@@ -1,0 +1,283 @@
+@prefix : <http://uco.org/di#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://uco.org/di> .
+
+<http://uco.org/di> rdf:type owl:Ontology ;
+                    
+                    owl:imports <> ,
+                                <http://uco.org/action> ,
+                                <http://uco.org/core> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://uco.org/di#analyzes
+
+:analyzes rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Forensic-action ;
+          
+          rdfs:range :Provenance-record .
+
+
+
+###  http://uco.org/di#characterizes
+
+:characterizes rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Environmental-characteristic ;
+               
+               rdfs:domain :Provenance-record .
+
+
+
+###  http://uco.org/di#empowered-by
+
+:empowered-by rdf:type owl:ObjectProperty ;
+              
+              rdfs:range :Authorization ;
+              
+              rdfs:domain :Case .
+
+
+
+###  http://uco.org/di#hasAttorney
+
+:hasAttorney rdf:type owl:ObjectProperty ;
+             
+             rdfs:range <#Attorney> ;
+             
+             rdfs:domain :Case .
+
+
+
+###  http://uco.org/di#hasExaminer
+
+:hasExaminer rdf:type owl:ObjectProperty ;
+             
+             rdfs:range <#Examiner> ;
+             
+             rdfs:domain :Case .
+
+
+
+###  http://uco.org/di#hasForensic-action
+
+:hasForensic-action rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:domain :Case ;
+                    
+                    rdfs:range :Forensic-action .
+
+
+
+###  http://uco.org/di#hasInvestigator
+
+:hasInvestigator rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:range <#Investigator> ;
+                 
+                 rdfs:domain :Case .
+
+
+
+###  http://uco.org/di#hasProvenance-record
+
+:hasProvenance-record rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:domain :Case ;
+                      
+                      rdfs:range :Provenance-record .
+
+
+
+###  http://uco.org/di#hasSubject
+
+:hasSubject rdf:type owl:ObjectProperty ;
+            
+            rdfs:range <#Subject> ;
+            
+            rdfs:domain :Case .
+
+
+
+###  http://uco.org/di#results-in
+
+:results-in rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :Forensic-action ;
+            
+            rdfs:range :Provenance-record .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  #Attorney
+
+<#Attorney> rdf:type owl:Class .
+
+
+
+###  #Examiner
+
+<#Examiner> rdf:type owl:Class .
+
+
+
+###  #Investigator
+
+<#Investigator> rdf:type owl:Class .
+
+
+
+###  #Subject
+
+<#Subject> rdf:type owl:Class .
+
+
+
+###  http://uco.org/action#Action
+
+<http://uco.org/action#Action> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core#Uco-object
+
+<http://uco.org/core#Uco-object> rdf:type owl:Class .
+
+
+
+###  http://uco.org/di#Authorization
+
+:Authorization rdf:type owl:Class .
+
+
+
+###  http://uco.org/di#Case
+
+:Case rdf:type owl:Class ;
+      
+      rdfs:subClassOf <http://uco.org/core#Uco-object> .
+
+
+
+###  http://uco.org/di#Environmental-characteristic
+
+:Environmental-characteristic rdf:type owl:Class .
+
+
+
+###  http://uco.org/di#Forensic-action
+
+:Forensic-action rdf:type owl:Class .
+
+
+
+###  http://uco.org/di#Provenance-record
+
+:Provenance-record rdf:type owl:Class .
+
+
+
+###  http://uco.org/di#Subject-action
+
+:Subject-action rdf:type owl:Class ;
+                
+                rdfs:subClassOf <http://uco.org/action#Action> .
+
+
+
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+:Subject-action rdfs:label "subject-action"@en .
+
+
+
+:hasProvenance-record rdfs:label "has provenance-record"@en .
+
+
+
+:hasAttorney rdfs:label "has attorney"@en .
+
+
+
+:hasExaminer rdfs:label "has examiner"@en .
+
+
+
+:analyzes rdfs:label "analyzes"@en .
+
+
+
+:Forensic-action rdfs:label "forensic-action"@en .
+
+
+
+:empowered-by rdfs:label "empowered-by"@en .
+
+
+
+:Environmental-characteristic rdfs:label "environmental-characteristic"@en .
+
+
+
+:Provenance-record rdfs:label "provenance-record"@en .
+
+
+
+:hasInvestigator rdfs:label "has investigator"@en .
+
+
+
+:Case rdfs:label "case"@en .
+
+
+
+:results-in rdfs:label "results-in"@en .
+
+
+
+:Authorization rdfs:label "authorization"@en .
+
+
+
+:characterizes rdfs:label "characterizes"@en .
+
+
+
+:hasForensic-action rdfs:label "has forensic-action"@en .
+
+
+
+:hasSubject rdfs:label "has subject"@en .
+
+
+
+
+###  Generated by the OWL API (version 4.0.1) http://owlapi.sourceforge.net
+

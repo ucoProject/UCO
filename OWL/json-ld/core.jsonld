@@ -1,0 +1,666 @@
+{
+  "_:genid1031143727" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first" : [ {
+      "value" : "_:genid1444288928",
+      "type" : "bnode"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid1200229560" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first" : [ {
+      "value" : "_:genid1620307086",
+      "type" : "bnode"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid1364119041" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Restriction",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
+      "value" : "1",
+      "type" : "literal",
+      "datatype" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    } ],
+    "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#onProperty" : [ {
+      "value" : "http://uco.org/core#spec_version",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid1444288928" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Restriction",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
+      "value" : "1",
+      "type" : "literal",
+      "datatype" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    } ],
+    "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#BasicString",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#onProperty" : [ {
+      "value" : "http://uco.org/core#title",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid1620307086" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Restriction",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
+      "value" : "1",
+      "type" : "literal",
+      "datatype" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    } ],
+    "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#Timestamp",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#onProperty" : [ {
+      "value" : "http://uco.org/core#created_time",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid1905551659" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Restriction",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : [ {
+      "value" : "1",
+      "type" : "literal",
+      "datatype" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    } ],
+    "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#Identifier",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#onProperty" : [ {
+      "value" : "http://uco.org/core#id",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid2037187586" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first" : [ {
+      "value" : "_:genid1905551659",
+      "type" : "bnode"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid234951851" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+      "value" : "_:genid1200229560",
+      "type" : "bnode"
+    } ]
+  },
+  "_:genid246592016" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first" : [ {
+      "value" : "_:genid535751376",
+      "type" : "bnode"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" : [ {
+      "value" : "_:genid2037187586",
+      "type" : "bnode"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid535751376" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Restriction",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+      "value" : "1",
+      "type" : "literal",
+      "datatype" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    } ],
+    "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#Identifier",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#onProperty" : [ {
+      "value" : "http://uco.org/core#id",
+      "type" : "uri"
+    } ]
+  },
+  "_:genid572989422" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+      "value" : "_:genid966663048",
+      "type" : "bnode"
+    } ]
+  },
+  "_:genid706125976" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+      "value" : "_:genid246592016",
+      "type" : "bnode"
+    } ]
+  },
+  "_:genid91294724" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+      "value" : "_:genid1031143727",
+      "type" : "bnode"
+    } ]
+  },
+  "_:genid966663048" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first" : [ {
+      "value" : "_:genid1364119041",
+      "type" : "bnode"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#List",
+      "type" : "uri"
+    } ]
+  },
+  "http://docs.oasis-open.org/cti/cti-common/marking#Granular-marking" : {
+    "http://purl.org/dc/terms/description" : [ {
+      "value" : "<p>The MarkingSpecificationType class characterizes a data marking specification that is applied to the STIX content.  Information captured includes the structured elements to which the data marking is to be applied, a set of marking structures, and source information.</p>",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ]
+  },
+  "http://purl.org/dc/terms/description" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#AnnotationProperty",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Ontology",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2002/07/owl#imports" : [ {
+      "value" : "http://docs.oasis-open.org/cti/cti-common/marking",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#Array-of-string" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "array-of-string",
+      "type" : "literal",
+      "lang" : "en"
+    } ]
+  },
+  "http://uco.org/core#Assertion" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "assertion",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#Descriptive-properties" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "descriptive-properties",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+      "value" : "_:genid91294724",
+      "type" : "bnode"
+    } ]
+  },
+  "http://uco.org/core#Item" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "item",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+      "value" : "http://uco.org/core#Observation",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#Location" : {
+    "http://purl.org/dc/terms/description" : [ {
+      "value" : "Characterization of a physical geolocation.",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "location",
+      "type" : "literal",
+      "lang" : "en"
+    } ]
+  },
+  "http://uco.org/core#Modus-operandi" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "modus-operandi",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#Observation" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "observation",
+      "type" : "literal",
+      "lang" : "en"
+    } ]
+  },
+  "http://uco.org/core#Pattern" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "pattern",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#Reference" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "reference",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+      "value" : "http://uco.org/core#Descriptive-properties",
+      "type" : "uri"
+    }, {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#Tool" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "tool",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#Uco-object" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#Class",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "uco-object",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+      "value" : "_:genid234951851",
+      "type" : "bnode"
+    }, {
+      "value" : "_:genid572989422",
+      "type" : "bnode"
+    }, {
+      "value" : "_:genid706125976",
+      "type" : "bnode"
+    } ]
+  },
+  "http://uco.org/core#created_time" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "created_time",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#Timestamp",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#defining_context" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Reference",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "defining_context",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#BasicString",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#description" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Descriptive-properties",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "description",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#Structured-text",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#external_identifier" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Reference",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "external_identifier",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#BasicString",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#granular_markings" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "granular_markings",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://docs.oasis-open.org/cti/cti-common/marking#Granular-marking",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#id" : {
+    "http://purl.org/dc/terms/description" : [ {
+      "value" : "<p>Specifies a globally unique identifier for this construct.</p>",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "id",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#Identifier",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#object_marking_refs" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "object_marking_refs",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#Identifier",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#reference_url" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Reference",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "reference_url",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#URI",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#spec_version" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "spec_version",
+      "type" : "literal",
+      "lang" : "en"
+    } ]
+  },
+  "http://uco.org/core#title" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Descriptive-properties",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "title",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#BasicString",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#type" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Uco-object",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "type",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#BasicString",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/core#value" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+      "value" : "http://uco.org/core#Array-of-string",
+      "type" : "uri"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+      "value" : "value",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
+    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+      "value" : "http://www.w3.org/2001/XMLSchema#BasicString",
+      "type" : "uri"
+    } ]
+  },
+  "http://www.w3.org/2001/XMLSchema#BasicString" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "type" : "uri"
+    } ]
+  },
+  "http://www.w3.org/2001/XMLSchema#Identifier" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "type" : "uri"
+    } ]
+  },
+  "http://www.w3.org/2001/XMLSchema#NativeFormatString" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "type" : "uri"
+    } ]
+  },
+  "http://www.w3.org/2001/XMLSchema#Structured-text" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "type" : "uri"
+    } ]
+  },
+  "http://www.w3.org/2001/XMLSchema#Timestamp" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "type" : "uri"
+    } ]
+  },
+  "http://www.w3.org/2001/XMLSchema#URI" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "type" : "uri"
+    } ]
+  }
+}

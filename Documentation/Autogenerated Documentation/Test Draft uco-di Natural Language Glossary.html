@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CCM Natural Language Glossary</title>
+		<meta charset="utf-8" />
+		<style>
+			.propdef {} 
+			.propname {font-style: italic;} 
+			.classname {} 
+			.datatype {font-style: italic;}
+			.headterm {font-weight: bold;}
+			.groupingterm {font-weight: bold; font-size: x-large;}
+			.doc {font-style: italic;}
+		</style>
+	</head>
+	<body>
+		<dl>
+																																																																																					<dt>
+				<span class="groupingterm">A</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="attorney" class="headterm">attorney</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																					<span class='classname'><a href="#defensive-actor">defensive-actor</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																																																																																					<dt>
+						<span id="authorization" class="headterm">authorization</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																					<span class='classname'><a href="#uco-object">uco-object</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																									</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">C</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="case" class="headterm">case</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#contextual-compilation">contextual-compilation</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>has examiner</span> any number of instances of 
+																				<span class='classname'><a href="#examiner">examiner</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>empowered-by</span> any number of instances of 
+																				<span class='classname'><a href="#authorization">authorization</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>has forensic-action</span> any number of instances of 
+																				<span class='classname'><a href="#forensic-action">forensic-action</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>has attorney</span> any number of instances of 
+																				<span class='classname'><a href="#attorney">attorney</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>has provenance-record</span> any number of instances of 
+																				<span class='classname'><a href="#provenance-record">provenance-record</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>has victim</span> any number of instances of 
+																				<span class='classname'><a href="#victim">victim</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>has investigator</span> any number of instances of 
+																				<span class='classname'><a href="#investigator">investigator</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>has subject</span> any number of instances of 
+																				<span class='classname'><a href="#subject">subject</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																	</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">E</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="environmental-characteristic" class="headterm">environmental-characteristic</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																					<span class='classname'><a href="#observation">observation</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																																																																																																		<dt>
+						<span id="examiner" class="headterm">examiner</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#defensive-actor">defensive-actor</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>carries-out</span> any number of instances of 
+																				<span class='classname'><a href="#forensic-action">forensic-action</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																																																																																																																																																																																																																																																																										</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">F</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="forensic-action" class="headterm">forensic-action</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#action">action</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>analyzes</span> any number of instances of 
+																				<span class='classname'><a href="#provenance-record">provenance-record</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>empowered-by</span> any number of instances of 
+																				<span class='classname'><a href="#authorization">authorization</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>results-in</span> any number of instances of 
+																				<span class='classname'><a href="#provenance-record">provenance-record</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																																																																																																				</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">I</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="investigator" class="headterm">investigator</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#defensive-actor">defensive-actor</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>requests</span> any number of instances of 
+																				<span class='classname'><a href="#forensic-action">forensic-action</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">P</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="provenance-record" class="headterm">provenance-record</span>
+					</dt>
+															<dd>	
+									<p>A kind of 
+																					<span class='classname'><a href="#contextual-compilation">contextual-compilation</a></span>.
+											    A valid instance satisfies the following necessary conditions:</p>
+									<ul>		
+																																										<li class='propdef'>
+																	<span  class='propname'>has source</span> 
+														at least one instance of <span class=''><a href="#identity">identity</a></span>.
+																						</li>
+																																				<li class='propdef'>
+																	<span  class='propname'>has time</span> 
+														exactly one value of <span class=''><a href="#time">time</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+									<p>An instance may also have the following properties:</p>
+									<ul>	
+																																									<li class='propdef'>
+												<span class='propname'>has reference</span> any number of instances of 
+																				<span class='classname'><a href="#reference">reference</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>has assertion</span> any number of instances of 
+																				<span class='classname'><a href="#assertion">assertion</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>has observation</span> any number of instances of 
+																				<span class='classname'><a href="#observation">observation</a></span>.
+																						</li>
+																																									<li class='propdef'>
+												<span class='propname'>has location</span> any number of instances of 
+																				<span class='classname'><a href="#location">location</a></span>.
+																						</li>
+																																								<li class='propdef'>
+												<span class='propname'>has tool</span> at most one instance of 
+																				<span class='classname'><a href="#tool">tool</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																																																																																																				</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">S</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="subject" class="headterm">subject</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#threat-actor">threat-actor</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>carries-out</span> any number of instances of 
+																				<span class='classname'><a href="#subject-action">subject-action</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+																																																																															<dt>
+						<span id="subject-action" class="headterm">subject-action</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																					<span class='classname'><a href="#action">action</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>(Undocumented)</span><p>	
+							</dd>		
+					</dl>
+			</dd>
+		</dl>
+	</body>
+</html>	
