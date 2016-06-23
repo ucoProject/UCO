@@ -1,0 +1,528 @@
+@prefix : <http://uco.org/action#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://uco.org/action> .
+
+<http://uco.org/action> rdf:type owl:Ontology ;
+                        
+                        owl:imports <> ,
+                                    <http://uco.org/core> ,
+                                    <http://uco.org/core/pattern> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/terms/description
+
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Datatypes
+#
+#################################################################
+
+
+###  http://uco.org/action#Action-status-type-enum
+
+:Action-status-type-enum rdf:type rdfs:Datatype ;
+                         
+                         owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                               owl:oneOf [ rdf:type rdf:List ;
+                                                           rdf:first "Complete/Finish"^^xsd:string ;
+                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                      rdf:first "Error"^^xsd:string ;
+                                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                                 rdf:first "Fail"^^xsd:string ;
+                                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                                            rdf:first "Ongoing"^^xsd:string ;
+                                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                                       rdf:first "Pending"^^xsd:string ;
+                                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                                  rdf:first "Success"^^xsd:string ;
+                                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                                             rdf:first "Unknown"^^xsd:string ;
+                                                                                                                             rdf:rest rdf:nil
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                             ] .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#BasicString
+
+xsd:BasicString rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#NonNegativeInteger
+
+xsd:NonNegativeInteger rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#Pattern-expression
+
+xsd:Pattern-expression rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#Timestamp
+
+xsd:Timestamp rdf:type rdfs:Datatype .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://uco.org/action#action_status
+
+:action_status rdf:type owl:ObjectProperty ;
+               
+               rdfs:range <#Controlled-vocabulary> ;
+               
+               rdfs:domain :Action .
+
+
+
+###  http://uco.org/action#error_type
+
+:error_type rdf:type owl:ObjectProperty ;
+            
+            rdfs:range <#Controlled-vocabulary> ;
+            
+            rdfs:domain :Action-error .
+
+
+
+###  http://uco.org/action#errors
+
+:errors rdf:type owl:ObjectProperty ;
+        
+        rdfs:domain :Action ;
+        
+        rdfs:range :Action-error .
+
+
+
+###  http://uco.org/action#facets
+
+:facets rdf:type owl:ObjectProperty ;
+        
+        rdfs:domain :Action ;
+        
+        rdfs:range <http://uco.org/core#Facet> .
+
+
+
+###  http://uco.org/action#phase_refs
+
+:phase_refs rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Action ;
+            
+            rdfs:domain :Action-lifecycle ;
+            
+            rdfs:subPropertyOf :subaction-refs .
+
+
+
+###  http://uco.org/action#subaction-refs
+
+:subaction-refs rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :Action ;
+                
+                rdfs:domain :Action .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://uco.org/action#action_count
+
+:action_count rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Action ;
+              
+              rdfs:range xsd:NonNegativeInteger .
+
+
+
+###  http://uco.org/action#action_end_time
+
+:action_end_time rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:domain :Action ;
+                 
+                 rdfs:range xsd:Timestamp .
+
+
+
+###  http://uco.org/action#action_start_time
+
+:action_start_time rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:domain :Action ;
+                   
+                   rdfs:range xsd:Timestamp .
+
+
+
+###  http://uco.org/action#error_content
+
+:error_content rdf:type owl:DatatypeProperty ;
+               
+               rdfs:domain :Action-error ;
+               
+               rdfs:range xsd:BasicString .
+
+
+
+###  http://uco.org/action#pattern_expression
+
+:pattern_expression rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:domain :Action-pattern ;
+                    
+                    rdfs:range xsd:Pattern-expression .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  #Controlled-vocabulary
+
+<#Controlled-vocabulary> rdf:type owl:Class .
+
+
+
+###  http://uco.org/action#Action
+
+:Action rdf:type owl:Class ;
+        
+        rdfs:subClassOf <http://uco.org/core#Uco-object> ,
+                        [ rdf:type owl:Class ;
+                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :action_start_time ;
+                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onDataRange xsd:Timestamp
+                                               ]
+                                             )
+                        ] ,
+                        [ rdf:type owl:Class ;
+                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :action_status ;
+                                                 owl:onClass <#Controlled-vocabulary> ;
+                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                               ]
+                                             )
+                        ] ,
+                        [ rdf:type owl:Class ;
+                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :action_end_time ;
+                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onDataRange xsd:Timestamp
+                                               ]
+                                             )
+                        ] ,
+                        [ rdf:type owl:Class ;
+                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :action_count ;
+                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onDataRange xsd:NonNegativeInteger
+                                               ]
+                                             )
+                        ] .
+
+
+
+###  http://uco.org/action#Action-error
+
+:Action-error rdf:type owl:Class ;
+              
+              rdfs:subClassOf [ rdf:type owl:Class ;
+                                owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :error_type ;
+                                                       owl:onClass <#Controlled-vocabulary> ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :error_type ;
+                                                       owl:onClass <#Controlled-vocabulary> ;
+                                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                     ]
+                                                   )
+                              ] ,
+                              [ rdf:type owl:Class ;
+                                owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :error_content ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange xsd:BasicString
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :error_content ;
+                                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange xsd:BasicString
+                                                     ]
+                                                   )
+                              ] .
+
+
+
+###  http://uco.org/action#Action-lifecycle
+
+:Action-lifecycle rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Action ,
+                                  [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :errors ;
+                                                           owl:someValuesFrom :Action-error
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :errors ;
+                                                           owl:onClass :Action-error ;
+                                                           owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger
+                                                         ]
+                                                       )
+                                  ] ,
+                                  [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :action_end_time ;
+                                                           owl:someValuesFrom xsd:Timestamp
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :action_end_time ;
+                                                           owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange xsd:Timestamp
+                                                         ]
+                                                       )
+                                  ] ,
+                                  [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :action_status ;
+                                                           owl:someValuesFrom <#Controlled-vocabulary>
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :action_status ;
+                                                           owl:onClass <#Controlled-vocabulary> ;
+                                                           owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger
+                                                         ]
+                                                       )
+                                  ] ,
+                                  [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :action_start_time ;
+                                                           owl:someValuesFrom xsd:Timestamp
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :action_start_time ;
+                                                           owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange xsd:Timestamp
+                                                         ]
+                                                       )
+                                  ] ,
+                                  [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :phase_refs ;
+                                                           owl:onClass :Action ;
+                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                         ]
+                                                       )
+                                  ] ,
+                                  [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :action_count ;
+                                                           owl:someValuesFrom xsd:NonNegativeInteger
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :action_count ;
+                                                           owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange xsd:NonNegativeInteger
+                                                         ]
+                                                       )
+                                  ] .
+
+
+
+###  http://uco.org/action#Action-pattern
+
+:Action-pattern rdf:type owl:Class ;
+                
+                rdfs:subClassOf <http://uco.org/core/pattern#Pattern> ,
+                                [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :pattern_expression ;
+                                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onDataRange xsd:Pattern-expression
+                                                       ]
+                                                     )
+                                ] .
+
+
+
+###  http://uco.org/core#Facet
+
+<http://uco.org/core#Facet> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core#Uco-object
+
+<http://uco.org/core#Uco-object> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core/pattern#Pattern
+
+<http://uco.org/core/pattern#Pattern> rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+:pattern_expression rdfs:label "pattern_expression"@en .
+
+
+
+:action_start_time rdfs:label "action_start_time"@en ;
+                   
+                   <http://purl.org/dc/terms/description> "The time at which performance of the action began."@en .
+
+
+
+:error_type rdfs:label "error_type"@en .
+
+
+
+<http://uco.org/core#Facet> <http://purl.org/dc/terms/description> "A grouping of properties characterizing a particular aspect/facet of an object."@en .
+
+
+
+:phase_refs rdfs:label "phase_refs"@en ;
+            
+            <http://purl.org/dc/terms/description> "The ordered set of actions or sub action-lifecycles that represent the action lifecycle."@en .
+
+
+
+:Action-error rdfs:label "action-error"@en ;
+              
+              <http://purl.org/dc/terms/description> "A characterization of the difference between the expected and the actual performance of an action."@en .
+
+
+
+<http://uco.org/core#Uco-object> <http://purl.org/dc/terms/description> """Base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Uniform Cyber Ontology (uco).
+"""@en .
+
+
+
+:Action-lifecycle rdfs:label "action-lifecycle"@en ;
+                  
+                  <http://purl.org/dc/terms/description> "An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles."@en .
+
+
+
+:subaction-refs rdfs:label "subaction-refs"@en .
+
+
+
+:errors rdfs:label "errors"@en ;
+        
+        <http://purl.org/dc/terms/description> "A characterization of the differences between the expected and the actual performance of the action."@en .
+
+
+
+: <http://purl.org/dc/terms/description> "A characterization of the differences between the expected and the actual performance of the action."@en ,
+                                         "The number of times that the action was performed."@en .
+
+
+
+:error_content rdfs:label "error_content"@en .
+
+
+
+:action_status rdfs:label "action_status"@en ;
+               
+               <http://purl.org/dc/terms/description> "The current state of the action."@en .
+
+
+
+:action_count rdfs:label "action_count"@en ;
+              
+              <http://purl.org/dc/terms/description> "The number of times that the action was performed."@en .
+
+
+
+:action_end_time rdfs:label "action_end_time"@en ;
+                 
+                 <http://purl.org/dc/terms/description> "The time at which performance of the action ended."@en .
+
+
+
+:Action rdfs:label "action"@en ;
+        
+        <http://purl.org/dc/terms/description> "Something that may be done or performed."@en .
+
+
+
+:facets rdfs:label "facets"@en ;
+        
+        <http://purl.org/dc/terms/description> "Additional sets of contextual properties characterizing particular aspects of the action."@en .
+
+
+
+:Action-pattern rdfs:label "action-pattern"@en ;
+                
+                <http://purl.org/dc/terms/description> "A logical pattern of characteristic action property values."@en .
+
+
+
+
+###  Generated by the OWL API (version 4.0.1) http://owlapi.sourceforge.net
+

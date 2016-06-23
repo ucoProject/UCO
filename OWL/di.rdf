@@ -1,0 +1,412 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://uco.org/di#"
+     xml:base="http://uco.org/di"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://uco.org/di">
+        <owl:imports rdf:resource=""/>
+        <owl:imports rdf:resource="http://uco.org/action"/>
+        <owl:imports rdf:resource="http://uco.org/core"/>
+        <owl:imports rdf:resource="http://uco.org/core/compilation"/>
+        <owl:imports rdf:resource="http://uco.org/core/role"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#BasicString -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#BasicString"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#Timestamp -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uco.org/di#action_lifecycle_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#action_lifecycle_refs">
+        <rdfs:range rdf:resource="http://uco.org/action#Action-lifecycle"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Investigation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#action_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#action_refs">
+        <rdfs:range rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Investigation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#annotation_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#annotation_refs">
+        <rdfs:range rdf:resource="http://uco.org/core#Annotation"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Provenance-record"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#assertion_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#assertion_refs">
+        <rdfs:range rdf:resource="http://uco.org/core#Assertion"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Provenance-record"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#investigation_form -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#investigation_form">
+        <rdfs:range rdf:resource="#Controlled-vocabulary"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Investigation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#investigation_status -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#investigation_status">
+        <rdfs:range rdf:resource="#Controlled-vocabulary"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Investigation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#item_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#item_refs">
+        <rdfs:range rdf:resource="http://uco.org/core#Item"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Provenance-record"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#provenance_record_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#provenance_record_refs">
+        <rdfs:domain rdf:resource="http://uco.org/di#Investigation"/>
+        <rdfs:range rdf:resource="http://uco.org/di#Provenance-record"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#relationship_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#relationship_refs">
+        <rdfs:range rdf:resource="#Relationship"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Provenance-record"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/di#role_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/di#role_refs">
+        <rdfs:range rdf:resource="http://uco.org/core/role#Role"/>
+        <rdfs:domain rdf:resource="http://uco.org/di#Investigation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uco.org/di#exhibit_number -->
+
+    <owl:DatatypeProperty rdf:about="http://uco.org/di#exhibit_number">
+        <rdfs:domain rdf:resource="http://uco.org/di#Provenance-record"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uco.org/di#investigation_end_time -->
+
+    <owl:DatatypeProperty rdf:about="http://uco.org/di#investigation_end_time">
+        <rdfs:domain rdf:resource="http://uco.org/di#Investigation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uco.org/di#investigation_start_time -->
+
+    <owl:DatatypeProperty rdf:about="http://uco.org/di#investigation_start_time">
+        <rdfs:domain rdf:resource="http://uco.org/di#Investigation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- #Controlled-vocabulary -->
+
+    <owl:Class rdf:about="#Controlled-vocabulary"/>
+    
+
+
+    <!-- #Relationship -->
+
+    <owl:Class rdf:about="#Relationship"/>
+    
+
+
+    <!-- http://uco.org/action#Action -->
+
+    <owl:Class rdf:about="http://uco.org/action#Action"/>
+    
+
+
+    <!-- http://uco.org/action#Action-lifecycle -->
+
+    <owl:Class rdf:about="http://uco.org/action#Action-lifecycle"/>
+    
+
+
+    <!-- http://uco.org/core#Annotation -->
+
+    <owl:Class rdf:about="http://uco.org/core#Annotation"/>
+    
+
+
+    <!-- http://uco.org/core#Assertion -->
+
+    <owl:Class rdf:about="http://uco.org/core#Assertion"/>
+    
+
+
+    <!-- http://uco.org/core#Item -->
+
+    <owl:Class rdf:about="http://uco.org/core#Item"/>
+    
+
+
+    <!-- http://uco.org/core/compilation#Contextual-compilation -->
+
+    <owl:Class rdf:about="http://uco.org/core/compilation#Contextual-compilation"/>
+    
+
+
+    <!-- http://uco.org/core/role#Role -->
+
+    <owl:Class rdf:about="http://uco.org/core/role#Role"/>
+    
+
+
+    <!-- http://uco.org/di#Forensic-action -->
+
+    <owl:Class rdf:about="http://uco.org/di#Forensic-action">
+        <rdfs:subClassOf rdf:resource="http://uco.org/action#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uco.org/di#Investigation -->
+
+    <owl:Class rdf:about="http://uco.org/di#Investigation">
+        <rdfs:subClassOf rdf:resource="http://uco.org/core/compilation#Contextual-compilation"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/di#investigation_start_time"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/di#investigation_status"/>
+                        <owl:onClass rdf:resource="#Controlled-vocabulary"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/di#investigation_form"/>
+                        <owl:onClass rdf:resource="#Controlled-vocabulary"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/di#investigation_form"/>
+                        <owl:onClass rdf:resource="#Controlled-vocabulary"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/di#investigation_end_time"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://uco.org/di#Provenance-record -->
+
+    <owl:Class rdf:about="http://uco.org/di#Provenance-record">
+        <rdfs:subClassOf rdf:resource="http://uco.org/core/compilation#Contextual-compilation"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/di#exhibit_number"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://uco.org/di#investigation_status">
+        <rdfs:label xml:lang="en">investigation_status</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#investigation_start_time">
+        <rdfs:label xml:lang="en">investigation_start_time</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#action_lifecycle_refs">
+        <rdfs:label xml:lang="en">action_lifecycle_refs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#provenance_record_refs">
+        <rdfs:label xml:lang="en">provenance_record_refs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#investigation_form">
+        <rdfs:label xml:lang="en">investigation_form</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#Forensic-action">
+        <rdfs:label xml:lang="en">forensic-action</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#item_refs">
+        <rdfs:label xml:lang="en">item_refs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#investigation_end_time">
+        <rdfs:label xml:lang="en">investigation_end_time</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#exhibit_number">
+        <rdfs:label xml:lang="en">exhibit_number</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#Provenance-record">
+        <rdfs:label xml:lang="en">provenance-record</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#action_refs">
+        <rdfs:label xml:lang="en">action_refs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#role_refs">
+        <rdfs:label xml:lang="en">role_refs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#Investigation">
+        <rdfs:label xml:lang="en">investigation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#assertion_refs">
+        <rdfs:label xml:lang="en">assertion_refs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Relationship">
+        <terms:description xml:lang="en">An association or link between two uco objects.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#relationship_refs">
+        <rdfs:label xml:lang="en">relationship_refs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/di#annotation_refs">
+        <rdfs:label xml:lang="en">annotation_refs</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.0.1) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CCM Natural Language Glossary</title>
+		<meta charset="utf-8" />
+		<style>
+			.propdef {} 
+			.propname {font-style: italic;} 
+			.classname {} 
+			.datatype {font-style: italic;}
+			.headterm {font-weight: bold;}
+			.groupingterm {font-weight: bold; font-size: x-large;}
+			.doc {font-style: italic;}
+		</style>
+	</head>
+	<body>
+		<dl>
+																																																																																																																																																																																																																																																																																							<dt>
+				<span class="groupingterm">A</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="action" class="headterm">action</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#uco-descriptive-object">uco-descriptive-object</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																								<li class='propdef'>
+												<span class='propname'>action_status</span> at most one instance of 
+																				<span class='classname'><a href="#controlled-vocabulary">controlled-vocabulary</a></span>.
+																						</li>
+																																								<li class='propdef'>
+												<span class='propname'>action_start_time</span> at most one value of 
+																				<span class='datatype'><a href="#timestamp">timestamp</a></span>.
+																						</li>
+																																								<li class='propdef'>
+												<span class='propname'>action_end_time</span> at most one value of 
+																				<span class='datatype'><a href="#timestamp">timestamp</a></span>.
+																						</li>
+																																									<li class='propdef'>
+												<span class='propname'>errors</span> any number of instances of 
+																				<span class='classname'><a href="#action-error">action-error</a></span>.
+																						</li>
+																																								<li class='propdef'>
+												<span class='propname'>action_count</span> at most one value of 
+																				<span class='datatype'><a href="#NonNegativeInteger">NonNegativeInteger</a></span>.
+																						</li>
+																																									<li class='propdef'>
+												<span class='propname'>facets</span> any number of instances of 
+																				<span class='classname'><a href="#facet">facet</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Something that may be done or performed.</span></p>
+							</dd>		
+																																																																																															<dt>
+						<span id="action-argument-facet" class="headterm">action-argument-facet</span>
+					</dt>
+															<dd>	
+									<p>A kind of 
+																					<span class='classname'><a href="#facet">facet</a></span>.
+											    A valid instance satisfies the following necessary conditions:</p>
+									<ul>		
+																																				<li class='propdef'>
+																	<span  class='propname'>name</span> 
+														exactly one instance of <span class=''><a href="#controlled-vocabulary">controlled-vocabulary</a></span>.
+																						</li>
+																																				<li class='propdef'>
+																	<span  class='propname'>value</span> 
+														exactly one instance of <span class=''><a href="#controlled-vocabulary">controlled-vocabulary</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A grouping of properties characterizing a single parameter for an action.</span></p>
+							</dd>		
+																																																																									<dt>
+						<span id="action-error" class="headterm">action-error</span>
+					</dt>
+															<dd>	
+									<p>A valid instance satisfies the following necessary conditions:</p>
+									<ul>		
+																																				<li class='propdef'>
+																	<span  class='propname'>error_type</span> 
+														exactly one instance of <span class=''><a href="#controlled-vocabulary">controlled-vocabulary</a></span>.
+																						</li>
+																																				<li class='propdef'>
+																	<span  class='propname'>error_content</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A characterization of the difference between the expected and the actual performance of an action.</span></p>
+							</dd>		
+																																																																																																							<dt>
+						<span id="action-estimation-facet" class="headterm">action-estimation-facet</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#facet">facet</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																								<li class='propdef'>
+												<span class='propname'>objective</span> at most one value of 
+																				<span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																								<li class='propdef'>
+												<span class='propname'>estimated_impact</span> at most one value of 
+																				<span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																								<li class='propdef'>
+												<span class='propname'>estimated_cost</span> at most one value of 
+																				<span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																								<li class='propdef'>
+												<span class='propname'>estimated_efficacy</span> at most one value of 
+																				<span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>A grouping of properties characterizing decision-focused estimation aspects for an action that may potentially be performed.</span></p>
+							</dd>		
+																																																																																																				<dt>
+						<span id="action-frequency-facet" class="headterm">action-frequency-facet</span>
+					</dt>
+															<dd>	
+									<p>A valid instance satisfies the following necessary conditions:</p>
+									<ul>		
+																																				<li class='propdef'>
+																	<span  class='propname'>rate</span> 
+														exactly one value of <span class=''><a href="#Float">Float</a></span>.
+																						</li>
+																																				<li class='propdef'>
+																	<span  class='propname'>units</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																				<li class='propdef'>
+																	<span  class='propname'>scale</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A grouping of properties characterizing the frequency of occurence for an action.</span></p>
+							</dd>		
+																																																																																																																																																																		<dt>
+						<span id="action-lifecycle" class="headterm">action-lifecycle</span>
+					</dt>
+															<dd>	
+									<p>A kind of 
+																					<span class='classname'><a href="#action">action</a></span>.
+											    A valid instance satisfies the following necessary condition:</p>
+									<ul>		
+																																				<li class='propdef'>
+																	<span  class='propname'>phase_refs</span> 
+														at least one instance of <span class=''><a href="#action">action</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles.</span></p>
+							</dd>		
+																																																																			<dt>
+						<span id="action-pattern" class="headterm">action-pattern</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#pattern">pattern</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																								<li class='propdef'>
+												<span class='propname'>pattern_expression</span> at most one value of 
+																				<span class='datatype'><a href="#pattern-expression">pattern-expression</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>A logical pattern of characteristic action property values.</span></p>
+							</dd>		
+																																																																																																																																																																																																																																																																																																																																																																	<dt>
+						<span id="action-refs-facet" class="headterm">action-refs-facet</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																					<span class='classname'><a href="#facet">facet</a></span>.
+												An instance may have the following properties:</p>
+													<ul>	
+																																															<li class='propdef'>
+												<span class='propname'>result_refs</span> any number of instances of 
+																				<span class='classname'><a href="#uco-object">uco-object</a></span>.
+																						</li>
+																																															<li class='propdef'>
+												<span class='propname'>participant_refs</span> any number of instances of 
+																				<span class='classname'><a href="#uco-object">uco-object</a></span>.
+																						</li>
+																																															<li class='propdef'>
+												<span class='propname'>instrument_refs</span> any number of instances of 
+																				<span class='classname'><a href="#uco-object">uco-object</a></span>.
+																						</li>
+																																									<li class='propdef'>
+												<span class='propname'>location_refs</span> any number of instances of 
+																				<span class='classname'><a href="#location">location</a></span>.
+																						</li>
+																																															<li class='propdef'>
+												<span class='propname'>target_object_refs</span> any number of instances of 
+																				<span class='classname'><a href="#uco-object">uco-object</a></span>.
+																						</li>
+																																														<li class='propdef'>
+												<span class='propname'>agent_ref</span> at most one instance of 
+																				<span class='classname'><a href="#uco-object">uco-object</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action.<br></span></p>
+							</dd>		
+					</dl>
+			</dd>
+		</dl>
+	</body>
+</html>	

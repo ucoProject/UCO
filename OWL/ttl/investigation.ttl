@@ -1,0 +1,452 @@
+@prefix : <http://uco.org/investigation#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://uco.org/investigation> .
+
+<http://uco.org/investigation> rdf:type owl:Ontology ;
+                               
+                               owl:imports <> ,
+                                           <http://uco.org/action> ,
+                                           <http://uco.org/core> ,
+                                           <http://uco.org/core/compilation> ,
+                                           <http://uco.org/core/role> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/terms/description
+
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Datatypes
+#
+#################################################################
+
+
+###  http://uco.org/investigation#Investigation-form-enum
+
+:Investigation-form-enum rdf:type rdfs:Datatype ;
+                         
+                         owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                               owl:oneOf [ rdf:type rdf:List ;
+                                                           rdf:first "case"^^xsd:string ;
+                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                      rdf:first "incident"^^xsd:string ;
+                                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                                 rdf:first "suspicious-activity"^^xsd:string ;
+                                                                                 rdf:rest rdf:nil
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                             ] .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#BasicString
+
+xsd:BasicString rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#Timestamp
+
+xsd:Timestamp rdf:type rdfs:Datatype .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://uco.org/investigation#action_lifecycle_refs
+
+:action_lifecycle_refs rdf:type owl:ObjectProperty ;
+                       
+                       rdfs:range <http://uco.org/action#Action-lifecycle> ;
+                       
+                       rdfs:domain :Investigation .
+
+
+
+###  http://uco.org/investigation#action_refs
+
+:action_refs rdf:type owl:ObjectProperty ;
+             
+             rdfs:range <http://uco.org/action#Action> ;
+             
+             rdfs:domain :Provenance-record .
+
+
+
+###  http://uco.org/investigation#annotation_refs
+
+:annotation_refs rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:range <http://uco.org/core#Annotation> ;
+                 
+                 rdfs:domain :Provenance-record .
+
+
+
+###  http://uco.org/investigation#assertion_refs
+
+:assertion_refs rdf:type owl:ObjectProperty ;
+                
+                rdfs:range <http://uco.org/core#Assertion> ;
+                
+                rdfs:domain :Provenance-record .
+
+
+
+###  http://uco.org/investigation#investigation_form
+
+:investigation_form rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:range <#Controlled-vocabulary> ;
+                    
+                    rdfs:domain :Investigation .
+
+
+
+###  http://uco.org/investigation#investigation_status
+
+:investigation_status rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:range <#Controlled-vocabulary> ;
+                      
+                      rdfs:domain :Investigation .
+
+
+
+###  http://uco.org/investigation#item_refs
+
+:item_refs rdf:type owl:ObjectProperty ;
+           
+           rdfs:range <http://uco.org/core#Item> ;
+           
+           rdfs:domain :Provenance-record .
+
+
+
+###  http://uco.org/investigation#provenance_record_refs
+
+:provenance_record_refs rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:domain :Investigation ;
+                        
+                        rdfs:range :Provenance-record .
+
+
+
+###  http://uco.org/investigation#relationship_refs
+
+:relationship_refs rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:range <#Relationship> ;
+                   
+                   rdfs:domain :Provenance-record .
+
+
+
+###  http://uco.org/investigation#role_refs
+
+:role_refs rdf:type owl:ObjectProperty ;
+           
+           rdfs:range <http://uco.org/core/role#Role> ;
+           
+           rdfs:domain :Investigation .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://uco.org/investigation#exhibit_number
+
+:exhibit_number rdf:type owl:DatatypeProperty ;
+                
+                rdfs:domain :Provenance-record ;
+                
+                rdfs:range xsd:BasicString .
+
+
+
+###  http://uco.org/investigation#investigation_end_time
+
+:investigation_end_time rdf:type owl:DatatypeProperty ;
+                        
+                        rdfs:domain :Investigation ;
+                        
+                        rdfs:range xsd:Timestamp .
+
+
+
+###  http://uco.org/investigation#investigation_start_time
+
+:investigation_start_time rdf:type owl:DatatypeProperty ;
+                          
+                          rdfs:domain :Investigation ;
+                          
+                          rdfs:range xsd:Timestamp .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  #Controlled-vocabulary
+
+<#Controlled-vocabulary> rdf:type owl:Class .
+
+
+
+###  #Relationship
+
+<#Relationship> rdf:type owl:Class .
+
+
+
+###  http://uco.org/action#Action
+
+<http://uco.org/action#Action> rdf:type owl:Class .
+
+
+
+###  http://uco.org/action#Action-lifecycle
+
+<http://uco.org/action#Action-lifecycle> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core#Annotation
+
+<http://uco.org/core#Annotation> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core#Assertion
+
+<http://uco.org/core#Assertion> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core#Item
+
+<http://uco.org/core#Item> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core/compilation#Contextual-compilation
+
+<http://uco.org/core/compilation#Contextual-compilation> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core/role#Role
+
+<http://uco.org/core/role#Role> rdf:type owl:Class .
+
+
+
+###  http://uco.org/investigation#Forensic-action
+
+:Forensic-action rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf <http://uco.org/action#Action> .
+
+
+
+###  http://uco.org/investigation#Investigation
+
+:Investigation rdf:type owl:Class ;
+               
+               rdfs:subClassOf <http://uco.org/core/compilation#Contextual-compilation> ,
+                               [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :investigation_end_time ;
+                                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:Timestamp
+                                                      ]
+                                                    )
+                               ] ,
+                               [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :investigation_status ;
+                                                        owl:onClass <#Controlled-vocabulary> ;
+                                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                    )
+                               ] ,
+                               [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :investigation_start_time ;
+                                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:Timestamp
+                                                      ]
+                                                    )
+                               ] ,
+                               [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :investigation_form ;
+                                                        owl:onClass <#Controlled-vocabulary> ;
+                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :investigation_form ;
+                                                        owl:onClass <#Controlled-vocabulary> ;
+                                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                    )
+                               ] .
+
+
+
+###  http://uco.org/investigation#Provenance-record
+
+:Provenance-record rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf <http://uco.org/core/compilation#Contextual-compilation> ,
+                                   [ rdf:type owl:Class ;
+                                     owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :exhibit_number ;
+                                                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onDataRange xsd:BasicString
+                                                          ]
+                                                        )
+                                   ] .
+
+
+
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+:item_refs rdfs:label "item_refs"@en .
+
+
+
+:Provenance-record rdfs:label "provenance-record"@en .
+
+
+
+<http://uco.org/core#Annotation> <http://purl.org/dc/terms/description> "A statement asserted to be true in relation to one or more other objects."@en .
+
+
+
+:exhibit_number rdfs:label "exhibit_number"@en .
+
+
+
+<http://uco.org/core#Assertion> <http://purl.org/dc/terms/description> "A statement asserted to be true."@en .
+
+
+
+:action_refs rdfs:label "action_refs"@en .
+
+
+
+:role_refs rdfs:label "role_refs"@en .
+
+
+
+<http://uco.org/action#Action-lifecycle> <http://purl.org/dc/terms/description> "An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles."@en .
+
+
+
+:investigation_end_time rdfs:label "investigation_end_time"@en .
+
+
+
+:Forensic-action rdfs:label "forensic-action"@en .
+
+
+
+:investigation_form rdfs:label "investigation_form"@en .
+
+
+
+<#Relationship> <http://purl.org/dc/terms/description> "An association or link between two uco objects."@en .
+
+
+
+:action_lifecycle_refs rdfs:label "action_lifecycle_refs"@en .
+
+
+
+:investigation_status rdfs:label "investigation_status"@en .
+
+
+
+:provenance_record_refs rdfs:label "provenance_record_refs"@en .
+
+
+
+:investigation_start_time rdfs:label "investigation_start_time"@en .
+
+
+
+:assertion_refs rdfs:label "assertion_refs"@en .
+
+
+
+<http://uco.org/core/compilation#Contextual-compilation> <http://purl.org/dc/terms/description> "A grouping of things sharing some context."@en .
+
+
+
+<http://uco.org/action#Action> <http://purl.org/dc/terms/description> "Something that may be done or performed."@en .
+
+
+
+:annotation_refs rdfs:label "annotation_refs"@en .
+
+
+
+:relationship_refs rdfs:label "relationship_refs"@en .
+
+
+
+:Investigation rdfs:label "investigation"@en ;
+               
+               <http://purl.org/dc/terms/description> "An exploration of the facts involved in a cyber-relevant set of suspicious activity."@en .
+
+
+
+
+###  Generated by the OWL API (version 4.0.1) http://owlapi.sourceforge.net
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://uco.org/core/pattern" uri="core.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://uco.org/core/marking" uri="core.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://uco.org/core/identity" uri="core.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1465238584386" name="http://uco.org/action" uri="action.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1465238584386" name="http://uco.org/core" uri="core.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1465238584386" name="http://uco.org/investigation" uri="investigation.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1465238584386" name="http://uco.org/observable" uri="observable.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1465238584386" name="http://uco.org/victim" uri="victim.rdf"/>
+    </group>
+</catalog>

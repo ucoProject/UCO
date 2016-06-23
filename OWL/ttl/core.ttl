@@ -1,0 +1,513 @@
+@prefix : <http://uco.org/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://uco.org/core> .
+
+<http://uco.org/core> rdf:type owl:Ontology ;
+                      
+                      owl:imports <> ,
+                                  <http://uco.org/core/identity> ,
+                                  <http://uco.org/core/marking> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/terms/description
+
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Datatypes
+#
+#################################################################
+
+
+###  http://www.w3.org/2001/XMLSchema#BasicString
+
+xsd:BasicString rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#Identifier
+
+xsd:Identifier rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#NativeFormatString
+
+xsd:NativeFormatString rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#Structured-text
+
+xsd:Structured-text rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#Timestamp
+
+xsd:Timestamp rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#URI
+
+xsd:URI rdf:type rdfs:Datatype .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://uco.org/core#created_by_ref
+
+:created_by_ref rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain :Uco-object ;
+                
+                rdfs:range <http://uco.org/core/identity#Identity> .
+
+
+
+###  http://uco.org/core#granular_markings
+
+:granular_markings rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:domain :Uco-object ;
+                   
+                   rdfs:range <http://uco.org/core/marking#Granular-marking> .
+
+
+
+###  http://uco.org/core#name
+
+:name rdf:type owl:ObjectProperty ;
+      
+      rdfs:range <#Controlled-vocabulary> ;
+      
+      rdfs:domain :Uco-object .
+
+
+
+###  http://uco.org/core#refs
+
+:refs rdf:type owl:ObjectProperty ;
+      
+      rdfs:domain :Annotation ;
+      
+      rdfs:range :Uco-object .
+
+
+
+###  http://uco.org/core#spec_version
+
+:spec_version rdf:type owl:ObjectProperty ;
+              
+              rdfs:range <#Controlled-vocabulary> ;
+              
+              rdfs:domain :Uco-object .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://uco.org/core#created_time
+
+:created_time rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Uco-object ;
+              
+              rdfs:range xsd:Timestamp .
+
+
+
+###  http://uco.org/core#defining_context
+
+:defining_context rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:domain :Reference ;
+                  
+                  rdfs:range xsd:BasicString .
+
+
+
+###  http://uco.org/core#description
+
+:description rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Uco-object ;
+             
+             rdfs:range xsd:Structured-text .
+
+
+
+###  http://uco.org/core#external_identifier
+
+:external_identifier rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:domain :Reference ;
+                     
+                     rdfs:range xsd:BasicString .
+
+
+
+###  http://uco.org/core#id
+
+:id rdf:type owl:DatatypeProperty ;
+    
+    rdfs:domain :Uco-object ;
+    
+    rdfs:range xsd:Identifier .
+
+
+
+###  http://uco.org/core#object_marking_refs
+
+:object_marking_refs rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:domain :Uco-object ;
+                     
+                     rdfs:range xsd:Identifier .
+
+
+
+###  http://uco.org/core#reference_url
+
+:reference_url rdf:type owl:DatatypeProperty ;
+               
+               rdfs:domain :Reference ;
+               
+               rdfs:range xsd:URI .
+
+
+
+###  http://uco.org/core#statement
+
+:statement rdf:type owl:DatatypeProperty ;
+           
+           rdfs:domain :Assertion ;
+           
+           rdfs:range xsd:BasicString .
+
+
+
+###  http://uco.org/core#tags
+
+:tags rdf:type owl:DatatypeProperty ;
+      
+      rdfs:domain :Annotation ;
+      
+      rdfs:range xsd:BasicString .
+
+
+
+###  http://uco.org/core#type
+
+:type rdf:type owl:DatatypeProperty ;
+      
+      rdfs:domain :Uco-object ;
+      
+      rdfs:range xsd:BasicString .
+
+
+
+###  http://uco.org/core#value
+
+:value rdf:type owl:DatatypeProperty ;
+       
+       rdfs:domain :Array-of-string ;
+       
+       rdfs:range xsd:BasicString .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  #Controlled-vocabulary
+
+<#Controlled-vocabulary> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core#Annotation
+
+:Annotation rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Assertion ,
+                            [ rdf:type owl:Class ;
+                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :refs ;
+                                                     owl:onClass :Uco-object ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                   ]
+                                                 )
+                            ] .
+
+
+
+###  http://uco.org/core#Array-of-string
+
+:Array-of-string rdf:type owl:Class .
+
+
+
+###  http://uco.org/core#Assertion
+
+:Assertion rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Uco-object ,
+                           [ rdf:type owl:Class ;
+                             owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :statement ;
+                                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onDataRange xsd:BasicString
+                                                  ]
+                                                )
+                           ] .
+
+
+
+###  http://uco.org/core#Facet
+
+:Facet rdf:type owl:Class .
+
+
+
+###  http://uco.org/core#Item
+
+:Item rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Uco-object .
+
+
+
+###  http://uco.org/core#Reference
+
+:Reference rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Uco-object .
+
+
+
+###  http://uco.org/core#Uco-object
+
+:Uco-object rdf:type owl:Class ;
+            
+            rdfs:subClassOf [ rdf:type owl:Class ;
+                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :created_by_ref ;
+                                                     owl:onClass <http://uco.org/core/identity#Identity> ;
+                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                   ]
+                                                 )
+                            ] ,
+                            [ rdf:type owl:Class ;
+                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :spec_version ;
+                                                     owl:onClass <#Controlled-vocabulary> ;
+                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                   ]
+                                                 )
+                            ] ,
+                            [ rdf:type owl:Class ;
+                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :id ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:Identifier
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :id ;
+                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:Identifier
+                                                   ]
+                                                 )
+                            ] ,
+                            [ rdf:type owl:Class ;
+                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :name ;
+                                                     owl:onClass <#Controlled-vocabulary> ;
+                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                   ]
+                                                 )
+                            ] ,
+                            [ rdf:type owl:Class ;
+                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :created_time ;
+                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:Timestamp
+                                                   ]
+                                                 )
+                            ] .
+
+
+
+###  http://uco.org/core/identity#Identity
+
+<http://uco.org/core/identity#Identity> rdf:type owl:Class .
+
+
+
+###  http://uco.org/core/marking#Granular-marking
+
+<http://uco.org/core/marking#Granular-marking> rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+:Annotation rdfs:label "annotation"@en ;
+            
+            <http://purl.org/dc/terms/description> "A statement asserted to be true in relation to one or more other objects."@en .
+
+
+
+:statement rdfs:label "statement"@en .
+
+
+
+<http://uco.org/core/marking#Granular-marking> <http://purl.org/dc/terms/description> "<p>The MarkingSpecificationType class characterizes a data marking specification that is applied to the STIX content.  Information captured includes the structured elements to which the data marking is to be applied, a set of marking structures, and source information.</p>"@en .
+
+
+
+:object_marking_refs rdfs:label "object_marking_refs"@en .
+
+
+
+<http://uco.org/core/identity#Identity> <http://purl.org/dc/terms/description> "Characterization of the identifying properties of an individual or organization."@en .
+
+
+
+:type rdfs:label "type"@en .
+
+
+
+:description rdfs:label "description"@en .
+
+
+
+:created_by_ref rdfs:label "created_by_ref"@en .
+
+
+
+:refs rdfs:label "refs"@en .
+
+
+
+:name rdfs:label "name"@en .
+
+
+
+:external_identifier rdfs:label "external_identifier"@en .
+
+
+
+:Reference rdfs:label "reference"@en .
+
+
+
+:granular_markings rdfs:label "granular_markings"@en .
+
+
+
+:Facet rdfs:label "facet"@en ;
+       
+       <http://purl.org/dc/terms/description> "A grouping of properties characterizing a particular aspect/facet of an object."@en .
+
+
+
+:Item rdfs:label "item"@en .
+
+
+
+:Uco-object rdfs:label "uco-object"@en ;
+            
+            <http://purl.org/dc/terms/description> """Base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Uniform Cyber Ontology (uco).
+"""@en .
+
+
+
+:reference_url rdfs:label "reference_url"@en .
+
+
+
+:Assertion rdfs:label "assertion"@en ;
+           
+           <http://purl.org/dc/terms/description> "A statement asserted to be true."@en .
+
+
+
+:Array-of-string rdfs:label "array-of-string"@en .
+
+
+
+:created_time rdfs:label "created_time"@en .
+
+
+
+:defining_context rdfs:label "defining_context"@en .
+
+
+
+:spec_version rdfs:label "spec_version"@en .
+
+
+
+:tags rdfs:label "tags"@en .
+
+
+
+:value rdfs:label "value"@en .
+
+
+
+:id rdfs:label "id"@en ;
+    
+    <http://purl.org/dc/terms/description> "<p>Specifies a globally unique identifier for this construct.</p>"@en .
+
+
+
+
+###  Generated by the OWL API (version 4.0.1) http://owlapi.sourceforge.net
+
