@@ -2,14 +2,16 @@
 <rdf:RDF xmlns="http://uco.org/victim#"
      xml:base="http://uco.org/victim"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://uco.org/victim">
+        <owl:imports rdf:resource=""/>
         <owl:imports rdf:resource="http://uco.org/action"/>
-        <owl:imports rdf:resource="http://uco.org/actor"/>
-        <owl:imports rdf:resource="http://uco.org/core"/>
+        <owl:imports rdf:resource="http://uco.org/core/pattern"/>
+        <owl:imports rdf:resource="http://uco.org/core/role"/>
     </owl:Ontology>
     
 
@@ -17,7 +19,7 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Object Properties
+    // Annotation properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
@@ -25,12 +27,9 @@
     
 
 
-    <!-- http://uco.org/victim# -->
+    <!-- http://purl.org/dc/terms/description -->
 
-    <owl:ObjectProperty rdf:about="http://uco.org/victim#">
-        <rdfs:domain rdf:resource="http://uco.org/victim#Victim"/>
-        <rdfs:range rdf:resource="http://uco.org/victim#Victim-action"/>
-    </owl:ObjectProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
@@ -45,36 +44,42 @@
     
 
 
-    <!-- http://uco.org/action#Action -->
+    <!-- #Modus-operandi -->
 
-    <owl:Class rdf:about="http://uco.org/action#Action"/>
+    <owl:Class rdf:about="#Modus-operandi"/>
     
 
 
-    <!-- http://uco.org/actor#Actor -->
+    <!-- http://uco.org/action#Action-lifecycle -->
 
-    <owl:Class rdf:about="http://uco.org/actor#Actor"/>
+    <owl:Class rdf:about="http://uco.org/action#Action-lifecycle"/>
     
 
 
-    <!-- http://uco.org/core#Modus-operandi -->
+    <!-- http://uco.org/core/pattern#Pattern -->
 
-    <owl:Class rdf:about="http://uco.org/core#Modus-operandi"/>
+    <owl:Class rdf:about="http://uco.org/core/pattern#Pattern"/>
+    
+
+
+    <!-- http://uco.org/core/role#Neutral-role -->
+
+    <owl:Class rdf:about="http://uco.org/core/role#Neutral-role"/>
     
 
 
     <!-- http://uco.org/victim#Victim -->
 
     <owl:Class rdf:about="http://uco.org/victim#Victim">
-        <rdfs:subClassOf rdf:resource="http://uco.org/actor#Actor"/>
+        <rdfs:subClassOf rdf:resource="http://uco.org/core/role#Neutral-role"/>
     </owl:Class>
     
 
 
-    <!-- http://uco.org/victim#Victim-action -->
+    <!-- http://uco.org/victim#Victim-action-lifecycle -->
 
-    <owl:Class rdf:about="http://uco.org/victim#Victim-action">
-        <rdfs:subClassOf rdf:resource="http://uco.org/action#Action"/>
+    <owl:Class rdf:about="http://uco.org/victim#Victim-action-lifecycle">
+        <rdfs:subClassOf rdf:resource="http://uco.org/action#Action-lifecycle"/>
     </owl:Class>
     
 
@@ -82,7 +87,9 @@
     <!-- http://uco.org/victim#Victim-targeting -->
 
     <owl:Class rdf:about="http://uco.org/victim#Victim-targeting">
-        <rdfs:subClassOf rdf:resource="http://uco.org/core#Modus-operandi"/>
+        <rdfs:subClassOf rdf:resource="#Modus-operandi"/>
+        <rdfs:subClassOf rdf:resource="http://uco.org/core/pattern#Pattern"/>
+        <rdfs:subClassOf rdf:resource="http://uco.org/victim#Victim"/>
     </owl:Class>
     
 
@@ -95,17 +102,17 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://uco.org/victim#Victim-action-lifecycle">
+        <rdfs:label xml:lang="en">victim-action-lifecycle</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://uco.org/victim#Victim-targeting">
         <rdfs:label xml:lang="en">victim-targeting</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://uco.org/victim#">
-        <rdfs:label xml:lang="en"></rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://uco.org/victim#Victim">
         <rdfs:label xml:lang="en">victim</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uco.org/victim#Victim-action">
-        <rdfs:label xml:lang="en">victim-action</rdfs:label>
+    <rdf:Description rdf:about="http://uco.org/action#Action-lifecycle">
+        <terms:description xml:lang="en">An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles.</terms:description>
     </rdf:Description>
 </rdf:RDF>
 
