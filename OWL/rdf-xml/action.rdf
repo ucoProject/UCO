@@ -2,13 +2,122 @@
 <rdf:RDF xmlns="http://uco.org/action#"
      xml:base="http://uco.org/action"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://uco.org/action">
+        <owl:imports rdf:resource=""/>
         <owl:imports rdf:resource="http://uco.org/core"/>
+        <owl:imports rdf:resource="http://uco.org/core/pattern"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uco.org/action#Action-status-type-enum -->
+
+    <rdfs:Datatype rdf:about="http://uco.org/action#Action-status-type-enum">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Complete/Finish</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Error</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fail</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ongoing</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pending</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Success</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#BasicString -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#BasicString"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#NonNegativeInteger -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#NonNegativeInteger"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#Pattern-expression -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#Pattern-expression"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#Timestamp -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#Timestamp"/>
     
 
 
@@ -23,12 +132,114 @@
     
 
 
-    <!-- http://uco.org/action# -->
+    <!-- http://uco.org/action#action_status -->
 
-    <owl:ObjectProperty rdf:about="http://uco.org/action#">
-        <rdfs:domain rdf:resource="http://uco.org/action#Action-lifecycle"/>
-        <rdfs:range rdf:resource="http://uco.org/action#Action-lifecycle-phase"/>
+    <owl:ObjectProperty rdf:about="http://uco.org/action#action_status">
+        <rdfs:range rdf:resource="#Controlled-vocabulary"/>
+        <rdfs:domain rdf:resource="http://uco.org/action#Action"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/action#error_type -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/action#error_type">
+        <rdfs:range rdf:resource="#Controlled-vocabulary"/>
+        <rdfs:domain rdf:resource="http://uco.org/action#Action-error"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/action#errors -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/action#errors">
+        <rdfs:domain rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:range rdf:resource="http://uco.org/action#Action-error"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/action#facets -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/action#facets">
+        <rdfs:domain rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:range rdf:resource="http://uco.org/core#Facet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/action#phase_refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/action#phase_refs">
+        <rdfs:range rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:domain rdf:resource="http://uco.org/action#Action-lifecycle"/>
+        <rdfs:subPropertyOf rdf:resource="http://uco.org/action#subaction-refs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uco.org/action#subaction-refs -->
+
+    <owl:ObjectProperty rdf:about="http://uco.org/action#subaction-refs">
+        <rdfs:range rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:domain rdf:resource="http://uco.org/action#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uco.org/action#action_count -->
+
+    <owl:DatatypeProperty rdf:about="http://uco.org/action#action_count">
+        <rdfs:domain rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#NonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uco.org/action#action_end_time -->
+
+    <owl:DatatypeProperty rdf:about="http://uco.org/action#action_end_time">
+        <rdfs:domain rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uco.org/action#action_start_time -->
+
+    <owl:DatatypeProperty rdf:about="http://uco.org/action#action_start_time">
+        <rdfs:domain rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uco.org/action#error_content -->
+
+    <owl:DatatypeProperty rdf:about="http://uco.org/action#error_content">
+        <rdfs:domain rdf:resource="http://uco.org/action#Action-error"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uco.org/action#pattern_expression -->
+
+    <owl:DatatypeProperty rdf:about="http://uco.org/action#pattern_expression">
+        <rdfs:domain rdf:resource="http://uco.org/action#Action-pattern"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Pattern-expression"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -43,10 +254,99 @@
     
 
 
+    <!-- #Controlled-vocabulary -->
+
+    <owl:Class rdf:about="#Controlled-vocabulary"/>
+    
+
+
     <!-- http://uco.org/action#Action -->
 
     <owl:Class rdf:about="http://uco.org/action#Action">
         <rdfs:subClassOf rdf:resource="http://uco.org/core#Uco-object"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_start_time"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_count"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#NonNegativeInteger"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_end_time"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_status"/>
+                        <owl:onClass rdf:resource="#Controlled-vocabulary"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://uco.org/action#Action-error -->
+
+    <owl:Class rdf:about="http://uco.org/action#Action-error">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#error_type"/>
+                        <owl:onClass rdf:resource="#Controlled-vocabulary"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#error_type"/>
+                        <owl:onClass rdf:resource="#Controlled-vocabulary"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#error_content"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#error_content"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -54,15 +354,93 @@
     <!-- http://uco.org/action#Action-lifecycle -->
 
     <owl:Class rdf:about="http://uco.org/action#Action-lifecycle">
-        <rdfs:subClassOf rdf:resource="http://uco.org/action#Action-pattern"/>
-    </owl:Class>
-    
-
-
-    <!-- http://uco.org/action#Action-lifecycle-phase -->
-
-    <owl:Class rdf:about="http://uco.org/action#Action-lifecycle-phase">
-        <rdfs:subClassOf rdf:resource="http://uco.org/action#Action-pattern"/>
+        <rdfs:subClassOf rdf:resource="http://uco.org/action#Action"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#phase_refs"/>
+                        <owl:onClass rdf:resource="http://uco.org/action#Action"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_end_time"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_end_time"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_status"/>
+                        <owl:someValuesFrom rdf:resource="#Controlled-vocabulary"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_status"/>
+                        <owl:onClass rdf:resource="#Controlled-vocabulary"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#errors"/>
+                        <owl:someValuesFrom rdf:resource="http://uco.org/action#Action-error"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#errors"/>
+                        <owl:onClass rdf:resource="http://uco.org/action#Action-error"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_count"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#NonNegativeInteger"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_count"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#NonNegativeInteger"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_start_time"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#action_start_time"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -70,30 +448,37 @@
     <!-- http://uco.org/action#Action-pattern -->
 
     <owl:Class rdf:about="http://uco.org/action#Action-pattern">
-        <rdfs:subClassOf rdf:resource="http://uco.org/core#Uco-object"/>
+        <rdfs:subClassOf rdf:resource="http://uco.org/core/pattern#Pattern"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uco.org/action#pattern_expression"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Pattern-expression"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://uco.org/action#Attack-pattern -->
+    <!-- http://uco.org/core#Facet -->
 
-    <owl:Class rdf:about="http://uco.org/action#Attack-pattern">
-        <rdfs:subClassOf rdf:resource="http://uco.org/action#Action-pattern"/>
-    </owl:Class>
-    
-
-
-    <!-- http://uco.org/action#Vulnerability-pattern -->
-
-    <owl:Class rdf:about="http://uco.org/action#Vulnerability-pattern">
-        <rdfs:subClassOf rdf:resource="http://uco.org/action#Action-pattern"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://uco.org/core#Facet"/>
     
 
 
     <!-- http://uco.org/core#Uco-object -->
 
     <owl:Class rdf:about="http://uco.org/core#Uco-object"/>
+    
+
+
+    <!-- http://uco.org/core/pattern#Pattern -->
+
+    <owl:Class rdf:about="http://uco.org/core/pattern#Pattern"/>
     
 
 
@@ -105,26 +490,72 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://uco.org/action#Vulnerability-pattern">
-        <rdfs:label xml:lang="en">vulnerability-pattern</rdfs:label>
+    <rdf:Description rdf:about="http://uco.org/action#pattern_expression">
+        <rdfs:label xml:lang="en">pattern_expression</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uco.org/action#Action-lifecycle-phase">
-        <rdfs:label xml:lang="en">action-lifecycle-phase</rdfs:label>
+    <rdf:Description rdf:about="http://uco.org/action#action_start_time">
+        <rdfs:label xml:lang="en">action_start_time</rdfs:label>
+        <terms:description xml:lang="en">The time at which performance of the action began.</terms:description>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uco.org/action#Action">
-        <rdfs:label xml:lang="en">action</rdfs:label>
+    <rdf:Description rdf:about="http://uco.org/action#error_type">
+        <rdfs:label xml:lang="en">error_type</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/core#Facet">
+        <terms:description xml:lang="en">A grouping of properties characterizing a particular aspect/facet of an object.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#phase_refs">
+        <rdfs:label xml:lang="en">phase_refs</rdfs:label>
+        <terms:description xml:lang="en">The ordered set of actions or sub action-lifecycles that represent the action lifecycle.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#Action-error">
+        <rdfs:label xml:lang="en">action-error</rdfs:label>
+        <terms:description xml:lang="en">A characterization of the difference between the expected and the actual performance of an action.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/core#Uco-object">
+        <terms:description xml:lang="en">Base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Uniform Cyber Ontology (uco).
+</terms:description>
     </rdf:Description>
     <rdf:Description rdf:about="http://uco.org/action#Action-lifecycle">
         <rdfs:label xml:lang="en">action-lifecycle</rdfs:label>
+        <terms:description xml:lang="en">An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles.</terms:description>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uco.org/action#Attack-pattern">
-        <rdfs:label xml:lang="en">attack-pattern</rdfs:label>
+    <rdf:Description rdf:about="http://uco.org/action#subaction-refs">
+        <rdfs:label xml:lang="en">subaction-refs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#errors">
+        <rdfs:label xml:lang="en">errors</rdfs:label>
+        <terms:description xml:lang="en">A characterization of the differences between the expected and the actual performance of the action.</terms:description>
     </rdf:Description>
     <rdf:Description rdf:about="http://uco.org/action#">
-        <rdfs:label xml:lang="en"></rdfs:label>
+        <terms:description xml:lang="en">A characterization of the differences between the expected and the actual performance of the action.</terms:description>
+        <terms:description xml:lang="en">The number of times that the action was performed.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#error_content">
+        <rdfs:label xml:lang="en">error_content</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#action_status">
+        <rdfs:label xml:lang="en">action_status</rdfs:label>
+        <terms:description xml:lang="en">The current state of the action.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#action_count">
+        <rdfs:label xml:lang="en">action_count</rdfs:label>
+        <terms:description xml:lang="en">The number of times that the action was performed.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#action_end_time">
+        <rdfs:label xml:lang="en">action_end_time</rdfs:label>
+        <terms:description xml:lang="en">The time at which performance of the action ended.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#Action">
+        <rdfs:label xml:lang="en">action</rdfs:label>
+        <terms:description xml:lang="en">Something that may be done or performed.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uco.org/action#facets">
+        <rdfs:label xml:lang="en">facets</rdfs:label>
+        <terms:description xml:lang="en">Additional sets of contextual properties characterizing particular aspects of the action.</terms:description>
     </rdf:Description>
     <rdf:Description rdf:about="http://uco.org/action#Action-pattern">
         <rdfs:label xml:lang="en">action-pattern</rdfs:label>
+        <terms:description xml:lang="en">A logical pattern of characteristic action property values.</terms:description>
     </rdf:Description>
 </rdf:RDF>
 

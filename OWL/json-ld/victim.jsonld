@@ -1,17 +1,28 @@
 {
-  "http://uco.org/action#Action" : {
+  "http://purl.org/dc/terms/description" : {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+      "value" : "http://www.w3.org/2002/07/owl#AnnotationProperty",
+      "type" : "uri"
+    } ]
+  },
+  "http://uco.org/action#Action-lifecycle" : {
+    "http://purl.org/dc/terms/description" : [ {
+      "value" : "An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles.",
+      "type" : "literal",
+      "lang" : "en"
+    } ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
       "value" : "http://www.w3.org/2002/07/owl#Class",
       "type" : "uri"
     } ]
   },
-  "http://uco.org/actor#Actor" : {
+  "http://uco.org/core/pattern#Pattern" : {
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
       "value" : "http://www.w3.org/2002/07/owl#Class",
       "type" : "uri"
     } ]
   },
-  "http://uco.org/core#Modus-operandi" : {
+  "http://uco.org/core/role#Neutral-role" : {
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
       "value" : "http://www.w3.org/2002/07/owl#Class",
       "type" : "uri"
@@ -26,29 +37,10 @@
       "value" : "http://uco.org/action",
       "type" : "uri"
     }, {
-      "value" : "http://uco.org/actor",
+      "value" : "http://uco.org/core/pattern",
       "type" : "uri"
     }, {
-      "value" : "http://uco.org/core",
-      "type" : "uri"
-    } ]
-  },
-  "http://uco.org/victim#" : {
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-      "value" : "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "type" : "uri"
-    } ],
-    "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-      "value" : "http://uco.org/victim#Victim",
-      "type" : "uri"
-    } ],
-    "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-      "value" : "",
-      "type" : "literal",
-      "lang" : "en"
-    } ],
-    "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-      "value" : "http://uco.org/victim#Victim-action",
+      "value" : "http://uco.org/core/role",
       "type" : "uri"
     } ]
   },
@@ -63,22 +55,22 @@
       "lang" : "en"
     } ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-      "value" : "http://uco.org/actor#Actor",
+      "value" : "http://uco.org/core/role#Neutral-role",
       "type" : "uri"
     } ]
   },
-  "http://uco.org/victim#Victim-action" : {
+  "http://uco.org/victim#Victim-action-lifecycle" : {
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
       "value" : "http://www.w3.org/2002/07/owl#Class",
       "type" : "uri"
     } ],
     "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-      "value" : "victim-action",
+      "value" : "victim-action-lifecycle",
       "type" : "literal",
       "lang" : "en"
     } ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-      "value" : "http://uco.org/action#Action",
+      "value" : "http://uco.org/action#Action-lifecycle",
       "type" : "uri"
     } ]
   },
@@ -93,7 +85,10 @@
       "lang" : "en"
     } ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-      "value" : "http://uco.org/core#Modus-operandi",
+      "value" : "http://uco.org/core/pattern#Pattern",
+      "type" : "uri"
+    }, {
+      "value" : "http://uco.org/victim#Victim",
       "type" : "uri"
     } ]
   }
