@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CCM Natural Language Glossary</title>
+		<meta charset="utf-8" />
+		<style>
+			.propdef {} 
+			.propname {font-style: italic;} 
+			.classname {} 
+			.datatype {font-style: italic;}
+			.headterm {font-weight: bold;}
+			.groupingterm {font-weight: bold; font-size: x-large;}
+			.doc {font-style: italic;}
+		</style>
+	</head>
+	<body>
+		<dl>
+																																																																																																																																																																																																																																							<dt>
+				<span class="groupingterm">A</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="Action" class="headterm">Action</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																								<span class='classname'><a href="#UcoObject">UcoObject</a></span>.
+												A valid occurrence may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>actionStatus</span> at most one occurrence 
+																				of <span class='classname'><a href="#ControlledVocabulary">ControlledVocabulary</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>startTime</span> at most one value 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>endTime</span> at most one value 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+																																											<li class='propdef'>
+																			<span class='propname'>Error</span> 
+														    any number of values of any type.
+											</li>
+																																										<li class='propdef'>
+												<span class='propname'>actionCount</span> at most one value 
+																				of <span class='datatype'><a href="#NonNegativeInteger">NonNegativeInteger</a></span>.
+																						</li>
+																																											<li class='propdef'>
+												<span class='propname'>subactionRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#Action">Action</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Something that may be done or performed.</span></p>
+							</dd>		
+																																																																																																			<dt>
+						<span id="ActionArgument" class="headterm">ActionArgument</span>
+					</dt>
+															<dd>	
+									<p>A kind of
+																								<span class='classname'><a href="#Facet">Facet</a></span>.
+											    A valid occurrence satisfies the following necessary conditions:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>Name</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																						<li class='propdef'>
+																	<span  class='propname'>Value</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A grouping of properties characterizing a single parameter for an action.</span></p>
+							</dd>		
+																																																																																																																																																																																																																																																																																																																																																																																																																										<dt>
+						<span id="ActionRefs" class="headterm">ActionRefs</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																								<span class='classname'><a href="#Facet">Facet</a></span>.
+												A valid occurrence may have the following properties:</p>
+													<ul>	
+																																																	<li class='propdef'>
+												<span class='propname'>instrumentRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+																																																	<li class='propdef'>
+												<span class='propname'>resultRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+																																																	<li class='propdef'>
+												<span class='propname'>participantRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+																																																<li class='propdef'>
+												<span class='propname'>performerRef</span> at most one occurrence 
+																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+																																											<li class='propdef'>
+												<span class='propname'>locationRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#Location">Location</a></span>.
+																						</li>
+																																																	<li class='propdef'>
+												<span class='propname'>objectRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action. The properties consist of identifier references to separate UCO objects detailing the particular property.<br></span></p>
+							</dd>		
+					</dl>
+			</dd>
+		</dl>
+	</body>
+</html>	
