@@ -15,12 +15,49 @@
 	</head>
 	<body>
 		<dl>
-																																																																																																																																									<dt>
+																																																					<dt>
 				<span class="groupingterm">A</span>
 			</dt>
 			<dd>
 				<dl>
 										<dt>
+						<span id="AccountRefsFacet" class="headterm">AccountRefsFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																																									<dt>
+						<span id="AddressFacet" class="headterm">AddressFacet</span>
+					</dt>
+															<dd>	
+									<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											    A valid occurrence satisfies the following necessary condition:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>AddressRef</span> 
+														exactly one occurrence of <span class=''><a href="#Location">Location</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>(Undocumented)</span><p>
+							</dd>		
+																																															<dt>
+						<span id="AffiliationFacet" class="headterm">AffiliationFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																																																																																																			<dt>
 						<span id="Annotation" class="headterm">Annotation</span>
 					</dt>
 															<dd>	
@@ -29,7 +66,7 @@
 											    A valid occurrence satisfies the following necessary condition:</p>
 									<ul>		
 																																												<li class='propdef'>
-																	<span  class='propname'>Ref</span> 
+																	<span  class='propname'>Object</span> 
 														at least one occurrence of <span class=''><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 									</ul>
@@ -37,7 +74,37 @@
 											<dd>
 								<p><span class='doc'>A statement asserted to be true in relation to one or more other objects.</span></p>
 							</dd>		
-																																																																	</dl>
+																																																			<dt>
+						<span id="ArrayOfHash" class="headterm">ArrayOfHash</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary condition:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>Hash</span> 
+														at least one occurrence of <span class=''><a href="#Hash">Hash</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>An ordered list of hash values.</span></p>
+							</dd>		
+																																									<dt>
+						<span id="ArrayOfString" class="headterm">ArrayOfString</span>
+					</dt>
+											<dd>
+									<p>A valid occurrence may have the following properties:</p>
+									<ul>	
+																																											<li class='propdef'>
+												<span class='propname'>Value</span> any number of values 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>An ordered list of string values.</span></p>
+							</dd>		
+																																																	</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">B</span>
@@ -45,6 +112,16 @@
 			<dd>
 				<dl>
 										<dt>
+						<span id="BirthInfoFacet" class="headterm">BirthInfoFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																															<dt>
 						<span id="Build" class="headterm">Build</span>
 					</dt>
 											<dd>
@@ -61,6 +138,108 @@
 									<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
+																																																									<dt>
+						<span id="BuildConfigurationType" class="headterm">BuildConfigurationType</span>
+					</dt>
+											<dd>
+									<p>A valid occurrence may have the following properties:</p>
+									<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>configurationSettingDescription</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																											<li class='propdef'>
+												<span class='propname'>configurationSettings</span> any number of occurrences 
+																				of <span class='classname'><a href="#ConfigurationSettingType">ConfigurationSettingType</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Describes how the build utility was configured for a particular build of a particular software.</span></p>
+							</dd>		
+																																																																																																																																																																																																									<dt>
+						<span id="BuildInformationType" class="headterm">BuildInformationType</span>
+					</dt>
+											<dd>
+									<p>A valid occurrence may have the following properties:</p>
+									<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>buildID</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>buildProject</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>buildUtility</span> at most one occurrence 
+																				of <span class='classname'><a href="#BuildUtilityType">BuildUtilityType</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>buildVersion</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>buildLabel</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																											<li class='propdef'>
+												<span class='propname'>Compilers</span> any number of occurrences 
+																				of <span class='classname'><a href="#CompilerType">CompilerType</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>compilationDate</span> at most one value 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>buildConfiguration</span> at most one occurrence 
+																				of <span class='classname'><a href="#BuildConfigurationType">BuildConfigurationType</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>buildScript</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																											<li class='propdef'>
+												<span class='propname'>Libraries</span> any number of occurrences 
+																				of <span class='classname'><a href="#LibraryType">LibraryType</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>buildOutputLog</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Characterizes how a software was built.</span></p>
+							</dd>		
+																																																																																			<dt>
+						<span id="BuildUtilityType" class="headterm">BuildUtilityType</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary condition:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>buildUtilityName</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+									<p>A valid occurrence may also have the following properties:</p>
+									<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>SWID</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>CPEID</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Identifies the utility used to build a particular software.</span></p>
+							</dd>		
 																																																																										<dt>
 						<span id="Bundle" class="headterm">Bundle</span>
 					</dt>
@@ -72,7 +251,7 @@
 										<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																																																														</dl>
+																																																																											</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">C</span>
@@ -80,6 +259,29 @@
 			<dd>
 				<dl>
 										<dt>
+						<span id="CompilerType" class="headterm">CompilerType</span>
+					</dt>
+											<dd>
+									<p>A valid occurrence may have the following properties:</p>
+									<ul>	
+																																										<li class='propdef'>
+																			<span class='propname'>compilerInformalDescription</span> 
+														    at most one value of any type.
+											</li>
+																																										<li class='propdef'>
+												<span class='propname'>SWID</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>CPEID</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>A compiler utilized during a particular build of a particular software.</span></p>
+							</dd>		
+																																																																												<dt>
 						<span id="Confidence" class="headterm">Confidence</span>
 					</dt>
 															<dd>	
@@ -95,6 +297,72 @@
 					</dd>
 											<dd>
 								<p><span class='doc'>An asserted level of certainty in the accuracy of some information.</span></p>
+							</dd>		
+																																																																																																													<dt>
+						<span id="ConfigurationSettingType" class="headterm">ConfigurationSettingType</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary conditions:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>itemName</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																						<li class='propdef'>
+																	<span  class='propname'>itemValue</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+									<p>A valid occurrence may also have the following properties:</p>
+									<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>itemType</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>itemDescription</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Describes a particular configuration setting for a tool, application or other cyber object.</span></p>
+							</dd>		
+																																																			<dt>
+						<span id="ControlledDictionary" class="headterm">ControlledDictionary</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary condition:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>Entry</span> 
+														at least one occurrence of <span class=''><a href="#ControlledDictionaryEntry">ControlledDictionaryEntry</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A list of terms/keys and their values where the set of terms/keys is constrained to an explicitly defined set of values.</span></p>
+							</dd>		
+																																																																													<dt>
+						<span id="ControlledDictionaryEntry" class="headterm">ControlledDictionaryEntry</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary conditions:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>Key</span> 
+														exactly one occurrence of <span class=''><a href="#ControlledVocabulary">ControlledVocabulary</a></span>.
+																						</li>
+																																						<li class='propdef'>
+																	<span  class='propname'>Value</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A single term/key and its value where the term/key is constrained to an explicitly defined set of values.</span></p>
 							</dd>		
 																																																																																																																																																																			<dt>
 						<span id="ControlledVocabulary" class="headterm">ControlledVocabulary</span>
@@ -126,7 +394,82 @@
 									<dd>
 								<p><span class='doc'>A string value from an explicitly constrained set of string values.</span></p>
 							</dd>		
-																																																																											</dl>
+																																															<dt>
+						<span id="CountriesOfResidenceFacet" class="headterm">CountriesOfResidenceFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																																					</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">D</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="DependencyType" class="headterm">DependencyType</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary condition:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span class='propname'>dependencyDescription</span> 
+													exactly one value of any type.
+											</li>
+									</ul>
+					</dd>
+									<dd>
+									<p>A valid occurrence may also have the following properties:</p>
+									<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>dependencyType</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Describes a single dependency for a tool.</span></p>
+							</dd>		
+																																																			<dt>
+						<span id="Dictionary" class="headterm">Dictionary</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary condition:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>Entry</span> 
+														at least one occurrence of <span class=''><a href="#DictionaryEntry">DictionaryEntry</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A list of terms/keys and their values.</span></p>
+							</dd>		
+																																																																													<dt>
+						<span id="DictionaryEntry" class="headterm">DictionaryEntry</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary conditions:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>Key</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																						<li class='propdef'>
+																	<span  class='propname'>Value</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A single of term/key and its value.</span></p>
+							</dd>		
+																																																	</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">E</span>
@@ -134,6 +477,16 @@
 			<dd>
 				<dl>
 										<dt>
+						<span id="EventsFacet" class="headterm">EventsFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																																									<dt>
 						<span id="ExecutionEnvironment" class="headterm">ExecutionEnvironment</span>
 					</dt>
 															<dd>	
@@ -149,6 +502,46 @@
 					</dd>
 											<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
+							</dd>		
+																																																																																															<dt>
+						<span id="ExecutionEnvironmentType" class="headterm">ExecutionEnvironmentType</span>
+					</dt>
+											<dd>
+									<p>A valid occurrence may have the following properties:</p>
+									<ul>	
+																																																	<li class='propdef'>
+												<span class='propname'>computerSpecificationRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
+																						</li>
+																																																<li class='propdef'>
+												<span class='propname'>userAccountRef</span> at most one occurrence 
+																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>commandLine</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																												<li class='propdef'>
+												<span class='propname'>startTime</span> any number of values 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Describes the execution environment of a particular software execution.</span></p>
+							</dd>		
+																																																																																																																																																																																																																																																																																																																																																																													</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">F</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="Facet" class="headterm">Facet</span>
+					</dt>
+													<dd>
+								<p><span class='doc'>A grouping of properties characterizing a particular aspect/facet of an object.</span></p>
 							</dd>		
 																																																																																																																	</dl>
 			</dd>
@@ -205,7 +598,62 @@
 									<dd>
 								<p><span class='doc'>Marking definitions to be applied to particular portions of a particular UCO object.</span></p>
 							</dd>		
-																																																																																																																																						</dl>
+																																																																															</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">H</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="Hash" class="headterm">Hash</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary conditions:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>hashMethod</span> 
+														exactly one occurrence of <span class=''><a href="#ControlledVocabulary">ControlledVocabulary</a></span>.
+																						</li>
+																																						<li class='propdef'>
+																	<span  class='propname'>hashValue</span> 
+														exactly one value of <span class=''><a href="#HexBinary">HexBinary</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A cryptographic hash of data.</span></p>
+							</dd>		
+																																																																																																																																																																																																																	<dt>
+						<span id="HasIdentity" class="headterm">HasIdentity</span>
+					</dt>
+															<dd>	
+									<p>A kind of
+																								<span class='classname'><a href="#Relationship">Relationship</a></span>.
+											    A valid occurrence satisfies the following necessary conditions:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span class='propname'>sourceRef</span>, among other things, at least one occurrence of <span class='classname'><a href="#Role">Role</a></span>.
+																</li>
+																																												<li class='propdef'>
+																	<span class='propname'>targetRef</span>, among other things, exactly one occurrence of <span class='classname'><a href="#Identity">Identity</a></span>.
+																</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>An association or link between any uco object and a uco Identity object.</span></p>
+							</dd>		
+																																																					<dt>
+						<span id="HasLocation" class="headterm">HasLocation</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#Relationship">Relationship</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>An association or link between any uco object and a uco Location object.</span></p>
+							</dd>		
+																																																	</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">I</span>
@@ -213,6 +661,16 @@
 			<dd>
 				<dl>
 										<dt>
+						<span id="IdentiferFacet" class="headterm">IdentiferFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																																																																																																				<dt>
 						<span id="Identity" class="headterm">Identity</span>
 					</dt>
 																<dd>
@@ -222,7 +680,17 @@
 										<dd>
 								<p><span class='doc'>Characterization of the identifying properties of an individual or organization.</span></p>
 							</dd>		
-																																																																																																	</dl>
+																																																																																																		<dt>
+						<span id="IdentityFacet" class="headterm">IdentityFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#Facet">Facet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>(Undocumented)</span><p>
+							</dd>		
+																																																	</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">L</span>
@@ -230,6 +698,16 @@
 			<dd>
 				<dl>
 										<dt>
+						<span id="LanguagesFacet" class="headterm">LanguagesFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																																																															<dt>
 						<span id="LatLongCoordinates" class="headterm">LatLongCoordinates</span>
 					</dt>
 											<dd>
@@ -253,6 +731,25 @@
 					</dd>
 									<dd>
 								<p><span class='doc'>A geolocation expressed as latitude and longitude.</span></p>
+							</dd>		
+																																																																													<dt>
+						<span id="LibraryType" class="headterm">LibraryType</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary conditions:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>libraryName</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																						<li class='propdef'>
+																	<span  class='propname'>libraryVersion</span> 
+														exactly one value of <span class=''><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>A library incorporated into the build of a software.</span></p>
 							</dd>		
 																																																																																								<dt>
 						<span id="Location" class="headterm">Location</span>
@@ -303,7 +800,115 @@
 													<dd>
 								<p><span class='doc'>A particular format of data markings</span></p>
 							</dd>		
-																																																																																																																																																																																																																																																																																																																																								</dl>
+																																																	</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">N</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="NationalityFacet" class="headterm">NationalityFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																	</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">O</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="OccupationFacet" class="headterm">OccupationFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																					<dt>
+						<span id="Organization" class="headterm">Organization</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#Identity">Identity</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>Characterization of the identifying properties of an organization.</span></p>
+							</dd>		
+																																															<dt>
+						<span id="OrganizationDetailsFacet" class="headterm">OrganizationDetailsFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																							</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">P</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="Person" class="headterm">Person</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#Identity">Identity</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>Characterization of the identifying properties of an individual person.</span></p>
+							</dd>		
+																																															<dt>
+						<span id="PersonalDetailsFacet" class="headterm">PersonalDetailsFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																															<dt>
+						<span id="PhysicalInfoFacet" class="headterm">PhysicalInfoFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																	</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">Q</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="QualificationFacet" class="headterm">QualificationFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
+																																																																																																																																										</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">R</span>
@@ -311,6 +916,27 @@
 			<dd>
 				<dl>
 										<dt>
+						<span id="RelatedIdentity" class="headterm">RelatedIdentity</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																								<span class='classname'><a href="#Relationship">Relationship</a></span>.
+												A valid occurrence may have the following properties:</p>
+													<ul>	
+																																												<li class='propdef'>
+												<span class='propname'>Role</span> any number of occurrences 
+																				of <span class='classname'><a href="#ControlledVocabulary">ControlledVocabulary</a></span>.
+																						</li>
+																																																		<li class='propdef'>
+												<span class='propname'></span> any number of occurrences 
+																				of <span class='classname'><a href="#Identity">Identity</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>(Undocumented)</span><p>
+							</dd>		
+																																																																																																																																																																																																																																																																																																																																						<dt>
 						<span id="Relationship" class="headterm">Relationship</span>
 					</dt>
 															<dd>	
@@ -323,12 +949,12 @@
 														exactly one value of <span class=''><a href="#Boolean">Boolean</a></span>.
 																						</li>
 																																												<li class='propdef'>
-																	<span  class='propname'>targetRef</span> 
-														exactly one occurrence of <span class=''><a href="#UcoObject">UcoObject</a></span>.
-																						</li>
-																																												<li class='propdef'>
 																	<span  class='propname'>sourceRef</span> 
 														at least one occurrence of <span class=''><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+																																												<li class='propdef'>
+																	<span  class='propname'>targetRef</span> 
+														exactly one occurrence of <span class=''><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 									</ul>
 					</dd>
@@ -355,6 +981,16 @@
 					</dd>
 									<dd>
 								<p><span class='doc'>An association or link between two uco objects.</span></p>
+							</dd>		
+																																															<dt>
+						<span id="RelationshipFacet" class="headterm">RelationshipFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
 							</dd>		
 																																																																																																																																	<dt>
 						<span id="Role" class="headterm">Role</span>
@@ -409,6 +1045,35 @@
 					</dd>
 									<dd>
 								<p><span class='doc'>A geolocation expressed as a simple administrative address.</span></p>
+							</dd>		
+																																																																																																															<dt>
+						<span id="SimpleNameFacet" class="headterm">SimpleNameFacet</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+												A valid occurrence may have the following properties:</p>
+													<ul>	
+																																												<li class='propdef'>
+																			<span class='propname'>familyName</span> 
+														    any number of values of any type.
+											</li>
+																																												<li class='propdef'>
+																			<span class='propname'>givenName</span> 
+														    any number of values of any type.
+											</li>
+																																												<li class='propdef'>
+																			<span class='propname'>honorificPrefix</span> 
+														    any number of values of any type.
+											</li>
+																																												<li class='propdef'>
+																			<span class='propname'>honorificSuffix</span> 
+														    any number of values of any type.
+											</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Very simple name properties of an identity.</span></p>
 							</dd>		
 																																																																																																																																																									</dl>
 			</dd>
@@ -538,6 +1203,23 @@
 					</dd>
 									<dd>
 								<p><span class='doc'>A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Uniform Cyber Ontology (uco).<br></span></p>
+							</dd>		
+																																																	</dl>
+			</dd>
+												<dt>
+				<span class="groupingterm">V</span>
+			</dt>
+			<dd>
+				<dl>
+										<dt>
+						<span id="VisaFacet" class="headterm">VisaFacet</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
 							</dd>		
 					</dl>
 			</dd>

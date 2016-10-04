@@ -78,7 +78,49 @@
 											<dd>
 								<p><span class='doc'>A grouping of properties characterizing a single parameter for an action.</span></p>
 							</dd>		
-																																																																																																																																																																																																																																																																																																																																																																																																																										<dt>
+																																																																																																																																																																																																																																																									<dt>
+						<span id="ActionLifecycle" class="headterm">ActionLifecycle</span>
+					</dt>
+															<dd>	
+									<p>A kind of
+																								<span class='classname'><a href="#Action">Action</a></span>.
+											    A valid occurrence satisfies the following necessary condition:</p>
+									<ul>		
+																																						<li class='propdef'>
+																	<span  class='propname'>phaseRefs</span> 
+														at least one occurrence of <span class=''><a href="#Action">Action</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+									<p>A valid occurrence may also have the following properties:</p>
+									<ul>	
+																																							<li class='propdef'>
+												<span class='propname'>actionStatus</span> exactly zero occurrences 
+																				of <span class='classname'><a href="#ControlledVocabulary">ControlledVocabulary</a></span>.
+																						</li>
+																																							<li class='propdef'>
+												<span class='propname'>startTime</span> exactly zero values 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+																																							<li class='propdef'>
+												<span class='propname'>endTime</span> exactly zero values 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+																																							<li class='propdef'>
+																			<span class='propname'>(Unnamed Class)</span> 
+														    exactly zero values of any type.
+											</li>
+																																							<li class='propdef'>
+												<span class='propname'>actionCount</span> exactly zero values 
+																				of <span class='datatype'><a href="#NonNegativeInteger">NonNegativeInteger</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles.</span></p>
+							</dd>		
+																																																																																																																																																																																																																																																																																																																																																																																																																																													<dt>
 						<span id="ActionRefs" class="headterm">ActionRefs</span>
 					</dt>
 											<dd>
@@ -86,8 +128,8 @@
 																								<span class='classname'><a href="#Facet">Facet</a></span>.
 												A valid occurrence may have the following properties:</p>
 													<ul>	
-																																																	<li class='propdef'>
-												<span class='propname'>instrumentRefs</span> any number of occurrences 
+																																																<li class='propdef'>
+												<span class='propname'>environmentRef</span> at most one occurrence 
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 																																																	<li class='propdef'>
@@ -95,11 +137,11 @@
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 																																																	<li class='propdef'>
-												<span class='propname'>participantRefs</span> any number of occurrences 
+												<span class='propname'>instrumentRefs</span> any number of occurrences 
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
-																																																<li class='propdef'>
-												<span class='propname'>performerRef</span> at most one occurrence 
+																																																	<li class='propdef'>
+												<span class='propname'>participantRefs</span> any number of occurrences 
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 																																											<li class='propdef'>
@@ -108,6 +150,10 @@
 																						</li>
 																																																	<li class='propdef'>
 												<span class='propname'>objectRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+																																																<li class='propdef'>
+												<span class='propname'>performerRef</span> at most one occurrence 
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 									</ul>
