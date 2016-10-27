@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<dl>
-																																																																																																																																																																																																							<dt>
+																																																																																																																																																																							<dt>
 				<span class="groupingterm">A</span>
 			</dt>
 			<dd>
@@ -88,7 +88,7 @@
 									<ul>		
 																																						<li class='propdef'>
 																	<span  class='propname'>phaseRefs</span> 
-														at least one occurrence of <span class=''><a href="#Action">Action</a></span>.
+														exactly one occurrence of <span class=''><a href="#ArrayOfAction">ArrayOfAction</a></span>.
 																						</li>
 									</ul>
 					</dd>
@@ -132,21 +132,21 @@
 												<span class='propname'>environmentRef</span> at most one occurrence 
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
-																																																	<li class='propdef'>
-												<span class='propname'>resultRefs</span> any number of occurrences 
-																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
+																																											<li class='propdef'>
+												<span class='propname'>locationRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#Location">Location</a></span>.
 																						</li>
 																																																	<li class='propdef'>
-												<span class='propname'>instrumentRefs</span> any number of occurrences 
+												<span class='propname'>resultRefs</span> any number of occurrences 
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 																																																	<li class='propdef'>
 												<span class='propname'>participantRefs</span> any number of occurrences 
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
-																																											<li class='propdef'>
-												<span class='propname'>locationRefs</span> any number of occurrences 
-																				of <span class='classname'><a href="#Location">Location</a></span>.
+																																																	<li class='propdef'>
+												<span class='propname'>instrumentRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 																																																	<li class='propdef'>
 												<span class='propname'>objectRefs</span> any number of occurrences 
@@ -160,6 +160,16 @@
 					</dd>
 									<dd>
 								<p><span class='doc'>A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action. The properties consist of identifier references to separate UCO objects detailing the particular property.<br></span></p>
+							</dd>		
+																																																																															<dt>
+						<span id="ArrayOfAction" class="headterm">ArrayOfAction</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#ArrayOfObject">ArrayOfObject</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>An ordered list of action object references.</span></p>
 							</dd>		
 					</dl>
 			</dd>

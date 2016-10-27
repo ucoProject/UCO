@@ -15,23 +15,13 @@
 	</head>
 	<body>
 		<dl>
-																																																					<dt>
+																																																																															<dt>
 				<span class="groupingterm">A</span>
 			</dt>
 			<dd>
 				<dl>
 										<dt>
-						<span id="AccountRefsFacet" class="headterm">AccountRefsFacet</span>
-					</dt>
-																<dd>
-						<p>A kind of
-																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
-											</dd>
-										<dd>
-								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
-							</dd>		
-																																																																									<dt>
-						<span id="AddressFacet" class="headterm">AddressFacet</span>
+						<span id="Address" class="headterm">Address</span>
 					</dt>
 															<dd>	
 									<p>A kind of
@@ -48,7 +38,7 @@
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
 																																															<dt>
-						<span id="AffiliationFacet" class="headterm">AffiliationFacet</span>
+						<span id="Affiliation" class="headterm">Affiliation</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -99,6 +89,21 @@
 											<dd>
 								<p><span class='doc'>An ordered list of hash values.</span></p>
 							</dd>		
+																																																									<dt>
+						<span id="ArrayOfObject" class="headterm">ArrayOfObject</span>
+					</dt>
+															<dd>	
+									<p>A valid occurrence satisfies the following necessary condition:</p>
+									<ul>		
+																																												<li class='propdef'>
+																	<span  class='propname'>object</span> 
+														at least one occurrence of <span class=''><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+									</ul>
+					</dd>
+											<dd>
+								<p><span class='doc'>An ordered list of object references.</span></p>
+							</dd>		
 																																									<dt>
 						<span id="ArrayOfString" class="headterm">ArrayOfString</span>
 					</dt>
@@ -148,14 +153,21 @@
 										<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																															<dt>
-						<span id="BirthInfoFacet" class="headterm">BirthInfoFacet</span>
+																																																															<dt>
+						<span id="BirthInfo" class="headterm">BirthInfo</span>
 					</dt>
-																<dd>
-						<p>A kind of
+											<dd>
+													<p>A kind of
 																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
-											</dd>
-										<dd>
+												A valid occurrence may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>birthdate</span> at most one value 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
 								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
 							</dd>		
 																																																															<dt>
@@ -459,7 +471,7 @@
 								<p><span class='doc'>A string value from an explicitly constrained set of string values.</span></p>
 							</dd>		
 																																															<dt>
-						<span id="CountriesOfResidenceFacet" class="headterm">CountriesOfResidenceFacet</span>
+						<span id="CountriesOfResidence" class="headterm">CountriesOfResidence</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -581,7 +593,7 @@
 								<p><span class='doc'>An aggregated grouping of things in a container.</span></p>
 							</dd>		
 																																															<dt>
-						<span id="EventsFacet" class="headterm">EventsFacet</span>
+						<span id="Events" class="headterm">Events</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -807,7 +819,7 @@
 			<dd>
 				<dl>
 										<dt>
-						<span id="IdentiferFacet" class="headterm">IdentiferFacet</span>
+						<span id="Identifer" class="headterm">Identifer</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -826,7 +838,7 @@
 										<dd>
 								<p><span class='doc'>Characterization of the identifying properties of an individual or organization.</span></p>
 							</dd>		
-																																																																																																		<dt>
+																																																																																															<dt>
 						<span id="IdentityFacet" class="headterm">IdentityFacet</span>
 					</dt>
 																<dd>
@@ -854,7 +866,7 @@
 			<dd>
 				<dl>
 										<dt>
-						<span id="LanguagesFacet" class="headterm">LanguagesFacet</span>
+						<span id="Languages" class="headterm">Languages</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -1012,7 +1024,7 @@
 			<dd>
 				<dl>
 										<dt>
-						<span id="NationalityFacet" class="headterm">NationalityFacet</span>
+						<span id="Nationality" class="headterm">Nationality</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -1039,7 +1051,7 @@
 			<dd>
 				<dl>
 										<dt>
-						<span id="OccupationFacet" class="headterm">OccupationFacet</span>
+						<span id="Occupation" class="headterm">Occupation</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -1059,7 +1071,7 @@
 								<p><span class='doc'>Characterization of the identifying properties of an organization.</span></p>
 							</dd>		
 																																															<dt>
-						<span id="OrganizationDetailsFacet" class="headterm">OrganizationDetailsFacet</span>
+						<span id="OrganizationDetails" class="headterm">OrganizationDetails</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -1096,7 +1108,7 @@
 								<p><span class='doc'>Characterization of the identifying properties of an individual person.</span></p>
 							</dd>		
 																																															<dt>
-						<span id="PersonalDetailsFacet" class="headterm">PersonalDetailsFacet</span>
+						<span id="PersonalDetails" class="headterm">PersonalDetails</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -1106,7 +1118,7 @@
 								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
 							</dd>		
 																																															<dt>
-						<span id="PhysicalInfoFacet" class="headterm">PhysicalInfoFacet</span>
+						<span id="PhysicalInfo" class="headterm">PhysicalInfo</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -1123,7 +1135,7 @@
 			<dd>
 				<dl>
 										<dt>
-						<span id="QualificationFacet" class="headterm">QualificationFacet</span>
+						<span id="Qualification" class="headterm">Qualification</span>
 					</dt>
 																<dd>
 						<p>A kind of
@@ -1160,6 +1172,16 @@
 									<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
+																																															<dt>
+						<span id="Relationship" class="headterm">Relationship</span>
+					</dt>
+																<dd>
+						<p>A kind of
+																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
+											</dd>
+										<dd>
+								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
+							</dd>		
 																																																																																																																																																																																																																																																																																																																						<dt>
 						<span id="Relationship" class="headterm">Relationship</span>
 					</dt>
@@ -1173,12 +1195,12 @@
 														exactly one value of <span class=''><a href="#Boolean">Boolean</a></span>.
 																						</li>
 																																												<li class='propdef'>
-																	<span  class='propname'>sourceRef</span> 
-														at least one occurrence of <span class=''><a href="#UcoObject">UcoObject</a></span>.
-																						</li>
-																																												<li class='propdef'>
 																	<span  class='propname'>targetRef</span> 
 														exactly one occurrence of <span class=''><a href="#UcoObject">UcoObject</a></span>.
+																						</li>
+																																												<li class='propdef'>
+																	<span  class='propname'>sourceRef</span> 
+														at least one occurrence of <span class=''><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 									</ul>
 					</dd>
@@ -1201,16 +1223,6 @@
 					</dd>
 									<dd>
 								<p><span class='doc'>An association or link between two uco objects.</span></p>
-							</dd>		
-																																															<dt>
-						<span id="RelationshipFacet" class="headterm">RelationshipFacet</span>
-					</dt>
-																<dd>
-						<p>A kind of
-																								<span class='classname'><a href="#IdentityFacet">IdentityFacet</a></span>.
-											</dd>
-										<dd>
-								<p><span class='doc'>&lt;Needs fleshed out from CIQ&gt;</span></p>
 							</dd>		
 																																																																																																	<dt>
 						<span id="Role" class="headterm">Role</span>
@@ -1242,15 +1254,15 @@
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>city</span> at most one value 
+												<span class='propname'>locality</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>state</span> at most one value 
+												<span class='propname'>region</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>zip</span> at most one value 
+												<span class='propname'>postalCode</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
@@ -1267,7 +1279,7 @@
 								<p><span class='doc'>A geolocation expressed as a simple administrative address.</span></p>
 							</dd>		
 																																																																																																															<dt>
-						<span id="SimpleNameFacet" class="headterm">SimpleNameFacet</span>
+						<span id="SimpleName" class="headterm">SimpleName</span>
 					</dt>
 											<dd>
 													<p>A kind of
@@ -1432,7 +1444,7 @@
 			<dd>
 				<dl>
 										<dt>
-						<span id="VisaFacet" class="headterm">VisaFacet</span>
+						<span id="Visa" class="headterm">Visa</span>
 					</dt>
 																<dd>
 						<p>A kind of

@@ -50,7 +50,7 @@
 																				of <span class='classname'><a href="#ControlledVocabulary">ControlledVocabulary</a></span>.
 																						</li>
 																																																<li class='propdef'>
-												<span class='propname'>issuerRef</span> at most one occurrence 
+												<span class='propname'>accountIssuerRef</span> at most one occurrence 
 																				of <span class='classname'><a href="#UcoObject">UcoObject</a></span>.
 																						</li>
 																																										<li class='propdef'>
@@ -95,7 +95,7 @@
 									<dd>
 								<p><span class='doc'>The authentication information related to an account.</span></p>
 							</dd>		
-																																																																																																		<dt>
+																																																																																																																		<dt>
 						<span id="Application" class="headterm">Application</span>
 					</dt>
 											<dd>
@@ -104,16 +104,20 @@
 												A valid occurrence may have the following properties:</p>
 													<ul>	
 																																										<li class='propdef'>
-												<span class='propname'>numberOfLaunches</span> at most one value 
-																				of <span class='datatype'><a href="#PositiveInteger">PositiveInteger</a></span>.
+												<span class='propname'>applicationIdentifier</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>version</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																																<li class='propdef'>
 												<span class='propname'>operatingSystemRef</span> at most one occurrence 
 																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>version</span> at most one value 
-																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+												<span class='propname'>numberOfLaunches</span> at most one value 
+																				of <span class='datatype'><a href="#PositiveInteger">PositiveInteger</a></span>.
 																						</li>
 									</ul>
 					</dd>
@@ -137,7 +141,7 @@
 											<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																																																																																																		<dt>
+																																																																																															<dt>
 						<span id="ArchiveFile" class="headterm">ArchiveFile</span>
 					</dt>
 											<dd>
@@ -145,10 +149,6 @@
 																								<span class='classname'><a href="#Facet">Facet</a></span>.
 												A valid occurrence may have the following properties:</p>
 													<ul>	
-																																																	<li class='propdef'>
-												<span class='propname'>fileRefs</span> any number of occurrences 
-																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
-																						</li>
 																																										<li class='propdef'>
 												<span class='propname'>version</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
@@ -465,7 +465,7 @@
 									<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																																																																																																																																																																																																																																																																																																																		<dt>
+																																																																																																																																																																																																																																																																																																																																																																																		<dt>
 						<span id="ComputerSpecification" class="headterm">ComputerSpecification</span>
 					</dt>
 											<dd>
@@ -514,11 +514,23 @@
 																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
 																						</li>
 																																										<li class='propdef'>
+												<span class='propname'>processorArchitecture</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>cpuFamily</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
 												<span class='propname'>cpu</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>processorArchitecture</span> at most one value 
+												<span class='propname'>gpuFamily</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>gpu</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
@@ -599,7 +611,7 @@
 									<dd>
 								<p><span class='doc'>Contact found in an application, for example an entry in an address book.</span></p>
 							</dd>		
-																																																																																																																																																																																																																																																																		<dt>
+																																																																																																																																																																																																																																		<dt>
 						<span id="ContentData" class="headterm">ContentData</span>
 					</dt>
 											<dd>
@@ -617,14 +629,6 @@
 																						</li>
 																																										<li class='propdef'>
 												<span class='propname'>mimeType</span> at most one value 
-																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
-																						</li>
-																																										<li class='propdef'>
-												<span class='propname'>rangeOffset</span> at most one value 
-																				of <span class='datatype'><a href="#Integer">Integer</a></span>.
-																						</li>
-																																										<li class='propdef'>
-												<span class='propname'>rangeOffsetType</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
@@ -664,7 +668,7 @@
 									<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																																																																																																	</dl>
+																																																																											</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">D</span>
@@ -672,6 +676,29 @@
 			<dd>
 				<dl>
 										<dt>
+						<span id="DataRange" class="headterm">DataRange</span>
+					</dt>
+											<dd>
+									<p>A valid occurrence may have the following properties:</p>
+									<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>rangeOffsetType</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>rangeOffset</span> at most one value 
+																				of <span class='datatype'><a href="#Integer">Integer</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>rangeSize</span> at most one value 
+																				of <span class='datatype'><a href="#long">long</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>(Undocumented)</span><p>
+							</dd>		
+																																																																																																															<dt>
 						<span id="Device" class="headterm">Device</span>
 					</dt>
 											<dd>
@@ -700,7 +727,7 @@
 									<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																																																																																															<dt>
+																																																																																																																															<dt>
 						<span id="DigitalAccount" class="headterm">DigitalAccount</span>
 					</dt>
 											<dd>
@@ -713,16 +740,20 @@
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>accountFirstLogin</span> at most one value 
+												<span class='propname'>firstLoginTime</span> at most one value 
 																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>accountLastLogin</span> at most one value 
+												<span class='propname'>lastLoginTime</span> at most one value 
 																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
 																						</li>
 																																										<li class='propdef'>
 												<span class='propname'>isDisabled</span> at most one value 
 																				of <span class='datatype'><a href="#Boolean">Boolean</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>displayName</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 									</ul>
 					</dd>
@@ -1309,7 +1340,7 @@
 																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>size</span> at most one value 
+												<span class='propname'>sizeInBytes</span> at most one value 
 																				of <span class='datatype'><a href="#Integer">Integer</a></span>.
 																						</li>
 									</ul>
@@ -1354,11 +1385,13 @@
 									<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																																																						<dt>
+																																																																																												<dt>
 						<span id="GeoLocationLog" class="headterm">GeoLocationLog</span>
 					</dt>
 															<dd>	
-									<p>A valid occurrence satisfies the following necessary condition:</p>
+									<p>A kind of
+																								<span class='classname'><a href="#Facet">Facet</a></span>.
+											    A valid occurrence satisfies the following necessary condition:</p>
 									<ul>		
 																																												<li class='propdef'>
 																	<span  class='propname'>applicationRef</span> 
@@ -1412,7 +1445,7 @@
 									<dd>
 								<p><span class='doc'>NFI needed</span></p>
 							</dd>		
-																																																																											</dl>
+																																																																																																																																																																								</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">H</span>
@@ -1420,23 +1453,6 @@
 			<dd>
 				<dl>
 										<dt>
-						<span id="Hashes" class="headterm">Hashes</span>
-					</dt>
-															<dd>	
-									<p>A kind of
-																								<span class='classname'><a href="#Facet">Facet</a></span>.
-											    A valid occurrence satisfies the following necessary condition:</p>
-									<ul>		
-																																						<li class='propdef'>
-																	<span  class='propname'>hashes</span> 
-														exactly one occurrence of <span class=''><a href="#ControlledDictionary">ControlledDictionary</a></span>.
-																						</li>
-									</ul>
-					</dd>
-											<dd>
-								<p><span class='doc'>(Undocumented)</span><p>
-							</dd>		
-																																																																																																																																																																						<dt>
 						<span id="HTTPConnection" class="headterm">HTTPConnection</span>
 					</dt>
 															<dd>	
@@ -1706,7 +1722,7 @@
 									<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																																																																		<dt>
+																																																																															<dt>
 						<span id="MessageThread" class="headterm">MessageThread</span>
 					</dt>
 											<dd>
@@ -1714,9 +1730,9 @@
 																								<span class='classname'><a href="#Facet">Facet</a></span>.
 												A valid occurrence may have the following properties:</p>
 													<ul>	
-																																																	<li class='propdef'>
+																																											<li class='propdef'>
 												<span class='propname'>messageRefs</span> any number of occurrences 
-																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
+																				of <span class='classname'><a href="#ArrayOfObject">ArrayOfObject</a></span>.
 																						</li>
 																																										<li class='propdef'>
 												<span class='propname'>visibility</span> at most one value 
@@ -1955,7 +1971,7 @@
 									<dd>
 								<p><span class='doc'>Properties specific to the storage of the file on the NTFS file system. </span></p>
 							</dd>		
-																																																																																																	</dl>
+																																																																																																																																	</dl>
 			</dd>
 												<dt>
 				<span class="groupingterm">O</span>
@@ -1970,6 +1986,14 @@
 																								<span class='classname'><a href="#Facet">Facet</a></span>.
 												A valid occurrence may have the following properties:</p>
 													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>manufacturer</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>version</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
 																																										<li class='propdef'>
 												<span class='propname'>bitness</span> at most one occurrence 
 																				of <span class='classname'><a href="#ControlledVocabulary">ControlledVocabulary</a></span>.
@@ -2236,7 +2260,7 @@
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
-												<span class='propname'>creator</span> at most one value 
+												<span class='propname'>manufacturer</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
 																						</li>
 																																										<li class='propdef'>
@@ -2472,7 +2496,7 @@
 									<dd>
 								<p><span class='doc'>(Undocumented)</span><p>
 							</dd>		
-																																																																																																																															<dt>
+																																																																																																															<dt>
 						<span id="UserAccount" class="headterm">UserAccount</span>
 					</dt>
 											<dd>
@@ -2480,10 +2504,6 @@
 																								<span class='classname'><a href="#Facet">Facet</a></span>.
 												A valid occurrence may have the following properties:</p>
 													<ul>	
-																																										<li class='propdef'>
-												<span class='propname'>displayName</span> at most one value 
-																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
-																						</li>
 																																										<li class='propdef'>
 												<span class='propname'>homeDirectory</span> at most one value 
 																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
@@ -2804,6 +2824,51 @@
 									<dd>
 								<p><span class='doc'>Properties specific to Windows portable executable (PE) files.</span></p>
 							</dd>		
+																																																																																																																																																																																								<dt>
+						<span id="WindowsPrefetch" class="headterm">WindowsPrefetch</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																								<span class='classname'><a href="#Facet">Facet</a></span>.
+												A valid occurrence may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>applicationFileName</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>prefetchHash</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>timesExecuted</span> at most one value 
+																				of <span class='datatype'><a href="#long">long</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>firstRun</span> at most one value 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+																																										<li class='propdef'>
+												<span class='propname'>lastRun</span> at most one value 
+																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
+																						</li>
+																																																<li class='propdef'>
+												<span class='propname'>volumeRef</span> at most one occurrence 
+																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
+																						</li>
+																																																	<li class='propdef'>
+												<span class='propname'>accessedFileRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
+																						</li>
+																																																	<li class='propdef'>
+												<span class='propname'>accessedDirectoryRefs</span> any number of occurrences 
+																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Characterizes entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup.</span></p>
+							</dd>		
 																																																																																																																																															<dt>
 						<span id="WindowsProcess" class="headterm">WindowsProcess</span>
 					</dt>
@@ -2946,70 +3011,8 @@
 									<dd>
 								<p><span class='doc'>DC3<br><br>Properties specific to Windows services.</span></p>
 							</dd>		
-																																																																					<dt>
-						<span id="WindowsVolume" class="headterm">WindowsVolume</span>
-					</dt>
-											<dd>
-													<p>A kind of
-																								<span class='classname'><a href="#Facet">Facet</a></span>.
-												A valid occurrence may have the following properties:</p>
-													<ul>	
-																																										<li class='propdef'>
-												<span class='propname'>driveLetter</span> at most one value 
-																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
-																						</li>
-									</ul>
-					</dd>
-									<dd>
-								<p><span class='doc'>Characterizes a Windows disk volume.</span></p>
-							</dd>		
-																																																																																																																																																																																								<dt>
-						<span id="WinPrefetch" class="headterm">WinPrefetch</span>
-					</dt>
-											<dd>
-													<p>A kind of
-																								<span class='classname'><a href="#Facet">Facet</a></span>.
-												A valid occurrence may have the following properties:</p>
-													<ul>	
-																																										<li class='propdef'>
-												<span class='propname'>applicationFileName</span> at most one value 
-																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
-																						</li>
-																																										<li class='propdef'>
-												<span class='propname'>prefetchHash</span> at most one value 
-																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
-																						</li>
-																																										<li class='propdef'>
-												<span class='propname'>timesExecuted</span> at most one value 
-																				of <span class='datatype'><a href="#long">long</a></span>.
-																						</li>
-																																										<li class='propdef'>
-												<span class='propname'>firstRun</span> at most one value 
-																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
-																						</li>
-																																										<li class='propdef'>
-												<span class='propname'>lastRun</span> at most one value 
-																				of <span class='datatype'><a href="#Timestamp">Timestamp</a></span>.
-																						</li>
-																																																<li class='propdef'>
-												<span class='propname'>volumeRef</span> at most one occurrence 
-																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
-																						</li>
-																																																	<li class='propdef'>
-												<span class='propname'>accessedFileRefs</span> any number of occurrences 
-																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
-																						</li>
-																																																	<li class='propdef'>
-												<span class='propname'>accessedDirectoryRefs</span> any number of occurrences 
-																				of <span class='classname'><a href="#CyberItem">CyberItem</a></span>.
-																						</li>
-									</ul>
-					</dd>
-									<dd>
-								<p><span class='doc'>Characterizes entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup.</span></p>
-							</dd>		
 																																																																																																																																																																																																																																																																																																																																																				<dt>
-						<span id="WinTask" class="headterm">WinTask</span>
+						<span id="WindowsTask" class="headterm">WindowsTask</span>
 					</dt>
 											<dd>
 													<p>A kind of
@@ -3090,7 +3093,7 @@
 								<p><span class='doc'>Characterize Windows task scheduler tasks. See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx.</span></p>
 							</dd>		
 																																																																																																																																																																																																															<dt>
-						<span id="WinThread" class="headterm">WinThread</span>
+						<span id="WindowsThread" class="headterm">WindowsThread</span>
 					</dt>
 											<dd>
 													<p>A kind of
@@ -3141,6 +3144,23 @@
 					</dd>
 									<dd>
 								<p><span class='doc'>Generic Thread??</span></p>
+							</dd>		
+																																																																					<dt>
+						<span id="WindowsVolume" class="headterm">WindowsVolume</span>
+					</dt>
+											<dd>
+													<p>A kind of
+																								<span class='classname'><a href="#Facet">Facet</a></span>.
+												A valid occurrence may have the following properties:</p>
+													<ul>	
+																																										<li class='propdef'>
+												<span class='propname'>driveLetter</span> at most one value 
+																				of <span class='datatype'><a href="#BasicString">BasicString</a></span>.
+																						</li>
+									</ul>
+					</dd>
+									<dd>
+								<p><span class='doc'>Characterizes a Windows disk volume.</span></p>
 							</dd>		
 																																																																															<dt>
 						<span id="WirelessNetworkConnection" class="headterm">WirelessNetworkConnection</span>
