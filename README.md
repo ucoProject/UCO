@@ -29,4 +29,4 @@ As such, v0.1.0 consists of solely of the following simple artifacts:
 Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.
 
 ### Serialized Content Examples
- - [Cyberinvestigation Analysis Standard Expression (CASE) v0.1.0 JSON-LD examples](documentation/derived-model-implementations/case-v0.1.0-natural-language-glossary.html)
+ - [Cyberinvestigation Analysis Standard Expression (CASE) v0.1.0 JSON-LD examples](https://github.com/casework/case/tree/master/examples)
