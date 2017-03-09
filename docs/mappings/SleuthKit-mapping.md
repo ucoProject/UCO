@@ -3,6 +3,7 @@
 
 
 ## Concept mappings
+
 |Sleuthkit|CASE/UCO|
 |:---|:---|
 |object|Trace|
