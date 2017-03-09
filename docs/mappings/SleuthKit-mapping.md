@@ -4,7 +4,7 @@
 
 ## Concept mappings
 |Sleuthkit|CASE/UCO|
-|---|---|
+|:---|:---|
 |object|Trace|
 |parent object|separate Trace with a "contained-within" relationship to it|
 |image|Trace with various (Image, File, ContentData, etc) property bundles|
