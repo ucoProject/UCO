@@ -204,7 +204,7 @@
 |[TSK_TEXT_FILE](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#aa20ee0ce1e3068c5b7d1edf664bc2862)|||
 |[TSK_TEXT_LANGUAGE](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a44a03629b1c01c1b70fea2c9cf328140)|||
 |[TSK_TITLE](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a3d8177bbf59319c9710557a7e5ea3965)|||
-|[TSK_URL](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#ad25804142531c6be839ba426b3e1c273)|||
+|[TSK_URL](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#ad25804142531c6be839ba426b3e1c273)|uco-observable.URL|uco-observable.URL.fullValue|
 |[TSK_URL_DECODED](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#ad783b5ad5883513d111f9c3e7d3f5dc4)|||
 |[TSK_USER_ID](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#afdf417b5c32f73b041df627c3747eee8)|||
 |[TSK_USER_NAME](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a116bd61fe6595867a4a8e9a613e3ad16)|||
