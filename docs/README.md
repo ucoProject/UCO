@@ -30,3 +30,6 @@ Future versions of UCO will not only expand and refine the ontology itself but w
 
 ### Serialized Content Examples
  - [Cyberinvestigation Analysis Standard Expression (CASE) v0.1.0 JSON-LD examples](https://github.com/casework/case/tree/master/examples)
+
+### Mappings
+- [CASE/UCO v0.1.0 implementation mapping index](mappings/mapping-index.md)
