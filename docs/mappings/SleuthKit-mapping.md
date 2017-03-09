@@ -1,3 +1,6 @@
+---
+title: SleuthKit CASE UCO mapping
+---
 
 # SleuthKit CASE UCO mapping
 
@@ -19,6 +22,7 @@
 |attribute|property|
 
 ### Table mappings
+
 |Sleuthkit|CASE/UCO Class|CASE/UCO Property|
 |---|---|---|
 |object|Trace||
@@ -38,6 +42,7 @@
 ||||
 
 ### Artifact mappings
+
 |Sleuthkit|CASE/UCO Class|CASE/UCO Property|
 |---|---|---|
 |object|Trace||
@@ -87,6 +92,7 @@
 
 
 ### Attribute mappings
+
 |Sleuthkit|CASE/UCO Class|CASE/UCO Property|
 |---|---|---|
 |object|Trace||
