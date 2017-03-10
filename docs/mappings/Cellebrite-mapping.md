@@ -22,15 +22,15 @@ title: Cellebrite CASE UCO mapping
 |Image Details|||
 |Plugins|||
 |Contents|||
-|Data Files|||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
+|Data Files|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).ContentData||
+|Activity Analytics|||
+|Analytics Phones|||
+|Contacts|||
+|Databases|||
+|Powering Events|||
+|Text files|||
+|Web Bookmarks|||
+|Timeline|||
 
 ### Property mappings
 
