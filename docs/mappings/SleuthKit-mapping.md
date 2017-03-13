@@ -25,21 +25,13 @@ title: SleuthKit CASE UCO mapping
 
 |Sleuthkit|CASE/UCO Class|CASE/UCO Property|
 |---|---|---|
-|object|Trace||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
-||||
+|Object|Trace||
+|Image|Trace with File, ContentData, Image, etc property bundles||
+|Volume|Trace with Volume, DiskPartition, etc property bundles||
+|File System|||
+|Blackboard|||
+
+
 
 ### Artifact mappings
 
