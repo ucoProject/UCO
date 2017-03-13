@@ -10,7 +10,12 @@ title: Cellebrite CASE UCO mapping
 |Cellebrite|CASE/UCO|
 |---|---|
 |Report|uco-core.Bundle OR uco-core.Grouping OR uco-investigation.Investigation|
-|||
+|Extraction|uco-action.Action|
+|Device|uco-observable.CyberItem(Trace).Device|
+|Files|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).ContentData|
+|Contacts|uco-observable.CyberItem(Trace).Contact|
+|Events|uco-action.Action|
+|Web Bookmarks|uco-observable.CyberItem(Trace).BrowserBookmark|
 
 ### Category mappings
 
