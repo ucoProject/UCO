@@ -67,7 +67,7 @@ title: Cellebrite CASE UCO mapping
 |  -Author|uco-core.Tool|uco-core.Tool.creator||
 |  -Version|uco-core.Tool|uco-core.Tool.version||
 |**Image**|uco-observable.File|||
-|  -Name|uco-observable.name|||
+|  -Name|uco-observable.File.fileName|||
 |  -Path|uco-observable.File|uco-observable.File.filePath||
 |  -Size(bytes)|uco-observable.File OR uco-observable.ContentData|uco-observable.File.sizeInBytes (file system asserted) OR uco-observable.ContentData.sizeInBytes (actual)||
 |  -MD5|uco-observable.ContentData|uco-observable.ContentData.Hash.hashMethod="MD5" AND uco-observable.ContentData.Hash.hashValue||
@@ -112,7 +112,7 @@ title: Cellebrite CASE UCO mapping
 |  -Bookmark Note|_More information needed_|||
 |**Database**|uco-observable.File|||
 |  -File System|uco-observable.File|uco-observable.File.fileSystemType||
-|  -Name|uco-observable.CyberItem(Trace)|uco-observable.CyberItem(Trace).name||
+|  -Name|uco-observable.File|uco-observable.File.fileName||
 |  -Row count|NA (GAP)|||
 |  --Size(bytes)|uco-observable.File OR uco-observable.ContentData|uco-observable.File.sizeInBytes (file system asserted) OR uco-observable.ContentData.sizeInBytes (actual)||
 |  -Path|uco-observable.File|uco-observable.File.filePath||
@@ -146,7 +146,7 @@ title: Cellebrite CASE UCO mapping
 |  -Bookmark Note|_More information needed_|||
 |**Text file**|uco-observable.File|||
 |  -File System|uco-observable.File|uco-observable.File.fileSystemType||
-|  -Name|uco-observable.CyberItem(Trace)|uco-observable.CyberItem(Trace).name||
+|  -Name|uco-observable.File|uco-observable.File.fileName||
 |  --Size(bytes)|uco-observable.File OR uco-observable.ContentData|uco-observable.File.sizeInBytes (file system asserted) OR uco-observable.ContentData.sizeInBytes (actual)||
 |  -Path|uco-observable.File|uco-observable.File.filePath||
 |  -Meta Data|_More information needed_|||
@@ -173,7 +173,7 @@ title: Cellebrite CASE UCO mapping
 |  -Additional file info|_More information needed_|||
 |**Data file**|uco-observable.File|||
 |  -File System|uco-observable.File|uco-observable.File.fileSystemType||
-|  -Name|uco-observable.CyberItem(Trace)|uco-observable.CyberItem(Trace).name||
+|  -Name|uco-observable.File|uco-observable.File.fileName||
 |  --Size(bytes)|uco-observable.File OR uco-observable.ContentData|uco-observable.File.sizeInBytes (file system asserted) OR uco-observable.ContentData.sizeInBytes (actual)||
 |  -Path|uco-observable.File|uco-observable.File.filePath||
 |  -Meta Data|_More information needed_|||
