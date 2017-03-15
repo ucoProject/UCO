@@ -32,3 +32,16 @@ title: NSRL CASE UCO mapping
 |MfgCode|uco-observable.Software|uco-observable.Software.manufacturer||
 |Language|uco-observable.Software|uco-observable.Software.language||
 |ApplicationType|NA (Gap)|||
+
+## NSRLFile mapping
+
+|NSRL|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
+|---|---|---|---|
+|SHA-1|uco-observable.ContentData|uco-observable.ContentData.Hash.hashMethod="SHA1" AND uco-observable.ContentData.Hash.hashValue||
+|MD5|uco-observable.ContentData|uco-observable.ContentData.Hash.hashMethod="MD5" AND uco-observable.ContentData.Hash.hashValue||
+|CRC32|uco-observable.ContentData|uco-observable.ContentData.Hash.hashMethod="CRC32" AND uco-observable.ContentData.Hash.hashValue||
+|FileName|uco-observable.File|uco-observable.File.fileName||
+|FileSize|uco-observable.File OR uco-observable.ContentData|uco-observable.File.sizeInBytes (file system asserted) OR uco-observable.ContentData.sizeInBytes (actual)||
+|ProductCode|uco-core.Relationship|uco-core.Relationship.kindOfRelationship="ComponentOf" AND uco-core.Relationship.source=id of file object AND uco-core.Relationship.target=id of product object||
+|OpSystemCode|uco-core.Relationship|uco-core.Relationship.kindOfRelationship="RelevantTo"(???) AND uco-core.Relationship.source=id of operating system object AND uco-core.Relationship.target=id of operating system object|||
+|SpecialCode|NA (Gap)|||
