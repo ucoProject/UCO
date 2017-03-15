@@ -8,3 +8,4 @@ Below are initial draft mappings from several commonly used tool implementations
 * [Sleuthkit](SleuthKit-mapping.md)
 * [Cellebrite](Cellebrite-mapping.md)
 * [Bulk Extractor](BulkExtractor-mapping.md)
+* [NSRL](NSRL-mapping.md)
