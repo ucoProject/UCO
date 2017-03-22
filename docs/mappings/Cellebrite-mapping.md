@@ -19,23 +19,23 @@ title: Cellebrite CASE UCO mapping
 
 ### Category mappings
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|
-|---|---|---|
-|Report Summary|uco-investigation.Investigation||
-|Source Extraction|uco-action.Action||
-|Device Information|uco-observable.CyberItem(Trace).Device||
-|Image Details|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).Image; uco-observable.CyberItem(Trace).ContentData||
-|Plugins|uco-core.Tool||
-|Contents|uco-observable.CyberItem(Trace)||
-|Data Files|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).ContentData||
-|Activity Analytics|_More information needed_||
-|Analytics Phones|_More information needed_||
-|Contacts|uco-observable.CyberItem(Trace).Contact||
-|Databases|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).ContentData||
-|Powering Events|uco-action.Action||
-|Text files|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).ContentData||
-|Web Bookmarks|uco-observable.CyberItem(Trace).BrowserBookmark||
-|Timeline|uco-action.Action; uco-core.Relationship||
+|Cellebrite|CASE/UCO Class|
+|---|---|
+|Report Summary|uco-investigation.Investigation|
+|Source Extraction|uco-action.Action|
+|Device Information|uco-observable.CyberItem(Trace).Device|
+|Image Details|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).Image; uco-observable.CyberItem(Trace).ContentData|
+|Plugins|uco-core.Tool|
+|Contents|uco-observable.CyberItem(Trace)|
+|Data Files|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).ContentData|
+|Activity Analytics|_More information needed_|
+|Analytics Phones|_More information needed_|
+|Contacts|uco-observable.CyberItem(Trace).Contact|
+|Databases|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).ContentData|
+|Powering Events|uco-action.Action|
+|Text files|uco-observable.CyberItem(Trace).File; uco-observable.CyberItem(Trace).ContentData|
+|Web Bookmarks|uco-observable.CyberItem(Trace).BrowserBookmark|
+|Timeline|uco-action.Action; uco-core.Relationship|
 
 ### Property mappings
 
