@@ -56,8 +56,8 @@ title: Cellebrite CASE UCO mapping
 |  -Extraction end date/time|uco-action.Action|uco-action.Action.endTime||
 |  -UFED Version|uco-core.Tool|uco-core.Tool.version||
 |  -Internal Version|_More information needed_|||
-|  -Selected Manufacturer|uco-observable.Device|uco-observable.Device.manufacturer||
-|  -Selected Device Name|uco-observable.Device|uco-observable.Device.model||
+|  -Selected Manufacturer|uco-observable.Device|uco-observable.Device.manufacturer|device.json](https://github.com/casework/case/blob/master/examples/device.json)|
+|  -Selected Device Name|uco-observable.Device|uco-observable.Device.model|device.json](https://github.com/casework/case/blob/master/examples/device.json)|
 |  -Connection Type|_More information needed_|||
 |  -Extraction Type|uco-action.Action|uco-action.Action.name||
 |  -Extraction ID|uco-action.Action|uco-action.Action.id||
