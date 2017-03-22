@@ -56,8 +56,8 @@ title: Cellebrite CASE UCO mapping
 |  -Extraction end date/time|uco-action.Action|uco-action.Action.endTime||
 |  -UFED Version|uco-core.Tool|uco-core.Tool.version||
 |  -Internal Version|_More information needed_|||
-|  -Selected Manufacturer|uco-observable.Device|uco-observable.Device.manufacturer|device.json](https://github.com/casework/case/blob/master/examples/device.json)|
-|  -Selected Device Name|uco-observable.Device|uco-observable.Device.model|device.json](https://github.com/casework/case/blob/master/examples/device.json)|
+|  -Selected Manufacturer|uco-observable.Device|uco-observable.Device.manufacturer|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
+|  -Selected Device Name|uco-observable.Device|uco-observable.Device.model|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
 |  -Connection Type|_More information needed_|||
 |  -Extraction Type|uco-action.Action|uco-action.Action.name||
 |  -Extraction ID|uco-action.Action|uco-action.Action.id||
@@ -73,10 +73,10 @@ title: Cellebrite CASE UCO mapping
 |  -MD5|uco-observable.ContentData|uco-observable.ContentData.Hash.hashMethod="MD5" AND uco-observable.ContentData.Hash.hashValue||
 |**Device Information**|uco-observable.Device|||
 |  -Android Id|NA (GAP)|||
-|  -Bluetooth device name|uco-observable.Device|uco-observable.Device.model||
+|  -Bluetooth device name|uco-observable.Device|uco-observable.Device.model|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
 |  -Bluetooth MAC Address|uco-observable.MACAddress|uco-observable.MACAddress.value||
 |  -Client Used for Extraction|_More information needed_|||
-|  -DeviceInfoDetectedManufacturer|uco-observable.Device|uco-observable.Device.manufacturer||
+|  -DeviceInfoDetectedManufacturer|uco-observable.Device|uco-observable.Device.manufacturer|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
 |  -DeviceInfoDetectedModel|uco-observable.Device|uco-observable.Device.model||
 |  -DeviceInfoPhoneDateTime|_More information needed_|||
 |  -DeviceInfoRevision|_More information needed_|||
