@@ -23,13 +23,13 @@ title: SleuthKit CASE UCO mapping
 
 ### Table mappings
 
-|Sleuthkit|CASE/UCO Class|CASE/UCO Property|
-|---|---|---|
-|Object|Trace||
-|Image|Trace with File, ContentData, Image, etc property bundles||
-|Volume|Trace with Volume, DiskPartition, etc property bundles||
-|File System|Traces with FileSystem, File, ContentData, DataRange, FilePermissions, Fragment, ExtInode, MftRecord, etc property bundles; Relationship; Tool||
-|Blackboard|Traces with various property bundles||
+|Sleuthkit|CASE/UCO Class|
+|---|---|
+|Object|Trace|
+|Image|Trace with File, ContentData, Image, etc property bundles|
+|Volume|Trace with Volume, DiskPartition, etc property bundles|
+|File System|Traces with FileSystem, File, ContentData, DataRange, FilePermissions, Fragment, ExtInode, MftRecord, etc property bundles; Relationship; Tool|
+|Blackboard|Traces with various property bundles|
 
 
 
