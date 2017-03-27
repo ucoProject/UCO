@@ -28,8 +28,8 @@ title: SleuthKit CASE UCO mapping
 |Object|Trace||
 |Image|Trace with File, ContentData, Image, etc property bundles||
 |Volume|Trace with Volume, DiskPartition, etc property bundles||
-|File System|||
-|Blackboard|||
+|File System|Traces with FileSystem, File, ContentData, DataRange, FilePermissions, Fragment, ExtInode, MftRecord, etc property bundles; Relationship; Tool||
+|Blackboard|Traces with various property bundles||
 
 
 
