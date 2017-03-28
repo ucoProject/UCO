@@ -5,7 +5,7 @@ TSK_WEB_BOOKMARK
 * TSK_URL (URL of bookmark)
 * TSK_DATETIME_CREATED (when bookmark was created)
 * TSK_PROG_NAME (browser this came from)
-* TSK_TITLE (Title of webpage)
+* **_TSK_TITLE (Title of webpage)_**
 * TSK_DOMAIN (domain name of URL)
 
 
