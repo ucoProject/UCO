@@ -1,6 +1,6 @@
 # Web Bookmark Mapping Example
 
-##SleuthKit
+## SleuthKit
 TSK_WEB_BOOKMARK
 * TSK_URL (URL of bookmark)
 * TSK_DATETIME_CREATED (when bookmark was created)
@@ -9,7 +9,8 @@ TSK_WEB_BOOKMARK
 * TSK_DOMAIN (domain name of URL)
 
 
-##CASE/UCO v0.1.0
+
+## CASE/UCO v0.1.0
 ```json
 { //Bookmark
   "@id": "bookmark-3fc60abc-9fa6-46b2-9e89-29db6aa5b3c4",
