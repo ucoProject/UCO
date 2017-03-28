@@ -26,8 +26,8 @@ title: SleuthKit CASE UCO mapping
 |Sleuthkit|CASE/UCO Class|
 |---|---|
 |Object|Trace|
-|Image|Trace with File, ContentData, Image, etc property bundles|
-|Volume|Trace with Volume, DiskPartition, etc property bundles|
+|Image|Traces with File, ContentData, Image, etc property bundles|
+|Volume|Traces with Volume, DiskPartition, etc property bundles|
 |File System|Traces with FileSystem, File, ContentData, DataRange, FilePermissions, Fragment, ExtInode, MftRecord, etc property bundles; Relationship; Tool|
 |Blackboard|Traces with various property bundles|
 
@@ -107,7 +107,7 @@ title: SleuthKit CASE UCO mapping
 |[TSK_DATETIME_CREATED](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#af775d5c07c8eeac229ed345aa332e3bb)|uco-observable.File|uco-observable.File.createdTime|[file.json](https://github.com/casework/case/blob/master/examples/file.json)|
 |[TSK_DATETIME_END](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a1563835f74d4f914234eb9a207a65a4b)||endTime|[forensic_lifecycle.json](https://github.com/casework/case/blob/master/examples/forensic_lifecycle.json)|
 |[TSK_DATETIME_MODIFIED](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#ac3a78136c91230cb76c26792190f4d17)|uco-observable.File|uco-observable.File.modifiedTime|[file.json](https://github.com/casework/case/blob/master/examples/file.json)|
-|[TSK_DATETIME_RCVD](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a22eb014fa6821d7cd472e60262c4b586)||||
+|[TSK_DATETIME_RCVD](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a22eb014fa6821d7cd472e60262c4b586)|_More information needed_|||
 |[TSK_DATETIME_SENT](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a410f42053688ae2c5c3d6fcb1c479dfc)|uco-observable.Message|uco-observable.Message.sentTime||
 |[TSK_DATETIME_START](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#ab417cf245ec0a7fea5224e81fc5fa90e)||startTime|[forensic_lifecycle.json](https://github.com/casework/case/blob/master/examples/forensic_lifecycle.json)|
 |[TSK_DESCRIPTION](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a66fcb9c1ba67cb5cb8bfb85d476f10f9)|uco-core.UcoObject|uco-core.UcoObject.description|[exif_data.json](https://github.com/casework/case/blob/master/examples/exif_data.json)|
