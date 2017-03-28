@@ -1,4 +1,4 @@
-# Web Bookmark Mapping Example
+# Web Cookie Mapping Example
 
 ## SleuthKit
 
@@ -13,8 +13,8 @@ TSK_WEB_COOKIE
 
 ## CASE/UCO v0.1.0
 ```json
-{ //Bookmark
-  "@id": "bookmark-3fc60abc-9fa6-46b2-9e89-29db6aa5b3c4",
+{ //Cookie
+  "@id": "Cookie-3fc60abc-9fa6-46b2-9e89-29db6aa5b3c4",
   "@type": "Trace",
   "propertyBundle": [
     {
