@@ -10,6 +10,7 @@ TSK_WEB_BOOKMARK
 
 
 ##CASE/UCO v0.1.0
+```json
 { //Bookmark
   "@id": "bookmark-3fc60abc-9fa6-46b2-9e89-29db6aa5b3c4",
   "@type": "Trace",
@@ -55,3 +56,4 @@ TSK_WEB_BOOKMARK
     }
   ]
 }
+```
