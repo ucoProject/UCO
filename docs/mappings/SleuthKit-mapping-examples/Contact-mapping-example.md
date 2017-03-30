@@ -67,5 +67,7 @@ TSK_CONTACT (a Address-book/Email/Messaging application contact )
 ```
 
 There are known issues with the structure of Contact within CASE/UCO v0.1.0.
+
 These issues are identified and a solution proposed in the following UCO issue entry: [#25](https://github.com/ucoProject/uco/issues/25)
+
 The above CASE/UCO content represents the recommended approach for v0.1.0 to at least partially mitigate the known issues.
