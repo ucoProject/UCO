@@ -9,3 +9,5 @@ Below are initial draft mappings from several commonly used tool implementations
 * [Cellebrite](Cellebrite-mapping.md)
 * [Bulk Extractor](BulkExtractor-mapping.md)
 * [NSRL](NSRL-mapping.md)
+* [Plaso](Plaso-mapping.md)
+* [DFVFS](DFVFS-mapping.md)
