@@ -39,9 +39,9 @@ title: Cellebrite CASE UCO mapping
 
 ### Property mappings
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
 |---|---|---|---|
-|**Report Summary**|uco-investigation.Investigation|||
+|**Report Summary**|uco-investigation.Investigation||[Report Summary and Source Extraction mapping](Cellebrite-mapping-examples/Report-Summary-and-Source-Extraction-mapping-example.md)||
 |  -Report type|uco-investigation.Investigation|uco-investigation.Investigation.investigationForm OR uco-investigation.Investigation.focus||
 |  -Case number|uco-investigation.Investigation|uco-investigation.Investigation.id||
 |  -Case name|uco-investigation.Investigation|uco-investigation.Investigation.name||
@@ -52,9 +52,9 @@ title: Cellebrite CASE UCO mapping
 |  -Examiner name|uco-action.ActionReferences|uco-action.ActionReferences.performer||
 |  -Notes|uco-core.Annotation; uco-core.Assertion|uco-core.Annotation.statement; uco-core.Assertion.statement||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
 |---|---|---|---|
-|**Source Extraction**|uco-action.Action|||
+|**Source Extraction**|uco-action.Action||[Report Summary and Source Extraction mapping](Cellebrite-mapping-examples/Report-Summary-and-Source-Extraction-mapping-example.md)||
 |  -Extraction start date/time|uco-action.Action|uco-action.Action.startTime||
 |  -Extraction end date/time|uco-action.Action|uco-action.Action.endTime||
 |  -UFED Version|uco-core.Tool|uco-core.Tool.version||
