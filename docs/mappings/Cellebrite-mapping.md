@@ -48,7 +48,7 @@ title: Cellebrite CASE UCO mapping
 |  -Device|uco-observable.Device|uco-observable.Device.manufacturer; uco-observable.Device.model||
 |  -UFED Physical Analyzer version|uco-core.Tool|uco-core.Tool.version||
 |  -Unit Identifier|_More information needed_|||
-|  -Time zone settings (UTC)|NA (GAP)&#x1F534;|||
+|  -Time zone settings (UTC)|NA (all CASE/UCO timestamps include timezone)|||
 |  -Examiner name|uco-action.ActionReferences|uco-action.ActionReferences.performer||
 |  -Notes|uco-core.Annotation; uco-core.Assertion|uco-core.Annotation.statement; uco-core.Assertion.statement||
 
@@ -262,3 +262,10 @@ title: Cellebrite CASE UCO mapping
 |  -Location Info|uco-core.Location|||
 |  -Deleted|_More information needed_|||
 |  -Bookmark Note|_More information needed_|||
+
+## Identified Gaps
+
+- Mobile device specific properties
+- Android mobile device specific properties
+- Mobile phone device specific properties
+- Database row count
