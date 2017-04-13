@@ -205,3 +205,12 @@ title: SleuthKit CASE UCO mapping
 |[TSK_USER_NAME](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a116bd61fe6595867a4a8e9a613e3ad16)|uco-observable.DigitalAccount|uco-observable.DigitalAccount.accountLogin|[accounts.json](https://github.com/casework/case/blob/master/examples/accounts.json)|
 |[TSK_VALUE](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#aeab9d3b462c742ef7cd6b0d742bf56d9)|_More information needed_|||
 |[TSK_VERSION](http://sleuthkit.org/sleuthkit/docs/jni-docs/4.3/enumorg_1_1sleuthkit_1_1datamodel_1_1_blackboard_attribute_1_1_a_t_t_r_i_b_u_t_e___t_y_p_e.html#a1bbcab7dbbb867d796c0bb794ac1ca5b)|_More information needed_|||
+
+
+## Identified Gaps
+
+- Credit Card specific information
+- Account entry labeling (home, work, mobile, etc) within ContactsCrossReference
+- Geolocation area scoping (quadrilateral)
+- Geolocation mapdatum
+- Geolocation bearing and velocity
