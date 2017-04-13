@@ -209,6 +209,8 @@ title: SleuthKit CASE UCO mapping
 
 ## Identified Gaps
 
+- Magnetic strip card Track1 specific information
+- Magnetic strip card Track2 specific information
 - Credit Card specific information
 - Account entry labeling (home, work, mobile, etc) within ContactsCrossReference
 - Geolocation area scoping (quadrilateral)
