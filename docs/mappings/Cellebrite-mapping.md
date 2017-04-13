@@ -48,7 +48,7 @@ title: Cellebrite CASE UCO mapping
 |  -Device|uco-observable.Device|uco-observable.Device.manufacturer; uco-observable.Device.model||
 |  -UFED Physical Analyzer version|uco-core.Tool|uco-core.Tool.version||
 |  -Unit Identifier|_More information needed_|||
-|  -Time zone settings (UTC)|NA (GAP)|||
+|  -Time zone settings (UTC)|NA (GAP)&#x1F534;|||
 |  -Examiner name|uco-action.ActionReferences|uco-action.ActionReferences.performer||
 |  -Notes|uco-core.Annotation; uco-core.Assertion|uco-core.Annotation.statement; uco-core.Assertion.statement||
 
@@ -84,7 +84,7 @@ title: Cellebrite CASE UCO mapping
 |Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
 |---|---|---|---|
 |**Device Information**|uco-observable.Device|||
-|  -Android Id|NA (GAP)|||
+|  -Android Id|NA (GAP)&#x1F534;|||
 |  -Bluetooth device name|uco-observable.Device|uco-observable.Device.model|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
 |  -Bluetooth MAC Address|uco-observable.MACAddress|uco-observable.MACAddress.value||
 |  -Client Used for Extraction|_More information needed_|||
@@ -93,14 +93,14 @@ title: Cellebrite CASE UCO mapping
 |  -DeviceInfoPhoneDateTime|_More information needed_|||
 |  -DeviceInfoRevision|_More information needed_|||
 |  -Factory Number|uco-observable.Device|uco-observable.Device.serialNumber||
-|  -Generic|NA (GAP)|||
-|  -ICCID|NA (GAP)|||
-|  -IMEI|NA (GAP)|||
-|  -IMSI|NA (GAP)|||
+|  -Generic|NA (GAP)&#x1F534;|||
+|  -ICCID|NA (GAP)&#x1F534;|||
+|  -IMEI|NA (GAP)&#x1F534;|||
+|  -IMSI|NA (GAP)&#x1F534;|||
 |  -Mock Locations Allowed|_More information needed_|||
-|  -MSISDN|NA (GAP)|||
-|  -MSISDN Type|NA (GAP)|||
-|  -Phone Activation Time|NA (GAP)|||
+|  -MSISDN|NA (GAP)&#x1F534;|||
+|  -MSISDN Type|NA (GAP)&#x1F534;|||
+|  -Phone Activation Time|NA (GAP)&#x1F534;|||
 
 |Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
 |---|---|---|---|
@@ -137,7 +137,7 @@ title: Cellebrite CASE UCO mapping
 |**Database**|uco-observable.File|||
 |  -File System|uco-observable.File|uco-observable.File.fileSystemType||
 |  -Name|uco-observable.File|uco-observable.File.fileName||
-|  -Row count|NA (GAP)|||
+|  -Row count|NA (GAP)&#x1F534;|||
 |  --Size(bytes)|uco-observable.File OR uco-observable.ContentData|uco-observable.File.sizeInBytes (file system asserted) OR uco-observable.ContentData.sizeInBytes (actual)||
 |  -Path|uco-observable.File|uco-observable.File.filePath||
 |  -Meta Data|_More information needed_|||
