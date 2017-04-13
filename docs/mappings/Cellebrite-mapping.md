@@ -65,8 +65,8 @@ title: Cellebrite CASE UCO mapping
 |  -Extraction Type|uco-action.Action|uco-action.Action.name||
 |  -Extraction ID|uco-action.Action|uco-action.Action.id||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Plugins**|uco-core.Tool||[Plugin mapping](Cellebrite-mapping-examples/Plugin-mapping-example.md)||
 |  -Name|uco-core.Tool|uco-core.Tool.name||
 |  -Description|uco-core.Tool|uco-core.Tool.description||
