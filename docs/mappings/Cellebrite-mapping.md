@@ -67,7 +67,7 @@ title: Cellebrite CASE UCO mapping
 
 |Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
 |---|---|---|---|
-|**Plugins**|uco-core.Tool|||
+|**Plugins**|uco-core.Tool||[Plugin mapping](Cellebrite-mapping-examples/Plugin-mapping-example.md)||
 |  -Name|uco-core.Tool|uco-core.Tool.name||
 |  -Description|uco-core.Tool|uco-core.Tool.description||
 |  -Author|uco-core.Tool|uco-core.Tool.creator||
