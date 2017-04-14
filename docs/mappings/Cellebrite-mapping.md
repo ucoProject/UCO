@@ -40,7 +40,7 @@ title: Cellebrite CASE UCO mapping
 ### Property mappings
 
 |Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
-|---|---|---|---|
+|---|---|---|---|---|
 |**Report Summary**|uco-investigation.Investigation||[Report Summary and Source Extraction mapping](Cellebrite-mapping-examples/Report-Summary-and-Source-Extraction-mapping-example.md)||
 |  -Report type|uco-investigation.Investigation|uco-investigation.Investigation.investigationForm OR uco-investigation.Investigation.focus||
 |  -Case number|uco-investigation.Investigation|uco-investigation.Investigation.id||
@@ -53,7 +53,7 @@ title: Cellebrite CASE UCO mapping
 |  -Notes|uco-core.Annotation; uco-core.Assertion|uco-core.Annotation.statement; uco-core.Assertion.statement||
 
 |Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
-|---|---|---|---|
+|---|---|---|---|---|
 |**Source Extraction**|uco-action.Action||[Report Summary and Source Extraction mapping](Cellebrite-mapping-examples/Report-Summary-and-Source-Extraction-mapping-example.md)||
 |  -Extraction start date/time|uco-action.Action|uco-action.Action.startTime||
 |  -Extraction end date/time|uco-action.Action|uco-action.Action.endTime||
