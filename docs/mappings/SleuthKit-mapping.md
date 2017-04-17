@@ -16,7 +16,7 @@ title: SleuthKit CASE UCO mapping
 |partition|Trace with DiskPartition (and possibly other) property bundles|
 |file system|Trace with FileSystem (and possibly other) property bundles|
 |file|Trace with File (and possibly other (ContentData, ExtInode, MftRecord, ArchiveFile, FilePermissions, etc.) property bundles|
-|file layout|Trace for the file as described above; separate Trace with ContentData for each byte run; separate "contained-within" Relationship between fragment and file with DataRange property bundle for each byte run; separate "has-fragment" Relationship between file and fragment with Fragment property bundle for each byte run|
+|file layout|Trace for the file as described above; separate Trace with ContentData for each byte run; separate "contained-within" Relationship between fragment and image with DataRange property bundle for each byte run; separate "has-fragment" Relationship between file and fragment with Fragment property bundle for each byte run|
 |derived files method|ForensicAction with associated 'instrument' property reference to a Tool object|
 |artifact|property bundle on Trace|
 |attribute|property|
