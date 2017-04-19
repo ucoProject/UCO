@@ -93,7 +93,7 @@ title: Cellebrite CASE UCO mapping
 |  -DeviceInfoPhoneDateTime|_More information needed_|||
 |  -DeviceInfoRevision|_More information needed_|||
 |  -Factory Number|uco-observable.Device|uco-observable.Device.serialNumber||
-|  -Generic|NA (GAP)&#x1F534;|||
+|  -Generic|_More information needed_|||
 |  -ICCID|NA (GAP)&#x1F534;|||
 |  -IMEI|NA (GAP)&#x1F534;|||
 |  -IMSI|NA (GAP)&#x1F534;|||
@@ -265,7 +265,8 @@ title: Cellebrite CASE UCO mapping
 
 ## Identified Gaps
 
-- Mobile device specific properties
-- Android mobile device specific properties
-- Mobile phone device specific properties
-- Database row count
+- Mobile account properties (e.g. IMSI, MSISDN) ([#33](https://github.com/ucoProject/uco/issues/33))
+- SIM Card properties (e.g. ICCID) ([#34](https://github.com/ucoProject/uco/issues/34))
+- Mobile device specific properties (e.g. IMEI) ([#35](https://github.com/ucoProject/uco/issues/35))
+- Android mobile device specific properties (e.g. AndroidID) ([#36](https://github.com/ucoProject/uco/issues/36))
+- Database row count ([#37](https://github.com/ucoProject/uco/issues/37))
