@@ -213,6 +213,6 @@ title: SleuthKit CASE UCO mapping
 - Magnetic strip card Track2 specific information([#28](https://github.com/ucoProject/uco/issues/28))
 - Credit Card specific information([#29](https://github.com/ucoProject/uco/issues/29))
 - Account entry labeling (home, work, mobile, etc) within ContactsCrossReference
-- Geolocation area scoping (quadrilateral)
-- Geolocation mapdatum
-- Geolocation bearing and velocity
+- Geolocation area scoping (quadrilateral) ([#30](https://github.com/ucoProject/uco/issues/30))
+- Geolocation mapdatum ([#31](https://github.com/ucoProject/uco/issues/31))
+- Geolocation bearing and velocity ([#32](https://github.com/ucoProject/uco/issues/32))
