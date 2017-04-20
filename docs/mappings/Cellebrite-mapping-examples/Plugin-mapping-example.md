@@ -35,7 +35,7 @@
   "creator": "Cellebrite",
   "version": "4.5.1.14"
 },
-{//UFED Plugin
+{//Plugin
   "@id": "tool-f9d860d2-bdfb-4739-a8a8-0b5b58cefabd",
   "@type": "Tool",
   "name": "MBRGeneric",
