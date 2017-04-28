@@ -55,15 +55,15 @@ title: Cellebrite CASE UCO mapping
 |Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
 |---|---|---|---|---|
 |**Source Extraction**|uco-action.Action||[Report Summary and Source Extraction mapping](Cellebrite-mapping-examples/Report-Summary-and-Source-Extraction-mapping-example.md)||
-|  -Extraction start date/time|uco-action.Action|uco-action.Action.startTime||
-|  -Extraction end date/time|uco-action.Action|uco-action.Action.endTime||
-|  -UFED Version|uco-core.Tool|uco-core.Tool.version||
-|  -Internal Version|_More information needed_|||
-|  -Selected Manufacturer|uco-observable.Device|uco-observable.Device.manufacturer|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
-|  -Selected Device Name|uco-observable.Device|uco-observable.Device.model|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
-|  -Connection Type|_More information needed_|||
-|  -Extraction Type|uco-action.Action|uco-action.Action.name||
-|  -Extraction ID|uco-action.Action|uco-action.Action.id||
+|  -Extraction start date/time|uco-action.Action|uco-action.Action.startTime|||
+|  -Extraction end date/time|uco-action.Action|uco-action.Action.endTime|||
+|  -UFED Version|uco-core.Tool|uco-core.Tool.version|||
+|  -Internal Version|_More information needed_||||
+|  -Selected Manufacturer|uco-observable.Device|uco-observable.Device.manufacturer||[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
+|  -Selected Device Name|uco-observable.Device|uco-observable.Device.model||[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
+|  -Connection Type|_More information needed_||||
+|  -Extraction Type|uco-action.Action|uco-action.Action.name|||
+|  -Extraction ID|uco-action.Action|uco-action.Action.id|||
 
 |Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
 |---|---|---|---|---|
@@ -73,22 +73,22 @@ title: Cellebrite CASE UCO mapping
 |  -Author|uco-core.Tool|uco-core.Tool.creator||
 |  -Version|uco-core.Tool|uco-core.Tool.version||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Image**|uco-observable.File|||
 |  -Name|uco-observable.File.fileName|||
 |  -Path|uco-observable.File|uco-observable.File.filePath||
 |  -Size(bytes)|uco-observable.File OR uco-observable.ContentData|uco-observable.File.sizeInBytes (file system asserted) OR uco-observable.ContentData.sizeInBytes (actual)||
 |  -MD5|uco-observable.ContentData|uco-observable.ContentData.Hash.hashMethod="MD5" AND uco-observable.ContentData.Hash.hashValue||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Device Information**|uco-observable.Device|||
 |  -Android Id|NA (GAP)&#x1F534;|||
-|  -Bluetooth device name|uco-observable.Device|uco-observable.Device.model|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
+|  -Bluetooth device name|uco-observable.Device|uco-observable.Device.model||[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
 |  -Bluetooth MAC Address|uco-observable.MACAddress|uco-observable.MACAddress.value||
 |  -Client Used for Extraction|_More information needed_|||
-|  -DeviceInfoDetectedManufacturer|uco-observable.Device|uco-observable.Device.manufacturer|[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
+|  -DeviceInfoDetectedManufacturer|uco-observable.Device|uco-observable.Device.manufacturer||[device.json](https://github.com/casework/case/blob/master/examples/device.json)|
 |  -DeviceInfoDetectedModel|uco-observable.Device|uco-observable.Device.model||
 |  -DeviceInfoPhoneDateTime|_More information needed_|||
 |  -DeviceInfoRevision|_More information needed_|||
@@ -102,18 +102,18 @@ title: Cellebrite CASE UCO mapping
 |  -MSISDN Type|NA (GAP)&#x1F534;|||
 |  -Phone Activation Time|NA (GAP)&#x1F534;|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Activity Analytics**|_More information needed_|||
 |  -_More information needed_|_More information needed_|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Analytics Phones**|_More information needed_|||
 |  -_More information needed_|_More information needed_|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Contact**|uco-observable.Contact|||
 |  -Group|_More information needed_|||
 |  -Contact Type|uco-observable.Contact|uco-observable.Contact.contactType||
@@ -132,8 +132,8 @@ title: Cellebrite CASE UCO mapping
 |  -Deleted|_More information needed_|||
 |  -Bookmark Note|_More information needed_|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Database**|uco-observable.File|||
 |  -File System|uco-observable.File|uco-observable.File.fileSystemType||
 |  -Name|uco-observable.File|uco-observable.File.fileName||
@@ -163,8 +163,8 @@ title: Cellebrite CASE UCO mapping
 |  -Bookmark Note|_More information needed_|||
 |  -Additional file info|_More information needed_|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Powering Events**|uco-action.Action|||
 |  -Element|uco-action.ActionReferences|uco-action.ActionReferences.object||
 |  -Timestamp|uco-action.Action|uco-action.Action.startTime||
@@ -172,8 +172,8 @@ title: Cellebrite CASE UCO mapping
 |  -Deleted|_More information needed_|||
 |  -Bookmark Note|_More information needed_|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Text file**|uco-observable.File|||
 |  -File System|uco-observable.File|uco-observable.File.fileSystemType||
 |  -Name|uco-observable.File|uco-observable.File.fileName||
@@ -202,8 +202,8 @@ title: Cellebrite CASE UCO mapping
 |  -Bookmark Note|_More information needed_|||
 |  -Additional file info|_More information needed_|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Data file**|uco-observable.File|||
 |  -File System|uco-observable.File|uco-observable.File.fileSystemType||
 |  -Name|uco-observable.File|uco-observable.File.fileName||
@@ -232,8 +232,8 @@ title: Cellebrite CASE UCO mapping
 |  -Bookmark Note|_More information needed_|||
 |  -Additional file info|_More information needed_|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Web Bookmarks**|uco-observable.BrowserBookmark|||
 |  -Title|uco-observable.CyberItem(Trace)|uco-observable.CyberItem(Trace).name||
 |  -URL|uco-observable.BrowserBookmark|uco-observable.BrowserBookmark.urlTargeted||
@@ -248,8 +248,8 @@ title: Cellebrite CASE UCO mapping
 |  -Deleted|_More information needed_|||
 |  -Bookmark Note|_More information needed_|||
 
-|Cellebrite|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
-|---|---|---|---|
+|Cellebrite|CASE/UCO Class|CASE/UCO Property|Mapping Examples|CASE/UCO Example|
+|---|---|---|---|---|
 |**Timeline**|uco-action.Action|||
 |  -Type|uco-action.Action|uco-action.Action.name||
 |  -Direction|_More information needed_|||
