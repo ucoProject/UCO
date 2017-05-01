@@ -9,14 +9,14 @@ title: NSRL CASE UCO mapping
 
 |NSRL|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
 |---|---|---|---|
-|MfgCode|uco-core.UcoObject; NA (GAP)&#x1F534|uco-core.UcoObject.id (for universal identification); NA (GAP)&#x1F534 (for NSRL local ID) (likely capture in ExternalID property bundle [#38](https://github.com/ucoProject/uco/issues/38))||
+|MfgCode|uco-core.UcoObject; NA (GAP)&#x1F534;|uco-core.UcoObject.id (for universal identification); NA (GAP)&#x1F534; (for NSRL local ID) (likely capture in ExternalID property bundle [#38](https://github.com/ucoProject/uco/issues/38))||
 |MfgName|uco-core.Identity|uco-core.Identity.name||
 
 ## NSRLOS mapping
 
 |NSRL|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
 |---|---|---|---|
-|OpSystemCode|uco-core.UcoObject; NA (GAP)&#x1F534|uco-core.UcoObject.id (for universal identification); NA (GAP)&#x1F534 (for NSRL local ID) (likely capture in ExternalID property bundle [#38](https://github.com/ucoProject/uco/issues/38))||
+|OpSystemCode|uco-core.UcoObject; NA (GAP)&#x1F534;|uco-core.UcoObject.id (for universal identification); NA (GAP)&#x1F534; (for NSRL local ID) (likely capture in ExternalID property bundle [#38](https://github.com/ucoProject/uco/issues/38))||
 |OpSystemName|uco-observable.CyberItem(Trace)|uco-observable.CyberItem(Trace).name||
 |OpSystemVersion|uco-observable.OperatingSystem|uco-observable.OperatingSystem.version||
 |MfgCode|uco-observable.OperatingSystem|uco-observable.OperatingSystem.manufacturer||
@@ -25,13 +25,13 @@ title: NSRL CASE UCO mapping
 
 |NSRL|CASE/UCO Class|CASE/UCO Property|CASE/UCO Example|
 |---|---|---|---|
-|ProductCode|uco-core.UcoObject; NA (GAP)&#x1F534|uco-core.UcoObject.id (for universal identification); NA (GAP)&#x1F534 (for NSRL local ID) (likely capture in ExternalID property bundle [#38](https://github.com/ucoProject/uco/issues/38))||
+|ProductCode|uco-core.UcoObject; NA (GAP)&#x1F534;|uco-core.UcoObject.id (for universal identification); NA (GAP)&#x1F534; (for NSRL local ID) (likely capture in ExternalID property bundle [#38](https://github.com/ucoProject/uco/issues/38))||
 |ProductName|uco-observable.CyberItem(Trace)|uco-observable.CyberItem(Trace).name|||
 |ProductVersion|uco-observable.Software|uco-observable.Software.version||
 |OpSystemCode|uco-observable.Application|uco-observable.Application.operatingSystem||
 |MfgCode|uco-observable.Software|uco-observable.Software.manufacturer||
-|Language|NA (GAP)&#x1F534|||
-|ApplicationType|NA (GAP)&#x1F534|||
+|Language|NA (GAP)&#x1F534;|||
+|ApplicationType|NA (GAP)&#x1F534;|||
 
 ## NSRLFile mapping
 
@@ -44,4 +44,4 @@ title: NSRL CASE UCO mapping
 |FileSize|uco-observable.File OR uco-observable.ContentData|uco-observable.File.sizeInBytes (file system asserted) OR uco-observable.ContentData.sizeInBytes (actual)||
 |ProductCode|uco-core.Relationship|uco-core.Relationship.kindOfRelationship="contained-within" AND uco-core.Relationship.source=id of file object AND uco-core.Relationship.target=id of product object||
 |OpSystemCode|uco-core.Relationship|uco-core.Relationship.kindOfRelationship="RelevantTo" AND uco-core.Relationship.source=id of operating system object AND uco-core.Relationship.target=id of operating system object|||
-|SpecialCode|NA (GAP)&#x1F534|||
+|SpecialCode|NA (GAP)&#x1F534;|||
