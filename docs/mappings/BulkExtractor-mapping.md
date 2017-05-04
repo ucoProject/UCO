@@ -12,7 +12,7 @@ title: Bulk Extractor CASE UCO mapping
 |ccn.txt|one or more uco-observable.CyberItem(Trace) (with Account property bundle); NA (Gap)||||
 |ccn_track2.txt|NA (Gap)&#x1F534;||||
 |domain.txt|one or more uco-observable.CyberItem(Trace) (with DomainName property bundle) each with a separate “contained-within” uco-core.Relationship between domain name Trace and image Trace with DataRange property bundle specifying offset and and ExtractedStrings property bundle specifying the string extraction context for the domain name.||[Domain.txt mapping](BulkExtractor-mapping-examples/Domain.txt-mapping-example.md)||
-|email.txt|one or more uco-observable.CyberItem(Trace) (with EmailAccount property bundle)||||
+|email.txt|one or more uco-observable.CyberItem(Trace) (with EmailAddress property bundle) each with a separate “contained-within” uco-core.Relationship between email address Trace and image Trace with DataRange property bundle specifying offset and and ExtractedStrings property bundle specifying the string extraction context for the email address.||[Email.txt mapping](BulkExtractor-mapping-examples/Email.txt-mapping-example.md)||
 |ether.txt|one or more uco-observable.CyberItem(Trace) (with MACAddress property bundle)||||
 |exif.txt|one or more uco-observable.CyberItem(Trace) (with Exif property bundle)||||
 |find.txt|_Need more information_||||
