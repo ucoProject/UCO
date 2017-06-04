@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://unifiedcyberontology.org/identity#"
+     xml:base="http://unifiedcyberontology.org/identity"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://unifiedcyberontology.org/identity"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://unifiedcyberontology.org/identity#address -->
+
+
+    <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/identity#address">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/identity#Address"/>
+        <rdfs:range rdf:resource="http://unifiedcyberontology.org/location#Location"/>
+        <terms:description xml:lang="en"></terms:description>
+        <rdfs:label xml:lang="en">address</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://unifiedcyberontology.org/identity#birthdate -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/identity#birthdate">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/identity#BirthInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+        <terms:description xml:lang="en"></terms:description>
+        <rdfs:label xml:lang="en">birthdate</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#familyName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/identity#familyName">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/identity#SimpleName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+        <terms:description xml:lang="en"></terms:description>
+        <rdfs:label xml:lang="en">familyName</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#givenName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/identity#givenName">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/identity#SimpleName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+        <terms:description xml:lang="en"></terms:description>
+        <rdfs:label xml:lang="en">givenName</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#honorificPrefix -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/identity#honorificPrefix">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/identity#SimpleName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+        <terms:description xml:lang="en"></terms:description>
+        <rdfs:label xml:lang="en">honorificPrefix</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#honorificSuffix -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/identity#honorificSuffix">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/identity#SimpleName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+        <terms:description xml:lang="en"></terms:description>
+        <rdfs:label xml:lang="en">honorificSuffix</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://unifiedcyberontology.org/identity#Address -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Address">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/identity#address"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://unifiedcyberontology.org/location#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">The location address of an identity.</terms:description>
+        <rdfs:label xml:lang="en">Address</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Affiliation -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Affiliation">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Affiliation</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#BirthInformation -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#BirthInformation">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/identity#birthdate"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">BirthInformation</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#CountriesOfResidence -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#CountriesOfResidence">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">CountriesOfResidence</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Events -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Events">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Events</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Identifier -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Identifier">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Identifier</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Identity -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Identity">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
+        <terms:description xml:lang="en">Characterization of the identifying properties of an individual or organization.</terms:description>
+        <rdfs:label xml:lang="en">Identity</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#IdentityFacet -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#IdentityFacet">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/core#Facet"/>
+        <terms:description xml:lang="en">Characteristic properties of a particular aspect of an identity.</terms:description>
+        <rdfs:label xml:lang="en">IdentityFacet</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Languages -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Languages">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Languages</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Nationality -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Nationality">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Nationality</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Occupation -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Occupation">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Occupation</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Organization -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Organization">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#Identity"/>
+        <terms:description xml:lang="en">Characterization of the identifying properties of an organization.</terms:description>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#OrganizationDetails -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#OrganizationDetails">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">OrganizationDetails</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Person -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Person">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#Identity"/>
+        <terms:description xml:lang="en">Characterization of the identifying properties of an individual person.</terms:description>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#PersonalDetails -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#PersonalDetails">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">PersonalDetails</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#PhysicalInfo -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#PhysicalInfo">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">PhysicalInfo</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Qualification -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Qualification">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Qualification</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Relationship -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Relationship">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Relationship</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#SimpleName -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#SimpleName">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">Very simple name properties of an identity.</terms:description>
+        <rdfs:label xml:lang="en">SimpleName</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/identity#Visa -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/identity#Visa">
+        <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/identity#IdentityFacet"/>
+        <terms:description xml:lang="en">&lt;Needs fleshed out from CIQ&gt;</terms:description>
+        <rdfs:label xml:lang="en">Visa</rdfs:label>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://unifiedcyberontology.org/identity">
+        <rdfs:label xml:lang="en">uco-identity</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/ -->
+
+
+
+
+
+<!-- Warning: type declarations were not added automatically. -->

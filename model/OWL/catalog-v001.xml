@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/action" uri="action.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/core" uri="core.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/marking" uri="marking.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/pattern" uri="pattern.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/role" uri="role.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/domains/case" uri="case.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/identity" uri="identity.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/investigation" uri="investigation.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/location" uri="location.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/observable" uri="observable.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/time" uri="time.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/tool" uri="tool.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/types" uri="types.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1495829666094" name="http://unifiedcyberontology.org/victim" uri="victim.rdf"/>
+    </group>
+</catalog>

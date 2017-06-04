@@ -1,0 +1,362 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://unifiedcyberontology.org/types#"
+     xml:base="http://unifiedcyberontology.org/types"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://unifiedcyberontology.org/types"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#String -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#String"/>
+
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#HexBinary -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#HexBinary"/>
+
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#Identifier -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#Identifier">
+      <terms:description xml:lang="en">A globally unique identifier for a characterization of a concept. At a minimum should contain a UUID. </terms:description>
+    </rdfs:Datatype>
+
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#NativeFormatString -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#NativeFormatString"/>
+
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#StructuredText -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#StructuredText"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- http://unifiedcyberontology.org/types#entry -->
+
+
+    <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/types#entry">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#Dictionary"/>
+        <rdfs:range rdf:resource="http://unifiedcyberontology.org/types#DictionaryEntry"/>
+        <terms:description xml:lang="en">A dictionary entry.</terms:description>
+        <rdfs:label xml:lang="en">entry</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#hash -->
+
+
+    <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/types#hash">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ArrayOfHash"/>
+        <rdfs:range rdf:resource="http://unifiedcyberontology.org/types#Hash"/>
+        <terms:description xml:lang="en">A single calculated hash.</terms:description>
+        <rdfs:label xml:lang="en">hash</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#object -->
+
+
+    <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/types#object">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ArrayOfObject"/>
+        <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
+        <terms:description xml:lang="en">A single UCO object.</terms:description>
+        <rdfs:label xml:lang="en">object</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- http://unifiedcyberontology.org/types#hashMethod -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/types#hashMethod">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#Hash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+        <terms:description xml:lang="en">A particular cryptographic hashing method (e.g., MD5).</terms:description>
+        <rdfs:label xml:lang="en">hashMethod</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#hashValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/types#hashValue">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#Hash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#HexBinary"/>
+        <terms:description xml:lang="en">A cryptographic hash value.</terms:description>
+        <rdfs:label xml:lang="en">hashValue</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#key -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/types#key">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ControlledDictionaryEntry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+        <terms:description xml:lang="en">A key property of a single dictionary entry.</terms:description>
+        <rdfs:label xml:lang="en">key</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+
+    <!-- http://unifiedcyberontology.org/types#value -->
+
+
+    <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/types#value">
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ControlledDictionaryEntry"/>
+        <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ArrayOfString"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+        <terms:description xml:lang="en">A specific property value.</terms:description>
+        <rdfs:label xml:lang="en">value</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+
+    <!-- http://unifiedcyberontology.org/types#ArrayOfHash -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/types#ArrayOfHash">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#hash"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://unifiedcyberontology.org/types#Hash"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">An ordered list of hash values.</terms:description>
+        <rdfs:label xml:lang="en">ArrayOfHash</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#ArrayOfObject -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/types#ArrayOfObject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#object"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">An ordered list of object references.</terms:description>
+        <rdfs:label xml:lang="en">ArrayOfObject</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#ArrayOfString -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/types#ArrayOfString">
+        <terms:description xml:lang="en">An ordered list of string values.</terms:description>
+        <rdfs:label xml:lang="en">ArrayOfString</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#ControlledDictionary -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/types#ControlledDictionary">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#entry"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://unifiedcyberontology.org/types#ControlledDictionaryEntry"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">A list of terms/keys and their values where the set of terms/keys is constrained to an explicitly defined set of values.</terms:description>
+        <rdfs:label xml:lang="en">ControlledDictionary</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#ControlledDictionaryEntry -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/types#ControlledDictionaryEntry">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#key"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#value"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">A single term/key and its value where the term/key is constrained to an explicitly defined set of values.</terms:description>
+        <rdfs:label xml:lang="en">ControlledDictionaryEntry</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#Dictionary -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/types#Dictionary">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#entry"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://unifiedcyberontology.org/types#DictionaryEntry"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">A list of terms/keys and their values.</terms:description>
+        <rdfs:label xml:lang="en">Dictionary</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#DictionaryEntry -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/types#DictionaryEntry">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#key"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#value"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">A single of term/key and its value.</terms:description>
+        <rdfs:label xml:lang="en">DictionaryEntry</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://unifiedcyberontology.org/types#Hash -->
+
+
+    <owl:Class rdf:about="http://unifiedcyberontology.org/types#Hash">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#hashMethod"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/types#hashValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#HexBinary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description xml:lang="en">A cryptographic hash of data.</terms:description>
+        <rdfs:label xml:lang="en">Hash</rdfs:label>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://unifiedcyberontology.org/types">
+        <rdfs:label xml:lang="en">uco-types</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://unifiedcyberontology.org/types#Identifier">
+        <terms:description xml:lang="en">UCO standard format for object identifiers.
+
+UUID-based.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://unifiedcyberontology.org/types#NativeFormatString">
+        <terms:description xml:lang="en">Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property.</terms:description>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://unifiedcyberontology.org/types#StructuredText">
+        <terms:description xml:lang="en">Expresses string-based data in some information structuring format (e.g., HTML5).
+</terms:description>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/ -->
+
+
+
+
+
+<!-- Warning: type declarations were not added automatically. -->
