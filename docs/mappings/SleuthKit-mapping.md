@@ -216,3 +216,4 @@ title: SleuthKit CASE UCO mapping
 - Geolocation area scoping (quadrilateral) ([#30](https://github.com/ucoProject/uco/issues/30))
 - Geolocation mapdatum ([#31](https://github.com/ucoProject/uco/issues/31))
 - Geolocation bearing and velocity ([#32](https://github.com/ucoProject/uco/issues/32))
+ 
