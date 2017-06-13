@@ -71,7 +71,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/investigation#authorizationIdentifier">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/investigation#Authorization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">The identifier for a particular authorization (e.g. warrant number)</terms:description>
+        <rdfs:comment xml:lang="en">The identifier for a particular authorization (e.g. warrant number)</rdfs:comment>
         <rdfs:label xml:lang="en">authorizationIdentifier</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -83,7 +83,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/investigation#authorizationType">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/investigation#Authorization"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#ControlledVocabulary"/>
-        <terms:description xml:lang="en">A label categorizing a type of authorization (e.g. warrant)</terms:description>
+        <rdfs:comment xml:lang="en">A label categorizing a type of authorization (e.g. warrant)</rdfs:comment>
         <rdfs:label xml:lang="en">authorizationType</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -94,8 +94,8 @@
 
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/investigation#endTime">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/investigation#Investigation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:range rdf:resource="http://unifiedcyberontology.org/time#Timestamp"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">endTime</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -107,7 +107,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/investigation#exhibitNumber">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/investigation#ProvenanceRecord"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">exhibitNumber</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -119,7 +119,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/investigation#focus">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/investigation#Investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">Specifies the topical focus of an investigation.</terms:description>
+        <rdfs:comment xml:lang="en">Specifies the topical focus of an investigation.</rdfs:comment>
         <rdfs:label xml:lang="en">focus</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -131,7 +131,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/investigation#investigationForm">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/investigation#Investigation"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#ControlledVocabulary"/>
-        <terms:description xml:lang="en">A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)</terms:description>
+        <rdfs:comment xml:lang="en">A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)</rdfs:comment>
         <rdfs:label xml:lang="en">investigationForm</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -143,7 +143,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/investigation#investigationStatus">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/investigation#Investigation"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#ControlledVocabulary"/>
-        <terms:description xml:lang="en">A label characterizing the status of an investigation (open, closed, etc.).</terms:description>
+        <rdfs:comment xml:lang="en">A label characterizing the status of an investigation (open, closed, etc.).</rdfs:comment>
         <rdfs:label xml:lang="en">investigationStatus</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -154,8 +154,8 @@
 
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/investigation#startTime">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/investigation#Investigation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:range rdf:resource="http://unifiedcyberontology.org/time#Timestamp"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">startTime</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -178,7 +178,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/investigation#Attorney">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/role#BenevolentRole"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">Attorney</rdfs:label>
     </owl:Class>
 
@@ -202,7 +202,7 @@
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">Identifies some form of authorization for investigatory action.</terms:description>
+        <rdfs:comment xml:lang="en">Identifies some form of authorization for investigatory action.</rdfs:comment>
         <rdfs:label xml:lang="en">Authorization</rdfs:label>
     </owl:Class>
 
@@ -213,7 +213,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/investigation#Examiner">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/role#BenevolentRole"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">Examiner</rdfs:label>
     </owl:Class>
 
@@ -224,7 +224,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/investigation#ExaminerActionLifecylce">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/action#ActionLifecycle"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">ExaminerActionLifecylce</rdfs:label>
     </owl:Class>
 
@@ -235,7 +235,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/investigation#ForensicAction">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/action#Action"/>
-        <terms:description xml:lang="en">A forensic examination action taken as part of a cyber investigation.</terms:description>
+        <rdfs:comment xml:lang="en">A forensic examination action taken as part of a cyber investigation.</rdfs:comment>
         <rdfs:label xml:lang="en">ForensicAction</rdfs:label>
     </owl:Class>
 
@@ -270,7 +270,7 @@
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">An exploration of the facts involved in a cyber-relevant set of suspicious activity.</terms:description>
+        <rdfs:comment xml:lang="en">An exploration of the facts involved in a cyber-relevant set of suspicious activity.</rdfs:comment>
         <rdfs:label xml:lang="en">Investigation</rdfs:label>
     </owl:Class>
 
@@ -281,7 +281,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/investigation#Investigator">
       <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/role#BenevolentRole"/>
-      <terms:description xml:lang="en"></terms:description>
+      <rdfs:comment xml:lang="en"></rdfs:comment>
       <rdfs:label xml:lang="en">Investigator</rdfs:label>
     </owl:Class>
 
@@ -299,7 +299,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A provenantial connection between a forensic action and a set of observations (items and/or actions) or interpretations that result from it.</terms:description>
+        <rdfs:comment xml:lang="en">A provenantial connection between a forensic action and a set of observations (items and/or actions) or interpretations that result from it.</rdfs:comment>
         <rdfs:label xml:lang="en">ProvenanceRecord</rdfs:label>
     </owl:Class>
 
@@ -310,7 +310,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/investigation#Subject">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/role#MaliciousRole"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">Subject</rdfs:label>
     </owl:Class>
 
@@ -321,7 +321,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/investigation#SubjectActionLifecycle">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/action#ActionLifecycle"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">SubjectActionLifecycle</rdfs:label>
     </owl:Class>
 
@@ -332,7 +332,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/investigation#VictimActionLifecycle">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/action#ActionLifecycle"/>
-        <terms:description xml:lang="en"></terms:description>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">VictimActionLifecycle</rdfs:label>
     </owl:Class>
 

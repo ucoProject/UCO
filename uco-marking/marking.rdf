@@ -41,7 +41,7 @@
     <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/marking#definition">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/marking#MarkingDefinition"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/marking#MarkingModel"/>
-        <terms:description xml:lang="en">Explicit specification of a data marking instance.</terms:description>
+        <rdfs:comment xml:lang="en">Explicit specification of a data marking instance.</rdfs:comment>
         <rdfs:label xml:lang="en">definition</rdfs:label>
     </owl:ObjectProperty>
 
@@ -53,7 +53,7 @@
     <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/marking#marking">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/marking#GranularMarking"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/marking#MarkingDefinition"/>
-        <terms:description xml:lang="en">Represents specific marking definitions to be applied to UCO data.</terms:description>
+        <rdfs:comment xml:lang="en">Represents specific marking definitions to be applied to UCO data.</rdfs:comment>
         <rdfs:label xml:lang="en">marking</rdfs:label>
     </owl:ObjectProperty>
 
@@ -77,8 +77,8 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/marking#contentSelectors">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/marking#GranularMarking"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">Explicit specification of exactly which portions of a UCO object to apply marking definitions to.
-Specific syntax for how to specify the UCO object portions is dependent on the particular syntactic serialization implementation (XML, JSON, etc.) of UCO and MUST be explicitly specified in a separate binding specification for that syntactic serialization implementation (e.g. a UCO XML Binding Specification). </terms:description>
+        <rdfs:comment xml:lang="en">Explicit specification of exactly which portions of a UCO object to apply marking definitions to.
+Specific syntax for how to specify the UCO object portions is dependent on the particular syntactic serialization implementation (XML, JSON, etc.) of UCO and MUST be explicitly specified in a separate binding specification for that syntactic serialization implementation (e.g. a UCO XML Binding Specification). </rdfs:comment>
         <rdfs:label xml:lang="en">contentSelectors</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -90,7 +90,7 @@ Specific syntax for how to specify the UCO object portions is dependent on the p
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/marking#definitionType">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/marking#MarkingDefinition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">Specifies the Marking Model for a Marking Definition.</terms:description>
+        <rdfs:comment xml:lang="en">Specifies the Marking Model for a Marking Definition.</rdfs:comment>
         <rdfs:label xml:lang="en">definitionType</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -112,7 +112,7 @@ Specific syntax for how to specify the UCO object portions is dependent on the p
 
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/marking#GranularMarking">
-        <terms:description xml:lang="en">Marking definitions to be applied to particular portions of a particular UCO object.</terms:description>
+        <rdfs:comment xml:lang="en">Marking definitions to be applied to particular portions of a particular UCO object.</rdfs:comment>
         <rdfs:label xml:lang="en">GranularMarking</rdfs:label>
     </owl:Class>
 
@@ -130,7 +130,7 @@ Specific syntax for how to specify the UCO object portions is dependent on the p
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">Represents a specific marking that may be applied to UCO data.</terms:description>
+        <rdfs:comment xml:lang="en">Represents a specific marking that may be applied to UCO data.</rdfs:comment>
         <rdfs:label xml:lang="en">MarkingDefinition</rdfs:label>
     </owl:Class>
 
@@ -140,7 +140,7 @@ Specific syntax for how to specify the UCO object portions is dependent on the p
 
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/marking#MarkingModel">
-        <terms:description xml:lang="en">A particular format of data markings</terms:description>
+        <rdfs:comment xml:lang="en">A particular format of data markings</rdfs:comment>
         <rdfs:label xml:lang="en">MarkingModel</rdfs:label>
     </owl:Class>
 
@@ -156,7 +156,7 @@ Specific syntax for how to specify the UCO object portions is dependent on the p
 
 
     <rdf:Description rdf:about="http://unifiedcyberontology.org/marking">
-        <terms:description xml:lang="en">Data markings represent restrictions, permissions, and other guidance for how data can be used and shared.</terms:description>
+        <rdfs:comment xml:lang="en">Data markings represent restrictions, permissions, and other guidance for how data can be used and shared.</rdfs:comment>
         <rdfs:label xml:lang="en">uco-marking</rdfs:label>
     </rdf:Description>
 </rdf:RDF>

@@ -27,7 +27,7 @@
 
 
     <rdf:Description rdf:about="http://unifiedcyberontology.org/action#ActionRelationshipTypeEnum">
-        <terms:description xml:lang="en">An enumeration of types of relationships between actions.</terms:description>
+        <rdfs:comment xml:lang="en">An enumeration of types of relationships between actions.</rdfs:comment>
         <owl:equivalentClass>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -83,7 +83,7 @@
 
 
     <rdf:Description rdf:about="http://unifiedcyberontology.org/action#ActionStatusTypeEnum">
-        <terms:description xml:lang="en">An enumeration of action status types.</terms:description>
+        <rdfs:comment xml:lang="en">An enumeration of action status types.</rdfs:comment>
         <owl:equivalentClass>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -139,7 +139,7 @@
 
 
     <rdf:Description rdf:about="http://unifiedcyberontology.org/action#TrendEnum">
-        <terms:description xml:lang="en">An enumeration of trend types.</terms:description>
+        <rdfs:comment xml:lang="en">An enumeration of trend types.</rdfs:comment>
         <owl:equivalentClass>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -177,7 +177,7 @@
      <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#environment">
          <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionReferences"/>
          <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
-         <terms:description xml:lang="en">The environment wherein an action occurs.</terms:description>
+         <rdfs:comment xml:lang="en">The environment wherein an action occurs.</rdfs:comment>
          <rdfs:label xml:lang="en">environment</rdfs:label>
      </owl:ObjectProperty>
 
@@ -189,7 +189,7 @@
      <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#error">
          <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#Action"/>
          <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
-         <terms:description xml:lang="en">A characterization of the differences between the expected and the actual performance of the action.</terms:description>
+         <rdfs:comment xml:lang="en">A characterization of the differences between the expected and the actual performance of the action.</rdfs:comment>
          <rdfs:label xml:lang="en">error</rdfs:label>
      </owl:ObjectProperty>
 
@@ -201,7 +201,7 @@
      <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#instrument">
          <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionReferences"/>
          <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
-         <terms:description xml:lang="en">The things used to perform an action.</terms:description>
+         <rdfs:comment xml:lang="en">The things used to perform an action.</rdfs:comment>
          <rdfs:label xml:lang="en">instrument</rdfs:label>
      </owl:ObjectProperty>
 
@@ -213,7 +213,7 @@
      <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#location">
          <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionReferences"/>
          <rdfs:range rdf:resource="http://unifiedcyberontology.org/location#Location"/>
-         <terms:description xml:lang="en">The locations where an action occurs.</terms:description>
+         <rdfs:comment xml:lang="en">The locations where an action occurs.</rdfs:comment>
          <rdfs:label xml:lang="en">location</rdfs:label>
      </owl:ObjectProperty>
 
@@ -225,7 +225,7 @@
      <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#object">
          <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionReferences"/>
          <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
-         <terms:description xml:lang="en">The things that the action is performed on/against.</terms:description>
+         <rdfs:comment xml:lang="en">The things that the action is performed on/against.</rdfs:comment>
          <rdfs:label xml:lang="en">object</rdfs:label>
      </owl:ObjectProperty>
 
@@ -237,7 +237,7 @@
      <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#participant">
          <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionReferences"/>
          <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
-         <terms:description xml:lang="en">The supporting (non-primary) performers of an action.</terms:description>
+         <rdfs:comment xml:lang="en">The supporting (non-primary) performers of an action.</rdfs:comment>
          <rdfs:label xml:lang="en">participant</rdfs:label>
      </owl:ObjectProperty>
 
@@ -249,7 +249,7 @@
      <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#performer">
          <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionReferences"/>
          <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
-         <terms:description xml:lang="en">The primary performer of an action.</terms:description>
+         <rdfs:comment xml:lang="en">The primary performer of an action.</rdfs:comment>
          <rdfs:label xml:lang="en">performer</rdfs:label>
      </owl:ObjectProperty>
 
@@ -262,7 +262,7 @@
         <rdfs:subPropertyOf rdf:resource="http://unifiedcyberontology.org/action#subaction"/>
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionLifecycle"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/action#ArrayOfAction"/>
-        <terms:description xml:lang="en">The ordered set of actions or sub action-lifecycles that represent the action lifecycle.</terms:description>
+        <rdfs:comment xml:lang="en">The ordered set of actions or sub action-lifecycles that represent the action lifecycle.</rdfs:comment>
         <rdfs:label xml:lang="en">phase</rdfs:label>
     </owl:ObjectProperty>
 
@@ -274,7 +274,7 @@
     <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#result">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionReferences"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
-        <terms:description xml:lang="en">The things resulting from performing an action.</terms:description>
+        <rdfs:comment xml:lang="en">The things resulting from performing an action.</rdfs:comment>
         <rdfs:label xml:lang="en">result</rdfs:label>
     </owl:ObjectProperty>
 
@@ -286,7 +286,7 @@
     <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/action#subaction">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#Action"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/action#Action"/>
-        <terms:description xml:lang="en">References to other actions that make up part of a larger more complex action.</terms:description>
+        <rdfs:comment xml:lang="en">References to other actions that make up part of a larger more complex action.</rdfs:comment>
         <rdfs:label xml:lang="en">subaction</rdfs:label>
     </owl:ObjectProperty>
 
@@ -308,7 +308,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#actionCount">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#Action"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#NonNegativeInteger"/>
-        <terms:description xml:lang="en">The number of times that the action was performed.</terms:description>
+        <rdfs:comment xml:lang="en">The number of times that the action was performed.</rdfs:comment>
         <rdfs:label xml:lang="en">actionCount</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -320,7 +320,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#actionStatus">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#Action"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#ControlledVocabulary"/>
-        <terms:description xml:lang="en">The current state of the action.</terms:description>
+        <rdfs:comment xml:lang="en">The current state of the action.</rdfs:comment>
         <rdfs:label xml:lang="en">actionStatus</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -331,8 +331,8 @@
 
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#endTime">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#Action"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
-        <terms:description xml:lang="en">The time at which performance of the action ended.</terms:description>
+        <rdfs:range rdf:resource="http://unifiedcyberontology.org/time#Timestamp"/>
+        <rdfs:comment xml:lang="en">The time at which performance of the action ended.</rdfs:comment>
         <rdfs:label xml:lang="en">endTime</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -344,7 +344,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#estimatedCost">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionEstimation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">An estimation of the cost if the action is performed.</terms:description>
+        <rdfs:comment xml:lang="en">An estimation of the cost if the action is performed.</rdfs:comment>
         <rdfs:label xml:lang="en">estimatedCost</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -356,7 +356,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#estimatedEfficacy">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionEstimation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">An estimation of the effectiveness of the action at achieving its objective if the action is performed.</terms:description>
+        <rdfs:comment xml:lang="en">An estimation of the effectiveness of the action at achieving its objective if the action is performed.</rdfs:comment>
         <rdfs:label xml:lang="en">estimatedEfficacy</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -368,7 +368,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#estimatedImpact">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionEstimation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">An estimation of the impact if the action is performed.</terms:description>
+        <rdfs:comment xml:lang="en">An estimation of the impact if the action is performed.</rdfs:comment>
         <rdfs:label xml:lang="en">estimatedImpact</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -380,7 +380,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#argumentName">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionArgument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">The identifying label of an argument.</terms:description>
+        <rdfs:comment xml:lang="en">The identifying label of an argument.</rdfs:comment>
         <rdfs:label xml:lang="en">name</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -392,7 +392,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#objective">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionEstimation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">The intended purpose for performing the action.</terms:description>
+        <rdfs:comment xml:lang="en">The intended purpose for performing the action.</rdfs:comment>
         <rdfs:label xml:lang="en">objective</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -404,7 +404,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#rate">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionFrequency"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Float"/>
-        <terms:description xml:lang="en">The frequency rate for the occurence of an action.</terms:description>
+        <rdfs:comment xml:lang="en">The frequency rate for the occurence of an action.</rdfs:comment>
         <rdfs:label xml:lang="en">rate</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -416,7 +416,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#scale">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionFrequency"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">The time scale utilized for the frequency rate count for the occurence of an action.</terms:description>
+        <rdfs:comment xml:lang="en">The time scale utilized for the frequency rate count for the occurence of an action.</rdfs:comment>
         <rdfs:label xml:lang="en">scale</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -427,8 +427,8 @@
 
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#startTime">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#Action"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Timestamp"/>
-        <terms:description xml:lang="en">The time at which performance of the action began.</terms:description>
+        <rdfs:range rdf:resource="http://unifiedcyberontology.org/time#Timestamp"/>
+        <rdfs:comment xml:lang="en">The time at which performance of the action began.</rdfs:comment>
         <rdfs:label xml:lang="en">startTime</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -440,7 +440,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#trend">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionFrequency"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/action#TrendEnum"/>
-        <terms:description xml:lang="en">A characterization of the frequency trend for the occurence of an action.</terms:description>
+        <rdfs:comment xml:lang="en">A characterization of the frequency trend for the occurence of an action.</rdfs:comment>
         <rdfs:label xml:lang="en">trend</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -452,7 +452,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#units">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionFrequency"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">The units of measure utilized for the frequency rate count for the occurence of an action.</terms:description>
+        <rdfs:comment xml:lang="en">The units of measure utilized for the frequency rate count for the occurence of an action.</rdfs:comment>
         <rdfs:label xml:lang="en">units</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -464,7 +464,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/action#value">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/action#ActionArgument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">The value of an action parameter.</terms:description>
+        <rdfs:comment xml:lang="en">The value of an action parameter.</rdfs:comment>
         <rdfs:label xml:lang="en">value</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -512,7 +512,7 @@
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">Something that may be done or performed.</terms:description>
+        <rdfs:comment xml:lang="en">Something that may be done or performed.</rdfs:comment>
         <rdfs:label xml:lang="en">Action</rdfs:label>
     </owl:Class>
 
@@ -537,7 +537,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A grouping of properties characterizing a single parameter for an action.</terms:description>
+        <rdfs:comment xml:lang="en">A grouping of properties characterizing a single parameter for an action.</rdfs:comment>
         <rdfs:label xml:lang="en">ActionArgument</rdfs:label>
     </owl:Class>
 
@@ -576,7 +576,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A grouping of properties characterizing decision-focused estimation aspects for an action that may potentially be performed.</terms:description>
+        <rdfs:comment xml:lang="en">A grouping of properties characterizing decision-focused estimation aspects for an action that may potentially be performed.</rdfs:comment>
         <rdfs:label xml:lang="en">ActionEstimation</rdfs:label>
     </owl:Class>
 
@@ -615,7 +615,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#BasicString"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A grouping of properties characterizing the frequency of occurence for an action.</terms:description>
+        <rdfs:comment xml:lang="en">A grouping of properties characterizing the frequency of occurence for an action.</rdfs:comment>
         <rdfs:label xml:lang="en">ActionFrequency</rdfs:label>
     </owl:Class>
 
@@ -664,7 +664,7 @@
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles.</terms:description>
+        <rdfs:comment xml:lang="en">An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles.</rdfs:comment>
         <rdfs:label xml:lang="en">ActionLifecycle</rdfs:label>
     </owl:Class>
 
@@ -675,7 +675,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/action#ActionPattern">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/pattern#Pattern"/>
-        <terms:description xml:lang="en">A logical pattern of characteristic action property values.</terms:description>
+        <rdfs:comment xml:lang="en">A logical pattern of characteristic action property values.</rdfs:comment>
         <rdfs:label xml:lang="en">ActionPattern</rdfs:label>
     </owl:Class>
 
@@ -700,8 +700,8 @@
                 <owl:onClass rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action. The properties consist of identifier references to separate UCO objects detailing the particular property.
-</terms:description>
+        <rdfs:comment xml:lang="en">A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action. The properties consist of identifier references to separate UCO objects detailing the particular property.
+</rdfs:comment>
         <rdfs:label xml:lang="en">ActionReferences</rdfs:label>
     </owl:Class>
 
@@ -712,7 +712,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/action#ArrayOfAction">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/types#ArrayOfObject"/>
-        <terms:description xml:lang="en">An ordered list of action object references.</terms:description>
+        <rdfs:comment xml:lang="en">An ordered list of action object references.</rdfs:comment>
         <rdfs:label xml:lang="en">ArrayOfAction</rdfs:label>
     </owl:Class>
 

@@ -8,10 +8,10 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://unifiedcyberontology.org/time"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Datatypes
@@ -20,14 +20,14 @@
      -->
 
 
-    
+
 
 
     <!-- http://unifiedcyberontology.org/time#TimestampPrecision -->
 
 
     <rdf:Description rdf:about="http://unifiedcyberontology.org/time#TimestampPrecision">
-        <terms:description xml:lang="en">An enumeration of timestamp precision granularities.</terms:description>
+        <rdfs:comment xml:lang="en">An enumeration of timestamp precision granularities.</rdfs:comment>
         <owl:equivalentClass>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -70,31 +70,31 @@
             </rdfs:Datatype>
         </owl:equivalentClass>
     </rdf:Description>
-    
 
 
-    <!-- http://www.w3.org/2001/XMLSchema#Time -->
+
+    <!-- http://unifiedcyberontology.org/time#Time -->
 
 
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#Time"/>
-    
+    <rdfs:Datatype rdf:about="http://unifiedcyberontology.org/time#Time"/>
 
 
-    <!-- http://www.w3.org/2001/XMLSchema#TimeRange -->
+
+    <!-- http://unifiedcyberontology.org/time#TimeRange -->
 
 
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#TimeRange"/>
-    
+    <rdfs:Datatype rdf:about="http://unifiedcyberontology.org/time#TimeRange"/>
 
 
-    <!-- http://www.w3.org/2001/XMLSchema#Timestamp -->
+
+    <!-- http://unifiedcyberontology.org/time#Timestamp -->
 
 
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#Timestamp"/>
-    
+    <rdfs:Datatype rdf:about="http://unifiedcyberontology.org/time#Timestamp"/>
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotations
@@ -117,5 +117,3 @@
 
 
 <!-- Warning: type declarations were not added automatically. -->
-
-

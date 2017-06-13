@@ -28,7 +28,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/victim#Victim">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/core/role#NeutralRole"/>
-        <terms:description xml:lang="en">Person or organization that is the target of some malicious action.</terms:description>
+        <rdfs:comment xml:lang="en">Person or organization that is the target of some malicious action.</rdfs:comment>
         <rdfs:label xml:lang="en">Victim</rdfs:label>
     </owl:Class>
 
@@ -39,7 +39,7 @@
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/victim#VictimTargeting">
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/victim#Victim"/>
-        <terms:description xml:lang="en">Characteristics of people or organizations that are the target of some malicious activity.</terms:description>
+        <rdfs:comment xml:lang="en">Characteristics of people or organizations that are the target of some malicious activity.</rdfs:comment>
         <rdfs:label xml:lang="en">VictimTargeting</rdfs:label>
     </owl:Class>
 

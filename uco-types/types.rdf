@@ -41,7 +41,7 @@
 
 
     <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#Identifier">
-      <terms:description xml:lang="en">A globally unique identifier for a characterization of a concept. At a minimum should contain a UUID. </terms:description>
+      <rdfs:comment xml:lang="en">A globally unique identifier for a characterization of a concept. At a minimum should contain a UUID. </rdfs:comment>
     </rdfs:Datatype>
 
 
@@ -76,7 +76,7 @@
     <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/types#entry">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#Dictionary"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/types#DictionaryEntry"/>
-        <terms:description xml:lang="en">A dictionary entry.</terms:description>
+        <rdfs:comment xml:lang="en">A dictionary entry.</rdfs:comment>
         <rdfs:label xml:lang="en">entry</rdfs:label>
     </owl:ObjectProperty>
 
@@ -88,7 +88,7 @@
     <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/types#hash">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ArrayOfHash"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/types#Hash"/>
-        <terms:description xml:lang="en">A single calculated hash.</terms:description>
+        <rdfs:comment xml:lang="en">A single calculated hash.</rdfs:comment>
         <rdfs:label xml:lang="en">hash</rdfs:label>
     </owl:ObjectProperty>
 
@@ -100,7 +100,7 @@
     <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/types#object">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ArrayOfObject"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
-        <terms:description xml:lang="en">A single UCO object.</terms:description>
+        <rdfs:comment xml:lang="en">A single UCO object.</rdfs:comment>
         <rdfs:label xml:lang="en">object</rdfs:label>
     </owl:ObjectProperty>
 
@@ -122,7 +122,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/types#hashMethod">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#Hash"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">A particular cryptographic hashing method (e.g., MD5).</terms:description>
+        <rdfs:comment xml:lang="en">A particular cryptographic hashing method (e.g., MD5).</rdfs:comment>
         <rdfs:label xml:lang="en">hashMethod</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -134,7 +134,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/types#hashValue">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#Hash"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#HexBinary"/>
-        <terms:description xml:lang="en">A cryptographic hash value.</terms:description>
+        <rdfs:comment xml:lang="en">A cryptographic hash value.</rdfs:comment>
         <rdfs:label xml:lang="en">hashValue</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -146,7 +146,7 @@
     <owl:DatatypeProperty rdf:about="http://unifiedcyberontology.org/types#key">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ControlledDictionaryEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">A key property of a single dictionary entry.</terms:description>
+        <rdfs:comment xml:lang="en">A key property of a single dictionary entry.</rdfs:comment>
         <rdfs:label xml:lang="en">key</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -160,7 +160,7 @@
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ControlledDictionaryEntry"/>
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/types#ArrayOfString"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
-        <terms:description xml:lang="en">A specific property value.</terms:description>
+        <rdfs:comment xml:lang="en">A specific property value.</rdfs:comment>
         <rdfs:label xml:lang="en">value</rdfs:label>
     </owl:DatatypeProperty>
 
@@ -189,7 +189,7 @@
                 <owl:onClass rdf:resource="http://unifiedcyberontology.org/types#Hash"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">An ordered list of hash values.</terms:description>
+        <rdfs:comment xml:lang="en">An ordered list of hash values.</rdfs:comment>
         <rdfs:label xml:lang="en">ArrayOfHash</rdfs:label>
     </owl:Class>
 
@@ -205,7 +205,7 @@
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">An ordered list of object references.</terms:description>
+        <rdfs:comment xml:lang="en">An ordered list of object references.</rdfs:comment>
         <rdfs:label xml:lang="en">ArrayOfObject</rdfs:label>
     </owl:Class>
 
@@ -215,7 +215,7 @@
 
 
     <owl:Class rdf:about="http://unifiedcyberontology.org/types#ArrayOfString">
-        <terms:description xml:lang="en">An ordered list of string values.</terms:description>
+        <rdfs:comment xml:lang="en">An ordered list of string values.</rdfs:comment>
         <rdfs:label xml:lang="en">ArrayOfString</rdfs:label>
     </owl:Class>
 
@@ -232,7 +232,7 @@
                 <owl:onClass rdf:resource="http://unifiedcyberontology.org/types#ControlledDictionaryEntry"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A list of terms/keys and their values where the set of terms/keys is constrained to an explicitly defined set of values.</terms:description>
+        <rdfs:comment xml:lang="en">A list of terms/keys and their values where the set of terms/keys is constrained to an explicitly defined set of values.</rdfs:comment>
         <rdfs:label xml:lang="en">ControlledDictionary</rdfs:label>
     </owl:Class>
 
@@ -255,7 +255,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A single term/key and its value where the term/key is constrained to an explicitly defined set of values.</terms:description>
+        <rdfs:comment xml:lang="en">A single term/key and its value where the term/key is constrained to an explicitly defined set of values.</rdfs:comment>
         <rdfs:label xml:lang="en">ControlledDictionaryEntry</rdfs:label>
     </owl:Class>
 
@@ -272,7 +272,7 @@
                 <owl:onClass rdf:resource="http://unifiedcyberontology.org/types#DictionaryEntry"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A list of terms/keys and their values.</terms:description>
+        <rdfs:comment xml:lang="en">A list of terms/keys and their values.</rdfs:comment>
         <rdfs:label xml:lang="en">Dictionary</rdfs:label>
     </owl:Class>
 
@@ -296,7 +296,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A single of term/key and its value.</terms:description>
+        <rdfs:comment xml:lang="en">A single of term/key and its value.</rdfs:comment>
         <rdfs:label xml:lang="en">DictionaryEntry</rdfs:label>
     </owl:Class>
 
@@ -319,7 +319,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#HexBinary"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">A cryptographic hash of data.</terms:description>
+        <rdfs:comment xml:lang="en">A cryptographic hash of data.</rdfs:comment>
         <rdfs:label xml:lang="en">Hash</rdfs:label>
     </owl:Class>
 
@@ -338,16 +338,16 @@
         <rdfs:label xml:lang="en">uco-types</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://unifiedcyberontology.org/types#Identifier">
-        <terms:description xml:lang="en">UCO standard format for object identifiers.
+        <rdfs:comment xml:lang="en">UCO standard format for object identifiers.
 
-UUID-based.</terms:description>
+UUID-based.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://unifiedcyberontology.org/types#NativeFormatString">
-        <terms:description xml:lang="en">Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property.</terms:description>
+        <rdfs:comment xml:lang="en">Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://unifiedcyberontology.org/types#StructuredText">
-        <terms:description xml:lang="en">Expresses string-based data in some information structuring format (e.g., HTML5).
-</terms:description>
+        <rdfs:comment xml:lang="en">Expresses string-based data in some information structuring format (e.g., HTML5).
+</rdfs:comment>
     </rdf:Description>
 </rdf:RDF>
 
