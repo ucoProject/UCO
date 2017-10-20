@@ -1,0 +1,179 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://unifiedcyberontology.org/identity>
+  a owl:Ontology ;
+  rdfs:label "uco-identity"@en .
+
+<http://unifiedcyberontology.org/identity#address>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/identity#Address> ;
+  rdfs:range <http://unifiedcyberontology.org/location#Location> ;
+  rdfs:comment ""@en ;
+  rdfs:label "address"@en .
+
+<http://unifiedcyberontology.org/identity#birthdate>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/identity#BirthInformation> ;
+  rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+  rdfs:comment ""@en ;
+  rdfs:label "birthdate"@en .
+
+<http://unifiedcyberontology.org/identity#familyName>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/identity#SimpleName> ;
+  rdfs:range xsd:String ;
+  rdfs:comment ""@en ;
+  rdfs:label "familyName"@en .
+
+<http://unifiedcyberontology.org/identity#givenName>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/identity#SimpleName> ;
+  rdfs:range xsd:String ;
+  rdfs:comment ""@en ;
+  rdfs:label "givenName"@en .
+
+<http://unifiedcyberontology.org/identity#honorificPrefix>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/identity#SimpleName> ;
+  rdfs:range xsd:String ;
+  rdfs:comment ""@en ;
+  rdfs:label "honorificPrefix"@en .
+
+<http://unifiedcyberontology.org/identity#honorificSuffix>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/identity#SimpleName> ;
+  rdfs:range xsd:String ;
+  rdfs:comment ""@en ;
+  rdfs:label "honorificSuffix"@en .
+
+<http://unifiedcyberontology.org/identity#Address>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/identity#address> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://unifiedcyberontology.org/location#Location>
+  ] ;
+  rdfs:comment "The location address of an identity."@en ;
+  rdfs:label "Address"@en .
+
+<http://unifiedcyberontology.org/identity#Affiliation>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Affiliation"@en .
+
+<http://unifiedcyberontology.org/identity#BirthInformation>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/identity#birthdate> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange <http://unifiedcyberontology.org/time#Timestamp>
+  ] ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "BirthInformation"@en .
+
+<http://unifiedcyberontology.org/identity#CountriesOfResidence>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "CountriesOfResidence"@en .
+
+<http://unifiedcyberontology.org/identity#Events>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Events"@en .
+
+<http://unifiedcyberontology.org/identity#Identifier>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Identifier"@en .
+
+<http://unifiedcyberontology.org/identity#Identity>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "Characterization of the identifying properties of an individual or organization."@en ;
+  rdfs:label "Identity"@en .
+
+<http://unifiedcyberontology.org/identity#IdentityFacet>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+  rdfs:comment "Characteristic properties of a particular aspect of an identity."@en ;
+  rdfs:label "IdentityFacet"@en .
+
+<http://unifiedcyberontology.org/identity#Languages>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Languages"@en .
+
+<http://unifiedcyberontology.org/identity#Nationality>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Nationality"@en .
+
+<http://unifiedcyberontology.org/identity#Occupation>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Occupation"@en .
+
+<http://unifiedcyberontology.org/identity#Organization>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#Identity> ;
+  rdfs:comment "Characterization of the identifying properties of an organization."@en ;
+  rdfs:label "Organization"@en .
+
+<http://unifiedcyberontology.org/identity#OrganizationDetails>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "OrganizationDetails"@en .
+
+<http://unifiedcyberontology.org/identity#Person>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#Identity> ;
+  rdfs:comment "Characterization of the identifying properties of an individual person."@en ;
+  rdfs:label "Person"@en .
+
+<http://unifiedcyberontology.org/identity#PersonalDetails>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "PersonalDetails"@en .
+
+<http://unifiedcyberontology.org/identity#PhysicalInfo>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "PhysicalInfo"@en .
+
+<http://unifiedcyberontology.org/identity#Qualification>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Qualification"@en .
+
+<http://unifiedcyberontology.org/identity#Relationship>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Relationship"@en .
+
+<http://unifiedcyberontology.org/identity#SimpleName>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "Very simple name properties of an identity."@en ;
+  rdfs:label "SimpleName"@en .
+
+<http://unifiedcyberontology.org/identity#Visa>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/identity#IdentityFacet> ;
+  rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+  rdfs:label "Visa"@en .

@@ -1,0 +1,34 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://unifiedcyberontology.org/pattern>
+  a owl:Ontology ;
+  rdfs:label "uco-pattern"@en .
+
+xsd:PatternExpression a rdfs:Datatype .
+<http://unifiedcyberontology.org/pattern#patternExpression>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/pattern#LogicalPattern> ;
+  rdfs:range xsd:PatternExpression ;
+  rdfs:comment ""@en ;
+  rdfs:label "patternExpression"@en .
+
+<http://unifiedcyberontology.org/pattern#LogicalPattern>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/pattern#Pattern>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/pattern#patternExpression> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:PatternExpression
+  ] ;
+  rdfs:comment "An informational pattern instantiated in UCO content and expressed as a logical pattern expression."@en ;
+  rdfs:label "LogicalPattern"@en .
+
+<http://unifiedcyberontology.org/pattern#Pattern>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "A combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ;
+  rdfs:label "Pattern"@en .
+
+<http://unifiedcyberontology.org/pattern#PatternExpression> rdfs:comment "An explicit logical specification of a UCO informational pattern."@en .
