@@ -117,14 +117,14 @@
 
 
 
-    <!-- http://unifiedcyberontology.org/core#objectRef -->
+    <!-- http://unifiedcyberontology.org/core#object -->
 
 
-    <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/core#objectRef">
+    <owl:ObjectProperty rdf:about="http://unifiedcyberontology.org/core#object">
         <rdfs:domain rdf:resource="http://unifiedcyberontology.org/core#ContextualCompilation"/>
         <rdfs:range rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
         <rdfs:comment xml:lang="en">One or more UcoObject identifers referencing other objects.</rdfs:comment>
-        <rdfs:label xml:lang="en">objectRef</rdfs:label>
+        <rdfs:label xml:lang="en">object</rdfs:label>
     </owl:ObjectProperty>
 
 
@@ -468,7 +468,7 @@
         <rdfs:subClassOf rdf:resource="http://unifiedcyberontology.org/core#Compilation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/core#objectRef"/>
+                <owl:onProperty rdf:resource="http://unifiedcyberontology.org/core#object"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="http://unifiedcyberontology.org/core#UcoObject"/>
             </owl:Restriction>
