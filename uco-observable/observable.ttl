@@ -1782,6 +1782,13 @@
   rdfs:comment "Specifies the address of the entry point relative to the image base when the executable is loaded into memory."@en ;
   rdfs:label "addressOfEntryPoint"@en .
 
+<http://unifiedcyberontology.org/observable#allocationStatus>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/observable#File> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "The allocation status of a file."@en ;
+  rdfs:label "allocationStatus"@en .
+
 <http://unifiedcyberontology.org/observable#applicationFileName>
   a owl:DatatypeProperty ;
   rdfs:domain <http://unifiedcyberontology.org/observable#WindowsPrefetch> ;
@@ -5499,6 +5506,11 @@ For consistency, it is strongly recommended to use the ISO 639-2 language code, 
     owl:onProperty <http://unifiedcyberontology.org/observable#sizeInBytes> ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Integer
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/observable#allocationStatus ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:String
   ] ;
   rdfs:comment "The basic properties associated with the storage of a file on a file system."@en ;
   rdfs:label "File"@en .
