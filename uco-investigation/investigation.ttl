@@ -106,7 +106,7 @@
 <http://unifiedcyberontology.org/investigation#InvestigativeAction>
   a owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/action#Action> ;
-  rdfs:comment "A forensic examination action taken as part of a cyber investigation."@en ;
+  rdfs:comment "An examination action taken as part of a cyber investigation."@en ;
   rdfs:label "InvestigativeAction"@en .
 
 <http://unifiedcyberontology.org/investigation#Investigation>
