@@ -15,7 +15,7 @@ The purpose of this repository is to provide a foundation for broader community 
 ### Current Release
 The current release of UCO is v0.1.0
 
-The content of v0.1.0 is driven primarily from the initial base requirements of expressing cyber investigation information and is the product of input from the [Cyberinvestigation Analysis Standard Expression (CASE)](https://github.com/casework/case) community.
+The content of v0.1.0 is driven primarily from the initial base requirements of expressing cyber investigation information and is the product of input from the [Cyberinvestigation Analysis Standard Expression (CASE)](https://github.com/ucoProject/CASE) community.
 
 This is an initial draft version of the ontology intended for informal exploration, experimentation, implementation and collaborative feedback from the community. 
 
@@ -28,4 +28,4 @@ As such, v0.1.0 consists of solely of the following simple artifacts:
 Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.
 
 ### Serialized Content Examples
- - [Cyberinvestigation Analysis Standard Expression (CASE) v0.1.0 JSON-LD examples](https://github.com/casework/case/tree/master/examples)
+ - [Cyberinvestigation Analysis Standard Expression (CASE) v0.1.0 JSON-LD examples](https://github.com/ucoProject/CASE/tree/master/examples)
