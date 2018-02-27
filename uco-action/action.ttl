@@ -1,0 +1,368 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://unifiedcyberontology.org/action>
+  a owl:Ontology ;
+  rdfs:label "uco-action"@en .
+
+<http://unifiedcyberontology.org/action#ActionRelationshipTypeEnum>
+  rdfs:comment "An enumeration of types of relationships between actions."@en ;
+  owl:equivalentClass [
+    a rdfs:Datatype ;
+    owl:oneOf (
+     "Dependent_On"^^xsd:string
+     "Equivalent_To"^^xsd:string
+     "Followed_By"^^xsd:string
+     "Initiated"^^xsd:string
+     "Initiated_By"^^xsd:string
+     "Preceded_By"^^xsd:string
+     "Related_To"^^xsd:string
+   )
+  ] .
+
+<http://unifiedcyberontology.org/action#ActionStatusTypeEnum>
+  rdfs:comment "An enumeration of action status types."@en ;
+  owl:equivalentClass [
+    a rdfs:Datatype ;
+    owl:oneOf (
+     "Complete/Finish"^^xsd:string
+     "Error"^^xsd:string
+     "Fail"^^xsd:string
+     "Ongoing"^^xsd:string
+     "Pending"^^xsd:string
+     "Success"^^xsd:string
+     "Unknown"^^xsd:string
+   )
+  ] .
+
+<http://unifiedcyberontology.org/action#TrendEnum>
+  rdfs:comment "An enumeration of trend types."@en ;
+  owl:equivalentClass [
+    a rdfs:Datatype ;
+    owl:oneOf (
+     "Decreasing"^^xsd:string
+     "Increasing"^^xsd:string
+   )
+  ] .
+
+<http://unifiedcyberontology.org/action#environment>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionReferences> ;
+  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "The environment wherein an action occurs."@en ;
+  rdfs:label "environment"@en .
+
+<http://unifiedcyberontology.org/action#error>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#Action> ;
+  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "A characterization of the differences between the expected and the actual performance of the action."@en ;
+  rdfs:label "error"@en .
+
+<http://unifiedcyberontology.org/action#instrument>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionReferences> ;
+  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "The things used to perform an action."@en ;
+  rdfs:label "instrument"@en .
+
+<http://unifiedcyberontology.org/action#location>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionReferences> ;
+  rdfs:range <http://unifiedcyberontology.org/location#Location> ;
+  rdfs:comment "The locations where an action occurs."@en ;
+  rdfs:label "location"@en .
+
+<http://unifiedcyberontology.org/action#object>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionReferences> ;
+  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "The things that the action is performed on/against."@en ;
+  rdfs:label "object"@en .
+
+<http://unifiedcyberontology.org/action#participant>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionReferences> ;
+  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "The supporting (non-primary) performers of an action."@en ;
+  rdfs:label "participant"@en .
+
+<http://unifiedcyberontology.org/action#performer>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionReferences> ;
+  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "The primary performer of an action."@en ;
+  rdfs:label "performer"@en .
+
+<http://unifiedcyberontology.org/action#phase>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://unifiedcyberontology.org/action#subaction> ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionLifecycle> ;
+  rdfs:range <http://unifiedcyberontology.org/action#ArrayOfAction> ;
+  rdfs:comment "The ordered set of actions or sub action-lifecycles that represent the action lifecycle."@en ;
+  rdfs:label "phase"@en .
+
+<http://unifiedcyberontology.org/action#result>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionReferences> ;
+  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "The things resulting from performing an action."@en ;
+  rdfs:label "result"@en .
+
+<http://unifiedcyberontology.org/action#subaction>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#Action> ;
+  rdfs:range <http://unifiedcyberontology.org/action#Action> ;
+  rdfs:comment "References to other actions that make up part of a larger more complex action."@en ;
+  rdfs:label "subaction"@en .
+
+<http://unifiedcyberontology.org/action#actionCount>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#Action> ;
+  rdfs:range xsd:NonNegativeInteger ;
+  rdfs:comment "The number of times that the action was performed."@en ;
+  rdfs:label "actionCount"@en .
+
+<http://unifiedcyberontology.org/action#actionStatus>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#Action> ;
+  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
+  rdfs:comment "The current state of the action."@en ;
+  rdfs:label "actionStatus"@en .
+
+<http://unifiedcyberontology.org/action#endTime>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#Action> ;
+  rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+  rdfs:comment "The time at which performance of the action ended."@en ;
+  rdfs:label "endTime"@en .
+
+<http://unifiedcyberontology.org/action#estimatedCost>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionEstimation> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "An estimation of the cost if the action is performed."@en ;
+  rdfs:label "estimatedCost"@en .
+
+<http://unifiedcyberontology.org/action#estimatedEfficacy>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionEstimation> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "An estimation of the effectiveness of the action at achieving its objective if the action is performed."@en ;
+  rdfs:label "estimatedEfficacy"@en .
+
+<http://unifiedcyberontology.org/action#estimatedImpact>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionEstimation> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "An estimation of the impact if the action is performed."@en ;
+  rdfs:label "estimatedImpact"@en .
+
+<http://unifiedcyberontology.org/action#argumentName>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionArgument> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "The identifying label of an argument."@en ;
+  rdfs:label "name"@en .
+
+<http://unifiedcyberontology.org/action#objective>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionEstimation> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "The intended purpose for performing the action."@en ;
+  rdfs:label "objective"@en .
+
+<http://unifiedcyberontology.org/action#rate>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionFrequency> ;
+  rdfs:range xsd:Float ;
+  rdfs:comment "The frequency rate for the occurence of an action."@en ;
+  rdfs:label "rate"@en .
+
+<http://unifiedcyberontology.org/action#scale>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionFrequency> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "The time scale utilized for the frequency rate count for the occurence of an action."@en ;
+  rdfs:label "scale"@en .
+
+<http://unifiedcyberontology.org/action#startTime>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#Action> ;
+  rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+  rdfs:comment "The time at which performance of the action began."@en ;
+  rdfs:label "startTime"@en .
+
+<http://unifiedcyberontology.org/action#trend>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionFrequency> ;
+  rdfs:range <http://unifiedcyberontology.org/action#TrendEnum> ;
+  rdfs:comment "A characterization of the frequency trend for the occurence of an action."@en ;
+  rdfs:label "trend"@en .
+
+<http://unifiedcyberontology.org/action#units>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionFrequency> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "The units of measure utilized for the frequency rate count for the occurence of an action."@en ;
+  rdfs:label "units"@en .
+
+<http://unifiedcyberontology.org/action#value>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://unifiedcyberontology.org/action#ActionArgument> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "The value of an action parameter."@en ;
+  rdfs:label "value"@en .
+
+<http://unifiedcyberontology.org/action#Action>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#actionCount> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:NonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#actionStatus> ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#endTime> ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#startTime> ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+  ] ;
+  rdfs:comment "Something that may be done or performed."@en ;
+  rdfs:label "Action"@en .
+
+<http://unifiedcyberontology.org/action#ActionArgument>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#name> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:BasicString
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#value> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:BasicString
+  ] ;
+  rdfs:comment "A grouping of properties characterizing a single parameter for an action."@en ;
+  rdfs:label "ActionArgument"@en .
+
+<http://unifiedcyberontology.org/action#ActionEstimation>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#estimatedCost> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:BasicString
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#estimatedEfficacy> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:BasicString
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#estimatedImpact> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:BasicString
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#objective> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:BasicString
+  ] ;
+  rdfs:comment "A grouping of properties characterizing decision-focused estimation aspects for an action that may potentially be performed."@en ;
+  rdfs:label "ActionEstimation"@en .
+
+<http://unifiedcyberontology.org/action#ActionFrequency>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#rate> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:Float
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#scale> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:BasicString
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#trend> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange <http://unifiedcyberontology.org/action#TrendEnum>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#units> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:BasicString
+  ] ;
+  rdfs:comment "A grouping of properties characterizing the frequency of occurence for an action."@en ;
+  rdfs:label "ActionFrequency"@en .
+
+<http://unifiedcyberontology.org/action#ActionLifecycle>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/action#Action>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#phase> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://unifiedcyberontology.org/action#ArrayOfAction>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#actionCount> ;
+    owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:onDataRange xsd:NonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#actionStatus> ;
+    owl:maxCardinality "0"^^xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#endTime> ;
+    owl:maxCardinality "0"^^xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#error> ;
+    owl:maxCardinality "0"^^xsd:nonNegativeInteger
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#startTime> ;
+    owl:maxCardinality "0"^^xsd:nonNegativeInteger
+  ] ;
+  rdfs:comment "An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles."@en ;
+  rdfs:label "ActionLifecycle"@en .
+
+<http://unifiedcyberontology.org/action#ActionPattern>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/pattern#Pattern> ;
+  rdfs:comment "A logical pattern of characteristic action property values."@en ;
+  rdfs:label "ActionPattern"@en .
+
+<http://unifiedcyberontology.org/action#ActionReferences>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#performer> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://unifiedcyberontology.org/core#UcoObject>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://unifiedcyberontology.org/action#environment> ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://unifiedcyberontology.org/core#UcoObject>
+  ] ;
+  rdfs:comment """A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action. The properties consist of identifier references to separate UCO objects detailing the particular property.
+"""@en ;
+  rdfs:label "ActionReferences"@en .
+
+<http://unifiedcyberontology.org/action#ArrayOfAction>
+  a owl:Class ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/types#ArrayOfObject> ;
+  rdfs:comment "An ordered list of action object references."@en ;
+  rdfs:label "ArrayOfAction"@en .
