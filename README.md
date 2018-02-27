@@ -21,4 +21,4 @@ Its content is driven primarily from the initial base requirements of expressing
 Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.
 
 ### Serialized Content Examples
- - [Cyberinvestigation Analysis Standard Expression (CASE) v0.1.0 JSON-LD examples](https://github.com/casework/case/tree/master/examples)
+ - [Cyberinvestigation Analysis Standard Expression (CASE) v0.1.0 JSON-LD examples](https://github.com/ucoProject/CASE/tree/master/examples)
