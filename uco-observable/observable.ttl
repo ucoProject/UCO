@@ -7521,14 +7521,14 @@ How does this relate to Application?
 
     <http://unifiedcyberontology.org/observable#MSISDN>
     a owl:DatatypeProperty ;
-    rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount>> ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount> ;
     rdfs:range xsd:string;
     rdfs:comment "Mobile Station International Subscriber Directory Number (MSISDN) is a number used to identify a mobile phone number internationally. MSISDN is defined by the E.164 numbering plan. This number includes a country code and a National Destination Code which identifies the subscriber's operator."@en ;
     rdfs:label "MSISDN"@en .
 
     <http://unifiedcyberontology.org/observable#MSISDNType>
     a owl:DatatypeProperty ;
-    rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount>> ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount> ;
     rdfs:range xsd:string;
     rdfs:comment "???."@en ;
     rdfs:label "MSISDNType"@en .
@@ -7537,7 +7537,7 @@ How does this relate to Application?
     a owl:DatatypeProperty ;
     rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
     rdfs:range xsd:string;
-    rdfs:comment "???."@en ;
+    rdfs:comment "The generalizedTime value on the mobile device when it was processes."@en ;
     rdfs:label "clockSetting"@en .
 
     <http://unifiedcyberontology.org/observable#network>
@@ -7565,14 +7565,14 @@ How does this relate to Application?
     a owl:DatatypeProperty ;
     rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
     rdfs:range xsd:string ;
-    rdfs:comment "???."@en ;
+    rdfs:comment "A code or password set on a device for security that must be entered to gain access to the device."@en ;
     rdfs:label "keypadUnlockCode"@en .
 
     <http://unifiedcyberontology.org/observable#bluetoothDeviceName>
     a owl:DatatypeProperty ;
     rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
     rdfs:range xsd:string ;
-    rdfs:comment "???."@en ;
+    rdfs:comment "Name configured withing Bluetooth settings on a device."@en ;
     rdfs:label "bluetoothDeviceName"@en .
 
     <http://unifiedcyberontology.org/observable#mockLocationsAllowed>
@@ -7586,21 +7586,21 @@ How does this relate to Application?
     a owl:DatatypeProperty ;
     rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
     rdfs:range <http://unifiedcyberontology.org/time#Timestamp>  ;
-    rdfs:comment "???."@en ;
+    rdfs:comment "The date and time that a device was activated."@en ;
     rdfs:label "phoneActivationTime"@en .
 
     <http://unifiedcyberontology.org/observable#SIMType>
     a owl:DatatypeProperty ;
     rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
     rdfs:range xsd:string  ;
-    rdfs:comment "???."@en ;
+    rdfs:comment "The type of SIM card such as SIM, USIM, UICC."@en ;
     rdfs:label "SIMType"@en .
 
     <http://unifiedcyberontology.org/observable#SIMForm>
     a owl:DatatypeProperty ;
     rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
     rdfs:range xsd:string  ;
-    rdfs:comment "???."@en ;
+    rdfs:comment "The form of SIM card such as SIM, Micro SIM, Nano SIM."@en ;
     rdfs:label "SIMForm"@en .
 
     <http://unifiedcyberontology.org/observable#storageCapacityInBytes>
@@ -7608,7 +7608,7 @@ How does this relate to Application?
     rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice ;
     rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
     rdfs:range xsd:long ;
-    rdfs:comment "???."@en ;
+    rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
     rdfs:label "storageCapacityInBytes"@en .
 
     <http://unifiedcyberontology.org/observable#ICCID>
