@@ -7605,7 +7605,7 @@ How does this relate to Application?
 
     <http://unifiedcyberontology.org/observable#storageCapacityInBytes>
     a owl:DatatypeProperty ;
-    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
     rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
     rdfs:range xsd:long ;
     rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
@@ -7696,7 +7696,7 @@ How does this relate to Application?
           owl:onDataRange xsd:String
         ], [
           a owl:Restriction ;
-          owl:onProperty <http://unifiedcyberontology.org/observable#bluetoothDeviceName ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#bluetoothDeviceName> ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
           owl:onDataRange xsd:String
         ], [
@@ -7733,7 +7733,7 @@ How does this relate to Application?
             owl:onDataRange xsd:String
           ], [
             a owl:Restriction ;
-            owl:onProperty <http://unifiedcyberontology.org/observable#carrier ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#carrier> ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:String
           ], [
@@ -7743,12 +7743,12 @@ How does this relate to Application?
             owl:onDataRange xsd:String
           ], [
             a owl:Restriction ;
-            owl:onProperty <http://unifiedcyberontology.org/observable#PIN ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#PIN> ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:String
           ], [
             a owl:Restriction ;
-            owl:onProperty <http://unifiedcyberontology.org/observable#PUK ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#PUK> ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:String
           ]
