@@ -7515,6 +7515,7 @@ How does this relate to Application?
   <http://unifiedcyberontology.org/observable#IMSI>
     a owl:DatatypeProperty ;
     rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount> ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
     rdfs:range xsd:string ;
     rdfs:comment "An International Mobile Subscriber Identity (IMSI) is a unique identification associated with all GSM and UMTS network mobile phone users. It is stored as a 64-bit field in the SIM inside the phone and is sent by the phone to the network."@en ;
     rdfs:label "IMSI"@en .
@@ -7522,6 +7523,7 @@ How does this relate to Application?
     <http://unifiedcyberontology.org/observable#MSISDN>
     a owl:DatatypeProperty ;
     rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount> ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
     rdfs:range xsd:string;
     rdfs:comment "Mobile Station International Subscriber Directory Number (MSISDN) is a number used to identify a mobile phone number internationally. MSISDN is defined by the E.164 numbering plan. This number includes a country code and a National Destination Code which identifies the subscriber's operator."@en ;
     rdfs:label "MSISDN"@en .
@@ -7739,6 +7741,11 @@ How does this relate to Application?
           ], [
             a owl:Restriction ;
             owl:onProperty <http://unifiedcyberontology.org/observable#ICCID> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ], [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#IMSI> ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:String
           ], [
