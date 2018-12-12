@@ -401,4 +401,3 @@
   rdfs:comment """A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Unified Cyber Ontology (uco).
 """@en ;
   rdfs:label "UcoObject"@en .
-This converter is running version 0.9.0 of EasyRdf.

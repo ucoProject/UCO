@@ -5508,7 +5508,7 @@ For consistency, it is strongly recommended to use the ISO 639-2 language code, 
     owl:onDataRange xsd:Integer
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/observable#allocationStatus ;
+    owl:onProperty <http://unifiedcyberontology.org/observable#allocationStatus> ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:String
   ] ;
