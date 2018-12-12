@@ -7473,3 +7473,314 @@ How does this relate to Application?
 <http://unifiedcyberontology.org/observable#owner>
   rdfs:comment "The owner of the file."@en, "The owner of this account."@en ;
   rdfs:label "owner"@en .
+
+
+
+
+
+
+
+
+
+  <http://unifiedcyberontology.org/observable#SIMTypeEnum>
+    rdfs:comment "An enumeration of common SIM card types."@en ;
+    owl:equivalentClass [
+      a rdfs:Datatype ;
+      owl:oneOf (
+       "SIM"^^xsd:string
+       "USIM"^^xsd:string
+       "UICC"^^xsd:string
+     )
+     ] .
+
+  <http://unifiedcyberontology.org/observable#SIMFormEnum>
+     rdfs:comment "An enumeration of common SIM card form factors."@en ;
+     owl:equivalentClass [
+     a rdfs:Datatype ;
+     owl:oneOf (
+     "Full-size SIM^^xsd:string
+     "Micro SIM"^^xsd:string
+     "Nano SIM"^^xsd:string
+     )
+     ] .
+
+
+    <http://unifiedcyberontology.org/observable#carrier>
+    a owl:ObjectProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
+    rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+    rdfs:comment "Telecommunications service provider that sold the SIM card."@en ;
+    rdfs:label "carrier"@en .
+
+  <http://unifiedcyberontology.org/observable#IMSI>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount> ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "An International Mobile Subscriber Identity (IMSI) is a unique identification associated with all GSM and UMTS network mobile phone users. It is stored as a 64-bit field in the SIM inside the phone and is sent by the phone to the network."@en ;
+    rdfs:label "IMSI"@en .
+
+    <http://unifiedcyberontology.org/observable#MSISDN>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount> ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range xsd:string;
+    rdfs:comment "Mobile Station International Subscriber Directory Number (MSISDN) is a number used to identify a mobile phone number internationally. MSISDN is defined by the E.164 numbering plan. This number includes a country code and a National Destination Code which identifies the subscriber's operator."@en ;
+    rdfs:label "MSISDN"@en .
+
+    <http://unifiedcyberontology.org/observable#MSISDNType>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileAccount> ;
+    rdfs:range xsd:string;
+    rdfs:comment "???."@en ;
+    rdfs:label "MSISDNType"@en .
+
+    <http://unifiedcyberontology.org/observable#clockSetting>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range xsd:string;
+    rdfs:comment "The generalizedTime value on the mobile device when it was processes."@en ;
+    rdfs:label "clockSetting"@en .
+
+    <http://unifiedcyberontology.org/observable#network>
+    a owl:DatatypeProperty;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "???."@en ;
+    rdfs:label "network"@en .
+
+    <http://unifiedcyberontology.org/observable#IMEI>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "International Mobile Equipment Identity (IMEI)."@en ;
+    rdfs:label "IMEI"@en .
+
+    <http://unifiedcyberontology.org/observable#ESN>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Electronic Serial Number ."@en ;
+    rdfs:label "ESN"@en .
+
+    <http://unifiedcyberontology.org/observable#keypadUnlockCode>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A code or password set on a device for security that must be entered to gain access to the device."@en ;
+    rdfs:label "keypadUnlockCode"@en .
+
+    <http://unifiedcyberontology.org/observable#bluetoothDeviceName>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Name configured withing Bluetooth settings on a device."@en ;
+    rdfs:label "bluetoothDeviceName"@en .
+
+    <http://unifiedcyberontology.org/observable#mockLocationsAllowed>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "???."@en ;
+    rdfs:label "mockLocationsAllowed"@en .
+
+    <http://unifiedcyberontology.org/observable#phoneActivationTime>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:range <http://unifiedcyberontology.org/time#Timestamp>  ;
+    rdfs:comment "The date and time that a device was activated."@en ;
+    rdfs:label "phoneActivationTime"@en .
+
+    <http://unifiedcyberontology.org/observable#SIMType>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
+    rdfs:range xsd:string  ;
+    rdfs:comment "The type of SIM card such as SIM, USIM, UICC."@en ;
+    rdfs:label "SIMType"@en .
+
+    <http://unifiedcyberontology.org/observable#SIMForm>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
+    rdfs:range xsd:string  ;
+    rdfs:comment "The form of SIM card such as SIM, Micro SIM, Nano SIM."@en ;
+    rdfs:label "SIMForm"@en .
+
+    <http://unifiedcyberontology.org/observable#storageCapacityInBytes>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#MobileDevice> ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
+    rdfs:range xsd:long ;
+    rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
+    rdfs:label "storageCapacityInBytes"@en .
+
+    <http://unifiedcyberontology.org/observable#ICCID>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
+    rdfs:range xsd:string  ;
+    rdfs:comment "Integrated circuit card identifier (http://www.itu.int/)."@en ;
+    rdfs:label "ICCID"@en .
+
+    <http://unifiedcyberontology.org/observable#pin>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
+    rdfs:range xsd:string  ;
+    rdfs:comment "Personal Identification Number (PIN)."@en ;
+    rdfs:label "pin"@en .
+
+    <http://unifiedcyberontology.org/observable#PUK>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#SIMCard> ;
+    rdfs:range xsd:string  ;
+    rdfs:comment "Personal Unlocking Key (PUK) to unlock the SIM card."@en ;
+    rdfs:label "PUK"@en .
+
+    <http://unifiedcyberontology.org/observable#addressValue>
+    a owl:DatatypeProperty ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#BluetoothAddress> ;
+    rdfs:domain <http://unifiedcyberontology.org/observable#WiFiAddress> ;
+    rdfs:range xsd:string  ;
+    rdfs:comment "The value of an address."@en ;
+    rdfs:label "addressValue"@en .
+
+    <http://unifiedcyberontology.org/observable#MobileAccount>
+      a owl:Class ;
+      rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+        a owl:Restriction ;
+        owl:onProperty <http://unifiedcyberontology.org/observable#IMSI> ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onDataRange xsd:String
+      ], [
+        a owl:Restriction ;
+        owl:onProperty <http://unifiedcyberontology.org/observable#MSISDN> ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onDataRange xsd:String
+      ], [
+        a owl:Restriction ;
+        owl:onProperty <http://unifiedcyberontology.org/observable#MSISDNType> ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onDataRange xsd:String
+      ] ;
+      rdfs:comment "Properties of a Mobile Account."@en ;
+      rdfs:label "MobileAccount"@en .
+
+
+      <http://unifiedcyberontology.org/observable#MobileDevice>
+        a owl:Class ;
+        rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#clockSetting> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ], [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#storageCapacityInBytes> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ], [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#network> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ], [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#IMEI> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ], [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#ESN> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ], [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#keypadUnlockCode> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ], [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#bluetoothDeviceName> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ], [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#mockLocationsAllowed> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ], [
+          a owl:Restriction ;
+          owl:onProperty <http://unifiedcyberontology.org/observable#phoneActivationTime> ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:String
+        ]
+         ;
+        rdfs:comment "Properties of a Mobile Device."@en ;
+        rdfs:label "MobileDevice"@en .
+
+        <http://unifiedcyberontology.org/observable#SIMCard>
+          a owl:Class ;
+          rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#SIMType> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ], [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#SIMForm> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ], [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#storageCapacityInBytes> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ], [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#carrier> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ], [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#ICCID> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ], [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#IMSI> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ], [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#PIN> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ], [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#PUK> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ]
+           ;
+          rdfs:comment "Properties of a Mobile SIM card."@en ;
+          rdfs:label "SIMCard"@en .
+
+        <http://unifiedcyberontology.org/observable#BluetoothAddress>
+          a owl:Class ;
+          rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#addressValue> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ] ;
+          rdfs:comment "Properties of a Bluetooth address."@en ;
+          rdfs:label "BluetoothAddress"@en .
+
+        <http://unifiedcyberontology.org/observable#WifiAddress>
+          a owl:Class ;
+          rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+            a owl:Restriction ;
+            owl:onProperty <http://unifiedcyberontology.org/observable#addressValue> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:String
+          ] ;
+          rdfs:comment "Properties of a WiFI address."@en ;
+          rdfs:label "WifiAddress"@en .
