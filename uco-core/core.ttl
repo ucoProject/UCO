@@ -9,7 +9,6 @@
 <http://unifiedcyberontology.org/core>
   rdf:type owl:Ontology ;
   rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en-US ;
-  rdfs:label "Unified Cyber Ontology - Core Ontology" ;
   rdfs:label "uco-core"@en
   owl:versionInfo "0.2.1" ;
   .
