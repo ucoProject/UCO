@@ -1,3 +1,6 @@
+# baseURI: http://unifiedcyberontology.org/core
+
+@prefix core: <http://unifiedcyberontology.org/core#core:> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -7,397 +10,401 @@
   a owl:Ontology ;
   rdfs:label "uco-core"@en .
 
-<http://unifiedcyberontology.org/core#confidence>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Confidence> ;
-  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:comment "An asserted level of certainty in the accuracy of some information."@en ;
-  rdfs:label "confidence"@en .
 
-<http://unifiedcyberontology.org/core#createdBy>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
-  rdfs:comment "The identity that created a characterization of a concept."@en ;
-  rdfs:label "createdBy"@en .
 
-<http://unifiedcyberontology.org/core#facets>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range <http://unifiedcyberontology.org/core#Facet> ;
-  rdfs:comment "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized."@en ;
-  rdfs:label "facets"@en .
 
-<http://unifiedcyberontology.org/core#kindOfRelationship>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Relationship> ;
-  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:comment "A characterization of the nature of a relationship between objects."@en ;
-  rdfs:label "kindOfRelationship"@en .
 
-<http://unifiedcyberontology.org/core#name>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:comment "The name of a particular concept characterization."@en ;
-  rdfs:label "name"@en .
-
-<http://unifiedcyberontology.org/core#object>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Annotation>, <http://unifiedcyberontology.org/core#EnclosingCompilation>, <http://unifiedcyberontology.org/core#ContextualCompilation> ;
-  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:comment "One or more UcoObjects."@en, "One or more UcoObject identifers referencing other objects."@en ;
-  rdfs:label "object"@en .
-
-<http://unifiedcyberontology.org/core#objectMarking>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range <http://unifiedcyberontology.org/marking#MarkingDefinition> ;
-  rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
-  rdfs:label "objectMarking"@en .
-
-<http://unifiedcyberontology.org/core#role>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#RelatedIdentity> ;
-  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:comment "Usual or customary function based on contextual perspective."@en ;
-  rdfs:label "role"@en .
-
-<http://unifiedcyberontology.org/core#source>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Relationship> ;
-  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:comment "The originating node of a specified relationship."@en ;
-  rdfs:label "source"@en .
-
-<http://unifiedcyberontology.org/core#specVersion>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:comment "The version of UCO used to characterize a concept."@en ;
-  rdfs:label "specVersion"@en .
-
-<http://unifiedcyberontology.org/core#target>
-  a owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Relationship> ;
-  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:comment "The terminating node of a specified relationship."@en ;
-  rdfs:label "target"@en .
-
-<http://unifiedcyberontology.org/core#constrainingVocabularyName>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "The name of an explicitly constrained set of string values."@en ;
-  rdfs:label "constrainingVocabularyName"@en .
-
-<http://unifiedcyberontology.org/core#constrainingVocabularyReference>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:range xsd:URI ;
-  rdfs:comment "A reference to a specification for an explicitly constrained set of string values. The specification may be unstructured (e.g., web page listing string values) or structured (e.g. RDF/OWL enumeration)."@en ;
-  rdfs:label "constrainingVocabularyReference"@en .
-
-<http://unifiedcyberontology.org/core#context>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Grouping> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A description of particular contextual affinity."@en ;
-  rdfs:label "context"@en .
-
-<http://unifiedcyberontology.org/core#createdTime>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
-  rdfs:comment "The time at which a characterization of a concept is created."@en ;
-  rdfs:label "createdTime"@en .
-
-<http://unifiedcyberontology.org/core#definingContext>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#ExternalReference> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A description of the context relevant to the definition of a particular external reference identifier."@en ;
-  rdfs:label "definingContext"@en .
-
-<http://unifiedcyberontology.org/core#description>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A description of a particular concept characterization."@en ;
-  rdfs:label "description"@en .
-
-<http://unifiedcyberontology.org/core#endTime>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Relationship> ;
-  rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
-  rdfs:comment "The ending time of a time range."@en ;
-  rdfs:label "endTime"@en .
-
-<http://unifiedcyberontology.org/core#externalIdentifier>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#ExternalReference> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "An identifier for some information defined external to the UCO context."@en ;
-  rdfs:label "externalIdentifier"@en .
-
-<http://unifiedcyberontology.org/core#id>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range <http://unifiedcyberontology.org/types#Identifier> ;
-  rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
-  rdfs:label "id"@en .
-
-<http://unifiedcyberontology.org/core#isDirectional>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Relationship> ;
-  rdfs:range xsd:Boolean ;
-  rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
-  rdfs:label "isDirectional"@en .
-
-<http://unifiedcyberontology.org/core#referenceURL>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#ExternalReference> ;
-  rdfs:range xsd:URI ;
-  rdfs:comment "A URL for some information defined external to the UCO context."@en ;
-  rdfs:label "referenceURL"@en .
-
-<http://unifiedcyberontology.org/core#startTime>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Relationship> ;
-  rdfs:comment "The initial time of a time range."@en ;
-  rdfs:label "startTime"@en .
-
-<http://unifiedcyberontology.org/core#statement>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Assertion> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A textual statement of an assertion."@en ;
-  rdfs:label "statement"@en .
-
-<http://unifiedcyberontology.org/core#tag>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#Annotation> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A generic tag/label."@en ;
-  rdfs:label "tag"@en .
-
-<http://unifiedcyberontology.org/core#type>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "The explicitly-defined type of characterization of a concept."@en ;
-  rdfs:label "type"@en .
-
-<http://unifiedcyberontology.org/core#value>
-  a owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A string value."@en ;
-  rdfs:label "value"@en .
-
-<http://unifiedcyberontology.org/core#Annotation>
+core:Annotation
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Assertion>, [
+  rdfs:subClassOf core:Assertion, [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#object> ;
+    owl:onProperty core:object ;
     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#UcoObject>
+    owl:onClass core:UcoObject
   ] ;
   rdfs:comment "An assertion made in relation to one or more objects."@en ;
   rdfs:label "Annotation"@en .
 
-<http://unifiedcyberontology.org/core#Assertion>
+core:Assertion
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:subClassOf core:UcoObject ;
   rdfs:comment "A statement asserted to be true."@en ;
   rdfs:label "Assertion"@en .
 
-<http://unifiedcyberontology.org/core#Bundle>
+core:Bundle
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#EnclosingCompilation> ;
+  rdfs:subClassOf core:EnclosingCompilation ;
   rdfs:comment "A contained compilation of UCO content with no presumption of shared context."@en ;
   rdfs:label "Bundle"@en .
 
-<http://unifiedcyberontology.org/core#Compilation>
+core:Compilation
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:subClassOf core:UcoObject ;
   rdfs:comment "A grouping of things."@en ;
   rdfs:label "Compilation"@en .
 
-<http://unifiedcyberontology.org/core#Confidence>
+core:Confidence
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
+  rdfs:subClassOf core:Facet, [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#confidence> ;
+    owl:onProperty core:confidence ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#ControlledVocabulary>
+    owl:onClass core:ControlledVocabulary
   ] ;
   rdfs:comment "An asserted level of certainty in the accuracy of some information."@en ;
   rdfs:label "Confidence"@en .
 
-<http://unifiedcyberontology.org/core#ContextualCompilation>
+core:ContextualCompilation
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Compilation>, [
+  rdfs:subClassOf core:Compilation>, [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#object> ;
+    owl:onProperty core:object ;
     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#UcoObject>
+    owl:onClass core:UcoObject
   ] ;
   rdfs:comment "A grouping of things sharing some context."@en ;
   rdfs:label "ContextualCompilation"@en .
 
-<http://unifiedcyberontology.org/core#ControlledVocabulary>
+core:ControlledVocabulary
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject>, [
+  rdfs:subClassOf core:UcoObject, [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#value> ;
+    owl:onProperty core:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:String
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#constrainingVocabularyName> ;
+    owl:onProperty core:constrainingVocabularyName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:String
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#constrainingVocabularyReference> ;
+    owl:onProperty core:constrainingVocabularyReference ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:URI
   ] ;
   rdfs:comment "A string value from an explicitly constrained set of string values."@en ;
   rdfs:label "ControlledVocabulary"@en .
 
-<http://unifiedcyberontology.org/core#EnclosingCompilation>
+core:EnclosingCompilation
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Compilation>, [
+  rdfs:subClassOf core:Compilation, [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#name> ;
-    owl:someValuesFrom <http://unifiedcyberontology.org/core#ControlledVocabulary>
+    owl:onProperty core:name ;
+    owl:someValuesFrom core:ControlledVocabulary
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#name> ;
+    owl:onProperty core:name ;
     owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#ControlledVocabulary>
+    owl:onClass core:ControlledVocabulary
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#description> ;
+    owl:onProperty core:description ;
     owl:someValuesFrom rdf:PlainLiteral
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#description> ;
+    owl:onProperty core:description ;
     owl:maxCardinality "0"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#object> ;
+    owl:onProperty core:object ;
     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#UcoObject>
+    owl:onClass core:UcoObject
   ] ;
   rdfs:comment "A container for one or more objects."@en ;
   rdfs:label "EnclosingCompilation"@en .
 
-<http://unifiedcyberontology.org/core#ExternalReference>
+core:ExternalReference
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:subClassOf core:UcoObject ;
   rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
   rdfs:label "ExternalReference"@en .
 
-<http://unifiedcyberontology.org/core#Facet>
+core:Facet
   a owl:Class ;
   rdfs:comment "A grouping of properties characterizing a particular aspect/facet of an object."@en ;
   rdfs:label "Facet"@en .
 
-<http://unifiedcyberontology.org/core#Grouping>
+core:Grouping
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#ContextualCompilation> ;
+  rdfs:subClassOf core:ContextualCompilation ;
   rdfs:comment "A compilation of referenced UCO content with a shared context."@en ;
   rdfs:label "Grouping"@en .
 
-<http://unifiedcyberontology.org/core#HasIdentity>
+core:HasIdentity
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Relationship> ;
+  rdfs:subClassOf core:Relationship ;
   rdfs:comment "An association or link between any uco object and a uco Identity object."@en ;
   rdfs:label "HasIdentity"@en .
 
-<http://unifiedcyberontology.org/core#HasLocation>
+core:HasLocation
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Relationship> ;
+  rdfs:subClassOf core:Relationship ;
   rdfs:comment "An association or link between any uco object and a uco Location object."@en ;
   rdfs:label "HasLocation"@en .
 
-<http://unifiedcyberontology.org/core#Item>
+core:Item
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:subClassOf core:UcoObject ;
   rdfs:comment "A distinct article or unit."@en ;
   rdfs:label "Item"@en .
 
-<http://unifiedcyberontology.org/core#ModusOperandi>
+core:ModusOperandi
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:subClassOf core:UcoObject ;
   rdfs:comment "A particular method of operation (how a particular entity behaves or the resources they use)."@en ;
   rdfs:label "ModusOperandi"@en .
 
-<http://unifiedcyberontology.org/core#RelatedIdentity>
+core:RelatedIdentity
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Relationship>, [
+  rdfs:subClassOf core:Relationship, [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#target> ;
+    owl:onProperty core:target ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onClass <http://unifiedcyberontology.org/identity#Identity>
   ] ;
   rdfs:comment "An association or link between any uco object and a uco Identity object."@en ;
   rdfs:label "RelatedIdentity"@en .
 
-<http://unifiedcyberontology.org/core#Relationship>
+core:Relationship
   a owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject>, [
+  rdfs:subClassOf core:UcoObject, [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#source> ;
+    owl:onProperty core:source ;
     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#UcoObject>
+    owl:onClass core:UcoObject
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#target> ;
+    owl:onProperty core:target ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#UcoObject>
+    owl:onClass core:UcoObject
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#kindOfRelationship> ;
+    owl:onProperty core:kindOfRelationship ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#ControlledVocabulary>
+    owl:onClass core:ControlledVocabulary
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#isDirectional> ;
+    owl:onProperty core:isDirectional ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Boolean
   ] ;
   rdfs:comment "An assertion that one or more objects are related to another object in some way."@en ;
   rdfs:label "Relationship"@en .
 
-<http://unifiedcyberontology.org/core#UcoObject>
+core:UcoObject
   a owl:Class ;
   rdfs:subClassOf [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#name> ;
+    owl:onProperty core:name ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#ControlledVocabulary>
+    owl:onClass core:ControlledVocabulary
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#specVersion> ;
+    owl:onProperty core:specVersion ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass <http://unifiedcyberontology.org/core#ControlledVocabulary>
+    owl:onClass core:ControlledVocabulary
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#id> ;
+    owl:onProperty core:id ;
     owl:cardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#createdBy> ;
+    owl:onProperty core:createdBy ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/core#createdTime> ;
+    owl:onProperty core:createdTime ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger
   ] ;
   rdfs:comment """A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Unified Cyber Ontology (uco).
 """@en ;
   rdfs:label "UcoObject"@en .
+
+  core:confidence
+    a owl:ObjectProperty ;
+    rdfs:domain core:Confidence ;
+    rdfs:range core:ControlledVocabulary ;
+    rdfs:comment "An asserted level of certainty in the accuracy of some information."@en ;
+    rdfs:label "confidence"@en .
+
+  core:createdBy
+    a owl:ObjectProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+    rdfs:comment "The identity that created a characterization of a concept."@en ;
+    rdfs:label "createdBy"@en .
+
+  core:facets
+    a owl:ObjectProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range core:Facet ;
+    rdfs:comment "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized."@en ;
+    rdfs:label "facets"@en .
+
+  core:kindOfRelationship
+    a owl:ObjectProperty ;
+    rdfs:domain core:Relationship ;
+    rdfs:range core:ControlledVocabulary ;
+    rdfs:comment "A characterization of the nature of a relationship between objects."@en ;
+    rdfs:label "kindOfRelationship"@en .
+
+  core:name
+    a owl:ObjectProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range core:ControlledVocabulary ;
+    rdfs:comment "The name of a particular concept characterization."@en ;
+    rdfs:label "name"@en .
+
+  core:object
+    a owl:ObjectProperty ;
+    rdfs:domain core:Annotation>, core:EnclosingCompilation>, core:ContextualCompilation> ;
+    rdfs:range core:UcoObject ;
+    rdfs:comment "One or more UcoObjects."@en, "One or more UcoObject identifers referencing other objects."@en ;
+    rdfs:label "object"@en .
+
+  core:objectMarking
+    a owl:ObjectProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range <http://unifiedcyberontology.org/marking#MarkingDefinition> ;
+    rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
+    rdfs:label "objectMarking"@en .
+
+  core:role
+    a owl:ObjectProperty ;
+    rdfs:domain core:RelatedIdentity> ;
+    rdfs:range core:ControlledVocabulary ;
+    rdfs:comment "Usual or customary function based on contextual perspective."@en ;
+    rdfs:label "role"@en .
+
+  core:source
+    a owl:ObjectProperty ;
+    rdfs:domain core:Relationship ;
+    rdfs:range core:UcoObject ;
+    rdfs:comment "The originating node of a specified relationship."@en ;
+    rdfs:label "source"@en .
+
+  core:specVersion
+    a owl:ObjectProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range core:ControlledVocabulary ;
+    rdfs:comment "The version of UCO used to characterize a concept."@en ;
+    rdfs:label "specVersion"@en .
+
+  core:target
+    a owl:ObjectProperty ;
+    rdfs:domain core:Relationship ;
+    rdfs:range core:UcoObject ;
+    rdfs:comment "The terminating node of a specified relationship."@en ;
+    rdfs:label "target"@en .
+
+  core:constrainingVocabularyName
+    a owl:DatatypeProperty ;
+    rdfs:domain core:ControlledVocabulary ;
+    rdfs:range xsd:String ;
+    rdfs:comment "The name of an explicitly constrained set of string values."@en ;
+    rdfs:label "constrainingVocabularyName"@en .
+
+  core:constrainingVocabularyReference
+    a owl:DatatypeProperty ;
+    rdfs:domain core:ControlledVocabulary ;
+    rdfs:range xsd:URI ;
+    rdfs:comment "A reference to a specification for an explicitly constrained set of string values. The specification may be unstructured (e.g., web page listing string values) or structured (e.g. RDF/OWL enumeration)."@en ;
+    rdfs:label "constrainingVocabularyReference"@en .
+
+  core:context
+    a owl:DatatypeProperty ;
+    rdfs:domain core:Grouping ;
+    rdfs:range xsd:String ;
+    rdfs:comment "A description of particular contextual affinity."@en ;
+    rdfs:label "context"@en .
+
+  core:createdTime
+    a owl:DatatypeProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+    rdfs:comment "The time at which a characterization of a concept is created."@en ;
+    rdfs:label "createdTime"@en .
+
+  core:definingContext
+    a owl:DatatypeProperty ;
+    rdfs:domain core:ExternalReference ;
+    rdfs:range xsd:String ;
+    rdfs:comment "A description of the context relevant to the definition of a particular external reference identifier."@en ;
+    rdfs:label "definingContext"@en .
+
+  core:description
+    a owl:DatatypeProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range xsd:String ;
+    rdfs:comment "A description of a particular concept characterization."@en ;
+    rdfs:label "description"@en .
+
+  core:endTime
+    a owl:DatatypeProperty ;
+    rdfs:domain core:Relationship ;
+    rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+    rdfs:comment "The ending time of a time range."@en ;
+    rdfs:label "endTime"@en .
+
+  core:externalIdentifier
+    a owl:DatatypeProperty ;
+    rdfs:domain core:ExternalReference ;
+    rdfs:range xsd:String ;
+    rdfs:comment "An identifier for some information defined external to the UCO context."@en ;
+    rdfs:label "externalIdentifier"@en .
+
+  core:id
+    a owl:DatatypeProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range <http://unifiedcyberontology.org/types#Identifier> ;
+    rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
+    rdfs:label "id"@en .
+
+  core:isDirectional
+    a owl:DatatypeProperty ;
+    rdfs:domain core:Relationship ;
+    rdfs:range xsd:Boolean ;
+    rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
+    rdfs:label "isDirectional"@en .
+
+  core:referenceURL
+    a owl:DatatypeProperty ;
+    rdfs:domain core:ExternalReference ;
+    rdfs:range xsd:URI ;
+    rdfs:comment "A URL for some information defined external to the UCO context."@en ;
+    rdfs:label "referenceURL"@en .
+
+  core:startTime
+    a owl:DatatypeProperty ;
+    rdfs:domain core:Relationship ;
+    rdfs:comment "The initial time of a time range."@en ;
+    rdfs:label "startTime"@en .
+
+  core:statement
+    a owl:DatatypeProperty ;
+    rdfs:domain core:Assertion ;
+    rdfs:range xsd:String ;
+    rdfs:comment "A textual statement of an assertion."@en ;
+    rdfs:label "statement"@en .
+
+  core:tag
+    a owl:DatatypeProperty ;
+    rdfs:domain core:Annotation ;
+    rdfs:range xsd:String ;
+    rdfs:comment "A generic tag/label."@en ;
+    rdfs:label "tag"@en .
+
+  core:type
+    a owl:DatatypeProperty ;
+    rdfs:domain core:UcoObject ;
+    rdfs:range xsd:String ;
+    rdfs:comment "The explicitly-defined type of characterization of a concept."@en ;
+    rdfs:label "type"@en .
+
+  core:value
+    a owl:DatatypeProperty ;
+    rdfs:domain core:ControlledVocabulary ;
+    rdfs:range xsd:String ;
+    rdfs:comment "A string value."@en ;
+    rdfs:label "value"@en .
