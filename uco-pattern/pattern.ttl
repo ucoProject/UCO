@@ -33,6 +33,7 @@ rdf:type owl:Class ;
 rdfs:comment "An explicit logical specification of a UCO informational pattern."@en ;
 rdfs:label "PatternExpression"@en .
 
+
 pattern:patternExpression
   rdf:type owl:DatatypeProperty ;
   rdfs:domain pattern:LogicalPattern ;

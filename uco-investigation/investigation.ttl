@@ -9,69 +9,6 @@
   rdf:type owl:Ontology ;
   rdfs:label "uco-investigation"@en .
 
-investigation:InvestigationFormEnum owl:equivalentClass [
-    rdf:type rdfs:Datatype ;
-    owl:oneOf (
-     "case"^^xsd:string
-     "incident"^^xsd:string
-     "suspicious-activity"^^xsd:string
-   )
-  ] .
-investigation:authorizationIdentifier
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain investigation:Authorization ;
-  rdfs:range xsd:String ;
-  rdfs:comment "The identifier for a particular authorization (e.g. warrant number)"@en ;
-  rdfs:label "authorizationIdentifier"@en .
-
-investigation:authorizationType
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain investigation:Authorization ;
-  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:comment "A label categorizing a type of authorization (e.g. warrant)"@en ;
-  rdfs:label "authorizationType"@en .
-
-investigation:endTime
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain investigation:Investigation ;
-  rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
-  rdfs:comment ""@en ;
-  rdfs:label "endTime"@en .
-
-investigation:exhibitNumber
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain investigation:ProvenanceRecord ;
-  rdfs:range xsd:String ;
-  rdfs:comment ""@en ;
-  rdfs:label "exhibitNumber"@en .
-
-investigation:focus
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain investigation:Investigation ;
-  rdfs:range xsd:String ;
-  rdfs:comment "Specifies the topical focus of an investigation."@en ;
-  rdfs:label "focus"@en .
-
-investigation:investigationForm
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain investigation:Investigation ;
-  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
-  rdfs:label "investigationForm"@en .
-
-investigation:investigationStatus
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain investigation:Investigation ;
-  rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-  rdfs:comment "A label characterizing the status of an investigation (open, closed, etc.)."@en ;
-  rdfs:label "investigationStatus"@en .
-
-investigation:startTime
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain investigation:Investigation ;
-  rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
-  rdfs:comment ""@en ;
-  rdfs:label "startTime"@en .
 
 investigation:Attorney
   rdf:type owl:Class ;
@@ -168,3 +105,68 @@ investigation:VictimActionLifecycle
   rdfs:subClassOf <http://unifiedcyberontology.org/action#ActionLifecycle> ;
   rdfs:comment ""@en ;
   rdfs:label "VictimActionLifecycle"@en .
+
+
+  investigation:InvestigationFormEnum owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+       "case"^^xsd:string
+       "incident"^^xsd:string
+       "suspicious-activity"^^xsd:string
+     )
+    ] .
+  investigation:authorizationIdentifier
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain investigation:Authorization ;
+    rdfs:range xsd:String ;
+    rdfs:comment "The identifier for a particular authorization (e.g. warrant number)"@en ;
+    rdfs:label "authorizationIdentifier"@en .
+
+  investigation:authorizationType
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain investigation:Authorization ;
+    rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
+    rdfs:comment "A label categorizing a type of authorization (e.g. warrant)"@en ;
+    rdfs:label "authorizationType"@en .
+
+  investigation:endTime
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain investigation:Investigation ;
+    rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+    rdfs:comment ""@en ;
+    rdfs:label "endTime"@en .
+
+  investigation:exhibitNumber
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain investigation:ProvenanceRecord ;
+    rdfs:range xsd:String ;
+    rdfs:comment ""@en ;
+    rdfs:label "exhibitNumber"@en .
+
+  investigation:focus
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain investigation:Investigation ;
+    rdfs:range xsd:String ;
+    rdfs:comment "Specifies the topical focus of an investigation."@en ;
+    rdfs:label "focus"@en .
+
+  investigation:investigationForm
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain investigation:Investigation ;
+    rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
+    rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
+    rdfs:label "investigationForm"@en .
+
+  investigation:investigationStatus
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain investigation:Investigation ;
+    rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
+    rdfs:comment "A label characterizing the status of an investigation (open, closed, etc.)."@en ;
+    rdfs:label "investigationStatus"@en .
+
+  investigation:startTime
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain investigation:Investigation ;
+    rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+    rdfs:comment ""@en ;
+    rdfs:label "startTime"@en .

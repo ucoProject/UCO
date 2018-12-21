@@ -10,71 +10,6 @@
   rdfs:label "uco-types"@en .
 
 
-xsd:String
- rdf:type rdfs:Datatype .
-
-xsd:HexBinary
- rdf:type rdfs:Datatype .
-
-xsd:Identifier
-  rdf:type rdfs:Datatype ;
-  rdfs:comment "A globally unique identifier for a characterization of a concept. At a minimum should contain a UUID. "@en .
-
-xsd:NativeFormatString
- rdf:type rdfs:Datatype .
-
-xsd:StructuredText
- rdf:type rdfs:Datatype .
-
-types:entry
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain types:Dictionary ;
-  rdfs:range types:DictionaryEntry ;
-  rdfs:comment "A dictionary entry."@en ;
-  rdfs:label "entry"@en .
-
-types:hash
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain types:ArrayOfHash ;
-  rdfs:range types:Hash ;
-  rdfs:comment "A single calculated hash."@en ;
-  rdfs:label "hash"@en .
-
-types:object
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain types:ArrayOfObject ;
-  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
-  rdfs:comment "A single UCO object."@en ;
-  rdfs:label "object"@en .
-
-types:hashMethod
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain types:Hash ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
-  rdfs:label "hashMethod"@en .
-
-types:hashValue
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain types:Hash ;
-  rdfs:range xsd:HexBinary ;
-  rdfs:comment "A cryptographic hash value."@en ;
-  rdfs:label "hashValue"@en .
-
-types:key
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain types:ControlledDictionaryEntry ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A key property of a single dictionary entry."@en ;
-  rdfs:label "key"@en .
-
-types:value
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain types:ControlledDictionaryEntry>, types:ArrayOfString> ;
-  rdfs:range xsd:String ;
-  rdfs:comment "A specific property value."@en ;
-  rdfs:label "value"@en .
-
 types:ArrayOfHash
   rdf:type owl:Class ;
   rdfs:subClassOf [
@@ -176,3 +111,69 @@ UUID-based."""@en .
 types:NativeFormatString> rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en .
 types:StructuredText> rdfs:comment """Expresses string-based data in some information structuring format (e.g., HTML5).
 """@en .
+
+
+xsd:String
+ rdf:type rdfs:Datatype .
+
+xsd:HexBinary
+ rdf:type rdfs:Datatype .
+
+xsd:Identifier
+  rdf:type rdfs:Datatype ;
+  rdfs:comment "A globally unique identifier for a characterization of a concept. At a minimum should contain a UUID. "@en .
+
+xsd:NativeFormatString
+ rdf:type rdfs:Datatype .
+
+xsd:StructuredText
+ rdf:type rdfs:Datatype .
+
+types:entry
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain types:Dictionary ;
+  rdfs:range types:DictionaryEntry ;
+  rdfs:comment "A dictionary entry."@en ;
+  rdfs:label "entry"@en .
+
+types:hash
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain types:ArrayOfHash ;
+  rdfs:range types:Hash ;
+  rdfs:comment "A single calculated hash."@en ;
+  rdfs:label "hash"@en .
+
+types:object
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain types:ArrayOfObject ;
+  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+  rdfs:comment "A single UCO object."@en ;
+  rdfs:label "object"@en .
+
+types:hashMethod
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain types:Hash ;
+  rdfs:range xsd:String ;
+  rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
+  rdfs:label "hashMethod"@en .
+
+types:hashValue
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain types:Hash ;
+  rdfs:range xsd:HexBinary ;
+  rdfs:comment "A cryptographic hash value."@en ;
+  rdfs:label "hashValue"@en .
+
+types:key
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain types:ControlledDictionaryEntry ;
+  rdfs:range xsd:String ;
+  rdfs:comment "A key property of a single dictionary entry."@en ;
+  rdfs:label "key"@en .
+
+types:value
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain types:ControlledDictionaryEntry>, types:ArrayOfString> ;
+  rdfs:range xsd:String ;
+  rdfs:comment "A specific property value."@en ;
+  rdfs:label "value"@en .

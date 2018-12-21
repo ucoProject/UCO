@@ -9,47 +9,6 @@
   rdf:type owl:Ontology ;
   rdfs:label "uco-identity"@en .
 
-identity:address
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain identity:Address ;
-  rdfs:range <http://unifiedcyberontology.org/location#Location> ;
-  rdfs:comment ""@en ;
-  rdfs:label "address"@en .
-
-identity:birthdate
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain identity:BirthInformation ;
-  rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
-  rdfs:comment ""@en ;
-  rdfs:label "birthdate"@en .
-
-identity:familyName
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain identity:SimpleName ;
-  rdfs:range xsd:String ;
-  rdfs:comment ""@en ;
-  rdfs:label "familyName"@en .
-
-identity:givenName
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain identity:SimpleName ;
-  rdfs:range xsd:String ;
-  rdfs:comment ""@en ;
-  rdfs:label "givenName"@en .
-
-identity:honorificPrefix
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain identity:SimpleName ;
-  rdfs:range xsd:String ;
-  rdfs:comment ""@en ;
-  rdfs:label "honorificPrefix"@en .
-
-identity:honorificSuffix
-  rdf:type owl:DatatypeProperty ;
-  rdfs:domain identity:SimpleName ;
-  rdfs:range xsd:String ;
-  rdfs:comment ""@en ;
-  rdfs:label "honorificSuffix"@en .
 
 identity:Address
   rdf:type owl:Class ;
@@ -78,6 +37,7 @@ identity:BirthInformation
   ] ;
   rdfs:comment "<Needs fleshed out from CIQ>"@en ;
   rdfs:label "BirthInformation"@en .
+
 
 identity:CountriesOfResidence
   rdf:type owl:Class ;
@@ -180,3 +140,45 @@ identity:Visa
   rdfs:subClassOf identity:IdentityFacet ;
   rdfs:comment "<Needs fleshed out from CIQ>"@en ;
   rdfs:label "Visa"@en .
+
+  identity:address
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain identity:Address ;
+    rdfs:range <http://unifiedcyberontology.org/location#Location> ;
+    rdfs:comment ""@en ;
+    rdfs:label "address"@en .
+
+  identity:birthdate
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain identity:BirthInformation ;
+    rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+    rdfs:comment ""@en ;
+    rdfs:label "birthdate"@en .
+
+  identity:familyName
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain identity:SimpleName ;
+    rdfs:range xsd:String ;
+    rdfs:comment ""@en ;
+    rdfs:label "familyName"@en .
+
+  identity:givenName
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain identity:SimpleName ;
+    rdfs:range xsd:String ;
+    rdfs:comment ""@en ;
+    rdfs:label "givenName"@en .
+
+  identity:honorificPrefix
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain identity:SimpleName ;
+    rdfs:range xsd:String ;
+    rdfs:comment ""@en ;
+    rdfs:label "honorificPrefix"@en .
+
+  identity:honorificSuffix
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain identity:SimpleName ;
+    rdfs:range xsd:String ;
+    rdfs:comment ""@en ;
+    rdfs:label "honorificSuffix"@en .
