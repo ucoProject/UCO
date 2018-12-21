@@ -10,52 +10,52 @@
   rdfs:comment "Data markings represent restrictions, permissions, and other guidance for how data can be used and shared."@en ;
   rdfs:label "uco-marking"@en .
 
-<http://unifiedcyberontology.org/marking#definition>
+marking:definition
   rdf:type owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/marking#MarkingDefinition> ;
-  rdfs:range <http://unifiedcyberontology.org/marking#MarkingModel> ;
+  rdfs:domain marking:MarkingDefinition ;
+  rdfs:range marking:MarkingModel ;
   rdfs:comment "Explicit specification of a data marking instance."@en ;
   rdfs:label "definition"@en .
 
-<http://unifiedcyberontology.org/marking#marking>
+marking:marking
   rdf:type owl:ObjectProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/marking#GranularMarking> ;
-  rdfs:range <http://unifiedcyberontology.org/marking#MarkingDefinition> ;
+  rdfs:domain marking:GranularMarking ;
+  rdfs:range marking:MarkingDefinition ;
   rdfs:comment "Represents specific marking definitions to be applied to UCO data."@en ;
   rdfs:label "marking"@en .
 
-<http://unifiedcyberontology.org/marking#contentSelectors>
+marking:contentSelectors
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/marking#GranularMarking> ;
+  rdfs:domain marking:GranularMarking ;
   rdfs:range xsd:String ;
   rdfs:comment """Explicit specification of exactly which portions of a UCO object to apply marking definitions to.
 Specific syntax for how to specify the UCO object portions is dependent on the particular syntactic serialization implementation (XML, JSON, etc.) of UCO and MUST be explicitly specified in a separate binding specification for that syntactic serialization implementation (e.g. a UCO XML Binding Specification). """@en ;
   rdfs:label "contentSelectors"@en .
 
-<http://unifiedcyberontology.org/marking#definitionType>
+marking:definitionType
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/marking#MarkingDefinition> ;
+  rdfs:domain marking:MarkingDefinition ;
   rdfs:range xsd:String ;
   rdfs:comment "Specifies the Marking Model for a Marking Definition."@en ;
   rdfs:label "definitionType"@en .
 
-<http://unifiedcyberontology.org/marking#GranularMarking>
+marking:GranularMarking
   rdf:type owl:Class ;
   rdfs:comment "Marking definitions to be applied to particular portions of a particular UCO object."@en ;
   rdfs:label "GranularMarking"@en .
 
-<http://unifiedcyberontology.org/marking#MarkingDefinition>
+marking:MarkingDefinition
   rdf:type owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject>, [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/marking#definitionType> ;
+    owl:onProperty marking:definitionType ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:String
   ] ;
   rdfs:comment "Represents a specific marking that may be applied to UCO data."@en ;
   rdfs:label "MarkingDefinition"@en .
 
-<http://unifiedcyberontology.org/marking#MarkingModel>
+marking:MarkingModel
   rdf:type owl:Class ;
   rdfs:comment "A particular format of data markings"@en ;
   rdfs:label "MarkingModel"@en .

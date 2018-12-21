@@ -9,7 +9,7 @@
   rdf:type owl:Ontology ;
   rdfs:label "uco-time"@en .
 
-<http://unifiedcyberontology.org/time#TimestampPrecision>
+time:TimestampPrecision
   rdfs:comment "An enumeration of timestamp precision granularities."@en ;
   owl:equivalentClass [
     rdf:type rdfs:Datatype ;
@@ -23,6 +23,11 @@
    )
   ] .
 
-<http://unifiedcyberontology.org/time#Time> a rdfs:Datatype .
-<http://unifiedcyberontology.org/time#TimeRange> a rdfs:Datatype .
-<http://unifiedcyberontology.org/time#Timestamp> a rdfs:Datatype .
+time:Time
+ rdf:type rdfs:Datatype .
+
+time:TimeRange
+ rdf:type rdfs:Datatype .
+
+time:Timestamp
+ rdf:type rdfs:Datatype .

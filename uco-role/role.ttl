@@ -8,25 +8,25 @@
   rdf:type owl:Ontology ;
   rdfs:label "uco-role"@en .
 
-<http://unifiedcyberontology.org/role#BenevolentRole>
+role:BenevolentRole
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/role#Role> ;
+  rdfs:subClassOf role:Role ;
   rdfs:comment " A role with postive and/or beneficial intent."@en ;
   rdfs:label "BenevolentRole"@en .
 
-<http://unifiedcyberontology.org/role#MaliciousRole>
+role:MaliciousRole
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/role#Role> ;
+  rdfs:subClassOf role:Role ;
   rdfs:comment " A role with malicious intent."@en ;
   rdfs:label "MaliciousRole"@en .
 
-<http://unifiedcyberontology.org/role#NeutralRole>
+role:NeutralRole
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/role#Role> ;
+  rdfs:subClassOf role:Role ;
   rdfs:comment " A role with neutral intent."@en ;
   rdfs:label "NeutralRole"@en .
 
-<http://unifiedcyberontology.org/role#Role>
+role:Role
   rdf:type owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
   rdfs:comment "Usual or customary function based on contextual perspective."@en ;

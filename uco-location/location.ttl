@@ -9,180 +9,180 @@
   rdf:type owl:Ontology ;
   rdfs:label "uco-location"@en .
 
-<http://unifiedcyberontology.org/location#addressType>
+location:addressType
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#SimpleAddress> ;
+  rdfs:domain location:SimpleAddress ;
   rdfs:range xsd:String ;
   rdfs:comment "The type of the address, for instance home or work."@en ;
   rdfs:label "addressType"@en .
 
-<http://unifiedcyberontology.org/location#altitude>
+location:altitude
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#LatLongCoordinates> ;
+  rdfs:domain location:LatLongCoordinates ;
   rdfs:range xsd:Decimal ;
   rdfs:comment "The altitude coordinate of a geolocation."@en ;
   rdfs:label "altitude"@en .
 
-<http://unifiedcyberontology.org/location#country>
+location:country
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#SimpleAddress> ;
+  rdfs:domain location:SimpleAddress ;
   rdfs:range xsd:String ;
   rdfs:comment "The name of the geolocation country."@en ;
   rdfs:label "country"@en .
 
-<http://unifiedcyberontology.org/location#hdop>
+location:hdop
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#GPSCoordinates> ;
+  rdfs:domain location:GPSCoordinates ;
   rdfs:range xsd:Double ;
   rdfs:comment "The horizontal dilution of precision of the GPS location."@en ;
   rdfs:label "hdop"@en .
 
-<http://unifiedcyberontology.org/location#latitude>
+location:latitude
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#LatLongCoordinates> ;
+  rdfs:domain location:LatLongCoordinates ;
   rdfs:range xsd:Decimal ;
   rdfs:comment "The latitude coordinate of a geolocation."@en ;
   rdfs:label "latitude"@en .
 
-<http://unifiedcyberontology.org/location#locality>
+location:locality
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#SimpleAddress> ;
+  rdfs:domain location:SimpleAddress ;
   rdfs:range xsd:String ;
   rdfs:comment "The name of the geolocation locality (e.g., city)."@en ;
   rdfs:label "locality"@en .
 
-<http://unifiedcyberontology.org/location#longitude>
+location:longitude
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#LatLongCoordinates> ;
+  rdfs:domain location:LatLongCoordinates ;
   rdfs:range xsd:Decimal ;
   rdfs:comment "The longitude coordinate of a geolocation."@en ;
   rdfs:label "longitude"@en .
 
-<http://unifiedcyberontology.org/location#pdop>
+location:pdop
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#GPSCoordinates> ;
+  rdfs:domain location:GPSCoordinates ;
   rdfs:range xsd:Double ;
   rdfs:comment "The positional (3D) dilution of precision of the GPS location."@en ;
   rdfs:label "pdop"@en .
 
-<http://unifiedcyberontology.org/location#postalCode>
+location:postalCode
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#SimpleAddress> ;
+  rdfs:domain location:SimpleAddress ;
   rdfs:range xsd:String ;
   rdfs:comment "The zip-code."@en ;
   rdfs:label "postalCode"@en .
 
-<http://unifiedcyberontology.org/location#region>
+location:region
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#SimpleAddress> ;
+  rdfs:domain location:SimpleAddress ;
   rdfs:range xsd:String ;
   rdfs:comment "The name of the geolocation region (e.g., state)."@en ;
   rdfs:label "region"@en .
 
-<http://unifiedcyberontology.org/location#street>
+location:street
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#SimpleAddress> ;
+  rdfs:domain location:SimpleAddress ;
   rdfs:range xsd:String ;
   rdfs:comment "The name of the street."@en ;
   rdfs:label "street"@en .
 
-<http://unifiedcyberontology.org/location#tdop>
+location:tdop
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#GPSCoordinates> ;
+  rdfs:domain location:GPSCoordinates ;
   rdfs:range xsd:Double ;
   rdfs:comment "The temporal dilution of precision of the GPS location."@en ;
   rdfs:label "tdop"@en .
 
-<http://unifiedcyberontology.org/location#vdop>
+location:vdop
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain <http://unifiedcyberontology.org/location#GPSCoordinates> ;
+  rdfs:domain location:GPSCoordinates ;
   rdfs:range xsd:Double ;
   rdfs:comment "The vertical dilution of precision of the GPS location."@en ;
   rdfs:label "vdop"@en .
 
-<http://unifiedcyberontology.org/location#GPSCoordinates>
+location:GPSCoordinates
   rdf:type owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#hdop> ;
+    owl:onProperty location:hdop ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Double
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#pdop> ;
+    owl:onProperty location:pdop ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Double
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#tdop> ;
+    owl:onProperty location:tdop ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Double
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#vdop> ;
+    owl:onProperty location:vdop ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Double
   ] ;
   rdfs:comment "A GPS location, a possibly timed global position."@en ;
   rdfs:label "GPSCoordinates"@en .
 
-<http://unifiedcyberontology.org/location#LatLongCoordinates>
+location:LatLongCoordinates
   rdf:type owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#altitude> ;
+    owl:onProperty location:altitude ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Decimal
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#latitude> ;
+    owl:onProperty location:latitude ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Decimal
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#longitude> ;
+    owl:onProperty location:longitude ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:Decimal
   ] ;
   rdfs:comment "A geolocation expressed as latitude and longitude."@en ;
   rdfs:label "LatLongCoordinates"@en .
 
-<http://unifiedcyberontology.org/location#Location>
+location:Location
   rdf:type owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
   rdfs:comment "A geophysical place, site or position."@en ;
   rdfs:label "Location"@en .
 
-<http://unifiedcyberontology.org/location#SimpleAddress>
+location:SimpleAddress
   rdf:type owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#addressType> ;
+    owl:onProperty location:addressType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:BasicString
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#country> ;
+    owl:onProperty location:country ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:BasicString
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#locality> ;
+    owl:onProperty location:locality ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:BasicString
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#postalCode> ;
+    owl:onProperty location:postalCode ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:BasicString
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#region> ;
+    owl:onProperty location:region ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:BasicString
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty <http://unifiedcyberontology.org/location#street> ;
+    owl:onProperty location:street ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:BasicString
   ] ;
