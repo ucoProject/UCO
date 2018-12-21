@@ -1,5 +1,6 @@
 # baseURI: http://unifiedcyberontology.org/tool
 
+@prefix tool: <http://unifiedcyberontology.org/tool#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc: <http://purl.org/dc/terms/> .
