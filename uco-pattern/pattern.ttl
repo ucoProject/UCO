@@ -3,21 +3,21 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://unifiedcyberontology.org/pattern>
-  a owl:Ontology ;
+  rdf:type owl:Ontology ;
   rdfs:label "uco-pattern"@en .
 
 xsd:PatternExpression a rdfs:Datatype .
 <http://unifiedcyberontology.org/pattern#patternExpression>
-  a owl:DatatypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:domain <http://unifiedcyberontology.org/pattern#LogicalPattern> ;
   rdfs:range xsd:PatternExpression ;
   rdfs:comment ""@en ;
   rdfs:label "patternExpression"@en .
 
 <http://unifiedcyberontology.org/pattern#LogicalPattern>
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/pattern#Pattern>, [
-    a owl:Restriction ;
+    rdf:type owl:Restriction ;
     owl:onProperty <http://unifiedcyberontology.org/pattern#patternExpression> ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:PatternExpression
@@ -26,7 +26,7 @@ xsd:PatternExpression a rdfs:Datatype .
   rdfs:label "LogicalPattern"@en .
 
 <http://unifiedcyberontology.org/pattern#Pattern>
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
   rdfs:comment "A combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ;
   rdfs:label "Pattern"@en .

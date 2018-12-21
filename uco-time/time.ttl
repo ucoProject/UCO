@@ -3,13 +3,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://unifiedcyberontology.org/time>
-  a owl:Ontology ;
+  rdf:type owl:Ontology ;
   rdfs:label "uco-time"@en .
 
 <http://unifiedcyberontology.org/time#TimestampPrecision>
   rdfs:comment "An enumeration of timestamp precision granularities."@en ;
   owl:equivalentClass [
-    a rdfs:Datatype ;
+    rdf:type rdfs:Datatype ;
     owl:oneOf (
      "day"^^xsd:string
      "hour"^^xsd:string
