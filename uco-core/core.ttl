@@ -9,8 +9,8 @@
 <http://unifiedcyberontology.org/core>
   rdf:type owl:Ontology ;
   rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en-US ;
-  rdfs:label "uco-core"@en
-  owl:versionInfo "0.2.1" ;
+  rdfs:label "uco-core"@en ;
+  owl:versionInfo "0.2.1"
   .
 
 
@@ -63,7 +63,7 @@ core:ContextualCompilation
   rdf:type owl:Class ;
   rdfs:comment "A grouping of things sharing some context."@en ;
   rdfs:label "ContextualCompilation"@en ;
-  rdfs:subClassOf core:Compilation>, [
+  rdfs:subClassOf core:Compilation, [
     rdf:type owl:Restriction ;
     owl:onProperty core:object ;
     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -282,7 +282,7 @@ core:UcoObject
     rdf:type owl:ObjectProperty ;
     rdfs:comment "One or more UcoObjects."@en, "One or more UcoObject identifers referencing other objects."@en ;
     rdfs:label "object"@en ;
-    rdfs:domain core:Annotation>, core:EnclosingCompilation>, core:ContextualCompilation> ;
+    rdfs:domain core:Annotation, core:EnclosingCompilation, core:ContextualCompilation ;
     rdfs:range core:UcoObject
      .
 
@@ -298,7 +298,7 @@ core:UcoObject
     rdf:type owl:ObjectProperty ;
     rdfs:comment "Usual or customary function based on contextual perspective."@en ;
     rdfs:label "role"@en ;
-    rdfs:domain core:RelatedIdentity> ;
+    rdfs:domain core:RelatedIdentity ;
     rdfs:range core:ControlledVocabulary
      .
 

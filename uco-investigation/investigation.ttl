@@ -2,6 +2,7 @@
 
 @prefix investigation: <<http://unifiedcyberontology.org/investigation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -12,15 +13,18 @@
 
 investigation:Attorney
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/role#BenevolentRole> ;
   rdfs:comment ""@en ;
-  rdfs:label "Attorney"@en .
+  rdfs:label "Attorney"@en  ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/role#BenevolentRole> ;
+  .
 
 investigation:Authorization
   rdf:type owl:Class ;
+  rdfs:comment "Identifies some form of authorization for investigatory action."@en ;
+  rdfs:label "Authorization"@en  ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
     rdf:type owl:Restriction ;
-    owl:onProperty investigation:authorizationIdentifier> ;
+    owl:onProperty investigation:authorizationIdentifier ;
     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:BasicString
   ], [
@@ -28,29 +32,33 @@ investigation:Authorization
     owl:onProperty investigation:authorizationType ;
     owl:cardinality "1"^^xsd:nonNegativeInteger
   ] ;
-  rdfs:comment "Identifies some form of authorization for investigatory action."@en ;
-  rdfs:label "Authorization"@en .
+  .
 
 investigation:Examiner
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/role#BenevolentRole> ;
   rdfs:comment ""@en ;
-  rdfs:label "Examiner"@en .
+  rdfs:label "Examiner"@en  ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/role#BenevolentRole> ;
+  .
 
 investigation:ExaminerActionLifecylce
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/action#ActionLifecycle> ;
   rdfs:comment ""@en ;
-  rdfs:label "ExaminerActionLifecylce"@en .
+  rdfs:label "ExaminerActionLifecylce"@en  ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/action#ActionLifecycle> ;
+  .
 
 investigation:InvestigativeAction
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/action#Action> ;
   rdfs:comment "An examination action taken as part of a cyber investigation."@en ;
-  rdfs:label "InvestigativeAction"@en .
+  rdfs:label "InvestigativeAction"@en  ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/action#Action> ;
+  .
 
 investigation:Investigation
   rdf:type owl:Class ;
+  rdfs:comment "An exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
+  rdfs:label "Investigation"@en  ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#ContextualCompilation>, [
     rdf:type owl:Restriction ;
     owl:onProperty investigation:investigationForm ;
@@ -68,43 +76,47 @@ investigation:Investigation
     owl:onProperty investigation:startTime ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger
   ] ;
-  rdfs:comment "An exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
-  rdfs:label "Investigation"@en .
+  .
 
 investigation:Investigator
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/role#BenevolentRole> ;
   rdfs:comment ""@en ;
-  rdfs:label "Investigator"@en .
+  rdfs:label "Investigator"@en  ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/role#BenevolentRole> ;
+  .
 
 investigation:ProvenanceRecord
   rdf:type owl:Class ;
+  rdfs:comment "A provenantial connection between a forensic action and a set of observations (items and/or actions) or interpretations that result from it."@en ;
+  rdfs:label "ProvenanceRecord"@en  ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#ContextualCompilation>, [
     rdf:type owl:Restriction ;
     owl:onProperty investigation:exhibitNumber ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onDataRange xsd:BasicString
   ] ;
-  rdfs:comment "A provenantial connection between a forensic action and a set of observations (items and/or actions) or interpretations that result from it."@en ;
-  rdfs:label "ProvenanceRecord"@en .
+  .
 
 investigation:Subject
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/role#MaliciousRole> ;
   rdfs:comment ""@en ;
-  rdfs:label "Subject"@en .
+  rdfs:label "Subject"@en  ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/role#MaliciousRole> ;
+  .
 
 investigation:SubjectActionLifecycle
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/action#ActionLifecycle> ;
   rdfs:comment ""@en ;
-  rdfs:label "SubjectActionLifecycle"@en .
+  rdfs:label "SubjectActionLifecycle"@en  ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/action#ActionLifecycle> ;
+  .
 
 investigation:VictimActionLifecycle
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/action#ActionLifecycle> ;
   rdfs:comment ""@en ;
-  rdfs:label "VictimActionLifecycle"@en .
+  rdfs:label "VictimActionLifecycle"@en  ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/action#ActionLifecycle> ;
+  .
 
 
   investigation:InvestigationFormEnum owl:equivalentClass [
@@ -115,58 +127,67 @@ investigation:VictimActionLifecycle
        "suspicious-activity"^^xsd:string
      )
     ] .
+
   investigation:authorizationIdentifier
     rdf:type owl:DatatypeProperty ;
+    rdfs:comment "The identifier for a particular authorization (e.g. warrant number)"@en ;
+    rdfs:label "authorizationIdentifier"@en  ;
     rdfs:domain investigation:Authorization ;
     rdfs:range xsd:String ;
-    rdfs:comment "The identifier for a particular authorization (e.g. warrant number)"@en ;
-    rdfs:label "authorizationIdentifier"@en .
+    .
 
   investigation:authorizationType
     rdf:type owl:DatatypeProperty ;
+    rdfs:comment "A label categorizing a type of authorization (e.g. warrant)"@en ;
+    rdfs:label "authorizationType"@en  ;
     rdfs:domain investigation:Authorization ;
     rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-    rdfs:comment "A label categorizing a type of authorization (e.g. warrant)"@en ;
-    rdfs:label "authorizationType"@en .
+    .
 
   investigation:endTime
     rdf:type owl:DatatypeProperty ;
+    rdfs:comment ""@en ;
+    rdfs:label "endTime"@en  ;
     rdfs:domain investigation:Investigation ;
     rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
-    rdfs:comment ""@en ;
-    rdfs:label "endTime"@en .
+    .
 
   investigation:exhibitNumber
     rdf:type owl:DatatypeProperty ;
+    rdfs:comment ""@en ;
+    rdfs:label "exhibitNumber"@en  ;
     rdfs:domain investigation:ProvenanceRecord ;
     rdfs:range xsd:String ;
-    rdfs:comment ""@en ;
-    rdfs:label "exhibitNumber"@en .
+    .
 
   investigation:focus
     rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Specifies the topical focus of an investigation."@en ;
+    rdfs:label "focus"@en  ;
     rdfs:domain investigation:Investigation ;
     rdfs:range xsd:String ;
-    rdfs:comment "Specifies the topical focus of an investigation."@en ;
-    rdfs:label "focus"@en .
+    .
 
   investigation:investigationForm
     rdf:type owl:DatatypeProperty ;
+    rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
+    rdfs:label "investigationForm"@en  ;
     rdfs:domain investigation:Investigation ;
     rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-    rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
-    rdfs:label "investigationForm"@en .
+    .
 
   investigation:investigationStatus
     rdf:type owl:DatatypeProperty ;
+    rdfs:comment "A label characterizing the status of an investigation (open, closed, etc.)."@en ;
+    rdfs:label "investigationStatus"@en  ;
     rdfs:domain investigation:Investigation ;
     rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
-    rdfs:comment "A label characterizing the status of an investigation (open, closed, etc.)."@en ;
-    rdfs:label "investigationStatus"@en .
+    .
 
   investigation:startTime
     rdf:type owl:DatatypeProperty ;
+    rdfs:comment ""@en ;
+    rdfs:label "startTime"@en  ;
     rdfs:domain investigation:Investigation ;
     rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
-    rdfs:comment ""@en ;
-    rdfs:label "startTime"@en .
+    .

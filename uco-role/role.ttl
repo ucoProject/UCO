@@ -2,6 +2,7 @@
 
 @prefix role: <http://unifiedcyberontology.org/role#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://unifiedcyberontology.org/role>
@@ -10,24 +11,28 @@
 
 role:BenevolentRole
   rdf:type owl:Class ;
-  rdfs:subClassOf role:Role ;
   rdfs:comment " A role with postive and/or beneficial intent."@en ;
-  rdfs:label "BenevolentRole"@en .
+  rdfs:label "BenevolentRole"@en ;
+  rdfs:subClassOf role:Role ;
+  .
 
 role:MaliciousRole
   rdf:type owl:Class ;
-  rdfs:subClassOf role:Role ;
   rdfs:comment " A role with malicious intent."@en ;
-  rdfs:label "MaliciousRole"@en .
+  rdfs:label "MaliciousRole"@en ;
+  rdfs:subClassOf role:Role ;
+  .
 
 role:NeutralRole
   rdf:type owl:Class ;
-  rdfs:subClassOf role:Role ;
   rdfs:comment " A role with neutral intent."@en ;
-  rdfs:label "NeutralRole"@en .
+  rdfs:label "NeutralRole"@en ;
+  rdfs:subClassOf role:Role ;
+  .
 
 role:Role
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
   rdfs:comment "Usual or customary function based on contextual perspective."@en ;
-  rdfs:label "Role"@en .
+  rdfs:label "Role"@en ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+  .

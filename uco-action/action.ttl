@@ -2,6 +2,7 @@
 
 @prefix action: <http://unifiedcyberontology.org/action#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -97,7 +98,7 @@
       rdf:type owl:Restriction ;
       owl:onProperty action:trend ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange action:TrendEnum>
+      owl:onDataRange action:TrendEnum
     ], [
       rdf:type owl:Restriction ;
       owl:onProperty action:units ;
@@ -114,7 +115,7 @@
       rdf:type owl:Restriction ;
       owl:onProperty action:phase ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass action:ArrayOfAction>
+      owl:onClass action:ArrayOfAction
     ], [
       rdf:type owl:Restriction ;
       owl:onProperty action:actionCount ;
@@ -273,9 +274,9 @@ action:phase
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The ordered set of actions or sub action-lifecycles that represent the action lifecycle."@en ;
   rdfs:label "phase"@en ;
-  rdfs:subPropertyOf action:subaction> ;
+  rdfs:subPropertyOf action:subaction ;
   rdfs:domain action:ActionLifecycle ;
-  rdfs:range action:ArrayOfAction>
+  rdfs:range action:ArrayOfAction
    .
 
 action:result
@@ -291,7 +292,7 @@ action:subaction
   rdfs:comment "References to other actions that make up part of a larger more complex action."@en ;
   rdfs:label "subaction"@en ;
   rdfs:domain action:Action ;
-  rdfs:range action:Action>
+  rdfs:range action:Action
    .
 
 action:actionCount
@@ -386,7 +387,7 @@ action:trend
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "A characterization of the frequency trend for the occurence of an action."@en ;
   rdfs:label "trend"@en ;
-  rdfs:domain action:ActionFrequency> ;
+  rdfs:domain action:ActionFrequency ;
   rdfs:range action:TrendEnum
   .
 
