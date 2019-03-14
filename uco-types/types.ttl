@@ -122,12 +122,6 @@ types:StructuredText
  rdfs:comment "Expresses string-based data in some information structuring format (e.g., HTML5)."@en .
 
 
-xsd:String
- rdf:type rdfs:Datatype .
-
-xsd:hexBinary
- rdf:type rdfs:Datatype .
-
 xsd:Identifier
   rdf:type rdfs:Datatype ;
   rdfs:comment "A globally unique identifier for a characterization of a concept. At a minimum should contain a UUID. "@en .
