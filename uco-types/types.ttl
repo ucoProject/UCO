@@ -113,18 +113,15 @@ types:Hash
   .
 
 types:Identifier
- rdfs:comment "UCO standard format for object identifiers. UUID-based."@en .
+  rdf:type rdfs:Datatype ;
+  owl:onDatatype xsd:string ;
+  rdfs:comment "UCO standard format for object identifiers. UUID-based."@en .
 
 types:NativeFormatString
 rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en .
 
 types:StructuredText
  rdfs:comment "Expresses string-based data in some information structuring format (e.g., HTML5)."@en .
-
-
-xsd:Identifier
-  rdf:type rdfs:Datatype ;
-  rdfs:comment "A globally unique identifier for a characterization of a concept. At a minimum should contain a UUID. "@en .
 
 types:entry
   rdf:type owl:ObjectProperty ;
