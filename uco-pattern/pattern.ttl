@@ -20,27 +20,29 @@ pattern:LogicalPattern
     rdf:type owl:Restriction ;
     owl:onProperty pattern:patternExpression ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:PatternExpression
+    owl:onDataRange pattern:PatternExpression
   ] ;
   .
 
 pattern:Pattern
   rdf:type owl:Class ;
   rdfs:comment "An explicit logical specification of a UCO informational pattern."@en ;
-  rdfs:label "PatternExpression"@en ;
+  rdfs:label "Pattern"@en ;
   rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
   rdfs:comment "A combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ;
   rdfs:label "Pattern"@en
   .
 
 pattern:PatternExpression
+rdfs:comment "An explicit logical pattern expression."@en ;
 rdf:type owl:Class ;
+rdfs:label "PatternExpression"@en ;
 .
 
 
 pattern:patternExpression
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment ""@en ;
+  rdfs:comment "An explicit logical pattern expression."@en ;
   rdfs:label "patternExpression"@en ;
   rdfs:domain pattern:LogicalPattern ;
   rdfs:range pattern:PatternExpression ;
