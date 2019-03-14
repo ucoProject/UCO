@@ -28,7 +28,7 @@ pattern:Pattern
   rdf:type owl:Class ;
   rdfs:comment "An explicit logical specification of a UCO informational pattern."@en ;
   rdfs:label "PatternExpression"@en ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject ;
+  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
   rdfs:comment "A combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ;
   rdfs:label "Pattern"@en
   .
