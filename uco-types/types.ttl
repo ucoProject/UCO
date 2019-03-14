@@ -129,9 +129,6 @@ xsd:Identifier
 xsd:NativeFormatString
  rdf:type rdfs:Datatype .
 
-xsd:StructuredText
- rdf:type rdfs:Datatype .
-
 types:entry
   rdf:type owl:ObjectProperty ;
   rdfs:comment "A dictionary entry."@en ;
