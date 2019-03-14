@@ -1,6 +1,6 @@
 # baseURI: http://unifiedcyberontology.org/investigation
 
-@prefix investigation: <<http://unifiedcyberontology.org/investigation#> .
+@prefix investigation: <http://unifiedcyberontology.org/investigation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -26,7 +26,7 @@ investigation:Authorization
     rdf:type owl:Restriction ;
     owl:onProperty investigation:authorizationIdentifier ;
     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:BasicString
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty investigation:authorizationType ;
@@ -93,7 +93,7 @@ investigation:ProvenanceRecord
     rdf:type owl:Restriction ;
     owl:onProperty investigation:exhibitNumber ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:BasicString
+    owl:onDataRange xsd:string
   ] ;
   .
 

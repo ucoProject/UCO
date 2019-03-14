@@ -75,32 +75,32 @@ location:SimpleAddress
     rdf:type owl:Restriction ;
     owl:onProperty location:addressType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:BasicString
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:country ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:BasicString
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:locality ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:BasicString
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:postalCode ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:BasicString
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:region ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:BasicString
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:street ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:BasicString
+    owl:onDataRange xsd:string
   ] ;
   .
 

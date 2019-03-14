@@ -44,12 +44,12 @@
       rdf:type owl:Restriction ;
       owl:onProperty action:name ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:BasicString
+      owl:onDataRange xsd:string
     ], [
       rdf:type owl:Restriction ;
       owl:onProperty action:value ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:BasicString
+      owl:onDataRange xsd:string
     ]
      .
 
@@ -61,22 +61,22 @@
       rdf:type owl:Restriction ;
       owl:onProperty action:estimatedCost ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:BasicString
+      owl:onDataRange xsd:string
     ], [
       rdf:type owl:Restriction ;
       owl:onProperty action:estimatedEfficacy ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:BasicString
+      owl:onDataRange xsd:string
     ], [
       rdf:type owl:Restriction ;
       owl:onProperty action:estimatedImpact ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:BasicString
+      owl:onDataRange xsd:string
     ], [
       rdf:type owl:Restriction ;
       owl:onProperty action:objective ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:BasicString
+      owl:onDataRange xsd:string
     ]
      .
 
@@ -93,7 +93,7 @@
       rdf:type owl:Restriction ;
       owl:onProperty action:scale ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:BasicString
+      owl:onDataRange xsd:string
     ], [
       rdf:type owl:Restriction ;
       owl:onProperty action:trend ;
@@ -103,7 +103,7 @@
       rdf:type owl:Restriction ;
       owl:onProperty action:units ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:BasicString
+      owl:onDataRange xsd:string
     ]
      .
 
