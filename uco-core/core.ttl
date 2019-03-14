@@ -89,7 +89,7 @@ core:ControlledVocabulary
     rdf:type owl:Restriction ;
     owl:onProperty core:constrainingVocabularyReference ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:URI
+    owl:onDataRange xsd:anyURI
   ]
    .
 
@@ -339,7 +339,7 @@ core:UcoObject
     rdfs:comment "A reference to a specification for an explicitly constrained set of string values. The specification may be unstructured (e.g., web page listing string values) or structured (e.g. RDF/OWL enumeration)."@en ;
     rdfs:label "constrainingVocabularyReference"@en ;
     rdfs:domain core:ControlledVocabulary ;
-    rdfs:range xsd:URI
+    rdfs:range xsd:anyURI
      .
 
   core:context
@@ -411,7 +411,7 @@ core:UcoObject
     rdfs:comment "A URL for some information defined external to the UCO context."@en ;
     rdfs:label "referenceURL"@en ;
     rdfs:domain core:ExternalReference ;
-    rdfs:range xsd:URI
+    rdfs:range xsd:anyURI
      .
 
   core:startTime

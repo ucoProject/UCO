@@ -466,7 +466,7 @@ tool:ToolConfigurationType
     rdfs:comment "References to information describing a particular tool."@en ;
     rdfs:label "references"@en ;
     rdfs:domain tool:Tool ;
-    rdfs:range xsd:URI ;
+    rdfs:range xsd:anyURI ;
     .
 
   tool:servicePack

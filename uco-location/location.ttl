@@ -19,22 +19,22 @@ location:GPSCoordinates
     rdf:type owl:Restriction ;
     owl:onProperty location:hdop ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Double
+    owl:onDataRange xsd:double
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:pdop ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Double
+    owl:onDataRange xsd:double
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:tdop ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Double
+    owl:onDataRange xsd:double
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:vdop ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Double
+    owl:onDataRange xsd:double
   ] ;
   .
 
@@ -46,17 +46,17 @@ location:LatLongCoordinates
     rdf:type owl:Restriction ;
     owl:onProperty location:altitude ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Decimal
+    owl:onDataRange xsd:decimal
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:latitude ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Decimal
+    owl:onDataRange xsd:decimal
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty location:longitude ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Decimal
+    owl:onDataRange xsd:decimal
   ] ;
   .
 
@@ -118,7 +118,7 @@ location:SimpleAddress
     rdfs:comment "The altitude coordinate of a geolocation."@en ;
     rdfs:label "altitude"@en  ;
     rdfs:domain location:LatLongCoordinates ;
-    rdfs:range xsd:Decimal ;
+    rdfs:range xsd:decimal ;
     .
 
   location:country
@@ -134,7 +134,7 @@ location:SimpleAddress
     rdfs:comment "The horizontal dilution of precision of the GPS location."@en ;
     rdfs:label "hdop"@en  ;
     rdfs:domain location:GPSCoordinates ;
-    rdfs:range xsd:Double ;
+    rdfs:range xsd:double ;
     .
 
   location:latitude
@@ -142,7 +142,7 @@ location:SimpleAddress
     rdfs:comment "The latitude coordinate of a geolocation."@en ;
     rdfs:label "latitude"@en ;
     rdfs:domain location:LatLongCoordinates ;
-    rdfs:range xsd:Decimal ;
+    rdfs:range xsd:decimal ;
     .
 
   location:locality
@@ -158,7 +158,7 @@ location:SimpleAddress
     rdfs:comment "The longitude coordinate of a geolocation."@en ;
     rdfs:label "longitude"@en ;
     rdfs:domain location:LatLongCoordinates ;
-    rdfs:range xsd:Decimal ;
+    rdfs:range xsd:decimal ;
     .
 
   location:pdop
@@ -166,7 +166,7 @@ location:SimpleAddress
     rdfs:comment "The positional (3D) dilution of precision of the GPS location."@en ;
     rdfs:label "pdop"@en ;
     rdfs:domain location:GPSCoordinates ;
-    rdfs:range xsd:Double ;
+    rdfs:range xsd:double ;
     .
 
   location:postalCode
@@ -198,7 +198,7 @@ location:SimpleAddress
     rdfs:comment "The temporal dilution of precision of the GPS location."@en ;
     rdfs:label "tdop"@en ;
     rdfs:domain location:GPSCoordinates ;
-    rdfs:range xsd:Double ;
+    rdfs:range xsd:double ;
     .
 
   location:vdop
@@ -206,5 +206,5 @@ location:SimpleAddress
     rdfs:comment "The vertical dilution of precision of the GPS location."@en ;
     rdfs:label "vdop"@en ;
     rdfs:domain location:GPSCoordinates ;
-    rdfs:range xsd:Double ;
+    rdfs:range xsd:double ;
     .

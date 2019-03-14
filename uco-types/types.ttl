@@ -108,7 +108,7 @@ types:Hash
     rdf:type owl:Restriction ;
     owl:onProperty types:hashValue ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:HexBinary
+    owl:onDataRange xsd:hexBinary
   ] ;
   .
 
@@ -125,7 +125,7 @@ types:StructuredText
 xsd:String
  rdf:type rdfs:Datatype .
 
-xsd:HexBinary
+xsd:hexBinary
  rdf:type rdfs:Datatype .
 
 xsd:Identifier
@@ -175,7 +175,7 @@ types:hashValue
   rdfs:comment "A cryptographic hash value."@en ;
   rdfs:label "hashValue"@en ;
   rdfs:domain types:Hash ;
-  rdfs:range xsd:HexBinary ;
+  rdfs:range xsd:hexBinary ;
   .
 
 types:key

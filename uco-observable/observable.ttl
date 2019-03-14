@@ -83,7 +83,7 @@ observable:AlternateDataStream
     rdf:type owl:Restriction ;
     owl:onProperty observable:size ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ] ;
   rdfs:label "AlternateDataStream"@en .
 
@@ -103,7 +103,7 @@ observable:Application
     rdf:type owl:Restriction ;
     owl:onProperty observable:numberOfLaunches ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:version ;
@@ -160,12 +160,12 @@ observable:Audio
     rdf:type owl:Restriction ;
     owl:onProperty observable:bitRate ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:duration ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:format ;
@@ -181,7 +181,7 @@ observable:AutonomousSystem
     rdf:type owl:Restriction ;
     owl:onProperty observable:number ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:asHandle ;
@@ -223,7 +223,7 @@ observable:BrowserBookmark
     rdf:type owl:Restriction ;
     owl:onProperty observable:visitCount ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ] ;
   rdfs:comment "A bookmark to a web pages or files using a web browser."@en ;
   rdfs:label "BrowserBookmark"@en .
@@ -302,7 +302,7 @@ observable:CalendarEntry
     rdf:type owl:Restriction ;
     owl:onProperty observable:duration ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:endTime ;
@@ -367,7 +367,7 @@ observable:CompressedStream
     rdf:type owl:Restriction ;
     owl:onProperty observable:compressionRatio ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Double
+    owl:onDataRange xsd:double
   ] ;
   rdfs:comment "Characteristics of compression applied to a body of data content."@en ;
   rdfs:label "CompressedStream"@en .
@@ -378,7 +378,7 @@ observable:ComputerSpecification
     rdf:type owl:Restriction ;
     owl:onProperty observable:availableRam ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:biosDate ;
@@ -459,7 +459,7 @@ observable:ComputerSpecification
     rdf:type owl:Restriction ;
     owl:onProperty observable:totalRam ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:uptime ;
@@ -535,7 +535,7 @@ observable:ContentData
     rdf:type owl:Restriction ;
     owl:onProperty observable:entropy ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Double
+    owl:onDataRange xsd:double
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isEncrypted ;
@@ -560,7 +560,7 @@ observable:ContentData
     rdf:type owl:Restriction ;
     owl:onProperty observable:sizeInBytes ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ] ;
   rdfs:comment "Characteristics of a block of digital data."@en ;
   rdfs:label "ContentData"@en .
@@ -604,7 +604,7 @@ observable:DataRange
     rdf:type owl:Restriction ;
     owl:onProperty observable:rangeOffset ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:rangeOffsetType ;
@@ -614,7 +614,7 @@ observable:DataRange
     rdf:type owl:Restriction ;
     owl:onProperty observable:rangeSize ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ] ;
   rdfs:comment "Bounding characteristics of a range within a block of digital data."@en ;
   rdfs:label "DataRange"@en .
@@ -709,7 +709,7 @@ observable:Disk
     rdf:type owl:Restriction ;
     owl:onProperty observable:diskSize ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:diskType ;
@@ -718,7 +718,7 @@ observable:Disk
     rdf:type owl:Restriction ;
     owl:onProperty observable:freeSpace ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ] ;
   rdfs:label "Disk"@en .
 
@@ -741,32 +741,32 @@ observable:DiskPartition
     rdf:type owl:Restriction ;
     owl:onProperty observable:partitionID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:partitionLength ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:partitionOffset ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:spaceLeft ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:spaceUsed ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:totalSpace ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ] ;
   rdfs:comment "Characteristics of a region on a hard disk or other secondary storage."@en ;
   rdfs:label "DiskPartition"@en .
@@ -1022,17 +1022,17 @@ observable:ExtInode
     rdf:type owl:Restriction ;
     owl:onProperty observable:extFileType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:extFlags ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:extHardLinkCount ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:extInodeChangeTime ;
@@ -1041,22 +1041,22 @@ observable:ExtInode
     rdf:type owl:Restriction ;
     owl:onProperty observable:extInodeID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:extPermissions ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:extSGID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:extSUID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ] ;
   rdfs:comment "Characterizes the details of a single EXT file."@en ;
   rdfs:label "ExtInode"@en .
@@ -1088,7 +1088,7 @@ observable:ExtractedString
     rdf:type owl:Restriction ;
     owl:onProperty observable:length ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:stringValue ;
@@ -1135,7 +1135,7 @@ observable:File
     rdf:type owl:Restriction ;
     owl:onProperty observable:sizeInBytes ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:allocationStatus ;
@@ -1162,7 +1162,7 @@ observable:FileSystem
     rdf:type owl:Restriction ;
     owl:onProperty observable:clusterSize ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:fileSystemType ;
@@ -1272,7 +1272,7 @@ observable:HTTPConnection
     rdf:type owl:Restriction ;
     owl:onProperty observable:httpMesageBodyLength ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:httpRequestHeader ;
@@ -1494,7 +1494,7 @@ observable:MftRecord
     rdf:type owl:Restriction ;
     owl:onProperty observable:mftFileID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:mftFileNameAccessedTime ;
@@ -1507,7 +1507,7 @@ observable:MftRecord
     rdf:type owl:Restriction ;
     owl:onProperty observable:mftFileNameLength ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:mftFileNameModifiedTime ;
@@ -1520,12 +1520,12 @@ observable:MftRecord
     rdf:type owl:Restriction ;
     owl:onProperty observable:mftFlags ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:mftParentID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:mftRecordChangeTime ;
@@ -1534,7 +1534,7 @@ observable:MftRecord
     rdf:type owl:Restriction ;
     owl:onProperty observable:ntfsHardLinkCount ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:ntfsOwnerID ;
@@ -1598,7 +1598,7 @@ observable:NTFSFileSystem
     rdf:type owl:Restriction ;
     owl:onProperty observable:entryID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:sid ;
@@ -1613,7 +1613,7 @@ observable:NetworkConnection
     rdf:type owl:Restriction ;
     owl:onProperty observable:destinationPort ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:endTime ;
@@ -1631,7 +1631,7 @@ observable:NetworkConnection
     rdf:type owl:Restriction ;
     owl:onProperty observable:sourcePort ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:startTime ;
@@ -1656,12 +1656,12 @@ observable:NetworkFlow
     rdf:type owl:Restriction ;
     owl:onProperty observable:dstBytes ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:dstPackets ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:ipfix ;
@@ -1670,12 +1670,12 @@ observable:NetworkFlow
     rdf:type owl:Restriction ;
     owl:onProperty observable:srcBytes ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:srcPackets ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ] ;
   rdfs:comment "Characteristics of a sequence of data transiting a one or more digital network connections."@en ;
   rdfs:label "NetworkFlow"@en .
@@ -1829,7 +1829,7 @@ observable:PhoneCall
     rdf:type owl:Restriction ;
     owl:onProperty observable:duration ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:endTime ;
@@ -1876,7 +1876,7 @@ observable:Process
     rdf:type owl:Restriction ;
     owl:onProperty observable:exitStatus ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:exitTime ;
@@ -1890,7 +1890,7 @@ observable:Process
     rdf:type owl:Restriction ;
     owl:onProperty observable:pid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:status ;
@@ -1938,7 +1938,7 @@ observable:RasterPicture
     rdf:type owl:Restriction ;
     owl:onProperty observable:bitsPerPixel ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:imageCompressionMethod ;
@@ -1948,12 +1948,12 @@ observable:RasterPicture
     rdf:type owl:Restriction ;
     owl:onProperty observable:pictureHeight ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:pictureWidth ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:picturetype ;
@@ -2159,7 +2159,7 @@ observable:UNIXAccount
     rdf:type owl:Restriction ;
     owl:onProperty observable:gid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:shell ;
@@ -2232,7 +2232,7 @@ observable:URL
     rdf:type owl:Restriction ;
     owl:onProperty observable:port ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:query ;
@@ -2318,7 +2318,7 @@ observable:Volume
     rdf:type owl:Restriction ;
     owl:onProperty observable:sectorSize ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:volumeID ;
@@ -2564,12 +2564,12 @@ observable:WindowsPEBinaryFile
     rdf:type owl:Restriction ;
     owl:onProperty observable:numberOfSections ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:numberOfSymbols ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:peType ;
@@ -2578,7 +2578,7 @@ observable:WindowsPEBinaryFile
     rdf:type owl:Restriction ;
     owl:onProperty observable:sizeOfOptionalHeader ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:timeDateStamp ;
@@ -2611,12 +2611,12 @@ observable:WindowsPESection
     rdf:type owl:Restriction ;
     owl:onProperty observable:entropy ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Float
+    owl:onDataRange xsd:float
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:size ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ] ;
   rdfs:label "WindowsPESection"@en .
 
@@ -2649,7 +2649,7 @@ observable:WindowsPrefetch
     rdf:type owl:Restriction ;
     owl:onProperty observable:timesExecuted ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ] ;
   rdfs:comment "Characterizes entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup."@en ;
   rdfs:label "WindowsPrefetch"@en .
@@ -2719,7 +2719,7 @@ observable:WindowsRegistryKey
     rdf:type owl:Restriction ;
     owl:onProperty observable:numberOfSubkeys ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ] ;
   rdfs:comment "Characteristics of a particular key within a Windows registry."@en ;
   rdfs:label "WindowsRegistryKey"@en .
@@ -2827,7 +2827,7 @@ observable:WindowsTask
     rdf:type owl:Restriction ;
     owl:onProperty observable:exitCode ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:imageName ;
@@ -2837,7 +2837,7 @@ observable:WindowsTask
     rdf:type owl:Restriction ;
     owl:onProperty observable:maxRunTime ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Long
+    owl:onDataRange xsd:long
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:mostRecentRunTime ;
@@ -2885,7 +2885,7 @@ observable:WindowsThread
     rdf:type owl:Restriction ;
     owl:onProperty observable:priority ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:runningStatus ;
@@ -2990,7 +2990,7 @@ observable:X509Certificate
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectPublicKeyExponent ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Integer
+    owl:onDataRange xsd:integer
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectPublicKeyModulus ;
@@ -5257,7 +5257,7 @@ observable:X509V3Extensions
           observable:availableRam
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the amount of physical memory available on the system, in bytes."@en ;
             rdfs:label "availableRam"@en .
 
@@ -5319,7 +5319,7 @@ observable:X509V3Extensions
           observable:bitRate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Audio ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "The bitrate of the audio in bits per second."@en ;
             rdfs:label "bitRate"@en .
 
@@ -5333,7 +5333,7 @@ observable:X509V3Extensions
           observable:bitsPerPixel
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:RasterPicture ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "bitsPerPixel"@en .
 
           observable:blockType
@@ -5411,7 +5411,7 @@ observable:X509V3Extensions
           observable:clusterSize
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:FileSystem ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "The size of cluster allocation units in a file system."@en ;
             rdfs:label "clusterSize"@en .
 
@@ -5451,7 +5451,7 @@ observable:X509V3Extensions
           observable:compressionRatio
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:CompressedStream ;
-            rdfs:range xsd:Double ;
+            rdfs:range xsd:double ;
             rdfs:comment "The compression ratio of the compressed data."@en ;
             rdfs:label "compressionRatio"@en .
 
@@ -5642,7 +5642,7 @@ observable:X509V3Extensions
           observable:destinationPort
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkConnection ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the destination port used in the connection, as an integer in the range of 0 - 65535."@en ;
             rdfs:label "destinationPort"@en .
 
@@ -5676,7 +5676,7 @@ observable:X509V3Extensions
           observable:diskSize
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Disk ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "The size of the disk, in bytes."@en ;
             rdfs:label "diskSize"@en .
 
@@ -5738,19 +5738,19 @@ observable:X509V3Extensions
           observable:dstBytes
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkFlow ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "dstBytes"@en .
 
           observable:dstPackets
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkFlow ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "dstPackets"@en .
 
           observable:duration
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PhoneCall ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "The duration of the phone call in seconds."@en ;
             rdfs:label "duration"@en .
 
@@ -5821,14 +5821,14 @@ observable:X509V3Extensions
           observable:entropy
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ContentData ;
-            rdfs:range xsd:Double ;
+            rdfs:range xsd:double ;
             rdfs:comment "Shannon entropy (a measure of randomness) of the data."@en ;
             rdfs:label "entropy"@en .
 
           observable:entryID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NTFSFileSystem ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "A unique identifier for the file within the filesystem."@en ;
             rdfs:label "entryID"@en .
 
@@ -5884,14 +5884,14 @@ observable:X509V3Extensions
           observable:exitCode
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the last exit code of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381245(v=vs.85).aspx."@en ;
             rdfs:label "exitCode"@en .
 
           observable:exitStatus
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Process ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "A small number passed from the process to the parent process when it has finished executing. In general, 0 indicates successful termination, any other number indicates a failure."@en ;
             rdfs:label "exitStatus"@en .
 
@@ -5926,21 +5926,21 @@ observable:X509V3Extensions
           observable:extFileType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the EXT file type (FIFO, Directory, Regular file, Symbolic link, etc) for the Inode."@en ;
             rdfs:label "extFileType"@en .
 
           observable:extFlags
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies user flags to further protect (limit its use and modification) the file represented by an Inode."@en ;
             rdfs:label "extFlags"@en .
 
           observable:extHardLinkCount
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies a count of how many hard links point to an Inode."@en ;
             rdfs:label "extHardLinkCount"@en .
 
@@ -5954,28 +5954,28 @@ observable:X509V3Extensions
           observable:extInodeID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies a single Inode identifier."@en ;
             rdfs:label "extInodeID"@en .
 
           observable:extPermissions
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the read/write/execute permissions for the file represented by an EXT Inode."@en ;
             rdfs:label "extPermissions"@en .
 
           observable:extSGID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the group ID for the file represented by an Inode."@en ;
             rdfs:label "extSGID"@en .
 
           observable:extSUID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the user ID that \"owns\" the file represented by an Inode."@en ;
             rdfs:label "extSUID"@en .
 
@@ -6065,13 +6065,13 @@ observable:X509V3Extensions
           observable:fragmentIndex
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Fragment ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "fragmentIndex"@en .
 
           observable:freeSpace
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Disk ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "The amount of free space on the disk, in bytes."@en ;
             rdfs:label "freeSpace"@en .
 
@@ -6085,7 +6085,7 @@ observable:X509V3Extensions
           observable:gid
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UNIXAccount ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "gid"@en .
 
           observable:gpu
@@ -6150,7 +6150,7 @@ observable:X509V3Extensions
           observable:httpMesageBodyLength
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:HTTPConnection ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the length of an HTTP message body in bytes."@en ;
             rdfs:label "httpMesageBodyLength"@en .
 
@@ -6416,7 +6416,7 @@ observable:X509V3Extensions
           observable:length
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtractedString ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the length, in characters, of the extracted string."@en ;
             rdfs:label "length"@en .
 
@@ -6519,7 +6519,7 @@ observable:X509V3Extensions
           observable:maxRunTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the maximum run time of the scheduled task before terminating, in milliseconds. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.85).aspx."@en ;
             rdfs:label "maxRunTime"@en .
 
@@ -6554,7 +6554,7 @@ observable:X509V3Extensions
           observable:mftFileID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the record number for the file within an NTFS Master File Table."@en ;
             rdfs:label "mftFileID"@en .
 
@@ -6575,7 +6575,7 @@ observable:X509V3Extensions
           observable:mftFileNameLength
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment " Specifies the length of an NTFS file name, in unicode characters."@en ;
             rdfs:label "mftFileNameLength"@en .
 
@@ -6596,14 +6596,14 @@ observable:X509V3Extensions
           observable:mftFlags
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies basic permissions for the file (Read-Only, Hidden, Archive, Compressed, etc.)."@en ;
             rdfs:label "mftFlags"@en .
 
           observable:mftParentID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the record number within an NTFS Master File Table for parent directory of the file."@en ;
             rdfs:label "mftParentID"@en .
 
@@ -6734,7 +6734,7 @@ observable:X509V3Extensions
           observable:ntfsHardLinkCount
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the number of directory entries that reference an NTFS file record."@en ;
             rdfs:label "ntfsHardLinkCount"@en .
 
@@ -6755,13 +6755,13 @@ observable:X509V3Extensions
           observable:number
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:AutonomousSystem ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "number"@en .
 
           observable:numberOfLaunches
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Application ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "numberOfLaunches"@en .
 
           observable:numberOfRVAAndSizes
@@ -6774,7 +6774,7 @@ observable:X509V3Extensions
           observable:numberOfSections
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPEBinaryFile ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment """Specifies the number of sections in the PE binary, as a non-negative integer.
           """@en ;
             rdfs:label "numberOfSections"@en .
@@ -6782,13 +6782,13 @@ observable:X509V3Extensions
           observable:numberOfSubkeys
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsRegistryKey ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "numberOfSubkeys"@en .
 
           observable:numberOfSymbols
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPEBinaryFile ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the number of entries in the symbol table of the PE binary, as a non-negative integer."@en ;
             rdfs:label "numberOfSymbols"@en .
 
@@ -6808,7 +6808,7 @@ observable:X509V3Extensions
           observable:openFileDescriptor
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UNIXProcess ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies a listing of the current file descriptors used by the Unix process."@en ;
             rdfs:label "openFileDescriptor"@en .
 
@@ -6841,21 +6841,21 @@ observable:X509V3Extensions
           observable:partitionID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DiskPartition ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the numerical identifier of the partition."@en ;
             rdfs:label "partitionID"@en .
 
           observable:partitionLength
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DiskPartition ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the length of the partition, in bytes."@en ;
             rdfs:label "partitionLength"@en .
 
           observable:partitionOffset
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DiskPartition ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the starting offset of the partition, in bytes."@en ;
             rdfs:label "partitionOffset"@en .
 
@@ -6923,13 +6923,13 @@ observable:X509V3Extensions
           observable:pictureHeight
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:RasterPicture ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "pictureHeight"@en .
 
           observable:pictureWidth
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:RasterPicture ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "The width of the picture in pixels."@en ;
             rdfs:label "pictureWidth"@en .
 
@@ -6943,7 +6943,7 @@ observable:X509V3Extensions
           observable:pid
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Process ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "The Process ID, or PID, of the process."@en ;
             rdfs:label "pid"@en .
 
@@ -6969,7 +6969,7 @@ observable:X509V3Extensions
           observable:port
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:URL ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Port on which communication takes place."@en ;
             rdfs:label "port"@en .
 
@@ -7030,7 +7030,7 @@ observable:X509V3Extensions
           observable:rangeOffset
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DataRange ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "The offset at which the start of data can be found, relative to the rangeOffsetType defined."@en ;
             rdfs:label "rangeOffset"@en .
 
@@ -7044,7 +7044,7 @@ observable:X509V3Extensions
           observable:rangeSize
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DataRange ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "The size of the data in bytes."@en ;
             rdfs:label "rangeSize"@en .
 
@@ -7071,7 +7071,7 @@ observable:X509V3Extensions
           observable:regionSize
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Memory ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "The regionSize property specifies the size of the particular memory region, in bytes."@en ;
             rdfs:label "regionSize"@en .
 
@@ -7209,7 +7209,7 @@ observable:X509V3Extensions
           observable:sectorSize
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Volume ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "The sector size of the volume in bytes."@en ;
             rdfs:label "sectorSize"@en .
 
@@ -7317,14 +7317,14 @@ observable:X509V3Extensions
           observable:size
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPESection ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the size of the section, in bytes."@en ;
             rdfs:label "size"@en .
 
           observable:sizeInBytes
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ContentData ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "The size of the data in bytes."@en ;
             rdfs:label "sizeInBytes"@en .
 
@@ -7373,7 +7373,7 @@ observable:X509V3Extensions
           observable:sizeOfOptionalHeader
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPEBinaryFile ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "Specifies the size of the optional header of the PE binary. "@en ;
             rdfs:label "sizeOfOptionalHeader"@en .
 
@@ -7408,7 +7408,7 @@ observable:X509V3Extensions
           observable:sourcePort
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkConnection ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment """Specifies the source port used in the connection, as an integer in the range of 0 - 65535.
           """@en ;
             rdfs:label "sourcePort"@en .
@@ -7416,14 +7416,14 @@ observable:X509V3Extensions
           observable:spaceLeft
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DiskPartition ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the amount of space left on the partition, in bytes."@en ;
             rdfs:label "spaceLeft"@en .
 
           observable:spaceUsed
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DiskPartition ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the amount of space used on the partition, in bytes."@en ;
             rdfs:label "spaceUsed"@en .
 
@@ -7437,13 +7437,13 @@ observable:X509V3Extensions
           observable:srcBytes
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkFlow ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "srcBytes"@en .
 
           observable:srcPackets
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkFlow ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "srcPackets"@en .
 
           observable:ssid
@@ -7537,7 +7537,7 @@ observable:X509V3Extensions
           observable:subjectPublicKeyExponent
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "subjectPublicKeyExponent"@en .
 
           observable:subjectPublicKeyModulus
@@ -7601,7 +7601,7 @@ observable:X509V3Extensions
           observable:timesExecuted
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPrefetch ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "The number of times the prefetch application has executed."@en ;
             rdfs:label "timesExecuted"@en .
 
@@ -7622,20 +7622,20 @@ observable:X509V3Extensions
           observable:totalFragments
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Fragment ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:label "totalFragments"@en .
 
           observable:totalRam
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the total amount of physical memory present on the system, in bytes."@en ;
             rdfs:label "totalRam"@en .
 
           observable:totalSpace
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DiskPartition ;
-            rdfs:range xsd:Long ;
+            rdfs:range xsd:long ;
             rdfs:comment "Specifies the total amount of space available on the partition, in bytes."@en ;
             rdfs:label "totalSpace"@en .
 
@@ -7755,7 +7755,7 @@ observable:X509V3Extensions
           observable:visitCount
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:BrowserBookmark ;
-            rdfs:range xsd:Integer ;
+            rdfs:range xsd:integer ;
             rdfs:comment "The minimal number of times this web page or file has been visited by this web browser."@en ;
             rdfs:label "visitCount"@en .
 
