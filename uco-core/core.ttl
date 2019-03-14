@@ -79,12 +79,12 @@ core:ControlledVocabulary
     rdf:type owl:Restriction ;
     owl:onProperty core:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty core:constrainingVocabularyName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty core:constrainingVocabularyReference ;
@@ -204,7 +204,7 @@ core:Relationship
     rdf:type owl:Restriction ;
     owl:onProperty core:isDirectional ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ]
    .
 
@@ -331,7 +331,7 @@ core:UcoObject
     rdfs:comment "The name of an explicitly constrained set of string values."@en ;
     rdfs:label "constrainingVocabularyName"@en ;
     rdfs:domain core:ControlledVocabulary ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
      .
 
   core:constrainingVocabularyReference
@@ -347,7 +347,7 @@ core:UcoObject
     rdfs:comment "A description of particular contextual affinity."@en ;
     rdfs:label "context"@en  ;
     rdfs:domain core:Grouping ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
     .
 
   core:createdTime
@@ -363,7 +363,7 @@ core:UcoObject
     rdfs:comment "A description of the context relevant to the definition of a particular external reference identifier."@en ;
     rdfs:label "definingContext"@en ;
     rdfs:domain core:ExternalReference ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
      .
 
   core:description
@@ -371,7 +371,7 @@ core:UcoObject
     rdfs:comment "A description of a particular concept characterization."@en ;
     rdfs:label "description"@en  ;
     rdfs:domain core:UcoObject ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
     .
 
   core:endTime
@@ -387,7 +387,7 @@ core:UcoObject
     rdfs:comment "An identifier for some information defined external to the UCO context."@en ;
     rdfs:label "externalIdentifier"@en ;
     rdfs:domain core:ExternalReference ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
      .
 
   core:id
@@ -403,7 +403,7 @@ core:UcoObject
     rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
     rdfs:label "isDirectional"@en ;
     rdfs:domain core:Relationship ;
-    rdfs:range xsd:Boolean
+    rdfs:range xsd:boolean
      .
 
   core:referenceURL
@@ -426,7 +426,7 @@ core:UcoObject
     rdfs:comment "A textual statement of an assertion."@en ;
     rdfs:label "statement"@en ;
     rdfs:domain core:Assertion ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
      .
 
   core:tag
@@ -434,7 +434,7 @@ core:UcoObject
     rdfs:comment "A generic tag/label."@en ;
     rdfs:label "tag"@en ;
     rdfs:domain core:Annotation ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
      .
 
   core:type
@@ -442,7 +442,7 @@ core:UcoObject
     rdfs:comment "The explicitly-defined type of characterization of a concept."@en ;
     rdfs:label "type"@en ;
     rdfs:domain core:UcoObject ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
      .
 
   core:value
@@ -450,5 +450,5 @@ core:UcoObject
     rdfs:comment "A string value."@en ;
     rdfs:label "value"@en ;
     rdfs:domain core:ControlledVocabulary ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
      .
