@@ -126,9 +126,6 @@ xsd:Identifier
   rdf:type rdfs:Datatype ;
   rdfs:comment "A globally unique identifier for a characterization of a concept. At a minimum should contain a UUID. "@en .
 
-xsd:NativeFormatString
- rdf:type rdfs:Datatype .
-
 types:entry
   rdf:type owl:ObjectProperty ;
   rdfs:comment "A dictionary entry."@en ;
