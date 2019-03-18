@@ -153,7 +153,7 @@ investigation:VictimActionLifecycle
     rdfs:comment ""@en ;
     rdfs:label "endTime"@en  ;
     rdfs:domain investigation:Investigation ;
-    rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+    rdfs:range xsd:dateTime ;
     .
 
   investigation:exhibitNumber
@@ -193,5 +193,5 @@ investigation:VictimActionLifecycle
     rdfs:comment ""@en ;
     rdfs:label "startTime"@en  ;
     rdfs:domain investigation:Investigation ;
-    rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+    rdfs:range xsd:dateTime ;
     .

@@ -355,7 +355,7 @@ core:UcoObject
     rdfs:comment "The time at which a characterization of a concept is created."@en ;
     rdfs:label "createdTime"@en ;
     rdfs:domain core:UcoObject ;
-    rdfs:range <http://unifiedcyberontology.org/time#Timestamp>
+    rdfs:range xsd:dateTime
      .
 
   core:definingContext
@@ -379,7 +379,7 @@ core:UcoObject
     rdfs:comment "The ending time of a time range."@en ;
     rdfs:label "endTime"@en ;
     rdfs:domain core:Relationship ;
-    rdfs:range <http://unifiedcyberontology.org/time#Timestamp>
+    rdfs:range xsd:dateTime
      .
 
   core:externalIdentifier

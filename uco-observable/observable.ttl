@@ -4392,7 +4392,7 @@ observable:X509V3Extensions
                 observable:phoneActivationTime
                 rdf:type owl:DatatypeProperty ;
                 rdfs:domain observable:MobileDevice ;
-                rdfs:range <http://unifiedcyberontology.org/time#Timestamp>  ;
+                rdfs:range xsd:dateTime  ;
                 rdfs:comment "The date and time that a device was activated."@en ;
                 rdfs:label "phoneActivationTime"@en .
 
@@ -5128,7 +5128,7 @@ observable:X509V3Extensions
           observable:accessedTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time at which the Object was accessed."@en ;
             rdfs:label "accessedTime"@en .
 
@@ -5290,7 +5290,7 @@ observable:X509V3Extensions
           observable:biosDate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date of the BIOS (e.g. the datestamp of the BIOS revision)."@en ;
             rdfs:label "biosDate"@en .
 
@@ -5304,7 +5304,7 @@ observable:X509V3Extensions
           observable:biosReleaseDate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:comment "Specifies the date the BIOS was released."@en ;
             rdfs:label "biosReleaseDate"@en .
 
@@ -5552,14 +5552,14 @@ observable:X509V3Extensions
           observable:createdTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:comment "The date and time at which the Object was created."@en ;
             rdfs:label "createdTime"@en .
 
           observable:creationDate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoIs ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:comment "Specifies the date in which the registered domain was created."@en ;
             rdfs:label "creationDate"@en .
 
@@ -5572,7 +5572,7 @@ observable:X509V3Extensions
           observable:creationTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsThread ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:label "creationTime"@en .
 
           observable:creator
@@ -5661,14 +5661,14 @@ observable:X509V3Extensions
           observable:dhcpLeaseExpires
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkInterface ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date/time that the DHCP lease obtained on the network interface expires."@en ;
             rdfs:label "dhcpLeaseExpires"@en .
 
           observable:dhcpLeaseObtained
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkInterface ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date/time that the DHCP lease was obtained on the network interface."@en ;
             rdfs:label "dhcpLeaseObtained"@en .
 
@@ -5814,7 +5814,7 @@ observable:X509V3Extensions
           observable:endTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PhoneCall ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:label "endTime"@en .
 
           observable:englishTranslation
@@ -5904,28 +5904,28 @@ observable:X509V3Extensions
           observable:exitTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Process ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:comment "The time at which the process exited."@en ;
             rdfs:label "exitTime"@en .
 
           observable:expirationDate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoIs ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:comment "Specifies the date in which the registered domain will expire."@en ;
             rdfs:label "expirationDate"@en .
 
           observable:expirationTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:BrowserCookie ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:comment "The date and time at which the validity of the object expires."@en ;
             rdfs:label "expirationTime"@en .
 
           observable:extDeletionTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:comment "Specifies the time at which the file represented by an Inode was \"deleted\"."@en ;
             rdfs:label "extDeletionTime"@en .
 
@@ -5953,7 +5953,7 @@ observable:X509V3Extensions
           observable:extInodeChangeTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtInode ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time at which the file Inode metadata was last modified."@en ;
             rdfs:label "extInodeChangeTime"@en .
 
@@ -6029,7 +6029,7 @@ observable:X509V3Extensions
           observable:firstLoginTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DigitalAccount ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time of the first login of the account."@en ;
             rdfs:label "firstLoginTime"@en .
 
@@ -6043,7 +6043,7 @@ observable:X509V3Extensions
           observable:firstRun
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPrefetch ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Timestamp of when the prefetch application was first run."@en ;
             rdfs:label "firstRun"@en .
 
@@ -6217,7 +6217,7 @@ observable:X509V3Extensions
           observable:installDate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:OperatingSystem ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date the operating system was installed."@en ;
             rdfs:label "installDate"@en .
 
@@ -6401,7 +6401,7 @@ observable:X509V3Extensions
           observable:lastLoginTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DigitalAccount ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time of the last login of the account."@en ;
             rdfs:label "lastLoginTime"@en .
 
@@ -6415,7 +6415,7 @@ observable:X509V3Extensions
           observable:lastRun
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPrefetch ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Timestamp of when the prefetch application was last run."@en ;
             rdfs:label "lastRun"@en .
 
@@ -6443,28 +6443,28 @@ observable:X509V3Extensions
           observable:localTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the local time on the system."@en ;
             rdfs:label "localTime"@en .
 
           observable:loginTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UserSession ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date/time of the login for the user session."@en ;
             rdfs:label "loginTime"@en .
 
           observable:logoutTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UserSession ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date/time of the logout for the user session."@en ;
             rdfs:label "logoutTime"@en .
 
           observable:lookupDate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoIs ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date and time that the Whois record was queried."@en ;
             rdfs:label "lookupDate"@en .
 
@@ -6553,7 +6553,7 @@ observable:X509V3Extensions
           observable:metadataChangeTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time at which the file metadata was last modified."@en ;
             rdfs:label "metadataChangeTime"@en .
 
@@ -6567,14 +6567,14 @@ observable:X509V3Extensions
           observable:mftFileNameAccessedTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The access date and time recorded in an MFT entry $File_Name attribute."@en ;
             rdfs:label "mftFileNameAccessedTime"@en .
 
           observable:mftFileNameCreatedTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The creation date and time recorded in an MFT entry $File_Name attribute."@en ;
             rdfs:label "mftFileNameCreatedTime"@en .
 
@@ -6588,14 +6588,14 @@ observable:X509V3Extensions
           observable:mftFileNameModifiedTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The modification date and time recorded in an MFT entry $File_Name attribute."@en ;
             rdfs:label "mftFileNameModifiedTime"@en .
 
           observable:mftFileNameRecordChangeTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The metadata modification date and time recorded in an MFT entry $File_Name attribute."@en ;
             rdfs:label "mftFileNameRecordChangeTime"@en .
 
@@ -6616,7 +6616,7 @@ observable:X509V3Extensions
           observable:mftRecordChangeTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time at which an NTFS file metadata was last modified."@en ;
             rdfs:label "mftRecordChangeTime"@en .
 
@@ -6678,14 +6678,14 @@ observable:X509V3Extensions
           observable:modifiedTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time at which the Object was last modified."@en ;
             rdfs:label "modifiedTime"@en .
 
           observable:mostRecentRunTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the most recent run date/time of this scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381254(v=vs.85).aspx."@en ;
             rdfs:label "mostRecentRunTime"@en .
 
@@ -6733,7 +6733,7 @@ observable:X509V3Extensions
           observable:nextRunTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the next run date/time of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381257(v=vs.85).aspx."@en ;
             rdfs:label "nextRunTime"@en .
 
@@ -6875,7 +6875,7 @@ observable:X509V3Extensions
           observable:passwordLastChanged
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:AccountAuthentication ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time that the password was last changed."@en ;
             rdfs:label "passwordLastChanged"@en .
 
@@ -6996,13 +6996,13 @@ observable:X509V3Extensions
           observable:privateKeyUsagePeriodNotAfter
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:label "privateKeyUsagePeriodNotAfter"@en .
 
           observable:privateKeyUsagePeriodNotBefore
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:label "privateKeyUsagePeriodNotBefore"@en .
 
           observable:processorArchitecture
@@ -7063,7 +7063,7 @@ observable:X509V3Extensions
           observable:receivedTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time at which the message received. "@en ;
             rdfs:label "receivedTime"@en .
 
@@ -7141,7 +7141,7 @@ observable:X509V3Extensions
           observable:remindTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:CalendarEntry ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:label "remindTime"@en .
 
           observable:requestMethod
@@ -7228,7 +7228,7 @@ observable:X509V3Extensions
           observable:sentTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "The date and time at which the message sent."@en ;
             rdfs:label "sentTime"@en .
 
@@ -7480,7 +7480,7 @@ observable:X509V3Extensions
           observable:startTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PhoneCall ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:label "startTime"@en .
 
           observable:startType
@@ -7576,7 +7576,7 @@ observable:X509V3Extensions
           observable:systemTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:label "systemTime"@en .
 
           observable:tableName
@@ -7600,7 +7600,7 @@ observable:X509V3Extensions
           observable:timeDateStamp
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPEBinaryFile ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp>;
+            rdfs:range xsd:dateTime;
             rdfs:comment "Specifies the time when the PE binary was created."@en ;
             rdfs:label "timeDateStamp"@en .
 
@@ -7648,7 +7648,7 @@ observable:X509V3Extensions
           observable:triggerBeginTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:TriggerType ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date/time that the trigger is activated."@en ;
             rdfs:label "triggerBeginTime"@en .
 
@@ -7662,7 +7662,7 @@ observable:X509V3Extensions
           observable:triggerEndTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:TriggerType ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date/time that the trigger is deactivated."@en ;
             rdfs:label "triggerEndTime"@en .
 
@@ -7697,7 +7697,7 @@ observable:X509V3Extensions
           observable:updatedDate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoIs ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the date in which the registered domain information was last updated."@en ;
             rdfs:label "updatedDate"@en .
 
@@ -7724,13 +7724,13 @@ observable:X509V3Extensions
           observable:validityNotAfter
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:label "validityNotAfter"@en .
 
           observable:validityNotBefore
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range <http://unifiedcyberontology.org/time#Timestamp> ;
+            rdfs:range xsd:dateTime ;
             rdfs:label "validityNotBefore"@en .
 
           observable:value

@@ -40,7 +40,7 @@ identity:BirthInformation
     rdf:type owl:Restriction ;
     owl:onProperty identity:birthdate ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange <http://unifiedcyberontology.org/time#Timestamp>
+    owl:onDataRange xsd:dateTime
   ]
   .
 
@@ -177,7 +177,7 @@ identity:Visa
     rdfs:comment ""@en ;
     rdfs:label "birthdate"@en ;
     rdfs:domain identity:BirthInformation ;
-    rdfs:range <http://unifiedcyberontology.org/time#Timestamp>
+    rdfs:range xsd:dateTime
     .
 
   identity:familyName

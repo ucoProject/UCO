@@ -320,7 +320,7 @@ action:endTime
   rdfs:comment "The time at which performance of the action ended."@en ;
   rdfs:label "endTime"@en ;
   rdfs:domain action:Action ;
-  rdfs:range <http://unifiedcyberontology.org/time#Timestamp>
+  rdfs:range xsd:dateTime
    .
 
 action:estimatedCost
@@ -384,7 +384,7 @@ action:startTime
   rdfs:comment "The time at which performance of the action began."@en ;
   rdfs:label "startTime"@en ;
   rdfs:domain action:Action ;
-  rdfs:range <http://unifiedcyberontology.org/time#Timestamp>
+  rdfs:range xsd:dateTime
   .
 
 action:trend
