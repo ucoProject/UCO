@@ -8,6 +8,10 @@
 
 <http://unifiedcyberontology.org/investigation>
   rdf:type owl:Ontology ;
+  owl:imports <http://unifiedcyberontology.org/core> ;
+  owl:imports <http://unifiedcyberontology.org/action> ;
+  owl:imports <http://unifiedcyberontology.org/location> ;
+  owl:imports <http://unifiedcyberontology.org/role> ;
   rdfs:label "uco-investigation"@en .
 
 

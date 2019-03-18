@@ -8,6 +8,10 @@
 
 <http://unifiedcyberontology.org/action>
   rdf:type owl:Ontology ;
+  owl:imports <http://unifiedcyberontology.org/core> ;
+  owl:imports <http://unifiedcyberontology.org/location> ;
+  owl:imports <http://unifiedcyberontology.org/pattern> ;
+  owl:imports <http://unifiedcyberontology.org/types> ;
   rdfs:comment "This ontology defines classes and properties for characterizing actions."@en-US ;
   rdfs:label "uco-action"@en .
 

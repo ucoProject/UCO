@@ -7,6 +7,8 @@
 
 <http://unifiedcyberontology.org/victim>
   rdf:type owl:Ontology ;
+  owl:imports <http://unifiedcyberontology.org/core> ;
+  owl:imports <http://unifiedcyberontology.org/role> ;
   rdfs:label "uco-victim"@en .
 
 victim:Victim

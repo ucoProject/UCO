@@ -8,6 +8,7 @@
 
 <http://unifiedcyberontology.org/marking>
   rdf:type owl:Ontology ;
+  owl:imports <http://unifiedcyberontology.org/core> ;
   rdfs:comment "Data markings represent restrictions, permissions, and other guidance for how data can be used and shared."@en ;
   rdfs:label "uco-marking"@en .
 

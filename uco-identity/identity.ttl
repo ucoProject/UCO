@@ -8,6 +8,8 @@
 
 <http://unifiedcyberontology.org/identity>
   rdf:type owl:Ontology ;
+  owl:imports <http://unifiedcyberontology.org/core> ;
+  owl:imports <http://unifiedcyberontology.org/location> ;
   rdfs:label "uco-identity"@en .
 
 

@@ -8,6 +8,7 @@
 
 <http://unifiedcyberontology.org/location>
   rdf:type owl:Ontology ;
+  owl:imports <http://unifiedcyberontology.org/core> ;
   rdfs:label "uco-location"@en .
 
 

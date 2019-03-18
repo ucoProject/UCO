@@ -8,6 +8,7 @@
 
 <http://unifiedcyberontology.org/tool>
   rdf:type owl:Ontology ;
+  owl:imports <http://unifiedcyberontology.org/core> ;
   rdfs:label "uco-tool"@en .
 
 

@@ -6,7 +6,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://unifiedcyberontology.org/observable> a owl:Ontology .
+<http://unifiedcyberontology.org/observable>
+ rdf:type owl:Ontology ;
+ owl:imports <http://unifiedcyberontology.org/core> ;
+ owl:imports <http://unifiedcyberontology.org/identity> ;
+ owl:imports <http://unifiedcyberontology.org/location> ;
+ owl:imports <http://unifiedcyberontology.org/types> ;
+ rdfs:label "uco-marking"@en .
 
 
 observable:Account
