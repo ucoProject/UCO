@@ -46,7 +46,7 @@
     rdfs:label "ActionArgument"@en;
     rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
       rdf:type owl:Restriction ;
-      owl:onProperty action:name ;
+      owl:onProperty action:argumentName ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string
     ], [
@@ -328,7 +328,7 @@ action:estimatedCost
   rdfs:comment "An estimation of the cost if the action is performed."@en ;
   rdfs:label "estimatedCost"@en ;
   rdfs:domain action:ActionEstimation ;
-  rdfs:range xsd:String
+  rdfs:range xsd:string
    .
 
 action:estimatedEfficacy
@@ -336,7 +336,7 @@ action:estimatedEfficacy
   rdfs:comment "An estimation of the effectiveness of the action at achieving its objective if the action is performed."@en ;
   rdfs:label "estimatedEfficacy"@en ;
   rdfs:domain action:ActionEstimation ;
-  rdfs:range xsd:String
+  rdfs:range xsd:string
    .
 
 action:estimatedImpact
@@ -344,7 +344,7 @@ action:estimatedImpact
   rdfs:comment "An estimation of the impact if the action is performed."@en ;
   rdfs:label "estimatedImpact"@en ;
   rdfs:domain action:ActionEstimation ;
-  rdfs:range xsd:String
+  rdfs:range xsd:string
    .
 
 action:argumentName
@@ -352,7 +352,7 @@ action:argumentName
   rdfs:comment "The identifying label of an argument."@en ;
   rdfs:label "name"@en ;
   rdfs:domain action:ActionArgument ;
-  rdfs:range xsd:String
+  rdfs:range xsd:string
    .
 
 action:objective
@@ -360,7 +360,7 @@ action:objective
   rdfs:comment "The intended purpose for performing the action."@en ;
   rdfs:label "objective"@en ;
   rdfs:domain action:ActionEstimation ;
-  rdfs:range xsd:String
+  rdfs:range xsd:string
   .
 
 action:rate
@@ -376,7 +376,7 @@ action:scale
   rdfs:comment "The time scale utilized for the frequency rate count for the occurence of an action."@en ;
   rdfs:label "scale"@en ;
   rdfs:domain action:ActionFrequency ;
-  rdfs:range xsd:String
+  rdfs:range xsd:string
   .
 
 action:startTime
@@ -400,7 +400,7 @@ action:units
   rdfs:comment "The units of measure utilized for the frequency rate count for the occurence of an action."@en ;
   rdfs:label "units"@en ;
   rdfs:domain action:ActionFrequency ;
-  rdfs:range xsd:String
+  rdfs:range xsd:string
   .
 
 action:value
@@ -408,5 +408,5 @@ action:value
   rdfs:comment "The value of an action parameter."@en ;
   rdfs:label "value"@en ;
   rdfs:domain action:ActionArgument ;
-  rdfs:range xsd:String
+  rdfs:range xsd:string
   .

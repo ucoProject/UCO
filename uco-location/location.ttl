@@ -111,7 +111,7 @@ location:SimpleAddress
     rdfs:comment "The type of the address, for instance home or work."@en ;
     rdfs:label "addressType"@en  ;
     rdfs:domain location:SimpleAddress ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   location:altitude
@@ -127,7 +127,7 @@ location:SimpleAddress
     rdfs:comment "The name of the geolocation country."@en ;
     rdfs:label "country"@en ;
     rdfs:domain location:SimpleAddress ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   location:hdop
@@ -151,7 +151,7 @@ location:SimpleAddress
     rdfs:comment "The name of the geolocation locality (e.g., city)."@en ;
     rdfs:label "locality"@en ;
     rdfs:domain location:SimpleAddress ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   location:longitude
@@ -175,7 +175,7 @@ location:SimpleAddress
     rdfs:comment "The zip-code."@en ;
     rdfs:label "postalCode"@en ;
     rdfs:domain location:SimpleAddress ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   location:region
@@ -183,7 +183,7 @@ location:SimpleAddress
     rdfs:comment "The name of the geolocation region (e.g., state)."@en ;
     rdfs:label "region"@en ;
     rdfs:domain location:SimpleAddress ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   location:street
@@ -191,7 +191,7 @@ location:SimpleAddress
     rdfs:comment "The name of the street."@en ;
     rdfs:label "street"@en ;
     rdfs:domain location:SimpleAddress ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   location:tdop

@@ -185,7 +185,7 @@ identity:Visa
     rdfs:comment ""@en ;
     rdfs:label "familyName"@en ;
     rdfs:domain identity:SimpleName ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
     .
 
   identity:givenName
@@ -193,7 +193,7 @@ identity:Visa
     rdfs:comment ""@en ;
     rdfs:label "givenName"@en ;
     rdfs:domain identity:SimpleName ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
     .
 
   identity:honorificPrefix
@@ -201,7 +201,7 @@ identity:Visa
     rdfs:comment ""@en ;
     rdfs:label "honorificPrefix"@en ;
     rdfs:domain identity:SimpleName ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
     .
 
   identity:honorificSuffix
@@ -209,5 +209,5 @@ identity:Visa
     rdfs:comment ""@en ;
     rdfs:label "honorificSuffix"@en ;
     rdfs:domain identity:SimpleName ;
-    rdfs:range xsd:String
+    rdfs:range xsd:string
     .

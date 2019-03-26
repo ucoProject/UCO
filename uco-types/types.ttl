@@ -64,7 +64,7 @@ types:ControlledDictionaryEntry
     rdf:type owl:Restriction ;
     owl:onProperty types:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -88,12 +88,12 @@ types:DictionaryEntry
     rdf:type owl:Restriction ;
     owl:onProperty types:key ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty types:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -153,7 +153,7 @@ types:hashMethod
   rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
   rdfs:label "hashMethod"@en ;
   rdfs:domain types:Hash ;
-  rdfs:range xsd:String ;
+  rdfs:range xsd:string ;
   .
 
 types:hashValue
@@ -169,7 +169,7 @@ types:key
   rdfs:comment "A key property of a single dictionary entry."@en ;
   rdfs:label "key"@en ;
   rdfs:domain types:ControlledDictionaryEntry ;
-  rdfs:range xsd:String ;
+  rdfs:range xsd:string ;
   .
 
 types:value
@@ -177,5 +177,5 @@ types:value
   rdfs:comment "A specific property value."@en ;
   rdfs:label "value"@en ;
   rdfs:domain types:ControlledDictionaryEntry, types:ArrayOfString ;
-  rdfs:range xsd:String ;
+  rdfs:range xsd:string ;
   .

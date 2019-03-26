@@ -21,7 +21,7 @@ observable:Account
     rdf:type owl:Restriction ;
     owl:onProperty observable:accountIdentifier ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:accountIssuer ;
@@ -42,7 +42,7 @@ observable:Account
     rdf:type owl:Restriction ;
     owl:onProperty observable:isActive ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:modifiedTime ;
@@ -61,7 +61,7 @@ observable:AccountAuthentication
     rdf:type owl:Restriction ;
     owl:onProperty observable:password ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:passwordLastChanged ;
@@ -70,7 +70,7 @@ observable:AccountAuthentication
     rdf:type owl:Restriction ;
     owl:onProperty observable:passwordType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "AccountAuthentication"@en .
 
@@ -80,7 +80,7 @@ observable:AlternateDataStream
     rdf:type owl:Restriction ;
     owl:onProperty observable:name ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:hashes ;
@@ -104,7 +104,7 @@ observable:Application
     rdf:type owl:Restriction ;
     owl:onProperty observable:applicationIdentifier ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:numberOfLaunches ;
@@ -114,7 +114,7 @@ observable:Application
     rdf:type owl:Restriction ;
     owl:onProperty observable:version ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a software application."@en ;
   rdfs:label "Application"@en .
@@ -136,17 +136,17 @@ observable:ArchiveFile
     rdf:type owl:Restriction ;
     owl:onProperty observable:archiveType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:comment ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:version ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "ArchiveFile"@en .
 
@@ -161,7 +161,7 @@ observable:Audio
     rdf:type owl:Restriction ;
     owl:onProperty observable:audioType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:bitRate ;
@@ -176,7 +176,7 @@ observable:Audio
     rdf:type owl:Restriction ;
     owl:onProperty observable:format ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of piece of digital audio."@en ;
   rdfs:label "Audio"@en .
@@ -192,7 +192,7 @@ observable:AutonomousSystem
     rdf:type owl:Restriction ;
     owl:onProperty observable:asHandle ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:regionalInternetRegistry ;
@@ -216,7 +216,7 @@ observable:BrowserBookmark
     rdf:type owl:Restriction ;
     owl:onProperty observable:bookmarkPath ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:createdTime ;
@@ -254,12 +254,12 @@ observable:BrowserCookie
     rdf:type owl:Restriction ;
     owl:onProperty observable:cookieName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:cookiePath ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:createdTime ;
@@ -272,7 +272,7 @@ observable:BrowserCookie
     rdf:type owl:Restriction ;
     owl:onProperty observable:isSecure ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ] ;
   rdfs:comment "A piece of data used by a (remote) web page, stored on the local machine."@en ;
   rdfs:label "BrowserCookie"@en .
@@ -317,17 +317,17 @@ observable:CalendarEntry
     rdf:type owl:Restriction ;
     owl:onProperty observable:eventStatus ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:eventType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isPrivate ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:location ;
@@ -344,7 +344,7 @@ observable:CalendarEntry
     rdf:type owl:Restriction ;
     owl:onProperty observable:recurrence ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:remindTime ;
@@ -357,7 +357,7 @@ observable:CalendarEntry
     rdf:type owl:Restriction ;
     owl:onProperty observable:subject ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of an entry (appointment, meeting, event) within a calendar."@en ;
   rdfs:label "CalendarEntry"@en .
@@ -368,7 +368,7 @@ observable:CompressedStream
     rdf:type owl:Restriction ;
     owl:onProperty observable:compressionMethod ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:compressionRatio ;
@@ -393,7 +393,7 @@ observable:ComputerSpecification
     rdf:type owl:Restriction ;
     owl:onProperty observable:biosManufacturer ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:biosReleaseDate ;
@@ -402,42 +402,42 @@ observable:ComputerSpecification
     rdf:type owl:Restriction ;
     owl:onProperty observable:biosSerialNumber ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:biosVersion ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:cpu ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:cpuFamily ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:currentSystemDate ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Date
+    owl:onDataRange xsd:dateTime
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:gpu ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:gpuFamily ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:hostname ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:localTime ;
@@ -446,7 +446,7 @@ observable:ComputerSpecification
     rdf:type owl:Restriction ;
     owl:onProperty observable:processorArchitecture ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:systemTime ;
@@ -455,12 +455,12 @@ observable:ComputerSpecification
     rdf:type owl:Restriction ;
     owl:onProperty observable:timezoneDST ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:timezoneStandard ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:totalRam ;
@@ -470,7 +470,7 @@ observable:ComputerSpecification
     rdf:type owl:Restriction ;
     owl:onProperty observable:uptime ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes a computer system (as a combination of both software and hardware)."@en ;
   rdfs:label "ComputerSpecification"@en .
@@ -486,37 +486,37 @@ observable:Contact
     rdf:type owl:Restriction ;
     owl:onProperty observable:contactID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:contactName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:contactType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:firstName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:lastName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:middleName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:screenName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Contact found in an application, for example an entry in an address book."@en ;
   rdfs:label "Contact"@en .
@@ -536,7 +536,7 @@ observable:ContentData
     rdf:type owl:Restriction ;
     owl:onProperty observable:dataPayload ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:entropy ;
@@ -546,22 +546,22 @@ observable:ContentData
     rdf:type owl:Restriction ;
     owl:onProperty observable:isEncrypted ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:magicNumber ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:mimeClass ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:mimeType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:sizeInBytes ;
@@ -583,7 +583,7 @@ observable:CyberItem
     rdf:type owl:Restriction ;
     owl:onProperty observable:hasChanged ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:state ;
@@ -615,7 +615,7 @@ observable:DataRange
     rdf:type owl:Restriction ;
     owl:onProperty observable:rangeOffsetType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:rangeSize ;
@@ -641,17 +641,17 @@ observable:Device
     rdf:type owl:Restriction ;
     owl:onProperty observable:manufacturer ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:model ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:serialNumber ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a piece of electronic equipment."@en ;
   rdfs:label "Device"@en .
@@ -662,7 +662,7 @@ observable:DigitalAccount
     rdf:type owl:Restriction ;
     owl:onProperty observable:displayName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:firstLoginTime ;
@@ -671,7 +671,7 @@ observable:DigitalAccount
     rdf:type owl:Restriction ;
     owl:onProperty observable:isDisabled ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:lastLoginTime ;
@@ -686,12 +686,12 @@ observable:DigitalSignatureInfo
     rdf:type owl:Restriction ;
     owl:onProperty observable:signatureExists ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:signatureVerified ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:certificateIssuer ;
@@ -704,7 +704,7 @@ observable:DigitalSignatureInfo
     rdf:type owl:Restriction ;
     owl:onProperty observable:signatureDescription ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a value calculated via a mathematical scheme for demonstrating the authenticity of a digital message or documents."@en ;
   rdfs:label "DigitalSignatureInfo"@en .
@@ -742,7 +742,7 @@ observable:DiskPartition
     rdf:type owl:Restriction ;
     owl:onProperty observable:mountPoint ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:partitionID ;
@@ -783,12 +783,12 @@ observable:DomainName
     rdf:type owl:Restriction ;
     owl:onProperty observable:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isTLD ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ] ;
   rdfs:comment "Characteristics of an identification string that defines a realm of administrative autonomy, authority or control within the Internet."@en ;
   rdfs:label "DomainName"@en .
@@ -820,12 +820,12 @@ observable:EmailAddress
     rdf:type owl:Restriction ;
     owl:onProperty observable:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:displayName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of an identifier for an email box to which email messages are delivered."@en ;
   rdfs:label "EmailAddress"@en .
@@ -876,32 +876,32 @@ observable:EmailMessage
     rdf:type owl:Restriction ;
     owl:onProperty observable:isMimeEncoded ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isMultipart ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:body ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:contentDisposition ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:contentType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isRead ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:modifiedTime ;
@@ -914,7 +914,7 @@ observable:EmailMessage
     rdf:type owl:Restriction ;
     owl:onProperty observable:priority ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:receivedTime ;
@@ -927,12 +927,12 @@ observable:EmailMessage
     rdf:type owl:Restriction ;
     owl:onProperty observable:subject ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:xMailer ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "An instance of an email message, corresponding to the internet message format described in RFC 5322 and related RFCs."@en ;
   rdfs:label "EmailMessage"@en .
@@ -943,7 +943,7 @@ observable:EncodedStream
     rdf:type owl:Restriction ;
     owl:onProperty observable:encodingMethod ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Represents the encoding-related properties of some encoded thing."@en ;
   rdfs:label "EncodedStream"@en .
@@ -968,12 +968,12 @@ observable:EnvironmentVariable
     rdf:type owl:Restriction ;
     owl:onProperty observable:name ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:value ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Represents the properties of an environment variable."@en ;
   rdfs:label "EnvironmentVariable"@en .
@@ -994,7 +994,7 @@ observable:Event
     rdf:type owl:Restriction ;
     owl:onProperty observable:computerName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:createdTime ;
@@ -1003,17 +1003,17 @@ observable:Event
     rdf:type owl:Restriction ;
     owl:onProperty observable:eventID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:eventText ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:eventType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "An event, mainly used for operating system events."@en ;
   rdfs:label "Event"@en .
@@ -1085,7 +1085,7 @@ observable:ExtractedString
     rdf:type owl:Restriction ;
     owl:onProperty observable:englishTranslation ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:language ;
@@ -1099,7 +1099,7 @@ observable:ExtractedString
     rdf:type owl:Restriction ;
     owl:onProperty observable:stringValue ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "A string extracted from a cyber item."@en ;
   rdfs:label "ExtractedString"@en .
@@ -1124,7 +1124,7 @@ observable:File
     rdf:type owl:Restriction ;
     owl:onProperty observable:extension ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:fileSystemType ;
@@ -1146,7 +1146,7 @@ observable:File
     rdf:type owl:Restriction ;
     owl:onProperty observable:allocationStatus ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "The basic properties associated with the storage of a file on a file system."@en ;
   rdfs:label "File"@en .
@@ -1242,17 +1242,17 @@ observable:GlobalFlagType
     rdf:type owl:Restriction ;
     owl:onProperty observable:abbreviation ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:destination ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:symbolicName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes Windows global flags."@en ;
   rdfs:label "GlobalFlagType"@en .
@@ -1268,12 +1268,12 @@ observable:HTTPConnection
     rdf:type owl:Restriction ;
     owl:onProperty observable:requestMethod ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:requestValue ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:httpMesageBodyLength ;
@@ -1287,7 +1287,7 @@ observable:HTTPConnection
     rdf:type owl:Restriction ;
     owl:onProperty observable:requestVersion ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Specifies HTTP-specific network connection properties."@en ;
   rdfs:label "HTTPConnection"@en .
@@ -1304,12 +1304,12 @@ observable:IComHandlerActionType
     rdf:type owl:Restriction ;
     owl:onProperty observable:comClassID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:comData ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes IComHandler actions."@en ;
   rdfs:label "IComHandlerActionType"@en .
@@ -1320,17 +1320,17 @@ observable:IExecActionType
     rdf:type owl:Restriction ;
     owl:onProperty observable:execArguments ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:execProgramPath ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:execWorkingDirectory ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes IExec actions."@en ;
   rdfs:label "IExecActionType"@en .
@@ -1341,7 +1341,7 @@ observable:IPv4Address
     rdf:type owl:Restriction ;
     owl:onProperty observable:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of an IPv4 internet protocol address."@en ;
   rdfs:label "IPv4Address"@en .
@@ -1352,7 +1352,7 @@ observable:IPv6Address
     rdf:type owl:Restriction ;
     owl:onProperty observable:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of an IPv6 internet protocol address."@en ;
   rdfs:label "IPv6Address"@en .
@@ -1363,12 +1363,12 @@ observable:IShowMessageActionType
     rdf:type owl:Restriction ;
     owl:onProperty observable:showMessageBody ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:showMessageTitle ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes IShowMessage actions."@en ;
   rdfs:label "IShowMessageActionType"@en .
@@ -1379,7 +1379,7 @@ observable:Image
     rdf:type owl:Restriction ;
     owl:onProperty observable:imageType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a complete copy of a hard disk, memory or other digital media."@en ;
   rdfs:label "Image"@en .
@@ -1403,7 +1403,7 @@ observable:MACAddress
     rdf:type owl:Restriction ;
     owl:onProperty observable:value ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a media access control (MAC) address identifier assigned to network interfaces for communications at the data link layer of a network segment."@en ;
   rdfs:label "MACAddress"@en .
@@ -1414,22 +1414,22 @@ observable:Memory
     rdf:type owl:Restriction ;
     owl:onProperty observable:isInjected ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isMapped ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isProtected ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isVolatile ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:blockType ;
@@ -1459,17 +1459,17 @@ observable:Message
     rdf:type owl:Restriction ;
     owl:onProperty observable:messageID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:messageText ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:messageType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:sentTime ;
@@ -1478,7 +1478,7 @@ observable:Message
     rdf:type owl:Restriction ;
     owl:onProperty observable:sessionID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of an electronic message."@en ;
   rdfs:label "Message"@en .
@@ -1489,7 +1489,7 @@ observable:MessageThread
     rdf:type owl:Restriction ;
     owl:onProperty observable:visibility ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ] ;
   rdfs:comment "Characteristics of a running commentary of electronic messages pertaining to one topic or question."@en ;
   rdfs:label "MessageThread"@en .
@@ -1545,12 +1545,12 @@ observable:MftRecord
     rdf:type owl:Restriction ;
     owl:onProperty observable:ntfsOwnerID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:ntfsOwnerSID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes the details of a single NTFS file."@en ;
   rdfs:label "MftRecord"@en .
@@ -1566,17 +1566,17 @@ observable:MimePartType
     rdf:type owl:Restriction ;
     owl:onProperty observable:body ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:contentDisposition ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:contentType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment """Specifies a component of a multi-part email body.
 """@en ;
@@ -1588,7 +1588,7 @@ observable:Mutex
     rdf:type owl:Restriction ;
     owl:onProperty observable:isNamed ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ] ;
   rdfs:label "Mutex"@en .
 
@@ -1609,7 +1609,7 @@ observable:NTFSFileSystem
     rdf:type owl:Restriction ;
     owl:onProperty observable:sid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "NTFSFileSystem"@en .
 
@@ -1628,7 +1628,7 @@ observable:NetworkConnection
     rdf:type owl:Restriction ;
     owl:onProperty observable:isActive ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:protocols ;
@@ -1697,7 +1697,7 @@ observable:NetworkInterface
     rdf:type owl:Restriction ;
     owl:onProperty observable:adapterName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:dhcpLeaseExpires ;
@@ -1728,7 +1728,7 @@ observable:Note
     rdf:type owl:Restriction ;
     owl:onProperty observable:text ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of digital textual note."@en ;
   rdfs:label "Note"@en .
@@ -1758,12 +1758,12 @@ observable:OperatingSystem
     rdf:type owl:Restriction ;
     owl:onProperty observable:manufacturer ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:version ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Specifies information about an operating system."@en ;
   rdfs:label "OperatingSystem"@en .
@@ -1776,19 +1776,19 @@ observable:PDFFIle
     owl:maxCardinality "1"^^xsd:nonNegativeInteger
   ], [
     rdf:type owl:Restriction ;
-    owl:onProperty observable:ersion ;
+    owl:onProperty observable:version ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isOptimized ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:pdfId1 ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "PDFFIle"@en .
 
@@ -1804,7 +1804,7 @@ observable:PhoneAccount
     rdf:type owl:Restriction ;
     owl:onProperty observable:phoneNumber ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a telephone service account."@en ;
   rdfs:label "PhoneAccount"@en .
@@ -1830,7 +1830,7 @@ observable:PhoneCall
     rdf:type owl:Restriction ;
     owl:onProperty observable:callType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:duration ;
@@ -1873,7 +1873,7 @@ observable:Process
     rdf:type owl:Restriction ;
     owl:onProperty observable:currentWorkingDirectory ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:environmentVariables ;
@@ -1891,7 +1891,7 @@ observable:Process
     rdf:type owl:Restriction ;
     owl:onProperty observable:isHidden ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:pid ;
@@ -1901,7 +1901,7 @@ observable:Process
     rdf:type owl:Restriction ;
     owl:onProperty observable:status ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of an instance of a computer program as executed on an operating system."@en ;
   rdfs:label "Process"@en .
@@ -1912,7 +1912,7 @@ observable:PropertiesEnumeratedEffect
     rdf:type owl:Restriction ;
     owl:onProperty observable:properties ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes the effects of actions upon cyberitems where some properties of the cyberitem are enumerated, such as the startup parameters for a process."@en ;
   rdfs:label "PropertiesEnumeratedEffect"@en .
@@ -1923,12 +1923,12 @@ observable:PropertyReadEffect
     rdf:type owl:Restriction ;
     owl:onProperty observable:propertyName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:value ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterize the effects of actions upon cyberitems where some specific property is read from an cyberitem, such as the current running state of a process."@en ;
   rdfs:label "PropertyReadEffect"@en .
@@ -1949,7 +1949,7 @@ observable:RasterPicture
     rdf:type owl:Restriction ;
     owl:onProperty observable:imageCompressionMethod ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:pictureHeight ;
@@ -1964,7 +1964,7 @@ observable:RasterPicture
     rdf:type owl:Restriction ;
     owl:onProperty observable:picturetype ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "RasterPicture"@en .
 
@@ -1974,7 +1974,7 @@ observable:SMSMessage
     rdf:type owl:Restriction ;
     owl:onProperty observable:isRead ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ] ;
   rdfs:comment "Characteristics of a Short Message Service (SMS) \"text\" message."@en ;
   rdfs:label "SMSMessage"@en .
@@ -1985,17 +1985,17 @@ observable:SQLiteBlob
     rdf:type owl:Restriction ;
     owl:onProperty observable:columnName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:rowCondition ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:tableName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of blob of data within a SQLite database."@en ;
   rdfs:label "SQLiteBlob"@en .
@@ -2006,7 +2006,7 @@ observable:SendControlCodeEffect
     rdf:type owl:Restriction ;
     owl:onProperty observable:controlCode ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes the effects of actions upon cyberitems where some control code, or other control-oriented communication signal, is sent to the cyberitem. For example, an action may send a control code to change the running state of a process."@en ;
   rdfs:label "SendControlCodeEffect"@en .
@@ -2017,27 +2017,27 @@ observable:Software
     rdf:type owl:Restriction ;
     owl:onProperty observable:cpeid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:language ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:manufacturer ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:swid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:version ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment """High-level properties associated with software, including software products.
 
@@ -2105,7 +2105,7 @@ observable:TaskActionType
     rdf:type owl:Restriction ;
     owl:onProperty observable:actionID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:actionType ;
@@ -2121,7 +2121,7 @@ observable:TriggerType
     rdf:type owl:Restriction ;
     owl:onProperty observable:isEnabled ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:triggerBeginTime ;
@@ -2130,7 +2130,7 @@ observable:TriggerType
     rdf:type owl:Restriction ;
     owl:onProperty observable:triggerDelay ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:triggerEndTime ;
@@ -2144,12 +2144,12 @@ observable:TriggerType
     rdf:type owl:Restriction ;
     owl:onProperty observable:triggerMaxRunTime ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:triggerSessionChangeType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:triggerType ;
@@ -2170,7 +2170,7 @@ observable:UNIXAccount
     rdf:type owl:Restriction ;
     owl:onProperty observable:shell ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "UNIXAccount"@en .
 
@@ -2192,12 +2192,12 @@ observable:UNIXVolume
     rdf:type owl:Restriction ;
     owl:onProperty observable:mountPoint ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:options ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes a Unix disk volume."@en ;
   rdfs:label "UNIXVolume"@en .
@@ -2223,17 +2223,17 @@ observable:URL
     rdf:type owl:Restriction ;
     owl:onProperty observable:fullValue ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:fragment ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:path ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:port ;
@@ -2243,12 +2243,12 @@ observable:URL
     rdf:type owl:Restriction ;
     owl:onProperty observable:query ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:scheme ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a uniform resource locator (URL)."@en ;
   rdfs:label "URL"@en .
@@ -2259,22 +2259,22 @@ observable:UserAccount
     rdf:type owl:Restriction ;
     owl:onProperty observable:canEscalatePrivs ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:homeDirectory ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isPrivileged ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:isServiceAccount ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ] ;
   rdfs:label "UserAccount"@en .
 
@@ -2289,12 +2289,12 @@ observable:UserSession
     rdf:type owl:Restriction ;
     owl:onProperty observable:effectiveGroup ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:effectiveGroupID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:loginTime ;
@@ -2313,7 +2313,7 @@ observable:ValuesEnumeratedEffect
     rdf:type owl:Restriction ;
     owl:onProperty observable:values ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characterizes the effects of actions upon cyberitems where some values of the cyberitem are enumerated, such as the values of a registry key."@en ;
   rdfs:label "ValuesEnumeratedEffect"@en .
@@ -2329,7 +2329,7 @@ observable:Volume
     rdf:type owl:Restriction ;
     owl:onProperty observable:volumeID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a single accessible storage area (Volume) with a single file system."@en ;
   rdfs:label "Volume"@en .
@@ -2369,7 +2369,7 @@ observable:WhoIs
     rdf:type owl:Restriction ;
     owl:onProperty observable:domainID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:expirationDate ;
@@ -2387,12 +2387,12 @@ observable:WhoIs
     rdf:type owl:Restriction ;
     owl:onProperty observable:remarks ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:sponsoringRegistrar ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:status ;
@@ -2431,12 +2431,12 @@ observable:WhoisContactType
     rdf:type owl:Restriction ;
     owl:onProperty observable:contactID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:contactName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:contactOrganization ;
@@ -2480,17 +2480,17 @@ observable:WhoisRegistrarInfoType
     rdf:type owl:Restriction ;
     owl:onProperty observable:registrarGUID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:registrarID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:registrarName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Registrar-related properties from a Whois record."@en ;
   rdfs:label "WhoisRegistrarInfoType"@en .
@@ -2506,7 +2506,7 @@ observable:WindowsActiveDirectoryAccount
     rdf:type owl:Restriction ;
     owl:onProperty observable:objectGUID ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "WindowsActiveDirectoryAccount"@en .
 
@@ -2531,17 +2531,17 @@ observable:WindowsComputerSpecification
     rdf:type owl:Restriction ;
     owl:onProperty observable:msProductID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:msProductName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:netBIOSName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:registeredOrganization ;
@@ -2565,7 +2565,7 @@ observable:WindowsPEBinaryFile
     rdf:type owl:Restriction ;
     owl:onProperty observable:impHash ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:numberOfSections ;
@@ -2612,7 +2612,7 @@ observable:WindowsPESection
     rdf:type owl:Restriction ;
     owl:onProperty observable:name ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:entropy ;
@@ -2637,7 +2637,7 @@ observable:WindowsPrefetch
     rdf:type owl:Restriction ;
     owl:onProperty observable:applicationFileName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:firstRun ;
@@ -2650,7 +2650,7 @@ observable:WindowsPrefetch
     rdf:type owl:Restriction ;
     owl:onProperty observable:prefetchHash ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:timesExecuted ;
@@ -2666,22 +2666,22 @@ observable:WindowsProcess
     rdf:type owl:Restriction ;
     owl:onProperty observable:aslrEnabled ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:depEnabled ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:ownerSID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:priority ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:startupInfo ;
@@ -2690,7 +2690,7 @@ observable:WindowsProcess
     rdf:type owl:Restriction ;
     owl:onProperty observable:windowTitle ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "WindowsProcess"@en .
 
@@ -2700,7 +2700,7 @@ observable:WindowsRegistryHive
     rdf:type owl:Restriction ;
     owl:onProperty observable:hiveType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a particular logical group of keys, subkeys, and values in a Windows registry."@en ;
   rdfs:label "WindowsRegistryHive"@en .
@@ -2716,7 +2716,7 @@ observable:WindowsRegistryKey
     rdf:type owl:Restriction ;
     owl:onProperty observable:key ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:modifiedTime ;
@@ -2736,12 +2736,12 @@ observable:WindowsRegistryValue
     rdf:type owl:Restriction ;
     owl:onProperty observable:name ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:data ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:dataType ;
@@ -2756,17 +2756,17 @@ observable:WindowsService
     rdf:type owl:Restriction ;
     owl:onProperty observable:serviceName ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:displayName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:groupName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:serviceStatus ;
@@ -2779,7 +2779,7 @@ observable:WindowsService
     rdf:type owl:Restriction ;
     owl:onProperty observable:startCommandLine ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:startType ;
@@ -2814,12 +2814,12 @@ observable:WindowsTask
     rdf:type owl:Restriction ;
     owl:onProperty observable:accountLogonType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:accountRunLevel ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:createdTime ;
@@ -2828,7 +2828,7 @@ observable:WindowsTask
     rdf:type owl:Restriction ;
     owl:onProperty observable:creator ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:exitCode ;
@@ -2838,7 +2838,7 @@ observable:WindowsTask
     rdf:type owl:Restriction ;
     owl:onProperty observable:imageName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:maxRunTime ;
@@ -2856,12 +2856,12 @@ observable:WindowsTask
     rdf:type owl:Restriction ;
     owl:onProperty observable:omment ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:parameters ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:priority ;
@@ -2882,7 +2882,7 @@ observable:WindowsThread
     rdf:type owl:Restriction ;
     owl:onProperty observable:context ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:creationTime ;
@@ -2900,7 +2900,7 @@ observable:WindowsThread
     rdf:type owl:Restriction ;
     owl:onProperty observable:securityAttributes ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Characteristics of a single thread of execution within a Windows process."@en ;
   rdfs:label "WindowsThread"@en .
@@ -2911,7 +2911,7 @@ observable:WindowsVolume
     rdf:type owl:Restriction ;
     owl:onProperty observable:driveLetter ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:driveType ;
@@ -2932,12 +2932,12 @@ observable:WirelessNetworkConnection
     rdf:type owl:Restriction ;
     owl:onProperty observable:baseStation ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:ssid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Connection to a wireless network."@en ;
   rdfs:label "WirelessNetworkConnection"@en .
@@ -2953,12 +2953,12 @@ observable:X509Certificate
     rdf:type owl:Restriction ;
     owl:onProperty observable:isSelfSigned ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:Boolean
+    owl:onDataRange xsd:boolean
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:issuer ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:issuerHash ;
@@ -2967,22 +2967,22 @@ observable:X509Certificate
     rdf:type owl:Restriction ;
     owl:onProperty observable:serialNumber ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:signature ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:signatureAlgorithm ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:subject ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectHash ;
@@ -2991,7 +2991,7 @@ observable:X509Certificate
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectPublicKeyAlgorithm ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectPublicKeyExponent ;
@@ -3001,7 +3001,7 @@ observable:X509Certificate
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectPublicKeyModulus ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:thumbprintHash ;
@@ -3018,7 +3018,7 @@ observable:X509Certificate
     rdf:type owl:Restriction ;
     owl:onProperty observable:version ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:label "X509Certificate"@en .
 
@@ -3028,57 +3028,57 @@ observable:X509V3Extensions
     rdf:type owl:Restriction ;
     owl:onProperty observable:authorityKeyIdentifier ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:basicConstraints ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:certificatePolicies ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:crlDistributionPoints ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:extendedKeyUsage ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:inhibitAnyPolicy ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:issuerAlternativeName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:keyUsage ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:nameConstraints ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:policyConstraints ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:policyMappings ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:privateKeyUsagePeriodNotAfter ;
@@ -3091,17 +3091,17 @@ observable:X509V3Extensions
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectAlternativeName ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectDirectoryAttributes ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty observable:subjectKeyIdentifier ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   rdfs:comment "Extended properties of X.509 v3 digital certificates."@en ;
   rdfs:label "X509V3Extensions"@en .
@@ -3114,17 +3114,17 @@ observable:X509V3Extensions
         rdf:type owl:Restriction ;
         owl:onProperty observable:IMSI ;
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onDataRange xsd:String
+        owl:onDataRange xsd:string
       ], [
         rdf:type owl:Restriction ;
         owl:onProperty observable:MSISDN ;
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onDataRange xsd:String
+        owl:onDataRange xsd:string
       ], [
         rdf:type owl:Restriction ;
         owl:onProperty observable:MSISDNType ;
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onDataRange xsd:String
+        owl:onDataRange xsd:string
       ] ;
       rdfs:comment "Properties of a Mobile Account."@en ;
       rdfs:label "MobileAccount"@en .
@@ -3136,47 +3136,47 @@ observable:X509V3Extensions
           rdf:type owl:Restriction ;
           owl:onProperty observable:clockSetting ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:string
         ], [
           rdf:type owl:Restriction ;
           owl:onProperty observable:storageCapacityInBytes ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:long
         ], [
           rdf:type owl:Restriction ;
           owl:onProperty observable:network ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:string
         ], [
           rdf:type owl:Restriction ;
           owl:onProperty observable:IMEI ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:string
         ], [
           rdf:type owl:Restriction ;
           owl:onProperty observable:ESN ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:string
         ], [
           rdf:type owl:Restriction ;
           owl:onProperty observable:keypadUnlockCode ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:string
         ], [
           rdf:type owl:Restriction ;
           owl:onProperty observable:bluetoothDeviceName ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:string
         ], [
           rdf:type owl:Restriction ;
           owl:onProperty observable:mockLocationsAllowed ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:string
         ], [
           rdf:type owl:Restriction ;
           owl:onProperty observable:phoneActivationTime ;
           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:String
+          owl:onDataRange xsd:string
         ]
          ;
         rdfs:comment "Properties of a Mobile Device."@en ;
@@ -3188,42 +3188,42 @@ observable:X509V3Extensions
             rdf:type owl:Restriction ;
             owl:onProperty observable:SIMType ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:string
           ], [
             rdf:type owl:Restriction ;
             owl:onProperty observable:SIMForm ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:string
           ], [
             rdf:type owl:Restriction ;
             owl:onProperty observable:storageCapacityInBytes ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:long
           ], [
             rdf:type owl:Restriction ;
             owl:onProperty observable:carrier ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onClass <http://unifiedcyberontology.org/identity#Identity>
           ], [
             rdf:type owl:Restriction ;
             owl:onProperty observable:ICCID ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:string
           ], [
             rdf:type owl:Restriction ;
             owl:onProperty observable:IMSI ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:string
           ], [
             rdf:type owl:Restriction ;
             owl:onProperty observable:PIN ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:string
           ], [
             rdf:type owl:Restriction ;
             owl:onProperty observable:PUK ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:string
           ]
            ;
           rdfs:comment "Properties of a Mobile SIM card."@en ;
@@ -3235,7 +3235,7 @@ observable:X509V3Extensions
             rdf:type owl:Restriction ;
             owl:onProperty observable:addressValue ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:string
           ] ;
           rdfs:comment "Properties of a Bluetooth address."@en ;
           rdfs:label "BluetoothAddress"@en .
@@ -3246,7 +3246,7 @@ observable:X509V3Extensions
             rdf:type owl:Restriction ;
             owl:onProperty observable:addressValue ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:String
+            owl:onDataRange xsd:string
           ] ;
           rdfs:comment "Properties of a WiFI address."@en ;
           rdfs:label "WifiAddress"@en .
@@ -4425,12 +4425,12 @@ observable:X509V3Extensions
                 rdfs:comment "Integrated circuit card identifier (http://www.itu.int/)."@en ;
                 rdfs:label "ICCID"@en .
 
-                observable:pin
+                observable:PIN
                 rdf:type owl:DatatypeProperty ;
                 rdfs:domain observable:SIMCard ;
                 rdfs:range xsd:string  ;
                 rdfs:comment "Personal Identification Number (PIN)."@en ;
-                rdfs:label "pin"@en .
+                rdfs:label "PIN"@en .
 
                 observable:PUK
                 rdf:type owl:DatatypeProperty ;
@@ -5121,7 +5121,7 @@ observable:X509V3Extensions
           observable:abbreviation
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:GlobalFlagType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The abbreviation of a global flag. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549646(v=vs.85).aspx."@en ;
             rdfs:label "abbreviation"@en .
 
@@ -5135,42 +5135,42 @@ observable:X509V3Extensions
           observable:accountIdentifier
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Account ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The unique identifier for the account."@en ;
             rdfs:label "accountIdentifier"@en .
 
           observable:accountLogin
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DigitalAccount ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The login identifier for the digital account."@en ;
             rdfs:label "accountLogin"@en .
 
           observable:accountLogonType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the security logon method required to run the tasks associated with the account. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383013(v=vs.85).aspx."@en ;
             rdfs:label "accountLogonType"@en .
 
           observable:accountRunLevel
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the permission level of the account that the task will be run at."@en ;
             rdfs:label "accountRunLevel"@en .
 
           observable:accountType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Account ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
             rdfs:label "accountType"@en .
 
           observable:actionID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:TaskActionType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the user-defined identifier for the action. This identifier is used by the Task Scheduler for logging purposes. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380590(v=vs.85).aspx."@en ;
             rdfs:label "actionID"@en .
 
@@ -5184,13 +5184,13 @@ observable:X509V3Extensions
           observable:activeDirectoryGroups
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsActiveDirectoryAccount ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "activeDirectoryGroups"@en .
 
           observable:adapterName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkInterface ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the network adapter used by the network interface."@en ;
             rdfs:label "adapterName"@en .
 
@@ -5204,60 +5204,60 @@ observable:X509V3Extensions
           observable:allocationStatus
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The allocation status of a file."@en ;
             rdfs:label "allocationStatus"@en .
 
           observable:applicationFileName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPrefetch ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Name of the executable of the prefetch file."@en ;
             rdfs:label "applicationFileName"@en .
 
           observable:applicationIdentifier
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Application ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "applicationIdentifier"@en .
 
           observable:archiveType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ArchiveFile ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of a file archive, e.g. ZIP, GZIP or RAR."@en ;
             rdfs:label "archiveType"@en .
 
           observable:arguments
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Process ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "A list of arguments utilized in initiating the process."@en ;
             rdfs:label "arguments"@en .
 
           observable:asHandle
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:AutonomousSystem ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "asHandle"@en .
 
           observable:aslrEnabled
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsProcess ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "aslrEnabled"@en .
 
           observable:audioType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Audio ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of a audio. For example: music or speech."@en ;
             rdfs:label "audioType"@en .
 
           observable:authorityKeyIdentifier
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "authorityKeyIdentifier"@en .
 
           observable:availableRam
@@ -5277,14 +5277,14 @@ observable:X509V3Extensions
           observable:baseStation
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WirelessNetworkConnection ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The base station."@en ;
             rdfs:label "baseStation"@en .
 
           observable:basicConstraints
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "basicConstraints"@en .
 
           observable:biosDate
@@ -5297,7 +5297,7 @@ observable:X509V3Extensions
           observable:biosManufacturer
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the manufacturer of the BIOS."@en ;
             rdfs:label "biosManufacturer"@en .
 
@@ -5311,14 +5311,14 @@ observable:X509V3Extensions
           observable:biosSerialNumber
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the serial number of the BIOS."@en ;
             rdfs:label "biosSerialNumber"@en .
 
           observable:biosVersion
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the version of the BIOS."@en ;
             rdfs:label "biosVersion"@en .
 
@@ -5332,7 +5332,7 @@ observable:X509V3Extensions
           observable:bitness
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:OperatingSystem ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the bitness of the operating system (i.e. 32 or 64). Note that this is potentially different from the word size of the underlying hardware or CPU. A 32-bit operating system can be installed on a machine running a 64-bit processor."@en ;
             rdfs:label "bitness"@en .
 
@@ -5352,20 +5352,20 @@ observable:X509V3Extensions
           observable:body
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "body"@en .
 
           observable:bookmarkPath
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:BrowserBookmark ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The folder containing the bookmark."@en ;
             rdfs:label "bookmarkPath"@en .
 
           observable:byteOrder
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ContentData ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "byteOrder"@en .
 
           observable:byteStringValue
@@ -5377,27 +5377,27 @@ observable:X509V3Extensions
           observable:callType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PhoneCall ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of a phone call,for example incoming, outgoing, missed."@en ;
             rdfs:label "callType"@en .
 
           observable:canEscalatePrivs
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UserAccount ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "canEscalatePrivs"@en .
 
           observable:categories
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Categories applied to the object."@en ;
             rdfs:label "categories"@en .
 
           observable:certificatePolicies
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "certificatePolicies"@en .
 
           observable:characteristics
@@ -5424,33 +5424,33 @@ observable:X509V3Extensions
           observable:columnName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:SQLiteBlob ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "columnName"@en .
 
           observable:comClassID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:IComHandlerActionType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the ID of the COM action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380613(v=vs.85).aspx."@en ;
             rdfs:label "comClassID"@en .
 
           observable:comData
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:IComHandlerActionType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the data associated with the COM handler. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380613(v=vs.85).aspx."@en ;
             rdfs:label "comData"@en .
 
           observable:comment
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ArchiveFile ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "comment"@en .
 
           observable:compressionMethod
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:CompressedStream ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The algorithm used to compress the data."@en ;
             rdfs:label "compressionMethod"@en .
 
@@ -5464,21 +5464,21 @@ observable:X509V3Extensions
           observable:computerName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Event ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "A name of the computer on which the log entry was created."@en ;
             rdfs:label "computerName"@en .
 
           observable:contactID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoisContactType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies an ID for the contact. This can be presented as Contact ID, Billing ID, Admin ID, Tech ID, etc."@en ;
             rdfs:label "contactID"@en .
 
           observable:contactName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoisContactType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The name of a contact."@en ;
             rdfs:label "contactName"@en .
 
@@ -5492,60 +5492,60 @@ observable:X509V3Extensions
           observable:contentDisposition
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "contentDisposition"@en .
 
           observable:contentType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "contentType"@en .
 
           observable:context
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsThread ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "context"@en .
 
           observable:controlCode
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:SendControlCodeEffect ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the actual control code that was sent to the cyberitem."@en ;
             rdfs:label "controlCode"@en .
 
             observable:cookieName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:BrowserCookie ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The name of the cookie."@en ;
             rdfs:label "cookieName"@en .
 
           observable:cookiePath
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:BrowserCookie ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "String representation of the path of the cookie."@en ;
             rdfs:label "cookiePath"@en .
 
           observable:cpeid
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Software ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
             rdfs:label "cpeid"@en .
 
           observable:cpu
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the CPU used by the system."@en ;
             rdfs:label "cpu"@en .
 
           observable:cpuFamily
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the CPU family used by the system."@en ;
             rdfs:label "cpuFamily"@en .
 
@@ -5578,63 +5578,63 @@ observable:X509V3Extensions
           observable:creator
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx."@en ;
             rdfs:label "creator"@en .
 
           observable:crlDistributionPoints
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "crlDistributionPoints"@en .
 
           observable:currentSystemDate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:Date ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment "Specifies the current date on the system."@en ;
             rdfs:label "currentSystemDate"@en .
 
           observable:currentWorkingDirectory
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Process ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "currentWorkingDirectory"@en .
 
           observable:data
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsRegistryValue ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "data"@en .
 
           observable:dataPayload
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ContentData ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "dataPayload"@en .
 
           observable:dataType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsRegistryValue ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "dataType"@en .
 
           observable:depEnabled
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsProcess ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "depEnabled"@en .
 
           observable:descriptions
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsService ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "descriptions"@en .
 
           observable:destination
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:GlobalFlagType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The destination of a global flag. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549646(v=vs.85).aspx."@en ;
             rdfs:label "destination"@en .
 
@@ -5655,7 +5655,7 @@ observable:X509V3Extensions
           observable:deviceType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Device ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "deviceType"@en .
 
           observable:dhcpLeaseExpires
@@ -5675,7 +5675,7 @@ observable:X509V3Extensions
           observable:diskPartitionType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DiskPartition ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the type of partition being characterized."@en ;
             rdfs:label "diskPartitionType"@en .
 
@@ -5689,14 +5689,14 @@ observable:X509V3Extensions
           observable:diskType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Disk ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of disk being characterized, e.g., removable."@en ;
             rdfs:label "diskType"@en .
 
           observable:displayName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsService ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "displayName"@en .
 
           observable:dllCharacteristics
@@ -5716,21 +5716,21 @@ observable:X509V3Extensions
           observable:domain
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The domain for which the cookie is stored, for example nfi.minjus.nl."@en, "The domain(s) that the system belongs to."@en ;
             rdfs:label "domain"@en .
 
           observable:domainID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoIs ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the domain id for the domain associated with a Whois entry."@en ;
             rdfs:label "domainID"@en .
 
           observable:driveLetter
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsVolume ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the drive letter of a windows volume."@en ;
             rdfs:label "driveLetter"@en .
 
@@ -5763,52 +5763,52 @@ observable:X509V3Extensions
           observable:effectiveGroup
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UserSession ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the effective group used in the user session."@en ;
             rdfs:label "effectiveGroup"@en .
 
           observable:effectiveGroupID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UserSession ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the effective group ID of the group used in the user session."@en ;
             rdfs:label "effectiveGroupID"@en .
 
           observable:encoding
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtractedString ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The encoding method used for the extracted string."@en ;
             rdfs:label "Encoding"@en .
 
           observable:encodingMethod
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EncodedStream ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "encodingMethod"@en .
 
           observable:encryptionIV
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EncryptedStream ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "encryptionIV"@en .
 
           observable:encryptionKey
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EncryptedStream ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "encryptionKey"@en .
 
           observable:encryptionMethod
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EncryptedStream ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "encryptionMethod"@en .
 
           observable:encryptionMode
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EncryptedStream ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "encryptionMode"@en .
 
           observable:endTime
@@ -5820,7 +5820,7 @@ observable:X509V3Extensions
           observable:englishTranslation
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtractedString ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the English translation of the string, if it is not written in English."@en ;
             rdfs:label "englishTranslation"@en .
 
@@ -5841,49 +5841,49 @@ observable:X509V3Extensions
           observable:eventID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Event ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The identifier of the event."@en ;
             rdfs:label "eventID"@en .
 
           observable:eventStatus
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:CalendarEntry ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The status of the event, for instance accepted, pending or cancelled."@en ;
             rdfs:label "eventStatus"@en .
 
           observable:eventText
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Event ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The textual representation of the event."@en ;
             rdfs:label "eventText"@en .
 
           observable:eventType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Event ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of the event, for example \\\"information\\\", \\\"warning\\\" or \\\"error\\\"."@en ;
             rdfs:label "eventType"@en .
 
           observable:execArguments
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:IExecActionType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the arguments associated with the command-line operation launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx."@en ;
             rdfs:label "execArguments"@en .
 
           observable:execProgramPath
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:IExecActionType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the path to the executable file launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx."@en ;
             rdfs:label "execProgramPath"@en .
 
           observable:execWorkingDirectory
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:IExecActionType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the directory that contains either the executable file or the files that are used by the executable file launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx."@en ;
             rdfs:label "execWorkingDirectory"@en .
 
@@ -5988,13 +5988,13 @@ observable:X509V3Extensions
           observable:extendedKeyUsage
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "extendedKeyUsage"@en .
 
           observable:extension
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The file name extension: everything after the last dot. Not present if the file has no dot in its name."@en ;
             rdfs:label "extension"@en .
 
@@ -6008,21 +6008,21 @@ observable:X509V3Extensions
           observable:fileName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name associated with a file in a file system."@en ;
             rdfs:label "fileName"@en .
 
           observable:filePath
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the file path for the location of a file within a filesystem."@en ;
             rdfs:label "filePath"@en .
 
           observable:fileSystemType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:FileSystem ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The specific type of a file system."@en ;
             rdfs:label "fileSystemType"@en .
 
@@ -6036,7 +6036,7 @@ observable:X509V3Extensions
           observable:firstName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Contact ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The first name of the contact."@en ;
             rdfs:label "firstName"@en .
 
@@ -6057,14 +6057,14 @@ observable:X509V3Extensions
           observable:format
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Audio ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The format of the audio. For example: mp3 or flac."@en ;
             rdfs:label "format"@en .
 
           observable:fragment
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:URL ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Fragment pointing to a specific part in the resource."@en ;
             rdfs:label "fragment"@en .
 
@@ -6084,7 +6084,7 @@ observable:X509V3Extensions
           observable:fullValue
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:URL ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The full string value of the URL."@en ;
             rdfs:label "fullValue"@en .
 
@@ -6097,33 +6097,33 @@ observable:X509V3Extensions
           observable:gpu
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the GPU used by the system."@en ;
             rdfs:label "gpu"@en .
 
           observable:gpuFamily
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the GPU family used by the system."@en ;
             rdfs:label "gpuFamily"@en .
 
           observable:groupName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsService ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "groupName"@en .
 
           observable:groups
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsAccount ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "groups"@en .
 
           observable:hasChanged
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:CyberItem ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "hasChanged"@en .
 
           observable:hexadecimalValue
@@ -6136,20 +6136,20 @@ observable:X509V3Extensions
           observable:hiveType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsRegistryHive ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of a registry hive."@en ;
             rdfs:label "hiveType"@en .
 
           observable:homeDirectory
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UserAccount ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "homeDirectory"@en .
 
           observable:hostname
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the hostname of the system."@en ;
             rdfs:label "hostname"@en .
 
@@ -6184,34 +6184,34 @@ observable:X509V3Extensions
           observable:imageCompressionMethod
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:RasterPicture ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "imageCompressionMethod"@en .
 
           observable:imageName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the image name for the task."@en ;
             rdfs:label "imageName"@en .
 
           observable:imageType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Image ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of the image, e.g. EnCase, RAW or LocalFolder."@en ;
             rdfs:label "imageType"@en .
 
           observable:impHash
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPEBinaryFile ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the special import hash, or ‘imphash’, calculated for the PE Binary based on its imported libraries and functions. "@en ;
             rdfs:label "impHash"@en .
 
           observable:inhibitAnyPolicy
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "inhibitAnyPolicy"@en .
 
           observable:installDate
@@ -6224,41 +6224,41 @@ observable:X509V3Extensions
           observable:isActive
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NetworkConnection ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "Indicates whether the network connection is still active."@en ;
             rdfs:label "isActive"@en .
 
           observable:isDirectory
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:File ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "Specifies whether a file entry represents a directory."@en ;
             rdfs:label "isDirectory"@en .
 
           observable:isDisabled
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DigitalAccount ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "Is the digital account disabled?"@en ;
             rdfs:label "isDisabled"@en .
 
           observable:isEnabled
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:TriggerType ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "Specifies whether the trigger is enabled."@en ;
             rdfs:label "isEnabled"@en .
 
           observable:isEncrypted
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ContentData ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isEncrypted"@en .
 
           observable:isHidden
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Process ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment """The isHidden property specifies whether the process is hidden or not.
           """@en ;
             rdfs:label "isHidden"@en .
@@ -6266,134 +6266,134 @@ observable:X509V3Extensions
           observable:isInjected
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Memory ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "The isInjected property specifies whether or not the particular memory object has had data/code injected into it by another process."@en ;
             rdfs:label "isInjected"@en .
 
           observable:isMapped
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Memory ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "The isMapped property specifies whether or not the particular memory object has been assigned a byte-for-byte correlation with some portion of a file or file-like resource."@en ;
             rdfs:label "isMapped"@en .
 
           observable:isMimeEncoded
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isMimeEncoded"@en .
 
           observable:isMultipart
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isMultipart"@en .
 
           observable:isNamed
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Mutex ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isNamed"@en .
 
           observable:isOptimized
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PDFFIle ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isOptimized"@en .
 
           observable:isPrivate
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:CalendarEntry ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "Is the event marked as private?"@en ;
             rdfs:label "isPrivate"@en .
 
           observable:isPrivileged
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UserAccount ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isPrivileged"@en .
 
           observable:isProtected
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Memory ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "The isProtected property specifies whether or not the particular memory object is protected (read/write only from the process that allocated it)."@en ;
             rdfs:label "isProtected"@en .
 
           observable:isRead
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isRead"@en .
 
           observable:isSecure
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:BrowserCookie ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "Is the cookie secure? If the cookie is secure it cannot be delivered over an unencrypted session such as http."@en ;
             rdfs:label "isSecure"@en .
 
           observable:isSelfSigned
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isSelfSigned"@en .
 
           observable:isServiceAccount
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UserAccount ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isServiceAccount"@en .
 
           observable:isTLD
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DomainName ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "isTLD"@en .
 
           observable:isVolatile
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Memory ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:comment "The isVolatile property specifies whether or not the particular memory object is volatile."@en ;
             rdfs:label "isVolatile"@en .
 
           observable:issuer
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "issuer"@en .
 
           observable:issuerAlternativeName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "issuerAlternativeName"@en .
 
           observable:key
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsRegistryKey ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "key"@en .
 
           observable:keyUsage
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "keyUsage"@en .
 
           observable:labels
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Named and colored label."@en ;
             rdfs:label "labels"@en .
 
           observable:language
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtractedString ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment """Specifies the language the string is written in, e.g. English.
           For consistency, it is strongly recommended to use the ISO 639-2 language code, if available. Please see http://www.loc.gov/standards/iso639-2/php/code_list.php for a list of ISO 639-2 codes."""@en ;
             rdfs:label "language"@en .
@@ -6408,7 +6408,7 @@ observable:X509V3Extensions
           observable:lastName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Contact ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The last name of the contact."@en ;
             rdfs:label "lastName"@en .
 
@@ -6429,7 +6429,7 @@ observable:X509V3Extensions
           observable:libraryType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Library ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the type of library being characterized."@en ;
             rdfs:label "libraryType"@en .
 
@@ -6471,7 +6471,7 @@ observable:X509V3Extensions
           observable:machine
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPEBinaryFile ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the type of target machine."@en ;
             rdfs:label "machine"@en .
 
@@ -6485,7 +6485,7 @@ observable:X509V3Extensions
           observable:magicNumber
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ContentData ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "magicNumber"@en .
 
           observable:majorImageVersion
@@ -6519,7 +6519,7 @@ observable:X509V3Extensions
           observable:manufacturer
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Device ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "manufacturer"@en .
 
           observable:maxRunTime
@@ -6532,21 +6532,21 @@ observable:X509V3Extensions
           observable:messageID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Message ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "A unique identifier (email address form) for identifying the email."@en, "An identifier for the message."@en ;
             rdfs:label "messageID"@en .
 
           observable:messageText
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Message ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The contents of the message."@en ;
             rdfs:label "messageText"@en .
 
           observable:messageType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Message ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of a message, for example incoming, draft or outgoing."@en ;
             rdfs:label "messageType"@en .
 
@@ -6623,20 +6623,20 @@ observable:X509V3Extensions
           observable:middleName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Contact ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The middle name of the contact."@en ;
             rdfs:label "middleName"@en .
 
           observable:mimeClass
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ContentData ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "mimeClass"@en .
 
           observable:mimeType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ContentData ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "MIME type of the data. For example 'text/html' or 'audio/mp3'."@en ;
             rdfs:label "mimeType"@en .
 
@@ -6672,7 +6672,7 @@ observable:X509V3Extensions
           observable:model
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Device ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "model"@en .
 
           observable:modifiedTime
@@ -6692,41 +6692,41 @@ observable:X509V3Extensions
           observable:mountPoint
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DiskPartition ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the mount point of the partition."@en ;
             rdfs:label "mountPoint"@en .
 
           observable:msProductID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The Microsoft Product ID. See also: http://support.microsoft.com/gp/pidwin."@en ;
             rdfs:label "msProductID"@en .
 
           observable:msProductName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The Microsoft ProductName of the current installation of Windows. This is typically found in HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion!ProductName."@en ;
             rdfs:label "msProductName"@en .
 
           observable:name
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPESection ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the section."@en ;
             rdfs:label "name"@en .
 
           observable:nameConstraints
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "nameConstraints"@en .
 
           observable:netBIOSName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the NetBIOS (Network Basic Input/Output System) name of the Windows system. This is not the same as the host name."@en ;
             rdfs:label "netBIOSName"@en .
 
@@ -6747,14 +6747,14 @@ observable:X509V3Extensions
           observable:ntfsOwnerID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the identifier of the file owner, from the security index."@en ;
             rdfs:label "ntfsOwnerID"@en .
 
           observable:ntfsOwnerSID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MftRecord ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the security ID (key in the $SII Index and $SDS DataStream in the file $Secure) for an NTFS file."@en ;
             rdfs:label "ntfsOwnerSID"@en .
 
@@ -6801,13 +6801,13 @@ observable:X509V3Extensions
           observable:objectGUID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsActiveDirectoryAccount ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "objectGUID"@en .
 
           observable:omment
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies a comment for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381232(v=vs.85).aspx."@en ;
             rdfs:label "omment"@en .
 
@@ -6821,14 +6821,14 @@ observable:X509V3Extensions
           observable:options
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UNIXVolume ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies any options used when mounting the volume."@en ;
             rdfs:label "options"@en .
 
           observable:ownerSID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsProcess ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "ownerSID"@en .
 
           observable:parameterAddress
@@ -6840,7 +6840,7 @@ observable:X509V3Extensions
           observable:parameters
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsTask ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the command line parameters used to launch the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381875(v=vs.85).aspx."@en ;
             rdfs:label "parameters"@en .
 
@@ -6868,7 +6868,7 @@ observable:X509V3Extensions
           observable:password
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:AccountAuthentication ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Password used to authenticate to this resource."@en, "The account authentication password."@en ;
             rdfs:label "password"@en .
 
@@ -6882,47 +6882,47 @@ observable:X509V3Extensions
           observable:passwordType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:AccountAuthentication ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of password, for instance plain-text or encrypted."@en ;
             rdfs:label "passwordType"@en .
 
           observable:path
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PathRelation ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the location of one object within another containing object."@en ;
             rdfs:label "path"@en .
 
           observable:pdfId0
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PDFFIle ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "pdfId0"@en .
 
           observable:pdfId1
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PDFFIle ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "pdfId1"@en .
 
           observable:peType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPEBinaryFile ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the type of the PE binary."@en ;
             rdfs:label "peType"@en .
 
           observable:phoneNumber
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PhoneAccount ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "A phone number(account)."@en ;
             rdfs:label "phoneNumber"@en .
 
           observable:phoneNumbers
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Contact ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The phone numbers of the contact."@en ;
             rdfs:label "phoneNumbers"@en .
 
@@ -6942,7 +6942,7 @@ observable:X509V3Extensions
           observable:picturetype
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:RasterPicture ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of a picture, for example a thumbnail."@en ;
             rdfs:label "picturetype"@en .
 
@@ -6963,13 +6963,13 @@ observable:X509V3Extensions
           observable:policyConstraints
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "policyConstraints"@en .
 
           observable:policyMappings
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "policyMappings"@en .
 
           observable:port
@@ -6982,14 +6982,14 @@ observable:X509V3Extensions
           observable:prefetchHash
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsPrefetch ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "An eight character hash of the location from which the application was run."@en ;
             rdfs:label "prefetchHash"@en .
 
           observable:priority
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The priority of the email."@en ;
             rdfs:label "priority"@en .
 
@@ -7008,28 +7008,28 @@ observable:X509V3Extensions
           observable:processorArchitecture
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "sSpecifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
             rdfs:label "processorArchitecture"@en .
 
           observable:properties
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PropertiesEnumeratedEffect ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the properties that were enumerated as a result of the action on the cyberitem."@en ;
             rdfs:label "properties"@en .
 
           observable:propertyName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PropertyReadEffect ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the Name of the property being read."@en ;
             rdfs:label "propertyName"@en .
 
           observable:query
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:URL ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Query passed to the resource."@en ;
             rdfs:label "query"@en .
 
@@ -7043,7 +7043,7 @@ observable:X509V3Extensions
           observable:rangeOffsetType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DataRange ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The type of offset defined for the range (e.g., image, file, address)."@en ;
             rdfs:label "rangeOffsetType"@en .
 
@@ -7057,7 +7057,7 @@ observable:X509V3Extensions
           observable:receivedLines
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "receivedLines"@en .
 
           observable:receivedTime
@@ -7070,7 +7070,7 @@ observable:X509V3Extensions
           observable:recurrence
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:CalendarEntry ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Recurrence of the event."@en ;
             rdfs:label "recurrence"@en .
 
@@ -7106,35 +7106,35 @@ observable:X509V3Extensions
           observable:registrantIDs
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoIs ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the registrant IDs associated with a domain lookup."@en ;
             rdfs:label "registrantIDs"@en .
 
           observable:registrarGUID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoisRegistrarInfoType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the Registrar GUID field of a Whois entry."@en ;
             rdfs:label "registrarGUID"@en .
 
           observable:registrarID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoisRegistrarInfoType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the Registrar ID field of a Whois entry."@en ;
             rdfs:label "registrarID"@en .
 
           observable:registrarName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoisRegistrarInfoType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The name of the registrar organization."@en ;
             rdfs:label "registrarName"@en .
 
           observable:remarks
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoIs ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies any remarks associated with this Whois entry."@en ;
             rdfs:label "remarks"@en .
 
@@ -7147,7 +7147,7 @@ observable:X509V3Extensions
           observable:requestMethod
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:HTTPConnection ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment """Specifies the HTTP method portion of the HTTP request line, as a lowercase string.
           """@en ;
             rdfs:label "requestMethod"@en .
@@ -7155,21 +7155,21 @@ observable:X509V3Extensions
           observable:requestValue
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:HTTPConnection ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the value (typically a resource path) portion of the HTTP request line."@en ;
             rdfs:label "requestValue"@en .
 
           observable:requestVersion
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:HTTPConnection ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the HTTP version portion of the HTTP request line, as a lowercase string."@en ;
             rdfs:label "requestVersion"@en .
 
           observable:rowCondition
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:SQLiteBlob ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "rowCondition"@en .
 
           observable:rowIndex
@@ -7188,20 +7188,20 @@ observable:X509V3Extensions
           observable:runningStatus
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsThread ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "runningStatus"@en .
 
           observable:scheme
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:URL ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Identifies the type of URL."@en ;
             rdfs:label "scheme"@en .
 
           observable:screenName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Contact ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The display name of the contact."@en ;
             rdfs:label "screenName"@en .
 
@@ -7222,7 +7222,7 @@ observable:X509V3Extensions
           observable:securityAttributes
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsThread ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "securityAttributes"@en .
 
           observable:sentTime
@@ -7235,89 +7235,89 @@ observable:X509V3Extensions
           observable:serialNumber
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Device ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "serialNumber"@en .
 
           observable:serviceName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsService ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "serviceName"@en .
 
           observable:serviceStatus
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsService ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "serviceStatus"@en .
 
           observable:serviceType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsService ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "serviceType"@en .
 
           observable:sessionID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Message ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "An identifier for the session from which the message originates."@en ;
             rdfs:label "sessionID"@en .
 
           observable:shell
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:UNIXAccount ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "shell"@en .
 
           observable:showMessageBody
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:IShowMessageActionType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the message text that is displayed in the body of the message box by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.85).aspx."@en ;
             rdfs:label "showMessageBody"@en .
 
           observable:showMessageTitle
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:IShowMessageActionType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the title of the message box shown by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.85).aspx."@en ;
             rdfs:label "showMessageTitle"@en .
 
           observable:sid
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:NTFSFileSystem ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "sid"@en .
 
           observable:signature
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "A"@en ;
             rdfs:label "signature"@en .
 
           observable:signatureAlgorithm
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "signatureAlgorithm"@en .
 
           observable:signatureDescription
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DigitalSignatureInfo ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "signatureDescription"@en .
 
           observable:signatureExists
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DigitalSignatureInfo ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "signatureExists"@en .
 
           observable:signatureVerified
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:DigitalSignatureInfo ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "signatureVerified"@en .
 
           observable:size
@@ -7436,7 +7436,7 @@ observable:X509V3Extensions
           observable:sponsoringRegistrar
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WhoIs ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the name of the sponsoring registrar for a domain."@en ;
             rdfs:label "sponsoringRegistrar"@en .
 
@@ -7455,7 +7455,7 @@ observable:X509V3Extensions
           observable:ssid
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WirelessNetworkConnection ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Network identifier."@en ;
             rdfs:label "ssid"@en .
 
@@ -7474,7 +7474,7 @@ observable:X509V3Extensions
           observable:startCommandLine
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsService ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "startCommandLine"@en .
 
           observable:startTime
@@ -7486,13 +7486,13 @@ observable:X509V3Extensions
           observable:startType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsService ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "startType"@en .
 
           observable:state
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:CyberItem ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "State"@en .
 
           observable:status
@@ -7505,39 +7505,39 @@ observable:X509V3Extensions
           observable:stringValue
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ExtractedString ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the actual value of the extracted string."@en ;
             rdfs:label "stringValue"@en .
 
           observable:subject
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The subject of the email."@en ;
             rdfs:label "subject"@en .
 
           observable:subjectAlternativeName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "subjectAlternativeName"@en .
 
           observable:subjectDirectoryAttributes
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "subjectDirectoryAttributes"@en .
 
           observable:subjectKeyIdentifier
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509V3Extensions ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "subjectKeyIdentifier"@en .
 
           observable:subjectPublicKeyAlgorithm
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "subjectPublicKeyAlgorithm"@en .
 
           observable:subjectPublicKeyExponent
@@ -7549,7 +7549,7 @@ observable:X509V3Extensions
           observable:subjectPublicKeyModulus
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:X509Certificate ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "subjectPublicKeyModulus"@en .
 
           observable:subsystem
@@ -7562,14 +7562,14 @@ observable:X509V3Extensions
           observable:swid
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Software ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the SWID tag for the software."@en ;
             rdfs:label "swid"@en .
 
           observable:symbolicName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:GlobalFlagType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The symbolic name of a global flag. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549646(v=vs.85).aspx."@en ;
             rdfs:label "symbolicName"@en .
 
@@ -7582,13 +7582,13 @@ observable:X509V3Extensions
           observable:tableName
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:SQLiteBlob ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "tableName"@en .
 
           observable:text
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Note ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "text"@en .
 
           observable:threadID
@@ -7614,14 +7614,14 @@ observable:X509V3Extensions
           observable:timezoneDST
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the time zone used by the system, taking daylight savings time (DST) into account."@en ;
             rdfs:label "timezoneDST"@en .
 
           observable:timezoneStandard
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the time zone used by the system, without taking daylight savings time (DST) into account."@en ;
             rdfs:label "timezoneStandard"@en .
 
@@ -7655,7 +7655,7 @@ observable:X509V3Extensions
           observable:triggerDelay
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:TriggerType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the delay that takes place between when the task is registered and when the task is started."@en ;
             rdfs:label "triggerDelay"@en .
 
@@ -7676,14 +7676,14 @@ observable:X509V3Extensions
           observable:triggerMaxRunTime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:TriggerType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The maximum amount of time that the task launched by the trigger is allowed to run. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.85).aspx."@en ;
             rdfs:label "triggerMaxRunTime"@en .
 
           observable:triggerSessionChangeType
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:TriggerType ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the type of Terminal Server session change that would trigger a task launch. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381298(v=vs.85).aspx."@en ;
             rdfs:label "triggerSessionChangeType"@en .
 
@@ -7704,7 +7704,7 @@ observable:X509V3Extensions
           observable:uptime
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ComputerSpecification ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "Specifies the duration that represents the current amount of time that the system has been up."@en ;
             rdfs:label "uptime"@en .
 
@@ -7736,26 +7736,26 @@ observable:X509V3Extensions
           observable:value
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:IPv4Address ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "value"@en .
 
           observable:values
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:ValuesEnumeratedEffect ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
             rdfs:label "values"@en .
 
           observable:version
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:PDFFIle, observable:Application ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "version"@en .
 
           observable:visibility
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:MessageThread ;
-            rdfs:range xsd:Boolean ;
+            rdfs:range xsd:boolean ;
             rdfs:label "visibility"@en .
 
           observable:visitCount
@@ -7768,7 +7768,7 @@ observable:X509V3Extensions
           observable:volumeID
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:Volume ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:comment "The unique identifier of the volume."@en ;
             rdfs:label "volumeID"@en .
 
@@ -7782,7 +7782,7 @@ observable:X509V3Extensions
           observable:windowTitle
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:WindowsProcess ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "windowTitle"@en .
 
           observable:windowsVolumeAttributes
@@ -7795,5 +7795,5 @@ observable:X509V3Extensions
           observable:xMailer
             rdf:type owl:DatatypeProperty ;
             rdfs:domain observable:EmailMessage ;
-            rdfs:range xsd:String ;
+            rdfs:range xsd:string ;
             rdfs:label "xMailer"@en .

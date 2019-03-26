@@ -26,7 +26,7 @@ marking:MarkingDefinition
     rdf:type owl:Restriction ;
     owl:onProperty marking:definitionType ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -58,7 +58,7 @@ marking:MarkingModel
   Specific syntax for how to specify the UCO object portions is dependent on the particular syntactic serialization implementation (XML, JSON, etc.) of UCO and MUST be explicitly specified in a separate binding specification for that syntactic serialization implementation (e.g. a UCO XML Binding Specification). """@en ;
     rdfs:label "contentSelectors"@en ;
     rdfs:domain marking:GranularMarking ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   marking:definitionType
@@ -66,5 +66,5 @@ marking:MarkingModel
     rdfs:comment "Specifies the Marking Model for a Marking Definition."@en ;
     rdfs:label "definitionType"@en ;
     rdfs:domain marking:MarkingDefinition ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .

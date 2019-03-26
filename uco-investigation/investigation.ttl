@@ -137,7 +137,7 @@ investigation:VictimActionLifecycle
     rdfs:comment "The identifier for a particular authorization (e.g. warrant number)"@en ;
     rdfs:label "authorizationIdentifier"@en  ;
     rdfs:domain investigation:Authorization ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   investigation:authorizationType
@@ -161,7 +161,7 @@ investigation:VictimActionLifecycle
     rdfs:comment ""@en ;
     rdfs:label "exhibitNumber"@en  ;
     rdfs:domain investigation:ProvenanceRecord ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   investigation:focus
@@ -169,7 +169,7 @@ investigation:VictimActionLifecycle
     rdfs:comment "Specifies the topical focus of an investigation."@en ;
     rdfs:label "focus"@en  ;
     rdfs:domain investigation:Investigation ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   investigation:investigationForm

@@ -39,7 +39,7 @@ tool:BuildConfigurationType
     rdf:type owl:Restriction ;
     owl:onProperty tool:configurationSettingDescription ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -61,32 +61,32 @@ tool:BuildInformationType
     rdf:type owl:Restriction ;
     owl:onProperty tool:buildID ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:buildLabel ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:buildOutputLog ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:buildProject ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:buildScript ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:buildVersion ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:compilationDate ;
@@ -102,17 +102,17 @@ tool:BuildUtilityType
     rdf:type owl:Restriction ;
     owl:onProperty tool:buildUtilityName ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:cpeid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:swid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -128,12 +128,12 @@ tool:CompilerType
     rdf:type owl:Restriction ;
     owl:onProperty tool:cpeid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:swid ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -145,22 +145,22 @@ tool:ConfigurationSettingType
     rdf:type owl:Restriction ;
     owl:onProperty tool:itemName ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:itemValue ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:itemDescription ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:itemType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -183,7 +183,7 @@ tool:DependencyType
     rdf:type owl:Restriction ;
     owl:onProperty tool:dependencyType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -195,12 +195,12 @@ tool:LibraryType
     rdf:type owl:Restriction ;
     owl:onProperty tool:libraryName ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:libraryVersion ;
     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -219,22 +219,22 @@ tool:Tool
     rdf:type owl:Restriction ;
     owl:onProperty tool:creator ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:servicePack ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:toolType ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ], [
     rdf:type owl:Restriction ;
     owl:onProperty tool:version ;
     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:String
+    owl:onDataRange xsd:string
   ] ;
   .
 
@@ -307,7 +307,7 @@ tool:ToolConfigurationType
     rdfs:comment "An externally defined unique identifier for a particular build of a software."@en ;
     rdfs:label "buildID"@en ;
     rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:buildLabel
@@ -315,7 +315,7 @@ tool:ToolConfigurationType
     rdfs:comment "Relevant label for a particular build of a particular software."@en ;
     rdfs:label "buildLabel"@en ;
     rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:buildOutputLog
@@ -323,7 +323,7 @@ tool:ToolConfigurationType
     rdfs:comment "The output log of the build process for a software."@en ;
     rdfs:label "buildOutputLog"@en ;
     rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:buildProject
@@ -331,7 +331,7 @@ tool:ToolConfigurationType
     rdfs:comment "The project name of a build of a software."@en ;
     rdfs:label "buildProject"@en ;
     rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:buildScript
@@ -339,7 +339,7 @@ tool:ToolConfigurationType
     rdfs:comment "The actual build script for a particular build of a particular software."@en ;
     rdfs:label "buildScript"@en ;
     rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:buildUtilityName
@@ -347,7 +347,7 @@ tool:ToolConfigurationType
     rdfs:comment "The informally defined name of the utility used to build a particular software."@en ;
     rdfs:label "buildUtilityName"@en ;
     rdfs:domain tool:BuildUtilityType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:buildVersion
@@ -355,7 +355,7 @@ tool:ToolConfigurationType
     rdfs:comment "The appropriate version descriptor of a particular build of a particular software."@en ;
     rdfs:label "buildVersion"@en ;
     rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:compilationDate
@@ -363,7 +363,7 @@ tool:ToolConfigurationType
     rdfs:comment "The compilation date for the build of a software."@en ;
     rdfs:label "compilationDate"@en ;
     rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:Timestamp ;
+    rdfs:range xsd:dateTime ;
     .
 
   tool:compilerInformalDescription
@@ -371,7 +371,7 @@ tool:ToolConfigurationType
     rdfs:comment "An informal description of a compiler."@en ;
     rdfs:label "compilerInformalDescription"@en ;
     rdfs:domain tool:CompilerType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:configurationSettingDescription
@@ -379,7 +379,7 @@ tool:ToolConfigurationType
     rdfs:comment "Description of the configuration settings for a particular build of a particular software."@en ;
     rdfs:label "configurationSettingDescription"@en ;
     rdfs:domain tool:BuildConfigurationType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:cpeid
@@ -387,7 +387,7 @@ tool:ToolConfigurationType
     rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
     rdfs:label "cpeid"@en ;
     rdfs:domain tool:CompilerType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:creator
@@ -395,7 +395,7 @@ tool:ToolConfigurationType
     rdfs:comment "The creator organization for a particular tool."@en ;
     rdfs:label "creator"@en ;
     rdfs:domain tool:Tool ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:dependencyDescription
@@ -403,7 +403,7 @@ tool:ToolConfigurationType
     rdfs:comment "A description of a tool dependency."@en ;
     rdfs:label "dependencyDescription"@en ;
     rdfs:domain tool:DependencyType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:dependencyType
@@ -411,7 +411,7 @@ tool:ToolConfigurationType
     rdfs:comment "The type of a tool dependency."@en ;
     rdfs:label "dependencyType"@en ;
     rdfs:domain tool:DependencyType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:itemDescription
@@ -419,7 +419,7 @@ tool:ToolConfigurationType
     rdfs:comment "A description of a configuration item."@en ;
     rdfs:label "itemDescription"@en ;
     rdfs:domain tool:ConfigurationSettingType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:itemName
@@ -427,7 +427,7 @@ tool:ToolConfigurationType
     rdfs:comment "The name of a configuration item."@en ;
     rdfs:label "itemName"@en ;
     rdfs:domain tool:ConfigurationSettingType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:itemType
@@ -435,7 +435,7 @@ tool:ToolConfigurationType
     rdfs:comment "The type of a configuration item."@en ;
     rdfs:label "itemType"@en ;
     rdfs:domain tool:ConfigurationSettingType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:itemValue
@@ -443,7 +443,7 @@ tool:ToolConfigurationType
     rdfs:comment "The value of a configuration setting instance."@en ;
     rdfs:label "itemValue"@en ;
     rdfs:domain tool:ConfigurationSettingType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:libraryName
@@ -451,7 +451,7 @@ tool:ToolConfigurationType
     rdfs:comment "The name of the library."@en ;
     rdfs:label "libraryName"@en ;
     rdfs:domain tool:LibraryType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:libraryVersion
@@ -459,7 +459,7 @@ tool:ToolConfigurationType
     rdfs:comment "The version of the library."@en ;
     rdfs:label "libraryVersion"@en ;
     rdfs:domain tool:LibraryType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:references
@@ -475,7 +475,7 @@ tool:ToolConfigurationType
     rdfs:comment "An appropriate service pack descriptor for a particular tool."@en ;
     rdfs:label "servicePack"@en ;
     rdfs:domain tool:Tool ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:swid
@@ -483,7 +483,7 @@ tool:ToolConfigurationType
     rdfs:comment "Specifies the SWID tag for the software."@en ;
     rdfs:label "swid"@en ;
     rdfs:domain tool:CompilerType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:toolType
@@ -491,7 +491,7 @@ tool:ToolConfigurationType
     rdfs:comment "The type of tool."@en ;
     rdfs:label "toolType"@en ;
     rdfs:domain tool:Tool ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:usageContextAssumptions
@@ -499,7 +499,7 @@ tool:ToolConfigurationType
     rdfs:comment "dDescriptions of the various relevant usage context assumptions for this tool ."@en ;
     rdfs:label "usageContextAssumptions"@en ;
     rdfs:domain tool:ToolConfigurationType ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
 
   tool:version
@@ -507,5 +507,5 @@ tool:ToolConfigurationType
     rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
     rdfs:label "version"@en ;
     rdfs:domain tool:Tool ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     .
