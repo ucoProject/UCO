@@ -1,35 +1,43 @@
 # baseURI: http://unifiedcyberontology.org/time
+# imports: http://unifiedcyberontology.org/core
 
-@prefix time: <http://unifiedcyberontology.org/time#> .
+@base <http://unifiedcyberontology.org/time> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://unifiedcyberontology.org/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://unifiedcyberontology.org/time>
-  rdf:type owl:Ontology ;
-  owl:imports <http://unifiedcyberontology.org/core> ;
-  rdfs:label "uco-time"@en .
-
-time:TimestampPrecision
-  rdfs:comment "An enumeration of timestamp precision granularities."@en ;
-  owl:equivalentClass [
-    rdf:type rdfs:Datatype ;
-    owl:oneOf (
-     "day"^^xsd:string
-     "hour"^^xsd:string
-     "minute"^^xsd:string
-     "month"^^xsd:string
-     "second"^^xsd:string
-     "year"^^xsd:string
-   )
-  ] .
+	a owl:Ontology ;
+	rdfs:label "uco-time"@en ;
+	owl:imports <http://unifiedcyberontology.org/core> ;
+	.
 
 time:Time
- rdf:type rdfs:Datatype .
+	a rdfs:Datatype ;
+	.
 
 time:TimeRange
- rdf:type rdfs:Datatype .
+	a rdfs:Datatype ;
+	.
 
 time:Timestamp
- rdf:type rdfs:Datatype .
+	a rdfs:Datatype ;
+	.
+
+time:TimestampPrecision
+	rdfs:comment "An enumeration of timestamp precision granularities."@en ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:oneOf (
+			"day"
+			"hour"
+			"minute"
+			"month"
+			"second"
+			"year"
+		) ;
+	] ;
+	.
+

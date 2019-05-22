@@ -1,181 +1,200 @@
 # baseURI: http://unifiedcyberontology.org/types
+# imports: http://unifiedcyberontology.org/core
 
-@prefix types: <http://unifiedcyberontology.org/types#> .
+@base <http://unifiedcyberontology.org/types> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix types: <http://unifiedcyberontology.org/types#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://unifiedcyberontology.org/types>
-  rdf:type owl:Ontology ;
-  owl:imports <http://unifiedcyberontology.org/core> ;
-  rdfs:label "uco-types"@en .
-
+	a owl:Ontology ;
+	rdfs:label "uco-types"@en ;
+	owl:imports <http://unifiedcyberontology.org/core> ;
+	.
 
 types:ArrayOfHash
-  rdf:type owl:Class ;
-  rdfs:comment "An ordered list of hash values."@en ;
-  rdfs:label "ArrayOfHash"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:hash ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass types:Hash
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty types:hash ;
+		owl:onClass types:Hash ;
+		owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	] ;
+	rdfs:label "ArrayOfHash"@en ;
+	rdfs:comment "An ordered list of hash values."@en ;
+	.
 
 types:ArrayOfObject
-  rdf:type owl:Class ;
-  rdfs:comment "An ordered list of object references."@en ;
-  rdfs:label "ArrayOfObject"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:object ;
-    owl:minCardinality "1"^^xsd:nonNegativeInteger
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty types:object ;
+		owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+	] ;
+	rdfs:label "ArrayOfObject"@en ;
+	rdfs:comment "An ordered list of object references."@en ;
+	.
 
 types:ArrayOfString
-  rdf:type owl:Class ;
-  rdfs:comment "An ordered list of string values."@en ;
-  rdfs:label "ArrayOfString"@en .
+	a owl:Class ;
+	rdfs:label "ArrayOfString"@en ;
+	rdfs:comment "An ordered list of string values."@en ;
+	.
 
 types:ControlledDictionary
-  rdf:type owl:Class ;
-  rdfs:comment "A list of terms/keys and their values where the set of terms/keys is constrained to an explicitly defined set of values."@en ;
-  rdfs:label "ControlledDictionary"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:entry ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass types:ControlledDictionaryEntry
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty types:entry ;
+		owl:onClass types:ControlledDictionaryEntry ;
+		owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	] ;
+	rdfs:label "ControlledDictionary"@en ;
+	rdfs:comment "A list of terms/keys and their values where the set of terms/keys is constrained to an explicitly defined set of values."@en ;
+	.
 
 types:ControlledDictionaryEntry
-  rdf:type owl:Class ;
-  rdfs:comment "A single term/key and its value where the term/key is constrained to an explicitly defined set of values."@en ;
-  rdfs:label "ControlledDictionaryEntry"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:key ;
-    owl:cardinality "1"^^xsd:nonNegativeInteger
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:value ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty types:key ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty types:value ;
+			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "ControlledDictionaryEntry"@en ;
+	rdfs:comment "A single term/key and its value where the term/key is constrained to an explicitly defined set of values."@en ;
+	.
 
 types:Dictionary
-  rdf:type owl:Class ;
-  rdfs:comment "A list of terms/keys and their values."@en ;
-  rdfs:label "Dictionary"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:entry ;
-    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass types:DictionaryEntry
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty types:entry ;
+		owl:onClass types:DictionaryEntry ;
+		owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	] ;
+	rdfs:label "Dictionary"@en ;
+	rdfs:comment "A list of terms/keys and their values."@en ;
+	.
 
 types:DictionaryEntry
-  rdf:type owl:Class ;
-  rdfs:comment "A single of term/key and its value."@en ;
-  rdfs:label "DictionaryEntry"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:key ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:value ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty types:key ;
+			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty types:value ;
+			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "DictionaryEntry"@en ;
+	rdfs:comment "A single of term/key and its value."@en ;
+	.
 
 types:Hash
-  rdf:type owl:Class ;
-  rdfs:comment "A cryptographic hash of data."@en ;
-  rdfs:label "Hash"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:hashMethod ;
-    owl:cardinality "1"^^xsd:nonNegativeInteger
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty types:hashValue ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:hexBinary
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty types:hashMethod ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty types:hashValue ;
+			owl:onDataRange xsd:hexBinary ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "Hash"@en ;
+	rdfs:comment "A cryptographic hash of data."@en ;
+	.
 
 types:Identifier
-  rdf:type rdfs:Datatype ;
-  owl:onDatatype xsd:string ;
-  rdfs:comment "UCO standard format for object identifiers. UUID-based."@en .
+	a rdfs:Datatype ;
+	rdfs:comment "UCO standard format for object identifiers. UUID-based."@en ;
+	owl:onDatatype xsd:string ;
+	.
 
 types:NativeFormatString
-rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en .
+	rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en ;
+	.
 
 types:StructuredText
- rdfs:comment "Expresses string-based data in some information structuring format (e.g., HTML5)."@en .
+	rdfs:comment "Expresses string-based data in some information structuring format (e.g., HTML5)."@en ;
+	.
 
 types:entry
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "A dictionary entry."@en ;
-  rdfs:label "entry"@en ;
-  rdfs:domain types:Dictionary ;
-  rdfs:range types:DictionaryEntry ;
-  .
+	a owl:ObjectProperty ;
+	rdfs:label "entry"@en ;
+	rdfs:comment "A dictionary entry."@en ;
+	rdfs:domain types:Dictionary ;
+	rdfs:range types:DictionaryEntry ;
+	.
 
 types:hash
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "A single calculated hash."@en ;
-  rdfs:label "hash"@en ;
-  rdfs:domain types:ArrayOfHash ;
-  rdfs:range types:Hash ;
-  .
-
-types:object
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "A single UCO object."@en ;
-  rdfs:label "object"@en ;
-  rdfs:domain types:ArrayOfObject ;
-  rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
-  .
+	a owl:ObjectProperty ;
+	rdfs:label "hash"@en ;
+	rdfs:comment "A single calculated hash."@en ;
+	rdfs:domain types:ArrayOfHash ;
+	rdfs:range types:Hash ;
+	.
 
 types:hashMethod
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
-  rdfs:label "hashMethod"@en ;
-  rdfs:domain types:Hash ;
-  rdfs:range xsd:string ;
-  .
+	a owl:DatatypeProperty ;
+	rdfs:label "hashMethod"@en ;
+	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
+	rdfs:domain types:Hash ;
+	rdfs:range xsd:string ;
+	.
 
 types:hashValue
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "A cryptographic hash value."@en ;
-  rdfs:label "hashValue"@en ;
-  rdfs:domain types:Hash ;
-  rdfs:range xsd:hexBinary ;
-  .
+	a owl:DatatypeProperty ;
+	rdfs:label "hashValue"@en ;
+	rdfs:comment "A cryptographic hash value."@en ;
+	rdfs:domain types:Hash ;
+	rdfs:range xsd:hexBinary ;
+	.
 
 types:key
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "A key property of a single dictionary entry."@en ;
-  rdfs:label "key"@en ;
-  rdfs:domain types:ControlledDictionaryEntry ;
-  rdfs:range xsd:string ;
-  .
+	a owl:DatatypeProperty ;
+	rdfs:label "key"@en ;
+	rdfs:comment "A key property of a single dictionary entry."@en ;
+	rdfs:domain types:ControlledDictionaryEntry ;
+	rdfs:range xsd:string ;
+	.
+
+types:object
+	a owl:ObjectProperty ;
+	rdfs:label "object"@en ;
+	rdfs:comment "A single UCO object."@en ;
+	rdfs:domain types:ArrayOfObject ;
+	rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+	.
 
 types:value
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "A specific property value."@en ;
-  rdfs:label "value"@en ;
-  rdfs:domain types:ControlledDictionaryEntry, types:ArrayOfString ;
-  rdfs:range xsd:string ;
-  .
+	a owl:DatatypeProperty ;
+	rdfs:label "value"@en ;
+	rdfs:comment "A specific property value."@en ;
+	rdfs:domain
+		types:ArrayOfString ,
+		types:ControlledDictionaryEntry
+		;
+	rdfs:range xsd:string ;
+	.
+
