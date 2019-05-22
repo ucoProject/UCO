@@ -1,0 +1,22 @@
+# baseURI: http://unifiedcyberontology.org/master
+
+@prefix victim: <http://unifiedcyberontology.org/master#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://unifiedcyberontology.org/master>
+  rdf:type owl:Ontology ;
+  owl:imports <http://unifiedcyberontology.org/core> ;
+  owl:imports <http://unifiedcyberontology.org/action> ;
+  owl:imports <http://unifiedcyberontology.org/identity> ;
+  owl:imports <http://unifiedcyberontology.org/investigation> ;
+  owl:imports <http://unifiedcyberontology.org/location> ;
+  owl:imports <http://unifiedcyberontology.org/marking> ;
+  owl:imports <http://unifiedcyberontology.org/observable> ;
+  owl:imports <http://unifiedcyberontology.org/pattern> ;
+  owl:imports <http://unifiedcyberontology.org/role> ;
+  owl:imports <http://unifiedcyberontology.org/tool> ;
+  owl:imports <http://unifiedcyberontology.org/types> ;
+  owl:imports <http://unifiedcyberontology.org/victim> ;
+  rdfs:label "uco-master"@en .
