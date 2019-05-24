@@ -1,24 +1,34 @@
 # baseURI: http://unifiedcyberontology.org/victim
+# imports: http://unifiedcyberontology.org/core
+# imports: http://unifiedcyberontology.org/role
 
-@prefix victim: <http://unifiedcyberontology.org/victim#> .
+@base <http://unifiedcyberontology.org/victim> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix victim: <http://unifiedcyberontology.org/victim#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://unifiedcyberontology.org/victim>
-  rdf:type owl:Ontology ;
-  owl:imports <http://unifiedcyberontology.org/core> ;
-  owl:imports <http://unifiedcyberontology.org/role> ;
-  rdfs:label "uco-victim"@en .
+	a owl:Ontology ;
+	rdfs:label "uco-victim"@en ;
+	owl:imports
+		<http://unifiedcyberontology.org/core> ,
+		<http://unifiedcyberontology.org/role>
+		;
+	.
 
 victim:Victim
-  rdf:type owl:Class ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core/role#NeutralRole> ;
-  rdfs:comment "Person or organization that is the target of some malicious action."@en ;
-  rdfs:label "Victim"@en .
+	a owl:Class ;
+	rdfs:subClassOf <http://unifiedcyberontology.org/core/role#NeutralRole> ;
+	rdfs:label "Victim"@en ;
+	rdfs:comment "Person or organization that is the target of some malicious action."@en ;
+	.
 
 victim:VictimTargeting
-  rdf:type owl:Class ;
-  rdfs:subClassOf victim:Victim ;
-  rdfs:comment "Characteristics of people or organizations that are the target of some malicious activity."@en ;
-  rdfs:label "VictimTargeting"@en .
+	a owl:Class ;
+	rdfs:subClassOf victim:Victim ;
+	rdfs:label "VictimTargeting"@en ;
+	rdfs:comment "Characteristics of people or organizations that are the target of some malicious activity."@en ;
+	.
+

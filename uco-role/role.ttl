@@ -1,39 +1,44 @@
 # baseURI: http://unifiedcyberontology.org/role
+# imports: http://unifiedcyberontology.org/core
 
-@prefix role: <http://unifiedcyberontology.org/role#> .
+@base <http://unifiedcyberontology.org/role> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://unifiedcyberontology.org/role#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://unifiedcyberontology.org/role>
-  rdf:type owl:Ontology ;
-  owl:imports <http://unifiedcyberontology.org/core> ;
-  rdfs:label "uco-role"@en .
+	a owl:Ontology ;
+	rdfs:label "uco-role"@en ;
+	owl:imports <http://unifiedcyberontology.org/core> ;
+	.
 
 role:BenevolentRole
-  rdf:type owl:Class ;
-  rdfs:comment " A role with postive and/or beneficial intent."@en ;
-  rdfs:label "BenevolentRole"@en ;
-  rdfs:subClassOf role:Role ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf role:Role ;
+	rdfs:label "BenevolentRole"@en ;
+	rdfs:comment " A role with postive and/or beneficial intent."@en ;
+	.
 
 role:MaliciousRole
-  rdf:type owl:Class ;
-  rdfs:comment " A role with malicious intent."@en ;
-  rdfs:label "MaliciousRole"@en ;
-  rdfs:subClassOf role:Role ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf role:Role ;
+	rdfs:label "MaliciousRole"@en ;
+	rdfs:comment " A role with malicious intent."@en ;
+	.
 
 role:NeutralRole
-  rdf:type owl:Class ;
-  rdfs:comment " A role with neutral intent."@en ;
-  rdfs:label "NeutralRole"@en ;
-  rdfs:subClassOf role:Role ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf role:Role ;
+	rdfs:label "NeutralRole"@en ;
+	rdfs:comment " A role with neutral intent."@en ;
+	.
 
 role:Role
-  rdf:type owl:Class ;
-  rdfs:comment "Usual or customary function based on contextual perspective."@en ;
-  rdfs:label "Role"@en ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+	rdfs:label "Role"@en ;
+	rdfs:comment "Usual or customary function based on contextual perspective."@en ;
+	.
+

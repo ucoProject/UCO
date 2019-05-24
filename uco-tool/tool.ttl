@@ -1,511 +1,551 @@
 # baseURI: http://unifiedcyberontology.org/tool
+# imports: http://unifiedcyberontology.org/core
 
-@prefix tool: <http://unifiedcyberontology.org/tool#> .
+@base <http://unifiedcyberontology.org/tool> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tool: <http://unifiedcyberontology.org/tool#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://unifiedcyberontology.org/tool>
-  rdf:type owl:Ontology ;
-  owl:imports <http://unifiedcyberontology.org/core> ;
-  rdfs:label "uco-tool"@en .
-
+	a owl:Ontology ;
+	rdfs:label "uco-tool"@en ;
+	owl:imports <http://unifiedcyberontology.org/core> ;
+	.
 
 tool:AnalyticTool
-  rdf:type owl:Class ;
-  rdfs:comment "An instrument useful for accomplishing an analytical task or purpose."@en ;
-  rdfs:label "AnalyticTool"@en ;
-  rdfs:subClassOf tool:Tool ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf tool:Tool ;
+	rdfs:label "AnalyticTool"@en ;
+	rdfs:comment "An instrument useful for accomplishing an analytical task or purpose."@en ;
+	.
 
 tool:Build
-  rdf:type owl:Class ;
-  rdfs:comment "Characteristics of a particular build of a tool."@en ;
-  rdfs:label "Build"@en ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet>, [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildInformation ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass tool:BuildInformationType
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		<http://unifiedcyberontology.org/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildInformation ;
+			owl:onClass tool:BuildInformationType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "Build"@en ;
+	rdfs:comment "Characteristics of a particular build of a tool."@en ;
+	.
 
 tool:BuildConfigurationType
-  rdf:type owl:Class ;
-  rdfs:comment "Describes how the build utility was configured for a particular build of a particular software."@en ;
-  rdfs:label "BuildConfigurationType"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:configurationSettingDescription ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty tool:configurationSettingDescription ;
+		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		owl:onDataRange xsd:string ;
+	] ;
+	rdfs:label "BuildConfigurationType"@en ;
+	rdfs:comment "Describes how the build utility was configured for a particular build of a particular software."@en ;
+	.
 
 tool:BuildInformationType
-  rdf:type owl:Class ;
-  rdfs:comment "Characterizes how a software was built."@en ;
-  rdfs:label "BuildInformationType"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildConfiguration ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass tool:BuildConfigurationType
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildUtility ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onClass tool:BuildUtilityType
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildID ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildLabel ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildOutputLog ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildProject ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildScript ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildVersion ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:compilationDate ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:compilationDate ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildConfiguration ;
+			owl:onClass tool:BuildConfigurationType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildUtility ;
+			owl:onClass tool:BuildUtilityType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildID ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildLabel ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildOutputLog ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildProject ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildScript ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildVersion ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "BuildInformationType"@en ;
+	rdfs:comment "Characterizes how a software was built."@en ;
+	.
 
 tool:BuildUtilityType
-  rdf:type owl:Class ;
-  rdfs:comment "Identifies the utility used to build a particular software."@en ;
-  rdfs:label "BuildUtilityType"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:buildUtilityName ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:cpeid ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:swid ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:cpeid ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:swid ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildUtilityName ;
+			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "BuildUtilityType"@en ;
+	rdfs:comment "Identifies the utility used to build a particular software."@en ;
+	.
 
 tool:CompilerType
-  rdf:type owl:Class ;
-  rdfs:comment "A compiler utilized during a particular build of a particular software."@en ;
-  rdfs:label "CompilerType"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:compilerInformalDescription ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:cpeid ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:swid ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:compilerInformalDescription ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:cpeid ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:swid ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "CompilerType"@en ;
+	rdfs:comment "A compiler utilized during a particular build of a particular software."@en ;
+	.
 
 tool:ConfigurationSettingType
-  rdf:type owl:Class ;
-  rdfs:comment "Describes a particular configuration setting for a tool, application or other cyber object."@en ;
-  rdfs:label "ConfigurationSettingType"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:itemName ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:itemValue ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:itemDescription ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:itemType ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:itemDescription ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:itemType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:itemName ;
+			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:itemValue ;
+			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "ConfigurationSettingType"@en ;
+	rdfs:comment "Describes a particular configuration setting for a tool, application or other cyber object."@en ;
+	.
 
 tool:DefensiveTool
-  rdf:type owl:Class ;
-  rdfs:comment "An instrument useful for accomplishing a defensive task or purpose."@en ;
-  rdfs:label "DefensiveTool"@en ;
-  rdfs:subClassOf tool:Tool ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf tool:Tool ;
+	rdfs:label "DefensiveTool"@en ;
+	rdfs:comment "An instrument useful for accomplishing a defensive task or purpose."@en ;
+	.
 
 tool:DependencyType
-  rdf:type owl:Class ;
-  rdfs:comment "Describes a single dependency for a tool."@en ;
-  rdfs:label "DependencyType"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:dependencyDescription ;
-    owl:cardinality "1"^^xsd:nonNegativeInteger
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:dependencyType ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:dependencyDescription ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:dependencyType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "DependencyType"@en ;
+	rdfs:comment "Describes a single dependency for a tool."@en ;
+	.
 
 tool:LibraryType
-  rdf:type owl:Class ;
-  rdfs:comment "A library incorporated into the build of a software."@en ;
-  rdfs:label "LibraryType"@en ;
-  rdfs:subClassOf [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:libraryName ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:libraryVersion ;
-    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:libraryName ;
+			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:libraryVersion ;
+			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "LibraryType"@en ;
+	rdfs:comment "A library incorporated into the build of a software."@en ;
+	.
 
 tool:MaliciousTool
-  rdf:type owl:Class ;
-  rdfs:comment "An instrument useful for accomplishing a malicious task or purpose."@en ;
-  rdfs:label "MaliciousTool"@en ;
-  rdfs:subClassOf tool:Tool ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf tool:Tool ;
+	rdfs:label "MaliciousTool"@en ;
+	rdfs:comment "An instrument useful for accomplishing a malicious task or purpose."@en ;
+	.
 
 tool:Tool
-  rdf:type owl:Class ;
-  rdfs:comment "An element of hardware and/or software utilized to carry out a particular function."@en ;
-  rdfs:label "Tool"@en ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject>, [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:creator ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:servicePack ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:toolType ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ], [
-    rdf:type owl:Restriction ;
-    owl:onProperty tool:version ;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onDataRange xsd:string
-  ] ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf
+		<http://unifiedcyberontology.org/core#UcoObject> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:creator ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:servicePack ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:toolType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:version ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "Tool"@en ;
+	rdfs:comment "An element of hardware and/or software utilized to carry out a particular function."@en ;
+	.
 
 tool:ToolConfigurationType
-  rdf:type owl:Class ;
-  rdfs:comment "Characterizes the configuration for a tool."@en ;
-  rdfs:label "ToolConfigurationType"@en ;
-  rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
-  .
+	a owl:Class ;
+	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:label "ToolConfigurationType"@en ;
+	rdfs:comment "Characterizes the configuration for a tool."@en ;
+	.
 
+tool:buildConfiguration
+	a owl:ObjectProperty ;
+	rdfs:label "buildConfiguration"@en ;
+	rdfs:comment "How the build utility was configured for a particular build of a particular software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range tool:BuildConfigurationType ;
+	.
 
-  tool:buildConfiguration
-    rdf:type owl:ObjectProperty ;
-    rdfs:comment "How the build utility was configured for a particular build of a particular software."@en ;
-    rdfs:label "buildConfiguration"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range tool:BuildConfigurationType ;
-    .
+tool:buildID
+	a owl:DatatypeProperty ;
+	rdfs:label "buildID"@en ;
+	rdfs:comment "An externally defined unique identifier for a particular build of a software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:buildInformation
-    rdf:type owl:ObjectProperty ;
-    rdfs:comment "Describes how a particular tool was built."@en ;
-    rdfs:label "buildInformation"@en ;
-    rdfs:domain tool:Build ;
-    rdfs:range tool:BuildInformationType ;
-    .
+tool:buildInformation
+	a owl:ObjectProperty ;
+	rdfs:label "buildInformation"@en ;
+	rdfs:comment "Describes how a particular tool was built."@en ;
+	rdfs:domain tool:Build ;
+	rdfs:range tool:BuildInformationType ;
+	.
 
-  tool:buildUtility
-    rdf:type owl:ObjectProperty ;
-    rdfs:comment "Identifies the utility used to build a software."@en ;
-    rdfs:label "buildUtility"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range tool:BuildUtilityType ;
-    .
+tool:buildLabel
+	a owl:DatatypeProperty ;
+	rdfs:label "buildLabel"@en ;
+	rdfs:comment "Relevant label for a particular build of a particular software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:compilers
-    rdf:type owl:ObjectProperty ;
-    rdfs:comment "The compilers utilized during a particular build of a particular software."@en ;
-    rdfs:label "compilers"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range tool:CompilerType ;
-    .
+tool:buildOutputLog
+	a owl:DatatypeProperty ;
+	rdfs:label "buildOutputLog"@en ;
+	rdfs:comment "The output log of the build process for a software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:configurationSettings
-    rdf:type owl:ObjectProperty ;
-    rdfs:comment "The configuration settings for a particular build of a particular software."@en ;
-    rdfs:label "configurationSettings"@en ;
-    rdfs:domain tool:BuildConfigurationType ;
-    rdfs:range tool:ConfigurationSettingType ;
-    .
+tool:buildProject
+	a owl:DatatypeProperty ;
+	rdfs:label "buildProject"@en ;
+	rdfs:comment "The project name of a build of a software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:dependencies
-    rdf:type owl:ObjectProperty ;
-    rdfs:comment "The relevant dependencies for a tool."@en ;
-    rdfs:label "dependencies"@en ;
-    rdfs:domain tool:ToolConfigurationType ;
-    rdfs:range tool:DependencyType ;
-    .
+tool:buildScript
+	a owl:DatatypeProperty ;
+	rdfs:label "buildScript"@en ;
+	rdfs:comment "The actual build script for a particular build of a particular software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:libraries
-    rdf:type owl:ObjectProperty ;
-    rdfs:comment "The libraries incorporated into a particular build of a software."@en ;
-    rdfs:label "libraries"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range tool:LibraryType ;
-    .
+tool:buildUtility
+	a owl:ObjectProperty ;
+	rdfs:label "buildUtility"@en ;
+	rdfs:comment "Identifies the utility used to build a software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range tool:BuildUtilityType ;
+	.
 
-  tool:buildID
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "An externally defined unique identifier for a particular build of a software."@en ;
-    rdfs:label "buildID"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:string ;
-    .
+tool:buildUtilityName
+	a owl:DatatypeProperty ;
+	rdfs:label "buildUtilityName"@en ;
+	rdfs:comment "The informally defined name of the utility used to build a particular software."@en ;
+	rdfs:domain tool:BuildUtilityType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:buildLabel
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "Relevant label for a particular build of a particular software."@en ;
-    rdfs:label "buildLabel"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:string ;
-    .
+tool:buildVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "buildVersion"@en ;
+	rdfs:comment "The appropriate version descriptor of a particular build of a particular software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:buildOutputLog
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The output log of the build process for a software."@en ;
-    rdfs:label "buildOutputLog"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:string ;
-    .
+tool:compilationDate
+	a owl:DatatypeProperty ;
+	rdfs:label "compilationDate"@en ;
+	rdfs:comment "The compilation date for the build of a software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range xsd:dateTime ;
+	.
 
-  tool:buildProject
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The project name of a build of a software."@en ;
-    rdfs:label "buildProject"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:string ;
-    .
+tool:compilerInformalDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "compilerInformalDescription"@en ;
+	rdfs:comment "An informal description of a compiler."@en ;
+	rdfs:domain tool:CompilerType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:buildScript
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The actual build script for a particular build of a particular software."@en ;
-    rdfs:label "buildScript"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:string ;
-    .
+tool:compilers
+	a owl:ObjectProperty ;
+	rdfs:label "compilers"@en ;
+	rdfs:comment "The compilers utilized during a particular build of a particular software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range tool:CompilerType ;
+	.
 
-  tool:buildUtilityName
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The informally defined name of the utility used to build a particular software."@en ;
-    rdfs:label "buildUtilityName"@en ;
-    rdfs:domain tool:BuildUtilityType ;
-    rdfs:range xsd:string ;
-    .
+tool:configurationSettingDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "configurationSettingDescription"@en ;
+	rdfs:comment "Description of the configuration settings for a particular build of a particular software."@en ;
+	rdfs:domain tool:BuildConfigurationType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:buildVersion
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The appropriate version descriptor of a particular build of a particular software."@en ;
-    rdfs:label "buildVersion"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:string ;
-    .
+tool:configurationSettings
+	a owl:ObjectProperty ;
+	rdfs:label "configurationSettings"@en ;
+	rdfs:comment "The configuration settings for a particular build of a particular software."@en ;
+	rdfs:domain tool:BuildConfigurationType ;
+	rdfs:range tool:ConfigurationSettingType ;
+	.
 
-  tool:compilationDate
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The compilation date for the build of a software."@en ;
-    rdfs:label "compilationDate"@en ;
-    rdfs:domain tool:BuildInformationType ;
-    rdfs:range xsd:dateTime ;
-    .
+tool:cpeid
+	a owl:DatatypeProperty ;
+	rdfs:label "cpeid"@en ;
+	rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
+	rdfs:domain tool:CompilerType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:compilerInformalDescription
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "An informal description of a compiler."@en ;
-    rdfs:label "compilerInformalDescription"@en ;
-    rdfs:domain tool:CompilerType ;
-    rdfs:range xsd:string ;
-    .
+tool:creator
+	a owl:DatatypeProperty ;
+	rdfs:label "creator"@en ;
+	rdfs:comment "The creator organization for a particular tool."@en ;
+	rdfs:domain tool:Tool ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:configurationSettingDescription
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "Description of the configuration settings for a particular build of a particular software."@en ;
-    rdfs:label "configurationSettingDescription"@en ;
-    rdfs:domain tool:BuildConfigurationType ;
-    rdfs:range xsd:string ;
-    .
+tool:dependencies
+	a owl:ObjectProperty ;
+	rdfs:label "dependencies"@en ;
+	rdfs:comment "The relevant dependencies for a tool."@en ;
+	rdfs:domain tool:ToolConfigurationType ;
+	rdfs:range tool:DependencyType ;
+	.
 
-  tool:cpeid
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
-    rdfs:label "cpeid"@en ;
-    rdfs:domain tool:CompilerType ;
-    rdfs:range xsd:string ;
-    .
+tool:dependencyDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "dependencyDescription"@en ;
+	rdfs:comment "A description of a tool dependency."@en ;
+	rdfs:domain tool:DependencyType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:creator
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The creator organization for a particular tool."@en ;
-    rdfs:label "creator"@en ;
-    rdfs:domain tool:Tool ;
-    rdfs:range xsd:string ;
-    .
+tool:dependencyType
+	a owl:DatatypeProperty ;
+	rdfs:label "dependencyType"@en ;
+	rdfs:comment "The type of a tool dependency."@en ;
+	rdfs:domain tool:DependencyType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:dependencyDescription
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "A description of a tool dependency."@en ;
-    rdfs:label "dependencyDescription"@en ;
-    rdfs:domain tool:DependencyType ;
-    rdfs:range xsd:string ;
-    .
+tool:itemDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "itemDescription"@en ;
+	rdfs:comment "A description of a configuration item."@en ;
+	rdfs:domain tool:ConfigurationSettingType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:dependencyType
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The type of a tool dependency."@en ;
-    rdfs:label "dependencyType"@en ;
-    rdfs:domain tool:DependencyType ;
-    rdfs:range xsd:string ;
-    .
+tool:itemName
+	a owl:DatatypeProperty ;
+	rdfs:label "itemName"@en ;
+	rdfs:comment "The name of a configuration item."@en ;
+	rdfs:domain tool:ConfigurationSettingType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:itemDescription
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "A description of a configuration item."@en ;
-    rdfs:label "itemDescription"@en ;
-    rdfs:domain tool:ConfigurationSettingType ;
-    rdfs:range xsd:string ;
-    .
+tool:itemType
+	a owl:DatatypeProperty ;
+	rdfs:label "itemType"@en ;
+	rdfs:comment "The type of a configuration item."@en ;
+	rdfs:domain tool:ConfigurationSettingType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:itemName
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The name of a configuration item."@en ;
-    rdfs:label "itemName"@en ;
-    rdfs:domain tool:ConfigurationSettingType ;
-    rdfs:range xsd:string ;
-    .
+tool:itemValue
+	a owl:DatatypeProperty ;
+	rdfs:label "itemValue"@en ;
+	rdfs:comment "The value of a configuration setting instance."@en ;
+	rdfs:domain tool:ConfigurationSettingType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:itemType
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The type of a configuration item."@en ;
-    rdfs:label "itemType"@en ;
-    rdfs:domain tool:ConfigurationSettingType ;
-    rdfs:range xsd:string ;
-    .
+tool:libraries
+	a owl:ObjectProperty ;
+	rdfs:label "libraries"@en ;
+	rdfs:comment "The libraries incorporated into a particular build of a software."@en ;
+	rdfs:domain tool:BuildInformationType ;
+	rdfs:range tool:LibraryType ;
+	.
 
-  tool:itemValue
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The value of a configuration setting instance."@en ;
-    rdfs:label "itemValue"@en ;
-    rdfs:domain tool:ConfigurationSettingType ;
-    rdfs:range xsd:string ;
-    .
+tool:libraryName
+	a owl:DatatypeProperty ;
+	rdfs:label "libraryName"@en ;
+	rdfs:comment "The name of the library."@en ;
+	rdfs:domain tool:LibraryType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:libraryName
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The name of the library."@en ;
-    rdfs:label "libraryName"@en ;
-    rdfs:domain tool:LibraryType ;
-    rdfs:range xsd:string ;
-    .
+tool:libraryVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "libraryVersion"@en ;
+	rdfs:comment "The version of the library."@en ;
+	rdfs:domain tool:LibraryType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:libraryVersion
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The version of the library."@en ;
-    rdfs:label "libraryVersion"@en ;
-    rdfs:domain tool:LibraryType ;
-    rdfs:range xsd:string ;
-    .
+tool:references
+	a owl:DatatypeProperty ;
+	rdfs:label "references"@en ;
+	rdfs:comment "References to information describing a particular tool."@en ;
+	rdfs:domain tool:Tool ;
+	rdfs:range xsd:anyURI ;
+	.
 
-  tool:references
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "References to information describing a particular tool."@en ;
-    rdfs:label "references"@en ;
-    rdfs:domain tool:Tool ;
-    rdfs:range xsd:anyURI ;
-    .
+tool:servicePack
+	a owl:DatatypeProperty ;
+	rdfs:label "servicePack"@en ;
+	rdfs:comment "An appropriate service pack descriptor for a particular tool."@en ;
+	rdfs:domain tool:Tool ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:servicePack
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "An appropriate service pack descriptor for a particular tool."@en ;
-    rdfs:label "servicePack"@en ;
-    rdfs:domain tool:Tool ;
-    rdfs:range xsd:string ;
-    .
+tool:swid
+	a owl:DatatypeProperty ;
+	rdfs:label "swid"@en ;
+	rdfs:comment "Specifies the SWID tag for the software."@en ;
+	rdfs:domain tool:CompilerType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:swid
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "Specifies the SWID tag for the software."@en ;
-    rdfs:label "swid"@en ;
-    rdfs:domain tool:CompilerType ;
-    rdfs:range xsd:string ;
-    .
+tool:toolType
+	a owl:DatatypeProperty ;
+	rdfs:label "toolType"@en ;
+	rdfs:comment "The type of tool."@en ;
+	rdfs:domain tool:Tool ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:toolType
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "The type of tool."@en ;
-    rdfs:label "toolType"@en ;
-    rdfs:domain tool:Tool ;
-    rdfs:range xsd:string ;
-    .
+tool:usageContextAssumptions
+	a owl:DatatypeProperty ;
+	rdfs:label "usageContextAssumptions"@en ;
+	rdfs:comment "dDescriptions of the various relevant usage context assumptions for this tool ."@en ;
+	rdfs:domain tool:ToolConfigurationType ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:usageContextAssumptions
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "dDescriptions of the various relevant usage context assumptions for this tool ."@en ;
-    rdfs:label "usageContextAssumptions"@en ;
-    rdfs:domain tool:ToolConfigurationType ;
-    rdfs:range xsd:string ;
-    .
+tool:version
+	a owl:DatatypeProperty ;
+	rdfs:label "version"@en ;
+	rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
+	rdfs:domain tool:Tool ;
+	rdfs:range xsd:string ;
+	.
 
-  tool:version
-    rdf:type owl:DatatypeProperty ;
-    rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
-    rdfs:label "version"@en ;
-    rdfs:domain tool:Tool ;
-    rdfs:range xsd:string ;
-    .
