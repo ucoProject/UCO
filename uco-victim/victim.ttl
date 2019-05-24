@@ -20,7 +20,7 @@
 
 victim:Victim
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core/role#NeutralRole> ;
+	rdfs:subClassOf <http://unifiedcyberontology.org/role#NeutralRole> ;
 	rdfs:label "Victim"@en ;
 	rdfs:comment "Person or organization that is the target of some malicious action."@en ;
 	.
