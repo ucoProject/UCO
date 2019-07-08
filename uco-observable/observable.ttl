@@ -25,6 +25,10 @@
 		;
 	.
 
+<http://unifiedcyberontology.org/core#sectionName>
+	rdfs:domain :WindowsPESection ;
+	.
+
 :Account
 	a owl:Class ;
 	rdfs:subClassOf
@@ -1553,12 +1557,6 @@
 			owl:onProperty :size ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty :name ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
 	rdfs:label "AlternateDataStream"@en ;
@@ -3424,20 +3422,12 @@
 
 :EnvironmentVariable
 	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty :value ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty :name ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty :value ;
+		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		owl:onDataRange xsd:string ;
+	] ;
 	rdfs:label "EnvironmentVariable"@en ;
 	rdfs:comment "Represents the properties of an environment variable."@en ;
 	.
@@ -6868,12 +6858,6 @@ How does this relate to Application?
 			owl:onProperty :size ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty :name ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
 	rdfs:label "WindowsPESection"@en ;
@@ -7025,12 +7009,6 @@ How does this relate to Application?
 			owl:onProperty :data ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty :name ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
 	rdfs:label "WindowsRegistryValue"@en ;
@@ -9936,14 +9914,6 @@ How does this relate to Application?
 	rdfs:label "msProductName"@en ;
 	rdfs:comment "The Microsoft ProductName of the current installation of Windows. This is typically found in HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion!ProductName."@en ;
 	rdfs:domain :WindowsComputerSpecification ;
-	rdfs:range xsd:string ;
-	.
-
-:name
-	a owl:DatatypeProperty ;
-	rdfs:label "name"@en ;
-	rdfs:comment "Specifies the name of the section."@en ;
-	rdfs:domain :WindowsPESection ;
 	rdfs:range xsd:string ;
 	.
 
