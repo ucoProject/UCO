@@ -57,7 +57,7 @@ core:Confidence
 		[
 			a owl:Restriction ;
 			owl:onProperty core:confidence ;
-			owl:onClass core:ControlledVocabulary ;
+			owl:onClass xsd:nonNegativeInteger ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -276,11 +276,19 @@ core:UcoObject
 	.
 
 core:confidence
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "confidence"@en ;
 	rdfs:comment "An asserted level of certainty in the accuracy of some information."@en ;
 	rdfs:domain core:Confidence ;
-	rdfs:range core:ControlledVocabulary ;
+	rdfs:range rdfs:range [
+      a rdfs:Datatype ;
+      owl:onDatatype xsd:nonNegativeInteger ;
+      owl:withRestrictions (
+          [
+            xsd:maxInclusive "100"^^xsd:nonNegativeInteger ;
+          ]
+        ) ;
+    ] ; ;
 	.
 
 core:constrainingVocabularyName
