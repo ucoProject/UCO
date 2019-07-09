@@ -11,6 +11,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://unifiedcyberontology.org/core#endTime>
+  rdfs:domain investigation:Authorization ;
+.
+
+<http://unifiedcyberontology.org/core#startTime>
+  rdfs:domain investigation:Authorization ;
+.
+
 <http://unifiedcyberontology.org/investigation>
 	a owl:Ontology ;
 	rdfs:label "uco-investigation"@en ;
@@ -43,6 +51,18 @@ investigation:Authorization
 			owl:onProperty investigation:authorizationIdentifier ;
 			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		],
+    [
+			a owl:Restriction ;
+			owl:onProperty <http://unifiedcyberontology.org/core#endTime> ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:dateTime ;
+		],
+    [
+			a owl:Restriction ;
+			owl:onProperty <http://unifiedcyberontology.org/core#startTime> ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:dateTime ;
 		]
 		;
 	rdfs:label "Authorization"@en ;
