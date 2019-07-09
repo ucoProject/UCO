@@ -32,7 +32,7 @@ investigation:Attorney
 investigation:Authorization
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<http://unifiedcyberontology.org/core#UcoObject> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty investigation:authorizationType ;
@@ -209,6 +209,14 @@ investigation:investigationStatus
 	rdfs:range <http://unifiedcyberontology.org/core#ControlledVocabulary> ;
 	.
 
+  investigation:relevantAuthorization
+  	a owl:ObjectProperty ;
+  	rdfs:label "relevantAuthorization"@en ;
+  	rdfs:comment "Specifies an authorization relevant to a particular investigation."@en ;
+  	rdfs:domain investigation:Investigation ;
+  	rdfs:range investigation:Authorization ;
+  	.
+
 investigation:startTime
 	a owl:DatatypeProperty ;
 	rdfs:label "startTime"@en ;
@@ -216,4 +224,3 @@ investigation:startTime
 	rdfs:domain investigation:Investigation ;
 	rdfs:range xsd:dateTime ;
 	.
-
