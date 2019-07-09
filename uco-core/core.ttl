@@ -119,7 +119,7 @@ core:EnclosingCompilation
 		[
 			a owl:Restriction ;
 			owl:onProperty core:name ;
-			owl:onClass core:ControlledVocabulary ;
+			owl:onClass xsd:string ;
 			owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -136,7 +136,7 @@ core:EnclosingCompilation
 		[
 			a owl:Restriction ;
 			owl:onProperty core:name ;
-			owl:someValuesFrom core:ControlledVocabulary ;
+			owl:someValuesFrom xsd:string ;
 		]
 		;
 	rdfs:label "EnclosingCompilation"@en ;
@@ -260,7 +260,7 @@ core:UcoObject
 		[
 			a owl:Restriction ;
 			owl:onProperty core:name ;
-			owl:onClass core:ControlledVocabulary ;
+			owl:onClass xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -388,11 +388,10 @@ core:kindOfRelationship
 	.
 
 core:name
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "name"@en ;
 	rdfs:comment "The name of a particular concept characterization."@en ;
-	rdfs:domain core:UcoObject ;
-	rdfs:range core:ControlledVocabulary ;
+	rdfs:domain xsd:string ;
 	.
 
 core:object
@@ -496,4 +495,3 @@ core:value
 	rdfs:domain core:ControlledVocabulary ;
 	rdfs:range xsd:string ;
 	.
-

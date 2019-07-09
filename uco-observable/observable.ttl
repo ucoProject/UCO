@@ -1556,7 +1556,7 @@
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :name ;
+			owl:onProperty <http://unifiedcyberontology.org/core#name> ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -3433,7 +3433,7 @@
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :name ;
+			owl:onProperty <http://unifiedcyberontology.org/core#name> ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -6871,7 +6871,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :name ;
+			owl:onProperty <http://unifiedcyberontology.org/core#name> ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -7028,7 +7028,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :name ;
+			owl:onProperty <http://unifiedcyberontology.org/core#name> ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -9939,14 +9939,6 @@ How does this relate to Application?
 	rdfs:range xsd:string ;
 	.
 
-:name
-	a owl:DatatypeProperty ;
-	rdfs:label "name"@en ;
-	rdfs:comment "Specifies the name of the section."@en ;
-	rdfs:domain :WindowsPESection ;
-	rdfs:range xsd:string ;
-	.
-
 :nameConstraints
 	a owl:DatatypeProperty ;
 	rdfs:label "nameConstraints"@en ;
@@ -11561,4 +11553,3 @@ How does this relate to Application?
 	rdfs:domain :EmailMessage ;
 	rdfs:range :CyberItem ;
 	.
-
