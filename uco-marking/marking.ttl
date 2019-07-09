@@ -42,6 +42,86 @@ marking:MarkingModel
 	rdfs:comment "A particular format of data markings"@en ;
 	.
 
+marking:LicenseMarking
+      rdf:type owl:Class ;
+      rdfs:comment ""Characterizes the License data marking""@en-US ;
+      rdfs:label "License Marking"@en-US ;
+      rdfs:subClassOf marking:MarkingModel ;
+      rdfs:subClassOf [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty marking:license ;
+        ] ;
+      rdfs:subClassOf [
+          rdf:type owl:Restriction ;
+          owl:hasValue "license" ;
+          owl:onProperty marking:definitionType ;
+        ] ;
+    .
+
+marking:ReleaseToMarking
+        rdf:type owl:Class ;
+        rdfs:comment "Characterizes the representation of the Release-To marking  that indicates the list of authorized persons and/or organizations to which the associated content maybe release.  The existance of the Released-To marking restricts access to ONLY those identities explicitly listed regardless of whether another data marking exists that allows sharing with other members of the community.""@en-US ;
+        rdfs:label "Release-To Marking"@en-US ;
+        rdfs:subClassOf marking:MarkingModel ;
+        rdfs:subClassOf [
+            rdf:type owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty marking:authorizedIdentities;
+          ] ;
+        rdfs:subClassOf [
+            rdf:type owl:Restriction ;
+            owl:hasValue "release-to" ;
+            owl:onProperty marking:definitionType ;
+          ] ;
+      .
+
+marking:StatementMarking
+    rdf:type owl:Class ;
+    rdfs:comment """Characterizes the representation of a textual marking statement, (e.g., copyright, terms of use, etc.) in a definition.  Statement markings are generally not machine-readable.
+
+  An example of a simple marking is to apply simple copyright information, for example \"Copyright 2014 Acme Inc.\""""@en-US ;
+    rdfs:label "Statement Marking"@en-US ;
+    rdfs:subClassOf marking:MarkingModel ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty marking:statement ;
+      ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:hasValue "statement" ;
+        owl:onProperty marking:definitionType ;
+      ] ;
+  .
+
+marking:TermsOfUseMarking
+      rdf:type owl:Class ;
+      rdfs:comment """Characterizes a marking used to make a text statement to specify the Terms of Use of the marked content.
+
+For example, the Terms of Use marking can be used to communicate a simple statement, such as \"Acme Inc. is not responsible for the content of this file\".""""@en-US ;
+      rdfs:label "Terms Of Use Marking"@en-US ;
+      rdfs:subClassOf marking:MarkingModel ;
+      rdfs:subClassOf [
+          rdf:type owl:Restriction ;
+          owl:cardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onProperty marking:termsOfUse ;
+        ] ;
+      rdfs:subClassOf [
+          rdf:type owl:Restriction ;
+          owl:hasValue "terms-of-use" ;
+          owl:onProperty marking:definitionType ;
+        ] ;
+    .
+
+marking:authorizedIdentities
+    rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Specifies the identities that are authorized to access the data to which the data marking is associated.  The list of authorized identities are represented as UUIDs."@en-US ;
+    rdfs:domain marking:ReleaseToMarking ;
+    rdfs:label "Authorized Identities"@en-US ;
+    rdfs:range xsd:string ;
+  .
+
 marking:contentSelectors
 	a owl:DatatypeProperty ;
 	rdfs:label "contentSelectors"@en ;
@@ -67,6 +147,14 @@ marking:definitionType
 	rdfs:range xsd:string ;
 	.
 
+marking:license
+    rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Specifies the identifier for the type of license" ;
+    rdfs:domain marking:LicenseMarking ;
+    rdfs:label "License" ;
+    rdfs:range xsd:string ;
+  .
+
 marking:marking
 	a owl:ObjectProperty ;
 	rdfs:label "marking"@en ;
@@ -75,3 +163,18 @@ marking:marking
 	rdfs:range marking:MarkingDefinition ;
 	.
 
+marking:statement
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Specifies the statement to apply to the structure for which the Marking is to be applied."@en-US ;
+  rdfs:domain marking:StatementMarking ;
+  rdfs:label "Statement"@en-US ;
+  rdfs:range xsd:string ;
+.
+
+marking:termsOfUse
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Specifies the terms of use that apply to the structure for which the Marking is to be applied."@en-US ;
+  rdfs:domain marking:TermsOfUseMarking ;
+  rdfs:label "Terms of Use"@en-US ;
+  rdfs:range xsd:string ;
+.
