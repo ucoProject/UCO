@@ -462,6 +462,7 @@ core:startTime
 	rdfs:label "startTime"@en ;
 	rdfs:comment "The initial time of a time range."@en ;
 	rdfs:domain core:Relationship ;
+  rdfs:range xsd:dateTime ;
 	.
 
 core:statement
