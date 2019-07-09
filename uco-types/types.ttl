@@ -160,7 +160,7 @@ types:hashMethod
 	rdfs:label "hashMethod"@en ;
 	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
 	rdfs:domain types:Hash ;
-	rdfs:range xsd:string ;
+	rdfs:range <http://unifiedcyberontology.org/core#HashNameEnum> ;
 	.
 
 types:hashValue
@@ -197,4 +197,3 @@ types:value
 		;
 	rdfs:range xsd:string ;
 	.
-

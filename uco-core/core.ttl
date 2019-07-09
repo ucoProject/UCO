@@ -495,3 +495,44 @@ core:value
 	rdfs:domain core:ControlledVocabulary ;
 	rdfs:range xsd:string ;
 	.
+
+core:HashNameEnum
+  	a rdfs:Datatype ;
+  	rdfs:comment "An enumeration of common hashing algorithm names."@en ;
+  	owl:equivalentClass [
+  		a rdfs:Datatype ;
+  		owl:oneOf [
+  			a rdf:List ;
+  			rdf:first "MD5" ;
+  			rdf:rest [
+  				a rdf:List ;
+  				rdf:first "MD6" ;
+  				rdf:rest [
+  					a rdf:List ;
+  					rdf:first "SHA1" ;
+  					rdf:rest [
+  						a rdf:List ;
+  						rdf:first "SHA224" ;
+  						rdf:rest [
+  							a rdf:List ;
+  							rdf:first "SHA256" ;
+  							rdf:rest [
+  								a rdf:List ;
+  								rdf:first "SHA384" ;
+  								rdf:rest [
+  									a rdf:List ;
+  									rdf:first "SHA512" ;
+  									rdf:rest [
+  										a rdf:List ;
+  										rdf:first "SSDEEP" ;
+  										rdf:rest rdf:nil ;
+  									] ;
+  								] ;
+  							] ;
+  						] ;
+  					] ;
+  				] ;
+  			] ;
+  		] ;
+  	] ;
+  	.
