@@ -57,7 +57,7 @@ core:Confidence
 		[
 			a owl:Restriction ;
 			owl:onProperty core:confidence ;
-			owl:onClass xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:nonNegativeInteger ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -114,30 +114,15 @@ core:EnclosingCompilation
 		[
 			a owl:Restriction ;
 			owl:onProperty core:description ;
-			owl:maxCardinality "0"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty core:name ;
-			owl:onClass xsd:string ;
-			owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty core:object ;
 			owl:onClass core:UcoObject ;
 			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty core:description ;
-			owl:someValuesFrom rdf:PlainLiteral ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty core:name ;
-			owl:someValuesFrom xsd:string ;
-		]
+		] 
 		;
 	rdfs:label "EnclosingCompilation"@en ;
 	rdfs:comment "A container for one or more objects."@en ;
@@ -246,21 +231,24 @@ core:UcoObject
 			a owl:Restriction ;
 			owl:onProperty core:id ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onClass <http://unifiedcyberontology.org/identity#Identity> ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty core:createdBy ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onClass <http://unifiedcyberontology.org/identity#Identity> ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty core:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:dateTime ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty core:name ;
-			owl:onClass xsd:string ;
+			owl:onDataRange xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -399,7 +387,7 @@ core:name
 	a owl:DatatypeProperty ;
 	rdfs:label "name"@en ;
 	rdfs:comment "The name of a particular concept characterization."@en ;
-	rdfs:domain xsd:string ;
+	rdfs:range xsd:string ;
 	.
 
 core:object
