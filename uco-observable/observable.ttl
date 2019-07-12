@@ -15,7 +15,7 @@
 
 <http://unifiedcyberontology.org/observable>
 	a owl:Ontology ;
-	rdfs:label "uco-marking"@en ;
+	rdfs:label "uco-observable"@en ;
 	owl:imports
 		<http://unifiedcyberontology.org/action> ,
 		<http://unifiedcyberontology.org/core> ,
