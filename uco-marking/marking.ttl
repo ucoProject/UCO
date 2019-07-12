@@ -44,8 +44,8 @@ marking:MarkingModel
 
 marking:LicenseMarking
       rdf:type owl:Class ;
-      rdfs:comment ""Characterizes the License data marking""@en-US ;
-      rdfs:label "License Marking"@en-US ;
+      rdfs:comment "Characterizes the License data marking"@en-US ;
+      rdfs:label "License Marking"@en ;
       rdfs:subClassOf marking:MarkingModel ;
       rdfs:subClassOf [
           rdf:type owl:Restriction ;
@@ -61,8 +61,8 @@ marking:LicenseMarking
 
 marking:ReleaseToMarking
         rdf:type owl:Class ;
-        rdfs:comment "Characterizes the representation of the Release-To marking  that indicates the list of authorized persons and/or organizations to which the associated content maybe release.  The existance of the Released-To marking restricts access to ONLY those identities explicitly listed regardless of whether another data marking exists that allows sharing with other members of the community.""@en-US ;
-        rdfs:label "Release-To Marking"@en-US ;
+        rdfs:comment "Characterizes the representation of the Release-To marking  that indicates the list of authorized persons and/or organizations to which the associated content maybe release.  The existance of the Released-To marking restricts access to ONLY those identities explicitly listed regardless of whether another data marking exists that allows sharing with other members of the community."@en-US ;
+        rdfs:label "Release-To Marking"@en ;
         rdfs:subClassOf marking:MarkingModel ;
         rdfs:subClassOf [
             rdf:type owl:Restriction ;
@@ -80,8 +80,8 @@ marking:StatementMarking
     rdf:type owl:Class ;
     rdfs:comment """Characterizes the representation of a textual marking statement, (e.g., copyright, terms of use, etc.) in a definition.  Statement markings are generally not machine-readable.
 
-  An example of a simple marking is to apply simple copyright information, for example \"Copyright 2014 Acme Inc.\""""@en-US ;
-    rdfs:label "Statement Marking"@en-US ;
+  An example of a simple marking is to apply simple copyright information, for example \"Copyright 2014 Acme Inc.\""""@en ;
+    rdfs:label "Statement Marking"@en ;
     rdfs:subClassOf marking:MarkingModel ;
     rdfs:subClassOf [
         rdf:type owl:Restriction ;
@@ -99,8 +99,8 @@ marking:TermsOfUseMarking
       rdf:type owl:Class ;
       rdfs:comment """Characterizes a marking used to make a text statement to specify the Terms of Use of the marked content.
 
-For example, the Terms of Use marking can be used to communicate a simple statement, such as \"Acme Inc. is not responsible for the content of this file\".""""@en-US ;
-      rdfs:label "Terms Of Use Marking"@en-US ;
+For example, the Terms of Use marking can be used to communicate a simple statement, such as \"Acme Inc. is not responsible for the content of this file\"."""@en ;
+      rdfs:label "Terms Of Use Marking"@en ;
       rdfs:subClassOf marking:MarkingModel ;
       rdfs:subClassOf [
           rdf:type owl:Restriction ;
@@ -116,9 +116,9 @@ For example, the Terms of Use marking can be used to communicate a simple statem
 
 marking:authorizedIdentities
     rdf:type owl:DatatypeProperty ;
-    rdfs:comment "Specifies the identities that are authorized to access the data to which the data marking is associated.  The list of authorized identities are represented as UUIDs."@en-US ;
+    rdfs:comment "Specifies the identities that are authorized to access the data to which the data marking is associated.  The list of authorized identities are represented as UUIDs."@en ;
     rdfs:domain marking:ReleaseToMarking ;
-    rdfs:label "Authorized Identities"@en-US ;
+    rdfs:label "Authorized Identities"@en ;
     rdfs:range xsd:string ;
   .
 
