@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/action" uri="uco-action/action.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/core" uri="uco-core/core.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/core/role" uri="uco-role/role.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/identity" uri="uco-identity/identity.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/investigation" uri="uco-investigation/investigation.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/location" uri="uco-location/location.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/marking" uri="uco-marking/marking.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/observable" uri="uco-observable/observable.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/pattern" uri="uco-pattern/pattern.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/time" uri="uco-time/time.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/tool" uri="uco-tool/tool.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/types" uri="uco-types/types.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1497378758889" name="http://unifiedcyberontology.org/victim" uri="uco-victim/victim.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/action" uri="uco-action/action.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/core" uri="uco-core/core.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/core/role" uri="uco-role/role.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/identity" uri="uco-identity/identity.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/investigation" uri="uco-investigation/investigation.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/location" uri="uco-location/location.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/marking" uri="uco-marking/marking.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/observable" uri="uco-observable/observable.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/pattern" uri="uco-pattern/pattern.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/time" uri="uco-time/time.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/tool" uri="uco-tool/tool.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/types" uri="uco-types/types.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1497378758889" name="https://unifiedcyberontology.org/ontology/uco/victim" uri="uco-victim/victim.rdf"/>
     </group>
 </catalog>

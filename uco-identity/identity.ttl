@@ -1,20 +1,20 @@
-# baseURI: http://unifiedcyberontology.org/identity
-# imports: http://unifiedcyberontology.org/core
-# imports: http://unifiedcyberontology.org/location
+# baseURI: https://unifiedcyberontology.org/ontology/uco/identity
+# imports: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://unifiedcyberontology.org/ontology/uco/location
 
-@base <http://unifiedcyberontology.org/identity> .
-@prefix identity: <http://unifiedcyberontology.org/identity#> .
+@base <https://unifiedcyberontology.org/ontology/uco/identity> .
+@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://unifiedcyberontology.org/identity>
+<https://unifiedcyberontology.org/ontology/uco/identity>
 	a owl:Ontology ;
 	rdfs:label "uco-identity"@en ;
 	owl:imports
-		<http://unifiedcyberontology.org/core> ,
-		<http://unifiedcyberontology.org/location>
+		<https://unifiedcyberontology.org/ontology/uco/core> ,
+		<https://unifiedcyberontology.org/ontology/uco/location>
 		;
 	.
 
@@ -25,7 +25,7 @@ identity:Address
 		[
 			a owl:Restriction ;
 			owl:onProperty identity:address ;
-			owl:onClass <http://unifiedcyberontology.org/location#Location> ;
+			owl:onClass <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -78,14 +78,14 @@ identity:Identifier
 
 identity:Identity
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	rdfs:label "Identity"@en ;
 	rdfs:comment "Characterization of the identifying properties of an individual or organization."@en ;
 	.
 
 identity:IdentityFacet
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "IdentityFacet"@en ;
 	rdfs:comment "Characteristic properties of a particular aspect of an identity."@en ;
 	.
@@ -179,7 +179,7 @@ identity:address
 	rdfs:label "address"@en ;
 	rdfs:comment ""@en ;
 	rdfs:domain identity:Address ;
-	rdfs:range <http://unifiedcyberontology.org/location#Location> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 	.
 
 identity:birthdate
@@ -221,4 +221,3 @@ identity:honorificSuffix
 	rdfs:domain identity:SimpleName ;
 	rdfs:range xsd:string ;
 	.
-
