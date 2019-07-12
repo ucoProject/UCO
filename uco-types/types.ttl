@@ -14,35 +14,6 @@
 	owl:imports <http://unifiedcyberontology.org/core> ;
 	.
 
-types:ArrayOfHash
-	a owl:Class ;
-	rdfs:subClassOf [
-		a owl:Restriction ;
-		owl:onProperty types:hash ;
-		owl:onClass types:Hash ;
-		owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	] ;
-	rdfs:label "ArrayOfHash"@en ;
-	rdfs:comment "An ordered list of hash values."@en ;
-	.
-
-types:ArrayOfObject
-	a owl:Class ;
-	rdfs:subClassOf [
-		a owl:Restriction ;
-		owl:onProperty types:object ;
-		owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-	] ;
-	rdfs:label "ArrayOfObject"@en ;
-	rdfs:comment "An ordered list of object references."@en ;
-	.
-
-types:ArrayOfString
-	a owl:Class ;
-	rdfs:label "ArrayOfString"@en ;
-	rdfs:comment "An ordered list of string values."@en ;
-	.
-
 types:ControlledDictionary
 	a owl:Class ;
 	rdfs:subClassOf [
@@ -147,14 +118,6 @@ types:entry
 	rdfs:range types:DictionaryEntry ;
 	.
 
-types:hash
-	a owl:ObjectProperty ;
-	rdfs:label "hash"@en ;
-	rdfs:comment "A single calculated hash."@en ;
-	rdfs:domain types:ArrayOfHash ;
-	rdfs:range types:Hash ;
-	.
-
 types:hashMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "hashMethod"@en ;
@@ -179,21 +142,10 @@ types:key
 	rdfs:range xsd:string ;
 	.
 
-types:object
-	a owl:ObjectProperty ;
-	rdfs:label "object"@en ;
-	rdfs:comment "A single UCO object."@en ;
-	rdfs:domain types:ArrayOfObject ;
-	rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
-	.
-
 types:value
 	a owl:DatatypeProperty ;
 	rdfs:label "value"@en ;
 	rdfs:comment "A specific property value."@en ;
-	rdfs:domain
-		types:ArrayOfString ,
-		types:ControlledDictionaryEntry
-		;
+	rdfs:domain types:ControlledDictionaryEntry;
 	rdfs:range xsd:string ;
 	.

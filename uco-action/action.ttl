@@ -244,7 +244,11 @@ action:ActionStatusTypeEnum
 
 action:ArrayOfAction
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/types#ArrayOfObject> ;
+  rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty action:action ;
+		owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+	] ;
 	rdfs:label "ArrayOfAction"@en ;
 	rdfs:comment "An ordered list of action object references."@en ;
 	.
@@ -259,6 +263,14 @@ action:TrendEnum
 		) ;
 	] ;
 	.
+
+action:action
+  	a owl:ObjectProperty ;
+  	rdfs:label "action"@en ;
+  	rdfs:comment "A characterization of a single action."@en ;
+  	rdfs:domain action:ArrayOfAction ;
+  	rdfs:range action:Action;
+  	.
 
 action:actionCount
 	a owl:DatatypeProperty ;
@@ -452,4 +464,3 @@ action:value
 	rdfs:domain action:ActionArgument ;
 	rdfs:range xsd:string ;
 	.
-
