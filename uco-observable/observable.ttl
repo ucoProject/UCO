@@ -4197,6 +4197,12 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 			owl:onProperty :visibility ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:boolean ;
+		],
+    [
+			a owl:Restriction ;
+			owl:onProperty :message ;
+			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :CyberItem;
 		]
 		;
 	rdfs:label "MessageThread"@en ;
@@ -9063,7 +9069,7 @@ How does this relate to Application?
 	rdfs:label "hashes"@en ;
 	rdfs:comment "Specifies any hashes computed over the section."@en ;
 	rdfs:domain :WindowsPESection ;
-	rdfs:range <http://unifiedcyberontology.org/types#ArrayOfHash> ;
+	rdfs:range <http://unifiedcyberontology.org/types#Hash>  ;
 	.
 
 :headerRaw
@@ -9668,7 +9674,7 @@ How does this relate to Application?
 	a owl:ObjectProperty ;
 	rdfs:label "message"@en ;
 	rdfs:domain :MessageThread ;
-	rdfs:range <http://unifiedcyberontology.org/types#ArrayOfObject> ;
+	rdfs:range :CyberItem ;
 	.
 
 :messageID
