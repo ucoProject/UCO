@@ -4202,7 +4202,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 			a owl:Restriction ;
 			owl:onProperty :message ;
 			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :CyberItem;
+			owl:onClass :CyberItem;
 		]
 		;
 	rdfs:label "MessageThread"@en ;
