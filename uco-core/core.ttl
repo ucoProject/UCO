@@ -231,7 +231,7 @@ core:UcoObject
 			a owl:Restriction ;
 			owl:onProperty core:id ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onClass <http://unifiedcyberontology.org/identity#Identity> ;
+			owl:onClass <http://unifiedcyberontology.org/identity#Identifier> ;
 		] ,
 		[
 			a owl:Restriction ;
