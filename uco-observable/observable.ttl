@@ -1,34 +1,34 @@
-# baseURI: http://unifiedcyberontology.org/observable
-# imports: http://unifiedcyberontology.org/action
-# imports: http://unifiedcyberontology.org/core
-# imports: http://unifiedcyberontology.org/identity
-# imports: http://unifiedcyberontology.org/location
-# imports: http://unifiedcyberontology.org/types
+# baseURI: https://unifiedcyberontology.org/ontology/uco/observable
+# imports: https://unifiedcyberontology.org/ontology/uco/action
+# imports: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://unifiedcyberontology.org/ontology/uco/identity
+# imports: https://unifiedcyberontology.org/ontology/uco/location
+# imports: https://unifiedcyberontology.org/ontology/uco/types
 
-@base <http://unifiedcyberontology.org/observable> .
-@prefix : <http://unifiedcyberontology.org/observable#> .
+@base <https://unifiedcyberontology.org/ontology/uco/observable> .
+@prefix : <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://unifiedcyberontology.org/observable>
+<https://unifiedcyberontology.org/ontology/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
 	owl:imports
-		<http://unifiedcyberontology.org/action> ,
-		<http://unifiedcyberontology.org/core> ,
-		<http://unifiedcyberontology.org/identity> ,
-		<http://unifiedcyberontology.org/location> ,
-		<http://unifiedcyberontology.org/types>
+		<https://unifiedcyberontology.org/ontology/uco/action> ,
+		<https://unifiedcyberontology.org/ontology/uco/core> ,
+		<https://unifiedcyberontology.org/ontology/uco/identity> ,
+		<https://unifiedcyberontology.org/ontology/uco/location> ,
+		<https://unifiedcyberontology.org/ontology/uco/types>
 		;
 	.
 
 :Account
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :accountIssuer ;
@@ -79,7 +79,7 @@
 :AccountAuthentication
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :passwordLastChanged ;
@@ -1556,7 +1556,7 @@
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <http://unifiedcyberontology.org/core#name> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -1567,7 +1567,7 @@
 :Application
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :operatingSystem ;
@@ -1600,7 +1600,7 @@
 :ApplicationAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :application ;
@@ -1615,7 +1615,7 @@
 :ArchiveFile
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :archiveType ;
@@ -1640,14 +1640,14 @@
 
 :Attachment
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "Attachment"@en ;
 	.
 
 :Audio
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :bitRate ;
@@ -1680,7 +1680,7 @@
 :AutonomousSystem
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :regionalInternetRegistry ;
@@ -1723,7 +1723,7 @@
 :BluetoothAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :addressValue ;
@@ -1738,7 +1738,7 @@
 :BrowserBookmark
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :accessedTime ;
@@ -1780,7 +1780,7 @@
 :BrowserCookie
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :accessedTime ;
@@ -1804,7 +1804,7 @@
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :domain ;
+			owl:onProperty :cookieDomain ;
 			owl:onClass :CyberItem ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -1834,7 +1834,7 @@
 :Calendar
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :application ;
@@ -1855,7 +1855,7 @@
 :CalendarEntry
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :createdTime ;
@@ -2002,7 +2002,7 @@
 :CompressedStream
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :compressionRatio ;
@@ -2023,7 +2023,7 @@
 :ComputerSpecification
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :biosDate ;
@@ -2142,7 +2142,7 @@
 :Contact
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :application ;
@@ -2199,7 +2199,7 @@
 :ContentData
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :byteOrder ;
@@ -2261,7 +2261,7 @@
 :CyberAction
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/action#Action> ,
+		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
 		:Observable
 		;
 	rdfs:label "CyberAction"@en ;
@@ -2271,7 +2271,7 @@
 :CyberItem
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Item> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Item> ,
 		:Observable ,
 		[
 			a owl:Restriction ;
@@ -2901,7 +2901,7 @@
 :CyberRelationship
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Relationship> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Relationship> ,
 		:Observable
 		;
 	rdfs:label "CyberRelationship"@en ;
@@ -2911,7 +2911,7 @@
 :DataRange
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :rangeOffset ;
@@ -2937,7 +2937,7 @@
 
 :DefinedEffectFacet
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "DefinedEffectFacet"@en ;
 	rdfs:comment "A set of properties characterizing some defined effect of a cyberaction in relation to one or more cyberitems."@en ;
 	.
@@ -2945,7 +2945,7 @@
 :Device
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :deviceType ;
@@ -2977,7 +2977,7 @@
 :DigitalAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :firstLoginTime ;
@@ -3008,7 +3008,7 @@
 :DigitalSignatureInfo
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :certificateIssuer ;
@@ -3045,7 +3045,7 @@
 :Disk
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :diskType ;
@@ -3070,7 +3070,7 @@
 :DiskPartition
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :createdTime ;
@@ -3160,7 +3160,7 @@
 :DomainName
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :isTLD ;
@@ -3189,7 +3189,7 @@
 :EXIF
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :exifData ;
@@ -3203,7 +3203,7 @@
 :EmailAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :emailAddress ;
@@ -3218,7 +3218,7 @@
 :EmailAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :displayName ;
@@ -3239,7 +3239,7 @@
 :EmailMessage
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :modifiedTime ;
@@ -3293,7 +3293,7 @@
 		[
 			a owl:Restriction ;
 			owl:onProperty :messageID ;
-			owl:onClass :CyberItem ;
+			owl:onDataRange xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3370,7 +3370,7 @@
 :EncodedStream
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :encodingMethod ;
@@ -3385,7 +3385,7 @@
 :EncryptedStream
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :encryptionMethod ;
@@ -3433,7 +3433,7 @@
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <http://unifiedcyberontology.org/core#name> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -3445,7 +3445,7 @@
 :Event
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :createdTime ;
@@ -3495,7 +3495,7 @@
 :ExtInode
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :extDeletionTime ;
@@ -3601,7 +3601,7 @@
 
 :ExtractedStrings
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "ExtractedStrings"@en ;
 	rdfs:comment "One or more strings extracted from a cyber item."@en ;
 	.
@@ -3609,7 +3609,7 @@
 :File
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :accessedTime ;
@@ -3661,7 +3661,7 @@
 :FilePermissions
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :owner ;
@@ -3676,7 +3676,7 @@
 :FileSystem
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :fileSystemType ;
@@ -3695,7 +3695,7 @@
 
 :Fragment
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "Fragment"@en ;
 	rdfs:comment "Characteristics of an individual fragment of a file."@en ;
 	.
@@ -3703,7 +3703,7 @@
 :GeoLocationEntry
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :createdTime ;
@@ -3728,7 +3728,7 @@
 :GeoLocationLog
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :createdTime ;
@@ -3748,7 +3748,7 @@
 :GeoLocationTrack
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :endTime ;
@@ -3799,7 +3799,7 @@
 :HTTPConnection
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :httpRequestHeader ;
@@ -3850,7 +3850,7 @@
 
 :ICMPConnection
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "ICMPConnection"@en ;
 	rdfs:comment "Specifies ICMP-specific network connection properties."@en ;
 	.
@@ -3923,7 +3923,7 @@
 :IPv4Address
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :value ;
@@ -3938,7 +3938,7 @@
 :IPv6Address
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :value ;
@@ -3973,7 +3973,7 @@
 :Image
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :imageType ;
@@ -3988,7 +3988,7 @@
 :Library
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :libraryType ;
@@ -4034,7 +4034,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :MACAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :value ;
@@ -4068,7 +4068,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :Memory
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :regionSize ;
@@ -4141,7 +4141,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :Message
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :sentTime ;
@@ -4191,7 +4191,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :MessageThread
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :visibility ;
@@ -4202,7 +4202,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 			a owl:Restriction ;
 			owl:onProperty :message ;
 			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :CyberItem;
+			owl:onClass :CyberItem;
 		]
 		;
 	rdfs:label "MessageThread"@en ;
@@ -4212,7 +4212,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :MftRecord
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :mftFileNameAccessedTime ;
@@ -4321,7 +4321,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :MobileAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :IMSI ;
@@ -4348,7 +4348,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :MobileDevice
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :storageCapacityInBytes ;
@@ -4411,7 +4411,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :Mutex
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :isNamed ;
@@ -4424,7 +4424,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 
 :NTFSFilePermissions
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "NTFSFilePermissions"@en ;
 	rdfs:comment "Characteristics of permissions or access rights for an NTFS file."@en ;
 	.
@@ -4432,7 +4432,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :NTFSFileSystem
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :entryID ;
@@ -4452,7 +4452,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :NetworkConnection
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :endTime ;
@@ -4494,7 +4494,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :NetworkFlow
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :ipfix ;
@@ -4544,7 +4544,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :NetworkInterface
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :dhcpLeaseExpires ;
@@ -4750,7 +4750,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :Note
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :createdTime ;
@@ -4780,7 +4780,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 
 :Observable
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#UcoObject> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	rdfs:label "Observable"@en ;
 	rdfs:comment """A characterizable item or action within the digital domain.
 """@en ;
@@ -4789,7 +4789,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :OperatingSystem
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :bitness ;
@@ -4825,7 +4825,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :PDFFIle
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :documentInformationDictionary ;
@@ -4956,7 +4956,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 
 :PathRelation
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "PathRelation"@en ;
 	rdfs:comment "Specifies the location of one object within another containing object."@en ;
 	.
@@ -4964,7 +4964,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :PhoneAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :phoneNumber ;
@@ -4979,7 +4979,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :PhoneCall
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :endTime ;
@@ -5028,7 +5028,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :Process
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :createdTime ;
@@ -5157,7 +5157,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :PropertiesEnumeratedEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -5173,7 +5173,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :PropertyReadEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -5195,7 +5195,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :RasterPicture
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :camera ;
@@ -5328,11 +5328,11 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :SIMCard
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :carrier ;
-			owl:onClass <http://unifiedcyberontology.org/identity#Identity> ;
+			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -5443,7 +5443,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :SMSMessage
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :isRead ;
@@ -5458,7 +5458,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :SQLiteBlob
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :columnName ;
@@ -5485,7 +5485,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :SendControlCodeEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -5501,7 +5501,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 :Software
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :cpeid ;
@@ -5544,7 +5544,7 @@ How does this relate to Application?
 :StateChangeEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -5566,7 +5566,7 @@ How does this relate to Application?
 :SymbolicLink
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :targetFile ;
@@ -5580,7 +5580,7 @@ How does this relate to Application?
 
 :TCPConnection
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "TCPConnection"@en ;
 	rdfs:comment "Specifies TCP-specific network connection properties."@en ;
 	.
@@ -6029,7 +6029,7 @@ How does this relate to Application?
 :UNIXAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :gid ;
@@ -6048,14 +6048,14 @@ How does this relate to Application?
 
 :UNIXFilePermissions
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "UNIXFilePermissions"@en ;
 	rdfs:comment "Characteristics of permissions or access rights for a UNIX file."@en ;
 	.
 
 :UNIXProcess
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "UNIXProcess"@en ;
 	rdfs:comment "Characterization of a UNIX process."@en ;
 	.
@@ -6063,7 +6063,7 @@ How does this relate to Application?
 :UNIXVolume
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :mountPoint ;
@@ -6084,7 +6084,7 @@ How does this relate to Application?
 :URL
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :host ;
@@ -6094,7 +6094,7 @@ How does this relate to Application?
 		[
 			a owl:Restriction ;
 			owl:onProperty :password ;
-			owl:onClass :CyberItem ;
+			owl:onDataRange xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -6184,7 +6184,7 @@ How does this relate to Application?
 :UserAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :canEscalatePrivs ;
@@ -6216,7 +6216,7 @@ How does this relate to Application?
 :UserSession
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :loginTime ;
@@ -6253,7 +6253,7 @@ How does this relate to Application?
 :ValuesEnumeratedEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -6269,7 +6269,7 @@ How does this relate to Application?
 :Volume
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :sectorSize ;
@@ -6290,7 +6290,7 @@ How does this relate to Application?
 :WhoIs
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :creationDate ;
@@ -6403,7 +6403,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :phoneNumber ;
+			owl:onProperty :phone ;
 			owl:onClass :CyberItem ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -6484,7 +6484,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :phoneNumber ;
+			owl:onProperty :phone ;
 			owl:onClass :CyberItem ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -6611,7 +6611,7 @@ How does this relate to Application?
 :WifiAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :addressValue ;
@@ -6625,14 +6625,14 @@ How does this relate to Application?
 
 :WindowsAccount
 	a owl:Class ;
-	rdfs:subClassOf <http://unifiedcyberontology.org/core#Facet> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "WindowsAccount"@en ;
 	.
 
 :WindowsActiveDirectoryAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :objectGUID ;
@@ -6646,7 +6646,7 @@ How does this relate to Application?
 :WindowsComputerSpecification
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :registeredOrganization ;
@@ -6738,7 +6738,7 @@ How does this relate to Application?
 :WindowsPEBinaryFile
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :peType ;
@@ -6836,7 +6836,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <http://unifiedcyberontology.org/core#name> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -6847,7 +6847,7 @@ How does this relate to Application?
 :WindowsPrefetch
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :firstRun ;
@@ -6890,7 +6890,7 @@ How does this relate to Application?
 :WindowsProcess
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :startupInfo ;
@@ -6933,7 +6933,7 @@ How does this relate to Application?
 :WindowsRegistryHive
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :hiveType ;
@@ -6948,7 +6948,7 @@ How does this relate to Application?
 :WindowsRegistryKey
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :modifiedTime ;
@@ -6993,7 +6993,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <http://unifiedcyberontology.org/core#name> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -7005,7 +7005,7 @@ How does this relate to Application?
 :WindowsService
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :serviceStatus ;
@@ -7141,7 +7141,7 @@ How does this relate to Application?
 :WindowsTask
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :createdTime ;
@@ -7219,7 +7219,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :creator ;
+			owl:onProperty :taskCreator ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -7249,7 +7249,7 @@ How does this relate to Application?
 :WindowsThread
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :creationTime ;
@@ -7286,7 +7286,7 @@ How does this relate to Application?
 :WindowsVolume
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :driveType ;
@@ -7338,7 +7338,7 @@ How does this relate to Application?
 :WirelessNetworkConnection
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :baseStation ;
@@ -7359,7 +7359,7 @@ How does this relate to Application?
 :X509Certificate
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :issuerHash ;
@@ -7458,7 +7458,7 @@ How does this relate to Application?
 :X509V3Extensions
 	a owl:Class ;
 	rdfs:subClassOf
-		<http://unifiedcyberontology.org/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty :privateKeyUsagePeriodNotAfter ;
@@ -7611,7 +7611,7 @@ How does this relate to Application?
 	rdfs:label "accountIssuer"@en ;
 	rdfs:comment "The issuer of this account."@en ;
 	rdfs:domain :Account ;
-	rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
 :accountLogin
@@ -7690,7 +7690,7 @@ How does this relate to Application?
 	rdfs:label "address"@en ;
 	rdfs:comment "An address"@en ;
 	rdfs:domain :WhoisContactType ;
-	rdfs:range <http://unifiedcyberontology.org/location#Location> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 	.
 
 :addressOfEntryPoint
@@ -7785,7 +7785,7 @@ How does this relate to Application?
 	rdfs:label "attendant"@en ;
 	rdfs:comment "The attendants of the event."@en ;
 	rdfs:domain :CalendarEntry ;
-	rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
 :audioType
@@ -7999,7 +7999,7 @@ How does this relate to Application?
 	rdfs:label "carrier"@en ;
 	rdfs:comment "Telecommunications service provider that sold the SIM card."@en ;
 	rdfs:domain :SIMCard ;
-	rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
 :categories
@@ -8021,7 +8021,7 @@ How does this relate to Application?
 	a owl:ObjectProperty ;
 	rdfs:label "certificateIssuer"@en ;
 	rdfs:domain :DigitalSignatureInfo ;
-	rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
 :certificatePolicies
@@ -8035,7 +8035,7 @@ How does this relate to Application?
 	a owl:ObjectProperty ;
 	rdfs:label "certificateSubject"@en ;
 	rdfs:domain :DigitalSignatureInfo ;
-	rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
 :characteristics
@@ -8153,7 +8153,7 @@ How does this relate to Application?
 	rdfs:label "contactOrganization"@en ;
 	rdfs:comment "The name of the organization a contact works for or is assoicated with."@en ;
 	rdfs:domain :WhoisContactType ;
-	rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
 :contactType
@@ -8263,21 +8263,20 @@ How does this relate to Application?
 	rdfs:range xsd:dateTime ;
 	.
 
-:creator
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
-	rdfs:label "creator"@en ;
+:taskCreator
+	a owl:DatatypeProperty ;
+	rdfs:label "taskCreator"@en ;
 	rdfs:comment "Specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx."@en ;
-	rdfs:domain
-		:WindowsRegistryKey ,
-		:WindowsTask
-		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:domain :WindowsTask ;
+	rdfs:range xsd:string ;
+	.
+
+:creator
+	a owl:ObjectProperty ;
+	rdfs:label "creator"@en ;
+	rdfs:comment "Specifies the name of the creator of the registry key."@en ;
+	rdfs:domain	:WindowsRegistryKey ;
+	rdfs:range :CyberItem ;
 	.
 
 :creatorUser
@@ -8466,27 +8465,24 @@ How does this relate to Application?
 	a owl:ObjectProperty ;
 	rdfs:label "documentInformationDictionary"@en ;
 	rdfs:domain :PDFFIle ;
-	rdfs:range <http://unifiedcyberontology.org/types#ControlledDictionary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
+	.
+
+:cookieDomain
+	a owl:ObjectProperty ;
+	rdfs:label "cookieDomain"@en ;
+	rdfs:comment
+		"The domain for which the cookie is stored, for example nfi.minjus.nl."@en ;
+	rdfs:domain :BrowserCookie ;
+	rdfs:range :CyberItem ;
 	.
 
 :domain
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "domain"@en ;
-	rdfs:comment
-		"The domain for which the cookie is stored, for example nfi.minjus.nl."@en ,
-		"The domain(s) that the system belongs to."@en
-		;
-	rdfs:domain
-		:BrowserCookie ,
-		:WindowsComputerSpecification
-		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:comment "The domain(s) that the system belongs to."@en ;
+	rdfs:domain	:WindowsComputerSpecification ;
+	rdfs:range xsd:string ;
 	.
 
 :domainID
@@ -8669,7 +8665,7 @@ How does this relate to Application?
 	rdfs:label "environmentVariables"@en ;
 	rdfs:comment "A list of environment variables associated with the process. "@en ;
 	rdfs:domain :Process ;
-	rdfs:range <http://unifiedcyberontology.org/types#Dictionary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
 :eventID
@@ -8717,7 +8713,7 @@ How does this relate to Application?
 	rdfs:label "execProgramHashes"@en ;
 	rdfs:comment "Specifies the hashes of the executable file launched by the action."@en ;
 	rdfs:domain :IExecActionType ;
-	rdfs:range <http://unifiedcyberontology.org/types#Hash> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 :execProgramPath
@@ -8740,7 +8736,7 @@ How does this relate to Application?
 	a owl:ObjectProperty ;
 	rdfs:label "exifData"@en ;
 	rdfs:domain :EXIF ;
-	rdfs:range <http://unifiedcyberontology.org/types#ControlledDictionary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
 	.
 
 :exitCode
@@ -8891,7 +8887,7 @@ How does this relate to Application?
 	rdfs:label "fileHeaderHashes"@en ;
 	rdfs:comment "Specifies any hashes that were computed for the file header."@en ;
 	rdfs:domain :WindowsPEBinaryFile ;
-	rdfs:range <http://unifiedcyberontology.org/types#Hash> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 :fileName
@@ -9061,7 +9057,7 @@ How does this relate to Application?
 	rdfs:label "hash"@en ;
 	rdfs:comment "Hash values of the data."@en ;
 	rdfs:domain :ContentData ;
-	rdfs:range <http://unifiedcyberontology.org/types#Hash> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 :hashes
@@ -9069,7 +9065,7 @@ How does this relate to Application?
 	rdfs:label "hashes"@en ;
 	rdfs:comment "Specifies any hashes computed over the section."@en ;
 	rdfs:domain :WindowsPESection ;
-	rdfs:range <http://unifiedcyberontology.org/types#Hash>  ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash>  ;
 	.
 
 :headerRaw
@@ -9139,7 +9135,7 @@ How does this relate to Application?
 	rdfs:label "httpRequestHeader"@en ;
 	rdfs:comment "Specifies all of the HTTP header fields that may be found in the HTTP client request"@en ;
 	rdfs:domain :HTTPConnection ;
-	rdfs:range <http://unifiedcyberontology.org/types#Dictionary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
 :iComHandlerAction
@@ -9281,7 +9277,7 @@ How does this relate to Application?
 	rdfs:label "ipfix"@en ;
 	rdfs:comment "Specifies any IP Flow Information Export (IPFIX) data for the network traffic flow."@en ;
 	rdfs:domain :NetworkFlow ;
-	rdfs:range <http://unifiedcyberontology.org/types#Dictionary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
 :isActive
@@ -9462,7 +9458,7 @@ How does this relate to Application?
 	rdfs:label "issuerHash"@en ;
 	rdfs:comment "A hash calculated on the certificate issuer name."@en ;
 	rdfs:domain :X509Certificate ;
-	rdfs:range <http://unifiedcyberontology.org/types#Hash> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 :key
@@ -9565,7 +9561,7 @@ How does this relate to Application?
 	rdfs:label "location"@en ;
 	rdfs:comment "An associated location."@en ;
 	rdfs:domain :GeoLocationEntry ;
-	rdfs:range <http://unifiedcyberontology.org/location#Location> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 	.
 
 :loginTime
@@ -9678,23 +9674,14 @@ How does this relate to Application?
 	.
 
 :messageID
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "messageID"@en ;
-	rdfs:comment
-		"A unique identifier (email address form) for identifying the email."@en ,
-		"An identifier for the message."@en
-		;
+	rdfs:comment "An unique identifier for the message."@en;
 	rdfs:domain
 		:EmailMessage ,
 		:Message
 		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:range xsd:string ;
 	.
 
 :messageText
@@ -10087,7 +10074,7 @@ How does this relate to Application?
 	a owl:ObjectProperty ;
 	rdfs:label "otherHeaders"@en ;
 	rdfs:domain :EmailMessage ;
-	rdfs:range <http://unifiedcyberontology.org/types#Dictionary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
 :owner
@@ -10102,7 +10089,7 @@ How does this relate to Application?
 		:FilePermissions
 		;
 	rdfs:range
-		<http://unifiedcyberontology.org/core#UcoObject> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
 		:CyberItem
 		;
 	.
@@ -10177,10 +10164,7 @@ How does this relate to Application?
 	.
 
 :password
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "password"@en ;
 	rdfs:comment
 		"Password used to authenticate to this resource."@en ,
@@ -10190,10 +10174,7 @@ How does this relate to Application?
 		:AccountAuthentication ,
 		:URL
 		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:range xsd:string ;
 	.
 
 :passwordLastChanged
@@ -10242,6 +10223,14 @@ How does this relate to Application?
 	rdfs:range xsd:string ;
 	.
 
+:phone
+	a owl:ObjectProperty ;
+	rdfs:label "phone"@en ;
+	rdfs:comment "A phone number(account)."@en ;
+	rdfs:domain :WhoisContactType ;
+	rdfs:range :CyberItem ;
+	.
+
 :phoneActivationTime
 	a owl:DatatypeProperty ;
 	rdfs:label "phoneActivationTime"@en ;
@@ -10251,20 +10240,11 @@ How does this relate to Application?
 	.
 
 :phoneNumber
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "phoneNumber"@en ;
 	rdfs:comment "A phone number(account)."@en ;
-	rdfs:domain
-		:PhoneAccount ,
-		:WhoisContactType
-		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:domain :PhoneAccount ;
+	rdfs:range xsd:string ;
 	.
 
 :phoneNumbers
@@ -10395,7 +10375,7 @@ How does this relate to Application?
 	rdfs:label "protocols"@en ;
 	rdfs:comment "Specifies the protocols involved in the network connection, along with their corresponding state. "@en ;
 	rdfs:domain :NetworkConnection ;
-	rdfs:range <http://unifiedcyberontology.org/types#ControlledDictionary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
 	.
 
 :query
@@ -10507,7 +10487,7 @@ How does this relate to Application?
 	rdfs:label "registeredOrganization"@en ;
 	rdfs:comment "The organization that this copy of Windows is registered to."@en ;
 	rdfs:domain :WindowsComputerSpecification ;
-	rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
 :registeredOwner
@@ -10515,7 +10495,7 @@ How does this relate to Application?
 	rdfs:label "registeredOwner"@en ;
 	rdfs:comment "The person or organization that is the registered owner of this copy of Windows."@en ;
 	rdfs:domain :WindowsComputerSpecification ;
-	rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
 :registrantIDs
@@ -10941,7 +10921,7 @@ How does this relate to Application?
 	rdfs:label "src"@en ;
 	rdfs:comment "Specifies the source(s) of the network connection."@en ;
 	rdfs:domain :NetworkConnection ;
-	rdfs:range <http://unifiedcyberontology.org/core#UcoObject> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
 :srcBytes
@@ -11012,7 +10992,7 @@ How does this relate to Application?
 	a owl:ObjectProperty ;
 	rdfs:label "startupInfo"@en ;
 	rdfs:domain :WindowsProcess ;
-	rdfs:range <http://unifiedcyberontology.org/types#Dictionary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
 :state
@@ -11083,7 +11063,7 @@ How does this relate to Application?
 	rdfs:label "subjectHash"@en ;
 	rdfs:comment "A hash calculated on the certificate subject name."@en ;
 	rdfs:domain :X509Certificate ;
-	rdfs:range <http://unifiedcyberontology.org/types#Hash> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 :subjectKeyIdentifier
@@ -11179,7 +11159,7 @@ How does this relate to Application?
 	rdfs:label "thumbprintHash"@en ;
 	rdfs:comment "A hash calculated on the entire certificate including signature."@en ;
 	rdfs:domain :X509Certificate ;
-	rdfs:range <http://unifiedcyberontology.org/types#Hash> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 :timeDateStamp
@@ -11369,21 +11349,20 @@ How does this relate to Application?
 	rdfs:range xsd:string ;
 	.
 
+:registryValues
+	a owl:ObjectProperty ;
+	rdfs:label "registryValues"@en ;
+	rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
+	rdfs:domain :WindowsRegistryKey	;
+	rdfs:range :WindowsRegistryValue ;
+	.
+
 :values
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "values"@en ;
 	rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
-	rdfs:domain
-		:ValuesEnumeratedEffect ,
-		:WindowsRegistryKey
-		;
-	rdfs:range
-		:WindowsRegistryValue ,
-		xsd:string
-		;
+	rdfs:domain :ValuesEnumeratedEffect ;
+	rdfs:range xsd:string ;
 	.
 
 :version

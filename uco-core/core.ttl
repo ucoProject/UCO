@@ -1,13 +1,13 @@
-# baseURI: http://unifiedcyberontology.org/core
+# baseURI: https://unifiedcyberontology.org/ontology/uco/core
 
-@base <http://unifiedcyberontology.org/core> .
-@prefix core: <http://unifiedcyberontology.org/core#> .
+@base <https://unifiedcyberontology.org/ontology/uco/core> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://unifiedcyberontology.org/core>
+<https://unifiedcyberontology.org/ontology/uco/core>
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
@@ -162,6 +162,7 @@ core:ModusOperandi
 	rdfs:comment "A particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	.
 
+
 core:Relationship
 	a owl:Class ;
 	rdfs:subClassOf
@@ -202,13 +203,13 @@ core:UcoObject
 			a owl:Restriction ;
 			owl:onProperty core:id ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onClass <http://unifiedcyberontology.org/identity#Identifier> ;
+			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identifier> ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty core:createdBy ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onClass <http://unifiedcyberontology.org/identity#Identity> ;
+			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -279,7 +280,7 @@ core:createdBy
 	rdfs:label "createdBy"@en ;
 	rdfs:comment "The identity that created a characterization of a concept."@en ;
 	rdfs:domain core:UcoObject ;
-	rdfs:range <http://unifiedcyberontology.org/identity#Identity> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
 core:createdTime
@@ -335,7 +336,7 @@ core:id
 	rdfs:label "id"@en ;
 	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
 	rdfs:domain core:UcoObject ;
-	rdfs:range <http://unifiedcyberontology.org/types#Identifier> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
 	.
 
 core:isDirectional
@@ -381,7 +382,7 @@ core:objectMarking
 	rdfs:label "objectMarking"@en ;
 	rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
 	rdfs:domain core:UcoObject ;
-	rdfs:range <http://unifiedcyberontology.org/marking#MarkingDefinition> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition> ;
 	.
 
 core:referenceURL
@@ -436,7 +437,7 @@ core:tag
 	a owl:DatatypeProperty ;
 	rdfs:label "tag"@en ;
 	rdfs:comment "A generic tag/label."@en ;
-	rdfs:domain core:Annotation ;
+	rdfs:domain core:UcoObject ;
 	rdfs:range xsd:string ;
 	.
 
