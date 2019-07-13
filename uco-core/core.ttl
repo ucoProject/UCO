@@ -148,20 +148,6 @@ core:Grouping
 	rdfs:comment "A compilation of referenced UCO content with a shared context."@en ;
 	.
 
-core:HasIdentity
-	a owl:Class ;
-	rdfs:subClassOf core:Relationship ;
-	rdfs:label "HasIdentity"@en ;
-	rdfs:comment "An association or link between any uco object and a uco Identity object."@en ;
-	.
-
-core:HasLocation
-	a owl:Class ;
-	rdfs:subClassOf core:Relationship ;
-	rdfs:label "HasLocation"@en ;
-	rdfs:comment "An association or link between any uco object and a uco Location object."@en ;
-	.
-
 core:Item
 	a owl:Class ;
 	rdfs:subClassOf core:UcoObject ;
@@ -176,20 +162,6 @@ core:ModusOperandi
 	rdfs:comment "A particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	.
 
-core:RelatedIdentity
-	a owl:Class ;
-	rdfs:subClassOf
-		core:Relationship ,
-		[
-			a owl:Restriction ;
-			owl:onProperty core:target ;
-			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "RelatedIdentity"@en ;
-	rdfs:comment "An association or link between any uco object and a uco Identity object."@en ;
-	.
 
 core:Relationship
 	a owl:Class ;
