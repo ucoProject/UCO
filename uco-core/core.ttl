@@ -465,7 +465,7 @@ core:tag
 	a owl:DatatypeProperty ;
 	rdfs:label "tag"@en ;
 	rdfs:comment "A generic tag/label."@en ;
-	rdfs:domain core:Annotation ;
+	rdfs:domain core:UcoObject ;
 	rdfs:range xsd:string ;
 	.
 
