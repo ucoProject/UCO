@@ -113,12 +113,6 @@ action:ActionFrequency
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty action:trend ;
-			owl:onDataRange action:TrendEnum ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty action:rate ;
 			owl:onDataRange xsd:float ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -133,6 +127,12 @@ action:ActionFrequency
 			a owl:Restriction ;
 			owl:onProperty action:units ;
 			owl:onDataRange xsd:string ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty action:trend ;
+			owl:onDataRange action:TrendEnum ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -244,7 +244,7 @@ action:ActionStatusTypeEnum
 
 action:ArrayOfAction
 	a owl:Class ;
-  rdfs:subClassOf [
+	rdfs:subClassOf [
 		a owl:Restriction ;
 		owl:onProperty action:action ;
 		owl:minCardinality "1"^^xsd:nonNegativeInteger ;
@@ -265,12 +265,12 @@ action:TrendEnum
 	.
 
 action:action
-  	a owl:ObjectProperty ;
-  	rdfs:label "action"@en ;
-  	rdfs:comment "A characterization of a single action."@en ;
-  	rdfs:domain action:ArrayOfAction ;
-  	rdfs:range action:Action;
-  	.
+	a owl:ObjectProperty ;
+	rdfs:label "action"@en ;
+	rdfs:comment "A characterization of a single action."@en ;
+	rdfs:domain action:ArrayOfAction ;
+	rdfs:range action:Action ;
+	.
 
 action:actionCount
 	a owl:DatatypeProperty ;
@@ -464,3 +464,4 @@ action:value
 	rdfs:domain action:ActionArgument ;
 	rdfs:range xsd:string ;
 	.
+

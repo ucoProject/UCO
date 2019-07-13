@@ -548,3 +548,4 @@ tool:version
 	rdfs:domain tool:Tool ;
 	rdfs:range xsd:string ;
 	.
+

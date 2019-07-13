@@ -221,3 +221,4 @@ identity:honorificSuffix
 	rdfs:domain identity:SimpleName ;
 	rdfs:range xsd:string ;
 	.
+

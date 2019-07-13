@@ -148,6 +148,47 @@ core:Grouping
 	rdfs:comment "A compilation of referenced UCO content with a shared context."@en ;
 	.
 
+core:HashNameEnum
+	a rdfs:Datatype ;
+	rdfs:comment "An enumeration of common hashing algorithm names."@en ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:oneOf [
+			a rdf:List ;
+			rdf:first "MD5" ;
+			rdf:rest [
+				a rdf:List ;
+				rdf:first "MD6" ;
+				rdf:rest [
+					a rdf:List ;
+					rdf:first "SHA1" ;
+					rdf:rest [
+						a rdf:List ;
+						rdf:first "SHA224" ;
+						rdf:rest [
+							a rdf:List ;
+							rdf:first "SHA256" ;
+							rdf:rest [
+								a rdf:List ;
+								rdf:first "SHA384" ;
+								rdf:rest [
+									a rdf:List ;
+									rdf:first "SHA512" ;
+									rdf:rest [
+										a rdf:List ;
+										rdf:first "SSDEEP" ;
+										rdf:rest rdf:nil ;
+									] ;
+								] ;
+							] ;
+						] ;
+					] ;
+				] ;
+			] ;
+		] ;
+	] ;
+	.
+
 core:Item
 	a owl:Class ;
 	rdfs:subClassOf core:UcoObject ;
@@ -161,7 +202,6 @@ core:ModusOperandi
 	rdfs:label "ModusOperandi"@en ;
 	rdfs:comment "A particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	.
-
 
 core:Relationship
 	a owl:Class ;
@@ -202,14 +242,14 @@ core:UcoObject
 		[
 			a owl:Restriction ;
 			owl:onProperty core:id ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identifier> ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty core:createdBy ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -219,15 +259,15 @@ core:UcoObject
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:name ;
-			owl:onDataRange xsd:string ;
+			owl:onProperty core:specVersion ;
+			owl:onClass core:ControlledVocabulary ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:specVersion ;
-			owl:onClass core:ControlledVocabulary ;
+			owl:onProperty core:name ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
 		]
 		;
 	rdfs:label "UcoObject"@en ;
@@ -241,14 +281,14 @@ core:confidence
 	rdfs:comment "An asserted level of certainty in the accuracy of some information."@en ;
 	rdfs:domain core:Confidence ;
 	rdfs:range [
-      a rdfs:Datatype ;
-      owl:onDatatype xsd:nonNegativeInteger ;
-      owl:withRestrictions (
-          [
-            xsd:maxInclusive "100"^^xsd:nonNegativeInteger ;
-          ]
-        ) ;
-    ] ;
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:nonNegativeInteger ;
+		owl:withRestrictions (
+			[
+				xsd:maxInclusive "100"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+	] ;
 	.
 
 core:constrainingVocabularyName
@@ -422,7 +462,7 @@ core:startTime
 	rdfs:label "startTime"@en ;
 	rdfs:comment "The initial time of a time range."@en ;
 	rdfs:domain core:Relationship ;
-  rdfs:range xsd:dateTime ;
+	rdfs:range xsd:dateTime ;
 	.
 
 core:statement
@@ -465,43 +505,3 @@ core:value
 	rdfs:range xsd:string ;
 	.
 
-core:HashNameEnum
-  	a rdfs:Datatype ;
-  	rdfs:comment "An enumeration of common hashing algorithm names."@en ;
-  	owl:equivalentClass [
-  		a rdfs:Datatype ;
-  		owl:oneOf [
-  			a rdf:List ;
-  			rdf:first "MD5" ;
-  			rdf:rest [
-  				a rdf:List ;
-  				rdf:first "MD6" ;
-  				rdf:rest [
-  					a rdf:List ;
-  					rdf:first "SHA1" ;
-  					rdf:rest [
-  						a rdf:List ;
-  						rdf:first "SHA224" ;
-  						rdf:rest [
-  							a rdf:List ;
-  							rdf:first "SHA256" ;
-  							rdf:rest [
-  								a rdf:List ;
-  								rdf:first "SHA384" ;
-  								rdf:rest [
-  									a rdf:List ;
-  									rdf:first "SHA512" ;
-  									rdf:rest [
-  										a rdf:List ;
-  										rdf:first "SSDEEP" ;
-  										rdf:rest rdf:nil ;
-  									] ;
-  								] ;
-  							] ;
-  						] ;
-  					] ;
-  				] ;
-  			] ;
-  		] ;
-  	] ;
-  	.

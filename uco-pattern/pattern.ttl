@@ -52,3 +52,4 @@ pattern:patternExpression
 	rdfs:domain pattern:LogicalPattern ;
 	rdfs:range pattern:PatternExpression ;
 	.
+

@@ -31,3 +31,4 @@ victim:VictimTargeting
 	rdfs:label "VictimTargeting"@en ;
 	rdfs:comment "Characteristics of people or organizations that are the target of some malicious activity."@en ;
 	.
+
