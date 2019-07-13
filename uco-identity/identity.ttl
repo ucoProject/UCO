@@ -153,10 +153,10 @@ identity:Qualification
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:Relationship
+identity:RelatedIdentity
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Relationship"@en ;
+	rdfs:label "Related Identity"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
