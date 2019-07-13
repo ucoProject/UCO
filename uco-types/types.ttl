@@ -146,6 +146,7 @@ types:value
 	a owl:DatatypeProperty ;
 	rdfs:label "value"@en ;
 	rdfs:comment "A specific property value."@en ;
-	rdfs:domain types:ControlledDictionaryEntry;
+	rdfs:domain types:ControlledDictionaryEntry ;
 	rdfs:range xsd:string ;
 	.
+

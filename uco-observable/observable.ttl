@@ -3292,12 +3292,6 @@
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :messageID ;
-			owl:onDataRange xsd:string ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :sender ;
 			owl:onClass :CyberItem ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -3329,6 +3323,12 @@
 		[
 			a owl:Restriction ;
 			owl:onProperty :contentType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :messageID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -4197,12 +4197,12 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 			owl:onProperty :visibility ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:boolean ;
-		],
-    [
+		] ,
+		[
 			a owl:Restriction ;
 			owl:onProperty :message ;
+			owl:onClass :CyberItem ;
 			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onClass :CyberItem;
 		]
 		;
 	rdfs:label "MessageThread"@en ;
@@ -5614,15 +5614,15 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :actionType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :TaskActionTypeEnum ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :actionID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :actionType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :TaskActionTypeEnum ;
 		]
 		;
 	rdfs:label "TaskActionType"@en ;
@@ -5950,18 +5950,6 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :triggerFrequency ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :TriggerFrequencyEnum ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty :triggerType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :TriggerTypeEnum ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :isEnabled ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:boolean ;
@@ -5983,6 +5971,18 @@ How does this relate to Application?
 			owl:onProperty :triggerSessionChangeType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :triggerFrequency ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :TriggerFrequencyEnum ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :triggerType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :TriggerTypeEnum ;
 		]
 		;
 	rdfs:label "TriggerType"@en ;
@@ -6093,12 +6093,6 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :password ;
-			owl:onDataRange xsd:string ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :userName ;
 			owl:onClass :CyberItem ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -6112,6 +6106,12 @@ How does this relate to Application?
 		[
 			a owl:Restriction ;
 			owl:onProperty :fragment ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :password ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -6337,24 +6337,6 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :regionalInternetRegistry ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :RegionalRegistryTypeEnum ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty :dnssec ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :WhoisDNSSECTypeEnum ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty :status ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :WhoisStatusTypeEnum ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :domainID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
@@ -6370,6 +6352,24 @@ How does this relate to Application?
 			owl:onProperty :sponsoringRegistrar ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :regionalInternetRegistry ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :RegionalRegistryTypeEnum ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :dnssec ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :WhoisDNSSECTypeEnum ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :status ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :WhoisStatusTypeEnum ;
 		]
 		;
 	rdfs:label "WhoIs"@en ;
@@ -6409,12 +6409,6 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :contactType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :WhoisContactTypeEnum ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :contactID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
@@ -6424,6 +6418,12 @@ How does this relate to Application?
 			owl:onProperty :contactName ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :contactType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :WhoisContactTypeEnum ;
 		]
 		;
 	rdfs:label "WhoisContactType"@en ;
@@ -7183,18 +7183,6 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :priority ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :TaskPriorityEnum ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty :status ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :TaskStatusEnum ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :exitCode ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:long ;
@@ -7219,12 +7207,6 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :taskCreator ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :imageName ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
@@ -7240,6 +7222,24 @@ How does this relate to Application?
 			owl:onProperty :parameters ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :taskCreator ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :priority ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :TaskPriorityEnum ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :status ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :TaskStatusEnum ;
 		]
 		;
 	rdfs:label "WindowsTask"@en ;
@@ -7289,15 +7289,15 @@ How does this relate to Application?
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :driveType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :WindowsDriveTypeEnum ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty :driveLetter ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty :driveType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange :WindowsDriveTypeEnum ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -8193,6 +8193,14 @@ How does this relate to Application?
 	rdfs:range xsd:string ;
 	.
 
+:cookieDomain
+	a owl:ObjectProperty ;
+	rdfs:label "cookieDomain"@en ;
+	rdfs:comment "The domain for which the cookie is stored, for example nfi.minjus.nl."@en ;
+	rdfs:domain :BrowserCookie ;
+	rdfs:range :CyberItem ;
+	.
+
 :cookieName
 	a owl:DatatypeProperty ;
 	rdfs:label "cookieName"@en ;
@@ -8263,19 +8271,11 @@ How does this relate to Application?
 	rdfs:range xsd:dateTime ;
 	.
 
-:taskCreator
-	a owl:DatatypeProperty ;
-	rdfs:label "taskCreator"@en ;
-	rdfs:comment "Specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx."@en ;
-	rdfs:domain :WindowsTask ;
-	rdfs:range xsd:string ;
-	.
-
 :creator
 	a owl:ObjectProperty ;
 	rdfs:label "creator"@en ;
 	rdfs:comment "Specifies the name of the creator of the registry key."@en ;
-	rdfs:domain	:WindowsRegistryKey ;
+	rdfs:domain :WindowsRegistryKey ;
 	rdfs:range :CyberItem ;
 	.
 
@@ -8468,20 +8468,11 @@ How does this relate to Application?
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
 	.
 
-:cookieDomain
-	a owl:ObjectProperty ;
-	rdfs:label "cookieDomain"@en ;
-	rdfs:comment
-		"The domain for which the cookie is stored, for example nfi.minjus.nl."@en ;
-	rdfs:domain :BrowserCookie ;
-	rdfs:range :CyberItem ;
-	.
-
 :domain
 	a owl:DatatypeProperty ;
 	rdfs:label "domain"@en ;
 	rdfs:comment "The domain(s) that the system belongs to."@en ;
-	rdfs:domain	:WindowsComputerSpecification ;
+	rdfs:domain :WindowsComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -9065,7 +9056,7 @@ How does this relate to Application?
 	rdfs:label "hashes"@en ;
 	rdfs:comment "Specifies any hashes computed over the section."@en ;
 	rdfs:domain :WindowsPESection ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash>  ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 :headerRaw
@@ -9676,7 +9667,7 @@ How does this relate to Application?
 :messageID
 	a owl:DatatypeProperty ;
 	rdfs:label "messageID"@en ;
-	rdfs:comment "An unique identifier for the message."@en;
+	rdfs:comment "An unique identifier for the message."@en ;
 	rdfs:domain
 		:EmailMessage ,
 		:Message
@@ -10538,6 +10529,14 @@ How does this relate to Application?
 	rdfs:range xsd:string ;
 	.
 
+:registryValues
+	a owl:ObjectProperty ;
+	rdfs:label "registryValues"@en ;
+	rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
+	rdfs:domain :WindowsRegistryKey ;
+	rdfs:range :WindowsRegistryValue ;
+	.
+
 :remarks
 	a owl:DatatypeProperty ;
 	rdfs:label "remarks"@en ;
@@ -11140,6 +11139,14 @@ How does this relate to Application?
 	rdfs:range :CyberItem ;
 	.
 
+:taskCreator
+	a owl:DatatypeProperty ;
+	rdfs:label "taskCreator"@en ;
+	rdfs:comment "Specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx."@en ;
+	rdfs:domain :WindowsTask ;
+	rdfs:range xsd:string ;
+	.
+
 :text
 	a owl:DatatypeProperty ;
 	rdfs:label "text"@en ;
@@ -11349,14 +11356,6 @@ How does this relate to Application?
 	rdfs:range xsd:string ;
 	.
 
-:registryValues
-	a owl:ObjectProperty ;
-	rdfs:label "registryValues"@en ;
-	rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
-	rdfs:domain :WindowsRegistryKey	;
-	rdfs:range :WindowsRegistryValue ;
-	.
-
 :values
 	a owl:DatatypeProperty ;
 	rdfs:label "values"@en ;
@@ -11497,3 +11496,4 @@ How does this relate to Application?
 	rdfs:domain :EmailMessage ;
 	rdfs:range :CyberItem ;
 	.
+

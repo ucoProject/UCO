@@ -229,3 +229,4 @@ location:vdop
 	rdfs:domain location:GPSCoordinates ;
 	rdfs:range xsd:double ;
 	.
+

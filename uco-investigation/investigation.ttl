@@ -11,14 +11,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/core#endTime>
-  rdfs:domain investigation:Authorization ;
-.
-
-<https://unifiedcyberontology.org/ontology/uco/core#startTime>
-  rdfs:domain investigation:Authorization ;
-.
-
 <https://unifiedcyberontology.org/ontology/uco/investigation>
 	a owl:Ontology ;
 	rdfs:label "uco-investigation"@en ;
@@ -28,6 +20,14 @@
 		<https://unifiedcyberontology.org/ontology/uco/location> ,
 		<https://unifiedcyberontology.org/ontology/uco/role>
 		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#endTime>
+	rdfs:domain investigation:Authorization ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#startTime>
+	rdfs:domain investigation:Authorization ;
 	.
 
 investigation:Attorney
@@ -48,21 +48,21 @@ investigation:Authorization
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty investigation:authorizationIdentifier ;
-			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		],
-    [
-			a owl:Restriction ;
 			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#endTime> ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:dateTime ;
-		],
-    [
+		] ,
+		[
 			a owl:Restriction ;
 			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#startTime> ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:dateTime ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty investigation:authorizationIdentifier ;
+			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
 		]
 		;
 	rdfs:label "Authorization"@en ;
@@ -229,13 +229,13 @@ investigation:investigationStatus
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#ControlledVocabulary> ;
 	.
 
-  investigation:relevantAuthorization
-  	a owl:ObjectProperty ;
-  	rdfs:label "relevantAuthorization"@en ;
-  	rdfs:comment "Specifies an authorization relevant to a particular investigation."@en ;
-  	rdfs:domain investigation:Investigation ;
-  	rdfs:range investigation:Authorization ;
-  	.
+investigation:relevantAuthorization
+	a owl:ObjectProperty ;
+	rdfs:label "relevantAuthorization"@en ;
+	rdfs:comment "Specifies an authorization relevant to a particular investigation."@en ;
+	rdfs:domain investigation:Investigation ;
+	rdfs:range investigation:Authorization ;
+	.
 
 investigation:startTime
 	a owl:DatatypeProperty ;
@@ -244,3 +244,4 @@ investigation:startTime
 	rdfs:domain investigation:Investigation ;
 	rdfs:range xsd:dateTime ;
 	.
+
