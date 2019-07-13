@@ -67,7 +67,8 @@ marking:ReleaseToMarking
         rdfs:subClassOf [
             rdf:type owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty marking:authorizedIdentities;
+            owl:onProperty marking:authorizedIdentities ;
+			owl:onDataRange xsd:string ;
           ] ;
         rdfs:subClassOf [
             rdf:type owl:Restriction ;

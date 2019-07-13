@@ -1804,7 +1804,7 @@
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :domain ;
+			owl:onProperty :cookieDomain ;
 			owl:onClass :CyberItem ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -3293,7 +3293,7 @@
 		[
 			a owl:Restriction ;
 			owl:onProperty :messageID ;
-			owl:onClass :CyberItem ;
+			owl:onDataRange xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -4202,7 +4202,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 			a owl:Restriction ;
 			owl:onProperty :message ;
 			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange :CyberItem;
+			owl:onClass :CyberItem;
 		]
 		;
 	rdfs:label "MessageThread"@en ;
@@ -6094,7 +6094,7 @@ How does this relate to Application?
 		[
 			a owl:Restriction ;
 			owl:onProperty :password ;
-			owl:onClass :CyberItem ;
+			owl:onDataRange xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -6403,7 +6403,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :phoneNumber ;
+			owl:onProperty :phone ;
 			owl:onClass :CyberItem ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -6484,7 +6484,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :phoneNumber ;
+			owl:onProperty :phone ;
 			owl:onClass :CyberItem ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -7219,7 +7219,7 @@ How does this relate to Application?
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty :creator ;
+			owl:onProperty :taskCreator ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -8263,21 +8263,20 @@ How does this relate to Application?
 	rdfs:range xsd:dateTime ;
 	.
 
+:taskCreator
+	a owl:DatatypeProperty ;
+	rdfs:label "taskCreator"@en ;
+	rdfs:comment "Specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx."@en ;
+	rdfs:domain :WindowsTask ;
+	rdfs:range xsd:string ;
+	.
+
 :creator
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:ObjectProperty ;
 	rdfs:label "creator"@en ;
 	rdfs:comment "Specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx."@en ;
-	rdfs:domain
-		:WindowsRegistryKey ,
-		:WindowsTask
-		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:domain	:WindowsRegistryKey ;
+	rdfs:range :CyberItem ;
 	.
 
 :creatorUser
@@ -8469,24 +8468,21 @@ How does this relate to Application?
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
 	.
 
-:domain
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
-	rdfs:label "domain"@en ;
+:cookieDomain
+	a owl:ObjectProperty ;
+	rdfs:label "cookieDomain"@en ;
 	rdfs:comment
-		"The domain for which the cookie is stored, for example nfi.minjus.nl."@en ,
-		"The domain(s) that the system belongs to."@en
-		;
-	rdfs:domain
-		:BrowserCookie ,
-		:WindowsComputerSpecification
-		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+		"The domain for which the cookie is stored, for example nfi.minjus.nl."@en ;
+	rdfs:domain :BrowserCookie ;
+	rdfs:range :CyberItem ;
+	.
+
+:domain
+	a owl:DatatypeProperty ;
+	rdfs:label "domain"@en ;
+	rdfs:comment "The domain(s) that the system belongs to."@en ;
+	rdfs:domain	:WindowsComputerSpecification ;
+	rdfs:range xsd:string ;
 	.
 
 :domainID
@@ -9678,10 +9674,7 @@ How does this relate to Application?
 	.
 
 :messageID
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "messageID"@en ;
 	rdfs:comment
 		"A unique identifier (email address form) for identifying the email."@en ,
@@ -9691,10 +9684,7 @@ How does this relate to Application?
 		:EmailMessage ,
 		:Message
 		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:range xsd:string ;
 	.
 
 :messageText
@@ -10177,10 +10167,7 @@ How does this relate to Application?
 	.
 
 :password
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "password"@en ;
 	rdfs:comment
 		"Password used to authenticate to this resource."@en ,
@@ -10190,10 +10177,7 @@ How does this relate to Application?
 		:AccountAuthentication ,
 		:URL
 		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:range xsd:string ;
 	.
 
 :passwordLastChanged
@@ -10242,6 +10226,14 @@ How does this relate to Application?
 	rdfs:range xsd:string ;
 	.
 
+:phone
+	a owl:ObjectProperty ;
+	rdfs:label "phone"@en ;
+	rdfs:comment "A phone number(account)."@en ;
+	rdfs:domain :WhoisContactType ;
+	rdfs:range :CyberItem ;
+	.
+
 :phoneActivationTime
 	a owl:DatatypeProperty ;
 	rdfs:label "phoneActivationTime"@en ;
@@ -10251,20 +10243,11 @@ How does this relate to Application?
 	.
 
 :phoneNumber
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "phoneNumber"@en ;
 	rdfs:comment "A phone number(account)."@en ;
-	rdfs:domain
-		:PhoneAccount ,
-		:WhoisContactType
-		;
-	rdfs:range
-		:CyberItem ,
-		xsd:string
-		;
+	rdfs:domain :PhoneAccount ;
+	rdfs:range xsd:string ;
 	.
 
 :phoneNumbers
@@ -11369,21 +11352,20 @@ How does this relate to Application?
 	rdfs:range xsd:string ;
 	.
 
+:registryValues
+	a owl:ObjectProperty ;
+	rdfs:label "registryValues"@en ;
+	rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
+	rdfs:domain :WindowsRegistryKey	;
+	rdfs:range :WindowsRegistryValue ;
+	.
+
 :values
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "values"@en ;
 	rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
-	rdfs:domain
-		:ValuesEnumeratedEffect ,
-		:WindowsRegistryKey
-		;
-	rdfs:range
-		:WindowsRegistryValue ,
-		xsd:string
-		;
+	rdfs:domain :ValuesEnumeratedEffect ;
+	rdfs:range xsd:string ;
 	.
 
 :version
