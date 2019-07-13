@@ -13,12 +13,9 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is v0.2.0
+The current release of UCO is v0.3.0
 
-The content of v0.2.0 is primarily a specification formalization of the v0.1.0 content into OWL.
-Its content is driven primarily from the initial base requirements of expressing cyber investigation information and is the product of input from the [Cyberinvestigation Analysis Standard Expression (CASE)](https://github.com/ucoProject/CASE) community. It does contain a few enhancements and fixes identified after the release of v0.1.0.
+The content of v0.3.0 is primarily of fixing lexical, syntactic and semantic reasoning errors present in v0.2.0 and simplifying in some areas.
+Its content is driven primarily from the initial base requirements of expressing cyber investigation information and is the product of input from the [Cyberinvestigation Analysis Standard Expression (CASE)](https://caseontology.org/) community. 
 
 Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.
-
-### Serialized Content Examples
- - [Cyberinvestigation Analysis Standard Expression (CASE) v0.1.0 JSON-LD examples](https://github.com/ucoProject/CASE/tree/master/examples)
