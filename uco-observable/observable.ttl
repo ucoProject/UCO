@@ -8274,7 +8274,7 @@ How does this relate to Application?
 :creator
 	a owl:ObjectProperty ;
 	rdfs:label "creator"@en ;
-	rdfs:comment "Specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx."@en ;
+	rdfs:comment "Specifies the name of the creator of the registry key."@en ;
 	rdfs:domain	:WindowsRegistryKey ;
 	rdfs:range :CyberItem ;
 	.
@@ -9676,10 +9676,7 @@ How does this relate to Application?
 :messageID
 	a owl:DatatypeProperty ;
 	rdfs:label "messageID"@en ;
-	rdfs:comment
-		"A unique identifier (email address form) for identifying the email."@en ,
-		"An identifier for the message."@en
-		;
+	rdfs:comment "An unique identifier for the message."@en;
 	rdfs:domain
 		:EmailMessage ,
 		:Message
