@@ -10340,7 +10340,7 @@ observable:privateKeyUsagePeriodNotBefore
 observable:processorArchitecture
 	a owl:DatatypeProperty ;
 	rdfs:label "processorArchitecture"@en ;
-	rdfs:comment "sSpecifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
+	rdfs:comment "Specifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
 	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
