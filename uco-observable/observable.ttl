@@ -4822,7 +4822,7 @@ observable:OperatingSystem
 	rdfs:comment "Specifies information about an operating system."@en ;
 	.
 
-observable:PDFFIle
+observable:PDFFile
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -4850,7 +4850,7 @@ observable:PDFFIle
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "PDFFIle"@en ;
+	rdfs:label "PDFFile"@en ;
 	.
 
 observable:PIN
@@ -8464,7 +8464,7 @@ observable:dnssec
 observable:documentInformationDictionary
 	a owl:ObjectProperty ;
 	rdfs:label "documentInformationDictionary"@en ;
-	rdfs:domain observable:PDFFIle ;
+	rdfs:domain observable:PDFFile ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
 	.
 
@@ -9359,7 +9359,7 @@ observable:isNamed
 observable:isOptimized
 	a owl:DatatypeProperty ;
 	rdfs:label "isOptimized"@en ;
-	rdfs:domain observable:PDFFIle ;
+	rdfs:domain observable:PDFFile ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -10195,14 +10195,14 @@ observable:path
 observable:pdfId0
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId0"@en ;
-	rdfs:domain observable:PDFFIle ;
+	rdfs:domain observable:PDFFile ;
 	rdfs:range xsd:string ;
 	.
 
 observable:pdfId1
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId1"@en ;
-	rdfs:domain observable:PDFFIle ;
+	rdfs:domain observable:PDFFile ;
 	rdfs:range xsd:string ;
 	.
 
@@ -10340,7 +10340,7 @@ observable:privateKeyUsagePeriodNotBefore
 observable:processorArchitecture
 	a owl:DatatypeProperty ;
 	rdfs:label "processorArchitecture"@en ;
-	rdfs:comment "sSpecifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
+	rdfs:comment "Specifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
 	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
@@ -11369,7 +11369,7 @@ observable:version
 	rdfs:label "version"@en ;
 	rdfs:domain
 		observable:Application ,
-		observable:PDFFIle
+		observable:PDFFile
 		;
 	rdfs:range xsd:string ;
 	.
