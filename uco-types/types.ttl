@@ -114,7 +114,6 @@ types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
 	rdfs:comment "A dictionary entry."@en ;
-	rdfs:domain types:Dictionary ;
 	rdfs:range types:DictionaryEntry ;
 	.
 
@@ -122,7 +121,6 @@ types:hashMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "hashMethod"@en ;
 	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
-	rdfs:domain types:Hash ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#HashNameEnum> ;
 	.
 
@@ -130,7 +128,6 @@ types:hashValue
 	a owl:DatatypeProperty ;
 	rdfs:label "hashValue"@en ;
 	rdfs:comment "A cryptographic hash value."@en ;
-	rdfs:domain types:Hash ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -138,7 +135,6 @@ types:key
 	a owl:DatatypeProperty ;
 	rdfs:label "key"@en ;
 	rdfs:comment "A key property of a single dictionary entry."@en ;
-	rdfs:domain types:ControlledDictionaryEntry ;
 	rdfs:range xsd:string ;
 	.
 
@@ -146,7 +142,6 @@ types:value
 	a owl:DatatypeProperty ;
 	rdfs:label "value"@en ;
 	rdfs:comment "A specific property value."@en ;
-	rdfs:domain types:ControlledDictionaryEntry ;
 	rdfs:range xsd:string ;
 	.
 

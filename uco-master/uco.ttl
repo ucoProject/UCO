@@ -1,15 +1,25 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/uco
 # imports: https://unifiedcyberontology.org/ontology/uco/action
+# imports: https://unifiedcyberontology.org/ontology/uco/action-da
 # imports: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://unifiedcyberontology.org/ontology/uco/core-da
 # imports: https://unifiedcyberontology.org/ontology/uco/identity
+# imports: https://unifiedcyberontology.org/ontology/uco/identity-da
 # imports: https://unifiedcyberontology.org/ontology/uco/investigation
+# imports: https://unifiedcyberontology.org/ontology/uco/investigation-da
 # imports: https://unifiedcyberontology.org/ontology/uco/location
+# imports: https://unifiedcyberontology.org/ontology/uco/location-da
 # imports: https://unifiedcyberontology.org/ontology/uco/marking
+# imports: https://unifiedcyberontology.org/ontology/uco/marking-da
 # imports: https://unifiedcyberontology.org/ontology/uco/observable
+# imports: https://unifiedcyberontology.org/ontology/uco/observable-da
 # imports: https://unifiedcyberontology.org/ontology/uco/pattern
+# imports: https://unifiedcyberontology.org/ontology/uco/pattern-da
 # imports: https://unifiedcyberontology.org/ontology/uco/role
 # imports: https://unifiedcyberontology.org/ontology/uco/tool
+# imports: https://unifiedcyberontology.org/ontology/uco/tool-da
 # imports: https://unifiedcyberontology.org/ontology/uco/types
+# imports: https://unifiedcyberontology.org/ontology/uco/types-da
 # imports: https://unifiedcyberontology.org/ontology/uco/victim
 
 @base <https://unifiedcyberontology.org/ontology/uco/uco> .
@@ -27,16 +37,26 @@
 	rdfs:label "uco-master"@en ;
 	owl:imports
 		<https://unifiedcyberontology.org/ontology/uco/action> ,
+		<https://unifiedcyberontology.org/ontology/uco/action-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/core> ,
+		<https://unifiedcyberontology.org/ontology/uco/core-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/identity> ,
+		<https://unifiedcyberontology.org/ontology/uco/identity-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/investigation> ,
+		<https://unifiedcyberontology.org/ontology/uco/investigation-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/location> ,
+		<https://unifiedcyberontology.org/ontology/uco/location-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/marking> ,
+		<https://unifiedcyberontology.org/ontology/uco/marking-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/observable> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/pattern> ,
+		<https://unifiedcyberontology.org/ontology/uco/pattern-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/role> ,
 		<https://unifiedcyberontology.org/ontology/uco/tool> ,
+		<https://unifiedcyberontology.org/ontology/uco/tool-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/types> ,
+		<https://unifiedcyberontology.org/ontology/uco/types-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/victim>
 		;
 	.

@@ -1,0 +1,2058 @@
+# baseURI: https://unifiedcyberontology.org/ontology/uco/observable-da
+
+@base <https://unifiedcyberontology.org/ontology/uco/observable-da> .
+@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://unifiedcyberontology.org/ontology/uco/observable-da>
+	a owl:Ontology ;
+	rdfs:label "observable domain assertions"@en ;
+	.
+
+observable:abbreviation
+	rdfs:domain observable:GlobalFlagType ;
+	.
+
+observable:accessedDirectory
+	rdfs:domain observable:WindowsPrefetch ;
+	.
+
+observable:accessedFile
+	rdfs:domain observable:WindowsPrefetch ;
+	.
+
+observable:accessedTime
+	rdfs:domain observable:File ;
+	.
+
+observable:account
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:accountIdentifier
+	rdfs:domain observable:Account ;
+	.
+
+observable:accountIssuer
+	rdfs:domain observable:Account ;
+	.
+
+observable:accountLogin
+	rdfs:domain observable:DigitalAccount ;
+	.
+
+observable:accountLogonType
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:accountRunLevel
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:accountType
+	rdfs:domain observable:Account ;
+	.
+
+observable:actionID
+	rdfs:domain observable:TaskActionType ;
+	.
+
+observable:actionList
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:actionType
+	rdfs:domain observable:TaskActionType ;
+	.
+
+observable:activeDirectoryGroups
+	rdfs:domain observable:WindowsActiveDirectoryAccount ;
+	.
+
+observable:adapterName
+	rdfs:domain observable:NetworkInterface ;
+	.
+
+observable:address
+	rdfs:domain observable:WhoisContactType ;
+	.
+
+observable:addressOfEntryPoint
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:addressValue
+	rdfs:domain
+		observable:BluetoothAddress ,
+		observable:WifiAddress
+		;
+	.
+
+observable:allocationStatus
+	rdfs:domain observable:File ;
+	.
+
+observable:alternateDataStreams
+	rdfs:domain observable:NTFSFileSystem ;
+	.
+
+observable:application
+	rdfs:domain observable:PhoneCall ;
+	.
+
+observable:applicationFileName
+	rdfs:domain observable:WindowsPrefetch ;
+	.
+
+observable:applicationIdentifier
+	rdfs:domain observable:Application ;
+	.
+
+observable:archiveType
+	rdfs:domain observable:ArchiveFile ;
+	.
+
+observable:arguments
+	rdfs:domain observable:Process ;
+	.
+
+observable:asHandle
+	rdfs:domain observable:AutonomousSystem ;
+	.
+
+observable:aslrEnabled
+	rdfs:domain observable:WindowsProcess ;
+	.
+
+observable:attendant
+	rdfs:domain observable:CalendarEntry ;
+	.
+
+observable:audioType
+	rdfs:domain observable:Audio ;
+	.
+
+observable:authorityKeyIdentifier
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:availableRam
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:baseOfCode
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:baseStation
+	rdfs:domain observable:WirelessNetworkConnection ;
+	.
+
+observable:basicConstraints
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:bcc
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:binary
+	rdfs:domain observable:Process ;
+	.
+
+observable:biosDate
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:biosManufacturer
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:biosReleaseDate
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:biosSerialNumber
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:biosVersion
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:bitRate
+	rdfs:domain observable:Audio ;
+	.
+
+observable:bitness
+	rdfs:domain observable:OperatingSystem ;
+	.
+
+observable:bitsPerPixel
+	rdfs:domain observable:RasterPicture ;
+	.
+
+observable:blockType
+	rdfs:domain observable:Memory ;
+	.
+
+observable:bluetoothDeviceName
+	rdfs:domain observable:MobileDevice ;
+	.
+
+observable:body
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:bodyMultipart
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:bodyRaw
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:bookmarkPath
+	rdfs:domain observable:BrowserBookmark ;
+	.
+
+observable:byteOrder
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:byteStringValue
+	rdfs:domain observable:ExtractedString ;
+	.
+
+observable:callType
+	rdfs:domain observable:PhoneCall ;
+	.
+
+observable:camera
+	rdfs:domain observable:RasterPicture ;
+	.
+
+observable:canEscalatePrivs
+	rdfs:domain observable:UserAccount ;
+	.
+
+observable:carrier
+	rdfs:domain observable:SIMCard ;
+	.
+
+observable:categories
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:cc
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:certificateIssuer
+	rdfs:domain observable:DigitalSignatureInfo ;
+	.
+
+observable:certificatePolicies
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:certificateSubject
+	rdfs:domain observable:DigitalSignatureInfo ;
+	.
+
+observable:characteristics
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:checksum
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:clockSetting
+	rdfs:domain observable:MobileDevice ;
+	.
+
+observable:clusterSize
+	rdfs:domain observable:FileSystem ;
+	.
+
+observable:columnName
+	rdfs:domain observable:SQLiteBlob ;
+	.
+
+observable:comClassID
+	rdfs:domain observable:IComHandlerActionType ;
+	.
+
+observable:comData
+	rdfs:domain observable:IComHandlerActionType ;
+	.
+
+observable:comment
+	rdfs:domain observable:ArchiveFile ;
+	.
+
+observable:compressionMethod
+	rdfs:domain observable:CompressedStream ;
+	.
+
+observable:compressionRatio
+	rdfs:domain observable:CompressedStream ;
+	.
+
+observable:computerName
+	rdfs:domain observable:Event ;
+	.
+
+observable:contactID
+	rdfs:domain observable:WhoisContactType ;
+	.
+
+observable:contactInfo
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:contactName
+	rdfs:domain observable:WhoisContactType ;
+	.
+
+observable:contactOrganization
+	rdfs:domain observable:WhoisContactType ;
+	.
+
+observable:contactType
+	rdfs:domain observable:WhoisContactType ;
+	.
+
+observable:contentDisposition
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:contentType
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:context
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:controlCode
+	rdfs:domain observable:SendControlCodeEffect ;
+	.
+
+observable:cookieDomain
+	rdfs:domain observable:BrowserCookie ;
+	.
+
+observable:cookieName
+	rdfs:domain observable:BrowserCookie ;
+	.
+
+observable:cookiePath
+	rdfs:domain observable:BrowserCookie ;
+	.
+
+observable:cpeid
+	rdfs:domain observable:Software ;
+	.
+
+observable:cpu
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:cpuFamily
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:createdTime
+	rdfs:domain observable:File ;
+	.
+
+observable:creationDate
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:creationFlags
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:creationTime
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:creator
+	rdfs:domain observable:WindowsRegistryKey ;
+	.
+
+observable:creatorUser
+	rdfs:domain observable:Process ;
+	.
+
+observable:crlDistributionPoints
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:currentSystemDate
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:currentWorkingDirectory
+	rdfs:domain observable:Process ;
+	.
+
+observable:cyberAction
+	rdfs:domain observable:Event ;
+	.
+
+observable:data
+	rdfs:domain observable:WindowsRegistryValue ;
+	.
+
+observable:dataPayload
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:dataPayloadReferenceURL
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:dataType
+	rdfs:domain observable:WindowsRegistryValue ;
+	.
+
+observable:depEnabled
+	rdfs:domain observable:WindowsProcess ;
+	.
+
+observable:descriptions
+	rdfs:domain observable:WindowsService ;
+	.
+
+observable:destination
+	rdfs:domain observable:GlobalFlagType ;
+	.
+
+observable:destinationFlags
+	rdfs:domain observable:TCPConnection ;
+	.
+
+observable:destinationPort
+	rdfs:domain observable:NetworkConnection ;
+	.
+
+observable:deviceType
+	rdfs:domain observable:Device ;
+	.
+
+observable:dhcpLeaseExpires
+	rdfs:domain observable:NetworkInterface ;
+	.
+
+observable:dhcpLeaseObtained
+	rdfs:domain observable:NetworkInterface ;
+	.
+
+observable:dhcpServer
+	rdfs:domain observable:NetworkInterface ;
+	.
+
+observable:diskPartitionType
+	rdfs:domain observable:DiskPartition ;
+	.
+
+observable:diskSize
+	rdfs:domain observable:Disk ;
+	.
+
+observable:diskType
+	rdfs:domain observable:Disk ;
+	.
+
+observable:displayName
+	rdfs:domain observable:WindowsService ;
+	.
+
+observable:dllCharacteristics
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:dnssec
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:documentInformationDictionary
+	rdfs:domain observable:PDFFIle ;
+	.
+
+observable:domain
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:domainID
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:domainName
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:driveLetter
+	rdfs:domain observable:WindowsVolume ;
+	.
+
+observable:driveType
+	rdfs:domain observable:WindowsVolume ;
+	.
+
+observable:dst
+	rdfs:domain observable:NetworkConnection ;
+	.
+
+observable:dstBytes
+	rdfs:domain observable:NetworkFlow ;
+	.
+
+observable:dstPackets
+	rdfs:domain observable:NetworkFlow ;
+	.
+
+observable:dstPayload
+	rdfs:domain observable:NetworkFlow ;
+	.
+
+observable:duration
+	rdfs:domain observable:PhoneCall ;
+	.
+
+observable:effectiveGroup
+	rdfs:domain observable:UserSession ;
+	.
+
+observable:effectiveGroupID
+	rdfs:domain observable:UserSession ;
+	.
+
+observable:effectiveUser
+	rdfs:domain observable:UserSession ;
+	.
+
+observable:emailAddress
+	rdfs:domain observable:WhoisContactType ;
+	.
+
+observable:encoding
+	rdfs:domain observable:ExtractedString ;
+	.
+
+observable:encodingMethod
+	rdfs:domain observable:EncodedStream ;
+	.
+
+observable:encryptionIV
+	rdfs:domain observable:EncryptedStream ;
+	.
+
+observable:encryptionKey
+	rdfs:domain observable:EncryptedStream ;
+	.
+
+observable:encryptionMethod
+	rdfs:domain observable:EncryptedStream ;
+	.
+
+observable:encryptionMode
+	rdfs:domain observable:EncryptedStream ;
+	.
+
+observable:endTime
+	rdfs:domain observable:PhoneCall ;
+	.
+
+observable:englishTranslation
+	rdfs:domain observable:ExtractedString ;
+	.
+
+observable:entropy
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:entryID
+	rdfs:domain observable:NTFSFileSystem ;
+	.
+
+observable:environmentVariables
+	rdfs:domain observable:Process ;
+	.
+
+observable:eventID
+	rdfs:domain observable:Event ;
+	.
+
+observable:eventStatus
+	rdfs:domain observable:CalendarEntry ;
+	.
+
+observable:eventText
+	rdfs:domain observable:Event ;
+	.
+
+observable:eventType
+	rdfs:domain observable:Event ;
+	.
+
+observable:execArguments
+	rdfs:domain observable:IExecActionType ;
+	.
+
+observable:execProgramHashes
+	rdfs:domain observable:IExecActionType ;
+	.
+
+observable:execProgramPath
+	rdfs:domain observable:IExecActionType ;
+	.
+
+observable:execWorkingDirectory
+	rdfs:domain observable:IExecActionType ;
+	.
+
+observable:exifData
+	rdfs:domain observable:EXIF ;
+	.
+
+observable:exitCode
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:exitStatus
+	rdfs:domain observable:Process ;
+	.
+
+observable:exitTime
+	rdfs:domain observable:Process ;
+	.
+
+observable:expirationDate
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:expirationTime
+	rdfs:domain observable:BrowserCookie ;
+	.
+
+observable:extDeletionTime
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extFileType
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extFlags
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extHardLinkCount
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extInodeChangeTime
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extInodeID
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extPermissions
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extSGID
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extSUID
+	rdfs:domain observable:ExtInode ;
+	.
+
+observable:extendedKeyUsage
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:extension
+	rdfs:domain observable:File ;
+	.
+
+observable:faxNumber
+	rdfs:domain observable:WhoisContactType ;
+	.
+
+observable:fileAlignment
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:fileHeaderHashes
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:fileName
+	rdfs:domain observable:File ;
+	.
+
+observable:filePath
+	rdfs:domain observable:File ;
+	.
+
+observable:fileSystemType
+	rdfs:domain observable:FileSystem ;
+	.
+
+observable:firstLoginTime
+	rdfs:domain observable:DigitalAccount ;
+	.
+
+observable:firstName
+	rdfs:domain observable:Contact ;
+	.
+
+observable:firstRun
+	rdfs:domain observable:WindowsPrefetch ;
+	.
+
+observable:flags
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:format
+	rdfs:domain observable:Audio ;
+	.
+
+observable:fragment
+	rdfs:domain observable:URL ;
+	.
+
+observable:fragmentIndex
+	rdfs:domain observable:Fragment ;
+	.
+
+observable:freeSpace
+	rdfs:domain observable:Disk ;
+	.
+
+observable:from
+	rdfs:domain observable:PhoneCall ;
+	.
+
+observable:fullValue
+	rdfs:domain observable:URL ;
+	.
+
+observable:geoLocationEntry
+	rdfs:domain observable:GeoLocationTrack ;
+	.
+
+observable:gid
+	rdfs:domain observable:UNIXAccount ;
+	.
+
+observable:globalFlagList
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:gpu
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:gpuFamily
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:groupName
+	rdfs:domain observable:WindowsService ;
+	.
+
+observable:groups
+	rdfs:domain observable:WindowsAccount ;
+	.
+
+observable:hasChanged
+	rdfs:domain observable:CyberItem ;
+	.
+
+observable:hash
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:hashes
+	rdfs:domain observable:WindowsPESection ;
+	.
+
+observable:headerRaw
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:hexadecimalValue
+	rdfs:domain observable:GlobalFlagType ;
+	.
+
+observable:hiveType
+	rdfs:domain observable:WindowsRegistryHive ;
+	.
+
+observable:homeDirectory
+	rdfs:domain observable:UserAccount ;
+	.
+
+observable:host
+	rdfs:domain observable:URL ;
+	.
+
+observable:hostname
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:httpMesageBodyLength
+	rdfs:domain observable:HTTPConnection ;
+	.
+
+observable:httpMessageBodyData
+	rdfs:domain observable:HTTPConnection ;
+	.
+
+observable:httpRequestHeader
+	rdfs:domain observable:HTTPConnection ;
+	.
+
+observable:iComHandlerAction
+	rdfs:domain observable:TaskActionType ;
+	.
+
+observable:iEmailAction
+	rdfs:domain observable:TaskActionType ;
+	.
+
+observable:iExecAction
+	rdfs:domain observable:TaskActionType ;
+	.
+
+observable:iShowMessageAction
+	rdfs:domain observable:TaskActionType ;
+	.
+
+observable:icmpCode
+	rdfs:domain observable:ICMPConnection ;
+	.
+
+observable:icmpType
+	rdfs:domain observable:ICMPConnection ;
+	.
+
+observable:imageBase
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:imageCompressionMethod
+	rdfs:domain observable:RasterPicture ;
+	.
+
+observable:imageName
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:imageType
+	rdfs:domain observable:Image ;
+	.
+
+observable:impHash
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:inReplyTo
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:inhibitAnyPolicy
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:installDate
+	rdfs:domain observable:OperatingSystem ;
+	.
+
+observable:ip
+	rdfs:domain observable:NetworkInterface ;
+	.
+
+observable:ipAddress
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:ipGateway
+	rdfs:domain observable:NetworkInterface ;
+	.
+
+observable:ipfix
+	rdfs:domain observable:NetworkFlow ;
+	.
+
+observable:isActive
+	rdfs:domain observable:NetworkConnection ;
+	.
+
+observable:isDirectory
+	rdfs:domain observable:File ;
+	.
+
+observable:isDisabled
+	rdfs:domain observable:DigitalAccount ;
+	.
+
+observable:isEnabled
+	rdfs:domain observable:TriggerType ;
+	.
+
+observable:isEncrypted
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:isHidden
+	rdfs:domain observable:Process ;
+	.
+
+observable:isInjected
+	rdfs:domain observable:Memory ;
+	.
+
+observable:isMapped
+	rdfs:domain observable:Memory ;
+	.
+
+observable:isMimeEncoded
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:isMultipart
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:isNamed
+	rdfs:domain observable:Mutex ;
+	.
+
+observable:isOptimized
+	rdfs:domain observable:PDFFIle ;
+	.
+
+observable:isPrivate
+	rdfs:domain observable:CalendarEntry ;
+	.
+
+observable:isPrivileged
+	rdfs:domain observable:UserAccount ;
+	.
+
+observable:isProtected
+	rdfs:domain observable:Memory ;
+	.
+
+observable:isRead
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:isSecure
+	rdfs:domain observable:BrowserCookie ;
+	.
+
+observable:isSelfSigned
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:isServiceAccount
+	rdfs:domain observable:UserAccount ;
+	.
+
+observable:isTLD
+	rdfs:domain observable:DomainName ;
+	.
+
+observable:isVolatile
+	rdfs:domain observable:Memory ;
+	.
+
+observable:issuer
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:issuerAlternativeName
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:issuerHash
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:key
+	rdfs:domain observable:WindowsRegistryKey ;
+	.
+
+observable:keyUsage
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:keypadUnlockCode
+	rdfs:domain observable:MobileDevice ;
+	.
+
+observable:labels
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:language
+	rdfs:domain observable:ExtractedString ;
+	.
+
+observable:lastLoginTime
+	rdfs:domain observable:DigitalAccount ;
+	.
+
+observable:lastName
+	rdfs:domain observable:Contact ;
+	.
+
+observable:lastRun
+	rdfs:domain observable:WindowsPrefetch ;
+	.
+
+observable:length
+	rdfs:domain observable:ExtractedString ;
+	.
+
+observable:libraryType
+	rdfs:domain observable:Library ;
+	.
+
+observable:loaderFlags
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:localTime
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:location
+	rdfs:domain observable:GeoLocationEntry ;
+	.
+
+observable:loginTime
+	rdfs:domain observable:UserSession ;
+	.
+
+observable:logoutTime
+	rdfs:domain observable:UserSession ;
+	.
+
+observable:lookupDate
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:macAddress
+	rdfs:domain observable:NetworkInterface ;
+	.
+
+observable:machine
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:magic
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:magicNumber
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:majorImageVersion
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:majorLinkerVersion
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:majorOSVersion
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:majorSubsystemVersion
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:manufacturer
+	rdfs:domain observable:Device ;
+	.
+
+observable:maxRunTime
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:message
+	rdfs:domain observable:MessageThread ;
+	.
+
+observable:messageID
+	rdfs:domain
+		observable:EmailMessage ,
+		observable:Message
+		;
+	.
+
+observable:messageText
+	rdfs:domain observable:Message ;
+	.
+
+observable:messageType
+	rdfs:domain observable:Message ;
+	.
+
+observable:metadataChangeTime
+	rdfs:domain observable:File ;
+	.
+
+observable:mftFileID
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:mftFileNameAccessedTime
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:mftFileNameCreatedTime
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:mftFileNameLength
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:mftFileNameModifiedTime
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:mftFileNameRecordChangeTime
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:mftFlags
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:mftParentID
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:mftRecordChangeTime
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:middleName
+	rdfs:domain observable:Contact ;
+	.
+
+observable:mimeClass
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:mimeType
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:minorImageVersion
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:minorLinkerVersion
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:minorOSVersion
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:minorSubsystemVersion
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:mockLocationsAllowed
+	rdfs:domain observable:MobileDevice ;
+	.
+
+observable:model
+	rdfs:domain observable:Device ;
+	.
+
+observable:modifiedTime
+	rdfs:domain observable:File ;
+	.
+
+observable:mostRecentRunTime
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:mountPoint
+	rdfs:domain observable:DiskPartition ;
+	.
+
+observable:msProductID
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:msProductName
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:nameConstraints
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:nameserver
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:netBIOSName
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:network
+	rdfs:domain observable:MobileDevice ;
+	.
+
+observable:networkInterface
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:newObject
+	rdfs:domain observable:StateChangeEffect ;
+	.
+
+observable:nextRunTime
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:ntfsHardLinkCount
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:ntfsOwnerID
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:ntfsOwnerSID
+	rdfs:domain observable:MftRecord ;
+	.
+
+observable:number
+	rdfs:domain observable:AutonomousSystem ;
+	.
+
+observable:numberOfLaunches
+	rdfs:domain observable:Application ;
+	.
+
+observable:numberOfRVAAndSizes
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:numberOfSections
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:numberOfSubkeys
+	rdfs:domain observable:WindowsRegistryKey ;
+	.
+
+observable:numberOfSymbols
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:objectGUID
+	rdfs:domain observable:WindowsActiveDirectoryAccount ;
+	.
+
+observable:oldObject
+	rdfs:domain observable:StateChangeEffect ;
+	.
+
+observable:omment
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:openFileDescriptor
+	rdfs:domain observable:UNIXProcess ;
+	.
+
+observable:operatingSystem
+	rdfs:domain observable:Application ;
+	.
+
+observable:optionalHeader
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:options
+	rdfs:domain observable:UNIXVolume ;
+	.
+
+observable:otherHeaders
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:owner
+	rdfs:domain
+		observable:Account ,
+		observable:FilePermissions
+		;
+	.
+
+observable:ownerSID
+	rdfs:domain observable:WindowsProcess ;
+	.
+
+observable:parameterAddress
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:parameters
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:parent
+	rdfs:domain observable:Process ;
+	.
+
+observable:participant
+	rdfs:domain observable:MessageThread ;
+	.
+
+observable:partition
+	rdfs:domain observable:Disk ;
+	.
+
+observable:partitionID
+	rdfs:domain observable:DiskPartition ;
+	.
+
+observable:partitionLength
+	rdfs:domain observable:DiskPartition ;
+	.
+
+observable:partitionOffset
+	rdfs:domain observable:DiskPartition ;
+	.
+
+observable:password
+	rdfs:domain
+		observable:AccountAuthentication ,
+		observable:URL
+		;
+	.
+
+observable:passwordLastChanged
+	rdfs:domain observable:AccountAuthentication ;
+	.
+
+observable:passwordType
+	rdfs:domain observable:AccountAuthentication ;
+	.
+
+observable:path
+	rdfs:domain observable:PathRelation ;
+	.
+
+observable:pdfId0
+	rdfs:domain observable:PDFFile ;
+	.
+
+observable:pdfId1
+	rdfs:domain observable:PDFFile ;
+	.
+
+observable:peType
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:phone
+	rdfs:domain observable:WhoisContactType ;
+	.
+
+observable:phoneActivationTime
+	rdfs:domain observable:MobileDevice ;
+	.
+
+observable:phoneNumber
+	rdfs:domain observable:PhoneAccount ;
+	.
+
+observable:phoneNumbers
+	rdfs:domain observable:Contact ;
+	.
+
+observable:pictureHeight
+	rdfs:domain observable:RasterPicture ;
+	.
+
+observable:pictureWidth
+	rdfs:domain observable:RasterPicture ;
+	.
+
+observable:picturetype
+	rdfs:domain observable:RasterPicture ;
+	.
+
+observable:pid
+	rdfs:domain observable:Process ;
+	.
+
+observable:pointerToSymbolTable
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:policyConstraints
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:policyMappings
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:port
+	rdfs:domain observable:URL ;
+	.
+
+observable:prefetchHash
+	rdfs:domain observable:WindowsPrefetch ;
+	.
+
+observable:priority
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:privateKeyUsagePeriodNotAfter
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:privateKeyUsagePeriodNotBefore
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:processorArchitecture
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:properties
+	rdfs:domain observable:PropertiesEnumeratedEffect ;
+	.
+
+observable:propertyName
+	rdfs:domain observable:PropertyReadEffect ;
+	.
+
+observable:protocols
+	rdfs:domain observable:NetworkConnection ;
+	.
+
+observable:query
+	rdfs:domain observable:URL ;
+	.
+
+observable:rangeOffset
+	rdfs:domain observable:DataRange ;
+	.
+
+observable:rangeOffsetType
+	rdfs:domain observable:DataRange ;
+	.
+
+observable:rangeSize
+	rdfs:domain observable:DataRange ;
+	.
+
+observable:receivedLines
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:receivedTime
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:recurrence
+	rdfs:domain observable:CalendarEntry ;
+	.
+
+observable:references
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:referralURL
+	rdfs:domain observable:WhoisRegistrarInfoType ;
+	.
+
+observable:regionSize
+	rdfs:domain observable:Memory ;
+	.
+
+observable:regionStartAddress
+	rdfs:domain observable:Memory ;
+	.
+
+observable:region_end_address
+	rdfs:domain observable:Memory ;
+	.
+
+observable:regionalInternetRegistry
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:registeredOrganization
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:registeredOwner
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:registrantIDs
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:registrarGUID
+	rdfs:domain observable:WhoisRegistrarInfoType ;
+	.
+
+observable:registrarID
+	rdfs:domain observable:WhoisRegistrarInfoType ;
+	.
+
+observable:registrarInfo
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:registrarName
+	rdfs:domain observable:WhoisRegistrarInfoType ;
+	.
+
+observable:registryValues
+	rdfs:domain observable:WindowsRegistryKey ;
+	.
+
+observable:remarks
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:remindTime
+	rdfs:domain observable:CalendarEntry ;
+	.
+
+observable:requestMethod
+	rdfs:domain observable:HTTPConnection ;
+	.
+
+observable:requestValue
+	rdfs:domain observable:HTTPConnection ;
+	.
+
+observable:requestVersion
+	rdfs:domain observable:HTTPConnection ;
+	.
+
+observable:rowCondition
+	rdfs:domain observable:SQLiteBlob ;
+	.
+
+observable:rowIndex
+	rdfs:domain observable:SQLiteBlob ;
+	.
+
+observable:ruid
+	rdfs:domain observable:UNIXProcess ;
+	.
+
+observable:runningStatus
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:scheme
+	rdfs:domain observable:URL ;
+	.
+
+observable:screenName
+	rdfs:domain observable:Contact ;
+	.
+
+observable:sectionAlignment
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sections
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:sectorSize
+	rdfs:domain observable:Volume ;
+	.
+
+observable:securityAttributes
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:sender
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:sentTime
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:serialNumber
+	rdfs:domain observable:Device ;
+	.
+
+observable:serverName
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:serviceName
+	rdfs:domain observable:WindowsService ;
+	.
+
+observable:serviceStatus
+	rdfs:domain observable:WindowsService ;
+	.
+
+observable:serviceType
+	rdfs:domain observable:WindowsService ;
+	.
+
+observable:sessionID
+	rdfs:domain observable:Message ;
+	.
+
+observable:shell
+	rdfs:domain observable:UNIXAccount ;
+	.
+
+observable:showMessageBody
+	rdfs:domain observable:IShowMessageActionType ;
+	.
+
+observable:showMessageTitle
+	rdfs:domain observable:IShowMessageActionType ;
+	.
+
+observable:sid
+	rdfs:domain observable:NTFSFileSystem ;
+	.
+
+observable:signature
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:signatureAlgorithm
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:signatureDescription
+	rdfs:domain observable:DigitalSignatureInfo ;
+	.
+
+observable:signatureExists
+	rdfs:domain observable:DigitalSignatureInfo ;
+	.
+
+observable:signatureVerified
+	rdfs:domain observable:DigitalSignatureInfo ;
+	.
+
+observable:size
+	rdfs:domain observable:WindowsPESection ;
+	.
+
+observable:sizeInBytes
+	rdfs:domain observable:ContentData ;
+	.
+
+observable:sizeOfCode
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sizeOfHeaders
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sizeOfHeapCommit
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sizeOfHeapReserve
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sizeOfImage
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sizeOfInitializedData
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sizeOfOptionalHeader
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:sizeOfStackCommit
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sizeOfStackReserve
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sizeOfUninitializedData
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:sourceFlags
+	rdfs:domain observable:TCPConnection ;
+	.
+
+observable:sourcePort
+	rdfs:domain observable:NetworkConnection ;
+	.
+
+observable:spaceLeft
+	rdfs:domain observable:DiskPartition ;
+	.
+
+observable:spaceUsed
+	rdfs:domain observable:DiskPartition ;
+	.
+
+observable:sponsoringRegistrar
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:src
+	rdfs:domain observable:NetworkConnection ;
+	.
+
+observable:srcBytes
+	rdfs:domain observable:NetworkFlow ;
+	.
+
+observable:srcPackets
+	rdfs:domain observable:NetworkFlow ;
+	.
+
+observable:srcPayload
+	rdfs:domain observable:NetworkFlow ;
+	.
+
+observable:ssid
+	rdfs:domain observable:WirelessNetworkConnection ;
+	.
+
+observable:stackSize
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:startAddress
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:startCommandLine
+	rdfs:domain observable:WindowsService ;
+	.
+
+observable:startTime
+	rdfs:domain observable:PhoneCall ;
+	.
+
+observable:startType
+	rdfs:domain observable:WindowsService ;
+	.
+
+observable:startupInfo
+	rdfs:domain observable:WindowsProcess ;
+	.
+
+observable:state
+	rdfs:domain observable:CyberItem ;
+	.
+
+observable:status
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:storageCapacityInBytes
+	rdfs:domain
+		observable:MobileDevice ,
+		observable:SIMCard
+		;
+	.
+
+observable:stringValue
+	rdfs:domain observable:ExtractedString ;
+	.
+
+observable:strings
+	rdfs:domain observable:ExtractedStrings ;
+	.
+
+observable:subject
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:subjectAlternativeName
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:subjectDirectoryAttributes
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:subjectHash
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:subjectKeyIdentifier
+	rdfs:domain observable:X509V3Extensions ;
+	.
+
+observable:subjectPublicKeyAlgorithm
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:subjectPublicKeyExponent
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:subjectPublicKeyModulus
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:subsystem
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:swid
+	rdfs:domain observable:Software ;
+	.
+
+observable:symbolicName
+	rdfs:domain observable:GlobalFlagType ;
+	.
+
+observable:systemTime
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:tableName
+	rdfs:domain observable:SQLiteBlob ;
+	.
+
+observable:targetFile
+	rdfs:domain observable:SymbolicLink ;
+	.
+
+observable:taskCreator
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:text
+	rdfs:domain observable:Note ;
+	.
+
+observable:threadID
+	rdfs:domain observable:WindowsThread ;
+	.
+
+observable:thumbprintHash
+	rdfs:range types:Hash ;
+	.
+
+observable:timeDateStamp
+	rdfs:domain observable:WindowsPEBinaryFile ;
+	.
+
+observable:timesExecuted
+	rdfs:domain observable:WindowsPrefetch ;
+	.
+
+observable:timezoneDST
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:timezoneStandard
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:to
+	rdfs:domain observable:PhoneCall ;
+	.
+
+observable:totalFragments
+	rdfs:domain observable:Fragment ;
+	.
+
+observable:totalRam
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:totalSpace
+	rdfs:domain observable:DiskPartition ;
+	.
+
+observable:triggerBeginTime
+	rdfs:domain observable:TriggerType ;
+	.
+
+observable:triggerDelay
+	rdfs:domain observable:TriggerType ;
+	.
+
+observable:triggerEndTime
+	rdfs:domain observable:TriggerType ;
+	.
+
+observable:triggerFrequency
+	rdfs:domain observable:TriggerType ;
+	.
+
+observable:triggerList
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:triggerMaxRunTime
+	rdfs:domain observable:TriggerType ;
+	.
+
+observable:triggerSessionChangeType
+	rdfs:domain observable:TriggerType ;
+	.
+
+observable:triggerType
+	rdfs:domain observable:TriggerType ;
+	.
+
+observable:updatedDate
+	rdfs:domain observable:WhoIs ;
+	.
+
+observable:uptime
+	rdfs:domain observable:ComputerSpecification ;
+	.
+
+observable:url
+	rdfs:domain observable:Attachment ;
+	.
+
+observable:urlTargeted
+	rdfs:domain observable:BrowserBookmark ;
+	.
+
+observable:userName
+	rdfs:domain observable:URL ;
+	.
+
+observable:validityNotAfter
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:validityNotBefore
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:value
+	rdfs:domain observable:IPv4Address ;
+	.
+
+observable:values
+	rdfs:domain observable:ValuesEnumeratedEffect ;
+	.
+
+observable:version
+	rdfs:domain
+		observable:Application ,
+		observable:PDFFile
+		;
+	.
+
+observable:visibility
+	rdfs:domain observable:MessageThread ;
+	.
+
+observable:visitCount
+	rdfs:domain observable:BrowserBookmark ;
+	.
+
+observable:volume
+	rdfs:domain observable:WindowsPrefetch ;
+	.
+
+observable:volumeID
+	rdfs:domain observable:Volume ;
+	.
+
+observable:whoisServer
+	rdfs:domain observable:WhoisRegistrarInfoType ;
+	.
+
+observable:win32VersionValue
+	rdfs:domain observable:WindowsPEOptionalHeader ;
+	.
+
+observable:windowTitle
+	rdfs:domain observable:WindowsProcess ;
+	.
+
+observable:windowsDirectory
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:windowsSystemDirectory
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:windowsTempDirectory
+	rdfs:domain observable:WindowsComputerSpecification ;
+	.
+
+observable:windowsVolumeAttributes
+	rdfs:domain observable:WindowsVolume ;
+	.
+
+observable:workItemData
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:workingDirectory
+	rdfs:domain observable:WindowsTask ;
+	.
+
+observable:x509v3extensions
+	rdfs:domain observable:X509Certificate ;
+	.
+
+observable:xMailer
+	rdfs:domain observable:EmailMessage ;
+	.
+
+observable:xOriginatingIP
+	rdfs:domain observable:EmailMessage ;
+	.
+

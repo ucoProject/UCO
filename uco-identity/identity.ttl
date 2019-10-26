@@ -178,7 +178,6 @@ identity:address
 	a owl:ObjectProperty ;
 	rdfs:label "address"@en ;
 	rdfs:comment ""@en ;
-	rdfs:domain identity:Address ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 	.
 
@@ -186,7 +185,6 @@ identity:birthdate
 	a owl:DatatypeProperty ;
 	rdfs:label "birthdate"@en ;
 	rdfs:comment ""@en ;
-	rdfs:domain identity:BirthInformation ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -194,7 +192,6 @@ identity:familyName
 	a owl:DatatypeProperty ;
 	rdfs:label "familyName"@en ;
 	rdfs:comment ""@en ;
-	rdfs:domain identity:SimpleName ;
 	rdfs:range xsd:string ;
 	.
 
@@ -202,7 +199,6 @@ identity:givenName
 	a owl:DatatypeProperty ;
 	rdfs:label "givenName"@en ;
 	rdfs:comment ""@en ;
-	rdfs:domain identity:SimpleName ;
 	rdfs:range xsd:string ;
 	.
 
@@ -210,7 +206,6 @@ identity:honorificPrefix
 	a owl:DatatypeProperty ;
 	rdfs:label "honorificPrefix"@en ;
 	rdfs:comment ""@en ;
-	rdfs:domain identity:SimpleName ;
 	rdfs:range xsd:string ;
 	.
 
@@ -218,7 +213,6 @@ identity:honorificSuffix
 	a owl:DatatypeProperty ;
 	rdfs:label "honorificSuffix"@en ;
 	rdfs:comment ""@en ;
-	rdfs:domain identity:SimpleName ;
 	rdfs:range xsd:string ;
 	.
 
