@@ -5452,7 +5452,7 @@ observable:SMSMessage
 		]
 		;
 	rdfs:label "SMSMessage"@en ;
-	rdfs:comment """Characteristics of a Short Message Service (SMS) 'text' message."""@en ;
+	rdfs:comment "Characteristics of a Short Message Service (SMS) 'text' message."@en ;
 	.
 
 observable:SQLiteBlob
@@ -8337,7 +8337,7 @@ observable:dllCharacteristics
 observable:dnssec
 	a owl:DatatypeProperty ;
 	rdfs:label "dnssec"@en ;
-	rdfs:comment """Specifies the DNSSEC property associated with a Whois entry. Acceptable values are: 'Signed' or 'Unsigned'."""@en ;
+	rdfs:comment "Specifies the DNSSEC property associated with a Whois entry. Acceptable values are: 'Signed' or 'Unsigned'."@en ;
 	rdfs:range observable:WhoisDNSSECTypeEnum ;
 	.
 
@@ -8538,7 +8538,7 @@ observable:eventText
 observable:eventType
 	a owl:DatatypeProperty ;
 	rdfs:label "eventType"@en ;
-	rdfs:comment """The type of the event, for example 'information', 'warning' or 'error'."""@en ;
+	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8614,7 +8614,7 @@ observable:expirationTime
 observable:extDeletionTime
 	a owl:DatatypeProperty ;
 	rdfs:label "extDeletionTime"@en ;
-	rdfs:comment """Specifies the time at which the file represented by an Inode was 'deleted'."""@en ;
+	rdfs:comment "Specifies the time at which the file represented by an Inode was 'deleted'."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -8670,7 +8670,7 @@ observable:extSGID
 observable:extSUID
 	a owl:DatatypeProperty ;
 	rdfs:label "extSUID"@en ;
-	rdfs:comment """Specifies the user ID that 'owns' the file represented by an Inode."""@en ;
+	rdfs:comment "Specifies the user ID that 'owns' the file represented by an Inode."@en ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -9497,7 +9497,7 @@ observable:mimeClass
 observable:mimeType
 	a owl:DatatypeProperty ;
 	rdfs:label "mimeType"@en ;
-	rdfs:comment """MIME type of the data. For example 'text/html' or 'audio/mp3'."""@en ;
+	rdfs:comment "MIME type of the data. For example 'text/html' or 'audio/mp3'."@en ;
 	rdfs:range xsd:string ;
 	.
 

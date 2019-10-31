@@ -44,3 +44,4 @@ marking:statement
 marking:termsOfUse
 	rdfs:domain marking:TermsOfUseMarking ;
 	.
+

@@ -1,6 +1,4 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/identity-da
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/location
 
 @base <https://unifiedcyberontology.org/ontology/uco/identity-da> .
 @prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
@@ -37,3 +35,4 @@ identity:honorificPrefix
 identity:honorificSuffix
 	rdfs:domain identity:SimpleName ;
 	.
+

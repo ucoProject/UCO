@@ -31,3 +31,4 @@ types:key
 types:value
 	rdfs:domain types:ControlledDictionaryEntry ;
 	.
+

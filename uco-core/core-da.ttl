@@ -15,7 +15,6 @@
 	owl:versionInfo "0.2.1" ;
 	.
 
-
 core:confidence
 	rdfs:domain core:Confidence ;
 	.
@@ -104,8 +103,7 @@ core:specVersion
 	.
 
 core:startTime
-	rdfs:domain
-		core:Relationship ;
+	rdfs:domain core:Relationship ;
 	.
 
 core:statement
