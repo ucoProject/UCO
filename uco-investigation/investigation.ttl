@@ -112,17 +112,6 @@ investigation:Investigation
 	rdfs:comment "An exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	.
 
-investigation:InvestigationFormEnum
-	owl:equivalentClass [
-		a rdfs:Datatype ;
-		owl:oneOf (
-			"case"
-			"incident"
-			"suspicious-activity"
-		) ;
-	] ;
-	.
-
 investigation:InvestigativeAction
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#Action> ;
@@ -244,4 +233,3 @@ investigation:startTime
 	rdfs:domain investigation:Investigation ;
 	rdfs:range xsd:dateTime ;
 	.
-
