@@ -1,12 +1,12 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/editor_annotation
+# baseURI: https://unifiedcyberontology.org/ontology/uco/core/editor-annotation
 
-@prefix edt: <https://unifiedcyberontology.org/ontology/uco/editor_annotation#> .
+@prefix edt: <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/editor_annotation>
+<https://unifiedcyberontology.org/ontology/uco/core/editor-annotation>
   rdf:type owl:Ontology ;
   rdfs:comment """Editor Annotation ontology defines a set of annotations that provide guidance to the interpretation or generation of UCO specifications, content or interfaces.
 
@@ -16,7 +16,7 @@
 edt:abstract
   rdf:type owl:AnnotationProperty ;
   rdfs:comment "Specifies that the class on which this annotation is defined should be considered abstract and not be instantiated"@en-US ;
-  rdfs:isDefinedBy <https://unifiedcyberontology.org/ontology/uco/editor_annotation> ;
+  rdfs:isDefinedBy <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation> ;
   rdfs:label "Editor Abstract"@en-US ;
   rdfs:range xsd:boolean ;
 .

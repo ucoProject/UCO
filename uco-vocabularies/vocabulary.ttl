@@ -1,13 +1,13 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix edt: <https://unifiedcyberontology.org/ontology/uco/editor_annotation#> .
+@prefix edt: <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 
 <https://unifiedcyberontology.org/ontology/uco/vocabulary>
   a owl:Ontology ;
   rdfs:label "uco-vocabularies"@en ;
-  owl:imports <https://unifiedcyberontology.org/ontology/uco/editor_annotation> ;
+  owl:imports <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation> ;
   .
 
 vocab:AccountTypeVocab
