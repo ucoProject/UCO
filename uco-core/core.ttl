@@ -174,7 +174,7 @@ core:Relationship
 		[
 			a owl:Restriction ;
 			owl:onProperty core:kindOfRelationship ;
-			owl:onClass core:ControlledVocabulary ;
+			owl:onDataRange xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -224,7 +224,7 @@ core:UcoObject
 		[
 			a owl:Restriction ;
 			owl:onProperty core:specVersion ;
-			owl:onClass core:ControlledVocabulary ;
+			owl:onDataRange xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -356,7 +356,7 @@ core:kindOfRelationship
 	rdfs:label "kindOfRelationship"@en ;
 	rdfs:comment "A characterization of the nature of a relationship between objects."@en ;
 	rdfs:domain core:Relationship ;
-	rdfs:range core:ControlledVocabulary ;
+	rdfs:range xsd:string ;
 	.
 
 core:name
@@ -402,7 +402,7 @@ core:role
 	rdfs:label "role"@en ;
 	rdfs:comment "Usual or customary function based on contextual perspective."@en ;
 	rdfs:domain core:RelatedIdentity ;
-	rdfs:range core:ControlledVocabulary ;
+	rdfs:range xsd:string ;
 	.
 
 core:source
@@ -418,7 +418,7 @@ core:specVersion
 	rdfs:label "specVersion"@en ;
 	rdfs:comment "The version of UCO used to characterize a concept."@en ;
 	rdfs:domain core:UcoObject ;
-	rdfs:range core:ControlledVocabulary ;
+	rdfs:range xsd:string ;
 	.
 
 core:startTime

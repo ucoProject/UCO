@@ -246,7 +246,7 @@ action:actionStatus
 	rdfs:label "actionStatus"@en ;
 	rdfs:comment "The current state of the action."@en ;
 	rdfs:domain action:Action ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#ControlledVocabulary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/vocabulary#ActionStatusTypeVocab> ;
 	.
 
 action:argumentName
