@@ -25,19 +25,3 @@ time:TimeRange
 time:Timestamp
 	a rdfs:Datatype ;
 	.
-
-time:TimestampPrecision
-	rdfs:comment "An enumeration of timestamp precision granularities."@en ;
-	owl:equivalentClass [
-		a rdfs:Datatype ;
-		owl:oneOf (
-			"day"
-			"hour"
-			"minute"
-			"month"
-			"second"
-			"year"
-		) ;
-	] ;
-	.
-
