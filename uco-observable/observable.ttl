@@ -3085,7 +3085,7 @@ observable:DiskPartition
 			a owl:Restriction ;
 			owl:onProperty observable:partitionID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:integer ;
+			owl:onDataRange xsd:string ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -10133,9 +10133,9 @@ observable:partition
 observable:partitionID
 	a owl:DatatypeProperty ;
 	rdfs:label "partitionID"@en ;
-	rdfs:comment "Specifies the numerical identifier of the partition."@en ;
+	rdfs:comment "Specifies the identifier of the partition, as provided by the containing partition table.  This identifier is the index value within the partition table, and is expected to be an incrementing alphanumeric value (numeric in most partition systems), not a GUID or UUID.  Sorting partitions by this index should first attempt to sort a numeric cast of the value."@en ;
 	rdfs:domain observable:DiskPartition ;
-	rdfs:range xsd:integer ;
+	rdfs:range xsd:string ;
 	.
 
 observable:partitionLength
