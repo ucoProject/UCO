@@ -13,9 +13,10 @@
 <https://unifiedcyberontology.org/ontology/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ,
-	<https://unifiedcyberontology.org/ontology/uco/vocabulary>
-	 ;
+	owl:imports
+		<https://unifiedcyberontology.org/ontology/uco/core> ,
+		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+		;
 	owl:versionInfo "0.4.0" ;
 	.
 
@@ -128,7 +129,7 @@ types:hashMethod
 	rdfs:label "hashMethod"@en ;
 	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
 	rdfs:domain types:Hash ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/vocabulary#HashNameVocab> ;
+	rdfs:range vocab:HashNameVocab ;
 	.
 
 types:hashValue
@@ -154,3 +155,4 @@ types:value
 	rdfs:domain types:ControlledDictionaryEntry ;
 	rdfs:range xsd:string ;
 	.
+

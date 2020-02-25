@@ -25,3 +25,4 @@ time:TimeRange
 time:Timestamp
 	a rdfs:Datatype ;
 	.
+

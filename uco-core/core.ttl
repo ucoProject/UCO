@@ -3,19 +3,17 @@
 
 @base <https://unifiedcyberontology.org/ontology/uco/core> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/core>
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
-	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
-		;
+	owl:imports <https://unifiedcyberontology.org/ontology/uco/vocabulary> ;
 	owl:versionInfo "0.4.0" ;
 	.
 
@@ -174,8 +172,8 @@ core:Relationship
 		[
 			a owl:Restriction ;
 			owl:onProperty core:kindOfRelationship ;
-			owl:onDataRange xsd:string ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -223,13 +221,13 @@ core:UcoObject
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:specVersion ;
-			owl:onDataRange xsd:string ;
+			owl:onProperty core:name ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:name ;
+			owl:onProperty core:specVersion ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		]
@@ -468,3 +466,4 @@ core:value
 	rdfs:domain core:ControlledVocabulary ;
 	rdfs:range xsd:string ;
 	.
+
