@@ -112,17 +112,6 @@ investigation:Investigation
 	rdfs:comment "An exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	.
 
-investigation:InvestigationFormEnum
-	owl:equivalentClass [
-		a rdfs:Datatype ;
-		owl:oneOf (
-			"case"
-			"incident"
-			"suspicious-activity"
-		) ;
-	] ;
-	.
-
 investigation:InvestigativeAction
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#Action> ;
@@ -186,7 +175,7 @@ investigation:authorizationType
 	rdfs:label "authorizationType"@en ;
 	rdfs:comment "A label categorizing a type of authorization (e.g. warrant)"@en ;
 	rdfs:domain investigation:Authorization ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#ControlledVocabulary> ;
+	rdfs:range xsd:string ;
 	.
 
 investigation:endTime
@@ -218,7 +207,7 @@ investigation:investigationForm
 	rdfs:label "investigationForm"@en ;
 	rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
 	rdfs:domain investigation:Investigation ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#ControlledVocabulary> ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/vocabulary#InvestigationFormVocab> ;
 	.
 
 investigation:investigationStatus
@@ -226,7 +215,7 @@ investigation:investigationStatus
 	rdfs:label "investigationStatus"@en ;
 	rdfs:comment "A label characterizing the status of an investigation (open, closed, etc.)."@en ;
 	rdfs:domain investigation:Investigation ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#ControlledVocabulary> ;
+	rdfs:range xsd:string ;
 	.
 
 investigation:relevantAuthorization
