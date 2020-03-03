@@ -3,12 +3,14 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/location
 # imports: https://unifiedcyberontology.org/ontology/uco/pattern
 # imports: https://unifiedcyberontology.org/ontology/uco/types
+# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/action> .
 @prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/action>
@@ -19,8 +21,10 @@
 		<https://unifiedcyberontology.org/ontology/uco/core> ,
 		<https://unifiedcyberontology.org/ontology/uco/location> ,
 		<https://unifiedcyberontology.org/ontology/uco/pattern> ,
-		<https://unifiedcyberontology.org/ontology/uco/types>
+		<https://unifiedcyberontology.org/ontology/uco/types> ,
+		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
 		;
+	owl:versionInfo "0.4.0" ;
 	.
 
 action:Action
@@ -132,7 +136,7 @@ action:ActionFrequency
 		[
 			a owl:Restriction ;
 			owl:onProperty action:trend ;
-			owl:onDataRange action:TrendEnum ;
+			owl:onDataRange vocab:TrendVocab ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -210,38 +214,6 @@ action:ActionReferences
   """@en ;
 	.
 
-action:ActionRelationshipTypeEnum
-	rdfs:comment "An enumeration of types of relationships between actions."@en ;
-	owl:equivalentClass [
-		a rdfs:Datatype ;
-		owl:oneOf (
-			"Dependent_On"
-			"Equivalent_To"
-			"Followed_By"
-			"Initiated"
-			"Initiated_By"
-			"Preceded_By"
-			"Related_To"
-		) ;
-	] ;
-	.
-
-action:ActionStatusTypeEnum
-	rdfs:comment "An enumeration of action status types."@en ;
-	owl:equivalentClass [
-		a rdfs:Datatype ;
-		owl:oneOf (
-			"Complete/Finish"
-			"Error"
-			"Fail"
-			"Ongoing"
-			"Pending"
-			"Success"
-			"Unknown"
-		) ;
-	] ;
-	.
-
 action:ArrayOfAction
 	a owl:Class ;
 	rdfs:subClassOf [
@@ -251,17 +223,6 @@ action:ArrayOfAction
 	] ;
 	rdfs:label "ArrayOfAction"@en ;
 	rdfs:comment "An ordered list of action object references."@en ;
-	.
-
-action:TrendEnum
-	rdfs:comment "An enumeration of trend types."@en ;
-	owl:equivalentClass [
-		a rdfs:Datatype ;
-		owl:oneOf (
-			"Decreasing"
-			"Increasing"
-		) ;
-	] ;
 	.
 
 action:action
@@ -282,7 +243,7 @@ action:actionStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "actionStatus"@en ;
 	rdfs:comment "The current state of the action."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#ControlledVocabulary> ;
+	rdfs:range vocab:ActionStatusTypeVocab ;
 	.
 
 action:argumentName
@@ -423,7 +384,7 @@ action:trend
 	a owl:DatatypeProperty ;
 	rdfs:label "trend"@en ;
 	rdfs:comment "A characterization of the frequency trend for the occurence of an action."@en ;
-	rdfs:range action:TrendEnum ;
+	rdfs:range vocab:TrendVocab ;
 	.
 
 action:units
