@@ -2862,7 +2862,7 @@ observable:RasterPicture
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:picturetype ;
+			owl:onProperty observable:pictureType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		]
@@ -7259,9 +7259,9 @@ observable:pictureWidth
 	rdfs:range xsd:integer ;
 	.
 
-observable:picturetype
+observable:pictureType
 	a owl:DatatypeProperty ;
-	rdfs:label "picturetype"@en ;
+	rdfs:label "pictureType"@en ;
 	rdfs:comment "The type of a picture, for example a thumbnail."@en ;
 	rdfs:domain observable:RasterPicture ;
 	rdfs:range xsd:string ;
