@@ -2862,7 +2862,7 @@ observable:RasterPicture
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:picturetype ;
+			owl:onProperty observable:pictureType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		]
@@ -5537,6 +5537,7 @@ observable:eventType
 	a owl:DatatypeProperty ;
 	rdfs:label "eventType"@en ;
 	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
+	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5613,6 +5614,7 @@ observable:extDeletionTime
 	a owl:DatatypeProperty ;
 	rdfs:label "extDeletionTime"@en ;
 	rdfs:comment "Specifies the time at which the file represented by an Inode was 'deleted'."@en ;
+	rdfs:comment "Specifies the time at which the file represented by an Inode was 'deleted'."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5668,6 +5670,7 @@ observable:extSGID
 observable:extSUID
 	a owl:DatatypeProperty ;
 	rdfs:label "extSUID"@en ;
+	rdfs:comment "Specifies the user ID that 'owns' the file represented by an Inode."@en ;
 	rdfs:comment "Specifies the user ID that 'owns' the file represented by an Inode."@en ;
 	rdfs:range xsd:integer ;
 	.
@@ -6793,8 +6796,8 @@ observable:partition
 observable:partitionID
 	a owl:DatatypeProperty ;
 	rdfs:label "partitionID"@en ;
-	rdfs:comment "Specifies the numerical identifier of the partition."@en ;
-	rdfs:range xsd:integer ;
+	rdfs:comment "Specifies the identifier of the partition, as provided by the containing partition table.  This identifier is the index value within the partition table, and is expected to be an incrementing alphanumeric value (numeric in most partition systems), not a GUID or UUID.  Sorting partitions by this index should first attempt to sort a numeric cast of the value."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:partitionLength
@@ -6902,9 +6905,9 @@ observable:pictureWidth
 	rdfs:range xsd:integer ;
 	.
 
-observable:picturetype
+observable:pictureType
 	a owl:DatatypeProperty ;
-	rdfs:label "picturetype"@en ;
+	rdfs:label "pictureType"@en ;
 	rdfs:comment "The type of a picture, for example a thumbnail."@en ;
 	rdfs:range xsd:string ;
 	.
@@ -6971,7 +6974,8 @@ observable:privateKeyUsagePeriodNotBefore
 observable:processorArchitecture
 	a owl:DatatypeProperty ;
 	rdfs:label "processorArchitecture"@en ;
-	rdfs:comment "sSpecifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
+	rdfs:comment "Specifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
+	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
