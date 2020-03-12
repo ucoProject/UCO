@@ -4560,7 +4560,6 @@ observable:abbreviation
 	a owl:DatatypeProperty ;
 	rdfs:label "abbreviation"@en ;
 	rdfs:comment "The abbreviation of a global flag. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549646(v=vs.85).aspx."@en ;
-	rdfs:domain observable:GlobalFlagType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4568,7 +4567,6 @@ observable:accessedDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "accessedDirectory"@en ;
 	rdfs:comment "Directories accessed by the prefetch application during startup."@en ;
-	rdfs:domain observable:WindowsPrefetch ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -4576,7 +4574,6 @@ observable:accessedFile
 	a owl:ObjectProperty ;
 	rdfs:label "accessedFile"@en ;
 	rdfs:comment "Files (e.g., DLLs and other support files) used by the application during startup."@en ;
-	rdfs:domain observable:WindowsPrefetch ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -4584,7 +4581,6 @@ observable:accessedTime
 	a owl:DatatypeProperty ;
 	rdfs:label "accessedTime"@en ;
 	rdfs:comment "The date and time at which the Object was accessed."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -4592,7 +4588,6 @@ observable:account
 	a owl:ObjectProperty ;
 	rdfs:label "account"@en ;
 	rdfs:comment "Specifies the account used to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -4600,7 +4595,6 @@ observable:accountIdentifier
 	a owl:DatatypeProperty ;
 	rdfs:label "accountIdentifier"@en ;
 	rdfs:comment "The unique identifier for the account."@en ;
-	rdfs:domain observable:Account ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4608,7 +4602,6 @@ observable:accountIssuer
 	a owl:ObjectProperty ;
 	rdfs:label "accountIssuer"@en ;
 	rdfs:comment "The issuer of this account."@en ;
-	rdfs:domain observable:Account ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -4616,7 +4609,6 @@ observable:accountLogin
 	a owl:DatatypeProperty ;
 	rdfs:label "accountLogin"@en ;
 	rdfs:comment "The login identifier for the digital account."@en ;
-	rdfs:domain observable:DigitalAccount ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4624,7 +4616,6 @@ observable:accountLogonType
 	a owl:DatatypeProperty ;
 	rdfs:label "accountLogonType"@en ;
 	rdfs:comment "Specifies the security logon method required to run the tasks associated with the account. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383013(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4632,7 +4623,6 @@ observable:accountRunLevel
 	a owl:DatatypeProperty ;
 	rdfs:label "accountRunLevel"@en ;
 	rdfs:comment "Specifies the permission level of the account that the task will be run at."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4640,7 +4630,6 @@ observable:accountType
 	a owl:DatatypeProperty ;
 	rdfs:label "accountType"@en ;
 	rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
-	rdfs:domain observable:Account ;
 	rdfs:range vocab:AccountTypeVocab ;
 	.
 
@@ -4648,7 +4637,6 @@ observable:actionID
 	a owl:DatatypeProperty ;
 	rdfs:label "actionID"@en ;
 	rdfs:comment "Specifies the user-defined identifier for the action. This identifier is used by the Task Scheduler for logging purposes. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380590(v=vs.85).aspx."@en ;
-	rdfs:domain observable:TaskActionType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4656,7 +4644,6 @@ observable:actionList
 	a owl:ObjectProperty ;
 	rdfs:label "actionList"@en ;
 	rdfs:comment "Specifies a list of actions to be performed by the scheduled task."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range observable:TaskActionType ;
 	.
 
@@ -4664,14 +4651,12 @@ observable:actionType
 	a owl:DatatypeProperty ;
 	rdfs:label "actionType"@en ;
 	rdfs:comment "Specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
-	rdfs:domain observable:TaskActionType ;
 	rdfs:range vocab:TaskActionTypeVocab ;
 	.
 
 observable:activeDirectoryGroups
 	a owl:DatatypeProperty ;
 	rdfs:label "activeDirectoryGroups"@en ;
-	rdfs:domain observable:WindowsActiveDirectoryAccount ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4679,7 +4664,6 @@ observable:adapterName
 	a owl:DatatypeProperty ;
 	rdfs:label "adapterName"@en ;
 	rdfs:comment "Specifies the name of the network adapter used by the network interface."@en ;
-	rdfs:domain observable:NetworkInterface ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4687,7 +4671,6 @@ observable:address
 	a owl:ObjectProperty ;
 	rdfs:label "address"@en ;
 	rdfs:comment "An address"@en ;
-	rdfs:domain observable:WhoisContactType ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 	.
 
@@ -4695,7 +4678,6 @@ observable:addressOfEntryPoint
 	a owl:DatatypeProperty ;
 	rdfs:label "addressOfEntryPoint"@en ;
 	rdfs:comment "Specifies the address of the entry point relative to the image base when the executable is loaded into memory."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -4703,10 +4685,6 @@ observable:addressValue
 	a owl:DatatypeProperty ;
 	rdfs:label "addressValue"@en ;
 	rdfs:comment "The value of an address."@en ;
-	rdfs:domain
-		observable:BluetoothAddress ,
-		observable:WifiAddress
-		;
 	rdfs:range xsd:string ;
 	.
 
@@ -4714,14 +4692,12 @@ observable:allocationStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "allocationStatus"@en ;
 	rdfs:comment "The allocation status of a file."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:string ;
 	.
 
 observable:alternateDataStreams
 	a owl:ObjectProperty ;
 	rdfs:label "alternateDataStreams"@en ;
-	rdfs:domain observable:NTFSFileSystem ;
 	rdfs:range observable:AlternateDataStream ;
 	.
 
@@ -4729,7 +4705,6 @@ observable:application
 	a owl:ObjectProperty ;
 	rdfs:label "application"@en ;
 	rdfs:comment "The application associated with this object."@en ;
-	rdfs:domain observable:PhoneCall ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -4737,14 +4712,12 @@ observable:applicationFileName
 	a owl:DatatypeProperty ;
 	rdfs:label "applicationFileName"@en ;
 	rdfs:comment "Name of the executable of the prefetch file."@en ;
-	rdfs:domain observable:WindowsPrefetch ;
 	rdfs:range xsd:string ;
 	.
 
 observable:applicationIdentifier
 	a owl:DatatypeProperty ;
 	rdfs:label "applicationIdentifier"@en ;
-	rdfs:domain observable:Application ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4752,7 +4725,6 @@ observable:archiveType
 	a owl:DatatypeProperty ;
 	rdfs:label "archiveType"@en ;
 	rdfs:comment "The type of a file archive, e.g. ZIP, GZIP or RAR."@en ;
-	rdfs:domain observable:ArchiveFile ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4760,21 +4732,18 @@ observable:arguments
 	a owl:DatatypeProperty ;
 	rdfs:label "arguments"@en ;
 	rdfs:comment "A list of arguments utilized in initiating the process."@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range xsd:string ;
 	.
 
 observable:asHandle
 	a owl:DatatypeProperty ;
 	rdfs:label "asHandle"@en ;
-	rdfs:domain observable:AutonomousSystem ;
 	rdfs:range xsd:string ;
 	.
 
 observable:aslrEnabled
 	a owl:DatatypeProperty ;
 	rdfs:label "aslrEnabled"@en ;
-	rdfs:domain observable:WindowsProcess ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -4782,7 +4751,6 @@ observable:attendant
 	a owl:ObjectProperty ;
 	rdfs:label "attendant"@en ;
 	rdfs:comment "The attendants of the event."@en ;
-	rdfs:domain observable:CalendarEntry ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
@@ -4790,14 +4758,12 @@ observable:audioType
 	a owl:DatatypeProperty ;
 	rdfs:label "audioType"@en ;
 	rdfs:comment "The type of a audio. For example: music or speech."@en ;
-	rdfs:domain observable:Audio ;
 	rdfs:range xsd:string ;
 	.
 
 observable:authorityKeyIdentifier
 	a owl:DatatypeProperty ;
 	rdfs:label "authorityKeyIdentifier"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4805,7 +4771,6 @@ observable:availableRam
 	a owl:DatatypeProperty ;
 	rdfs:label "availableRam"@en ;
 	rdfs:comment "Specifies the amount of physical memory available on the system, in bytes."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:long ;
 	.
 
@@ -4813,7 +4778,6 @@ observable:baseOfCode
 	a owl:DatatypeProperty ;
 	rdfs:label "baseOfCode"@en ;
 	rdfs:comment "Specifies the address that is relative to the image base of the beginning-of-code section when it is loaded into memory."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -4821,28 +4785,24 @@ observable:baseStation
 	a owl:DatatypeProperty ;
 	rdfs:label "baseStation"@en ;
 	rdfs:comment "The base station."@en ;
-	rdfs:domain observable:WirelessNetworkConnection ;
 	rdfs:range xsd:string ;
 	.
 
 observable:basicConstraints
 	a owl:DatatypeProperty ;
 	rdfs:label "basicConstraints"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
 observable:bcc
 	a owl:ObjectProperty ;
 	rdfs:label "bcc"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:binary
 	a owl:ObjectProperty ;
 	rdfs:label "binary"@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -4850,7 +4810,6 @@ observable:biosDate
 	a owl:DatatypeProperty ;
 	rdfs:label "biosDate"@en ;
 	rdfs:comment "Specifies the date of the BIOS (e.g. the datestamp of the BIOS revision)."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -4858,7 +4817,6 @@ observable:biosManufacturer
 	a owl:DatatypeProperty ;
 	rdfs:label "biosManufacturer"@en ;
 	rdfs:comment "Specifies the manufacturer of the BIOS."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4866,7 +4824,6 @@ observable:biosReleaseDate
 	a owl:DatatypeProperty ;
 	rdfs:label "biosReleaseDate"@en ;
 	rdfs:comment "Specifies the date the BIOS was released."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -4874,7 +4831,6 @@ observable:biosSerialNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "biosSerialNumber"@en ;
 	rdfs:comment "Specifies the serial number of the BIOS."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4882,7 +4838,6 @@ observable:biosVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "biosVersion"@en ;
 	rdfs:comment "Specifies the version of the BIOS."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4890,7 +4845,6 @@ observable:bitRate
 	a owl:DatatypeProperty ;
 	rdfs:label "bitRate"@en ;
 	rdfs:comment "The bitrate of the audio in bits per second."@en ;
-	rdfs:domain observable:Audio ;
 	rdfs:range xsd:long ;
 	.
 
@@ -4898,14 +4852,12 @@ observable:bitness
 	a owl:DatatypeProperty ;
 	rdfs:label "bitness"@en ;
 	rdfs:comment "Specifies the bitness of the operating system (i.e. 32 or 64). Note that this is potentially different from the word size of the underlying hardware or CPU. A 32-bit operating system can be installed on a machine running a 64-bit processor."@en ;
-	rdfs:domain observable:OperatingSystem ;
 	rdfs:range xsd:string ;
 	.
 
 observable:bitsPerPixel
 	a owl:DatatypeProperty ;
 	rdfs:label "bitsPerPixel"@en ;
-	rdfs:domain observable:RasterPicture ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -4913,7 +4865,6 @@ observable:blockType
 	a owl:DatatypeProperty ;
 	rdfs:label "blockType"@en ;
 	rdfs:comment "The blockType property specifies the block type of a particular memory object."@en ;
-	rdfs:domain observable:Memory ;
 	rdfs:range vocab:MemoryBlockTypeVocab ;
 	.
 
@@ -4921,14 +4872,12 @@ observable:bluetoothDeviceName
 	a owl:DatatypeProperty ;
 	rdfs:label "bluetoothDeviceName"@en ;
 	rdfs:comment "Name configured withing Bluetooth settings on a device."@en ;
-	rdfs:domain observable:MobileDevice ;
 	rdfs:range xsd:string ;
 	.
 
 observable:body
 	a owl:DatatypeProperty ;
 	rdfs:label "body"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4936,14 +4885,12 @@ observable:bodyMultipart
 	a owl:ObjectProperty ;
 	rdfs:label "bodyMultipart"@en ;
 	rdfs:comment "A list of the MIME parts that make up the email body. This field MAY only be used if isMultipart is true."@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:MimePartType ;
 	.
 
 observable:bodyRaw
 	a owl:ObjectProperty ;
 	rdfs:label "bodyRaw"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -4951,14 +4898,12 @@ observable:bookmarkPath
 	a owl:DatatypeProperty ;
 	rdfs:label "bookmarkPath"@en ;
 	rdfs:comment "The folder containing the bookmark."@en ;
-	rdfs:domain observable:BrowserBookmark ;
 	rdfs:range xsd:string ;
 	.
 
 observable:byteOrder
 	a owl:DatatypeProperty ;
 	rdfs:label "byteOrder"@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4966,14 +4911,12 @@ observable:byteStringValue
 	a owl:DatatypeProperty ;
 	rdfs:label "byteStringValue"@en ;
 	rdfs:comment "Specifies the raw, byte-string representation of the extracted string."@en ;
-	rdfs:domain observable:ExtractedString ;
 	.
 
 observable:callType
 	a owl:DatatypeProperty ;
 	rdfs:label "callType"@en ;
 	rdfs:comment "The type of a phone call,for example incoming, outgoing, missed."@en ;
-	rdfs:domain observable:PhoneCall ;
 	rdfs:range xsd:string ;
 	.
 
@@ -4981,14 +4924,12 @@ observable:camera
 	a owl:ObjectProperty ;
 	rdfs:label "camera"@en ;
 	rdfs:comment "The name/make of the camera that was used for taking the picture."@en ;
-	rdfs:domain observable:RasterPicture ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:canEscalatePrivs
 	a owl:DatatypeProperty ;
 	rdfs:label "canEscalatePrivs"@en ;
-	rdfs:domain observable:UserAccount ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -4996,7 +4937,6 @@ observable:carrier
 	a owl:ObjectProperty ;
 	rdfs:label "carrier"@en ;
 	rdfs:comment "Telecommunications service provider that sold the SIM card."@en ;
-	rdfs:domain observable:SIMCard ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
@@ -5004,35 +4944,30 @@ observable:categories
 	a owl:DatatypeProperty ;
 	rdfs:label "categories"@en ;
 	rdfs:comment "Categories applied to the object."@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
 observable:cc
 	a owl:ObjectProperty ;
 	rdfs:label "cc"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:certificateIssuer
 	a owl:ObjectProperty ;
 	rdfs:label "certificateIssuer"@en ;
-	rdfs:domain observable:DigitalSignatureInfo ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
 observable:certificatePolicies
 	a owl:DatatypeProperty ;
 	rdfs:label "certificatePolicies"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
 observable:certificateSubject
 	a owl:ObjectProperty ;
 	rdfs:label "certificateSubject"@en ;
-	rdfs:domain observable:DigitalSignatureInfo ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -5040,7 +4975,6 @@ observable:characteristics
 	a owl:DatatypeProperty ;
 	rdfs:label "characteristics"@en ;
 	rdfs:comment "Specifies the flags that indicate the file’s characteristics."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
@@ -5048,7 +4982,6 @@ observable:checksum
 	a owl:DatatypeProperty ;
 	rdfs:label "checksum"@en ;
 	rdfs:comment "Specifies the checksum of the PE binary."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -5056,7 +4989,6 @@ observable:clockSetting
 	a owl:DatatypeProperty ;
 	rdfs:label "clockSetting"@en ;
 	rdfs:comment "The generalizedTime value on the mobile device when it was processes."@en ;
-	rdfs:domain observable:MobileDevice ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5064,14 +4996,12 @@ observable:clusterSize
 	a owl:DatatypeProperty ;
 	rdfs:label "clusterSize"@en ;
 	rdfs:comment "The size of cluster allocation units in a file system."@en ;
-	rdfs:domain observable:FileSystem ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:columnName
 	a owl:DatatypeProperty ;
 	rdfs:label "columnName"@en ;
-	rdfs:domain observable:SQLiteBlob ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5079,7 +5009,6 @@ observable:comClassID
 	a owl:DatatypeProperty ;
 	rdfs:label "comClassID"@en ;
 	rdfs:comment "Specifies the ID of the COM action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380613(v=vs.85).aspx."@en ;
-	rdfs:domain observable:IComHandlerActionType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5087,14 +5016,12 @@ observable:comData
 	a owl:DatatypeProperty ;
 	rdfs:label "comData"@en ;
 	rdfs:comment "Specifies the data associated with the COM handler. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380613(v=vs.85).aspx."@en ;
-	rdfs:domain observable:IComHandlerActionType ;
 	rdfs:range xsd:string ;
 	.
 
 observable:comment
 	a owl:DatatypeProperty ;
 	rdfs:label "comment"@en ;
-	rdfs:domain observable:ArchiveFile ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5102,7 +5029,6 @@ observable:compressionMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "compressionMethod"@en ;
 	rdfs:comment "The algorithm used to compress the data."@en ;
-	rdfs:domain observable:CompressedStream ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5110,7 +5036,6 @@ observable:compressionRatio
 	a owl:DatatypeProperty ;
 	rdfs:label "compressionRatio"@en ;
 	rdfs:comment "The compression ratio of the compressed data."@en ;
-	rdfs:domain observable:CompressedStream ;
 	rdfs:range xsd:double ;
 	.
 
@@ -5118,7 +5043,6 @@ observable:computerName
 	a owl:DatatypeProperty ;
 	rdfs:label "computerName"@en ;
 	rdfs:comment "A name of the computer on which the log entry was created."@en ;
-	rdfs:domain observable:Event ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5126,7 +5050,6 @@ observable:contactID
 	a owl:DatatypeProperty ;
 	rdfs:label "contactID"@en ;
 	rdfs:comment "Specifies an ID for the contact. This can be presented as Contact ID, Billing ID, Admin ID, Tech ID, etc."@en ;
-	rdfs:domain observable:WhoisContactType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5134,7 +5057,6 @@ observable:contactInfo
 	a owl:ObjectProperty ;
 	rdfs:label "contactInfo"@en ;
 	rdfs:comment "Specifies contact info that would be returned from a contact lookup."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range observable:WhoisContactType ;
 	.
 
@@ -5142,7 +5064,6 @@ observable:contactName
 	a owl:DatatypeProperty ;
 	rdfs:label "contactName"@en ;
 	rdfs:comment "The name of a contact."@en ;
-	rdfs:domain observable:WhoisContactType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5150,7 +5071,6 @@ observable:contactOrganization
 	a owl:ObjectProperty ;
 	rdfs:label "contactOrganization"@en ;
 	rdfs:comment "The name of the organization a contact works for or is assoicated with."@en ;
-	rdfs:domain observable:WhoisContactType ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
@@ -5158,28 +5078,24 @@ observable:contactType
 	a owl:DatatypeProperty ;
 	rdfs:label "contactType"@en ;
 	rdfs:comment "Specifies what type of contact this is."@en ;
-	rdfs:domain observable:WhoisContactType ;
 	rdfs:range vocab:WhoisContactTypeVocab ;
 	.
 
 observable:contentDisposition
 	a owl:DatatypeProperty ;
 	rdfs:label "contentDisposition"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
 observable:contentType
 	a owl:DatatypeProperty ;
 	rdfs:label "contentType"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
 observable:context
 	a owl:DatatypeProperty ;
 	rdfs:label "context"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5187,7 +5103,6 @@ observable:controlCode
 	a owl:DatatypeProperty ;
 	rdfs:label "controlCode"@en ;
 	rdfs:comment "Specifies the actual control code that was sent to the cyberitem."@en ;
-	rdfs:domain observable:SendControlCodeEffect ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5195,7 +5110,6 @@ observable:cookieDomain
 	a owl:ObjectProperty ;
 	rdfs:label "cookieDomain"@en ;
 	rdfs:comment "The domain for which the cookie is stored, for example nfi.minjus.nl."@en ;
-	rdfs:domain observable:BrowserCookie ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5203,7 +5117,6 @@ observable:cookieName
 	a owl:DatatypeProperty ;
 	rdfs:label "cookieName"@en ;
 	rdfs:comment "The name of the cookie."@en ;
-	rdfs:domain observable:BrowserCookie ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5211,7 +5124,6 @@ observable:cookiePath
 	a owl:DatatypeProperty ;
 	rdfs:label "cookiePath"@en ;
 	rdfs:comment "String representation of the path of the cookie."@en ;
-	rdfs:domain observable:BrowserCookie ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5219,7 +5131,6 @@ observable:cpeid
 	a owl:DatatypeProperty ;
 	rdfs:label "cpeid"@en ;
 	rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
-	rdfs:domain observable:Software ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5227,7 +5138,6 @@ observable:cpu
 	a owl:DatatypeProperty ;
 	rdfs:label "cpu"@en ;
 	rdfs:comment "Specifies the name of the CPU used by the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5235,7 +5145,6 @@ observable:cpuFamily
 	a owl:DatatypeProperty ;
 	rdfs:label "cpuFamily"@en ;
 	rdfs:comment "Specifies the name of the CPU family used by the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5243,7 +5152,6 @@ observable:createdTime
 	a owl:DatatypeProperty ;
 	rdfs:label "createdTime"@en ;
 	rdfs:comment "The date and time at which the Object was created."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5251,21 +5159,18 @@ observable:creationDate
 	a owl:DatatypeProperty ;
 	rdfs:label "creationDate"@en ;
 	rdfs:comment "Specifies the date in which the registered domain was created."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range xsd:dateTime ;
 	.
 
 observable:creationFlags
 	a owl:DatatypeProperty ;
 	rdfs:label "creationFlags"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
 observable:creationTime
 	a owl:DatatypeProperty ;
 	rdfs:label "creationTime"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5273,7 +5178,6 @@ observable:creator
 	a owl:ObjectProperty ;
 	rdfs:label "creator"@en ;
 	rdfs:comment "Specifies the name of the creator of the registry key."@en ;
-	rdfs:domain observable:WindowsRegistryKey ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5281,14 +5185,12 @@ observable:creatorUser
 	a owl:ObjectProperty ;
 	rdfs:label "creatorUser"@en ;
 	rdfs:comment "The user that created/owns the process."@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:crlDistributionPoints
 	a owl:DatatypeProperty ;
 	rdfs:label "crlDistributionPoints"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5296,14 +5198,12 @@ observable:currentSystemDate
 	a owl:DatatypeProperty ;
 	rdfs:label "currentSystemDate"@en ;
 	rdfs:comment "Specifies the current date on the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:dateTime ;
 	.
 
 observable:currentWorkingDirectory
 	a owl:DatatypeProperty ;
 	rdfs:label "currentWorkingDirectory"@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5311,49 +5211,42 @@ observable:cyberAction
 	a owl:ObjectProperty ;
 	rdfs:label "cyberAction"@en ;
 	rdfs:comment "The action taken in response to the event."@en ;
-	rdfs:domain observable:Event ;
 	rdfs:range observable:CyberAction ;
 	.
 
 observable:data
 	a owl:DatatypeProperty ;
 	rdfs:label "data"@en ;
-	rdfs:domain observable:WindowsRegistryValue ;
 	rdfs:range xsd:string ;
 	.
 
 observable:dataPayload
 	a owl:DatatypeProperty ;
 	rdfs:label "dataPayload"@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range xsd:string ;
 	.
 
 observable:dataPayloadReferenceURL
 	a owl:ObjectProperty ;
 	rdfs:label "dataPayloadReferenceURL"@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:dataType
 	a owl:DatatypeProperty ;
 	rdfs:label "dataType"@en ;
-	rdfs:domain observable:WindowsRegistryValue ;
 	rdfs:range xsd:string ;
 	.
 
 observable:depEnabled
 	a owl:DatatypeProperty ;
 	rdfs:label "depEnabled"@en ;
-	rdfs:domain observable:WindowsProcess ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:descriptions
 	a owl:DatatypeProperty ;
 	rdfs:label "descriptions"@en ;
-	rdfs:domain observable:WindowsService ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5361,7 +5254,6 @@ observable:destination
 	a owl:DatatypeProperty ;
 	rdfs:label "destination"@en ;
 	rdfs:comment "The destination of a global flag. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549646(v=vs.85).aspx."@en ;
-	rdfs:domain observable:GlobalFlagType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5370,21 +5262,18 @@ observable:destinationFlags
 	rdfs:label "destinationFlags"@en ;
 	rdfs:comment """Specifies the destination TCP flags.
           """@en ;
-	rdfs:domain observable:TCPConnection ;
 	.
 
 observable:destinationPort
 	a owl:DatatypeProperty ;
 	rdfs:label "destinationPort"@en ;
 	rdfs:comment "Specifies the destination port used in the connection, as an integer in the range of 0 - 65535."@en ;
-	rdfs:domain observable:NetworkConnection ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:deviceType
 	a owl:DatatypeProperty ;
 	rdfs:label "deviceType"@en ;
-	rdfs:domain observable:Device ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5392,7 +5281,6 @@ observable:dhcpLeaseExpires
 	a owl:DatatypeProperty ;
 	rdfs:label "dhcpLeaseExpires"@en ;
 	rdfs:comment "Specifies the date/time that the DHCP lease obtained on the network interface expires."@en ;
-	rdfs:domain observable:NetworkInterface ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5400,7 +5288,6 @@ observable:dhcpLeaseObtained
 	a owl:DatatypeProperty ;
 	rdfs:label "dhcpLeaseObtained"@en ;
 	rdfs:comment "Specifies the date/time that the DHCP lease was obtained on the network interface."@en ;
-	rdfs:domain observable:NetworkInterface ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5408,7 +5295,6 @@ observable:dhcpServer
 	a owl:ObjectProperty ;
 	rdfs:label "dhcpServer"@en ;
 	rdfs:comment "Specifies the list of DHCP server IP Addresses used by the network interface."@en ;
-	rdfs:domain observable:NetworkInterface ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5416,7 +5302,6 @@ observable:diskPartitionType
 	a owl:DatatypeProperty ;
 	rdfs:label "diskPartitionType"@en ;
 	rdfs:comment "Specifies the type of partition being characterized."@en ;
-	rdfs:domain observable:DiskPartition ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5424,7 +5309,6 @@ observable:diskSize
 	a owl:DatatypeProperty ;
 	rdfs:label "diskSize"@en ;
 	rdfs:comment "The size of the disk, in bytes."@en ;
-	rdfs:domain observable:Disk ;
 	rdfs:range xsd:long ;
 	.
 
@@ -5432,14 +5316,12 @@ observable:diskType
 	a owl:DatatypeProperty ;
 	rdfs:label "diskType"@en ;
 	rdfs:comment "The type of disk being characterized, e.g., removable."@en ;
-	rdfs:domain observable:Disk ;
 	rdfs:range xsd:string ;
 	.
 
 observable:displayName
 	a owl:DatatypeProperty ;
 	rdfs:label "displayName"@en ;
-	rdfs:domain observable:WindowsService ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5447,7 +5329,6 @@ observable:dllCharacteristics
 	a owl:DatatypeProperty ;
 	rdfs:label "dllCharacteristics"@en ;
 	rdfs:comment "Specifies the flags that characterize the PE binary."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
@@ -5455,14 +5336,12 @@ observable:dnssec
 	a owl:DatatypeProperty ;
 	rdfs:label "dnssec"@en ;
 	rdfs:comment "Specifies the DNSSEC property associated with a Whois entry. Acceptable values are: 'Signed' or 'Unsigned'."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range vocab:WhoisDNSSECTypeVocab ;
 	.
 
 observable:documentInformationDictionary
 	a owl:ObjectProperty ;
 	rdfs:label "documentInformationDictionary"@en ;
-	rdfs:domain observable:PDFFile ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
 	.
 
@@ -5470,7 +5349,6 @@ observable:domain
 	a owl:DatatypeProperty ;
 	rdfs:label "domain"@en ;
 	rdfs:comment "The domain(s) that the system belongs to."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5486,7 +5364,6 @@ observable:domainName
 	a owl:ObjectProperty ;
 	rdfs:label "domainName"@en ;
 	rdfs:comment "Specifies the corresponding domain name for a whois entry."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5494,7 +5371,6 @@ observable:driveLetter
 	a owl:DatatypeProperty ;
 	rdfs:label "driveLetter"@en ;
 	rdfs:comment "Specifies the drive letter of a windows volume."@en ;
-	rdfs:domain observable:WindowsVolume ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5502,7 +5378,6 @@ observable:driveType
 	a owl:DatatypeProperty ;
 	rdfs:label "driveType"@en ;
 	rdfs:comment "Specifies the drive type of a windows volume."@en ;
-	rdfs:domain observable:WindowsVolume ;
 	rdfs:range vocab:WindowsDriveTypeVocab ;
 	.
 
@@ -5510,28 +5385,24 @@ observable:dst
 	a owl:ObjectProperty ;
 	rdfs:label "dst"@en ;
 	rdfs:comment "Specifies the destination(s) of the network connection."@en ;
-	rdfs:domain observable:NetworkConnection ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:dstBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "dstBytes"@en ;
-	rdfs:domain observable:NetworkFlow ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:dstPackets
 	a owl:DatatypeProperty ;
 	rdfs:label "dstPackets"@en ;
-	rdfs:domain observable:NetworkFlow ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:dstPayload
 	a owl:ObjectProperty ;
 	rdfs:label "dstPayload"@en ;
-	rdfs:domain observable:NetworkFlow ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5539,7 +5410,6 @@ observable:duration
 	a owl:DatatypeProperty ;
 	rdfs:label "duration"@en ;
 	rdfs:comment "The duration of the phone call in seconds."@en ;
-	rdfs:domain observable:PhoneCall ;
 	rdfs:range xsd:long ;
 	.
 
@@ -5547,7 +5417,6 @@ observable:effectiveGroup
 	a owl:DatatypeProperty ;
 	rdfs:label "effectiveGroup"@en ;
 	rdfs:comment "Specifies the name of the effective group used in the user session."@en ;
-	rdfs:domain observable:UserSession ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5555,7 +5424,6 @@ observable:effectiveGroupID
 	a owl:DatatypeProperty ;
 	rdfs:label "effectiveGroupID"@en ;
 	rdfs:comment "Specifies the effective group ID of the group used in the user session."@en ;
-	rdfs:domain observable:UserSession ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5563,7 +5431,6 @@ observable:effectiveUser
 	a owl:ObjectProperty ;
 	rdfs:label "effectiveUser"@en ;
 	rdfs:comment "Specifies the effective user details used in the user session."@en ;
-	rdfs:domain observable:UserSession ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5571,7 +5438,6 @@ observable:emailAddress
 	a owl:ObjectProperty ;
 	rdfs:label "emailAddress"@en ;
 	rdfs:comment "An email address."@en ;
-	rdfs:domain observable:WhoisContactType ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5579,49 +5445,42 @@ observable:encoding
 	a owl:DatatypeProperty ;
 	rdfs:label "Encoding"@en ;
 	rdfs:comment "The encoding method used for the extracted string."@en ;
-	rdfs:domain observable:ExtractedString ;
 	rdfs:range xsd:string ;
 	.
 
 observable:encodingMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "encodingMethod"@en ;
-	rdfs:domain observable:EncodedStream ;
 	rdfs:range xsd:string ;
 	.
 
 observable:encryptionIV
 	a owl:DatatypeProperty ;
 	rdfs:label "encryptionIV"@en ;
-	rdfs:domain observable:EncryptedStream ;
 	rdfs:range xsd:string ;
 	.
 
 observable:encryptionKey
 	a owl:DatatypeProperty ;
 	rdfs:label "encryptionKey"@en ;
-	rdfs:domain observable:EncryptedStream ;
 	rdfs:range xsd:string ;
 	.
 
 observable:encryptionMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "encryptionMethod"@en ;
-	rdfs:domain observable:EncryptedStream ;
 	rdfs:range xsd:string ;
 	.
 
 observable:encryptionMode
 	a owl:DatatypeProperty ;
 	rdfs:label "encryptionMode"@en ;
-	rdfs:domain observable:EncryptedStream ;
 	rdfs:range xsd:string ;
 	.
 
 observable:endTime
 	a owl:DatatypeProperty ;
 	rdfs:label "endTime"@en ;
-	rdfs:domain observable:PhoneCall ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5629,7 +5488,6 @@ observable:englishTranslation
 	a owl:DatatypeProperty ;
 	rdfs:label "englishTranslation"@en ;
 	rdfs:comment "Specifies the English translation of the string, if it is not written in English."@en ;
-	rdfs:domain observable:ExtractedString ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5637,7 +5495,6 @@ observable:entropy
 	a owl:DatatypeProperty ;
 	rdfs:label "entropy"@en ;
 	rdfs:comment "Shannon entropy (a measure of randomness) of the data."@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range xsd:double ;
 	.
 
@@ -5645,7 +5502,6 @@ observable:entryID
 	a owl:DatatypeProperty ;
 	rdfs:label "entryID"@en ;
 	rdfs:comment "A unique identifier for the file within the filesystem."@en ;
-	rdfs:domain observable:NTFSFileSystem ;
 	rdfs:range xsd:long ;
 	.
 
@@ -5653,7 +5509,6 @@ observable:environmentVariables
 	a owl:ObjectProperty ;
 	rdfs:label "environmentVariables"@en ;
 	rdfs:comment "A list of environment variables associated with the process. "@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
@@ -5661,7 +5516,6 @@ observable:eventID
 	a owl:DatatypeProperty ;
 	rdfs:label "eventID"@en ;
 	rdfs:comment "The identifier of the event."@en ;
-	rdfs:domain observable:Event ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5669,7 +5523,6 @@ observable:eventStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "eventStatus"@en ;
 	rdfs:comment "The status of the event, for instance accepted, pending or cancelled."@en ;
-	rdfs:domain observable:CalendarEntry ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5677,7 +5530,6 @@ observable:eventText
 	a owl:DatatypeProperty ;
 	rdfs:label "eventText"@en ;
 	rdfs:comment "The textual representation of the event."@en ;
-	rdfs:domain observable:Event ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5685,7 +5537,7 @@ observable:eventType
 	a owl:DatatypeProperty ;
 	rdfs:label "eventType"@en ;
 	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
-	rdfs:domain observable:Event ;
+	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5693,7 +5545,6 @@ observable:execArguments
 	a owl:DatatypeProperty ;
 	rdfs:label "execArguments"@en ;
 	rdfs:comment "Specifies the arguments associated with the command-line operation launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx."@en ;
-	rdfs:domain observable:IExecActionType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5701,7 +5552,6 @@ observable:execProgramHashes
 	a owl:ObjectProperty ;
 	rdfs:label "execProgramHashes"@en ;
 	rdfs:comment "Specifies the hashes of the executable file launched by the action."@en ;
-	rdfs:domain observable:IExecActionType ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
@@ -5709,7 +5559,6 @@ observable:execProgramPath
 	a owl:DatatypeProperty ;
 	rdfs:label "execProgramPath"@en ;
 	rdfs:comment "Specifies the path to the executable file launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx."@en ;
-	rdfs:domain observable:IExecActionType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5717,14 +5566,12 @@ observable:execWorkingDirectory
 	a owl:DatatypeProperty ;
 	rdfs:label "execWorkingDirectory"@en ;
 	rdfs:comment "Specifies the directory that contains either the executable file or the files that are used by the executable file launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx."@en ;
-	rdfs:domain observable:IExecActionType ;
 	rdfs:range xsd:string ;
 	.
 
 observable:exifData
 	a owl:ObjectProperty ;
 	rdfs:label "exifData"@en ;
-	rdfs:domain observable:EXIF ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
 	.
 
@@ -5732,7 +5579,6 @@ observable:exitCode
 	a owl:DatatypeProperty ;
 	rdfs:label "exitCode"@en ;
 	rdfs:comment "Specifies the last exit code of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381245(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:long ;
 	.
 
@@ -5740,7 +5586,6 @@ observable:exitStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "exitStatus"@en ;
 	rdfs:comment "A small number passed from the process to the parent process when it has finished executing. In general, 0 indicates successful termination, any other number indicates a failure."@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range xsd:long ;
 	.
 
@@ -5748,7 +5593,6 @@ observable:exitTime
 	a owl:DatatypeProperty ;
 	rdfs:label "exitTime"@en ;
 	rdfs:comment "The time at which the process exited."@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5756,7 +5600,6 @@ observable:expirationDate
 	a owl:DatatypeProperty ;
 	rdfs:label "expirationDate"@en ;
 	rdfs:comment "Specifies the date in which the registered domain will expire."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5764,7 +5607,6 @@ observable:expirationTime
 	a owl:DatatypeProperty ;
 	rdfs:label "expirationTime"@en ;
 	rdfs:comment "The date and time at which the validity of the object expires."@en ;
-	rdfs:domain observable:BrowserCookie ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5772,7 +5614,7 @@ observable:extDeletionTime
 	a owl:DatatypeProperty ;
 	rdfs:label "extDeletionTime"@en ;
 	rdfs:comment "Specifies the time at which the file represented by an Inode was 'deleted'."@en ;
-	rdfs:domain observable:ExtInode ;
+	rdfs:comment "Specifies the time at which the file represented by an Inode was 'deleted'."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5780,7 +5622,6 @@ observable:extFileType
 	a owl:DatatypeProperty ;
 	rdfs:label "extFileType"@en ;
 	rdfs:comment "Specifies the EXT file type (FIFO, Directory, Regular file, Symbolic link, etc) for the Inode."@en ;
-	rdfs:domain observable:ExtInode ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -5788,7 +5629,6 @@ observable:extFlags
 	a owl:DatatypeProperty ;
 	rdfs:label "extFlags"@en ;
 	rdfs:comment "Specifies user flags to further protect (limit its use and modification) the file represented by an Inode."@en ;
-	rdfs:domain observable:ExtInode ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -5796,7 +5636,6 @@ observable:extHardLinkCount
 	a owl:DatatypeProperty ;
 	rdfs:label "extHardLinkCount"@en ;
 	rdfs:comment "Specifies a count of how many hard links point to an Inode."@en ;
-	rdfs:domain observable:ExtInode ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -5804,7 +5643,6 @@ observable:extInodeChangeTime
 	a owl:DatatypeProperty ;
 	rdfs:label "extInodeChangeTime"@en ;
 	rdfs:comment "The date and time at which the file Inode metadata was last modified."@en ;
-	rdfs:domain observable:ExtInode ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5812,7 +5650,6 @@ observable:extInodeID
 	a owl:DatatypeProperty ;
 	rdfs:label "extInodeID"@en ;
 	rdfs:comment "Specifies a single Inode identifier."@en ;
-	rdfs:domain observable:ExtInode ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -5820,7 +5657,6 @@ observable:extPermissions
 	a owl:DatatypeProperty ;
 	rdfs:label "extPermissions"@en ;
 	rdfs:comment "Specifies the read/write/execute permissions for the file represented by an EXT Inode."@en ;
-	rdfs:domain observable:ExtInode ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -5828,7 +5664,6 @@ observable:extSGID
 	a owl:DatatypeProperty ;
 	rdfs:label "extSGID"@en ;
 	rdfs:comment "Specifies the group ID for the file represented by an Inode."@en ;
-	rdfs:domain observable:ExtInode ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -5836,14 +5671,13 @@ observable:extSUID
 	a owl:DatatypeProperty ;
 	rdfs:label "extSUID"@en ;
 	rdfs:comment "Specifies the user ID that 'owns' the file represented by an Inode."@en ;
-	rdfs:domain observable:ExtInode ;
+	rdfs:comment "Specifies the user ID that 'owns' the file represented by an Inode."@en ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:extendedKeyUsage
 	a owl:DatatypeProperty ;
 	rdfs:label "extendedKeyUsage"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5851,7 +5685,6 @@ observable:extension
 	a owl:DatatypeProperty ;
 	rdfs:label "extension"@en ;
 	rdfs:comment "The file name extension: everything after the last dot. Not present if the file has no dot in its name."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5859,7 +5692,6 @@ observable:faxNumber
 	a owl:ObjectProperty ;
 	rdfs:label "faxNumber"@en ;
 	rdfs:comment "A phone number(account) of a fax."@en ;
-	rdfs:domain observable:WhoisContactType ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5867,7 +5699,6 @@ observable:fileAlignment
 	a owl:DatatypeProperty ;
 	rdfs:label "fileAlignment"@en ;
 	rdfs:comment "Specifies the factor (in bytes) that is used to align the raw data of sections in the image file."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -5875,7 +5706,6 @@ observable:fileHeaderHashes
 	a owl:ObjectProperty ;
 	rdfs:label "fileHeaderHashes"@en ;
 	rdfs:comment "Specifies any hashes that were computed for the file header."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
@@ -5883,7 +5713,6 @@ observable:fileName
 	a owl:DatatypeProperty ;
 	rdfs:label "fileName"@en ;
 	rdfs:comment "Specifies the name associated with a file in a file system."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5891,7 +5720,6 @@ observable:filePath
 	a owl:DatatypeProperty ;
 	rdfs:label "filePath"@en ;
 	rdfs:comment "Specifies the file path for the location of a file within a filesystem."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5899,7 +5727,6 @@ observable:fileSystemType
 	a owl:DatatypeProperty ;
 	rdfs:label "fileSystemType"@en ;
 	rdfs:comment "The specific type of a file system."@en ;
-	rdfs:domain observable:FileSystem ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5907,7 +5734,6 @@ observable:firstLoginTime
 	a owl:DatatypeProperty ;
 	rdfs:label "firstLoginTime"@en ;
 	rdfs:comment "The date and time of the first login of the account."@en ;
-	rdfs:domain observable:DigitalAccount ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5915,7 +5741,6 @@ observable:firstName
 	a owl:DatatypeProperty ;
 	rdfs:label "firstName"@en ;
 	rdfs:comment "The first name of the contact."@en ;
-	rdfs:domain observable:Contact ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5923,7 +5748,6 @@ observable:firstRun
 	a owl:DatatypeProperty ;
 	rdfs:label "firstRun"@en ;
 	rdfs:comment "Timestamp of when the prefetch application was first run."@en ;
-	rdfs:domain observable:WindowsPrefetch ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5931,7 +5755,6 @@ observable:flags
 	a owl:DatatypeProperty ;
 	rdfs:label "flags"@en ;
 	rdfs:comment "Specifies any flags that modify the behavior of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range vocab:TaskFlagVocab ;
 	.
 
@@ -5939,7 +5762,6 @@ observable:format
 	a owl:DatatypeProperty ;
 	rdfs:label "format"@en ;
 	rdfs:comment "The format of the audio. For example: mp3 or flac."@en ;
-	rdfs:domain observable:Audio ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5947,14 +5769,12 @@ observable:fragment
 	a owl:DatatypeProperty ;
 	rdfs:label "fragment"@en ;
 	rdfs:comment "Fragment pointing to a specific part in the resource."@en ;
-	rdfs:domain observable:URL ;
 	rdfs:range xsd:string ;
 	.
 
 observable:fragmentIndex
 	a owl:DatatypeProperty ;
 	rdfs:label "fragmentIndex"@en ;
-	rdfs:domain observable:Fragment ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -5962,7 +5782,6 @@ observable:freeSpace
 	a owl:DatatypeProperty ;
 	rdfs:label "freeSpace"@en ;
 	rdfs:comment "The amount of free space on the disk, in bytes."@en ;
-	rdfs:domain observable:Disk ;
 	rdfs:range xsd:long ;
 	.
 
@@ -5970,7 +5789,6 @@ observable:from
 	a owl:ObjectProperty ;
 	rdfs:label "from"@en ;
 	rdfs:comment "The phone number of the initiating party."@en ;
-	rdfs:domain observable:PhoneCall ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -5978,21 +5796,18 @@ observable:fullValue
 	a owl:DatatypeProperty ;
 	rdfs:label "fullValue"@en ;
 	rdfs:comment "The full string value of the URL."@en ;
-	rdfs:domain observable:URL ;
 	rdfs:range xsd:string ;
 	.
 
 observable:geoLocationEntry
 	a owl:ObjectProperty ;
 	rdfs:label "geoLocationEntry"@en ;
-	rdfs:domain observable:GeoLocationTrack ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:gid
 	a owl:DatatypeProperty ;
 	rdfs:label "gid"@en ;
-	rdfs:domain observable:UNIXAccount ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6000,7 +5815,6 @@ observable:globalFlagList
 	a owl:ObjectProperty ;
 	rdfs:label "globalFlagList"@en ;
 	rdfs:comment "A list of global flags. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549557(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range observable:GlobalFlagType ;
 	.
 
@@ -6008,7 +5822,6 @@ observable:gpu
 	a owl:DatatypeProperty ;
 	rdfs:label "gpu"@en ;
 	rdfs:comment "Specifies the name of the GPU used by the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6016,28 +5829,24 @@ observable:gpuFamily
 	a owl:DatatypeProperty ;
 	rdfs:label "gpuFamily"@en ;
 	rdfs:comment "Specifies the name of the GPU family used by the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
 observable:groupName
 	a owl:DatatypeProperty ;
 	rdfs:label "groupName"@en ;
-	rdfs:domain observable:WindowsService ;
 	rdfs:range xsd:string ;
 	.
 
 observable:groups
 	a owl:DatatypeProperty ;
 	rdfs:label "groups"@en ;
-	rdfs:domain observable:WindowsAccount ;
 	rdfs:range xsd:string ;
 	.
 
 observable:hasChanged
 	a owl:DatatypeProperty ;
 	rdfs:label "hasChanged"@en ;
-	rdfs:domain observable:CyberItem ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6045,7 +5854,6 @@ observable:hash
 	a owl:ObjectProperty ;
 	rdfs:label "hash"@en ;
 	rdfs:comment "Hash values of the data."@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
@@ -6053,14 +5861,12 @@ observable:hashes
 	a owl:ObjectProperty ;
 	rdfs:label "hashes"@en ;
 	rdfs:comment "Specifies any hashes computed over the section."@en ;
-	rdfs:domain observable:WindowsPESection ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 observable:headerRaw
 	a owl:ObjectProperty ;
 	rdfs:label "headerRaw"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6068,7 +5874,6 @@ observable:hexadecimalValue
 	a owl:DatatypeProperty ;
 	rdfs:label "hexadecimalValue"@en ;
 	rdfs:comment "The hexadecimal value of a global flag. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549646(v=vs.85).aspx."@en ;
-	rdfs:domain observable:GlobalFlagType ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -6076,14 +5881,12 @@ observable:hiveType
 	a owl:DatatypeProperty ;
 	rdfs:label "hiveType"@en ;
 	rdfs:comment "The type of a registry hive."@en ;
-	rdfs:domain observable:WindowsRegistryHive ;
 	rdfs:range xsd:string ;
 	.
 
 observable:homeDirectory
 	a owl:DatatypeProperty ;
 	rdfs:label "homeDirectory"@en ;
-	rdfs:domain observable:UserAccount ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6091,7 +5894,6 @@ observable:host
 	a owl:ObjectProperty ;
 	rdfs:label "host"@en ;
 	rdfs:comment "Domain name or IP address where the resource is located."@en ;
-	rdfs:domain observable:URL ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6099,7 +5901,6 @@ observable:hostname
 	a owl:DatatypeProperty ;
 	rdfs:label "hostname"@en ;
 	rdfs:comment "Specifies the hostname of the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6107,7 +5908,6 @@ observable:httpMesageBodyLength
 	a owl:DatatypeProperty ;
 	rdfs:label "httpMesageBodyLength"@en ;
 	rdfs:comment "Specifies the length of an HTTP message body in bytes."@en ;
-	rdfs:domain observable:HTTPConnection ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6115,7 +5915,6 @@ observable:httpMessageBodyData
 	a owl:ObjectProperty ;
 	rdfs:label "httpMessageBodyData"@en ;
 	rdfs:comment "Specifies the data contained in an HTTP message body."@en ;
-	rdfs:domain observable:HTTPConnection ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6123,7 +5922,6 @@ observable:httpRequestHeader
 	a owl:ObjectProperty ;
 	rdfs:label "httpRequestHeader"@en ;
 	rdfs:comment "Specifies all of the HTTP header fields that may be found in the HTTP client request"@en ;
-	rdfs:domain observable:HTTPConnection ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
@@ -6131,7 +5929,6 @@ observable:iComHandlerAction
 	a owl:ObjectProperty ;
 	rdfs:label "iComHandlerAction"@en ;
 	rdfs:comment "Specifies the data associated with the task action-fired COM handler."@en ;
-	rdfs:domain observable:TaskActionType ;
 	rdfs:range observable:IComHandlerActionType ;
 	.
 
@@ -6139,7 +5936,6 @@ observable:iEmailAction
 	a owl:ObjectProperty ;
 	rdfs:label "iEmailAction"@en ;
 	rdfs:comment "Specifies an action that sends an e-mail, which in this context refers to actual email message sent. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380693(v=vs.85).aspx."@en ;
-	rdfs:domain observable:TaskActionType ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6147,7 +5943,6 @@ observable:iExecAction
 	a owl:ObjectProperty ;
 	rdfs:label "iExecAction"@en ;
 	rdfs:comment "Specifies an action that executes a command-line operation. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx."@en ;
-	rdfs:domain observable:TaskActionType ;
 	rdfs:range observable:IExecActionType ;
 	.
 
@@ -6155,7 +5950,6 @@ observable:iShowMessageAction
 	a owl:ObjectProperty ;
 	rdfs:label "iShowMessageAction"@en ;
 	rdfs:comment "Specifies an action that shows a message box when a task is activated. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.85).aspx."@en ;
-	rdfs:domain observable:TaskActionType ;
 	rdfs:range observable:IShowMessageActionType ;
 	.
 
@@ -6163,7 +5957,6 @@ observable:icmpCode
 	a owl:DatatypeProperty ;
 	rdfs:label "icmpCode"@en ;
 	rdfs:comment "Specifies the ICMP code byte."@en ;
-	rdfs:domain observable:ICMPConnection ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -6171,7 +5964,6 @@ observable:icmpType
 	a owl:DatatypeProperty ;
 	rdfs:label "icmpType"@en ;
 	rdfs:comment "Specifies the ICMP type byte."@en ;
-	rdfs:domain observable:ICMPConnection ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -6179,14 +5971,12 @@ observable:imageBase
 	a owl:DatatypeProperty ;
 	rdfs:label "imageBase"@en ;
 	rdfs:comment "Specifies the address that is relative to the image base of the beginning-of-data section when it is loaded into memory."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
 observable:imageCompressionMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "imageCompressionMethod"@en ;
-	rdfs:domain observable:RasterPicture ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6194,7 +5984,6 @@ observable:imageName
 	a owl:DatatypeProperty ;
 	rdfs:label "imageName"@en ;
 	rdfs:comment "Specifies the image name for the task."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6202,7 +5991,6 @@ observable:imageType
 	a owl:DatatypeProperty ;
 	rdfs:label "imageType"@en ;
 	rdfs:comment "The type of the image, e.g. EnCase, RAW or LocalFolder."@en ;
-	rdfs:domain observable:Image ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6210,7 +5998,6 @@ observable:impHash
 	a owl:DatatypeProperty ;
 	rdfs:label "impHash"@en ;
 	rdfs:comment "Specifies the special import hash, or ‘imphash’, calculated for the PE Binary based on its imported libraries and functions. "@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6218,14 +6005,12 @@ observable:inReplyTo
 	a owl:ObjectProperty ;
 	rdfs:label "inReplyTo"@en ;
 	rdfs:comment "One of more unique identifiers for identifying the email(s) this email is a reply to."@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:inhibitAnyPolicy
 	a owl:DatatypeProperty ;
 	rdfs:label "inhibitAnyPolicy"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6233,7 +6018,6 @@ observable:installDate
 	a owl:DatatypeProperty ;
 	rdfs:label "installDate"@en ;
 	rdfs:comment "Specifies the date the operating system was installed."@en ;
-	rdfs:domain observable:OperatingSystem ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6241,7 +6025,6 @@ observable:ip
 	a owl:ObjectProperty ;
 	rdfs:label "ip"@en ;
 	rdfs:comment "Specifies the list of IP addresses used by the network interface."@en ;
-	rdfs:domain observable:NetworkInterface ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6249,7 +6032,6 @@ observable:ipAddress
 	a owl:ObjectProperty ;
 	rdfs:label "ipAddress"@en ;
 	rdfs:comment "Specifies the corresponding ip address for a whois entry. Usually corresponds to a nameserver lookup."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6257,7 +6039,6 @@ observable:ipGateway
 	a owl:ObjectProperty ;
 	rdfs:label "ipGateway"@en ;
 	rdfs:comment "Specifies the list of IP Gateway IP Addresses used by the network interface."@en ;
-	rdfs:domain observable:NetworkInterface ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6265,7 +6046,6 @@ observable:ipfix
 	a owl:ObjectProperty ;
 	rdfs:label "ipfix"@en ;
 	rdfs:comment "Specifies any IP Flow Information Export (IPFIX) data for the network traffic flow."@en ;
-	rdfs:domain observable:NetworkFlow ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
@@ -6273,7 +6053,6 @@ observable:isActive
 	a owl:DatatypeProperty ;
 	rdfs:label "isActive"@en ;
 	rdfs:comment "Indicates whether the network connection is still active."@en ;
-	rdfs:domain observable:NetworkConnection ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6281,7 +6060,6 @@ observable:isDirectory
 	a owl:DatatypeProperty ;
 	rdfs:label "isDirectory"@en ;
 	rdfs:comment "Specifies whether a file entry represents a directory."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6289,7 +6067,6 @@ observable:isDisabled
 	a owl:DatatypeProperty ;
 	rdfs:label "isDisabled"@en ;
 	rdfs:comment "Is the digital account disabled?"@en ;
-	rdfs:domain observable:DigitalAccount ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6297,14 +6074,12 @@ observable:isEnabled
 	a owl:DatatypeProperty ;
 	rdfs:label "isEnabled"@en ;
 	rdfs:comment "Specifies whether the trigger is enabled."@en ;
-	rdfs:domain observable:TriggerType ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isEncrypted
 	a owl:DatatypeProperty ;
 	rdfs:label "isEncrypted"@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6313,7 +6088,6 @@ observable:isHidden
 	rdfs:label "isHidden"@en ;
 	rdfs:comment """The isHidden property specifies whether the process is hidden or not.
           """@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6321,7 +6095,6 @@ observable:isInjected
 	a owl:DatatypeProperty ;
 	rdfs:label "isInjected"@en ;
 	rdfs:comment "The isInjected property specifies whether or not the particular memory object has had data/code injected into it by another process."@en ;
-	rdfs:domain observable:Memory ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6329,35 +6102,30 @@ observable:isMapped
 	a owl:DatatypeProperty ;
 	rdfs:label "isMapped"@en ;
 	rdfs:comment "The isMapped property specifies whether or not the particular memory object has been assigned a byte-for-byte correlation with some portion of a file or file-like resource."@en ;
-	rdfs:domain observable:Memory ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isMimeEncoded
 	a owl:DatatypeProperty ;
 	rdfs:label "isMimeEncoded"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isMultipart
 	a owl:DatatypeProperty ;
 	rdfs:label "isMultipart"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isNamed
 	a owl:DatatypeProperty ;
 	rdfs:label "isNamed"@en ;
-	rdfs:domain observable:Mutex ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isOptimized
 	a owl:DatatypeProperty ;
 	rdfs:label "isOptimized"@en ;
-	rdfs:domain observable:PDFFile ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6365,14 +6133,12 @@ observable:isPrivate
 	a owl:DatatypeProperty ;
 	rdfs:label "isPrivate"@en ;
 	rdfs:comment "Is the event marked as private?"@en ;
-	rdfs:domain observable:CalendarEntry ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isPrivileged
 	a owl:DatatypeProperty ;
 	rdfs:label "isPrivileged"@en ;
-	rdfs:domain observable:UserAccount ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6380,14 +6146,12 @@ observable:isProtected
 	a owl:DatatypeProperty ;
 	rdfs:label "isProtected"@en ;
 	rdfs:comment "The isProtected property specifies whether or not the particular memory object is protected (read/write only from the process that allocated it)."@en ;
-	rdfs:domain observable:Memory ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isRead
 	a owl:DatatypeProperty ;
 	rdfs:label "isRead"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6395,28 +6159,24 @@ observable:isSecure
 	a owl:DatatypeProperty ;
 	rdfs:label "isSecure"@en ;
 	rdfs:comment "Is the cookie secure? If the cookie is secure it cannot be delivered over an unencrypted session such as http."@en ;
-	rdfs:domain observable:BrowserCookie ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isSelfSigned
 	a owl:DatatypeProperty ;
 	rdfs:label "isSelfSigned"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isServiceAccount
 	a owl:DatatypeProperty ;
 	rdfs:label "isServiceAccount"@en ;
-	rdfs:domain observable:UserAccount ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:isTLD
 	a owl:DatatypeProperty ;
 	rdfs:label "isTLD"@en ;
-	rdfs:domain observable:DomainName ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -6424,21 +6184,18 @@ observable:isVolatile
 	a owl:DatatypeProperty ;
 	rdfs:label "isVolatile"@en ;
 	rdfs:comment "The isVolatile property specifies whether or not the particular memory object is volatile."@en ;
-	rdfs:domain observable:Memory ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:issuer
 	a owl:DatatypeProperty ;
 	rdfs:label "issuer"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:string ;
 	.
 
 observable:issuerAlternativeName
 	a owl:DatatypeProperty ;
 	rdfs:label "issuerAlternativeName"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6446,21 +6203,18 @@ observable:issuerHash
 	a owl:ObjectProperty ;
 	rdfs:label "issuerHash"@en ;
 	rdfs:comment "A hash calculated on the certificate issuer name."@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 observable:key
 	a owl:DatatypeProperty ;
 	rdfs:label "key"@en ;
-	rdfs:domain observable:WindowsRegistryKey ;
 	rdfs:range xsd:string ;
 	.
 
 observable:keyUsage
 	a owl:DatatypeProperty ;
 	rdfs:label "keyUsage"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6468,7 +6222,6 @@ observable:keypadUnlockCode
 	a owl:DatatypeProperty ;
 	rdfs:label "keypadUnlockCode"@en ;
 	rdfs:comment "A code or password set on a device for security that must be entered to gain access to the device."@en ;
-	rdfs:domain observable:MobileDevice ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6476,7 +6229,6 @@ observable:labels
 	a owl:DatatypeProperty ;
 	rdfs:label "labels"@en ;
 	rdfs:comment "Named and colored label."@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6485,7 +6237,6 @@ observable:language
 	rdfs:label "language"@en ;
 	rdfs:comment """Specifies the language the string is written in, e.g. English.
           For consistency, it is strongly recommended to use the ISO 639-2 language code, if available. Please see http://www.loc.gov/standards/iso639-2/php/code_list.php for a list of ISO 639-2 codes."""@en ;
-	rdfs:domain observable:ExtractedString ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6493,7 +6244,6 @@ observable:lastLoginTime
 	a owl:DatatypeProperty ;
 	rdfs:label "lastLoginTime"@en ;
 	rdfs:comment "The date and time of the last login of the account."@en ;
-	rdfs:domain observable:DigitalAccount ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6501,7 +6251,6 @@ observable:lastName
 	a owl:DatatypeProperty ;
 	rdfs:label "lastName"@en ;
 	rdfs:comment "The last name of the contact."@en ;
-	rdfs:domain observable:Contact ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6509,7 +6258,6 @@ observable:lastRun
 	a owl:DatatypeProperty ;
 	rdfs:label "lastRun"@en ;
 	rdfs:comment "Timestamp of when the prefetch application was last run."@en ;
-	rdfs:domain observable:WindowsPrefetch ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6517,7 +6265,6 @@ observable:length
 	a owl:DatatypeProperty ;
 	rdfs:label "length"@en ;
 	rdfs:comment "Specifies the length, in characters, of the extracted string."@en ;
-	rdfs:domain observable:ExtractedString ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6525,7 +6272,6 @@ observable:libraryType
 	a owl:DatatypeProperty ;
 	rdfs:label "libraryType"@en ;
 	rdfs:comment "Specifies the type of library being characterized."@en ;
-	rdfs:domain observable:Library ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6533,7 +6279,6 @@ observable:loaderFlags
 	a owl:DatatypeProperty ;
 	rdfs:label "loaderFlags"@en ;
 	rdfs:comment "Specifies the reserved loader flags"@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -6541,7 +6286,6 @@ observable:localTime
 	a owl:DatatypeProperty ;
 	rdfs:label "localTime"@en ;
 	rdfs:comment "Specifies the local time on the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6549,7 +6293,6 @@ observable:location
 	a owl:ObjectProperty ;
 	rdfs:label "location"@en ;
 	rdfs:comment "An associated location."@en ;
-	rdfs:domain observable:GeoLocationEntry ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 	.
 
@@ -6557,7 +6300,6 @@ observable:loginTime
 	a owl:DatatypeProperty ;
 	rdfs:label "loginTime"@en ;
 	rdfs:comment "Specifies the date/time of the login for the user session."@en ;
-	rdfs:domain observable:UserSession ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6565,7 +6307,6 @@ observable:logoutTime
 	a owl:DatatypeProperty ;
 	rdfs:label "logoutTime"@en ;
 	rdfs:comment "Specifies the date/time of the logout for the user session."@en ;
-	rdfs:domain observable:UserSession ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6573,7 +6314,6 @@ observable:lookupDate
 	a owl:DatatypeProperty ;
 	rdfs:label "lookupDate"@en ;
 	rdfs:comment "Specifies the date and time that the Whois record was queried."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6581,7 +6321,6 @@ observable:macAddress
 	a owl:ObjectProperty ;
 	rdfs:label "macAddress"@en ;
 	rdfs:comment "Specifies the MAC or hardware address of the physical network card. "@en ;
-	rdfs:domain observable:NetworkInterface ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6589,7 +6328,6 @@ observable:machine
 	a owl:DatatypeProperty ;
 	rdfs:label "machine"@en ;
 	rdfs:comment "Specifies the type of target machine."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6597,14 +6335,12 @@ observable:magic
 	a owl:DatatypeProperty ;
 	rdfs:label "magic"@en ;
 	rdfs:comment "Specifies the value that indicates the type of the PE binary."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
 observable:magicNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "magicNumber"@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6612,7 +6348,6 @@ observable:majorImageVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "majorImageVersion"@en ;
 	rdfs:comment "Specifies the major version number of the image."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
@@ -6620,7 +6355,6 @@ observable:majorLinkerVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "majorLinkerVersion"@en ;
 	rdfs:comment "Specifies the linker major version number."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:byte ;
 	.
 
@@ -6628,7 +6362,6 @@ observable:majorOSVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "majorOSVersion"@en ;
 	rdfs:comment "Specifies the major version number of the required operating system."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
@@ -6636,14 +6369,12 @@ observable:majorSubsystemVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "majorSubsystemVersion"@en ;
 	rdfs:comment "Specifies the major version number of the subsystem."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
 observable:manufacturer
 	a owl:DatatypeProperty ;
 	rdfs:label "manufacturer"@en ;
-	rdfs:domain observable:Device ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6651,14 +6382,12 @@ observable:maxRunTime
 	a owl:DatatypeProperty ;
 	rdfs:label "maxRunTime"@en ;
 	rdfs:comment "Specifies the maximum run time of the scheduled task before terminating, in milliseconds. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:long ;
 	.
 
 observable:message
 	a owl:ObjectProperty ;
 	rdfs:label "message"@en ;
-	rdfs:domain observable:MessageThread ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6666,10 +6395,6 @@ observable:messageID
 	a owl:DatatypeProperty ;
 	rdfs:label "messageID"@en ;
 	rdfs:comment "An unique identifier for the message."@en ;
-	rdfs:domain
-		observable:EmailMessage ,
-		observable:Message
-		;
 	rdfs:range xsd:string ;
 	.
 
@@ -6677,7 +6402,6 @@ observable:messageText
 	a owl:DatatypeProperty ;
 	rdfs:label "messageText"@en ;
 	rdfs:comment "The contents of the message."@en ;
-	rdfs:domain observable:Message ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6685,7 +6409,6 @@ observable:messageType
 	a owl:DatatypeProperty ;
 	rdfs:label "messageType"@en ;
 	rdfs:comment "The type of a message, for example incoming, draft or outgoing."@en ;
-	rdfs:domain observable:Message ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6693,7 +6416,6 @@ observable:metadataChangeTime
 	a owl:DatatypeProperty ;
 	rdfs:label "metadataChangeTime"@en ;
 	rdfs:comment "The date and time at which the file metadata was last modified."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6701,7 +6423,6 @@ observable:mftFileID
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileID"@en ;
 	rdfs:comment "Specifies the record number for the file within an NTFS Master File Table."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6709,7 +6430,6 @@ observable:mftFileNameAccessedTime
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileNameAccessedTime"@en ;
 	rdfs:comment "The access date and time recorded in an MFT entry $File_Name attribute."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6717,7 +6437,6 @@ observable:mftFileNameCreatedTime
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileNameCreatedTime"@en ;
 	rdfs:comment "The creation date and time recorded in an MFT entry $File_Name attribute."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6725,7 +6444,6 @@ observable:mftFileNameLength
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileNameLength"@en ;
 	rdfs:comment " Specifies the length of an NTFS file name, in unicode characters."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6733,7 +6451,6 @@ observable:mftFileNameModifiedTime
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileNameModifiedTime"@en ;
 	rdfs:comment "The modification date and time recorded in an MFT entry $File_Name attribute."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6741,7 +6458,6 @@ observable:mftFileNameRecordChangeTime
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileNameRecordChangeTime"@en ;
 	rdfs:comment "The metadata modification date and time recorded in an MFT entry $File_Name attribute."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6749,7 +6465,6 @@ observable:mftFlags
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFlags"@en ;
 	rdfs:comment "Specifies basic permissions for the file (Read-Only, Hidden, Archive, Compressed, etc.)."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6757,7 +6472,6 @@ observable:mftParentID
 	a owl:DatatypeProperty ;
 	rdfs:label "mftParentID"@en ;
 	rdfs:comment "Specifies the record number within an NTFS Master File Table for parent directory of the file."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6765,7 +6479,6 @@ observable:mftRecordChangeTime
 	a owl:DatatypeProperty ;
 	rdfs:label "mftRecordChangeTime"@en ;
 	rdfs:comment "The date and time at which an NTFS file metadata was last modified."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6773,14 +6486,12 @@ observable:middleName
 	a owl:DatatypeProperty ;
 	rdfs:label "middleName"@en ;
 	rdfs:comment "The middle name of the contact."@en ;
-	rdfs:domain observable:Contact ;
 	rdfs:range xsd:string ;
 	.
 
 observable:mimeClass
 	a owl:DatatypeProperty ;
 	rdfs:label "mimeClass"@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6788,7 +6499,6 @@ observable:mimeType
 	a owl:DatatypeProperty ;
 	rdfs:label "mimeType"@en ;
 	rdfs:comment "MIME type of the data. For example 'text/html' or 'audio/mp3'."@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6796,7 +6506,6 @@ observable:minorImageVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "minorImageVersion"@en ;
 	rdfs:comment "Specifies the minor version number of the image."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
@@ -6804,7 +6513,6 @@ observable:minorLinkerVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "minorLinkerVersion"@en ;
 	rdfs:comment "Specifies the linker minor version number."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:byte ;
 	.
 
@@ -6812,7 +6520,6 @@ observable:minorOSVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "minorOSVersion"@en ;
 	rdfs:comment "Specifies the minor version number of the required operating system."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
@@ -6821,7 +6528,6 @@ observable:minorSubsystemVersion
 	rdfs:label "minorSubsystemVersion"@en ;
 	rdfs:comment """Specifies the minor version number of the subsystem.
           """@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
@@ -6829,14 +6535,12 @@ observable:mockLocationsAllowed
 	a owl:DatatypeProperty ;
 	rdfs:label "mockLocationsAllowed"@en ;
 	rdfs:comment "???."@en ;
-	rdfs:domain observable:MobileDevice ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:model
 	a owl:DatatypeProperty ;
 	rdfs:label "model"@en ;
-	rdfs:domain observable:Device ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6844,7 +6548,6 @@ observable:modifiedTime
 	a owl:DatatypeProperty ;
 	rdfs:label "modifiedTime"@en ;
 	rdfs:comment "The date and time at which the Object was last modified."@en ;
-	rdfs:domain observable:File ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6852,7 +6555,6 @@ observable:mostRecentRunTime
 	a owl:DatatypeProperty ;
 	rdfs:label "mostRecentRunTime"@en ;
 	rdfs:comment "Specifies the most recent run date/time of this scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381254(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6860,7 +6562,6 @@ observable:mountPoint
 	a owl:DatatypeProperty ;
 	rdfs:label "mountPoint"@en ;
 	rdfs:comment "Specifies the mount point of the partition."@en ;
-	rdfs:domain observable:DiskPartition ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6868,7 +6569,6 @@ observable:msProductID
 	a owl:DatatypeProperty ;
 	rdfs:label "msProductID"@en ;
 	rdfs:comment "The Microsoft Product ID. See also: http://support.microsoft.com/gp/pidwin."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6876,14 +6576,12 @@ observable:msProductName
 	a owl:DatatypeProperty ;
 	rdfs:label "msProductName"@en ;
 	rdfs:comment "The Microsoft ProductName of the current installation of Windows. This is typically found in HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion!ProductName."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
 observable:nameConstraints
 	a owl:DatatypeProperty ;
 	rdfs:label "nameConstraints"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6891,7 +6589,6 @@ observable:nameserver
 	a owl:ObjectProperty ;
 	rdfs:label "nameserver"@en ;
 	rdfs:comment "Specifies a list of nameserver entries for a Whois entry."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6899,7 +6596,6 @@ observable:netBIOSName
 	a owl:DatatypeProperty ;
 	rdfs:label "netBIOSName"@en ;
 	rdfs:comment "Specifies the NetBIOS (Network Basic Input/Output System) name of the Windows system. This is not the same as the host name."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6907,7 +6603,6 @@ observable:network
 	a owl:DatatypeProperty ;
 	rdfs:label "network"@en ;
 	rdfs:comment "???."@en ;
-	rdfs:domain observable:MobileDevice ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6915,7 +6610,6 @@ observable:networkInterface
 	a owl:ObjectProperty ;
 	rdfs:label "networkInterface"@en ;
 	rdfs:comment "Specifies the list of network interfaces present on the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6923,7 +6617,6 @@ observable:newObject
 	a owl:ObjectProperty ;
 	rdfs:label "newObject"@en ;
 	rdfs:comment "Specifies the cyberitem and its properties as they are after the state change effect occurred."@en ;
-	rdfs:domain observable:StateChangeEffect ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -6931,7 +6624,6 @@ observable:nextRunTime
 	a owl:DatatypeProperty ;
 	rdfs:label "nextRunTime"@en ;
 	rdfs:comment "Specifies the next run date/time of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381257(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6939,7 +6631,6 @@ observable:ntfsHardLinkCount
 	a owl:DatatypeProperty ;
 	rdfs:label "ntfsHardLinkCount"@en ;
 	rdfs:comment "Specifies the number of directory entries that reference an NTFS file record."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6947,7 +6638,6 @@ observable:ntfsOwnerID
 	a owl:DatatypeProperty ;
 	rdfs:label "ntfsOwnerID"@en ;
 	rdfs:comment "Specifies the identifier of the file owner, from the security index."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6955,21 +6645,18 @@ observable:ntfsOwnerSID
 	a owl:DatatypeProperty ;
 	rdfs:label "ntfsOwnerSID"@en ;
 	rdfs:comment "Specifies the security ID (key in the $SII Index and $SDS DataStream in the file $Secure) for an NTFS file."@en ;
-	rdfs:domain observable:MftRecord ;
 	rdfs:range xsd:string ;
 	.
 
 observable:number
 	a owl:DatatypeProperty ;
 	rdfs:label "number"@en ;
-	rdfs:domain observable:AutonomousSystem ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:numberOfLaunches
 	a owl:DatatypeProperty ;
 	rdfs:label "numberOfLaunches"@en ;
-	rdfs:domain observable:Application ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -6977,7 +6664,6 @@ observable:numberOfRVAAndSizes
 	a owl:DatatypeProperty ;
 	rdfs:label "numberOfRVAAndSizes"@en ;
 	rdfs:comment "Specifies the number of data-directory entries in the remainder of the optional header."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -6986,14 +6672,12 @@ observable:numberOfSections
 	rdfs:label "numberOfSections"@en ;
 	rdfs:comment """Specifies the number of sections in the PE binary, as a non-negative integer.
           """@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:numberOfSubkeys
 	a owl:DatatypeProperty ;
 	rdfs:label "numberOfSubkeys"@en ;
-	rdfs:domain observable:WindowsRegistryKey ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7001,14 +6685,12 @@ observable:numberOfSymbols
 	a owl:DatatypeProperty ;
 	rdfs:label "numberOfSymbols"@en ;
 	rdfs:comment "Specifies the number of entries in the symbol table of the PE binary, as a non-negative integer."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:objectGUID
 	a owl:DatatypeProperty ;
 	rdfs:label "objectGUID"@en ;
-	rdfs:domain observable:WindowsActiveDirectoryAccount ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7016,7 +6698,6 @@ observable:oldObject
 	a owl:ObjectProperty ;
 	rdfs:label "oldObject"@en ;
 	rdfs:comment "Specifies the cyberitem and its properties as they were before the state change effect occurred."@en ;
-	rdfs:domain observable:StateChangeEffect ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7024,7 +6705,6 @@ observable:omment
 	a owl:DatatypeProperty ;
 	rdfs:label "omment"@en ;
 	rdfs:comment "Specifies a comment for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381232(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7032,14 +6712,12 @@ observable:openFileDescriptor
 	a owl:DatatypeProperty ;
 	rdfs:label "openFileDescriptor"@en ;
 	rdfs:comment "Specifies a listing of the current file descriptors used by the Unix process."@en ;
-	rdfs:domain observable:UNIXProcess ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:operatingSystem
 	a owl:ObjectProperty ;
 	rdfs:label "operatingSystem"@en ;
-	rdfs:domain observable:Application ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7047,7 +6725,6 @@ observable:optionalHeader
 	a owl:ObjectProperty ;
 	rdfs:label "optionalHeader"@en ;
 	rdfs:comment "Specifies the PE optional header of the PE binary."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range observable:WindowsPEOptionalHeader ;
 	.
 
@@ -7055,14 +6732,12 @@ observable:options
 	a owl:DatatypeProperty ;
 	rdfs:label "options"@en ;
 	rdfs:comment "Specifies any options used when mounting the volume."@en ;
-	rdfs:domain observable:UNIXVolume ;
 	rdfs:range xsd:string ;
 	.
 
 observable:otherHeaders
 	a owl:ObjectProperty ;
 	rdfs:label "otherHeaders"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
@@ -7073,10 +6748,6 @@ observable:owner
 		"The owner of the file."@en ,
 		"The owner of this account."@en
 		;
-	rdfs:domain
-		observable:Account ,
-		observable:FilePermissions
-		;
 	rdfs:range
 		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
 		observable:CyberItem
@@ -7086,14 +6757,12 @@ observable:owner
 observable:ownerSID
 	a owl:DatatypeProperty ;
 	rdfs:label "ownerSID"@en ;
-	rdfs:domain observable:WindowsProcess ;
 	rdfs:range xsd:string ;
 	.
 
 observable:parameterAddress
 	a owl:DatatypeProperty ;
 	rdfs:label "parameterAddress"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -7101,7 +6770,6 @@ observable:parameters
 	a owl:DatatypeProperty ;
 	rdfs:label "parameters"@en ;
 	rdfs:comment "Specifies the command line parameters used to launch the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381875(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7109,14 +6777,12 @@ observable:parent
 	a owl:ObjectProperty ;
 	rdfs:label "parent"@en ;
 	rdfs:comment "The process that created this process."@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:participant
 	a owl:ObjectProperty ;
 	rdfs:label "participant"@en ;
-	rdfs:domain observable:MessageThread ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7124,7 +6790,6 @@ observable:partition
 	a owl:ObjectProperty ;
 	rdfs:label "partition"@en ;
 	rdfs:comment "The partitions that reside on the disk."@en ;
-	rdfs:domain observable:Disk ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7132,7 +6797,6 @@ observable:partitionID
 	a owl:DatatypeProperty ;
 	rdfs:label "partitionID"@en ;
 	rdfs:comment "Specifies the identifier of the partition, as provided by the containing partition table.  This identifier is the index value within the partition table, and is expected to be an incrementing alphanumeric value (numeric in most partition systems), not a GUID or UUID.  Sorting partitions by this index should first attempt to sort a numeric cast of the value."@en ;
-	rdfs:domain observable:DiskPartition ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7140,7 +6804,6 @@ observable:partitionLength
 	a owl:DatatypeProperty ;
 	rdfs:label "partitionLength"@en ;
 	rdfs:comment "Specifies the length of the partition, in bytes."@en ;
-	rdfs:domain observable:DiskPartition ;
 	rdfs:range xsd:long ;
 	.
 
@@ -7148,7 +6811,6 @@ observable:partitionOffset
 	a owl:DatatypeProperty ;
 	rdfs:label "partitionOffset"@en ;
 	rdfs:comment "Specifies the starting offset of the partition, in bytes."@en ;
-	rdfs:domain observable:DiskPartition ;
 	rdfs:range xsd:long ;
 	.
 
@@ -7159,10 +6821,6 @@ observable:password
 		"Password used to authenticate to this resource."@en ,
 		"The account authentication password."@en
 		;
-	rdfs:domain
-		observable:AccountAuthentication ,
-		observable:URL
-		;
 	rdfs:range xsd:string ;
 	.
 
@@ -7170,7 +6828,6 @@ observable:passwordLastChanged
 	a owl:DatatypeProperty ;
 	rdfs:label "passwordLastChanged"@en ;
 	rdfs:comment "The date and time that the password was last changed."@en ;
-	rdfs:domain observable:AccountAuthentication ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -7178,7 +6835,6 @@ observable:passwordType
 	a owl:DatatypeProperty ;
 	rdfs:label "passwordType"@en ;
 	rdfs:comment "The type of password, for instance plain-text or encrypted."@en ;
-	rdfs:domain observable:AccountAuthentication ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7186,21 +6842,18 @@ observable:path
 	a owl:DatatypeProperty ;
 	rdfs:label "path"@en ;
 	rdfs:comment "Specifies the location of one object within another containing object."@en ;
-	rdfs:domain observable:PathRelation ;
 	rdfs:range xsd:string ;
 	.
 
 observable:pdfId0
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId0"@en ;
-	rdfs:domain observable:PDFFile ;
 	rdfs:range xsd:string ;
 	.
 
 observable:pdfId1
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId1"@en ;
-	rdfs:domain observable:PDFFile ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7208,7 +6861,6 @@ observable:peType
 	a owl:DatatypeProperty ;
 	rdfs:label "peType"@en ;
 	rdfs:comment "Specifies the type of the PE binary."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7216,7 +6868,6 @@ observable:phone
 	a owl:ObjectProperty ;
 	rdfs:label "phone"@en ;
 	rdfs:comment "A phone number(account)."@en ;
-	rdfs:domain observable:WhoisContactType ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7224,7 +6875,6 @@ observable:phoneActivationTime
 	a owl:DatatypeProperty ;
 	rdfs:label "phoneActivationTime"@en ;
 	rdfs:comment "The date and time that a device was activated."@en ;
-	rdfs:domain observable:MobileDevice ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -7232,7 +6882,6 @@ observable:phoneNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "phoneNumber"@en ;
 	rdfs:comment "A phone number(account)."@en ;
-	rdfs:domain observable:PhoneAccount ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7240,14 +6889,12 @@ observable:phoneNumbers
 	a owl:DatatypeProperty ;
 	rdfs:label "phoneNumbers"@en ;
 	rdfs:comment "The phone numbers of the contact."@en ;
-	rdfs:domain observable:Contact ;
 	rdfs:range xsd:string ;
 	.
 
 observable:pictureHeight
 	a owl:DatatypeProperty ;
 	rdfs:label "pictureHeight"@en ;
-	rdfs:domain observable:RasterPicture ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7255,7 +6902,6 @@ observable:pictureWidth
 	a owl:DatatypeProperty ;
 	rdfs:label "pictureWidth"@en ;
 	rdfs:comment "The width of the picture in pixels."@en ;
-	rdfs:domain observable:RasterPicture ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7263,7 +6909,6 @@ observable:pictureType
 	a owl:DatatypeProperty ;
 	rdfs:label "pictureType"@en ;
 	rdfs:comment "The type of a picture, for example a thumbnail."@en ;
-	rdfs:domain observable:RasterPicture ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7271,7 +6916,6 @@ observable:pid
 	a owl:DatatypeProperty ;
 	rdfs:label "pid"@en ;
 	rdfs:comment "The Process ID, or PID, of the process."@en ;
-	rdfs:domain observable:Process ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7279,21 +6923,18 @@ observable:pointerToSymbolTable
 	a owl:DatatypeProperty ;
 	rdfs:label "pointerToSymbolTable"@en ;
 	rdfs:comment "Specifies the file offset of the COFF symbol table."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:hexBinary ;
 	.
 
 observable:policyConstraints
 	a owl:DatatypeProperty ;
 	rdfs:label "policyConstraints"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
 observable:policyMappings
 	a owl:DatatypeProperty ;
 	rdfs:label "policyMappings"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7301,7 +6942,6 @@ observable:port
 	a owl:DatatypeProperty ;
 	rdfs:label "port"@en ;
 	rdfs:comment "Port on which communication takes place."@en ;
-	rdfs:domain observable:URL ;
 	rdfs:range xsd:long ;
 	.
 
@@ -7309,7 +6949,6 @@ observable:prefetchHash
 	a owl:DatatypeProperty ;
 	rdfs:label "prefetchHash"@en ;
 	rdfs:comment "An eight character hash of the location from which the application was run."@en ;
-	rdfs:domain observable:WindowsPrefetch ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7317,21 +6956,18 @@ observable:priority
 	a owl:DatatypeProperty ;
 	rdfs:label "priority"@en ;
 	rdfs:comment "The priority of the email."@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
 observable:privateKeyUsagePeriodNotAfter
 	a owl:DatatypeProperty ;
 	rdfs:label "privateKeyUsagePeriodNotAfter"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:dateTime ;
 	.
 
 observable:privateKeyUsagePeriodNotBefore
 	a owl:DatatypeProperty ;
 	rdfs:label "privateKeyUsagePeriodNotBefore"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -7347,7 +6983,6 @@ observable:properties
 	a owl:DatatypeProperty ;
 	rdfs:label "properties"@en ;
 	rdfs:comment "Specifies the properties that were enumerated as a result of the action on the cyberitem."@en ;
-	rdfs:domain observable:PropertiesEnumeratedEffect ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7355,7 +6990,6 @@ observable:propertyName
 	a owl:DatatypeProperty ;
 	rdfs:label "propertyName"@en ;
 	rdfs:comment "Specifies the Name of the property being read."@en ;
-	rdfs:domain observable:PropertyReadEffect ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7363,7 +6997,6 @@ observable:protocols
 	a owl:ObjectProperty ;
 	rdfs:label "protocols"@en ;
 	rdfs:comment "Specifies the protocols involved in the network connection, along with their corresponding state. "@en ;
-	rdfs:domain observable:NetworkConnection ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
 	.
 
@@ -7371,7 +7004,6 @@ observable:query
 	a owl:DatatypeProperty ;
 	rdfs:label "query"@en ;
 	rdfs:comment "Query passed to the resource."@en ;
-	rdfs:domain observable:URL ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7379,7 +7011,6 @@ observable:rangeOffset
 	a owl:DatatypeProperty ;
 	rdfs:label "rangeOffset"@en ;
 	rdfs:comment "The offset at which the start of data can be found, relative to the rangeOffsetType defined."@en ;
-	rdfs:domain observable:DataRange ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7387,7 +7018,6 @@ observable:rangeOffsetType
 	a owl:DatatypeProperty ;
 	rdfs:label "rangeOffsetType"@en ;
 	rdfs:comment "The type of offset defined for the range (e.g., image, file, address)."@en ;
-	rdfs:domain observable:DataRange ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7395,14 +7025,12 @@ observable:rangeSize
 	a owl:DatatypeProperty ;
 	rdfs:label "rangeSize"@en ;
 	rdfs:comment "The size of the data in bytes."@en ;
-	rdfs:domain observable:DataRange ;
 	rdfs:range xsd:long ;
 	.
 
 observable:receivedLines
 	a owl:DatatypeProperty ;
 	rdfs:label "receivedLines"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7410,7 +7038,6 @@ observable:receivedTime
 	a owl:DatatypeProperty ;
 	rdfs:label "receivedTime"@en ;
 	rdfs:comment "The date and time at which the message received. "@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -7418,7 +7045,6 @@ observable:recurrence
 	a owl:DatatypeProperty ;
 	rdfs:label "recurrence"@en ;
 	rdfs:comment "Recurrence of the event."@en ;
-	rdfs:domain observable:CalendarEntry ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7426,7 +7052,6 @@ observable:references
 	a owl:ObjectProperty ;
 	rdfs:label "references"@en ;
 	rdfs:comment "A list of email message identifiers this email relates to."@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7434,7 +7059,6 @@ observable:referralURL
 	a owl:ObjectProperty ;
 	rdfs:label "referralURL"@en ;
 	rdfs:comment "Specifies the corresponding referral URL for a registrar."@en ;
-	rdfs:domain observable:WhoisRegistrarInfoType ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7442,7 +7066,6 @@ observable:regionSize
 	a owl:DatatypeProperty ;
 	rdfs:label "regionSize"@en ;
 	rdfs:comment "The regionSize property specifies the size of the particular memory region, in bytes."@en ;
-	rdfs:domain observable:Memory ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7451,7 +7074,6 @@ observable:regionStartAddress
 	rdfs:label "regionStartAddress"@en ;
 	rdfs:comment """The regionStartAddress property specifies the starting address of the particular memory region.
           """@en ;
-	rdfs:domain observable:Memory ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -7459,7 +7081,6 @@ observable:region_end_address
 	a owl:DatatypeProperty ;
 	rdfs:label "region_End_Address"@en ;
 	rdfs:comment "The regionEndAddress property specifies the ending address of the particular memory region."@en ;
-	rdfs:domain observable:Memory ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -7467,7 +7088,6 @@ observable:regionalInternetRegistry
 	a owl:DatatypeProperty ;
 	rdfs:label "regionalInternetRegistry"@en ;
 	rdfs:comment "specifies the name of the Regional Internet Registry (RIR) which allocated the IP address contained in a WHOIS entry."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range vocab:RegionalRegistryTypeVocab ;
 	.
 
@@ -7475,7 +7095,6 @@ observable:registeredOrganization
 	a owl:ObjectProperty ;
 	rdfs:label "registeredOrganization"@en ;
 	rdfs:comment "The organization that this copy of Windows is registered to."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
@@ -7483,7 +7102,6 @@ observable:registeredOwner
 	a owl:ObjectProperty ;
 	rdfs:label "registeredOwner"@en ;
 	rdfs:comment "The person or organization that is the registered owner of this copy of Windows."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
@@ -7491,7 +7109,6 @@ observable:registrantIDs
 	a owl:DatatypeProperty ;
 	rdfs:label "registrantIDs"@en ;
 	rdfs:comment "Specifies the registrant IDs associated with a domain lookup."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7499,7 +7116,6 @@ observable:registrarGUID
 	a owl:DatatypeProperty ;
 	rdfs:label "registrarGUID"@en ;
 	rdfs:comment "Specifies the Registrar GUID field of a Whois entry."@en ;
-	rdfs:domain observable:WhoisRegistrarInfoType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7507,7 +7123,6 @@ observable:registrarID
 	a owl:DatatypeProperty ;
 	rdfs:label "registrarID"@en ;
 	rdfs:comment "Specifies the Registrar ID field of a Whois entry."@en ;
-	rdfs:domain observable:WhoisRegistrarInfoType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7515,7 +7130,6 @@ observable:registrarInfo
 	a owl:ObjectProperty ;
 	rdfs:label "registrarInfo"@en ;
 	rdfs:comment "Specifies registrar info that would be returned from a registrar lookup."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range observable:WhoisRegistrarInfoType ;
 	.
 
@@ -7523,7 +7137,6 @@ observable:registrarName
 	a owl:DatatypeProperty ;
 	rdfs:label "registrarName"@en ;
 	rdfs:comment "The name of the registrar organization."@en ;
-	rdfs:domain observable:WhoisRegistrarInfoType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7531,7 +7144,6 @@ observable:registryValues
 	a owl:ObjectProperty ;
 	rdfs:label "registryValues"@en ;
 	rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
-	rdfs:domain observable:WindowsRegistryKey ;
 	rdfs:range observable:WindowsRegistryValue ;
 	.
 
@@ -7539,14 +7151,12 @@ observable:remarks
 	a owl:DatatypeProperty ;
 	rdfs:label "remarks"@en ;
 	rdfs:comment "Specifies any remarks associated with this Whois entry."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range xsd:string ;
 	.
 
 observable:remindTime
 	a owl:DatatypeProperty ;
 	rdfs:label "remindTime"@en ;
-	rdfs:domain observable:CalendarEntry ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -7555,7 +7165,6 @@ observable:requestMethod
 	rdfs:label "requestMethod"@en ;
 	rdfs:comment """Specifies the HTTP method portion of the HTTP request line, as a lowercase string.
           """@en ;
-	rdfs:domain observable:HTTPConnection ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7563,7 +7172,6 @@ observable:requestValue
 	a owl:DatatypeProperty ;
 	rdfs:label "requestValue"@en ;
 	rdfs:comment "Specifies the value (typically a resource path) portion of the HTTP request line."@en ;
-	rdfs:domain observable:HTTPConnection ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7571,21 +7179,18 @@ observable:requestVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "requestVersion"@en ;
 	rdfs:comment "Specifies the HTTP version portion of the HTTP request line, as a lowercase string."@en ;
-	rdfs:domain observable:HTTPConnection ;
 	rdfs:range xsd:string ;
 	.
 
 observable:rowCondition
 	a owl:DatatypeProperty ;
 	rdfs:label "rowCondition"@en ;
-	rdfs:domain observable:SQLiteBlob ;
 	rdfs:range xsd:string ;
 	.
 
 observable:rowIndex
 	a owl:DatatypeProperty ;
 	rdfs:label "rowIndex"@en ;
-	rdfs:domain observable:SQLiteBlob ;
 	rdfs:range xsd:positiveInteger ;
 	.
 
@@ -7593,14 +7198,12 @@ observable:ruid
 	a owl:DatatypeProperty ;
 	rdfs:label "ruid"@en ;
 	rdfs:comment "Specifies the real user ID, which represents the Unix user who created the process."@en ;
-	rdfs:domain observable:UNIXProcess ;
 	rdfs:range xsd:nonNegativeInteger ;
 	.
 
 observable:runningStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "runningStatus"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7608,7 +7211,6 @@ observable:scheme
 	a owl:DatatypeProperty ;
 	rdfs:label "scheme"@en ;
 	rdfs:comment "Identifies the type of URL."@en ;
-	rdfs:domain observable:URL ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7616,7 +7218,6 @@ observable:screenName
 	a owl:DatatypeProperty ;
 	rdfs:label "screenName"@en ;
 	rdfs:comment "The display name of the contact."@en ;
-	rdfs:domain observable:Contact ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7624,7 +7225,6 @@ observable:sectionAlignment
 	a owl:DatatypeProperty ;
 	rdfs:label "sectionAlignment"@en ;
 	rdfs:comment "Specifies the alignment (in bytes) of PE sections when they are loaded into memory."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7632,7 +7232,6 @@ observable:sections
 	a owl:ObjectProperty ;
 	rdfs:label "sections"@en ;
 	rdfs:comment "Specifies metadata about the sections in the PE file."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range observable:WindowsPESection ;
 	.
 
@@ -7640,21 +7239,18 @@ observable:sectorSize
 	a owl:DatatypeProperty ;
 	rdfs:label "sectorSize"@en ;
 	rdfs:comment "The sector size of the volume in bytes."@en ;
-	rdfs:domain observable:Volume ;
 	rdfs:range xsd:long ;
 	.
 
 observable:securityAttributes
 	a owl:DatatypeProperty ;
 	rdfs:label "securityAttributes"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:string ;
 	.
 
 observable:sender
 	a owl:ObjectProperty ;
 	rdfs:label "sender"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7662,14 +7258,12 @@ observable:sentTime
 	a owl:DatatypeProperty ;
 	rdfs:label "sentTime"@en ;
 	rdfs:comment "The date and time at which the message sent."@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:dateTime ;
 	.
 
 observable:serialNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "serialNumber"@en ;
-	rdfs:domain observable:Device ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7677,28 +7271,24 @@ observable:serverName
 	a owl:ObjectProperty ;
 	rdfs:label "serverName"@en ;
 	rdfs:comment "Specifies the corresponding server name for a whois entry. This usually corresponds to a nameserver lookup."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:serviceName
 	a owl:DatatypeProperty ;
 	rdfs:label "serviceName"@en ;
-	rdfs:domain observable:WindowsService ;
 	rdfs:range xsd:string ;
 	.
 
 observable:serviceStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "serviceStatus"@en ;
-	rdfs:domain observable:WindowsService ;
 	rdfs:range xsd:string ;
 	.
 
 observable:serviceType
 	a owl:DatatypeProperty ;
 	rdfs:label "serviceType"@en ;
-	rdfs:domain observable:WindowsService ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7706,14 +7296,12 @@ observable:sessionID
 	a owl:DatatypeProperty ;
 	rdfs:label "sessionID"@en ;
 	rdfs:comment "An identifier for the session from which the message originates."@en ;
-	rdfs:domain observable:Message ;
 	rdfs:range xsd:string ;
 	.
 
 observable:shell
 	a owl:DatatypeProperty ;
 	rdfs:label "shell"@en ;
-	rdfs:domain observable:UNIXAccount ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7721,7 +7309,6 @@ observable:showMessageBody
 	a owl:DatatypeProperty ;
 	rdfs:label "showMessageBody"@en ;
 	rdfs:comment "Specifies the message text that is displayed in the body of the message box by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.85).aspx."@en ;
-	rdfs:domain observable:IShowMessageActionType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7729,14 +7316,12 @@ observable:showMessageTitle
 	a owl:DatatypeProperty ;
 	rdfs:label "showMessageTitle"@en ;
 	rdfs:comment "Specifies the title of the message box shown by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.85).aspx."@en ;
-	rdfs:domain observable:IShowMessageActionType ;
 	rdfs:range xsd:string ;
 	.
 
 observable:sid
 	a owl:DatatypeProperty ;
 	rdfs:label "sid"@en ;
-	rdfs:domain observable:NTFSFileSystem ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7744,35 +7329,30 @@ observable:signature
 	a owl:DatatypeProperty ;
 	rdfs:label "signature"@en ;
 	rdfs:comment "A"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:string ;
 	.
 
 observable:signatureAlgorithm
 	a owl:DatatypeProperty ;
 	rdfs:label "signatureAlgorithm"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:string ;
 	.
 
 observable:signatureDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "signatureDescription"@en ;
-	rdfs:domain observable:DigitalSignatureInfo ;
 	rdfs:range xsd:string ;
 	.
 
 observable:signatureExists
 	a owl:DatatypeProperty ;
 	rdfs:label "signatureExists"@en ;
-	rdfs:domain observable:DigitalSignatureInfo ;
 	rdfs:range xsd:boolean ;
 	.
 
 observable:signatureVerified
 	a owl:DatatypeProperty ;
 	rdfs:label "signatureVerified"@en ;
-	rdfs:domain observable:DigitalSignatureInfo ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -7780,7 +7360,6 @@ observable:size
 	a owl:DatatypeProperty ;
 	rdfs:label "size"@en ;
 	rdfs:comment "Specifies the size of the section, in bytes."@en ;
-	rdfs:domain observable:WindowsPESection ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7788,7 +7367,6 @@ observable:sizeInBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeInBytes"@en ;
 	rdfs:comment "The size of the data in bytes."@en ;
-	rdfs:domain observable:ContentData ;
 	rdfs:range xsd:long ;
 	.
 
@@ -7796,7 +7374,6 @@ observable:sizeOfCode
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfCode"@en ;
 	rdfs:comment "Specifies the size of the code (text) section. If there are multiple such sections, this refers to the sum of the sizes of each section."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7804,7 +7381,6 @@ observable:sizeOfHeaders
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfHeaders"@en ;
 	rdfs:comment "Specifies the combined size of the MS-DOS, PE header, and section headers, rounded up a multiple of the value specified in the file_alignment header."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7812,7 +7388,6 @@ observable:sizeOfHeapCommit
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfHeapCommit"@en ;
 	rdfs:comment "Specifies the size of the local heap space to commit."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7820,7 +7395,6 @@ observable:sizeOfHeapReserve
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfHeapReserve"@en ;
 	rdfs:comment "Specifies the size of the local heap space to reserve."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7828,7 +7402,6 @@ observable:sizeOfImage
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfImage"@en ;
 	rdfs:comment "Specifies the size, in bytes, of the image, including all headers, as the image is loaded in memory."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7836,7 +7409,6 @@ observable:sizeOfInitializedData
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfInitializedData"@en ;
 	rdfs:comment "Specifies the size of the initialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7844,7 +7416,6 @@ observable:sizeOfOptionalHeader
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfOptionalHeader"@en ;
 	rdfs:comment "Specifies the size of the optional header of the PE binary. "@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7852,7 +7423,6 @@ observable:sizeOfStackCommit
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfStackCommit"@en ;
 	rdfs:comment "Specifies the size of the stack to commit."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7860,7 +7430,6 @@ observable:sizeOfStackReserve
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfStackReserve"@en ;
 	rdfs:comment "Specifies the size of the stack to reserve."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7868,7 +7437,6 @@ observable:sizeOfUninitializedData
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeOfUninitializedData"@en ;
 	rdfs:comment "Specifies the size of the uninitialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
@@ -7876,7 +7444,6 @@ observable:sourceFlags
 	a owl:DatatypeProperty ;
 	rdfs:label "sourceFlags"@en ;
 	rdfs:comment "Specifies the source TCP flags."@en ;
-	rdfs:domain observable:TCPConnection ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -7885,7 +7452,6 @@ observable:sourcePort
 	rdfs:label "sourcePort"@en ;
 	rdfs:comment """Specifies the source port used in the connection, as an integer in the range of 0 - 65535.
           """@en ;
-	rdfs:domain observable:NetworkConnection ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7893,7 +7459,6 @@ observable:spaceLeft
 	a owl:DatatypeProperty ;
 	rdfs:label "spaceLeft"@en ;
 	rdfs:comment "Specifies the amount of space left on the partition, in bytes."@en ;
-	rdfs:domain observable:DiskPartition ;
 	rdfs:range xsd:long ;
 	.
 
@@ -7901,7 +7466,6 @@ observable:spaceUsed
 	a owl:DatatypeProperty ;
 	rdfs:label "spaceUsed"@en ;
 	rdfs:comment "Specifies the amount of space used on the partition, in bytes."@en ;
-	rdfs:domain observable:DiskPartition ;
 	rdfs:range xsd:long ;
 	.
 
@@ -7909,7 +7473,6 @@ observable:sponsoringRegistrar
 	a owl:DatatypeProperty ;
 	rdfs:label "sponsoringRegistrar"@en ;
 	rdfs:comment "Specifies the name of the sponsoring registrar for a domain."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7917,28 +7480,24 @@ observable:src
 	a owl:ObjectProperty ;
 	rdfs:label "src"@en ;
 	rdfs:comment "Specifies the source(s) of the network connection."@en ;
-	rdfs:domain observable:NetworkConnection ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
 observable:srcBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "srcBytes"@en ;
-	rdfs:domain observable:NetworkFlow ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:srcPackets
 	a owl:DatatypeProperty ;
 	rdfs:label "srcPackets"@en ;
-	rdfs:domain observable:NetworkFlow ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:srcPayload
 	a owl:ObjectProperty ;
 	rdfs:label "srcPayload"@en ;
-	rdfs:domain observable:NetworkFlow ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -7946,56 +7505,48 @@ observable:ssid
 	a owl:DatatypeProperty ;
 	rdfs:label "ssid"@en ;
 	rdfs:comment "Network identifier."@en ;
-	rdfs:domain observable:WirelessNetworkConnection ;
 	rdfs:range xsd:string ;
 	.
 
 observable:stackSize
 	a owl:DatatypeProperty ;
 	rdfs:label "stackSize"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:nonNegativeInteger ;
 	.
 
 observable:startAddress
 	a owl:DatatypeProperty ;
 	rdfs:label "startAddress"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:hexBinary ;
 	.
 
 observable:startCommandLine
 	a owl:DatatypeProperty ;
 	rdfs:label "startCommandLine"@en ;
-	rdfs:domain observable:WindowsService ;
 	rdfs:range xsd:string ;
 	.
 
 observable:startTime
 	a owl:DatatypeProperty ;
 	rdfs:label "startTime"@en ;
-	rdfs:domain observable:PhoneCall ;
 	rdfs:range xsd:dateTime ;
 	.
 
 observable:startType
 	a owl:DatatypeProperty ;
 	rdfs:label "startType"@en ;
-	rdfs:domain observable:WindowsService ;
 	rdfs:range xsd:string ;
 	.
 
 observable:startupInfo
 	a owl:ObjectProperty ;
 	rdfs:label "startupInfo"@en ;
-	rdfs:domain observable:WindowsProcess ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
 	.
 
 observable:state
 	a owl:DatatypeProperty ;
 	rdfs:label "State"@en ;
-	rdfs:domain observable:CyberItem ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8003,7 +7554,6 @@ observable:status
 	a owl:DatatypeProperty ;
 	rdfs:label "status"@en ;
 	rdfs:comment "Specifies a list of statuses for a given Whois entry."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range vocab:WhoisStatusTypeVocab ;
 	.
 
@@ -8011,10 +7561,6 @@ observable:storageCapacityInBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "storageCapacityInBytes"@en ;
 	rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
-	rdfs:domain
-		observable:MobileDevice ,
-		observable:SIMCard
-		;
 	rdfs:range xsd:long ;
 	.
 
@@ -8022,14 +7568,12 @@ observable:stringValue
 	a owl:DatatypeProperty ;
 	rdfs:label "stringValue"@en ;
 	rdfs:comment "Specifies the actual value of the extracted string."@en ;
-	rdfs:domain observable:ExtractedString ;
 	rdfs:range xsd:string ;
 	.
 
 observable:strings
 	a owl:ObjectProperty ;
 	rdfs:label "strings"@en ;
-	rdfs:domain observable:ExtractedStrings ;
 	rdfs:range observable:ExtractedString ;
 	.
 
@@ -8037,21 +7581,18 @@ observable:subject
 	a owl:DatatypeProperty ;
 	rdfs:label "subject"@en ;
 	rdfs:comment "The subject of the email."@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
 observable:subjectAlternativeName
 	a owl:DatatypeProperty ;
 	rdfs:label "subjectAlternativeName"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
 observable:subjectDirectoryAttributes
 	a owl:DatatypeProperty ;
 	rdfs:label "subjectDirectoryAttributes"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8059,35 +7600,30 @@ observable:subjectHash
 	a owl:ObjectProperty ;
 	rdfs:label "subjectHash"@en ;
 	rdfs:comment "A hash calculated on the certificate subject name."@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
 observable:subjectKeyIdentifier
 	a owl:DatatypeProperty ;
 	rdfs:label "subjectKeyIdentifier"@en ;
-	rdfs:domain observable:X509V3Extensions ;
 	rdfs:range xsd:string ;
 	.
 
 observable:subjectPublicKeyAlgorithm
 	a owl:DatatypeProperty ;
 	rdfs:label "subjectPublicKeyAlgorithm"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:string ;
 	.
 
 observable:subjectPublicKeyExponent
 	a owl:DatatypeProperty ;
 	rdfs:label "subjectPublicKeyExponent"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:integer ;
 	.
 
 observable:subjectPublicKeyModulus
 	a owl:DatatypeProperty ;
 	rdfs:label "subjectPublicKeyModulus"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8095,7 +7631,6 @@ observable:subsystem
 	a owl:DatatypeProperty ;
 	rdfs:label "subsystem"@en ;
 	rdfs:comment "Specifies the subsystem (e.g., GUI, device driver, etc.) that is required to run this image."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedShort ;
 	.
 
@@ -8103,7 +7638,6 @@ observable:swid
 	a owl:DatatypeProperty ;
 	rdfs:label "swid"@en ;
 	rdfs:comment "Specifies the SWID tag for the software."@en ;
-	rdfs:domain observable:Software ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8111,21 +7645,18 @@ observable:symbolicName
 	a owl:DatatypeProperty ;
 	rdfs:label "symbolicName"@en ;
 	rdfs:comment "The symbolic name of a global flag. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549646(v=vs.85).aspx."@en ;
-	rdfs:domain observable:GlobalFlagType ;
 	rdfs:range xsd:string ;
 	.
 
 observable:systemTime
 	a owl:DatatypeProperty ;
 	rdfs:label "systemTime"@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:dateTime ;
 	.
 
 observable:tableName
 	a owl:DatatypeProperty ;
 	rdfs:label "tableName"@en ;
-	rdfs:domain observable:SQLiteBlob ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8133,7 +7664,6 @@ observable:targetFile
 	a owl:ObjectProperty ;
 	rdfs:label "targetFile"@en ;
 	rdfs:comment "Specifies the file targeted by a symbolic link."@en ;
-	rdfs:domain observable:SymbolicLink ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -8141,21 +7671,18 @@ observable:taskCreator
 	a owl:DatatypeProperty ;
 	rdfs:label "taskCreator"@en ;
 	rdfs:comment "Specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range xsd:string ;
 	.
 
 observable:text
 	a owl:DatatypeProperty ;
 	rdfs:label "text"@en ;
-	rdfs:domain observable:Note ;
 	rdfs:range xsd:string ;
 	.
 
 observable:threadID
 	a owl:DatatypeProperty ;
 	rdfs:label "threadID"@en ;
-	rdfs:domain observable:WindowsThread ;
 	rdfs:range xsd:nonNegativeInteger ;
 	.
 
@@ -8163,7 +7690,6 @@ observable:thumbprintHash
 	a owl:ObjectProperty ;
 	rdfs:label "thumbprintHash"@en ;
 	rdfs:comment "A hash calculated on the entire certificate including signature."@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
 	.
 
@@ -8171,7 +7697,6 @@ observable:timeDateStamp
 	a owl:DatatypeProperty ;
 	rdfs:label "timeDateStamp"@en ;
 	rdfs:comment "Specifies the time when the PE binary was created."@en ;
-	rdfs:domain observable:WindowsPEBinaryFile ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -8179,7 +7704,6 @@ observable:timesExecuted
 	a owl:DatatypeProperty ;
 	rdfs:label "timesExecuted"@en ;
 	rdfs:comment "The number of times the prefetch application has executed."@en ;
-	rdfs:domain observable:WindowsPrefetch ;
 	rdfs:range xsd:long ;
 	.
 
@@ -8187,7 +7711,6 @@ observable:timezoneDST
 	a owl:DatatypeProperty ;
 	rdfs:label "timezoneDST"@en ;
 	rdfs:comment "Specifies the time zone used by the system, taking daylight savings time (DST) into account."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8195,7 +7718,6 @@ observable:timezoneStandard
 	a owl:DatatypeProperty ;
 	rdfs:label "timezoneStandard"@en ;
 	rdfs:comment "Specifies the time zone used by the system, without taking daylight savings time (DST) into account."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8203,14 +7725,12 @@ observable:to
 	a owl:ObjectProperty ;
 	rdfs:label "to"@en ;
 	rdfs:comment "The receiver's phone number."@en ;
-	rdfs:domain observable:PhoneCall ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:totalFragments
 	a owl:DatatypeProperty ;
 	rdfs:label "totalFragments"@en ;
-	rdfs:domain observable:Fragment ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -8218,7 +7738,6 @@ observable:totalRam
 	a owl:DatatypeProperty ;
 	rdfs:label "totalRam"@en ;
 	rdfs:comment "Specifies the total amount of physical memory present on the system, in bytes."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:long ;
 	.
 
@@ -8226,7 +7745,6 @@ observable:totalSpace
 	a owl:DatatypeProperty ;
 	rdfs:label "totalSpace"@en ;
 	rdfs:comment "Specifies the total amount of space available on the partition, in bytes."@en ;
-	rdfs:domain observable:DiskPartition ;
 	rdfs:range xsd:long ;
 	.
 
@@ -8234,7 +7752,6 @@ observable:triggerBeginTime
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerBeginTime"@en ;
 	rdfs:comment "Specifies the date/time that the trigger is activated."@en ;
-	rdfs:domain observable:TriggerType ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -8242,7 +7759,6 @@ observable:triggerDelay
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerDelay"@en ;
 	rdfs:comment "Specifies the delay that takes place between when the task is registered and when the task is started."@en ;
-	rdfs:domain observable:TriggerType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8250,7 +7766,6 @@ observable:triggerEndTime
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerEndTime"@en ;
 	rdfs:comment "Specifies the date/time that the trigger is deactivated."@en ;
-	rdfs:domain observable:TriggerType ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -8258,7 +7773,6 @@ observable:triggerFrequency
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerFrequency"@en ;
 	rdfs:comment "Specifies the frequency at which the trigger repeats."@en ;
-	rdfs:domain observable:TriggerType ;
 	rdfs:range vocab:TriggerFrequencyVocab ;
 	.
 
@@ -8266,7 +7780,6 @@ observable:triggerList
 	a owl:ObjectProperty ;
 	rdfs:label "triggerList"@en ;
 	rdfs:comment "Specifies a set of triggers used by the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383264(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range observable:TriggerType ;
 	.
 
@@ -8274,7 +7787,6 @@ observable:triggerMaxRunTime
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerMaxRunTime"@en ;
 	rdfs:comment "The maximum amount of time that the task launched by the trigger is allowed to run. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.85).aspx."@en ;
-	rdfs:domain observable:TriggerType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8282,7 +7794,6 @@ observable:triggerSessionChangeType
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerSessionChangeType"@en ;
 	rdfs:comment "Specifies the type of Terminal Server session change that would trigger a task launch. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381298(v=vs.85).aspx."@en ;
-	rdfs:domain observable:TriggerType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8290,7 +7801,6 @@ observable:triggerType
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerType"@en ;
 	rdfs:comment "Specifies the type of the task trigger."@en ;
-	rdfs:domain observable:TriggerType ;
 	rdfs:range vocab:TriggerTypeVocab ;
 	.
 
@@ -8298,7 +7808,6 @@ observable:updatedDate
 	a owl:DatatypeProperty ;
 	rdfs:label "updatedDate"@en ;
 	rdfs:comment "Specifies the date in which the registered domain information was last updated."@en ;
-	rdfs:domain observable:WhoIs ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -8306,14 +7815,12 @@ observable:uptime
 	a owl:DatatypeProperty ;
 	rdfs:label "uptime"@en ;
 	rdfs:comment "Specifies the duration that represents the current amount of time that the system has been up."@en ;
-	rdfs:domain observable:ComputerSpecification ;
 	rdfs:range xsd:string ;
 	.
 
 observable:url
 	a owl:DatatypeProperty ;
 	rdfs:label "url"@en ;
-	rdfs:domain observable:Attachment ;
 	rdfs:range xsd:anyURI ;
 	.
 
@@ -8321,7 +7828,6 @@ observable:urlTargeted
 	a owl:DatatypeProperty ;
 	rdfs:label "urlTargeted"@en ;
 	rdfs:comment "The target of the bookmark."@en ;
-	rdfs:domain observable:BrowserBookmark ;
 	rdfs:range xsd:anyURI ;
 	.
 
@@ -8329,28 +7835,24 @@ observable:userName
 	a owl:ObjectProperty ;
 	rdfs:label "userName"@en ;
 	rdfs:comment "Username used to authenticate to this resource."@en ;
-	rdfs:domain observable:URL ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:validityNotAfter
 	a owl:DatatypeProperty ;
 	rdfs:label "validityNotAfter"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:dateTime ;
 	.
 
 observable:validityNotBefore
 	a owl:DatatypeProperty ;
 	rdfs:label "validityNotBefore"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range xsd:dateTime ;
 	.
 
 observable:value
 	a owl:DatatypeProperty ;
 	rdfs:label "value"@en ;
-	rdfs:domain observable:IPv4Address ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8358,24 +7860,18 @@ observable:values
 	a owl:DatatypeProperty ;
 	rdfs:label "values"@en ;
 	rdfs:comment "The values that were enumerated as a result of the action on the object."@en ;
-	rdfs:domain observable:ValuesEnumeratedEffect ;
 	rdfs:range xsd:string ;
 	.
 
 observable:version
 	a owl:DatatypeProperty ;
 	rdfs:label "version"@en ;
-	rdfs:domain
-		observable:Application ,
-		observable:PDFFile
-		;
 	rdfs:range xsd:string ;
 	.
 
 observable:visibility
 	a owl:DatatypeProperty ;
 	rdfs:label "visibility"@en ;
-	rdfs:domain observable:MessageThread ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -8383,7 +7879,6 @@ observable:visitCount
 	a owl:DatatypeProperty ;
 	rdfs:label "visitCount"@en ;
 	rdfs:comment "The minimal number of times this web page or file has been visited by this web browser."@en ;
-	rdfs:domain observable:BrowserBookmark ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -8391,7 +7886,6 @@ observable:volume
 	a owl:ObjectProperty ;
 	rdfs:label "volume"@en ;
 	rdfs:comment "The volume from which the prefetch application was run. If the applicatin was run from multiple volumes, there will be a separate prefetch file for each."@en ;
-	rdfs:domain observable:WindowsPrefetch ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -8399,7 +7893,6 @@ observable:volumeID
 	a owl:DatatypeProperty ;
 	rdfs:label "volumeID"@en ;
 	rdfs:comment "The unique identifier of the volume."@en ;
-	rdfs:domain observable:Volume ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8407,7 +7900,6 @@ observable:whoisServer
 	a owl:ObjectProperty ;
 	rdfs:label "whoisServer"@en ;
 	rdfs:comment "Specifies the corresponding whois server for a registrar."@en ;
-	rdfs:domain observable:WhoisRegistrarInfoType ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -8415,14 +7907,12 @@ observable:win32VersionValue
 	a owl:DatatypeProperty ;
 	rdfs:label "win32VersionValue"@en ;
 	rdfs:comment "Specifies the reserved win32 version value."@en ;
-	rdfs:domain observable:WindowsPEOptionalHeader ;
 	rdfs:range xsd:unsignedInt ;
 	.
 
 observable:windowTitle
 	a owl:DatatypeProperty ;
 	rdfs:label "windowTitle"@en ;
-	rdfs:domain observable:WindowsProcess ;
 	rdfs:range xsd:string ;
 	.
 
@@ -8430,7 +7920,6 @@ observable:windowsDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "windowsDirectory"@en ;
 	rdfs:comment "The Windows_Directory field specifies the fully-qualified path to the Windows install directory."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -8438,7 +7927,6 @@ observable:windowsSystemDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "windowsSystemDirectory"@en ;
 	rdfs:comment "The Windows_System_Directory field specifies the fully-qualified path to the Windows system directory."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -8446,7 +7934,6 @@ observable:windowsTempDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "windowsTempDirectory"@en ;
 	rdfs:comment "The Windows_Temp_Directory field specifies the fully-qualified path to the Windows temporary files directory."@en ;
-	rdfs:domain observable:WindowsComputerSpecification ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -8454,7 +7941,6 @@ observable:windowsVolumeAttributes
 	a owl:DatatypeProperty ;
 	rdfs:label "windowsVolumeAttributes"@en ;
 	rdfs:comment "Specifies the attributes of a windows volume."@en ;
-	rdfs:domain observable:WindowsVolume ;
 	rdfs:range vocab:WindowsVolumeAttributeVocab ;
 	.
 
@@ -8462,7 +7948,6 @@ observable:workItemData
 	a owl:ObjectProperty ;
 	rdfs:label "workItemData"@en ;
 	rdfs:comment "Specifies application defined data associated with the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381271(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range observable:CyberItem ;
 	.
 
@@ -8470,28 +7955,24 @@ observable:workingDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "workingDirectory"@en ;
 	rdfs:comment "Specifies the working directory for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381878(v=vs.85).aspx."@en ;
-	rdfs:domain observable:WindowsTask ;
 	rdfs:range observable:CyberItem ;
 	.
 
 observable:x509v3extensions
 	a owl:ObjectProperty ;
 	rdfs:label "x509V3Extensions"@en ;
-	rdfs:domain observable:X509Certificate ;
 	rdfs:range observable:X509V3Extensions ;
 	.
 
 observable:xMailer
 	a owl:DatatypeProperty ;
 	rdfs:label "xMailer"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range xsd:string ;
 	.
 
 observable:xOriginatingIP
 	a owl:ObjectProperty ;
 	rdfs:label "xOriginatingIP"@en ;
-	rdfs:domain observable:EmailMessage ;
 	rdfs:range observable:CyberItem ;
 	.
 

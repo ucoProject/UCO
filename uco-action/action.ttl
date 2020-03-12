@@ -229,7 +229,6 @@ action:action
 	a owl:ObjectProperty ;
 	rdfs:label "action"@en ;
 	rdfs:comment "A characterization of a single action."@en ;
-	rdfs:domain action:ArrayOfAction ;
 	rdfs:range action:Action ;
 	.
 
@@ -237,7 +236,6 @@ action:actionCount
 	a owl:DatatypeProperty ;
 	rdfs:label "actionCount"@en ;
 	rdfs:comment "The number of times that the action was performed."@en ;
-	rdfs:domain action:Action ;
 	rdfs:range xsd:nonNegativeInteger ;
 	.
 
@@ -245,7 +243,6 @@ action:actionStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "actionStatus"@en ;
 	rdfs:comment "The current state of the action."@en ;
-	rdfs:domain action:Action ;
 	rdfs:range vocab:ActionStatusTypeVocab ;
 	.
 
@@ -253,7 +250,6 @@ action:argumentName
 	a owl:DatatypeProperty ;
 	rdfs:label "name"@en ;
 	rdfs:comment "The identifying label of an argument."@en ;
-	rdfs:domain action:ActionArgument ;
 	rdfs:range xsd:string ;
 	.
 
@@ -261,7 +257,6 @@ action:endTime
 	a owl:DatatypeProperty ;
 	rdfs:label "endTime"@en ;
 	rdfs:comment "The time at which performance of the action ended."@en ;
-	rdfs:domain action:Action ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -269,7 +264,6 @@ action:environment
 	a owl:ObjectProperty ;
 	rdfs:label "environment"@en ;
 	rdfs:comment "The environment wherein an action occurs."@en ;
-	rdfs:domain action:ActionReferences ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -277,7 +271,6 @@ action:error
 	a owl:ObjectProperty ;
 	rdfs:label "error"@en ;
 	rdfs:comment "A characterization of the differences between the expected and the actual performance of the action."@en ;
-	rdfs:domain action:Action ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -285,7 +278,6 @@ action:estimatedCost
 	a owl:DatatypeProperty ;
 	rdfs:label "estimatedCost"@en ;
 	rdfs:comment "An estimation of the cost if the action is performed."@en ;
-	rdfs:domain action:ActionEstimation ;
 	rdfs:range xsd:string ;
 	.
 
@@ -293,7 +285,6 @@ action:estimatedEfficacy
 	a owl:DatatypeProperty ;
 	rdfs:label "estimatedEfficacy"@en ;
 	rdfs:comment "An estimation of the effectiveness of the action at achieving its objective if the action is performed."@en ;
-	rdfs:domain action:ActionEstimation ;
 	rdfs:range xsd:string ;
 	.
 
@@ -301,7 +292,6 @@ action:estimatedImpact
 	a owl:DatatypeProperty ;
 	rdfs:label "estimatedImpact"@en ;
 	rdfs:comment "An estimation of the impact if the action is performed."@en ;
-	rdfs:domain action:ActionEstimation ;
 	rdfs:range xsd:string ;
 	.
 
@@ -309,7 +299,6 @@ action:instrument
 	a owl:ObjectProperty ;
 	rdfs:label "instrument"@en ;
 	rdfs:comment "The things used to perform an action."@en ;
-	rdfs:domain action:ActionReferences ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -317,7 +306,6 @@ action:location
 	a owl:ObjectProperty ;
 	rdfs:label "location"@en ;
 	rdfs:comment "The locations where an action occurs."@en ;
-	rdfs:domain action:ActionReferences ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 	.
 
@@ -325,7 +313,6 @@ action:object
 	a owl:ObjectProperty ;
 	rdfs:label "object"@en ;
 	rdfs:comment "The things that the action is performed on/against."@en ;
-	rdfs:domain action:ActionReferences ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -333,7 +320,6 @@ action:objective
 	a owl:DatatypeProperty ;
 	rdfs:label "objective"@en ;
 	rdfs:comment "The intended purpose for performing the action."@en ;
-	rdfs:domain action:ActionEstimation ;
 	rdfs:range xsd:string ;
 	.
 
@@ -341,7 +327,6 @@ action:participant
 	a owl:ObjectProperty ;
 	rdfs:label "participant"@en ;
 	rdfs:comment "The supporting (non-primary) performers of an action."@en ;
-	rdfs:domain action:ActionReferences ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -349,7 +334,6 @@ action:performer
 	a owl:ObjectProperty ;
 	rdfs:label "performer"@en ;
 	rdfs:comment "The primary performer of an action."@en ;
-	rdfs:domain action:ActionReferences ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -358,7 +342,6 @@ action:phase
 	rdfs:subPropertyOf action:subaction ;
 	rdfs:label "phase"@en ;
 	rdfs:comment "The ordered set of actions or sub action-lifecycles that represent the action lifecycle."@en ;
-	rdfs:domain action:ActionLifecycle ;
 	rdfs:range action:ArrayOfAction ;
 	.
 
@@ -366,7 +349,6 @@ action:rate
 	a owl:DatatypeProperty ;
 	rdfs:label "rate"@en ;
 	rdfs:comment "The frequency rate for the occurence of an action."@en ;
-	rdfs:domain action:ActionFrequency ;
 	rdfs:range xsd:float ;
 	.
 
@@ -374,7 +356,6 @@ action:result
 	a owl:ObjectProperty ;
 	rdfs:label "result"@en ;
 	rdfs:comment "The things resulting from performing an action."@en ;
-	rdfs:domain action:ActionReferences ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	.
 
@@ -382,7 +363,6 @@ action:scale
 	a owl:DatatypeProperty ;
 	rdfs:label "scale"@en ;
 	rdfs:comment "The time scale utilized for the frequency rate count for the occurence of an action."@en ;
-	rdfs:domain action:ActionFrequency ;
 	rdfs:range xsd:string ;
 	.
 
@@ -390,7 +370,6 @@ action:startTime
 	a owl:DatatypeProperty ;
 	rdfs:label "startTime"@en ;
 	rdfs:comment "The time at which performance of the action began."@en ;
-	rdfs:domain action:Action ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -398,7 +377,6 @@ action:subaction
 	a owl:ObjectProperty ;
 	rdfs:label "subaction"@en ;
 	rdfs:comment "References to other actions that make up part of a larger more complex action."@en ;
-	rdfs:domain action:Action ;
 	rdfs:range action:Action ;
 	.
 
@@ -406,7 +384,6 @@ action:trend
 	a owl:DatatypeProperty ;
 	rdfs:label "trend"@en ;
 	rdfs:comment "A characterization of the frequency trend for the occurence of an action."@en ;
-	rdfs:domain action:ActionFrequency ;
 	rdfs:range vocab:TrendVocab ;
 	.
 
@@ -414,7 +391,6 @@ action:units
 	a owl:DatatypeProperty ;
 	rdfs:label "units"@en ;
 	rdfs:comment "The units of measure utilized for the frequency rate count for the occurence of an action."@en ;
-	rdfs:domain action:ActionFrequency ;
 	rdfs:range xsd:string ;
 	.
 
@@ -422,7 +398,6 @@ action:value
 	a owl:DatatypeProperty ;
 	rdfs:label "value"@en ;
 	rdfs:comment "The value of an action parameter."@en ;
-	rdfs:domain action:ActionArgument ;
 	rdfs:range xsd:string ;
 	.
 

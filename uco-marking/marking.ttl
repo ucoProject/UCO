@@ -127,7 +127,6 @@ marking:authorizedIdentities
 	a owl:DatatypeProperty ;
 	rdfs:label "Authorized Identities"@en ;
 	rdfs:comment "Specifies the identities that are authorized to access the data to which the data marking is associated.  The list of authorized identities are represented as UUIDs."@en ;
-	rdfs:domain marking:ReleaseToMarking ;
 	rdfs:range xsd:string ;
 	.
 
@@ -136,7 +135,6 @@ marking:contentSelectors
 	rdfs:label "contentSelectors"@en ;
 	rdfs:comment """Explicit specification of exactly which portions of a UCO object to apply marking definitions to.
   Specific syntax for how to specify the UCO object portions is dependent on the particular syntactic serialization implementation (XML, JSON, etc.) of UCO and MUST be explicitly specified in a separate binding specification for that syntactic serialization implementation (e.g. a UCO XML Binding Specification). """@en ;
-	rdfs:domain marking:GranularMarking ;
 	rdfs:range xsd:string ;
 	.
 
@@ -144,7 +142,6 @@ marking:definition
 	a owl:ObjectProperty ;
 	rdfs:label "definition"@en ;
 	rdfs:comment "Explicit specification of a data marking instance."@en ;
-	rdfs:domain marking:MarkingDefinition ;
 	rdfs:range marking:MarkingModel ;
 	.
 
@@ -152,7 +149,6 @@ marking:definitionType
 	a owl:DatatypeProperty ;
 	rdfs:label "definitionType"@en ;
 	rdfs:comment "Specifies the Marking Model for a Marking Definition."@en ;
-	rdfs:domain marking:MarkingDefinition ;
 	rdfs:range xsd:string ;
 	.
 
@@ -160,7 +156,6 @@ marking:license
 	a owl:DatatypeProperty ;
 	rdfs:label "License" ;
 	rdfs:comment "Specifies the identifier for the type of license" ;
-	rdfs:domain marking:LicenseMarking ;
 	rdfs:range xsd:string ;
 	.
 
@@ -168,7 +163,6 @@ marking:marking
 	a owl:ObjectProperty ;
 	rdfs:label "marking"@en ;
 	rdfs:comment "Represents specific marking definitions to be applied to UCO data."@en ;
-	rdfs:domain marking:GranularMarking ;
 	rdfs:range marking:MarkingDefinition ;
 	.
 
@@ -176,7 +170,6 @@ marking:statement
 	a owl:DatatypeProperty ;
 	rdfs:label "Statement"@en-US ;
 	rdfs:comment "Specifies the statement to apply to the structure for which the Marking is to be applied."@en-US ;
-	rdfs:domain marking:StatementMarking ;
 	rdfs:range xsd:string ;
 	.
 
@@ -184,7 +177,6 @@ marking:termsOfUse
 	a owl:DatatypeProperty ;
 	rdfs:label "Terms of Use"@en-US ;
 	rdfs:comment "Specifies the terms of use that apply to the structure for which the Marking is to be applied."@en-US ;
-	rdfs:domain marking:TermsOfUseMarking ;
 	rdfs:range xsd:string ;
 	.
 

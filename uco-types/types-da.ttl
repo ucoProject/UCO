@@ -1,0 +1,34 @@
+# baseURI: https://unifiedcyberontology.org/ontology/uco/types-da
+
+@base <https://unifiedcyberontology.org/ontology/uco/types-da> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://unifiedcyberontology.org/ontology/uco/types-da>
+	a owl:Ontology ;
+	rdfs:label "types domain assertions"@en ;
+	.
+
+types:entry
+	rdfs:domain types:Dictionary ;
+	.
+
+types:hashMethod
+	rdfs:domain types:Hash ;
+	.
+
+types:hashValue
+	rdfs:domain types:Hash ;
+	.
+
+types:key
+	rdfs:domain types:ControlledDictionaryEntry ;
+	.
+
+types:value
+	rdfs:domain types:ControlledDictionaryEntry ;
+	.
+
