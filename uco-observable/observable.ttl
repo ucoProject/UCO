@@ -2562,6 +2562,25 @@ observable:Observable
 """@en ;
 	.
 
+	observable:Observation
+		a owl:Class ;
+		rdfs:subClassOf
+			<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
+			[
+				a owl:Restriction ;
+				owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+				owl:cardinality "1"^^xsd:nonNegativeInteger ;
+			] ,
+			[
+				a owl:Restriction ;
+				owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+				owl:hasValue "observe" ;
+			]
+			;
+		rdfs:label "Observation"@en ;
+		rdfs:comment "An observation of something."@en ;
+		.
+
 observable:OperatingSystem
 	a owl:Class ;
 	rdfs:subClassOf
@@ -7975,4 +7994,3 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:CyberItem ;
 	.
-
