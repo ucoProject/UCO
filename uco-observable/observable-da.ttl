@@ -1288,7 +1288,7 @@ observable:oldObject
 	rdfs:domain observable:StateChangeEffect ;
 	.
 
-observable:omment
+observable:taskComment
 	rdfs:domain observable:WindowsTask ;
 	.
 
@@ -2055,4 +2055,3 @@ observable:xMailer
 observable:xOriginatingIP
 	rdfs:domain observable:EmailMessage ;
 	.
-

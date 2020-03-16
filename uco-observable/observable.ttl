@@ -4236,7 +4236,7 @@ observable:WindowsTask
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:omment ;
+			owl:onProperty observable:taskComment ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -6701,9 +6701,9 @@ observable:oldObject
 	rdfs:range observable:CyberItem ;
 	.
 
-observable:omment
+observable:taskComment
 	a owl:DatatypeProperty ;
-	rdfs:label "omment"@en ;
+	rdfs:label "taskComment"@en ;
 	rdfs:comment "Specifies a comment for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381232(v=vs.85).aspx."@en ;
 	rdfs:range xsd:string ;
 	.
@@ -7975,4 +7975,3 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:CyberItem ;
 	.
-
