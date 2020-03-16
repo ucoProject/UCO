@@ -16,6 +16,7 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/pattern
 # imports: https://unifiedcyberontology.org/ontology/uco/pattern-da
 # imports: https://unifiedcyberontology.org/ontology/uco/role
+# imports: https://unifiedcyberontology.org/ontology/uco/time
 # imports: https://unifiedcyberontology.org/ontology/uco/tool
 # imports: https://unifiedcyberontology.org/ontology/uco/tool-da
 # imports: https://unifiedcyberontology.org/ontology/uco/types
@@ -53,6 +54,7 @@
 		<https://unifiedcyberontology.org/ontology/uco/pattern> ,
 		<https://unifiedcyberontology.org/ontology/uco/pattern-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/role> ,
+		<https://unifiedcyberontology.org/ontology/uco/time> ,
 		<https://unifiedcyberontology.org/ontology/uco/tool> ,
 		<https://unifiedcyberontology.org/ontology/uco/tool-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/types> ,
@@ -60,4 +62,3 @@
 		<https://unifiedcyberontology.org/ontology/uco/victim>
 		;
 	.
-
