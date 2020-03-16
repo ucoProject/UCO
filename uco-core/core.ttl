@@ -133,7 +133,7 @@ core:EnclosingCompilation
 
 core:ExternalReference
 	a owl:Class ;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "ExternalReference"@en ;
 	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
 	.
@@ -436,4 +436,3 @@ core:value
 	rdfs:comment "A string value."@en ;
 	rdfs:range xsd:string ;
 	.
-
