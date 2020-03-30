@@ -74,6 +74,14 @@ core:kindOfRelationship
 	rdfs:domain core:Relationship ;
 	.
 
+core:modifiedTime
+	rdfs:domain core:UcoObject ;
+	.
+
+core:name
+	rdfs:domain core:UcoObject ;
+	.
+
 core:object
 	rdfs:domain
 		core:Annotation ,
@@ -125,4 +133,3 @@ core:type
 core:value
 	rdfs:domain core:ControlledVocabulary ;
 	.
-

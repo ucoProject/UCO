@@ -343,6 +343,13 @@ core:kindOfRelationship
 	rdfs:range xsd:string ;
 	.
 
+core:modifiedTime
+	a owl:DatatypeProperty
+	rdfs: label "modifiedTime"@en ;
+	rdfs:comment "Specifies the time that this particular version of the object was modified. The object creator can use the time it deems most appropriate as the time this version of the object was modified. The value of the modified property for a given object version MUST be later than or equal to the value of the created property. Object creators MUST update the modified property when creating a new version of an object. The modified timestamp MUST be precise to the nearest millisecond (exactly three digits after the decimal place in seconds).@en-us ;
+	rdfs:range xsd:dateTime ;
+	.
+
 core:name
 	a owl:DatatypeProperty ;
 	rdfs:label "name"@en ;
@@ -436,4 +443,3 @@ core:value
 	rdfs:comment "A string value."@en ;
 	rdfs:range xsd:string ;
 	.
-
