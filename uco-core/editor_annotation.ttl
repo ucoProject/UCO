@@ -1,5 +1,6 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/core/editor-annotation
 
+@base <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation> .
 @prefix edt: <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,87 +8,94 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation>
-  rdf:type owl:Ontology ;
-  rdfs:comment """Editor Annotation ontology defines a set of annotations that provide guidance to the interpretation or generation of UCO specifications, content or interfaces.
+	a owl:Ontology ;
+	rdfs:label "Editor Annotation Ontology"@en-US ;
+	rdfs:comment "Editor Annotation ontology defines a set of annotations that provide guidance to the interpretation or generation of UCO specifications, content or interfaces." ;
+	owl:versionInfo "0.4.0" ;
+	.
 
-  rdfs:label "Editor Annotation Ontology"@en-US ;
-  owl:versionInfo "0.4.0"^^xsd:string ;
-.
 edt:abstract
-  rdf:type owl:AnnotationProperty ;
-  rdfs:comment "Specifies that the class on which this annotation is defined should be considered abstract and not be instantiated"@en-US ;
-  rdfs:isDefinedBy <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation> ;
-  rdfs:label "Editor Abstract"@en-US ;
-  rdfs:range xsd:boolean ;
-.
-edt:autoGenerate
-  rdf:type owl:AnnotationProperty ;
-  rdfs:comment """Specifies an annotation property that can be defined on data properties to indicate to the editor to automatically generate a value for the data property if there is currently no value specified.
+	a owl:AnnotationProperty ;
+	rdfs:label "Editor Abstract"@en-US ;
+	rdfs:comment "Specifies that the class on which this annotation is defined should be considered abstract and not be instantiated"@en-US ;
+	rdfs:isDefinedBy <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation> ;
+	rdfs:range xsd:boolean ;
+	.
 
-The value associated with an instance of the autoGenerate annotation property is based on the type of the data property on which it is defined.  For most types of data, a value of \"TRUE\" indicates to autogenerate a value.  A value of \"FALSE\" or if no value is specified will result in no generation of a value.  If the type of the data property is a string, the value associated for the autoGenerate annotation property must specify the format of the value to be provided.
+edt:autoGenerate
+	a owl:AnnotationProperty ;
+	rdfs:label "AutoGenerate"@en-US ;
+	rdfs:comment '''Specifies an annotation property that can be defined on data properties to indicate to the editor to automatically generate a value for the data property if there is currently no value specified.
+
+The value associated with an instance of the autoGenerate annotation property is based on the type of the data property on which it is defined.  For most types of data, a value of "TRUE" indicates to autogenerate a value.  A value of "FALSE" or if no value is specified will result in no generation of a value.  If the type of the data property is a string, the value associated for the autoGenerate annotation property must specify the format of the value to be provided.
 
 The following tag values for the autoGenerate annotation property are supported for data properties that has a range of xsd:string:
 
 	{@uuid()} generates Universally Unique Identifiers (UUID). {@en-US}
-    {@date()} generates the the current date in ISO 8601 format of \"YYYY-MM-DD\"
-    {@time()} generates the current time in ISO 8601 format of \"hh:mm:ss:nnnZ\"
-    {@dateTime()} generates the curent date and time in ISO 8601 format of \"YYYY-MM-DDThh:mm:ss:nnnZ\""""^^xsd:string ;
-  rdfs:label "AutoGenerate"@en-US ;
-  rdfs:range xsd:string ;
-.
+    {@date()} generates the the current date in ISO 8601 format of "YYYY-MM-DD"
+    {@time()} generates the current time in ISO 8601 format of "hh:mm:ss:nnnZ"
+    {@dateTime()} generates the curent date and time in ISO 8601 format of "YYYY-MM-DDThh:mm:ss:nnnZ"''' ;
+	rdfs:range xsd:string ;
+	.
+
 edt:displayNameTemplate
-  rdf:type owl:AnnotationProperty ;
-  rdfs:comment "Specifies a template used to define the format of the text to be displayed as a label to be displayed to a user when creating an instance of a class to which the annotation is attached."@en-US ;
-  rdfs:label "Display Name Template"@en-US ;
-  rdfs:range xsd:string ;
-.
+	a owl:AnnotationProperty ;
+	rdfs:label "Display Name Template"@en-US ;
+	rdfs:comment "Specifies a template used to define the format of the text to be displayed as a label to be displayed to a user when creating an instance of a class to which the annotation is attached."@en-US ;
+	rdfs:range xsd:string ;
+	.
+
 edt:identifierTemplate
-  rdf:type owl:AnnotationProperty ;
-  rdfs:comment "Specifies the template which describes the format of an identifier when creating a individual of the class to which the annotation is attached"@en-US ;
-  rdfs:label "Identifier Template"@en-US ;
-  rdfs:range xsd:string ;
-.
+	a owl:AnnotationProperty ;
+	rdfs:label "Identifier Template"@en-US ;
+	rdfs:comment "Specifies the template which describes the format of an identifier when creating a individual of the class to which the annotation is attached"@en-US ;
+	rdfs:range xsd:string ;
+	.
+
 edt:immutable
-  rdf:type owl:AnnotationProperty ;
-  rdfs:comment "Specifies that the property is immutable; one created it can't be changed."@en-US ;
-  rdfs:label "immutable"@en-US ;
-  rdfs:range xsd:boolean ;
-.
+	a owl:AnnotationProperty ;
+	rdfs:label "immutable"@en-US ;
+	rdfs:comment "Specifies that the property is immutable; one created it can't be changed."@en-US ;
+	rdfs:range xsd:boolean ;
+	.
 
 edt:relationship_details
-  rdf:type owl:AnnotationProperty ;
-  rdfs:comment """Specifies details about a relationship.
+	a owl:AnnotationProperty ;
+	rdfs:label "Relationship Details"@en-US ;
+	rdfs:comment """Specifies details about a relationship.
 
 The details are expressed in the format <relationship-type>:<target-object>(<relationship-attributes>), where <relationship-type> defines the type of relationship as expressed in the relationship_type property, the <target-object> is the type/class of the object that is the target of the relationship, and <relationship-attributes> defines an expression that control the key/value pairs used to populate the relationship_attributes property. If no <relationship-attributes> value is specified, then none SHOULD be supplied.
 
 The <relationship-attributes> can be expressed in a couple of different approaches: (1) as the name of a vocabulary from which the key names are to be taken  or a value to be used as the key_name property, followed by an equal sign ('='), followed by either a datatype of the value or a vocabulary from which to values are to be taken. Multiple attributes can be expressed, each with their own value representation, but MUST be comma (',') separated.
 
 If an open-vocabulary is specified for the key name and a custom value not contained in the vocabulary is to be used, the custom name SHOULD be all lowercase ASCII characters, where hypens ('-') MUST be used instead of whitespaces."""@en-US ;
-  rdfs:label "Relationship Details"@en-US ;
-  rdfs:range xsd:string ;
-.
+	rdfs:range xsd:string ;
+	.
+
 edt:typeIdentifier
-  rdf:type owl:AnnotationProperty ;
-  rdfs:comment "Specifies the identifier associated with the type of the entity."@en-US ;
-  rdfs:isDefinedBy ""^^xsd:string ;
-  rdfs:label "Type Identifier"@en-US ;
-  rdfs:range xsd:string ;
-.
+	a owl:AnnotationProperty ;
+	rdfs:label "Type Identifier"@en-US ;
+	rdfs:comment "Specifies the identifier associated with the type of the entity."@en-US ;
+	rdfs:isDefinedBy "" ;
+	rdfs:range xsd:string ;
+	.
+
 edt:typeUsage
-  rdf:type owl:AnnotationProperty ;
-  rdfs:comment """Specifies an indication as to how the class is used.
+	a owl:AnnotationProperty ;
+	rdfs:label "Type Usage"@en-US ;
+	rdfs:comment """Specifies an indication as to how the class is used.
 
 'Object' indicates the class should be treated as referenceable object; 'Complex-Datatype' indicates that the class represents a complex datatype composed of other types; 'Facet' indicates that the class represents an extension facet of an object that defines extension-specific additional properties beyond the base definition of the Object."""@en-US ;
-  rdfs:isDefinedBy ""^^xsd:string ;
-  rdfs:label "Type Usage"@en-US ;
-  rdfs:range [
-      rdf:type rdfs:Datatype ;
-      owl:oneOf (
-          "Object"^^xsd:string
-          "Complex-Datatype"^^xsd:string
-          "Dictionary"^^xsd:string
-          "Facet"^^xsd:string
-          "Relationship"^^xsd:string
-        ) ;
-    ] ;
-.
+	rdfs:isDefinedBy "" ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:oneOf (
+			"Object"
+			"Complex-Datatype"
+			"Dictionary"
+			"Facet"
+			"Relationship"
+		) ;
+	] ;
+	.
+
