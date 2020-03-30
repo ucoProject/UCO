@@ -187,6 +187,7 @@ action:ActionLifecycle
 
 action:ActionPattern
 	a owl:Class ;
+	rdfs:subClassOf action:Action ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/pattern#Pattern> ;
 	rdfs:label "ActionPattern"@en ;
 	rdfs:comment "A logical pattern of characteristic action property values."@en ;
@@ -400,4 +401,3 @@ action:value
 	rdfs:comment "The value of an action parameter."@en ;
 	rdfs:range xsd:string ;
 	.
-
