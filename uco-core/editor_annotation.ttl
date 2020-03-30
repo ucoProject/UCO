@@ -8,7 +8,7 @@
 
 <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation>
   rdf:type owl:Ontology ;
-  rdfs:comment """Editor Annotation ontology defines a set of annotations that provide guidance to the interpretation or generation of UCO specifications, content or interfaces.
+  rdfs:comment """Editor Annotation ontology defines a set of annotations that provide guidance to the interpretation or generation of UCO specifications, content or interfaces.""" ;
 
   rdfs:label "Editor Annotation Ontology"@en-US ;
   owl:versionInfo "0.4.0"^^xsd:string ;
