@@ -233,8 +233,7 @@ core:UcoObject
 		]
 		;
 	rdfs:label "UcoObject"@en ;
-	rdfs:comment """A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Unified Cyber Ontology (uco).
-"""@en ;
+	rdfs:comment "A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Unified Cyber Ontology (uco)."@en ;
 	.
 
 core:confidence
@@ -344,9 +343,9 @@ core:kindOfRelationship
 	.
 
 core:modifiedTime
-	a owl:DatatypeProperty
-	rdfs: label "modifiedTime"@en ;
-	rdfs:comment "Specifies the time that this particular version of the object was modified. The object creator can use the time it deems most appropriate as the time this version of the object was modified. The value of the modified property for a given object version MUST be later than or equal to the value of the created property. Object creators MUST update the modified property when creating a new version of an object. The modified timestamp MUST be precise to the nearest millisecond (exactly three digits after the decimal place in seconds).@en-us ;
+	a owl:DatatypeProperty ;
+	rdfs:label "modifiedTime"@en ;
+	rdfs:comment "Specifies the time that this particular version of the object was modified. The object creator can use the time it deems most appropriate as the time this version of the object was modified. The value of the modified property for a given object version MUST be later than or equal to the value of the created property. Object creators MUST update the modified property when creating a new version of an object. The modified timestamp MUST be precise to the nearest millisecond (exactly three digits after the decimal place in seconds)."@en-us ;
 	rdfs:range xsd:dateTime ;
 	.
 
