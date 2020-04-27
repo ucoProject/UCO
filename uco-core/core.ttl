@@ -442,3 +442,4 @@ core:value
 	rdfs:comment "A string value."@en ;
 	rdfs:range xsd:string ;
 	.
+
