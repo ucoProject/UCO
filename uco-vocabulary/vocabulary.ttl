@@ -1,8 +1,6 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/vocabulary
-# imports: https://unifiedcyberontology.org/ontology/uco/core/editor-annotation
 
 @base <https://unifiedcyberontology.org/ontology/uco/vocabulary> .
-@prefix edt: <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -12,7 +10,6 @@
 <https://unifiedcyberontology.org/ontology/uco/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "uco-vocabularies"@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/core/editor-annotation> ;
 	.
 
 vocab:AccountTypeVocab
@@ -30,7 +27,6 @@ vocab:AccountTypeVocab
 		"windows_domain"^^vocab:AccountTypeVocab
 		"windows_local"^^vocab:AccountTypeVocab
 	) ;
-	edt:typeIdentifier "account-type-ov" ;
 	.
 
 vocab:ActionArgumentNameVocab
@@ -92,7 +88,6 @@ vocab:ActionArgumentNameVocab
 		"Transfer Flags"^^vocab:ActionArgumentNameVocab
 		"Username"^^vocab:ActionArgumentNameVocab
 	) ;
-	edt:typeIdentifier "action-argument-name-ov" ;
 	.
 
 vocab:ActionNameVocab
@@ -284,7 +279,6 @@ vocab:ActionNameVocab
 		"Write to File"^^vocab:ActionNameVocab
 		"Write to Process Virtual Memory"^^vocab:ActionNameVocab
 	) ;
-	edt:typeIdentifier "action-name-ov" ;
 	.
 
 vocab:ActionRelationshipTypeVocab
@@ -302,7 +296,6 @@ vocab:ActionRelationshipTypeVocab
 		"Preceded_By"^^vocab:ActionRelationshipTypeVocab
 		"Related_To"^^vocab:ActionRelationshipTypeVocab
 	) ;
-	edt:typeIdentifier "action-relationship-type-ov" ;
 	.
 
 vocab:ActionStatusTypeVocab
@@ -320,7 +313,6 @@ vocab:ActionStatusTypeVocab
 		"Success"^^vocab:ActionStatusTypeVocab
 		"Unknown"^^vocab:ActionStatusTypeVocab
 	) ;
-	edt:typeIdentifier "action-status-type-ov" ;
 	.
 
 vocab:ActionTypeVocab
@@ -442,7 +434,6 @@ vocab:ActionTypeVocab
 		"Wipe/Destroy/Purge"^^vocab:ActionTypeVocab
 		"Write"^^vocab:ActionTypeVocab
 	) ;
-	edt:typeIdentifier "action-type-ov" ;
 	.
 
 vocab:BitnessVocab
@@ -455,7 +446,6 @@ vocab:BitnessVocab
 		"32"^^vocab:BitnessVocab
 		"64"^^vocab:BitnessVocab
 	) ;
-	edt:typeIdentifier "bitness-ov" ;
 	.
 
 vocab:CharacterEncodingVocab
@@ -479,7 +469,6 @@ vocab:CharacterEncodingVocab
 		"Windows-1257"^^vocab:CharacterEncodingVocab
 		"Windows-1258"^^vocab:CharacterEncodingVocab
 	) ;
-	edt:typeIdentifier "character-encoding-ov" ;
 	.
 
 vocab:CyberItemRelationshipVocab
@@ -626,7 +615,6 @@ vocab:CyberItemRelationshipVocab
 		"Written_To_By"^^vocab:CyberItemRelationshipVocab
 		"Wrote_To"^^vocab:CyberItemRelationshipVocab
 	) ;
-	edt:typeIdentifier "cyber-item-relationship-ov" ;
 	.
 
 vocab:CyberItemStateVocab
@@ -647,7 +635,6 @@ vocab:CyberItemStateVocab
 		"Stopped"^^vocab:CyberItemStateVocab
 		"Unlocked"^^vocab:CyberItemStateVocab
 	) ;
-	edt:typeIdentifier "cyber-item-state-ov" ;
 	.
 
 vocab:DiskTypeVocab
@@ -663,7 +650,6 @@ vocab:DiskTypeVocab
 		"Remote"^^vocab:DiskTypeVocab
 		"Removable"^^vocab:DiskTypeVocab
 	) ;
-	edt:typeIdentifier "disk-type-ov" ;
 	.
 
 vocab:EndiannessTypeVocab
@@ -677,7 +663,6 @@ vocab:EndiannessTypeVocab
 		"Little-endian"^^vocab:EndiannessTypeVocab
 		"Middle-endian"^^vocab:EndiannessTypeVocab
 	) ;
-	edt:typeIdentifier "endianness-type-ov" ;
 	.
 
 vocab:HashNameVocab
@@ -696,7 +681,6 @@ vocab:HashNameVocab
 		"SHA512"^^vocab:HashNameVocab
 		"SSDEEP"^^vocab:HashNameVocab
 	) ;
-	edt:typeIdentifier "hash-name-ov" ;
 	.
 
 vocab:InvestigationFormVocab
@@ -710,7 +694,6 @@ vocab:InvestigationFormVocab
 		"incident"^^vocab:InvestigationFormVocab
 		"suspicious-activity"^^vocab:InvestigationFormVocab
 	) ;
-	edt:typeIdentifier "investigation-form-ov" ;
 	.
 
 vocab:LibraryTypeVocab
@@ -726,7 +709,6 @@ vocab:LibraryTypeVocab
 		"Shared"^^vocab:LibraryTypeVocab
 		"Static"^^vocab:LibraryTypeVocab
 	) ;
-	edt:typeIdentifier "library-type-ov" ;
 	.
 
 vocab:MemoryBlockTypeVocab
@@ -742,7 +724,6 @@ vocab:MemoryBlockTypeVocab
 		"Overlay"^^vocab:MemoryBlockTypeVocab
 		"Uninitialized"^^vocab:MemoryBlockTypeVocab
 	) ;
-	edt:typeIdentifier "memory-block-type-ov" ;
 	.
 
 vocab:PartitionTypeVocab
@@ -772,7 +753,6 @@ vocab:PartitionTypeVocab
 		"UNKNOWN"^^vocab:PartitionTypeVocab
 		"VALID_NTFT"^^vocab:PartitionTypeVocab
 	) ;
-	edt:typeIdentifier "partition-type-ov" ;
 	.
 
 vocab:ProcessorArchVocab
@@ -795,7 +775,6 @@ vocab:ProcessorArchVocab
 		"x86-64"^^vocab:ProcessorArchVocab
 		"z/Architecture"^^vocab:ProcessorArchVocab
 	) ;
-	edt:typeIdentifier "processor-architecture-ov" ;
 	.
 
 vocab:RegionalRegistryTypeVocab
@@ -811,7 +790,6 @@ vocab:RegionalRegistryTypeVocab
 		"LACNIC"^^vocab:RegionalRegistryTypeVocab
 		"RIPE NCC"^^vocab:RegionalRegistryTypeVocab
 	) ;
-	edt:typeIdentifier "regional-registry-type-ov" ;
 	.
 
 vocab:RegistryDatatypeVocab
@@ -834,7 +812,6 @@ vocab:RegistryDatatypeVocab
 		"reg_resource_requirements_list"^^vocab:RegistryDatatypeVocab
 		"reg_sz"^^vocab:RegistryDatatypeVocab
 	) ;
-	edt:typeIdentifier "registry-datatype-ov" ;
 	.
 
 vocab:SIMFormVocab
@@ -848,7 +825,6 @@ vocab:SIMFormVocab
 		"Micro SIM"^^vocab:SIMFormVocab
 		"Nano SIM"^^vocab:SIMFormVocab
 	) ;
-	edt:typeIdentifier "sim-form-ov" ;
 	.
 
 vocab:SIMTypeVocab
@@ -862,7 +838,6 @@ vocab:SIMTypeVocab
 		"UICC"^^vocab:SIMTypeVocab
 		"USIM"^^vocab:SIMTypeVocab
 	) ;
-	edt:typeIdentifier "sim-type-ov" ;
 	.
 
 vocab:TaskActionTypeVocab
@@ -877,7 +852,6 @@ vocab:TaskActionTypeVocab
 		"TASK_ACTION_SEND_EMAIL"^^vocab:TaskActionTypeVocab
 		"TASK_ACTION_SHOW_MESSAGE"^^vocab:TaskActionTypeVocab
 	) ;
-	edt:typeIdentifier "task-action-type-ov" ;
 	.
 
 vocab:TaskFlagVocab
@@ -901,7 +875,6 @@ vocab:TaskFlagVocab
 		"TASK_FLAG_SYSTEM_REQUIRED"^^vocab:TaskFlagVocab
 		"TASK_FLAG_ZERO"^^vocab:TaskFlagVocab
 	) ;
-	edt:typeIdentifier "task-flag-ov" ;
 	.
 
 vocab:TaskPriorityVocab
@@ -918,7 +891,6 @@ vocab:TaskPriorityVocab
 		"NORMAL_PRIORITY_CLASS"^^vocab:TaskPriorityVocab
 		"REALTIME_PRIORITY_CLASS"^^vocab:TaskPriorityVocab
 	) ;
-	edt:typeIdentifier "task-priority-ov" ;
 	.
 
 vocab:TaskStatusVocab
@@ -953,7 +925,6 @@ vocab:TaskStatusVocab
 		"TASK_STATE_QUEUED"^^vocab:TaskStatusVocab
 		"TASK_STATE_UNKNOWN"^^vocab:TaskStatusVocab
 	) ;
-	edt:typeIdentifier "task-status-ov" ;
 	.
 
 vocab:ThreadRunningStatusVocab
@@ -972,7 +943,6 @@ vocab:ThreadRunningStatusVocab
 		"Unknown"^^vocab:ThreadRunningStatusVocab
 		"Waiting"^^vocab:ThreadRunningStatusVocab
 	) ;
-	edt:typeIdentifier "thread-running-status-ov" ;
 	.
 
 vocab:TimestampPrecisionVocab
@@ -989,7 +959,6 @@ vocab:TimestampPrecisionVocab
 		"second"^^vocab:TimestampPrecisionVocab
 		"year"^^vocab:TimestampPrecisionVocab
 	) ;
-	edt:typeIdentifier "timestamp-precision-ov" ;
 	.
 
 vocab:TrendVocab
@@ -1002,7 +971,6 @@ vocab:TrendVocab
 		"Decreasing"^^vocab:TrendVocab
 		"Increasing"^^vocab:TrendVocab
 	) ;
-	edt:typeIdentifier "trend-ov" ;
 	.
 
 vocab:TriggerFrequencyVocab
@@ -1021,7 +989,6 @@ vocab:TriggerFrequencyVocab
 		"TASK_TIME_TRIGGER_ONCE"^^vocab:TriggerFrequencyVocab
 		"TASK_TIME_TRIGGER_WEEKLY"^^vocab:TriggerFrequencyVocab
 	) ;
-	edt:typeIdentifier "trigger-frequency-ov" ;
 	.
 
 vocab:TriggerTypeVocab
@@ -1039,7 +1006,6 @@ vocab:TriggerTypeVocab
 		"TASK_TRIGGER_SESSION_STATE_CHANGE"^^vocab:TriggerTypeVocab
 		"TASK_TRIGGER_TIME"^^vocab:TriggerTypeVocab
 	) ;
-	edt:typeIdentifier "trigger-type-ov" ;
 	.
 
 vocab:UnixProcessStateVocab
@@ -1057,7 +1023,6 @@ vocab:UnixProcessStateVocab
 		"UninterruptibleSleep"^^vocab:UnixProcessStateVocab
 		"Zombie"^^vocab:UnixProcessStateVocab
 	) ;
-	edt:typeIdentifier "unix-process-state-ov" ;
 	.
 
 vocab:WhoisContactTypeVocab
@@ -1071,7 +1036,6 @@ vocab:WhoisContactTypeVocab
 		"BILLING"^^vocab:WhoisContactTypeVocab
 		"TECHNICAL"^^vocab:WhoisContactTypeVocab
 	) ;
-	edt:typeIdentifier "whois-contact-type-ov" ;
 	.
 
 vocab:WhoisDNSSECTypeVocab
@@ -1084,7 +1048,6 @@ vocab:WhoisDNSSECTypeVocab
 		"Signed"^^vocab:WhoisDNSSECTypeVocab
 		"Unsigned"^^vocab:WhoisDNSSECTypeVocab
 	) ;
-	edt:typeIdentifier "whois-dnssec-type-ov" ;
 	.
 
 vocab:WhoisStatusTypeVocab
@@ -1114,7 +1077,6 @@ vocab:WhoisStatusTypeVocab
 		"TRANSFER_PROHIBITED"^^vocab:WhoisStatusTypeVocab
 		"UPDATE_PROHIBITED"^^vocab:WhoisStatusTypeVocab
 	) ;
-	edt:typeIdentifier "whois-status-type-ov" ;
 	.
 
 vocab:WindowsDriveTypeVocab
@@ -1132,7 +1094,6 @@ vocab:WindowsDriveTypeVocab
 		"DRIVE_REMOVABLE"^^vocab:WindowsDriveTypeVocab
 		"DRIVE_UNKNOWN"^^vocab:WindowsDriveTypeVocab
 	) ;
-	edt:typeIdentifier "windows-drive-type-ov" ;
 	.
 
 vocab:WindowsVolumeAttributeVocab
@@ -1147,6 +1108,5 @@ vocab:WindowsVolumeAttributeVocab
 		"ReadOnly"^^vocab:WindowsVolumeAttributeVocab
 		"ShadowCopy"^^vocab:WindowsVolumeAttributeVocab
 	) ;
-	edt:typeIdentifier "windows-volume-attribute-ov" ;
 	.
 
