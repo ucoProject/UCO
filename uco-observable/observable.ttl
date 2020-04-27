@@ -2562,24 +2562,24 @@ observable:Observable
 """@en ;
 	.
 
-	observable:Observation
-		a owl:Class ;
-		rdfs:subClassOf
-			<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
-			[
-				a owl:Restriction ;
-				owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
-				owl:cardinality "1"^^xsd:nonNegativeInteger ;
-			] ,
-			[
-				a owl:Restriction ;
-				owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
-				owl:hasValue "observe" ;
-			]
-			;
-		rdfs:label "Observation"@en ;
-		rdfs:comment "An observation of something."@en ;
-		.
+observable:Observation
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:hasValue "observe" ;
+		]
+		;
+	rdfs:label "Observation"@en ;
+	rdfs:comment "An observation of something."@en ;
+	.
 
 observable:OperatingSystem
 	a owl:Class ;
@@ -4255,13 +4255,13 @@ observable:WindowsTask
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:taskComment ;
+			owl:onProperty observable:parameters ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:parameters ;
+			owl:onProperty observable:taskComment ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -5556,7 +5556,6 @@ observable:eventType
 	a owl:DatatypeProperty ;
 	rdfs:label "eventType"@en ;
 	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
-	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5633,7 +5632,6 @@ observable:extDeletionTime
 	a owl:DatatypeProperty ;
 	rdfs:label "extDeletionTime"@en ;
 	rdfs:comment "Specifies the time at which the file represented by an Inode was 'deleted'."@en ;
-	rdfs:comment "Specifies the time at which the file represented by an Inode was 'deleted'."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5689,7 +5687,6 @@ observable:extSGID
 observable:extSUID
 	a owl:DatatypeProperty ;
 	rdfs:label "extSUID"@en ;
-	rdfs:comment "Specifies the user ID that 'owns' the file represented by an Inode."@en ;
 	rdfs:comment "Specifies the user ID that 'owns' the file represented by an Inode."@en ;
 	rdfs:range xsd:integer ;
 	.
@@ -6720,13 +6717,6 @@ observable:oldObject
 	rdfs:range observable:CyberItem ;
 	.
 
-observable:taskComment
-	a owl:DatatypeProperty ;
-	rdfs:label "taskComment"@en ;
-	rdfs:comment "Specifies a comment for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381232(v=vs.85).aspx."@en ;
-	rdfs:range xsd:string ;
-	.
-
 observable:openFileDescriptor
 	a owl:DatatypeProperty ;
 	rdfs:label "openFileDescriptor"@en ;
@@ -6917,18 +6907,18 @@ observable:pictureHeight
 	rdfs:range xsd:integer ;
 	.
 
-observable:pictureWidth
-	a owl:DatatypeProperty ;
-	rdfs:label "pictureWidth"@en ;
-	rdfs:comment "The width of the picture in pixels."@en ;
-	rdfs:range xsd:integer ;
-	.
-
 observable:pictureType
 	a owl:DatatypeProperty ;
 	rdfs:label "pictureType"@en ;
 	rdfs:comment "The type of a picture, for example a thumbnail."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:pictureWidth
+	a owl:DatatypeProperty ;
+	rdfs:label "pictureWidth"@en ;
+	rdfs:comment "The width of the picture in pixels."@en ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:pid
@@ -7686,6 +7676,13 @@ observable:targetFile
 	rdfs:range observable:CyberItem ;
 	.
 
+observable:taskComment
+	a owl:DatatypeProperty ;
+	rdfs:label "taskComment"@en ;
+	rdfs:comment "Specifies a comment for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381232(v=vs.85).aspx."@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:taskCreator
 	a owl:DatatypeProperty ;
 	rdfs:label "taskCreator"@en ;
@@ -7994,3 +7991,4 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:CyberItem ;
 	.
+
