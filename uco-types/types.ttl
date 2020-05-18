@@ -1,17 +1,23 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/types
 # imports: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/types> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
+@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ;
+	owl:imports
+		<https://unifiedcyberontology.org/ontology/uco/core> ,
+		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+		;
+	owl:versionInfo "0.4.0" ;
 	.
 
 types:ControlledDictionary
@@ -114,7 +120,6 @@ types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
 	rdfs:comment "A dictionary entry."@en ;
-	rdfs:domain types:Dictionary ;
 	rdfs:range types:DictionaryEntry ;
 	.
 
@@ -122,15 +127,13 @@ types:hashMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "hashMethod"@en ;
 	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
-	rdfs:domain types:Hash ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#HashNameEnum> ;
+	rdfs:range vocab:HashNameVocab ;
 	.
 
 types:hashValue
 	a owl:DatatypeProperty ;
 	rdfs:label "hashValue"@en ;
 	rdfs:comment "A cryptographic hash value."@en ;
-	rdfs:domain types:Hash ;
 	rdfs:range xsd:hexBinary ;
 	.
 
@@ -138,7 +141,6 @@ types:key
 	a owl:DatatypeProperty ;
 	rdfs:label "key"@en ;
 	rdfs:comment "A key property of a single dictionary entry."@en ;
-	rdfs:domain types:ControlledDictionaryEntry ;
 	rdfs:range xsd:string ;
 	.
 
@@ -146,7 +148,6 @@ types:value
 	a owl:DatatypeProperty ;
 	rdfs:label "value"@en ;
 	rdfs:comment "A specific property value."@en ;
-	rdfs:domain types:ControlledDictionaryEntry ;
 	rdfs:range xsd:string ;
 	.
 

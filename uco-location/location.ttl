@@ -130,7 +130,6 @@ location:addressType
 	a owl:DatatypeProperty ;
 	rdfs:label "addressType"@en ;
 	rdfs:comment "The type of the address, for instance home or work."@en ;
-	rdfs:domain location:SimpleAddress ;
 	rdfs:range xsd:string ;
 	.
 
@@ -138,7 +137,6 @@ location:altitude
 	a owl:DatatypeProperty ;
 	rdfs:label "altitude"@en ;
 	rdfs:comment "The altitude coordinate of a geolocation."@en ;
-	rdfs:domain location:LatLongCoordinates ;
 	rdfs:range xsd:decimal ;
 	.
 
@@ -146,7 +144,6 @@ location:country
 	a owl:DatatypeProperty ;
 	rdfs:label "country"@en ;
 	rdfs:comment "The name of the geolocation country."@en ;
-	rdfs:domain location:SimpleAddress ;
 	rdfs:range xsd:string ;
 	.
 
@@ -154,7 +151,6 @@ location:hdop
 	a owl:DatatypeProperty ;
 	rdfs:label "hdop"@en ;
 	rdfs:comment "The horizontal dilution of precision of the GPS location."@en ;
-	rdfs:domain location:GPSCoordinates ;
 	rdfs:range xsd:double ;
 	.
 
@@ -162,7 +158,6 @@ location:latitude
 	a owl:DatatypeProperty ;
 	rdfs:label "latitude"@en ;
 	rdfs:comment "The latitude coordinate of a geolocation."@en ;
-	rdfs:domain location:LatLongCoordinates ;
 	rdfs:range xsd:decimal ;
 	.
 
@@ -170,7 +165,6 @@ location:locality
 	a owl:DatatypeProperty ;
 	rdfs:label "locality"@en ;
 	rdfs:comment "The name of the geolocation locality (e.g., city)."@en ;
-	rdfs:domain location:SimpleAddress ;
 	rdfs:range xsd:string ;
 	.
 
@@ -178,7 +172,6 @@ location:longitude
 	a owl:DatatypeProperty ;
 	rdfs:label "longitude"@en ;
 	rdfs:comment "The longitude coordinate of a geolocation."@en ;
-	rdfs:domain location:LatLongCoordinates ;
 	rdfs:range xsd:decimal ;
 	.
 
@@ -186,7 +179,6 @@ location:pdop
 	a owl:DatatypeProperty ;
 	rdfs:label "pdop"@en ;
 	rdfs:comment "The positional (3D) dilution of precision of the GPS location."@en ;
-	rdfs:domain location:GPSCoordinates ;
 	rdfs:range xsd:double ;
 	.
 
@@ -194,7 +186,6 @@ location:postalCode
 	a owl:DatatypeProperty ;
 	rdfs:label "postalCode"@en ;
 	rdfs:comment "The zip-code."@en ;
-	rdfs:domain location:SimpleAddress ;
 	rdfs:range xsd:string ;
 	.
 
@@ -202,7 +193,6 @@ location:region
 	a owl:DatatypeProperty ;
 	rdfs:label "region"@en ;
 	rdfs:comment "The name of the geolocation region (e.g., state)."@en ;
-	rdfs:domain location:SimpleAddress ;
 	rdfs:range xsd:string ;
 	.
 
@@ -210,7 +200,6 @@ location:street
 	a owl:DatatypeProperty ;
 	rdfs:label "street"@en ;
 	rdfs:comment "The name of the street."@en ;
-	rdfs:domain location:SimpleAddress ;
 	rdfs:range xsd:string ;
 	.
 
@@ -218,7 +207,6 @@ location:tdop
 	a owl:DatatypeProperty ;
 	rdfs:label "tdop"@en ;
 	rdfs:comment "The temporal dilution of precision of the GPS location."@en ;
-	rdfs:domain location:GPSCoordinates ;
 	rdfs:range xsd:double ;
 	.
 
@@ -226,7 +214,6 @@ location:vdop
 	a owl:DatatypeProperty ;
 	rdfs:label "vdop"@en ;
 	rdfs:comment "The vertical dilution of precision of the GPS location."@en ;
-	rdfs:domain location:GPSCoordinates ;
 	rdfs:range xsd:double ;
 	.
 

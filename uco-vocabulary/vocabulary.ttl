@@ -1,0 +1,1075 @@
+# baseURI: https://unifiedcyberontology.org/ontology/uco/vocabulary
+
+@base <https://unifiedcyberontology.org/ontology/uco/vocabulary> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+	a owl:Ontology ;
+	rdfs:label "uco-vocabularies"@en ;
+	.
+
+vocab:AccountTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Account Type Vocabulary"@en-US ;
+	owl:oneOf (
+		"ldap"^^vocab:AccountTypeVocab
+		"nis"^^vocab:AccountTypeVocab
+		"openid"^^vocab:AccountTypeVocab
+		"radius"^^vocab:AccountTypeVocab
+		"tacacs"^^vocab:AccountTypeVocab
+		"unix"^^vocab:AccountTypeVocab
+		"windows_domain"^^vocab:AccountTypeVocab
+		"windows_local"^^vocab:AccountTypeVocab
+	) ;
+	.
+
+vocab:ActionArgumentNameVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Action Argument Name Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary for common arguments of cyber actions."@en ;
+	owl:oneOf (
+		"APC Address"^^vocab:ActionArgumentNameVocab
+		"APC Mode"^^vocab:ActionArgumentNameVocab
+		"API"^^vocab:ActionArgumentNameVocab
+		"Access Mode"^^vocab:ActionArgumentNameVocab
+		"Application Name"^^vocab:ActionArgumentNameVocab
+		"Base Address"^^vocab:ActionArgumentNameVocab
+		"Callback Address"^^vocab:ActionArgumentNameVocab
+		"Code Address"^^vocab:ActionArgumentNameVocab
+		"Command"^^vocab:ActionArgumentNameVocab
+		"Control Code"^^vocab:ActionArgumentNameVocab
+		"Control Parameter"^^vocab:ActionArgumentNameVocab
+		"Creation Flags"^^vocab:ActionArgumentNameVocab
+		"Database Name"^^vocab:ActionArgumentNameVocab
+		"Delay Time (ms)"^^vocab:ActionArgumentNameVocab
+		"Destination Address"^^vocab:ActionArgumentNameVocab
+		"Error Control"^^vocab:ActionArgumentNameVocab
+		"File Information Class"^^vocab:ActionArgumentNameVocab
+		"Flags"^^vocab:ActionArgumentNameVocab
+		"Function Address"^^vocab:ActionArgumentNameVocab
+		"Function Name"^^vocab:ActionArgumentNameVocab
+		"Function Ordinal"^^vocab:ActionArgumentNameVocab
+		"Hook Type"^^vocab:ActionArgumentNameVocab
+		"Host Name"^^vocab:ActionArgumentNameVocab
+		"Hostname"^^vocab:ActionArgumentNameVocab
+		"Initial Owner"^^vocab:ActionArgumentNameVocab
+		"Mapping Offset"^^vocab:ActionArgumentNameVocab
+		"Number of Bytes Per Send"^^vocab:ActionArgumentNameVocab
+		"Options"^^vocab:ActionArgumentNameVocab
+		"Parameter Address"^^vocab:ActionArgumentNameVocab
+		"Password"^^vocab:ActionArgumentNameVocab
+		"Privilege Name"^^vocab:ActionArgumentNameVocab
+		"Protection"^^vocab:ActionArgumentNameVocab
+		"Proxy Bypass"^^vocab:ActionArgumentNameVocab
+		"Proxy Name"^^vocab:ActionArgumentNameVocab
+		"Reason"^^vocab:ActionArgumentNameVocab
+		"Request Size"^^vocab:ActionArgumentNameVocab
+		"Requested Version"^^vocab:ActionArgumentNameVocab
+		"Server"^^vocab:ActionArgumentNameVocab
+		"Service Name"^^vocab:ActionArgumentNameVocab
+		"Service State"^^vocab:ActionArgumentNameVocab
+		"Service Type"^^vocab:ActionArgumentNameVocab
+		"Share Mode"^^vocab:ActionArgumentNameVocab
+		"Shutdown Flag"^^vocab:ActionArgumentNameVocab
+		"Size (bytes)"^^vocab:ActionArgumentNameVocab
+		"Sleep Time (ms)"^^vocab:ActionArgumentNameVocab
+		"Source Address"^^vocab:ActionArgumentNameVocab
+		"Starting Address"^^vocab:ActionArgumentNameVocab
+		"System Metric Index"^^vocab:ActionArgumentNameVocab
+		"Target PID"^^vocab:ActionArgumentNameVocab
+		"Transfer Flags"^^vocab:ActionArgumentNameVocab
+		"Username"^^vocab:ActionArgumentNameVocab
+	) ;
+	.
+
+vocab:ActionNameVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Action Name Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of common specific cyber action names."@en ;
+	owl:oneOf (
+		"Accept Socket Connection"^^vocab:ActionNameVocab
+		"Add Connection to Network Share"^^vocab:ActionNameVocab
+		"Add Network Share"^^vocab:ActionNameVocab
+		"Add Scheduled Task"^^vocab:ActionNameVocab
+		"Add System Call Hook"^^vocab:ActionNameVocab
+		"Add User"^^vocab:ActionNameVocab
+		"Add Windows Hook"^^vocab:ActionNameVocab
+		"Allocate Virtual Memory in Process"^^vocab:ActionNameVocab
+		"Bind Address to Socket"^^vocab:ActionNameVocab
+		"Change Service Configuration"^^vocab:ActionNameVocab
+		"Check for Remote Debugger"^^vocab:ActionNameVocab
+		"Close Port"^^vocab:ActionNameVocab
+		"Close Registry Key"^^vocab:ActionNameVocab
+		"Close Socket"^^vocab:ActionNameVocab
+		"Configure Service"^^vocab:ActionNameVocab
+		"Connect to IP"^^vocab:ActionNameVocab
+		"Connect to Named Pipe"^^vocab:ActionNameVocab
+		"Connect to Network Share"^^vocab:ActionNameVocab
+		"Connect to Socket"^^vocab:ActionNameVocab
+		"Connect to URL"^^vocab:ActionNameVocab
+		"Control Driver"^^vocab:ActionNameVocab
+		"Control Service"^^vocab:ActionNameVocab
+		"Copy File"^^vocab:ActionNameVocab
+		"Create Dialog Box"^^vocab:ActionNameVocab
+		"Create Directory"^^vocab:ActionNameVocab
+		"Create Event"^^vocab:ActionNameVocab
+		"Create File"^^vocab:ActionNameVocab
+		"Create File Alternate Data Stream"^^vocab:ActionNameVocab
+		"Create File Mapping"^^vocab:ActionNameVocab
+		"Create File Symbolic Link"^^vocab:ActionNameVocab
+		"Create Hidden File"^^vocab:ActionNameVocab
+		"Create Mailslot"^^vocab:ActionNameVocab
+		"Create Module"^^vocab:ActionNameVocab
+		"Create Mutex"^^vocab:ActionNameVocab
+		"Create Named Pipe"^^vocab:ActionNameVocab
+		"Create Process"^^vocab:ActionNameVocab
+		"Create Process as User"^^vocab:ActionNameVocab
+		"Create Registry Key"^^vocab:ActionNameVocab
+		"Create Registry Key Value"^^vocab:ActionNameVocab
+		"Create Remote Thread in Process"^^vocab:ActionNameVocab
+		"Create Service"^^vocab:ActionNameVocab
+		"Create Socket"^^vocab:ActionNameVocab
+		"Create Symbolic Link"^^vocab:ActionNameVocab
+		"Create Thread"^^vocab:ActionNameVocab
+		"Create Window"^^vocab:ActionNameVocab
+		"Delete Directory"^^vocab:ActionNameVocab
+		"Delete File"^^vocab:ActionNameVocab
+		"Delete Named Pipe"^^vocab:ActionNameVocab
+		"Delete Network Share"^^vocab:ActionNameVocab
+		"Delete Registry Key"^^vocab:ActionNameVocab
+		"Delete Registry Key Value"^^vocab:ActionNameVocab
+		"Delete Service"^^vocab:ActionNameVocab
+		"Delete User"^^vocab:ActionNameVocab
+		"Disconnect from Named Pipe"^^vocab:ActionNameVocab
+		"Disconnect from Network Share"^^vocab:ActionNameVocab
+		"Disconnect from Socket"^^vocab:ActionNameVocab
+		"Download File"^^vocab:ActionNameVocab
+		"Enumerate DLLs"^^vocab:ActionNameVocab
+		"Enumerate Network Shares"^^vocab:ActionNameVocab
+		"Enumerate Processes"^^vocab:ActionNameVocab
+		"Enumerate Protocols"^^vocab:ActionNameVocab
+		"Enumerate Registry Key Subkeys"^^vocab:ActionNameVocab
+		"Enumerate Registry Key Values"^^vocab:ActionNameVocab
+		"Enumerate Services"^^vocab:ActionNameVocab
+		"Enumerate System Handles"^^vocab:ActionNameVocab
+		"Enumerate Threads"^^vocab:ActionNameVocab
+		"Enumerate Threads in Process"^^vocab:ActionNameVocab
+		"Enumerate Users"^^vocab:ActionNameVocab
+		"Enumerate Windows"^^vocab:ActionNameVocab
+		"Find File"^^vocab:ActionNameVocab
+		"Find Window"^^vocab:ActionNameVocab
+		"Flush Process Instruction Cache"^^vocab:ActionNameVocab
+		"Free Library"^^vocab:ActionNameVocab
+		"Free Process Virtual Memory"^^vocab:ActionNameVocab
+		"Get Disk Free Space"^^vocab:ActionNameVocab
+		"Get Disk Type"^^vocab:ActionNameVocab
+		"Get Elapsed System Up Time"^^vocab:ActionNameVocab
+		"Get File Attributes"^^vocab:ActionNameVocab
+		"Get Function Address"^^vocab:ActionNameVocab
+		"Get Host By Address"^^vocab:ActionNameVocab
+		"Get Host By Name"^^vocab:ActionNameVocab
+		"Get Host Name"^^vocab:ActionNameVocab
+		"Get Library File Name"^^vocab:ActionNameVocab
+		"Get Library Handle"^^vocab:ActionNameVocab
+		"Get NetBIOS Name"^^vocab:ActionNameVocab
+		"Get Process Current Directory"^^vocab:ActionNameVocab
+		"Get Process Environment Variable"^^vocab:ActionNameVocab
+		"Get Process Startup Information"^^vocab:ActionNameVocab
+		"Get Processes Snapshot"^^vocab:ActionNameVocab
+		"Get Registry Key Attributes"^^vocab:ActionNameVocab
+		"Get Service Status"^^vocab:ActionNameVocab
+		"Get System Global Flags"^^vocab:ActionNameVocab
+		"Get System Host Name"^^vocab:ActionNameVocab
+		"Get System Local Time"^^vocab:ActionNameVocab
+		"Get System NetBIOS Name"^^vocab:ActionNameVocab
+		"Get System Network Parameters"^^vocab:ActionNameVocab
+		"Get System Time"^^vocab:ActionNameVocab
+		"Get Thread Context"^^vocab:ActionNameVocab
+		"Get Thread Username"^^vocab:ActionNameVocab
+		"Get User Attributes"^^vocab:ActionNameVocab
+		"Get Username"^^vocab:ActionNameVocab
+		"Get Windows Directory"^^vocab:ActionNameVocab
+		"Get Windows System Directory"^^vocab:ActionNameVocab
+		"Get Windows Temporary Files Directory"^^vocab:ActionNameVocab
+		"Hide Window"^^vocab:ActionNameVocab
+		"Impersonate Process"^^vocab:ActionNameVocab
+		"Impersonate Thread"^^vocab:ActionNameVocab
+		"Inject Memory Page"^^vocab:ActionNameVocab
+		"Kill Process"^^vocab:ActionNameVocab
+		"Kill Thread"^^vocab:ActionNameVocab
+		"Kill Window"^^vocab:ActionNameVocab
+		"Listen on Port"^^vocab:ActionNameVocab
+		"Listen on Socket"^^vocab:ActionNameVocab
+		"Load Driver"^^vocab:ActionNameVocab
+		"Load Library"^^vocab:ActionNameVocab
+		"Load Module"^^vocab:ActionNameVocab
+		"Load and Call Driver"^^vocab:ActionNameVocab
+		"Lock File"^^vocab:ActionNameVocab
+		"Logon as User"^^vocab:ActionNameVocab
+		"Map File"^^vocab:ActionNameVocab
+		"Map Library"^^vocab:ActionNameVocab
+		"Map View of File"^^vocab:ActionNameVocab
+		"Modify File"^^vocab:ActionNameVocab
+		"Modify Named Pipe"^^vocab:ActionNameVocab
+		"Modify Process"^^vocab:ActionNameVocab
+		"Modify Registry Key"^^vocab:ActionNameVocab
+		"Modify Registry Key Value"^^vocab:ActionNameVocab
+		"Modify Service"^^vocab:ActionNameVocab
+		"Monitor Registry Key"^^vocab:ActionNameVocab
+		"Move File"^^vocab:ActionNameVocab
+		"Open File"^^vocab:ActionNameVocab
+		"Open File Mapping"^^vocab:ActionNameVocab
+		"Open Mutex"^^vocab:ActionNameVocab
+		"Open Port"^^vocab:ActionNameVocab
+		"Open Process"^^vocab:ActionNameVocab
+		"Open Registry Key"^^vocab:ActionNameVocab
+		"Open Service"^^vocab:ActionNameVocab
+		"Open Service Control Manager"^^vocab:ActionNameVocab
+		"Protect Virtual Memory"^^vocab:ActionNameVocab
+		"Query DNS"^^vocab:ActionNameVocab
+		"Query Disk Attributes"^^vocab:ActionNameVocab
+		"Query Process Virtual Memory"^^vocab:ActionNameVocab
+		"Queue APC in Thread"^^vocab:ActionNameVocab
+		"Read File"^^vocab:ActionNameVocab
+		"Read From Named Pipe"^^vocab:ActionNameVocab
+		"Read From Process Memory"^^vocab:ActionNameVocab
+		"Read Registry Key Value"^^vocab:ActionNameVocab
+		"Receive Data on Socket"^^vocab:ActionNameVocab
+		"Receive Email Message"^^vocab:ActionNameVocab
+		"Release Mutex"^^vocab:ActionNameVocab
+		"Rename File"^^vocab:ActionNameVocab
+		"Revert Thread to Self"^^vocab:ActionNameVocab
+		"Send Control Code to File"^^vocab:ActionNameVocab
+		"Send Control Code to Pipe"^^vocab:ActionNameVocab
+		"Send Control Code to Service"^^vocab:ActionNameVocab
+		"Send DNS Query"^^vocab:ActionNameVocab
+		"Send Data on Socket"^^vocab:ActionNameVocab
+		"Send Data to Address on Socket"^^vocab:ActionNameVocab
+		"Send Email Message"^^vocab:ActionNameVocab
+		"Send ICMP Request"^^vocab:ActionNameVocab
+		"Send Reverse DNS Query"^^vocab:ActionNameVocab
+		"Set File Attributes"^^vocab:ActionNameVocab
+		"Set NetBIOS Name"^^vocab:ActionNameVocab
+		"Set Process Current Directory"^^vocab:ActionNameVocab
+		"Set Process Environment Variable"^^vocab:ActionNameVocab
+		"Set System Global Flags"^^vocab:ActionNameVocab
+		"Set System Host Name"^^vocab:ActionNameVocab
+		"Set System Time"^^vocab:ActionNameVocab
+		"Set Thread Context"^^vocab:ActionNameVocab
+		"Show Window"^^vocab:ActionNameVocab
+		"Shutdown System"^^vocab:ActionNameVocab
+		"Sleep Process"^^vocab:ActionNameVocab
+		"Sleep System"^^vocab:ActionNameVocab
+		"Start Service"^^vocab:ActionNameVocab
+		"Unload Driver"^^vocab:ActionNameVocab
+		"Unload Module"^^vocab:ActionNameVocab
+		"Unlock File"^^vocab:ActionNameVocab
+		"Unmap File"^^vocab:ActionNameVocab
+		"Upload File"^^vocab:ActionNameVocab
+		"Write to File"^^vocab:ActionNameVocab
+		"Write to Process Virtual Memory"^^vocab:ActionNameVocab
+	) ;
+	.
+
+vocab:ActionRelationshipTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Action Relationship Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary for capturing types of relationships between actions."@en-US ;
+	owl:oneOf (
+		"Dependent_On"^^vocab:ActionRelationshipTypeVocab
+		"Equivalent_To"^^vocab:ActionRelationshipTypeVocab
+		"Followed_By"^^vocab:ActionRelationshipTypeVocab
+		"Initiated"^^vocab:ActionRelationshipTypeVocab
+		"Initiated_By"^^vocab:ActionRelationshipTypeVocab
+		"Preceded_By"^^vocab:ActionRelationshipTypeVocab
+		"Related_To"^^vocab:ActionRelationshipTypeVocab
+	) ;
+	.
+
+vocab:ActionStatusTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Action Status Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of action status types."@en-US ;
+	owl:oneOf (
+		"Complete/Finish"^^vocab:ActionStatusTypeVocab
+		"Error"^^vocab:ActionStatusTypeVocab
+		"Fail"^^vocab:ActionStatusTypeVocab
+		"Ongoing"^^vocab:ActionStatusTypeVocab
+		"Pending"^^vocab:ActionStatusTypeVocab
+		"Success"^^vocab:ActionStatusTypeVocab
+		"Unknown"^^vocab:ActionStatusTypeVocab
+	) ;
+	.
+
+vocab:ActionTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Action Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of common general action types."@en ;
+	owl:oneOf (
+		"Accept"^^vocab:ActionTypeVocab
+		"Access"^^vocab:ActionTypeVocab
+		"Add"^^vocab:ActionTypeVocab
+		"Alert"^^vocab:ActionTypeVocab
+		"Allocate"^^vocab:ActionTypeVocab
+		"Archive"^^vocab:ActionTypeVocab
+		"Assign"^^vocab:ActionTypeVocab
+		"Audit"^^vocab:ActionTypeVocab
+		"Backup"^^vocab:ActionTypeVocab
+		"Bind"^^vocab:ActionTypeVocab
+		"Block"^^vocab:ActionTypeVocab
+		"Call"^^vocab:ActionTypeVocab
+		"Change"^^vocab:ActionTypeVocab
+		"Check"^^vocab:ActionTypeVocab
+		"Clean"^^vocab:ActionTypeVocab
+		"Click"^^vocab:ActionTypeVocab
+		"Close"^^vocab:ActionTypeVocab
+		"Compare"^^vocab:ActionTypeVocab
+		"Compress"^^vocab:ActionTypeVocab
+		"Configure"^^vocab:ActionTypeVocab
+		"Connect"^^vocab:ActionTypeVocab
+		"Control"^^vocab:ActionTypeVocab
+		"Copy/Duplicate"^^vocab:ActionTypeVocab
+		"Create"^^vocab:ActionTypeVocab
+		"Decode"^^vocab:ActionTypeVocab
+		"Decompress"^^vocab:ActionTypeVocab
+		"Decrypt"^^vocab:ActionTypeVocab
+		"Deny"^^vocab:ActionTypeVocab
+		"Depress"^^vocab:ActionTypeVocab
+		"Detect"^^vocab:ActionTypeVocab
+		"Disconnect"^^vocab:ActionTypeVocab
+		"Download"^^vocab:ActionTypeVocab
+		"Draw"^^vocab:ActionTypeVocab
+		"Drop"^^vocab:ActionTypeVocab
+		"Encode"^^vocab:ActionTypeVocab
+		"Encrypt"^^vocab:ActionTypeVocab
+		"Enumerate"^^vocab:ActionTypeVocab
+		"Execute"^^vocab:ActionTypeVocab
+		"Extract"^^vocab:ActionTypeVocab
+		"Filter"^^vocab:ActionTypeVocab
+		"Find"^^vocab:ActionTypeVocab
+		"Flush"^^vocab:ActionTypeVocab
+		"Fork"^^vocab:ActionTypeVocab
+		"Free"^^vocab:ActionTypeVocab
+		"Get"^^vocab:ActionTypeVocab
+		"Hide"^^vocab:ActionTypeVocab
+		"Hook"^^vocab:ActionTypeVocab
+		"Impersonate"^^vocab:ActionTypeVocab
+		"Initialize"^^vocab:ActionTypeVocab
+		"Inject"^^vocab:ActionTypeVocab
+		"Install"^^vocab:ActionTypeVocab
+		"Interleave"^^vocab:ActionTypeVocab
+		"Join"^^vocab:ActionTypeVocab
+		"Kill"^^vocab:ActionTypeVocab
+		"Listen"^^vocab:ActionTypeVocab
+		"Load"^^vocab:ActionTypeVocab
+		"Lock"^^vocab:ActionTypeVocab
+		"Login/Logon"^^vocab:ActionTypeVocab
+		"Logout/Logoff"^^vocab:ActionTypeVocab
+		"Map"^^vocab:ActionTypeVocab
+		"Merge"^^vocab:ActionTypeVocab
+		"Modify"^^vocab:ActionTypeVocab
+		"Monitor"^^vocab:ActionTypeVocab
+		"Move"^^vocab:ActionTypeVocab
+		"Open"^^vocab:ActionTypeVocab
+		"Pack"^^vocab:ActionTypeVocab
+		"Pause"^^vocab:ActionTypeVocab
+		"Press"^^vocab:ActionTypeVocab
+		"Protect"^^vocab:ActionTypeVocab
+		"Quarantine"^^vocab:ActionTypeVocab
+		"Query"^^vocab:ActionTypeVocab
+		"Queue"^^vocab:ActionTypeVocab
+		"Raise"^^vocab:ActionTypeVocab
+		"Read"^^vocab:ActionTypeVocab
+		"Receive"^^vocab:ActionTypeVocab
+		"Release"^^vocab:ActionTypeVocab
+		"Remove/Delete"^^vocab:ActionTypeVocab
+		"Rename"^^vocab:ActionTypeVocab
+		"Replicate"^^vocab:ActionTypeVocab
+		"Restore"^^vocab:ActionTypeVocab
+		"Resume"^^vocab:ActionTypeVocab
+		"Revert"^^vocab:ActionTypeVocab
+		"Run"^^vocab:ActionTypeVocab
+		"Save"^^vocab:ActionTypeVocab
+		"Scan"^^vocab:ActionTypeVocab
+		"Schedule"^^vocab:ActionTypeVocab
+		"Search"^^vocab:ActionTypeVocab
+		"Send"^^vocab:ActionTypeVocab
+		"Set"^^vocab:ActionTypeVocab
+		"Shutdown"^^vocab:ActionTypeVocab
+		"Sleep"^^vocab:ActionTypeVocab
+		"Snapshot"^^vocab:ActionTypeVocab
+		"Start"^^vocab:ActionTypeVocab
+		"Stop"^^vocab:ActionTypeVocab
+		"Suspend"^^vocab:ActionTypeVocab
+		"Synchronize"^^vocab:ActionTypeVocab
+		"Throw"^^vocab:ActionTypeVocab
+		"Transmit"^^vocab:ActionTypeVocab
+		"Unblock"^^vocab:ActionTypeVocab
+		"Unhide"^^vocab:ActionTypeVocab
+		"Unhook"^^vocab:ActionTypeVocab
+		"Uninstall"^^vocab:ActionTypeVocab
+		"Unload"^^vocab:ActionTypeVocab
+		"Unlock"^^vocab:ActionTypeVocab
+		"Unmap"^^vocab:ActionTypeVocab
+		"Unpack"^^vocab:ActionTypeVocab
+		"Update"^^vocab:ActionTypeVocab
+		"Upgrade"^^vocab:ActionTypeVocab
+		"Upload"^^vocab:ActionTypeVocab
+		"Wipe/Destroy/Purge"^^vocab:ActionTypeVocab
+		"Write"^^vocab:ActionTypeVocab
+	) ;
+	.
+
+vocab:BitnessVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Bitness Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of word sizes that define classes of operating systems."@en ;
+	owl:oneOf (
+		"32"^^vocab:BitnessVocab
+		"64"^^vocab:BitnessVocab
+	) ;
+	.
+
+vocab:CharacterEncodingVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Character Encoding Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of character encodings."@en ;
+	owl:oneOf (
+		"ASCII"^^vocab:CharacterEncodingVocab
+		"UTF-16"^^vocab:CharacterEncodingVocab
+		"UTF-32"^^vocab:CharacterEncodingVocab
+		"UTF-8"^^vocab:CharacterEncodingVocab
+		"Windows-1250"^^vocab:CharacterEncodingVocab
+		"Windows-1251"^^vocab:CharacterEncodingVocab
+		"Windows-1252"^^vocab:CharacterEncodingVocab
+		"Windows-1253"^^vocab:CharacterEncodingVocab
+		"Windows-1254"^^vocab:CharacterEncodingVocab
+		"Windows-1255"^^vocab:CharacterEncodingVocab
+		"Windows-1256"^^vocab:CharacterEncodingVocab
+		"Windows-1257"^^vocab:CharacterEncodingVocab
+		"Windows-1258"^^vocab:CharacterEncodingVocab
+	) ;
+	.
+
+vocab:CyberItemRelationshipVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Cyber Item Relationship Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of inter-cyberitem relationships."@en ;
+	owl:oneOf (
+		"Allocated"^^vocab:CyberItemRelationshipVocab
+		"Allocated_By"^^vocab:CyberItemRelationshipVocab
+		"Bound"^^vocab:CyberItemRelationshipVocab
+		"Bound_By"^^vocab:CyberItemRelationshipVocab
+		"Characterized_By"^^vocab:CyberItemRelationshipVocab
+		"Characterizes"^^vocab:CyberItemRelationshipVocab
+		"Child_Of"^^vocab:CyberItemRelationshipVocab
+		"Closed"^^vocab:CyberItemRelationshipVocab
+		"Closed_By"^^vocab:CyberItemRelationshipVocab
+		"Compressed"^^vocab:CyberItemRelationshipVocab
+		"Compressed_By"^^vocab:CyberItemRelationshipVocab
+		"Compressed_From"^^vocab:CyberItemRelationshipVocab
+		"Compressed_Into"^^vocab:CyberItemRelationshipVocab
+		"Connected_From"^^vocab:CyberItemRelationshipVocab
+		"Connected_To"^^vocab:CyberItemRelationshipVocab
+		"Contained_Within"^^vocab:CyberItemRelationshipVocab
+		"Contains"^^vocab:CyberItemRelationshipVocab
+		"Copied"^^vocab:CyberItemRelationshipVocab
+		"Copied_By"^^vocab:CyberItemRelationshipVocab
+		"Copied_From"^^vocab:CyberItemRelationshipVocab
+		"Copied_To"^^vocab:CyberItemRelationshipVocab
+		"Created"^^vocab:CyberItemRelationshipVocab
+		"Created_By"^^vocab:CyberItemRelationshipVocab
+		"Decoded"^^vocab:CyberItemRelationshipVocab
+		"Decoded_By"^^vocab:CyberItemRelationshipVocab
+		"Decompressed"^^vocab:CyberItemRelationshipVocab
+		"Decompressed_By"^^vocab:CyberItemRelationshipVocab
+		"Decrypted"^^vocab:CyberItemRelationshipVocab
+		"Decrypted_By"^^vocab:CyberItemRelationshipVocab
+		"Deleted"^^vocab:CyberItemRelationshipVocab
+		"Deleted_By"^^vocab:CyberItemRelationshipVocab
+		"Deleted_From"^^vocab:CyberItemRelationshipVocab
+		"Downloaded"^^vocab:CyberItemRelationshipVocab
+		"Downloaded_By"^^vocab:CyberItemRelationshipVocab
+		"Downloaded_From"^^vocab:CyberItemRelationshipVocab
+		"Downloaded_To"^^vocab:CyberItemRelationshipVocab
+		"Dropped"^^vocab:CyberItemRelationshipVocab
+		"Dropped_By"^^vocab:CyberItemRelationshipVocab
+		"Encoded"^^vocab:CyberItemRelationshipVocab
+		"Encoded_By"^^vocab:CyberItemRelationshipVocab
+		"Encrypted"^^vocab:CyberItemRelationshipVocab
+		"Encrypted_By"^^vocab:CyberItemRelationshipVocab
+		"Encrypted_From"^^vocab:CyberItemRelationshipVocab
+		"Encrypted_To"^^vocab:CyberItemRelationshipVocab
+		"Extracted_From"^^vocab:CyberItemRelationshipVocab
+		"FQDN_Of"^^vocab:CyberItemRelationshipVocab
+		"Freed"^^vocab:CyberItemRelationshipVocab
+		"Freed_By"^^vocab:CyberItemRelationshipVocab
+		"Hooked"^^vocab:CyberItemRelationshipVocab
+		"Hooked_By"^^vocab:CyberItemRelationshipVocab
+		"Initialized_By"^^vocab:CyberItemRelationshipVocab
+		"Initialized_To"^^vocab:CyberItemRelationshipVocab
+		"Injected"^^vocab:CyberItemRelationshipVocab
+		"Injected_As"^^vocab:CyberItemRelationshipVocab
+		"Injected_By"^^vocab:CyberItemRelationshipVocab
+		"Injected_Into"^^vocab:CyberItemRelationshipVocab
+		"Installed"^^vocab:CyberItemRelationshipVocab
+		"Installed_By"^^vocab:CyberItemRelationshipVocab
+		"Joined"^^vocab:CyberItemRelationshipVocab
+		"Joined_By"^^vocab:CyberItemRelationshipVocab
+		"Killed"^^vocab:CyberItemRelationshipVocab
+		"Killed_By"^^vocab:CyberItemRelationshipVocab
+		"Listened_On"^^vocab:CyberItemRelationshipVocab
+		"Listened_On_By"^^vocab:CyberItemRelationshipVocab
+		"Loaded_From"^^vocab:CyberItemRelationshipVocab
+		"Loaded_Into"^^vocab:CyberItemRelationshipVocab
+		"Locked"^^vocab:CyberItemRelationshipVocab
+		"Locked_By"^^vocab:CyberItemRelationshipVocab
+		"Mapped_By"^^vocab:CyberItemRelationshipVocab
+		"Mapped_Into"^^vocab:CyberItemRelationshipVocab
+		"Merged"^^vocab:CyberItemRelationshipVocab
+		"Merged_By"^^vocab:CyberItemRelationshipVocab
+		"Modified_Properties_Of"^^vocab:CyberItemRelationshipVocab
+		"Monitored"^^vocab:CyberItemRelationshipVocab
+		"Monitored_By"^^vocab:CyberItemRelationshipVocab
+		"Moved"^^vocab:CyberItemRelationshipVocab
+		"Moved_By"^^vocab:CyberItemRelationshipVocab
+		"Moved_From"^^vocab:CyberItemRelationshipVocab
+		"Moved_To"^^vocab:CyberItemRelationshipVocab
+		"Opened"^^vocab:CyberItemRelationshipVocab
+		"Opened_By"^^vocab:CyberItemRelationshipVocab
+		"Packed"^^vocab:CyberItemRelationshipVocab
+		"Packed_By"^^vocab:CyberItemRelationshipVocab
+		"Packed_From"^^vocab:CyberItemRelationshipVocab
+		"Packed_Into"^^vocab:CyberItemRelationshipVocab
+		"Parent_Of"^^vocab:CyberItemRelationshipVocab
+		"Paused"^^vocab:CyberItemRelationshipVocab
+		"Paused_By"^^vocab:CyberItemRelationshipVocab
+		"Previously_Contained"^^vocab:CyberItemRelationshipVocab
+		"Properties_Modified_By"^^vocab:CyberItemRelationshipVocab
+		"Properties_Queried"^^vocab:CyberItemRelationshipVocab
+		"Properties_Queried_By"^^vocab:CyberItemRelationshipVocab
+		"Read_From"^^vocab:CyberItemRelationshipVocab
+		"Read_From_By"^^vocab:CyberItemRelationshipVocab
+		"Received"^^vocab:CyberItemRelationshipVocab
+		"Received_By"^^vocab:CyberItemRelationshipVocab
+		"Received_From"^^vocab:CyberItemRelationshipVocab
+		"Received_Via_Upload"^^vocab:CyberItemRelationshipVocab
+		"Redirects_To"^^vocab:CyberItemRelationshipVocab
+		"Related_To"^^vocab:CyberItemRelationshipVocab
+		"Renamed"^^vocab:CyberItemRelationshipVocab
+		"Renamed_By"^^vocab:CyberItemRelationshipVocab
+		"Renamed_From"^^vocab:CyberItemRelationshipVocab
+		"Renamed_To"^^vocab:CyberItemRelationshipVocab
+		"Resolved_To"^^vocab:CyberItemRelationshipVocab
+		"Resumed"^^vocab:CyberItemRelationshipVocab
+		"Resumed_By"^^vocab:CyberItemRelationshipVocab
+		"Root_Domain_Of"^^vocab:CyberItemRelationshipVocab
+		"Searched_For"^^vocab:CyberItemRelationshipVocab
+		"Searched_For_By"^^vocab:CyberItemRelationshipVocab
+		"Sent"^^vocab:CyberItemRelationshipVocab
+		"Sent_By"^^vocab:CyberItemRelationshipVocab
+		"Sent_To"^^vocab:CyberItemRelationshipVocab
+		"Sent_Via_Upload"^^vocab:CyberItemRelationshipVocab
+		"Set_From"^^vocab:CyberItemRelationshipVocab
+		"Set_To"^^vocab:CyberItemRelationshipVocab
+		"Sub-domain_Of"^^vocab:CyberItemRelationshipVocab
+		"Supra-domain_Of"^^vocab:CyberItemRelationshipVocab
+		"Suspended"^^vocab:CyberItemRelationshipVocab
+		"Suspended_By"^^vocab:CyberItemRelationshipVocab
+		"Unhooked"^^vocab:CyberItemRelationshipVocab
+		"Unhooked_By"^^vocab:CyberItemRelationshipVocab
+		"Unlocked"^^vocab:CyberItemRelationshipVocab
+		"Unlocked_By"^^vocab:CyberItemRelationshipVocab
+		"Unpacked"^^vocab:CyberItemRelationshipVocab
+		"Unpacked_By"^^vocab:CyberItemRelationshipVocab
+		"Uploaded"^^vocab:CyberItemRelationshipVocab
+		"Uploaded_By"^^vocab:CyberItemRelationshipVocab
+		"Uploaded_From"^^vocab:CyberItemRelationshipVocab
+		"Uploaded_To"^^vocab:CyberItemRelationshipVocab
+		"Used"^^vocab:CyberItemRelationshipVocab
+		"Used_By"^^vocab:CyberItemRelationshipVocab
+		"Values_Enumerated"^^vocab:CyberItemRelationshipVocab
+		"Values_Enumerated_By"^^vocab:CyberItemRelationshipVocab
+		"Written_To_By"^^vocab:CyberItemRelationshipVocab
+		"Wrote_To"^^vocab:CyberItemRelationshipVocab
+	) ;
+	.
+
+vocab:CyberItemStateVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Cyber Item State Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of cyberitem states."@en ;
+	owl:oneOf (
+		"Active"^^vocab:CyberItemStateVocab
+		"Closed"^^vocab:CyberItemStateVocab
+		"Does Not Exist"^^vocab:CyberItemStateVocab
+		"Exists"^^vocab:CyberItemStateVocab
+		"Inactive"^^vocab:CyberItemStateVocab
+		"Locked"^^vocab:CyberItemStateVocab
+		"Open"^^vocab:CyberItemStateVocab
+		"Started"^^vocab:CyberItemStateVocab
+		"Stopped"^^vocab:CyberItemStateVocab
+		"Unlocked"^^vocab:CyberItemStateVocab
+	) ;
+	.
+
+vocab:DiskTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Disk Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of disk types."@en ;
+	owl:oneOf (
+		"CDRom"^^vocab:DiskTypeVocab
+		"Fixed"^^vocab:DiskTypeVocab
+		"RAMDisk"^^vocab:DiskTypeVocab
+		"Remote"^^vocab:DiskTypeVocab
+		"Removable"^^vocab:DiskTypeVocab
+	) ;
+	.
+
+vocab:EndiannessTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Endianness Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of byte ordering methods."@en ;
+	owl:oneOf (
+		"Big-endian"^^vocab:EndiannessTypeVocab
+		"Little-endian"^^vocab:EndiannessTypeVocab
+		"Middle-endian"^^vocab:EndiannessTypeVocab
+	) ;
+	.
+
+vocab:HashNameVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Hash Name Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
+	owl:oneOf (
+		"MD5"^^vocab:HashNameVocab
+		"MD6"^^vocab:HashNameVocab
+		"SHA1"^^vocab:HashNameVocab
+		"SHA224"^^vocab:HashNameVocab
+		"SHA256"^^vocab:HashNameVocab
+		"SHA384"^^vocab:HashNameVocab
+		"SHA512"^^vocab:HashNameVocab
+		"SSDEEP"^^vocab:HashNameVocab
+	) ;
+	.
+
+vocab:InvestigationFormVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Investigation Form Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of investigation forms."@en-US ;
+	owl:oneOf (
+		"case"^^vocab:InvestigationFormVocab
+		"incident"^^vocab:InvestigationFormVocab
+		"suspicious-activity"^^vocab:InvestigationFormVocab
+	) ;
+	.
+
+vocab:LibraryTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Library Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of library types."@en ;
+	owl:oneOf (
+		"Dynamic"^^vocab:LibraryTypeVocab
+		"Other"^^vocab:LibraryTypeVocab
+		"Remote"^^vocab:LibraryTypeVocab
+		"Shared"^^vocab:LibraryTypeVocab
+		"Static"^^vocab:LibraryTypeVocab
+	) ;
+	.
+
+vocab:MemoryBlockTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Memory Block Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of types of memory blocks."@en ;
+	owl:oneOf (
+		"Bit-mapped"^^vocab:MemoryBlockTypeVocab
+		"Byte-mapped"^^vocab:MemoryBlockTypeVocab
+		"Initialized"^^vocab:MemoryBlockTypeVocab
+		"Overlay"^^vocab:MemoryBlockTypeVocab
+		"Uninitialized"^^vocab:MemoryBlockTypeVocab
+	) ;
+	.
+
+vocab:PartitionTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Partition Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of partition types. See http://www.win.tue.nl/~aeb/partitions/partition_types-1.html for more information about the various partition types."@en ;
+	owl:oneOf (
+		"PARTITION_ENTRY_UNUSED"^^vocab:PartitionTypeVocab
+		"PARTITION_EXTENDED"^^vocab:PartitionTypeVocab
+		"PARTITION_FAT32"^^vocab:PartitionTypeVocab
+		"PARTITION_FAT32_XINT13"^^vocab:PartitionTypeVocab
+		"PARTITION_FAT_12"^^vocab:PartitionTypeVocab
+		"PARTITION_FAT_16"^^vocab:PartitionTypeVocab
+		"PARTITION_HUGE"^^vocab:PartitionTypeVocab
+		"PARTITION_IFS"^^vocab:PartitionTypeVocab
+		"PARTITION_LDM"^^vocab:PartitionTypeVocab
+		"PARTITION_NTFT"^^vocab:PartitionTypeVocab
+		"PARTITION_OS2BOOTMGR"^^vocab:PartitionTypeVocab
+		"PARTITION_PREP"^^vocab:PartitionTypeVocab
+		"PARTITION_UNIX"^^vocab:PartitionTypeVocab
+		"PARTITION_XENIX_1"^^vocab:PartitionTypeVocab
+		"PARTITION_XENIX_2"^^vocab:PartitionTypeVocab
+		"PARTITION_XINT13"^^vocab:PartitionTypeVocab
+		"PARTITION_XINT13_EXTENDED"^^vocab:PartitionTypeVocab
+		"UNKNOWN"^^vocab:PartitionTypeVocab
+		"VALID_NTFT"^^vocab:PartitionTypeVocab
+	) ;
+	.
+
+vocab:ProcessorArchVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Processor Architecture Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of computer processor architectures."@en ;
+	owl:oneOf (
+		"ARM"^^vocab:ProcessorArchVocab
+		"Alpha"^^vocab:ProcessorArchVocab
+		"IA-64"^^vocab:ProcessorArchVocab
+		"MIPS"^^vocab:ProcessorArchVocab
+		"Motorola 68k"^^vocab:ProcessorArchVocab
+		"Other"^^vocab:ProcessorArchVocab
+		"PowerPC"^^vocab:ProcessorArchVocab
+		"SPARC"^^vocab:ProcessorArchVocab
+		"eSi-RISC"^^vocab:ProcessorArchVocab
+		"x86-32"^^vocab:ProcessorArchVocab
+		"x86-64"^^vocab:ProcessorArchVocab
+		"z/Architecture"^^vocab:ProcessorArchVocab
+	) ;
+	.
+
+vocab:RegionalRegistryTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Regional Registry Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of Regional Internet Registries (RIRs) names, represented via their respective acronyms."@en ;
+	owl:oneOf (
+		"APNIC"^^vocab:RegionalRegistryTypeVocab
+		"ARIN"^^vocab:RegionalRegistryTypeVocab
+		"AfriNIC"^^vocab:RegionalRegistryTypeVocab
+		"LACNIC"^^vocab:RegionalRegistryTypeVocab
+		"RIPE NCC"^^vocab:RegionalRegistryTypeVocab
+	) ;
+	.
+
+vocab:RegistryDatatypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Registry Datatype Vocabulary"@en-US ;
+	owl:oneOf (
+		"reg_binary"^^vocab:RegistryDatatypeVocab
+		"reg_dword"^^vocab:RegistryDatatypeVocab
+		"reg_dword_big_endian"^^vocab:RegistryDatatypeVocab
+		"reg_expand_sz"^^vocab:RegistryDatatypeVocab
+		"reg_full_resource_descriptor"^^vocab:RegistryDatatypeVocab
+		"reg_invalid_type"^^vocab:RegistryDatatypeVocab
+		"reg_link"^^vocab:RegistryDatatypeVocab
+		"reg_multi_sz"^^vocab:RegistryDatatypeVocab
+		"reg_none"^^vocab:RegistryDatatypeVocab
+		"reg_qword"^^vocab:RegistryDatatypeVocab
+		"reg_resource_list"^^vocab:RegistryDatatypeVocab
+		"reg_resource_requirements_list"^^vocab:RegistryDatatypeVocab
+		"reg_sz"^^vocab:RegistryDatatypeVocab
+	) ;
+	.
+
+vocab:SIMFormVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "SIM Form Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of common SIM card form factors."@en ;
+	owl:oneOf (
+		"Full-size SIM"^^vocab:SIMFormVocab
+		"Micro SIM"^^vocab:SIMFormVocab
+		"Nano SIM"^^vocab:SIMFormVocab
+	) ;
+	.
+
+vocab:SIMTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "SIM Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of common SIM card types."@en ;
+	owl:oneOf (
+		"SIM"^^vocab:SIMTypeVocab
+		"UICC"^^vocab:SIMTypeVocab
+		"USIM"^^vocab:SIMTypeVocab
+	) ;
+	.
+
+vocab:TaskActionTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Task Action Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of task action types. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
+	owl:oneOf (
+		"TASK_ACTION_COM_HANDLER"^^vocab:TaskActionTypeVocab
+		"TASK_ACTION_EXEC"^^vocab:TaskActionTypeVocab
+		"TASK_ACTION_SEND_EMAIL"^^vocab:TaskActionTypeVocab
+		"TASK_ACTION_SHOW_MESSAGE"^^vocab:TaskActionTypeVocab
+	) ;
+	.
+
+vocab:TaskFlagVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Task Flag Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of the run flags for a task scheduler task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381283(v=vs.85).aspx See Also: http://msdn.microsoft.com/en-us/library/microsoft.office.excel.server.addins.computecluster.taskscheduler.taskflags(v=office.12).aspx."@en ;
+	owl:oneOf (
+		"TASK_FLAG_DELETE_WHEN_DONE"^^vocab:TaskFlagVocab
+		"TASK_FLAG_DISABLED"^^vocab:TaskFlagVocab
+		"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocab:TaskFlagVocab
+		"TASK_FLAG_HIDDEN"^^vocab:TaskFlagVocab
+		"TASK_FLAG_INTERACTIVE"^^vocab:TaskFlagVocab
+		"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"^^vocab:TaskFlagVocab
+		"TASK_FLAG_KILL_ON_IDLE_END"^^vocab:TaskFlagVocab
+		"TASK_FLAG_RESTART_ON_IDLE_RESUME"^^vocab:TaskFlagVocab
+		"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"^^vocab:TaskFlagVocab
+		"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"^^vocab:TaskFlagVocab
+		"TASK_FLAG_START_ONLY_IF_IDLE"^^vocab:TaskFlagVocab
+		"TASK_FLAG_SYSTEM_REQUIRED"^^vocab:TaskFlagVocab
+		"TASK_FLAG_ZERO"^^vocab:TaskFlagVocab
+	) ;
+	.
+
+vocab:TaskPriorityVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Task Priority Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of the priority levels of task scheduler tasks. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383512(v=vs.85).aspx."@en ;
+	owl:oneOf (
+		"ABOVE_NORMAL_PRIORITY_CLASS"^^vocab:TaskPriorityVocab
+		"BELOW_NORMAL_PRIORITY_CLASS"^^vocab:TaskPriorityVocab
+		"HIGH_PRIORITY_CLASS"^^vocab:TaskPriorityVocab
+		"IDLE_PRIORITY_CLASS"^^vocab:TaskPriorityVocab
+		"NORMAL_PRIORITY_CLASS"^^vocab:TaskPriorityVocab
+		"REALTIME_PRIORITY_CLASS"^^vocab:TaskPriorityVocab
+	) ;
+	.
+
+vocab:TaskStatusVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Task Status Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of the possible statuses of a scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383604(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381833(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383617(v=vs.85).aspx."@en ;
+	owl:oneOf (
+		"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocab:TaskStatusVocab
+		"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocab:TaskStatusVocab
+		"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocab:TaskStatusVocab
+		"SCHED_E_CANNOT_OPEN_TASK"^^vocab:TaskStatusVocab
+		"SCHED_E_INVALID_TASK"^^vocab:TaskStatusVocab
+		"SCHED_E_NO_SECURITY_SERVICES"^^vocab:TaskStatusVocab
+		"SCHED_E_SERVICE_NOT_INSTALLED"^^vocab:TaskStatusVocab
+		"SCHED_E_SERVICE_NOT_RUNNING"^^vocab:TaskStatusVocab
+		"SCHED_E_TASK_NOT_READY"^^vocab:TaskStatusVocab
+		"SCHED_E_TASK_NOT_RUNNING"^^vocab:TaskStatusVocab
+		"SCHED_E_TRIGGER_NOT_FOUND"^^vocab:TaskStatusVocab
+		"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocab:TaskStatusVocab
+		"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocab:TaskStatusVocab
+		"SCHED_S_EVENT_TRIGGER"^^vocab:TaskStatusVocab
+		"SCHED_S_TASK_DISABLED"^^vocab:TaskStatusVocab
+		"SCHED_S_TASK_HAS_NOT_RUN"^^vocab:TaskStatusVocab
+		"SCHED_S_TASK_NOT_SCHEDULED"^^vocab:TaskStatusVocab
+		"SCHED_S_TASK_NO_MORE_RUNS"^^vocab:TaskStatusVocab
+		"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocab:TaskStatusVocab
+		"SCHED_S_TASK_READY"^^vocab:TaskStatusVocab
+		"SCHED_S_TASK_RUNNING"^^vocab:TaskStatusVocab
+		"SCHED_S_TASK_TERMINATED"^^vocab:TaskStatusVocab
+		"TASK_STATE_QUEUED"^^vocab:TaskStatusVocab
+		"TASK_STATE_UNKNOWN"^^vocab:TaskStatusVocab
+	) ;
+	.
+
+vocab:ThreadRunningStatusVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Thread Running Status Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of the various states that a thread may be in before, during, or after execution. See http://msdn.microsoft.com/en-us/library/system.diagnostics.threadstate(v=vs.110).aspx."@en ;
+	owl:oneOf (
+		"Initialized"^^vocab:ThreadRunningStatusVocab
+		"Ready"^^vocab:ThreadRunningStatusVocab
+		"Running"^^vocab:ThreadRunningStatusVocab
+		"Standby"^^vocab:ThreadRunningStatusVocab
+		"Terminated"^^vocab:ThreadRunningStatusVocab
+		"Transition"^^vocab:ThreadRunningStatusVocab
+		"Unknown"^^vocab:ThreadRunningStatusVocab
+		"Waiting"^^vocab:ThreadRunningStatusVocab
+	) ;
+	.
+
+vocab:TimestampPrecisionVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Timestamp Precision Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of timestamp precision granularities."@en-US ;
+	owl:oneOf (
+		"day"^^vocab:TimestampPrecisionVocab
+		"hour"^^vocab:TimestampPrecisionVocab
+		"minute"^^vocab:TimestampPrecisionVocab
+		"month"^^vocab:TimestampPrecisionVocab
+		"second"^^vocab:TimestampPrecisionVocab
+		"year"^^vocab:TimestampPrecisionVocab
+	) ;
+	.
+
+vocab:TrendVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Trend Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of trend values."@en-US ;
+	owl:oneOf (
+		"Decreasing"^^vocab:TrendVocab
+		"Increasing"^^vocab:TrendVocab
+	) ;
+	.
+
+vocab:TriggerFrequencyVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Trigger Frequency Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of the frequency types that a trigger may use. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383620(v=vs.85).aspx and http://msdn.microsoft.com/en-us/library/windows/desktop/aa383987(v=vs.85).aspx."@en ;
+	owl:oneOf (
+		"TASK_EVENT_TRIGGER_AT_LOGON"^^vocab:TriggerFrequencyVocab
+		"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"^^vocab:TriggerFrequencyVocab
+		"TASK_EVENT_TRIGGER_ON_IDLE"^^vocab:TriggerFrequencyVocab
+		"TASK_TIME_TRIGGER_DAILY"^^vocab:TriggerFrequencyVocab
+		"TASK_TIME_TRIGGER_MONTHLYDATE"^^vocab:TriggerFrequencyVocab
+		"TASK_TIME_TRIGGER_MONTHLYDOW"^^vocab:TriggerFrequencyVocab
+		"TASK_TIME_TRIGGER_ONCE"^^vocab:TriggerFrequencyVocab
+		"TASK_TIME_TRIGGER_WEEKLY"^^vocab:TriggerFrequencyVocab
+	) ;
+	.
+
+vocab:TriggerTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Trigger Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of the types of triggers associated with a task."@en ;
+	owl:oneOf (
+		"TASK_TRIGGER_BOOT"^^vocab:TriggerTypeVocab
+		"TASK_TRIGGER_EVENT"^^vocab:TriggerTypeVocab
+		"TASK_TRIGGER_IDLE"^^vocab:TriggerTypeVocab
+		"TASK_TRIGGER_LOGON"^^vocab:TriggerTypeVocab
+		"TASK_TRIGGER_REGISTRATION"^^vocab:TriggerTypeVocab
+		"TASK_TRIGGER_SESSION_STATE_CHANGE"^^vocab:TriggerTypeVocab
+		"TASK_TRIGGER_TIME"^^vocab:TriggerTypeVocab
+	) ;
+	.
+
+vocab:UnixProcessStateVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "UNIX Process State Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of Unix process states"@en ;
+	owl:oneOf (
+		"Dead"^^vocab:UnixProcessStateVocab
+		"InterruptibleSleep"^^vocab:UnixProcessStateVocab
+		"Paging"^^vocab:UnixProcessStateVocab
+		"Running"^^vocab:UnixProcessStateVocab
+		"Stopped"^^vocab:UnixProcessStateVocab
+		"UninterruptibleSleep"^^vocab:UnixProcessStateVocab
+		"Zombie"^^vocab:UnixProcessStateVocab
+	) ;
+	.
+
+vocab:WhoisContactTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Whois Contact Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of types of registrar contacts listed in a whois entry."@en ;
+	owl:oneOf (
+		"ADMIN"^^vocab:WhoisContactTypeVocab
+		"BILLING"^^vocab:WhoisContactTypeVocab
+		"TECHNICAL"^^vocab:WhoisContactTypeVocab
+	) ;
+	.
+
+vocab:WhoisDNSSECTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Whois DNSSEC Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of acceptable values for the DNSSEC field in a Whois entry."@en ;
+	owl:oneOf (
+		"Signed"^^vocab:WhoisDNSSECTypeVocab
+		"Unsigned"^^vocab:WhoisDNSSECTypeVocab
+	) ;
+	.
+
+vocab:WhoisStatusTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Whois Status Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of all valid statuses for a domain within a whois entry."@en ;
+	owl:oneOf (
+		"ADD_PERIOD"^^vocab:WhoisStatusTypeVocab
+		"AUTO_RENEW_PERIOD"^^vocab:WhoisStatusTypeVocab
+		"CLIENT_DELETE_PROHIBITED"^^vocab:WhoisStatusTypeVocab
+		"CLIENT_HOLD"^^vocab:WhoisStatusTypeVocab
+		"CLIENT_RENEW_PROHIBITED"^^vocab:WhoisStatusTypeVocab
+		"CLIENT_TRANSFER_PROHIBITED"^^vocab:WhoisStatusTypeVocab
+		"CLIENT_UPDATE_PROHIBITED"^^vocab:WhoisStatusTypeVocab
+		"DELETE_PROHIBITED"^^vocab:WhoisStatusTypeVocab
+		"HOLD"^^vocab:WhoisStatusTypeVocab
+		"INACTIVE"^^vocab:WhoisStatusTypeVocab
+		"OK"^^vocab:WhoisStatusTypeVocab
+		"PENDING_DELETE_RESTORABLE"^^vocab:WhoisStatusTypeVocab
+		"PENDING_DELETE_SCHEDULED_FOR_RELEASE"^^vocab:WhoisStatusTypeVocab
+		"PENDING_RESTORE"^^vocab:WhoisStatusTypeVocab
+		"RENEW_PERIOD"^^vocab:WhoisStatusTypeVocab
+		"RENEW_PROHIBITED"^^vocab:WhoisStatusTypeVocab
+		"TRANSFER_PERIOD"^^vocab:WhoisStatusTypeVocab
+		"TRANSFER_PROHIBITED"^^vocab:WhoisStatusTypeVocab
+		"UPDATE_PROHIBITED"^^vocab:WhoisStatusTypeVocab
+	) ;
+	.
+
+vocab:WindowsDriveTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Windows Drive Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of possible drive types, as enumerated by the WINAPI GetDriveType function: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364939(v=vs.85).aspx."@en ;
+	owl:oneOf (
+		"DRIVE_CDROM"^^vocab:WindowsDriveTypeVocab
+		"DRIVE_FIXED"^^vocab:WindowsDriveTypeVocab
+		"DRIVE_NO_ROOT_DIR"^^vocab:WindowsDriveTypeVocab
+		"DRIVE_RAMDISK"^^vocab:WindowsDriveTypeVocab
+		"DRIVE_REMOTE"^^vocab:WindowsDriveTypeVocab
+		"DRIVE_REMOVABLE"^^vocab:WindowsDriveTypeVocab
+		"DRIVE_UNKNOWN"^^vocab:WindowsDriveTypeVocab
+	) ;
+	.
+
+vocab:WindowsVolumeAttributeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Windows Volume Attribute Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of attributes that may be returned by the diskpart attributes command: http://technet.microsoft.com/en-us/library/cc766465(v=ws.10).aspx."@en ;
+	owl:oneOf (
+		"Hidden"^^vocab:WindowsVolumeAttributeVocab
+		"NoDefaultDriveLetter"^^vocab:WindowsVolumeAttributeVocab
+		"ReadOnly"^^vocab:WindowsVolumeAttributeVocab
+		"ShadowCopy"^^vocab:WindowsVolumeAttributeVocab
+	) ;
+	.
+

@@ -289,7 +289,6 @@ tool:buildConfiguration
 	a owl:ObjectProperty ;
 	rdfs:label "buildConfiguration"@en ;
 	rdfs:comment "How the build utility was configured for a particular build of a particular software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range tool:BuildConfigurationType ;
 	.
 
@@ -297,7 +296,6 @@ tool:buildID
 	a owl:DatatypeProperty ;
 	rdfs:label "buildID"@en ;
 	rdfs:comment "An externally defined unique identifier for a particular build of a software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -305,7 +303,6 @@ tool:buildInformation
 	a owl:ObjectProperty ;
 	rdfs:label "buildInformation"@en ;
 	rdfs:comment "Describes how a particular tool was built."@en ;
-	rdfs:domain tool:Build ;
 	rdfs:range tool:BuildInformationType ;
 	.
 
@@ -313,7 +310,6 @@ tool:buildLabel
 	a owl:DatatypeProperty ;
 	rdfs:label "buildLabel"@en ;
 	rdfs:comment "Relevant label for a particular build of a particular software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -321,7 +317,6 @@ tool:buildOutputLog
 	a owl:DatatypeProperty ;
 	rdfs:label "buildOutputLog"@en ;
 	rdfs:comment "The output log of the build process for a software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -329,7 +324,6 @@ tool:buildProject
 	a owl:DatatypeProperty ;
 	rdfs:label "buildProject"@en ;
 	rdfs:comment "The project name of a build of a software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -337,7 +331,6 @@ tool:buildScript
 	a owl:DatatypeProperty ;
 	rdfs:label "buildScript"@en ;
 	rdfs:comment "The actual build script for a particular build of a particular software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -345,7 +338,6 @@ tool:buildUtility
 	a owl:ObjectProperty ;
 	rdfs:label "buildUtility"@en ;
 	rdfs:comment "Identifies the utility used to build a software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range tool:BuildUtilityType ;
 	.
 
@@ -353,7 +345,6 @@ tool:buildUtilityName
 	a owl:DatatypeProperty ;
 	rdfs:label "buildUtilityName"@en ;
 	rdfs:comment "The informally defined name of the utility used to build a particular software."@en ;
-	rdfs:domain tool:BuildUtilityType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -361,7 +352,6 @@ tool:buildVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "buildVersion"@en ;
 	rdfs:comment "The appropriate version descriptor of a particular build of a particular software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -369,7 +359,6 @@ tool:compilationDate
 	a owl:DatatypeProperty ;
 	rdfs:label "compilationDate"@en ;
 	rdfs:comment "The compilation date for the build of a software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -377,7 +366,6 @@ tool:compilerInformalDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "compilerInformalDescription"@en ;
 	rdfs:comment "An informal description of a compiler."@en ;
-	rdfs:domain tool:CompilerType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -385,7 +373,6 @@ tool:compilers
 	a owl:ObjectProperty ;
 	rdfs:label "compilers"@en ;
 	rdfs:comment "The compilers utilized during a particular build of a particular software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range tool:CompilerType ;
 	.
 
@@ -393,7 +380,6 @@ tool:configurationSettingDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "configurationSettingDescription"@en ;
 	rdfs:comment "Description of the configuration settings for a particular build of a particular software."@en ;
-	rdfs:domain tool:BuildConfigurationType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -401,7 +387,6 @@ tool:configurationSettings
 	a owl:ObjectProperty ;
 	rdfs:label "configurationSettings"@en ;
 	rdfs:comment "The configuration settings for a particular build of a particular software."@en ;
-	rdfs:domain tool:BuildConfigurationType ;
 	rdfs:range tool:ConfigurationSettingType ;
 	.
 
@@ -409,7 +394,6 @@ tool:cpeid
 	a owl:DatatypeProperty ;
 	rdfs:label "cpeid"@en ;
 	rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
-	rdfs:domain tool:CompilerType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -417,7 +401,6 @@ tool:creator
 	a owl:DatatypeProperty ;
 	rdfs:label "creator"@en ;
 	rdfs:comment "The creator organization for a particular tool."@en ;
-	rdfs:domain tool:Tool ;
 	rdfs:range xsd:string ;
 	.
 
@@ -425,7 +408,6 @@ tool:dependencies
 	a owl:ObjectProperty ;
 	rdfs:label "dependencies"@en ;
 	rdfs:comment "The relevant dependencies for a tool."@en ;
-	rdfs:domain tool:ToolConfigurationType ;
 	rdfs:range tool:DependencyType ;
 	.
 
@@ -433,7 +415,6 @@ tool:dependencyDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "dependencyDescription"@en ;
 	rdfs:comment "A description of a tool dependency."@en ;
-	rdfs:domain tool:DependencyType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -441,7 +422,6 @@ tool:dependencyType
 	a owl:DatatypeProperty ;
 	rdfs:label "dependencyType"@en ;
 	rdfs:comment "The type of a tool dependency."@en ;
-	rdfs:domain tool:DependencyType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -449,7 +429,6 @@ tool:itemDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "itemDescription"@en ;
 	rdfs:comment "A description of a configuration item."@en ;
-	rdfs:domain tool:ConfigurationSettingType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -457,7 +436,6 @@ tool:itemName
 	a owl:DatatypeProperty ;
 	rdfs:label "itemName"@en ;
 	rdfs:comment "The name of a configuration item."@en ;
-	rdfs:domain tool:ConfigurationSettingType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -465,7 +443,6 @@ tool:itemType
 	a owl:DatatypeProperty ;
 	rdfs:label "itemType"@en ;
 	rdfs:comment "The type of a configuration item."@en ;
-	rdfs:domain tool:ConfigurationSettingType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -473,7 +450,6 @@ tool:itemValue
 	a owl:DatatypeProperty ;
 	rdfs:label "itemValue"@en ;
 	rdfs:comment "The value of a configuration setting instance."@en ;
-	rdfs:domain tool:ConfigurationSettingType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -481,7 +457,6 @@ tool:libraries
 	a owl:ObjectProperty ;
 	rdfs:label "libraries"@en ;
 	rdfs:comment "The libraries incorporated into a particular build of a software."@en ;
-	rdfs:domain tool:BuildInformationType ;
 	rdfs:range tool:LibraryType ;
 	.
 
@@ -489,7 +464,6 @@ tool:libraryName
 	a owl:DatatypeProperty ;
 	rdfs:label "libraryName"@en ;
 	rdfs:comment "The name of the library."@en ;
-	rdfs:domain tool:LibraryType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -497,7 +471,6 @@ tool:libraryVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "libraryVersion"@en ;
 	rdfs:comment "The version of the library."@en ;
-	rdfs:domain tool:LibraryType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -505,7 +478,6 @@ tool:references
 	a owl:DatatypeProperty ;
 	rdfs:label "references"@en ;
 	rdfs:comment "References to information describing a particular tool."@en ;
-	rdfs:domain tool:Tool ;
 	rdfs:range xsd:anyURI ;
 	.
 
@@ -513,7 +485,6 @@ tool:servicePack
 	a owl:DatatypeProperty ;
 	rdfs:label "servicePack"@en ;
 	rdfs:comment "An appropriate service pack descriptor for a particular tool."@en ;
-	rdfs:domain tool:Tool ;
 	rdfs:range xsd:string ;
 	.
 
@@ -521,7 +492,6 @@ tool:swid
 	a owl:DatatypeProperty ;
 	rdfs:label "swid"@en ;
 	rdfs:comment "Specifies the SWID tag for the software."@en ;
-	rdfs:domain tool:CompilerType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -529,7 +499,6 @@ tool:toolType
 	a owl:DatatypeProperty ;
 	rdfs:label "toolType"@en ;
 	rdfs:comment "The type of tool."@en ;
-	rdfs:domain tool:Tool ;
 	rdfs:range xsd:string ;
 	.
 
@@ -537,7 +506,6 @@ tool:usageContextAssumptions
 	a owl:DatatypeProperty ;
 	rdfs:label "usageContextAssumptions"@en ;
 	rdfs:comment "dDescriptions of the various relevant usage context assumptions for this tool ."@en ;
-	rdfs:domain tool:ToolConfigurationType ;
 	rdfs:range xsd:string ;
 	.
 
@@ -545,7 +513,6 @@ tool:version
 	a owl:DatatypeProperty ;
 	rdfs:label "version"@en ;
 	rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
-	rdfs:domain tool:Tool ;
 	rdfs:range xsd:string ;
 	.
 

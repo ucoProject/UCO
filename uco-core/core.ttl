@@ -1,17 +1,20 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/core> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/core>
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
-	owl:versionInfo "0.2.1" ;
+	owl:imports <https://unifiedcyberontology.org/ontology/uco/vocabulary> ;
+	owl:versionInfo "0.4.0" ;
 	.
 
 core:Annotation
@@ -130,7 +133,7 @@ core:EnclosingCompilation
 
 core:ExternalReference
 	a owl:Class ;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "ExternalReference"@en ;
 	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
 	.
@@ -146,47 +149,6 @@ core:Grouping
 	rdfs:subClassOf core:ContextualCompilation ;
 	rdfs:label "Grouping"@en ;
 	rdfs:comment "A compilation of referenced UCO content with a shared context."@en ;
-	.
-
-core:HashNameEnum
-	a rdfs:Datatype ;
-	rdfs:comment "An enumeration of common hashing algorithm names."@en ;
-	owl:equivalentClass [
-		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "MD5" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "MD6" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "SHA1" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "SHA224" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "SHA256" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "SHA384" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "SHA512" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "SSDEEP" ;
-										rdf:rest rdf:nil ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
-	] ;
 	.
 
 core:Item
@@ -210,8 +172,8 @@ core:Relationship
 		[
 			a owl:Restriction ;
 			owl:onProperty core:kindOfRelationship ;
-			owl:onClass core:ControlledVocabulary ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -259,27 +221,25 @@ core:UcoObject
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:specVersion ;
-			owl:onClass core:ControlledVocabulary ;
+			owl:onProperty core:name ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:name ;
+			owl:onProperty core:specVersion ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		]
 		;
 	rdfs:label "UcoObject"@en ;
-	rdfs:comment """A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Unified Cyber Ontology (uco).
-"""@en ;
+	rdfs:comment "A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Unified Cyber Ontology (uco)."@en ;
 	.
 
 core:confidence
 	a owl:DatatypeProperty ;
 	rdfs:label "confidence"@en ;
 	rdfs:comment "An asserted level of certainty in the accuracy of some information."@en ;
-	rdfs:domain core:Confidence ;
 	rdfs:range [
 		a rdfs:Datatype ;
 		owl:onDatatype xsd:nonNegativeInteger ;
@@ -295,7 +255,6 @@ core:constrainingVocabularyName
 	a owl:DatatypeProperty ;
 	rdfs:label "constrainingVocabularyName"@en ;
 	rdfs:comment "The name of an explicitly constrained set of string values."@en ;
-	rdfs:domain core:ControlledVocabulary ;
 	rdfs:range xsd:string ;
 	.
 
@@ -303,7 +262,6 @@ core:constrainingVocabularyReference
 	a owl:DatatypeProperty ;
 	rdfs:label "constrainingVocabularyReference"@en ;
 	rdfs:comment "A reference to a specification for an explicitly constrained set of string values. The specification may be unstructured (e.g., web page listing string values) or structured (e.g. RDF/OWL enumeration)."@en ;
-	rdfs:domain core:ControlledVocabulary ;
 	rdfs:range xsd:anyURI ;
 	.
 
@@ -311,7 +269,6 @@ core:context
 	a owl:DatatypeProperty ;
 	rdfs:label "context"@en ;
 	rdfs:comment "A description of particular contextual affinity."@en ;
-	rdfs:domain core:Grouping ;
 	rdfs:range xsd:string ;
 	.
 
@@ -319,7 +276,6 @@ core:createdBy
 	a owl:ObjectProperty ;
 	rdfs:label "createdBy"@en ;
 	rdfs:comment "The identity that created a characterization of a concept."@en ;
-	rdfs:domain core:UcoObject ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
@@ -327,7 +283,6 @@ core:createdTime
 	a owl:DatatypeProperty ;
 	rdfs:label "createdTime"@en ;
 	rdfs:comment "The time at which a characterization of a concept is created."@en ;
-	rdfs:domain core:UcoObject ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -335,7 +290,6 @@ core:definingContext
 	a owl:DatatypeProperty ;
 	rdfs:label "definingContext"@en ;
 	rdfs:comment "A description of the context relevant to the definition of a particular external reference identifier."@en ;
-	rdfs:domain core:ExternalReference ;
 	rdfs:range xsd:string ;
 	.
 
@@ -343,7 +297,6 @@ core:description
 	a owl:DatatypeProperty ;
 	rdfs:label "description"@en ;
 	rdfs:comment "A description of a particular concept characterization."@en ;
-	rdfs:domain core:UcoObject ;
 	rdfs:range xsd:string ;
 	.
 
@@ -351,7 +304,6 @@ core:endTime
 	a owl:DatatypeProperty ;
 	rdfs:label "endTime"@en ;
 	rdfs:comment "The ending time of a time range."@en ;
-	rdfs:domain core:Relationship ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -359,7 +311,6 @@ core:externalIdentifier
 	a owl:DatatypeProperty ;
 	rdfs:label "externalIdentifier"@en ;
 	rdfs:comment "An identifier for some information defined external to the UCO context."@en ;
-	rdfs:domain core:ExternalReference ;
 	rdfs:range xsd:string ;
 	.
 
@@ -367,7 +318,6 @@ core:facets
 	a owl:ObjectProperty ;
 	rdfs:label "facets"@en ;
 	rdfs:comment "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized."@en ;
-	rdfs:domain core:UcoObject ;
 	rdfs:range core:Facet ;
 	.
 
@@ -375,7 +325,6 @@ core:id
 	a owl:DatatypeProperty ;
 	rdfs:label "id"@en ;
 	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
-	rdfs:domain core:UcoObject ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
 	.
 
@@ -383,7 +332,6 @@ core:isDirectional
 	a owl:DatatypeProperty ;
 	rdfs:label "isDirectional"@en ;
 	rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
-	rdfs:domain core:Relationship ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -391,8 +339,14 @@ core:kindOfRelationship
 	a owl:ObjectProperty ;
 	rdfs:label "kindOfRelationship"@en ;
 	rdfs:comment "A characterization of the nature of a relationship between objects."@en ;
-	rdfs:domain core:Relationship ;
-	rdfs:range core:ControlledVocabulary ;
+	rdfs:range xsd:string ;
+	.
+
+core:modifiedTime
+	a owl:DatatypeProperty ;
+	rdfs:label "modifiedTime"@en ;
+	rdfs:comment "Specifies the time that this particular version of the object was modified. The object creator can use the time it deems most appropriate as the time this version of the object was modified. The value of the modified property for a given object version MUST be later than or equal to the value of the created property. Object creators MUST update the modified property when creating a new version of an object. The modified timestamp MUST be precise to the nearest millisecond (exactly three digits after the decimal place in seconds)."@en-us ;
+	rdfs:range xsd:dateTime ;
 	.
 
 core:name
@@ -409,11 +363,6 @@ core:object
 		"One or more UcoObject identifers referencing other objects."@en ,
 		"One or more UcoObjects."@en
 		;
-	rdfs:domain
-		core:Annotation ,
-		core:ContextualCompilation ,
-		core:EnclosingCompilation
-		;
 	rdfs:range core:UcoObject ;
 	.
 
@@ -421,7 +370,6 @@ core:objectMarking
 	a owl:ObjectProperty ;
 	rdfs:label "objectMarking"@en ;
 	rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
-	rdfs:domain core:UcoObject ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition> ;
 	.
 
@@ -429,7 +377,6 @@ core:referenceURL
 	a owl:DatatypeProperty ;
 	rdfs:label "referenceURL"@en ;
 	rdfs:comment "A URL for some information defined external to the UCO context."@en ;
-	rdfs:domain core:ExternalReference ;
 	rdfs:range xsd:anyURI ;
 	.
 
@@ -437,15 +384,13 @@ core:role
 	a owl:ObjectProperty ;
 	rdfs:label "role"@en ;
 	rdfs:comment "Usual or customary function based on contextual perspective."@en ;
-	rdfs:domain core:RelatedIdentity ;
-	rdfs:range core:ControlledVocabulary ;
+	rdfs:range xsd:string ;
 	.
 
 core:source
 	a owl:ObjectProperty ;
 	rdfs:label "source"@en ;
 	rdfs:comment "The originating node of a specified relationship."@en ;
-	rdfs:domain core:Relationship ;
 	rdfs:range core:UcoObject ;
 	.
 
@@ -453,15 +398,13 @@ core:specVersion
 	a owl:ObjectProperty ;
 	rdfs:label "specVersion"@en ;
 	rdfs:comment "The version of UCO used to characterize a concept."@en ;
-	rdfs:domain core:UcoObject ;
-	rdfs:range core:ControlledVocabulary ;
+	rdfs:range xsd:string ;
 	.
 
 core:startTime
 	a owl:DatatypeProperty ;
 	rdfs:label "startTime"@en ;
 	rdfs:comment "The initial time of a time range."@en ;
-	rdfs:domain core:Relationship ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -469,7 +412,6 @@ core:statement
 	a owl:DatatypeProperty ;
 	rdfs:label "statement"@en ;
 	rdfs:comment "A textual statement of an assertion."@en ;
-	rdfs:domain core:Assertion ;
 	rdfs:range xsd:string ;
 	.
 
@@ -477,7 +419,6 @@ core:tag
 	a owl:DatatypeProperty ;
 	rdfs:label "tag"@en ;
 	rdfs:comment "A generic tag/label."@en ;
-	rdfs:domain core:UcoObject ;
 	rdfs:range xsd:string ;
 	.
 
@@ -485,7 +426,6 @@ core:target
 	a owl:ObjectProperty ;
 	rdfs:label "target"@en ;
 	rdfs:comment "The terminating node of a specified relationship."@en ;
-	rdfs:domain core:Relationship ;
 	rdfs:range core:UcoObject ;
 	.
 
@@ -493,7 +433,6 @@ core:type
 	a owl:DatatypeProperty ;
 	rdfs:label "type"@en ;
 	rdfs:comment "The explicitly-defined type of characterization of a concept."@en ;
-	rdfs:domain core:UcoObject ;
 	rdfs:range xsd:string ;
 	.
 
@@ -501,7 +440,6 @@ core:value
 	a owl:DatatypeProperty ;
 	rdfs:label "value"@en ;
 	rdfs:comment "A string value."@en ;
-	rdfs:domain core:ControlledVocabulary ;
 	rdfs:range xsd:string ;
 	.
 

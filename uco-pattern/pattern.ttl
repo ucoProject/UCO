@@ -49,7 +49,6 @@ pattern:patternExpression
 	a owl:DatatypeProperty ;
 	rdfs:label "patternExpression"@en ;
 	rdfs:comment "An explicit logical pattern expression."@en ;
-	rdfs:domain pattern:LogicalPattern ;
 	rdfs:range pattern:PatternExpression ;
 	.
 

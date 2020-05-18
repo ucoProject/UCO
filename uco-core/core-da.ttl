@@ -1,0 +1,135 @@
+# baseURI: https://unifiedcyberontology.org/ontology/uco/core-da
+
+@base <https://unifiedcyberontology.org/ontology/uco/core-da> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix investigation: <https://unifiedcyberontology.org/ontology/uco/investigation#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://unifiedcyberontology.org/ontology/uco/core-da>
+	a owl:Ontology ;
+	rdfs:label "uco-core"@en ;
+	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
+	owl:versionInfo "0.2.1" ;
+	.
+
+core:confidence
+	rdfs:domain core:Confidence ;
+	.
+
+core:constrainingVocabularyName
+	rdfs:domain core:ControlledVocabulary ;
+	.
+
+core:constrainingVocabularyReference
+	rdfs:domain core:ControlledVocabulary ;
+	.
+
+core:context
+	rdfs:domain core:Grouping ;
+	.
+
+core:createdBy
+	rdfs:domain core:UcoObject ;
+	.
+
+core:createdTime
+	rdfs:domain core:UcoObject ;
+	.
+
+core:definingContext
+	rdfs:domain core:ExternalReference ;
+	.
+
+core:description
+	rdfs:domain core:UcoObject ;
+	.
+
+core:endTime
+	rdfs:domain
+		core:Relationship ,
+		investigation:Authorization
+		;
+	.
+
+core:externalIdentifier
+	rdfs:domain core:ExternalReference ;
+	.
+
+core:facets
+	rdfs:domain core:UcoObject ;
+	.
+
+core:id
+	rdfs:domain core:UcoObject ;
+	.
+
+core:isDirectional
+	rdfs:domain core:Relationship ;
+	.
+
+core:kindOfRelationship
+	rdfs:domain core:Relationship ;
+	.
+
+core:modifiedTime
+	rdfs:domain core:UcoObject ;
+	.
+
+core:name
+	rdfs:domain core:UcoObject ;
+	.
+
+core:object
+	rdfs:domain
+		core:Annotation ,
+		core:ContextualCompilation ,
+		core:EnclosingCompilation
+		;
+	.
+
+core:objectMarking
+	rdfs:domain core:UcoObject ;
+	.
+
+core:referenceURL
+	rdfs:domain core:ExternalReference ;
+	.
+
+core:role
+	rdfs:domain core:RelatedIdentity ;
+	.
+
+core:source
+	rdfs:domain core:Relationship ;
+	.
+
+core:specVersion
+	rdfs:domain core:UcoObject ;
+	.
+
+core:startTime
+	rdfs:domain core:Relationship ;
+	.
+
+core:statement
+	rdfs:domain core:Assertion ;
+	.
+
+core:tag
+	rdfs:domain core:UcoObject ;
+	.
+
+core:target
+	rdfs:domain core:Relationship ;
+	.
+
+core:type
+	rdfs:domain core:UcoObject ;
+	.
+
+core:value
+	rdfs:domain core:ControlledVocabulary ;
+	.

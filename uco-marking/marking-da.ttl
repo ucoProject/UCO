@@ -1,0 +1,47 @@
+# baseURI: https://unifiedcyberontology.org/ontology/uco/marking-da
+
+@base <https://unifiedcyberontology.org/ontology/uco/marking-da> .
+@prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://unifiedcyberontology.org/ontology/uco/marking-da>
+	a owl:Ontology ;
+	rdfs:label "marking domain assertions"@en ;
+	rdfs:comment "This ontology defines the domain assertions for the marking ontology"@en ;
+	.
+
+marking:authorizedIdentities
+	rdfs:domain marking:ReleaseToMarking ;
+	.
+
+marking:contentSelectors
+	rdfs:domain marking:GranularMarking ;
+	.
+
+marking:definition
+	rdfs:domain marking:MarkingDefinition ;
+	.
+
+marking:definitionType
+	rdfs:domain marking:MarkingDefinition ;
+	.
+
+marking:license
+	rdfs:domain marking:LicenseMarking ;
+	.
+
+marking:marking
+	rdfs:domain marking:GranularMarking ;
+	.
+
+marking:statement
+	rdfs:domain marking:StatementMarking ;
+	.
+
+marking:termsOfUse
+	rdfs:domain marking:TermsOfUseMarking ;
+	.
+
