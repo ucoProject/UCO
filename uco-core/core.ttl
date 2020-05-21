@@ -2,11 +2,13 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/core> .
+@prefix : <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/core>
@@ -117,7 +119,7 @@ core:EnclosingCompilation
 		[
 			a owl:Restriction ;
 			owl:onProperty core:description ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
 		[
@@ -203,20 +205,14 @@ core:UcoObject
 	rdfs:subClassOf
 		[
 			a owl:Restriction ;
-			owl:onProperty core:id ;
-			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identifier> ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty core:createdBy ;
 			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty core:createdTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:dateTime ;
 		] ,
 		[
@@ -230,6 +226,12 @@ core:UcoObject
 			owl:onProperty core:specVersion ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty core:id ;
+			owl:onClass <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
 	rdfs:label "UcoObject"@en ;
@@ -322,7 +324,10 @@ core:facets
 	.
 
 core:id
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:ObjectProperty
+		;
 	rdfs:label "id"@en ;
 	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
@@ -336,7 +341,10 @@ core:isDirectional
 	.
 
 core:kindOfRelationship
-	a owl:ObjectProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:ObjectProperty
+		;
 	rdfs:label "kindOfRelationship"@en ;
 	rdfs:comment "A characterization of the nature of a relationship between objects."@en ;
 	rdfs:range xsd:string ;
@@ -381,7 +389,10 @@ core:referenceURL
 	.
 
 core:role
-	a owl:ObjectProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:ObjectProperty
+		;
 	rdfs:label "role"@en ;
 	rdfs:comment "Usual or customary function based on contextual perspective."@en ;
 	rdfs:range xsd:string ;
@@ -395,7 +406,10 @@ core:source
 	.
 
 core:specVersion
-	a owl:ObjectProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:ObjectProperty
+		;
 	rdfs:label "specVersion"@en ;
 	rdfs:comment "The version of UCO used to characterize a concept."@en ;
 	rdfs:range xsd:string ;
@@ -441,5 +455,17 @@ core:value
 	rdfs:label "value"@en ;
 	rdfs:comment "A string value."@en ;
 	rdfs:range xsd:string ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#Identity>
+	a owl:Class ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
+	a owl:Class ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/types#Identifier>
+	a owl:Class ;
 	.
 
