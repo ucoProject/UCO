@@ -324,10 +324,7 @@ core:facets
 	.
 
 core:id
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "id"@en ;
 	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
@@ -341,10 +338,7 @@ core:isDirectional
 	.
 
 core:kindOfRelationship
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "kindOfRelationship"@en ;
 	rdfs:comment "A characterization of the nature of a relationship between objects."@en ;
 	rdfs:range xsd:string ;
@@ -389,10 +383,7 @@ core:referenceURL
 	.
 
 core:role
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "role"@en ;
 	rdfs:comment "Usual or customary function based on contextual perspective."@en ;
 	rdfs:range xsd:string ;
@@ -406,10 +397,7 @@ core:source
 	.
 
 core:specVersion
-	a
-		owl:DatatypeProperty ,
-		owl:ObjectProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "specVersion"@en ;
 	rdfs:comment "The version of UCO used to characterize a concept."@en ;
 	rdfs:range xsd:string ;
