@@ -327,7 +327,6 @@ core:id
 	a owl:DatatypeProperty ;
 	rdfs:label "id"@en ;
 	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
 	.
 
 core:isDirectional
@@ -450,10 +449,6 @@ core:value
 	.
 
 <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
-	a owl:Class ;
-	.
-
-<https://unifiedcyberontology.org/ontology/uco/types#Identifier>
 	a owl:Class ;
 	.
 
