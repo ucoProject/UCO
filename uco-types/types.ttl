@@ -151,4 +151,3 @@ types:value
 	rdfs:comment "A specific property value."@en ;
 	rdfs:range xsd:string ;
 	.
-

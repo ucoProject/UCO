@@ -230,7 +230,7 @@ core:UcoObject
 		[
 			a owl:Restriction ;
 			owl:onProperty core:id ;
-			owl:onClass <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
+			owl:onDataRange <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -327,6 +327,7 @@ core:id
 	a owl:DatatypeProperty ;
 	rdfs:label "id"@en ;
 	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
 	.
 
 core:isDirectional
@@ -451,4 +452,3 @@ core:value
 <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
 	a owl:Class ;
 	.
-
