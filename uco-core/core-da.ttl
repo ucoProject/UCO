@@ -133,3 +133,4 @@ core:type
 core:value
 	rdfs:domain core:ControlledVocabulary ;
 	.
+

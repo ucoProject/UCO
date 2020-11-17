@@ -28,6 +28,31 @@
 		;
 	.
 
+observable:AccountAuthenticationFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:passwordLastChanged ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:password ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:passwordType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "AccountAuthenticationFacet"@en ;
+	.
+
 observable:AccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -79,31 +104,6 @@ observable:AccountFacet
 	rdfs:comment "The fundamental properties of an account."@en ;
 	.
 
-observable:AccountAuthenticationFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:passwordLastChanged ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:password ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:passwordType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
-		;
-	rdfs:label "AccountAuthenticationFacet"@en ;
-	.
-
 observable:AlternateDataStream
 	a owl:Class ;
 	rdfs:subClassOf
@@ -126,6 +126,21 @@ observable:AlternateDataStream
 		]
 		;
 	rdfs:label "AlternateDataStream"@en ;
+	.
+
+observable:ApplicationAccountFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:application ;
+			owl:onClass observable:ObservableObject ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "ApplicationAccountFacet"@en ;
+	rdfs:comment "Characteristics of an account within a particular application."@en ;
 	.
 
 observable:ApplicationFacet
@@ -159,21 +174,6 @@ observable:ApplicationFacet
 		;
 	rdfs:label "ApplicationFacet"@en ;
 	rdfs:comment "Characteristics of a software application."@en ;
-	.
-
-observable:ApplicationAccountFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:application ;
-			owl:onClass observable:ObservableObject ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "ApplicationAccountFacet"@en ;
-	rdfs:comment "Characteristics of an account within a particular application."@en ;
 	.
 
 observable:ArchiveFileFacet
@@ -378,27 +378,6 @@ observable:BrowserCookieFacet
 	rdfs:comment "A piece of data used by a (remote) web page, stored on the local machine."@en ;
 	.
 
-observable:CalendarFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:application ;
-			owl:onClass observable:ObservableObject ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:owner ;
-			owl:onClass observable:ObservableObject ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "CalendarFacet"@en ;
-	rdfs:comment "A collection of appointments and meetings."@en ;
-	.
-
 observable:CalendarEntryFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -483,6 +462,27 @@ observable:CalendarEntryFacet
 		;
 	rdfs:label "CalendarEntryFacet"@en ;
 	rdfs:comment "Characteristics of an entry (appointment, meeting, event) within a calendar."@en ;
+	.
+
+observable:CalendarFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:application ;
+			owl:onClass observable:ObservableObject ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:owner ;
+			owl:onClass observable:ObservableObject ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "CalendarFacet"@en ;
+	rdfs:comment "A collection of appointments and meetings."@en ;
 	.
 
 observable:CompressedStreamFacet
@@ -742,54 +742,6 @@ observable:ContentDataFacet
 		;
 	rdfs:label "ContentDataFacet"@en ;
 	rdfs:comment "Characteristics of a block of digital data."@en ;
-	.
-
-observable:ObservableAction
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
-		observable:Observable
-		;
-	rdfs:label "ObservableAction"@en ;
-	rdfs:comment "Something that may be done or performed within the digital domain."@en ;
-	.
-
-observable:ObservableObject
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Item> ,
-		observable:Observable ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:state ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:hasChanged ;
-			owl:onDataRange xsd:boolean ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "ObservableObject"@en ;
-	rdfs:comment "A distinct article or unit within the digital domain."@en ;
-	.
-
-observable:ObservablePattern
-	a owl:Class ;
-	rdfs:subClassOf observable:Observable ;
-	rdfs:label "ObservablePattern"@en ;
-	rdfs:comment "A logical pattern composed of observable object and observable action properties."@en ;
-	.
-
-observable:ObservableRelationship
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Relationship> ,
-		observable:Observable
-		;
-	rdfs:label "ObservableRelationship"@en ;
-	rdfs:comment "An association or link between two cyber observable objects."@en ;
 	.
 
 observable:DataRangeFacet
@@ -2562,6 +2514,54 @@ observable:Observable
 """@en ;
 	.
 
+observable:ObservableAction
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
+		observable:Observable
+		;
+	rdfs:label "ObservableAction"@en ;
+	rdfs:comment "Something that may be done or performed within the digital domain."@en ;
+	.
+
+observable:ObservableObject
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Item> ,
+		observable:Observable ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:state ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:hasChanged ;
+			owl:onDataRange xsd:boolean ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "ObservableObject"@en ;
+	rdfs:comment "A distinct article or unit within the digital domain."@en ;
+	.
+
+observable:ObservablePattern
+	a owl:Class ;
+	rdfs:subClassOf observable:Observable ;
+	rdfs:label "ObservablePattern"@en ;
+	rdfs:comment "A logical pattern composed of observable object and observable action properties."@en ;
+	.
+
+observable:ObservableRelationship
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Relationship> ,
+		observable:Observable
+		;
+	rdfs:label "ObservableRelationship"@en ;
+	rdfs:comment "An association or link between two cyber observable objects."@en ;
+	.
+
 observable:Observation
 	a owl:Class ;
 	rdfs:subClassOf
@@ -3172,12 +3172,6 @@ observable:TaskActionType
 	rdfs:subClassOf
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:iEmailAction ;
-			owl:onClass observable:ObservableObject ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty observable:iComHandlerAction ;
 			owl:onClass observable:IComHandlerActionType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -3192,6 +3186,12 @@ observable:TaskActionType
 			a owl:Restriction ;
 			owl:onProperty observable:iShowMessageAction ;
 			owl:onClass observable:IShowMessageActionType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:iEmailAction ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -7991,3 +7991,4 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
+
