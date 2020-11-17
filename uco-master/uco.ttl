@@ -15,8 +15,6 @@
                                                                  <https://unifiedcyberontology.org/ontology/uco/core-da> ,
                                                                  <https://unifiedcyberontology.org/ontology/uco/identity> ,
                                                                  <https://unifiedcyberontology.org/ontology/uco/identity-da> ,
-                                                                 <https://unifiedcyberontology.org/ontology/uco/investigation> ,
-                                                                 <https://unifiedcyberontology.org/ontology/uco/investigation-da> ,
                                                                  <https://unifiedcyberontology.org/ontology/uco/location> ,
                                                                  <https://unifiedcyberontology.org/ontology/uco/location-da> ,
                                                                  <https://unifiedcyberontology.org/ontology/uco/marking> ,
