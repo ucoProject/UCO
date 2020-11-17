@@ -19,43 +19,43 @@ observable:abbreviation
 	.
 
 observable:accessedDirectory
-	rdfs:domain observable:WindowsPrefetch ;
+	rdfs:domain observable:WindowsPrefetchFacet ;
 	.
 
 observable:accessedFile
-	rdfs:domain observable:WindowsPrefetch ;
+	rdfs:domain observable:WindowsPrefetchFacet ;
 	.
 
 observable:accessedTime
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:account
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:accountIdentifier
-	rdfs:domain observable:Account ;
+	rdfs:domain observable:AccountFacet ;
 	.
 
 observable:accountIssuer
-	rdfs:domain observable:Account ;
+	rdfs:domain observable:AccountFacet ;
 	.
 
 observable:accountLogin
-	rdfs:domain observable:DigitalAccount ;
+	rdfs:domain observable:DigitalAccountFacet ;
 	.
 
 observable:accountLogonType
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:accountRunLevel
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:accountType
-	rdfs:domain observable:Account ;
+	rdfs:domain observable:AccountFacet ;
 	.
 
 observable:actionID
@@ -63,7 +63,7 @@ observable:actionID
 	.
 
 observable:actionList
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:actionType
@@ -71,11 +71,11 @@ observable:actionType
 	.
 
 observable:activeDirectoryGroups
-	rdfs:domain observable:WindowsActiveDirectoryAccount ;
+	rdfs:domain observable:WindowsActiveDirectoryAccountFacet ;
 	.
 
 observable:adapterName
-	rdfs:domain observable:NetworkInterface ;
+	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
 observable:address
@@ -88,61 +88,61 @@ observable:addressOfEntryPoint
 
 observable:addressValue
 	rdfs:domain
-		observable:BluetoothAddress ,
-		observable:WifiAddress
+		observable:BluetoothAddressFacet ,
+		observable:WifiAddressFacet
 		;
 	.
 
 observable:allocationStatus
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:alternateDataStreams
-	rdfs:domain observable:NTFSFileSystem ;
+	rdfs:domain observable:NTFSFileSystemFacet ;
 	.
 
 observable:application
-	rdfs:domain observable:PhoneCall ;
+	rdfs:domain observable:PhoneCallFacet ;
 	.
 
 observable:applicationFileName
-	rdfs:domain observable:WindowsPrefetch ;
+	rdfs:domain observable:WindowsPrefetchFacet ;
 	.
 
 observable:applicationIdentifier
-	rdfs:domain observable:Application ;
+	rdfs:domain observable:ApplicationFacet ;
 	.
 
 observable:archiveType
-	rdfs:domain observable:ArchiveFile ;
+	rdfs:domain observable:ArchiveFileFacet ;
 	.
 
 observable:arguments
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:asHandle
-	rdfs:domain observable:AutonomousSystem ;
+	rdfs:domain observable:AutonomousSystemFacet ;
 	.
 
 observable:aslrEnabled
-	rdfs:domain observable:WindowsProcess ;
+	rdfs:domain observable:WindowsProcessFacet ;
 	.
 
 observable:attendant
-	rdfs:domain observable:CalendarEntry ;
+	rdfs:domain observable:CalendarEntryFacet ;
 	.
 
 observable:audioType
-	rdfs:domain observable:Audio ;
+	rdfs:domain observable:AudioFacet ;
 	.
 
 observable:authorityKeyIdentifier
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:availableRam
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacetFacet ;
 	.
 
 observable:baseOfCode
@@ -150,79 +150,79 @@ observable:baseOfCode
 	.
 
 observable:baseStation
-	rdfs:domain observable:WirelessNetworkConnection ;
+	rdfs:domain observable:WirelessNetworkConnectionFacet ;
 	.
 
 observable:basicConstraints
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:bcc
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:binary
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:biosDate
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:biosManufacturer
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:biosReleaseDate
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:biosSerialNumber
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:biosVersion
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:bitRate
-	rdfs:domain observable:Audio ;
+	rdfs:domain observable:AudioFacet ;
 	.
 
 observable:bitness
-	rdfs:domain observable:OperatingSystem ;
+	rdfs:domain observable:OperatingSystemFacet ;
 	.
 
 observable:bitsPerPixel
-	rdfs:domain observable:RasterPicture ;
+	rdfs:domain observable:RasterPictureFacet ;
 	.
 
 observable:blockType
-	rdfs:domain observable:Memory ;
+	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:bluetoothDeviceName
-	rdfs:domain observable:MobileDevice ;
+	rdfs:domain observable:MobileDeviceFacet ;
 	.
 
 observable:body
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:bodyMultipart
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:bodyRaw
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:bookmarkPath
-	rdfs:domain observable:BrowserBookmark ;
+	rdfs:domain observable:BrowserBookmarkFacet ;
 	.
 
 observable:byteOrder
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:byteStringValue
@@ -230,43 +230,43 @@ observable:byteStringValue
 	.
 
 observable:callType
-	rdfs:domain observable:PhoneCall ;
+	rdfs:domain observable:PhoneCallFacet ;
 	.
 
 observable:camera
-	rdfs:domain observable:RasterPicture ;
+	rdfs:domain observable:RasterPictureFacet ;
 	.
 
 observable:canEscalatePrivs
-	rdfs:domain observable:UserAccount ;
+	rdfs:domain observable:UserAccountFacet ;
 	.
 
 observable:carrier
-	rdfs:domain observable:SIMCard ;
+	rdfs:domain observable:SIMCardFacet ;
 	.
 
 observable:categories
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:cc
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:certificateIssuer
-	rdfs:domain observable:DigitalSignatureInfo ;
+	rdfs:domain observable:DigitalSignatureInfoFacet ;
 	.
 
 observable:certificatePolicies
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:certificateSubject
-	rdfs:domain observable:DigitalSignatureInfo ;
+	rdfs:domain observable:DigitalSignatureInfoFacet ;
 	.
 
 observable:characteristics
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:checksum
@@ -274,15 +274,15 @@ observable:checksum
 	.
 
 observable:clockSetting
-	rdfs:domain observable:MobileDevice ;
+	rdfs:domain observable:MobileDeviceFacet ;
 	.
 
 observable:clusterSize
-	rdfs:domain observable:FileSystem ;
+	rdfs:domain observable:FileSystemFacet ;
 	.
 
 observable:columnName
-	rdfs:domain observable:SQLiteBlob ;
+	rdfs:domain observable:SQLiteBlobFacet ;
 	.
 
 observable:comClassID
@@ -294,19 +294,19 @@ observable:comData
 	.
 
 observable:comment
-	rdfs:domain observable:ArchiveFile ;
+	rdfs:domain observable:ArchiveFileFacet ;
 	.
 
 observable:compressionMethod
-	rdfs:domain observable:CompressedStream ;
+	rdfs:domain observable:CompressedStreamFacet ;
 	.
 
 observable:compressionRatio
-	rdfs:domain observable:CompressedStream ;
+	rdfs:domain observable:CompressedStreamFacet ;
 	.
 
 observable:computerName
-	rdfs:domain observable:Event ;
+	rdfs:domain observable:EventFacet ;
 	.
 
 observable:contactID
@@ -314,7 +314,7 @@ observable:contactID
 	.
 
 observable:contactInfo
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:contactName
@@ -330,83 +330,83 @@ observable:contactType
 	.
 
 observable:contentDisposition
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:contentType
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:context
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:controlCode
-	rdfs:domain observable:SendControlCodeEffect ;
+	rdfs:domain observable:SendControlCodeEffectFacet ;
 	.
 
 observable:cookieDomain
-	rdfs:domain observable:BrowserCookie ;
+	rdfs:domain observable:BrowserCookieFacet ;
 	.
 
 observable:cookieName
-	rdfs:domain observable:BrowserCookie ;
+	rdfs:domain observable:BrowserCookieFacet ;
 	.
 
 observable:cookiePath
-	rdfs:domain observable:BrowserCookie ;
+	rdfs:domain observable:BrowserCookieFacet ;
 	.
 
 observable:cpeid
-	rdfs:domain observable:Software ;
+	rdfs:domain observable:SoftwareFacet ;
 	.
 
 observable:cpu
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:cpuFamily
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:createdTime
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:creationDate
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:creationFlags
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:creationTime
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:creator
-	rdfs:domain observable:WindowsRegistryKey ;
+	rdfs:domain observable:WindowsRegistryKeyFacet ;
 	.
 
 observable:creatorUser
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:crlDistributionPoints
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:currentSystemDate
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:currentWorkingDirectory
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:cyberAction
-	rdfs:domain observable:Event ;
+	rdfs:domain observable:EventFacet ;
 	.
 
 observable:data
@@ -414,11 +414,11 @@ observable:data
 	.
 
 observable:dataPayload
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:dataPayloadReferenceURL
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:dataType
@@ -426,11 +426,11 @@ observable:dataType
 	.
 
 observable:depEnabled
-	rdfs:domain observable:WindowsProcess ;
+	rdfs:domain observable:WindowsProcessFacet ;
 	.
 
 observable:descriptions
-	rdfs:domain observable:WindowsService ;
+	rdfs:domain observable:WindowsServiceFacet ;
 	.
 
 observable:destination
@@ -438,43 +438,43 @@ observable:destination
 	.
 
 observable:destinationFlags
-	rdfs:domain observable:TCPConnection ;
+	rdfs:domain observable:TCPConnectionFacet ;
 	.
 
 observable:destinationPort
-	rdfs:domain observable:NetworkConnection ;
+	rdfs:domain observable:NetworkConnectionFacet ;
 	.
 
 observable:deviceType
-	rdfs:domain observable:Device ;
+	rdfs:domain observable:DeviceFacet ;
 	.
 
 observable:dhcpLeaseExpires
-	rdfs:domain observable:NetworkInterface ;
+	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
 observable:dhcpLeaseObtained
-	rdfs:domain observable:NetworkInterface ;
+	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
 observable:dhcpServer
-	rdfs:domain observable:NetworkInterface ;
+	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
 observable:diskPartitionType
-	rdfs:domain observable:DiskPartition ;
+	rdfs:domain observable:DiskPartitionFacet ;
 	.
 
 observable:diskSize
-	rdfs:domain observable:Disk ;
+	rdfs:domain observable:DiskFacet ;
 	.
 
 observable:diskType
-	rdfs:domain observable:Disk ;
+	rdfs:domain observable:DiskFacet ;
 	.
 
 observable:displayName
-	rdfs:domain observable:WindowsService ;
+	rdfs:domain observable:WindowsServiceFacet ;
 	.
 
 observable:dllCharacteristics
@@ -482,7 +482,7 @@ observable:dllCharacteristics
 	.
 
 observable:dnssec
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:documentInformationDictionary
@@ -490,55 +490,55 @@ observable:documentInformationDictionary
 	.
 
 observable:domain
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:domainID
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:domainName
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:driveLetter
-	rdfs:domain observable:WindowsVolume ;
+	rdfs:domain observable:WindowsVolumeFacet ;
 	.
 
 observable:driveType
-	rdfs:domain observable:WindowsVolume ;
+	rdfs:domain observable:WindowsVolumeFacet ;
 	.
 
 observable:dst
-	rdfs:domain observable:NetworkConnection ;
+	rdfs:domain observable:NetworkConnectionFacet ;
 	.
 
 observable:dstBytes
-	rdfs:domain observable:NetworkFlow ;
+	rdfs:domain observable:NetworkFlowFacet ;
 	.
 
 observable:dstPackets
-	rdfs:domain observable:NetworkFlow ;
+	rdfs:domain observable:NetworkFlowFacet ;
 	.
 
 observable:dstPayload
-	rdfs:domain observable:NetworkFlow ;
+	rdfs:domain observable:NetworkFlowFacet ;
 	.
 
 observable:duration
-	rdfs:domain observable:PhoneCall ;
+	rdfs:domain observable:PhoneCallFacet ;
 	.
 
 observable:effectiveGroup
-	rdfs:domain observable:UserSession ;
+	rdfs:domain observable:UserSessionFacet ;
 	.
 
 observable:effectiveGroupID
-	rdfs:domain observable:UserSession ;
+	rdfs:domain observable:UserSessionFacet ;
 	.
 
 observable:effectiveUser
-	rdfs:domain observable:UserSession ;
+	rdfs:domain observable:UserSessionFacet ;
 	.
 
 observable:emailAddress
@@ -550,27 +550,27 @@ observable:encoding
 	.
 
 observable:encodingMethod
-	rdfs:domain observable:EncodedStream ;
+	rdfs:domain observable:EncodedStreamFacet ;
 	.
 
 observable:encryptionIV
-	rdfs:domain observable:EncryptedStream ;
+	rdfs:domain observable:EncryptedStreamFacet ;
 	.
 
 observable:encryptionKey
-	rdfs:domain observable:EncryptedStream ;
+	rdfs:domain observable:EncryptedStreamFacet ;
 	.
 
 observable:encryptionMethod
-	rdfs:domain observable:EncryptedStream ;
+	rdfs:domain observable:EncryptedStreamFacet ;
 	.
 
 observable:encryptionMode
-	rdfs:domain observable:EncryptedStream ;
+	rdfs:domain observable:EncryptedStreamFacet ;
 	.
 
 observable:endTime
-	rdfs:domain observable:PhoneCall ;
+	rdfs:domain observable:PhoneCallFacet ;
 	.
 
 observable:englishTranslation
@@ -578,31 +578,31 @@ observable:englishTranslation
 	.
 
 observable:entropy
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:entryID
-	rdfs:domain observable:NTFSFileSystem ;
+	rdfs:domain observable:NTFSFileSystemFacet ;
 	.
 
 observable:environmentVariables
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:eventID
-	rdfs:domain observable:Event ;
+	rdfs:domain observable:EventFacet ;
 	.
 
 observable:eventStatus
-	rdfs:domain observable:CalendarEntry ;
+	rdfs:domain observable:CalendarEntryFacet ;
 	.
 
 observable:eventText
-	rdfs:domain observable:Event ;
+	rdfs:domain observable:EventFacet ;
 	.
 
 observable:eventType
-	rdfs:domain observable:Event ;
+	rdfs:domain observable:EventFacet ;
 	.
 
 observable:execArguments
@@ -622,71 +622,71 @@ observable:execWorkingDirectory
 	.
 
 observable:exifData
-	rdfs:domain observable:EXIF ;
+	rdfs:domain observable:EXIFFacet ;
 	.
 
 observable:exitCode
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:exitStatus
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:exitTime
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:expirationDate
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:expirationTime
-	rdfs:domain observable:BrowserCookie ;
+	rdfs:domain observable:BrowserCookieFacet ;
 	.
 
 observable:extDeletionTime
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extFileType
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extFlags
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extHardLinkCount
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extInodeChangeTime
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extInodeID
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extPermissions
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extSGID
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extSUID
-	rdfs:domain observable:ExtInode ;
+	rdfs:domain observable:ExtInodeFacet ;
 	.
 
 observable:extendedKeyUsage
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:extension
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:faxNumber
@@ -698,87 +698,87 @@ observable:fileAlignment
 	.
 
 observable:fileHeaderHashes
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:fileName
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:filePath
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:fileSystemType
-	rdfs:domain observable:FileSystem ;
+	rdfs:domain observable:FileSystemFacet ;
 	.
 
 observable:firstLoginTime
-	rdfs:domain observable:DigitalAccount ;
+	rdfs:domain observable:DigitalAccountFacet ;
 	.
 
 observable:firstName
-	rdfs:domain observable:Contact ;
+	rdfs:domain observable:ContactFacet ;
 	.
 
 observable:firstRun
-	rdfs:domain observable:WindowsPrefetch ;
+	rdfs:domain observable:WindowsPrefetchFacet ;
 	.
 
 observable:flags
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:format
-	rdfs:domain observable:Audio ;
+	rdfs:domain observable:AudioFacet ;
 	.
 
 observable:fragment
-	rdfs:domain observable:URL ;
+	rdfs:domain observable:URLFacet ;
 	.
 
 observable:fragmentIndex
-	rdfs:domain observable:Fragment ;
+	rdfs:domain observable:FragmentFacet ;
 	.
 
 observable:freeSpace
-	rdfs:domain observable:Disk ;
+	rdfs:domain observable:DiskFacet ;
 	.
 
 observable:from
-	rdfs:domain observable:PhoneCall ;
+	rdfs:domain observable:PhoneCallFacet ;
 	.
 
 observable:fullValue
-	rdfs:domain observable:URL ;
+	rdfs:domain observable:URLFacet ;
 	.
 
 observable:geoLocationEntry
-	rdfs:domain observable:GeoLocationTrack ;
+	rdfs:domain observable:GeoLocationTrackFacet ;
 	.
 
 observable:gid
-	rdfs:domain observable:UNIXAccount ;
+	rdfs:domain observable:UNIXAccountFacet ;
 	.
 
 observable:globalFlagList
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:gpu
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:gpuFamily
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:groupName
-	rdfs:domain observable:WindowsService ;
+	rdfs:domain observable:WindowsServiceFacet ;
 	.
 
 observable:groups
-	rdfs:domain observable:WindowsAccount ;
+	rdfs:domain observable:WindowsAccountFacet ;
 	.
 
 observable:hasChanged
@@ -786,7 +786,7 @@ observable:hasChanged
 	.
 
 observable:hash
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:hashes
@@ -794,7 +794,7 @@ observable:hashes
 	.
 
 observable:headerRaw
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:hexadecimalValue
@@ -802,31 +802,31 @@ observable:hexadecimalValue
 	.
 
 observable:hiveType
-	rdfs:domain observable:WindowsRegistryHive ;
+	rdfs:domain observable:WindowsRegistryHiveFacet ;
 	.
 
 observable:homeDirectory
-	rdfs:domain observable:UserAccount ;
+	rdfs:domain observable:UserAccountFacet ;
 	.
 
 observable:host
-	rdfs:domain observable:URL ;
+	rdfs:domain observable:URLFacet ;
 	.
 
 observable:hostname
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:httpMesageBodyLength
-	rdfs:domain observable:HTTPConnection ;
+	rdfs:domain observable:HTTPConnectionFacet ;
 	.
 
 observable:httpMessageBodyData
-	rdfs:domain observable:HTTPConnection ;
+	rdfs:domain observable:HTTPConnectionFacet ;
 	.
 
 observable:httpRequestHeader
-	rdfs:domain observable:HTTPConnection ;
+	rdfs:domain observable:HTTPConnectionFacet ;
 	.
 
 observable:iComHandlerAction
@@ -846,11 +846,11 @@ observable:iShowMessageAction
 	.
 
 observable:icmpCode
-	rdfs:domain observable:ICMPConnection ;
+	rdfs:domain observable:ICMPConnectionFacet ;
 	.
 
 observable:icmpType
-	rdfs:domain observable:ICMPConnection ;
+	rdfs:domain observable:ICMPConnectionFacet ;
 	.
 
 observable:imageBase
@@ -858,59 +858,59 @@ observable:imageBase
 	.
 
 observable:imageCompressionMethod
-	rdfs:domain observable:RasterPicture ;
+	rdfs:domain observable:RasterPictureFacet ;
 	.
 
 observable:imageName
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:imageType
-	rdfs:domain observable:Image ;
+	rdfs:domain observable:ImageFacet ;
 	.
 
 observable:impHash
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:inReplyTo
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:inhibitAnyPolicy
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:installDate
-	rdfs:domain observable:OperatingSystem ;
+	rdfs:domain observable:OperatingSystemFacet ;
 	.
 
 observable:ip
-	rdfs:domain observable:NetworkInterface ;
+	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
 observable:ipAddress
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:ipGateway
-	rdfs:domain observable:NetworkInterface ;
+	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
 observable:ipfix
-	rdfs:domain observable:NetworkFlow ;
+	rdfs:domain observable:NetworkFlowFacet ;
 	.
 
 observable:isActive
-	rdfs:domain observable:NetworkConnection ;
+	rdfs:domain observable:NetworkConnectionFacet ;
 	.
 
 observable:isDirectory
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:isDisabled
-	rdfs:domain observable:DigitalAccount ;
+	rdfs:domain observable:DigitalAccountFacet ;
 	.
 
 observable:isEnabled
@@ -918,31 +918,31 @@ observable:isEnabled
 	.
 
 observable:isEncrypted
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:isHidden
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:isInjected
-	rdfs:domain observable:Memory ;
+	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:isMapped
-	rdfs:domain observable:Memory ;
+	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:isMimeEncoded
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:isMultipart
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:isNamed
-	rdfs:domain observable:Mutex ;
+	rdfs:domain observable:MutexFacet ;
 	.
 
 observable:isOptimized
@@ -950,67 +950,67 @@ observable:isOptimized
 	.
 
 observable:isPrivate
-	rdfs:domain observable:CalendarEntry ;
+	rdfs:domain observable:CalendarEntryFacet ;
 	.
 
 observable:isPrivileged
-	rdfs:domain observable:UserAccount ;
+	rdfs:domain observable:UserAccountFacet ;
 	.
 
 observable:isProtected
-	rdfs:domain observable:Memory ;
+	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:isRead
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:isSecure
-	rdfs:domain observable:BrowserCookie ;
+	rdfs:domain observable:BrowserCookieFacet ;
 	.
 
 observable:isSelfSigned
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:isServiceAccount
-	rdfs:domain observable:UserAccount ;
+	rdfs:domain observable:UserAccountFacet ;
 	.
 
 observable:isTLD
-	rdfs:domain observable:DomainName ;
+	rdfs:domain observable:DomainNameFacet ;
 	.
 
 observable:isVolatile
-	rdfs:domain observable:Memory ;
+	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:issuer
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:issuerAlternativeName
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:issuerHash
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:key
-	rdfs:domain observable:WindowsRegistryKey ;
+	rdfs:domain observable:WindowsRegistryKeyFacet ;
 	.
 
 observable:keyUsage
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:keypadUnlockCode
-	rdfs:domain observable:MobileDevice ;
+	rdfs:domain observable:MobileDeviceFacet ;
 	.
 
 observable:labels
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:language
@@ -1018,15 +1018,15 @@ observable:language
 	.
 
 observable:lastLoginTime
-	rdfs:domain observable:DigitalAccount ;
+	rdfs:domain observable:DigitalAccountFacet ;
 	.
 
 observable:lastName
-	rdfs:domain observable:Contact ;
+	rdfs:domain observable:ContactFacet ;
 	.
 
 observable:lastRun
-	rdfs:domain observable:WindowsPrefetch ;
+	rdfs:domain observable:WindowsPrefetchFacet ;
 	.
 
 observable:length
@@ -1034,7 +1034,7 @@ observable:length
 	.
 
 observable:libraryType
-	rdfs:domain observable:Library ;
+	rdfs:domain observable:LibraryFacet ;
 	.
 
 observable:loaderFlags
@@ -1042,31 +1042,31 @@ observable:loaderFlags
 	.
 
 observable:localTime
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:location
-	rdfs:domain observable:GeoLocationEntry ;
+	rdfs:domain observable:GeoLocationEntryFacet ;
 	.
 
 observable:loginTime
-	rdfs:domain observable:UserSession ;
+	rdfs:domain observable:UserSessionFacet ;
 	.
 
 observable:logoutTime
-	rdfs:domain observable:UserSession ;
+	rdfs:domain observable:UserSessionFacet ;
 	.
 
 observable:lookupDate
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:macAddress
-	rdfs:domain observable:NetworkInterface ;
+	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
 observable:machine
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:magic
@@ -1074,7 +1074,7 @@ observable:magic
 	.
 
 observable:magicNumber
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:majorImageVersion
@@ -1094,82 +1094,82 @@ observable:majorSubsystemVersion
 	.
 
 observable:manufacturer
-	rdfs:domain observable:Device ;
+	rdfs:domain observable:DeviceFacet ;
 	.
 
 observable:maxRunTime
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:message
-	rdfs:domain observable:MessageThread ;
+	rdfs:domain observable:MessageThreadFacet ;
 	.
 
 observable:messageID
 	rdfs:domain
-		observable:EmailMessage ,
-		observable:Message
+		observable:EmailMessageFacet ,
+		observable:MessageFacet
 		;
 	.
 
 observable:messageText
-	rdfs:domain observable:Message ;
+	rdfs:domain observable:MessageFacet ;
 	.
 
 observable:messageType
-	rdfs:domain observable:Message ;
+	rdfs:domain observable:MessageFacet ;
 	.
 
 observable:metadataChangeTime
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:mftFileID
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:mftFileNameAccessedTime
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:mftFileNameCreatedTime
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:mftFileNameLength
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:mftFileNameModifiedTime
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:mftFileNameRecordChangeTime
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:mftFlags
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:mftParentID
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:mftRecordChangeTime
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:middleName
-	rdfs:domain observable:Contact ;
+	rdfs:domain observable:ContactFacet ;
 	.
 
 observable:mimeClass
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:mimeType
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:minorImageVersion
@@ -1189,79 +1189,79 @@ observable:minorSubsystemVersion
 	.
 
 observable:mockLocationsAllowed
-	rdfs:domain observable:MobileDevice ;
+	rdfs:domain observable:MobileDeviceFacet ;
 	.
 
 observable:model
-	rdfs:domain observable:Device ;
+	rdfs:domain observable:DeviceFacet ;
 	.
 
 observable:modifiedTime
-	rdfs:domain observable:File ;
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:mostRecentRunTime
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:mountPoint
-	rdfs:domain observable:DiskPartition ;
+	rdfs:domain observable:DiskPartitionFacet ;
 	.
 
 observable:msProductID
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:msProductName
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:nameConstraints
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:nameserver
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:netBIOSName
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:network
-	rdfs:domain observable:MobileDevice ;
+	rdfs:domain observable:MobileDeviceFacet ;
 	.
 
 observable:networkInterface
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:newObject
-	rdfs:domain observable:StateChangeEffect ;
+	rdfs:domain observable:StateChangeEffectFacet ;
 	.
 
 observable:nextRunTime
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:ntfsHardLinkCount
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:ntfsOwnerID
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:ntfsOwnerSID
-	rdfs:domain observable:MftRecord ;
+	rdfs:domain observable:MftRecordFacet ;
 	.
 
 observable:number
-	rdfs:domain observable:AutonomousSystem ;
+	rdfs:domain observable:AutonomousSystemFacet ;
 	.
 
 observable:numberOfLaunches
-	rdfs:domain observable:Application ;
+	rdfs:domain observable:ApplicationFacet ;
 	.
 
 observable:numberOfRVAAndSizes
@@ -1269,121 +1269,121 @@ observable:numberOfRVAAndSizes
 	.
 
 observable:numberOfSections
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:numberOfSubkeys
-	rdfs:domain observable:WindowsRegistryKey ;
+	rdfs:domain observable:WindowsRegistryKeyFacet ;
 	.
 
 observable:numberOfSymbols
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:objectGUID
-	rdfs:domain observable:WindowsActiveDirectoryAccount ;
+	rdfs:domain observable:WindowsActiveDirectoryAccountFacet ;
 	.
 
 observable:oldObject
-	rdfs:domain observable:StateChangeEffect ;
+	rdfs:domain observable:StateChangeEffectFacet ;
 	.
 
 observable:taskComment
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:openFileDescriptor
-	rdfs:domain observable:UNIXProcess ;
+	rdfs:domain observable:UNIXProcessFacet ;
 	.
 
 observable:operatingSystem
-	rdfs:domain observable:Application ;
+	rdfs:domain observable:ApplicationFacet ;
 	.
 
 observable:optionalHeader
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:options
-	rdfs:domain observable:UNIXVolume ;
+	rdfs:domain observable:UNIXVolumeFacet ;
 	.
 
 observable:otherHeaders
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:owner
 	rdfs:domain
-		observable:Account ,
-		observable:FilePermissions
+		observable:AccountFacet ,
+		observable:FilePermissionsFacet
 		;
 	.
 
 observable:ownerSID
-	rdfs:domain observable:WindowsProcess ;
+	rdfs:domain observable:WindowsProcessFacet ;
 	.
 
 observable:parameterAddress
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:parameters
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:parent
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:participant
-	rdfs:domain observable:MessageThread ;
+	rdfs:domain observable:MessageThreadFacet ;
 	.
 
 observable:partition
-	rdfs:domain observable:Disk ;
+	rdfs:domain observable:DiskFacet ;
 	.
 
 observable:partitionID
-	rdfs:domain observable:DiskPartition ;
+	rdfs:domain observable:DiskPartitionFacet ;
 	.
 
 observable:partitionLength
-	rdfs:domain observable:DiskPartition ;
+	rdfs:domain observable:DiskPartitionFacet ;
 	.
 
 observable:partitionOffset
-	rdfs:domain observable:DiskPartition ;
+	rdfs:domain observable:DiskPartitionFacet ;
 	.
 
 observable:password
 	rdfs:domain
-		observable:AccountAuthentication ,
-		observable:URL
+		observable:AccountAuthenticationFacet ,
+		observable:URLFacet
 		;
 	.
 
 observable:passwordLastChanged
-	rdfs:domain observable:AccountAuthentication ;
+	rdfs:domain observable:AccountAuthenticationFacet ;
 	.
 
 observable:passwordType
-	rdfs:domain observable:AccountAuthentication ;
+	rdfs:domain observable:AccountAuthenticationFacet ;
 	.
 
 observable:path
-	rdfs:domain observable:PathRelation ;
+	rdfs:domain observable:PathRelationFacet ;
 	.
 
 observable:pdfId0
-	rdfs:domain observable:PDFFile ;
+	rdfs:domain observable:PDFFileFacet ;
 	.
 
 observable:pdfId1
-	rdfs:domain observable:PDFFile ;
+	rdfs:domain observable:PDFFileFacet ;
 	.
 
 observable:peType
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:phone
@@ -1391,111 +1391,111 @@ observable:phone
 	.
 
 observable:phoneActivationTime
-	rdfs:domain observable:MobileDevice ;
+	rdfs:domain observable:MobileDeviceFacet ;
 	.
 
 observable:phoneNumber
-	rdfs:domain observable:PhoneAccount ;
+	rdfs:domain observable:PhoneAccountFacet ;
 	.
 
 observable:phoneNumbers
-	rdfs:domain observable:Contact ;
+	rdfs:domain observable:ContactFacet ;
 	.
 
 observable:pictureHeight
-	rdfs:domain observable:RasterPicture ;
+	rdfs:domain observable:RasterPictureFacet ;
 	.
 
 observable:pictureWidth
-	rdfs:domain observable:RasterPicture ;
+	rdfs:domain observable:RasterPictureFacet ;
 	.
 
 observable:picturetype
-	rdfs:domain observable:RasterPicture ;
+	rdfs:domain observable:RasterPictureFacet ;
 	.
 
 observable:pid
-	rdfs:domain observable:Process ;
+	rdfs:domain observable:ProcessFacet ;
 	.
 
 observable:pointerToSymbolTable
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:policyConstraints
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:policyMappings
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:port
-	rdfs:domain observable:URL ;
+	rdfs:domain observable:URLFacet ;
 	.
 
 observable:prefetchHash
-	rdfs:domain observable:WindowsPrefetch ;
+	rdfs:domain observable:WindowsPrefetchFacet ;
 	.
 
 observable:priority
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:privateKeyUsagePeriodNotAfter
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:privateKeyUsagePeriodNotBefore
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:processorArchitecture
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:properties
-	rdfs:domain observable:PropertiesEnumeratedEffect ;
+	rdfs:domain observable:PropertiesEnumeratedEffectFacet ;
 	.
 
 observable:propertyName
-	rdfs:domain observable:PropertyReadEffect ;
+	rdfs:domain observable:PropertyReadEffectFacet ;
 	.
 
 observable:protocols
-	rdfs:domain observable:NetworkConnection ;
+	rdfs:domain observable:NetworkConnectionFacet ;
 	.
 
 observable:query
-	rdfs:domain observable:URL ;
+	rdfs:domain observable:URLFacet ;
 	.
 
 observable:rangeOffset
-	rdfs:domain observable:DataRange ;
+	rdfs:domain observable:DataRangeFacet ;
 	.
 
 observable:rangeOffsetType
-	rdfs:domain observable:DataRange ;
+	rdfs:domain observable:DataRangeFacet ;
 	.
 
 observable:rangeSize
-	rdfs:domain observable:DataRange ;
+	rdfs:domain observable:DataRangeFacet ;
 	.
 
 observable:receivedLines
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:receivedTime
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:recurrence
-	rdfs:domain observable:CalendarEntry ;
+	rdfs:domain observable:CalendarEntryFacet ;
 	.
 
 observable:references
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:referralURL
@@ -1503,31 +1503,31 @@ observable:referralURL
 	.
 
 observable:regionSize
-	rdfs:domain observable:Memory ;
+	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:regionStartAddress
-	rdfs:domain observable:Memory ;
+	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:region_end_address
-	rdfs:domain observable:Memory ;
+	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:regionalInternetRegistry
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:registeredOrganization
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:registeredOwner
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:registrantIDs
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:registrarGUID
@@ -1539,7 +1539,7 @@ observable:registrarID
 	.
 
 observable:registrarInfo
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:registrarName
@@ -1547,51 +1547,51 @@ observable:registrarName
 	.
 
 observable:registryValues
-	rdfs:domain observable:WindowsRegistryKey ;
+	rdfs:domain observable:WindowsRegistryKeyFacet ;
 	.
 
 observable:remarks
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:remindTime
-	rdfs:domain observable:CalendarEntry ;
+	rdfs:domain observable:CalendarEntryFacet ;
 	.
 
 observable:requestMethod
-	rdfs:domain observable:HTTPConnection ;
+	rdfs:domain observable:HTTPConnectionFacet ;
 	.
 
 observable:requestValue
-	rdfs:domain observable:HTTPConnection ;
+	rdfs:domain observable:HTTPConnectionFacet ;
 	.
 
 observable:requestVersion
-	rdfs:domain observable:HTTPConnection ;
+	rdfs:domain observable:HTTPConnectionFacet ;
 	.
 
 observable:rowCondition
-	rdfs:domain observable:SQLiteBlob ;
+	rdfs:domain observable:SQLiteBlobFacet ;
 	.
 
 observable:rowIndex
-	rdfs:domain observable:SQLiteBlob ;
+	rdfs:domain observable:SQLiteBlobFacet ;
 	.
 
 observable:ruid
-	rdfs:domain observable:UNIXProcess ;
+	rdfs:domain observable:UNIXProcessFacet ;
 	.
 
 observable:runningStatus
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:scheme
-	rdfs:domain observable:URL ;
+	rdfs:domain observable:URLFacet ;
 	.
 
 observable:screenName
-	rdfs:domain observable:Contact ;
+	rdfs:domain observable:ContactFacet ;
 	.
 
 observable:sectionAlignment
@@ -1599,51 +1599,51 @@ observable:sectionAlignment
 	.
 
 observable:sections
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:sectorSize
-	rdfs:domain observable:Volume ;
+	rdfs:domain observable:VolumeFacet ;
 	.
 
 observable:securityAttributes
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:sender
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:sentTime
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:serialNumber
-	rdfs:domain observable:Device ;
+	rdfs:domain observable:DeviceFacet ;
 	.
 
 observable:serverName
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:serviceName
-	rdfs:domain observable:WindowsService ;
+	rdfs:domain observable:WindowsServiceFacet ;
 	.
 
 observable:serviceStatus
-	rdfs:domain observable:WindowsService ;
+	rdfs:domain observable:WindowsServiceFacet ;
 	.
 
 observable:serviceType
-	rdfs:domain observable:WindowsService ;
+	rdfs:domain observable:WindowsServiceFacet ;
 	.
 
 observable:sessionID
-	rdfs:domain observable:Message ;
+	rdfs:domain observable:MessageFacet ;
 	.
 
 observable:shell
-	rdfs:domain observable:UNIXAccount ;
+	rdfs:domain observable:UNIXAccountFacet ;
 	.
 
 observable:showMessageBody
@@ -1655,27 +1655,27 @@ observable:showMessageTitle
 	.
 
 observable:sid
-	rdfs:domain observable:NTFSFileSystem ;
+	rdfs:domain observable:NTFSFileSystemFacet ;
 	.
 
 observable:signature
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:signatureAlgorithm
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:signatureDescription
-	rdfs:domain observable:DigitalSignatureInfo ;
+	rdfs:domain observable:DigitalSignatureInfoFacet ;
 	.
 
 observable:signatureExists
-	rdfs:domain observable:DigitalSignatureInfo ;
+	rdfs:domain observable:DigitalSignatureInfoFacet ;
 	.
 
 observable:signatureVerified
-	rdfs:domain observable:DigitalSignatureInfo ;
+	rdfs:domain observable:DigitalSignatureInfoFacet ;
 	.
 
 observable:size
@@ -1683,7 +1683,7 @@ observable:size
 	.
 
 observable:sizeInBytes
-	rdfs:domain observable:ContentData ;
+	rdfs:domain observable:ContentDataFacet ;
 	.
 
 observable:sizeOfCode
@@ -1711,7 +1711,7 @@ observable:sizeOfInitializedData
 	.
 
 observable:sizeOfOptionalHeader
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:sizeOfStackCommit
@@ -1727,67 +1727,67 @@ observable:sizeOfUninitializedData
 	.
 
 observable:sourceFlags
-	rdfs:domain observable:TCPConnection ;
+	rdfs:domain observable:TCPConnectionFacet ;
 	.
 
 observable:sourcePort
-	rdfs:domain observable:NetworkConnection ;
+	rdfs:domain observable:NetworkConnectionFacet ;
 	.
 
 observable:spaceLeft
-	rdfs:domain observable:DiskPartition ;
+	rdfs:domain observable:DiskPartitionFacet ;
 	.
 
 observable:spaceUsed
-	rdfs:domain observable:DiskPartition ;
+	rdfs:domain observable:DiskPartitionFacet ;
 	.
 
 observable:sponsoringRegistrar
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:src
-	rdfs:domain observable:NetworkConnection ;
+	rdfs:domain observable:NetworkConnectionFacet ;
 	.
 
 observable:srcBytes
-	rdfs:domain observable:NetworkFlow ;
+	rdfs:domain observable:NetworkFlowFacet ;
 	.
 
 observable:srcPackets
-	rdfs:domain observable:NetworkFlow ;
+	rdfs:domain observable:NetworkFlowFacet ;
 	.
 
 observable:srcPayload
-	rdfs:domain observable:NetworkFlow ;
+	rdfs:domain observable:NetworkFlowFacet ;
 	.
 
 observable:ssid
-	rdfs:domain observable:WirelessNetworkConnection ;
+	rdfs:domain observable:WirelessNetworkConnectionFacet ;
 	.
 
 observable:stackSize
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:startAddress
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:startCommandLine
-	rdfs:domain observable:WindowsService ;
+	rdfs:domain observable:WindowsServiceFacet ;
 	.
 
 observable:startTime
-	rdfs:domain observable:PhoneCall ;
+	rdfs:domain observable:PhoneCallFacet ;
 	.
 
 observable:startType
-	rdfs:domain observable:WindowsService ;
+	rdfs:domain observable:WindowsServiceFacet ;
 	.
 
 observable:startupInfo
-	rdfs:domain observable:WindowsProcess ;
+	rdfs:domain observable:WindowsProcessFacet ;
 	.
 
 observable:state
@@ -1795,13 +1795,13 @@ observable:state
 	.
 
 observable:status
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:storageCapacityInBytes
 	rdfs:domain
-		observable:MobileDevice ,
-		observable:SIMCard
+		observable:MobileDeviceFacet ,
+		observable:SIMCardFacet
 		;
 	.
 
@@ -1810,39 +1810,39 @@ observable:stringValue
 	.
 
 observable:strings
-	rdfs:domain observable:ExtractedStrings ;
+	rdfs:domain observable:ExtractedStringsFacet ;
 	.
 
 observable:subject
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:subjectAlternativeName
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:subjectDirectoryAttributes
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:subjectHash
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:subjectKeyIdentifier
-	rdfs:domain observable:X509V3Extensions ;
+	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
 observable:subjectPublicKeyAlgorithm
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:subjectPublicKeyExponent
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:subjectPublicKeyModulus
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:subsystem
@@ -1850,7 +1850,7 @@ observable:subsystem
 	.
 
 observable:swid
-	rdfs:domain observable:Software ;
+	rdfs:domain observable:SoftwareFacet ;
 	.
 
 observable:symbolicName
@@ -1858,27 +1858,27 @@ observable:symbolicName
 	.
 
 observable:systemTime
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:tableName
-	rdfs:domain observable:SQLiteBlob ;
+	rdfs:domain observable:SQLiteBlobFacet ;
 	.
 
 observable:targetFile
-	rdfs:domain observable:SymbolicLink ;
+	rdfs:domain observable:SymbolicLinkFacet ;
 	.
 
 observable:taskCreator
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:text
-	rdfs:domain observable:Note ;
+	rdfs:domain observable:NoteFacet ;
 	.
 
 observable:threadID
-	rdfs:domain observable:WindowsThread ;
+	rdfs:domain observable:WindowsThreadFacet ;
 	.
 
 observable:thumbprintHash
@@ -1886,35 +1886,35 @@ observable:thumbprintHash
 	.
 
 observable:timeDateStamp
-	rdfs:domain observable:WindowsPEBinaryFile ;
+	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
 observable:timesExecuted
-	rdfs:domain observable:WindowsPrefetch ;
+	rdfs:domain observable:WindowsPrefetchFacet ;
 	.
 
 observable:timezoneDST
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:timezoneStandard
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:to
-	rdfs:domain observable:PhoneCall ;
+	rdfs:domain observable:PhoneCallFacet ;
 	.
 
 observable:totalFragments
-	rdfs:domain observable:Fragment ;
+	rdfs:domain observable:FragmentFacet ;
 	.
 
 observable:totalRam
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:totalSpace
-	rdfs:domain observable:DiskPartition ;
+	rdfs:domain observable:DiskPartitionFacet ;
 	.
 
 observable:triggerBeginTime
@@ -1934,7 +1934,7 @@ observable:triggerFrequency
 	.
 
 observable:triggerList
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:triggerMaxRunTime
@@ -1950,62 +1950,62 @@ observable:triggerType
 	.
 
 observable:updatedDate
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:uptime
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
 observable:url
-	rdfs:domain observable:Attachment ;
+	rdfs:domain observable:AttachmentFacet ;
 	.
 
 observable:urlTargeted
-	rdfs:domain observable:BrowserBookmark ;
+	rdfs:domain observable:BrowserBookmarkFacet ;
 	.
 
 observable:userName
-	rdfs:domain observable:URL ;
+	rdfs:domain observable:URLFacet ;
 	.
 
 observable:validityNotAfter
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:validityNotBefore
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:value
-	rdfs:domain observable:IPv4Address ;
+	rdfs:domain observable:IPv4AddressFacet ;
 	.
 
 observable:values
-	rdfs:domain observable:ValuesEnumeratedEffect ;
+	rdfs:domain observable:ValuesEnumeratedEffectFacet ;
 	.
 
 observable:version
 	rdfs:domain
-		observable:Application ,
-		observable:PDFFile
+		observable:ApplicationFacet ,
+		observable:PDFFileFacet
 		;
 	.
 
 observable:visibility
-	rdfs:domain observable:MessageThread ;
+	rdfs:domain observable:MessageThreadFacet ;
 	.
 
 observable:visitCount
-	rdfs:domain observable:BrowserBookmark ;
+	rdfs:domain observable:BrowserBookmarkFacet ;
 	.
 
 observable:volume
-	rdfs:domain observable:WindowsPrefetch ;
+	rdfs:domain observable:WindowsPrefetchFacet ;
 	.
 
 observable:volumeID
-	rdfs:domain observable:Volume ;
+	rdfs:domain observable:VolumeFacet ;
 	.
 
 observable:whoisServer
@@ -2017,41 +2017,41 @@ observable:win32VersionValue
 	.
 
 observable:windowTitle
-	rdfs:domain observable:WindowsProcess ;
+	rdfs:domain observable:WindowsProcessFacet ;
 	.
 
 observable:windowsDirectory
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:windowsSystemDirectory
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:windowsTempDirectory
-	rdfs:domain observable:WindowsComputerSpecification ;
+	rdfs:domain observable:WindowsComputerSpecificationFacet ;
 	.
 
 observable:windowsVolumeAttributes
-	rdfs:domain observable:WindowsVolume ;
+	rdfs:domain observable:WindowsVolumeFacet ;
 	.
 
 observable:workItemData
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:workingDirectory
-	rdfs:domain observable:WindowsTask ;
+	rdfs:domain observable:WindowsTaskFacet ;
 	.
 
 observable:x509v3extensions
-	rdfs:domain observable:X509Certificate ;
+	rdfs:domain observable:X509CertificateFacet ;
 	.
 
 observable:xMailer
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.
 
 observable:xOriginatingIP
-	rdfs:domain observable:EmailMessage ;
+	rdfs:domain observable:EmailMessageFacet ;
 	.

@@ -58,7 +58,7 @@ core:externalIdentifier
 	rdfs:domain core:ExternalReference ;
 	.
 
-core:facets
+core:hasFacet
 	rdfs:domain core:UcoObject ;
 	.
 

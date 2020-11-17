@@ -670,18 +670,6 @@ vocab:HashNameVocab
 	) ;
 	.
 
-vocab:InvestigationFormVocab
-	a rdfs:Datatype ;
-	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Investigation Form Vocabulary"@en-US ;
-	rdfs:comment "Defines an open-vocabulary of investigation forms."@en-US ;
-	owl:oneOf (
-		"case"^^vocab:InvestigationFormVocab
-		"incident"^^vocab:InvestigationFormVocab
-		"suspicious-activity"^^vocab:InvestigationFormVocab
-	) ;
-	.
-
 vocab:LibraryTypeVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
