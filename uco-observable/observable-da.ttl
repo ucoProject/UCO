@@ -782,7 +782,7 @@ observable:groups
 	.
 
 observable:hasChanged
-	rdfs:domain observable:CyberItem ;
+	rdfs:domain observable:ObservableObject ;
 	.
 
 observable:hash
@@ -1791,7 +1791,7 @@ observable:startupInfo
 	.
 
 observable:state
-	rdfs:domain observable:CyberItem ;
+	rdfs:domain observable:ObservableObject ;
 	.
 
 observable:status
