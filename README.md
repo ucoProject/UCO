@@ -13,9 +13,8 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is v0.3.0
+The current release of UCO is 0.5.0
 
-The content of v0.3.0 is primarily of fixing lexical, syntactic and semantic reasoning errors present in v0.2.0 and simplifying in some areas.
-Its content is driven primarily from the initial base requirements of expressing cyber investigation information and is the product of input from the [Cyberinvestigation Analysis Standard Expression (CASE)](https://caseontology.org/) community. 
+UCO 0.5.0 is primarily focused on the removal of the investigation namespace from UCO (that namespace now resides in the CASE ontology) and on the renaming of several classes (Observable subclasses, Facet subclasses) in the observable namespace  and a single property (core:facet) to support improved alignment with the CASE ontology and the forthcoming addition of ObservableObject subclasses.
 
 Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.
