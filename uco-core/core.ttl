@@ -316,9 +316,9 @@ core:externalIdentifier
 	rdfs:range xsd:string ;
 	.
 
-core:facets
+core:hasFacet
 	a owl:ObjectProperty ;
-	rdfs:label "facets"@en ;
+	rdfs:label "hasFacet"@en ;
 	rdfs:comment "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized."@en ;
 	rdfs:range core:Facet ;
 	.
@@ -452,3 +452,4 @@ core:value
 <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
 	a owl:Class ;
 	.
+

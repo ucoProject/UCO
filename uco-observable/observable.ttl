@@ -28,7 +28,32 @@
 		;
 	.
 
-observable:Account
+observable:AccountAuthenticationFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:passwordLastChanged ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:password ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:passwordType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "AccountAuthenticationFacet"@en ;
+	.
+
+observable:AccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -75,33 +100,8 @@ observable:Account
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Account"@en ;
+	rdfs:label "AccountFacet"@en ;
 	rdfs:comment "The fundamental properties of an account."@en ;
-	.
-
-observable:AccountAuthentication
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:passwordLastChanged ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:password ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:passwordType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
-		;
-	rdfs:label "AccountAuthentication"@en ;
 	.
 
 observable:AlternateDataStream
@@ -128,14 +128,29 @@ observable:AlternateDataStream
 	rdfs:label "AlternateDataStream"@en ;
 	.
 
-observable:Application
+observable:ApplicationAccountFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:application ;
+			owl:onClass observable:ObservableObject ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "ApplicationAccountFacet"@en ;
+	rdfs:comment "Characteristics of an account within a particular application."@en ;
+	.
+
+observable:ApplicationFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:operatingSystem ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -157,26 +172,11 @@ observable:Application
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Application"@en ;
+	rdfs:label "ApplicationFacet"@en ;
 	rdfs:comment "Characteristics of a software application."@en ;
 	.
 
-observable:ApplicationAccount
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "ApplicationAccount"@en ;
-	rdfs:comment "Characteristics of an account within a particular application."@en ;
-	.
-
-observable:ArchiveFile
+observable:ArchiveFileFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -199,16 +199,16 @@ observable:ArchiveFile
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "ArchiveFile"@en ;
+	rdfs:label "ArchiveFileFacet"@en ;
 	.
 
-observable:Attachment
+observable:AttachmentFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "Attachment"@en ;
+	rdfs:label "AttachmentFacet"@en ;
 	.
 
-observable:Audio
+observable:AudioFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -237,11 +237,11 @@ observable:Audio
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Audio"@en ;
+	rdfs:label "AudioFacet"@en ;
 	rdfs:comment "Characteristics of piece of digital audio."@en ;
 	.
 
-observable:AutonomousSystem
+observable:AutonomousSystemFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -263,11 +263,11 @@ observable:AutonomousSystem
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "AutonomousSystem"@en ;
+	rdfs:label "AutonomousSystemFacet"@en ;
 	rdfs:comment "Basic characteristics of an Internet autonomous system."@en ;
 	.
 
-observable:BluetoothAddress
+observable:BluetoothAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -278,11 +278,11 @@ observable:BluetoothAddress
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "BluetoothAddress"@en ;
+	rdfs:label "BluetoothAddressFacet"@en ;
 	rdfs:comment "Properties of a Bluetooth address."@en ;
 	.
 
-observable:BrowserBookmark
+observable:BrowserBookmarkFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -304,7 +304,7 @@ observable:BrowserBookmark
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -320,11 +320,11 @@ observable:BrowserBookmark
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "BrowserBookmark"@en ;
+	rdfs:label "BrowserBookmarkFacet"@en ;
 	rdfs:comment "A bookmark to a web pages or files using a web browser."@en ;
 	.
 
-observable:BrowserCookie
+observable:BrowserCookieFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -346,13 +346,13 @@ observable:BrowserCookie
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:cookieDomain ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -374,32 +374,11 @@ observable:BrowserCookie
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "BrowserCookie"@en ;
+	rdfs:label "BrowserCookieFacet"@en ;
 	rdfs:comment "A piece of data used by a (remote) web page, stored on the local machine."@en ;
 	.
 
-observable:Calendar
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:owner ;
-			owl:onClass observable:CyberItem ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "Calendar"@en ;
-	rdfs:comment "A collection of appointments and meetings."@en ;
-	.
-
-observable:CalendarEntry
+observable:CalendarEntryFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -441,7 +420,7 @@ observable:CalendarEntry
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -481,11 +460,32 @@ observable:CalendarEntry
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "CalendarEntry"@en ;
+	rdfs:label "CalendarEntryFacet"@en ;
 	rdfs:comment "Characteristics of an entry (appointment, meeting, event) within a calendar."@en ;
 	.
 
-observable:CompressedStream
+observable:CalendarFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:application ;
+			owl:onClass observable:ObservableObject ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:owner ;
+			owl:onClass observable:ObservableObject ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "CalendarFacet"@en ;
+	rdfs:comment "A collection of appointments and meetings."@en ;
+	.
+
+observable:CompressedStreamFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -502,11 +502,11 @@ observable:CompressedStream
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "CompressedStream"@en ;
+	rdfs:label "CompressedStreamFacet"@en ;
 	rdfs:comment "Characteristics of compression applied to a body of data content."@en ;
 	.
 
-observable:ComputerSpecification
+observable:ComputerSpecificationFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -621,18 +621,18 @@ observable:ComputerSpecification
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "ComputerSpecification"@en ;
+	rdfs:label "ComputerSpecificationFacet"@en ;
 	rdfs:comment "Characterizes a computer system (as a combination of both software and hardware)."@en ;
 	.
 
-observable:Contact
+observable:ContactFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -678,11 +678,11 @@ observable:Contact
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Contact"@en ;
+	rdfs:label "ContactFacet"@en ;
 	rdfs:comment "Contact found in an application, for example an entry in an address book."@en ;
 	.
 
-observable:ContentData
+observable:ContentDataFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -694,7 +694,7 @@ observable:ContentData
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:dataPayloadReferenceURL ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -740,59 +740,11 @@ observable:ContentData
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "ContentData"@en ;
+	rdfs:label "ContentDataFacet"@en ;
 	rdfs:comment "Characteristics of a block of digital data."@en ;
 	.
 
-observable:CyberAction
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
-		observable:Observable
-		;
-	rdfs:label "CyberAction"@en ;
-	rdfs:comment "Something that may be done or performed within the digital domain."@en ;
-	.
-
-observable:CyberItem
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Item> ,
-		observable:Observable ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:state ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:hasChanged ;
-			owl:onDataRange xsd:boolean ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "CyberItem"@en ;
-	rdfs:comment "A distinct article or unit within the digital domain."@en ;
-	.
-
-observable:CyberObservablePattern
-	a owl:Class ;
-	rdfs:subClassOf observable:Observable ;
-	rdfs:label "CyberObservablePattern"@en ;
-	rdfs:comment "A logical pattern composed of cyberitem and cyberaction properties."@en ;
-	.
-
-observable:CyberRelationship
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Relationship> ,
-		observable:Observable
-		;
-	rdfs:label "CyberRelationship"@en ;
-	rdfs:comment "An association or link between two cyber observable objects."@en ;
-	.
-
-observable:DataRange
+observable:DataRangeFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -815,7 +767,7 @@ observable:DataRange
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "DataRange"@en ;
+	rdfs:label "DataRangeFacet"@en ;
 	rdfs:comment "Bounding characteristics of a range within a block of digital data."@en ;
 	.
 
@@ -823,10 +775,10 @@ observable:DefinedEffectFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "DefinedEffectFacet"@en ;
-	rdfs:comment "A set of properties characterizing some defined effect of a cyberaction in relation to one or more cyberitems."@en ;
+	rdfs:comment "A set of properties characterizing some defined effect of a observable action in relation to one or more observable objects."@en ;
 	.
 
-observable:Device
+observable:DeviceFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -854,11 +806,11 @@ observable:Device
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Device"@en ;
+	rdfs:label "DeviceFacet"@en ;
 	rdfs:comment "Characteristics of a piece of electronic equipment."@en ;
 	.
 
-observable:DigitalAccount
+observable:DigitalAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -885,11 +837,11 @@ observable:DigitalAccount
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "DigitalAccount"@en ;
+	rdfs:label "DigitalAccountFacet"@en ;
 	rdfs:comment "Characteristics of an account within the digital domain."@en ;
 	.
 
-observable:DigitalSignatureInfo
+observable:DigitalSignatureInfoFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -922,11 +874,11 @@ observable:DigitalSignatureInfo
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "DigitalSignatureInfo"@en ;
+	rdfs:label "DigitalSignatureInfoFacet"@en ;
 	rdfs:comment "Characteristics of a value calculated via a mathematical scheme for demonstrating the authenticity of a digital message or documents."@en ;
 	.
 
-observable:Disk
+observable:DiskFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -948,10 +900,10 @@ observable:Disk
 			owl:onDataRange xsd:long ;
 		]
 		;
-	rdfs:label "Disk"@en ;
+	rdfs:label "DiskFacet"@en ;
 	.
 
-observable:DiskPartition
+observable:DiskPartitionFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1008,11 +960,11 @@ observable:DiskPartition
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "DiskPartition"@en ;
+	rdfs:label "DiskPartitionFacet"@en ;
 	rdfs:comment "Characteristics of a region on a hard disk or other secondary storage."@en ;
 	.
 
-observable:DomainName
+observable:DomainNameFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1029,7 +981,7 @@ observable:DomainName
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "DomainName"@en ;
+	rdfs:label "DomainNameFacet"@en ;
 	rdfs:comment "Characteristics of an identification string that defines a realm of administrative autonomy, authority or control within the Internet."@en ;
 	.
 
@@ -1037,11 +989,11 @@ observable:ESN
 	a owl:DatatypeProperty ;
 	rdfs:label "ESN"@en ;
 	rdfs:comment "Electronic Serial Number ."@en ;
-	rdfs:domain observable:MobileDevice ;
+	rdfs:domain observable:MobileDeviceFacet ;
 	rdfs:range xsd:string ;
 	.
 
-observable:EXIF
+observable:EXIFFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1051,26 +1003,26 @@ observable:EXIF
 			owl:minCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "EXIF"@en ;
+	rdfs:label "EXIFFacet"@en ;
 	rdfs:comment "Specifies exchangeable image file format (Exif) metadata tags for image and sound files recorded by digital cameras."@en ;
 	.
 
-observable:EmailAccount
+observable:EmailAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:emailAddress ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "EmailAccount"@en ;
+	rdfs:label "EmailAccountFacet"@en ;
 	rdfs:comment "Characteristics of an account within an email domain."@en ;
 	.
 
-observable:EmailAddress
+observable:EmailAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1087,11 +1039,11 @@ observable:EmailAddress
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "EmailAddress"@en ;
+	rdfs:label "EmailAddressFacet"@en ;
 	rdfs:comment "Characteristics of an identifier for an email box to which email messages are delivered."@en ;
 	.
 
-observable:EmailMessage
+observable:EmailMessageFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1118,43 +1070,43 @@ observable:EmailMessage
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:bodyRaw ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:from ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:headerRaw ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:inReplyTo ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:sender ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:xOriginatingIP ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1218,11 +1170,11 @@ observable:EmailMessage
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "EmailMessage"@en ;
+	rdfs:label "EmailMessageFacet"@en ;
 	rdfs:comment "An instance of an email message, corresponding to the internet message format described in RFC 5322 and related RFCs."@en ;
 	.
 
-observable:EncodedStream
+observable:EncodedStreamFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1233,11 +1185,11 @@ observable:EncodedStream
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "EncodedStream"@en ;
+	rdfs:label "EncodedStreamFacet"@en ;
 	rdfs:comment "Represents the encoding-related properties of some encoded thing."@en ;
 	.
 
-observable:EncryptedStream
+observable:EncryptedStreamFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1252,7 +1204,7 @@ observable:EncryptedStream
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "EncryptedStream"@en ;
+	rdfs:label "EncryptedStreamFacet"@en ;
 	rdfs:comment "Represents the encryption-related properties of some encrypted thing."@en ;
 	.
 
@@ -1276,7 +1228,7 @@ observable:EnvironmentVariable
 	rdfs:comment "Represents the properties of an environment variable."@en ;
 	.
 
-observable:Event
+observable:EventFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1288,7 +1240,7 @@ observable:Event
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:cyberAction ;
-			owl:onClass observable:CyberAction ;
+			owl:onClass observable:ObservableAction ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1318,15 +1270,15 @@ observable:Event
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Event"@en ;
+	rdfs:label "EventFacet"@en ;
 	rdfs:comment "An event, mainly used for operating system events."@en ;
 	.
 
-observable:ExtInode
+observable:ExtInodeFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1383,7 +1335,7 @@ observable:ExtInode
 			owl:onDataRange xsd:integer ;
 		]
 		;
-	rdfs:label "ExtInode"@en ;
+	rdfs:label "ExtInodeFacet"@en ;
 	rdfs:comment "Characterizes the details of a single EXT file."@en ;
 	.
 
@@ -1433,14 +1385,14 @@ observable:ExtractedString
 	rdfs:comment "A string extracted from a cyber item."@en ;
 	.
 
-observable:ExtractedStrings
+observable:ExtractedStringsFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "ExtractedStrings"@en ;
+	rdfs:label "ExtractedStringsFacet"@en ;
 	rdfs:comment "One or more strings extracted from a cyber item."@en ;
 	.
 
-observable:File
+observable:FileFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1488,26 +1440,26 @@ observable:File
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "File"@en ;
+	rdfs:label "FileFacet"@en ;
 	rdfs:comment "The basic properties associated with the storage of a file on a file system."@en ;
 	.
 
-observable:FilePermissions
+observable:FilePermissionsFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:owner ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "FilePermissions"@en ;
+	rdfs:label "FilePermissionsFacet"@en ;
 	rdfs:comment "Characteristics of permissions or access rights for a file."@en ;
 	.
 
-observable:FileSystem
+observable:FileSystemFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1523,18 +1475,18 @@ observable:FileSystem
 			owl:onDataRange xsd:integer ;
 		]
 		;
-	rdfs:label "FileSystem"@en ;
+	rdfs:label "FileSystemFacet"@en ;
 	rdfs:comment "Represents the properties of a file system."@en ;
 	.
 
-observable:Fragment
+observable:FragmentFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "Fragment"@en ;
+	rdfs:label "FragmentFacet"@en ;
 	rdfs:comment "Characteristics of an individual fragment of a file."@en ;
 	.
 
-observable:GeoLocationEntry
+observable:GeoLocationEntryFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1551,15 +1503,15 @@ observable:GeoLocationEntry
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "GeoLocationEntry"@en ;
+	rdfs:label "GeoLocationEntryFacet"@en ;
 	rdfs:comment "Characteristics of a single application-specific geolocation entry."@en ;
 	.
 
-observable:GeoLocationLog
+observable:GeoLocationLogFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1571,15 +1523,15 @@ observable:GeoLocationLog
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "GeoLocationLog"@en ;
+	rdfs:label "GeoLocationLogFacet"@en ;
 	rdfs:comment "A log containing geolocation tracks and/or geolocation entries."@en ;
 	.
 
-observable:GeoLocationTrack
+observable:GeoLocationTrackFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1596,11 +1548,11 @@ observable:GeoLocationTrack
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "GeoLocationTrack"@en ;
+	rdfs:label "GeoLocationTrackFacet"@en ;
 	rdfs:comment "Characteristics of a set of contiguous geolocation entries representing a path/track taken."@en ;
 	.
 
@@ -1630,7 +1582,7 @@ observable:GlobalFlagType
 	rdfs:comment "Characterizes Windows global flags."@en ;
 	.
 
-observable:HTTPConnection
+observable:HTTPConnectionFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1642,7 +1594,7 @@ observable:HTTPConnection
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:httpMessageBodyData ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1670,7 +1622,7 @@ observable:HTTPConnection
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "HTTPConnection"@en ;
+	rdfs:label "HTTPConnectionFacet"@en ;
 	rdfs:comment "Specifies HTTP-specific network connection properties."@en ;
 	.
 
@@ -1678,14 +1630,14 @@ observable:ICCID
 	a owl:DatatypeProperty ;
 	rdfs:label "ICCID"@en ;
 	rdfs:comment "Integrated circuit card identifier (http://www.itu.int/)."@en ;
-	rdfs:domain observable:SIMCard ;
+	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
-observable:ICMPConnection
+observable:ICMPConnectionFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "ICMPConnection"@en ;
+	rdfs:label "ICMPConnectionFacet"@en ;
 	rdfs:comment "Specifies ICMP-specific network connection properties."@en ;
 	.
 
@@ -1739,7 +1691,7 @@ observable:IMEI
 	a owl:DatatypeProperty ;
 	rdfs:label "IMEI"@en ;
 	rdfs:comment "International Mobile Equipment Identity (IMEI)."@en ;
-	rdfs:domain observable:MobileDevice ;
+	rdfs:domain observable:MobileDeviceFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1748,13 +1700,13 @@ observable:IMSI
 	rdfs:label "IMSI"@en ;
 	rdfs:comment "An International Mobile Subscriber Identity (IMSI) is a unique identification associated with all GSM and UMTS network mobile phone users. It is stored as a 64-bit field in the SIM inside the phone and is sent by the phone to the network."@en ;
 	rdfs:domain
-		observable:MobileAccount ,
-		observable:SIMCard
+		observable:MobileAccountFacet ,
+		observable:SIMCardFacet
 		;
 	rdfs:range xsd:string ;
 	.
 
-observable:IPv4Address
+observable:IPv4AddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1765,11 +1717,11 @@ observable:IPv4Address
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "IPv4Address"@en ;
+	rdfs:label "IPv4AddressFacet"@en ;
 	rdfs:comment "Characteristics of an IPv4 internet protocol address."@en ;
 	.
 
-observable:IPv6Address
+observable:IPv6AddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1780,7 +1732,7 @@ observable:IPv6Address
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "IPv6Address"@en ;
+	rdfs:label "IPv6AddressFacet"@en ;
 	rdfs:comment "Characteristics of an IPv6 internet protocol address."@en ;
 	.
 
@@ -1804,7 +1756,7 @@ observable:IShowMessageActionType
 	rdfs:comment "Characterizes IShowMessage actions."@en ;
 	.
 
-observable:Image
+observable:ImageFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1815,11 +1767,11 @@ observable:Image
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Image"@en ;
+	rdfs:label "ImageFacet"@en ;
 	rdfs:comment "Characteristics of a complete copy of a hard disk, memory or other digital media."@en ;
 	.
 
-observable:Library
+observable:LibraryFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1829,14 +1781,14 @@ observable:Library
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Library"@en ;
+	rdfs:label "LibraryFacet"@en ;
 	rdfs:comment """A characterization of a software library.
 
 
 What about Android Package and iOS Package and Windows MSI?"""@en ;
 	.
 
-observable:MACAddress
+observable:MACAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1847,7 +1799,7 @@ observable:MACAddress
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "MACAddress"@en ;
+	rdfs:label "MACAddressFacet"@en ;
 	rdfs:comment "Characteristics of a media access control (MAC) address identifier assigned to network interfaces for communications at the data link layer of a network segment."@en ;
 	.
 
@@ -1856,8 +1808,8 @@ observable:MSISDN
 	rdfs:label "MSISDN"@en ;
 	rdfs:comment "Mobile Station International Subscriber Directory Number (MSISDN) is a number used to identify a mobile phone number internationally. MSISDN is defined by the E.164 numbering plan. This number includes a country code and a National Destination Code which identifies the subscriber's operator."@en ;
 	rdfs:domain
-		observable:MobileAccount ,
-		observable:MobileDevice
+		observable:MobileAccountFacet ,
+		observable:MobileDeviceFacet
 		;
 	rdfs:range xsd:string ;
 	.
@@ -1866,11 +1818,11 @@ observable:MSISDNType
 	a owl:DatatypeProperty ;
 	rdfs:label "MSISDNType"@en ;
 	rdfs:comment "???."@en ;
-	rdfs:domain observable:MobileAccount ;
+	rdfs:domain observable:MobileAccountFacet ;
 	rdfs:range xsd:string ;
 	.
 
-observable:Memory
+observable:MemoryFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1910,11 +1862,11 @@ observable:Memory
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Memory"@en ;
+	rdfs:label "MemoryFacet"@en ;
 	rdfs:comment "Characteristics of a region of computer memory."@en ;
 	.
 
-observable:Message
+observable:MessageFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1926,13 +1878,13 @@ observable:Message
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:from ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1960,11 +1912,11 @@ observable:Message
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Message"@en ;
+	rdfs:label "MessageFacet"@en ;
 	rdfs:comment "Characteristics of an electronic message."@en ;
 	.
 
-observable:MessageThread
+observable:MessageThreadFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -1977,15 +1929,15 @@ observable:MessageThread
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:message ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "MessageThread"@en ;
+	rdfs:label "MessageThreadFacet"@en ;
 	rdfs:comment "Characteristics of a running commentary of electronic messages pertaining to one topic or question."@en ;
 	.
 
-observable:MftRecord
+observable:MftRecordFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2057,7 +2009,7 @@ observable:MftRecord
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "MftRecord"@en ;
+	rdfs:label "MftRecordFacet"@en ;
 	rdfs:comment "Characterizes the details of a single NTFS file."@en ;
 	.
 
@@ -2067,7 +2019,7 @@ observable:MimePartType
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:bodyRaw ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2094,7 +2046,7 @@ observable:MimePartType
 """@en ;
 	.
 
-observable:MobileAccount
+observable:MobileAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2117,11 +2069,11 @@ observable:MobileAccount
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "MobileAccount"@en ;
+	rdfs:label "MobileAccountFacet"@en ;
 	rdfs:comment "Properties of a Mobile Account."@en ;
 	.
 
-observable:MobileDevice
+observable:MobileDeviceFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2180,11 +2132,11 @@ observable:MobileDevice
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "MobileDevice"@en ;
+	rdfs:label "MobileDeviceFacet"@en ;
 	rdfs:comment "Properties of a Mobile Device."@en ;
 	.
 
-observable:Mutex
+observable:MutexFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2195,17 +2147,17 @@ observable:Mutex
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Mutex"@en ;
+	rdfs:label "MutexFacet"@en ;
 	.
 
-observable:NTFSFilePermissions
+observable:NTFSFilePermissionsFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "NTFSFilePermissions"@en ;
+	rdfs:label "NTFSFilePermissionsFacet"@en ;
 	rdfs:comment "Characteristics of permissions or access rights for an NTFS file."@en ;
 	.
 
-observable:NTFSFileSystem
+observable:NTFSFileSystemFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2222,10 +2174,10 @@ observable:NTFSFileSystem
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "NTFSFileSystem"@en ;
+	rdfs:label "NTFSFileSystemFacet"@en ;
 	.
 
-observable:NetworkConnection
+observable:NetworkConnectionFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2263,11 +2215,11 @@ observable:NetworkConnection
 			owl:onDataRange xsd:integer ;
 		]
 		;
-	rdfs:label "NetworkConnection"@en ;
+	rdfs:label "NetworkConnectionFacet"@en ;
 	rdfs:comment "Characteristics of connection (completed or attempted) across a digital network."@en ;
 	.
 
-observable:NetworkFlow
+observable:NetworkFlowFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2279,13 +2231,13 @@ observable:NetworkFlow
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:dstPayload ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:srcPayload ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2313,11 +2265,11 @@ observable:NetworkFlow
 			owl:onDataRange xsd:integer ;
 		]
 		;
-	rdfs:label "NetworkFlow"@en ;
+	rdfs:label "NetworkFlowFacet"@en ;
 	rdfs:comment "Characteristics of a sequence of data transiting a one or more digital network connections."@en ;
 	.
 
-observable:NetworkInterface
+observable:NetworkInterfaceFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2334,7 +2286,7 @@ observable:NetworkInterface
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:macAddress ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2344,7 +2296,7 @@ observable:NetworkInterface
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "NetworkInterface"@en ;
+	rdfs:label "NetworkInterfaceFacet"@en ;
 	.
 
 observable:NetworkSocketAddressFamily
@@ -2523,7 +2475,7 @@ observable:NetworkSocketType
 	] ;
 	.
 
-observable:Note
+observable:NoteFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2546,11 +2498,11 @@ observable:Note
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Note"@en ;
+	rdfs:label "NoteFacet"@en ;
 	rdfs:comment "Characteristics of digital textual note."@en ;
 	.
 
@@ -2560,6 +2512,54 @@ observable:Observable
 	rdfs:label "Observable"@en ;
 	rdfs:comment """A characterizable item or action within the digital domain.
 """@en ;
+	.
+
+observable:ObservableAction
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
+		observable:Observable
+		;
+	rdfs:label "ObservableAction"@en ;
+	rdfs:comment "Something that may be done or performed within the digital domain."@en ;
+	.
+
+observable:ObservableObject
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Item> ,
+		observable:Observable ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:state ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:hasChanged ;
+			owl:onDataRange xsd:boolean ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "ObservableObject"@en ;
+	rdfs:comment "A distinct article or unit within the digital domain."@en ;
+	.
+
+observable:ObservablePattern
+	a owl:Class ;
+	rdfs:subClassOf observable:Observable ;
+	rdfs:label "ObservablePattern"@en ;
+	rdfs:comment "A logical pattern composed of observable object and observable action properties."@en ;
+	.
+
+observable:ObservableRelationship
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Relationship> ,
+		observable:Observable
+		;
+	rdfs:label "ObservableRelationship"@en ;
+	rdfs:comment "An association or link between two cyber observable objects."@en ;
 	.
 
 observable:Observation
@@ -2581,7 +2581,7 @@ observable:Observation
 	rdfs:comment "An observation of something."@en ;
 	.
 
-observable:OperatingSystem
+observable:OperatingSystemFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2613,11 +2613,11 @@ observable:OperatingSystem
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "OperatingSystem"@en ;
+	rdfs:label "OperatingSystemFacet"@en ;
 	rdfs:comment "Specifies information about an operating system."@en ;
 	.
 
-observable:PDFFile
+observable:PDFFileFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2645,14 +2645,14 @@ observable:PDFFile
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "PDFFile"@en ;
+	rdfs:label "PDFFileFacet"@en ;
 	.
 
 observable:PIN
 	a owl:DatatypeProperty ;
 	rdfs:label "PIN"@en ;
 	rdfs:comment "Personal Identification Number (PIN)."@en ;
-	rdfs:domain observable:SIMCard ;
+	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -2660,18 +2660,18 @@ observable:PUK
 	a owl:DatatypeProperty ;
 	rdfs:label "PUK"@en ;
 	rdfs:comment "Personal Unlocking Key (PUK) to unlock the SIM card."@en ;
-	rdfs:domain observable:SIMCard ;
+	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
-observable:PathRelation
+observable:PathRelationFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "PathRelation"@en ;
+	rdfs:label "PathRelationFacet"@en ;
 	rdfs:comment "Specifies the location of one object within another containing object."@en ;
 	.
 
-observable:PhoneAccount
+observable:PhoneAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2682,11 +2682,11 @@ observable:PhoneAccount
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "PhoneAccount"@en ;
+	rdfs:label "PhoneAccountFacet"@en ;
 	rdfs:comment "Characteristics of a telephone service account."@en ;
 	.
 
-observable:PhoneCall
+observable:PhoneCallFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2703,13 +2703,13 @@ observable:PhoneCall
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:from ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:to ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2727,15 +2727,15 @@ observable:PhoneCall
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "PhoneCall"@en ;
+	rdfs:label "PhoneCallFacet"@en ;
 	rdfs:comment "Characteristics of a specific phone call."@en ;
 	.
 
-observable:Process
+observable:ProcessFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2757,19 +2757,19 @@ observable:Process
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:binary ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:creatorUser ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:parent ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2803,11 +2803,11 @@ observable:Process
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Process"@en ;
+	rdfs:label "ProcessFacet"@en ;
 	rdfs:comment "Characteristics of an instance of a computer program as executed on an operating system."@en ;
 	.
 
-observable:PropertiesEnumeratedEffect
+observable:PropertiesEnumeratedEffectFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2819,11 +2819,11 @@ observable:PropertiesEnumeratedEffect
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "PropertiesEnumeratedEffect"@en ;
+	rdfs:label "PropertiesEnumeratedEffectFacet"@en ;
 	rdfs:comment "Characterizes the effects of actions upon cyberitems where some properties of the cyberitem are enumerated, such as the startup parameters for a process."@en ;
 	.
 
-observable:PropertyReadEffect
+observable:PropertyReadEffectFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -2841,18 +2841,18 @@ observable:PropertyReadEffect
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "PropertyReadEffect"@en ;
+	rdfs:label "PropertyReadEffectFacet"@en ;
 	rdfs:comment "Characterize the effects of actions upon cyberitems where some specific property is read from an cyberitem, such as the current running state of a process."@en ;
 	.
 
-observable:RasterPicture
+observable:RasterPictureFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:camera ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2886,7 +2886,7 @@ observable:RasterPicture
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "RasterPicture"@en ;
+	rdfs:label "RasterPictureFacet"@en ;
 	.
 
 observable:RegistryDatatype
@@ -2949,7 +2949,7 @@ observable:RegistryDatatype
 	] ;
 	.
 
-observable:SIMCard
+observable:SIMCardFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3002,7 +3002,7 @@ observable:SIMCard
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "SIMCard"@en ;
+	rdfs:label "SIMCardFacet"@en ;
 	rdfs:comment "Properties of a Mobile SIM card."@en ;
 	.
 
@@ -3010,7 +3010,7 @@ observable:SIMForm
 	a owl:DatatypeProperty ;
 	rdfs:label "SIMForm"@en ;
 	rdfs:comment "The form of SIM card such as SIM, Micro SIM, Nano SIM."@en ;
-	rdfs:domain observable:SIMCard ;
+	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -3018,11 +3018,11 @@ observable:SIMType
 	a owl:DatatypeProperty ;
 	rdfs:label "SIMType"@en ;
 	rdfs:comment "The type of SIM card such as SIM, USIM, UICC."@en ;
-	rdfs:domain observable:SIMCard ;
+	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
-observable:SMSMessage
+observable:SMSMessageFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3033,11 +3033,11 @@ observable:SMSMessage
 			owl:onDataRange xsd:boolean ;
 		]
 		;
-	rdfs:label "SMSMessage"@en ;
+	rdfs:label "SMSMessageFacet"@en ;
 	rdfs:comment "Characteristics of a Short Message Service (SMS) 'text' message."@en ;
 	.
 
-observable:SQLiteBlob
+observable:SQLiteBlobFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3060,11 +3060,11 @@ observable:SQLiteBlob
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "SQLiteBlob"@en ;
+	rdfs:label "SQLiteBlobFacet"@en ;
 	rdfs:comment "Characteristics of blob of data within a SQLite database."@en ;
 	.
 
-observable:SendControlCodeEffect
+observable:SendControlCodeEffectFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3076,11 +3076,11 @@ observable:SendControlCodeEffect
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "SendControlCodeEffect"@en ;
+	rdfs:label "SendControlCodeEffectFacet"@en ;
 	rdfs:comment "Characterizes the effects of actions upon cyberitems where some control code, or other control-oriented communication signal, is sent to the cyberitem. For example, an action may send a control code to change the running state of a process."@en ;
 	.
 
-observable:Software
+observable:SoftwareFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3115,7 +3115,7 @@ observable:Software
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Software"@en ;
+	rdfs:label "SoftwareFacet"@en ;
 	rdfs:comment """High-level properties associated with software, including software products.
 
 How does this relate to Application?
@@ -3123,7 +3123,7 @@ How does this relate to Application?
 """@en ;
 	.
 
-observable:StateChangeEffect
+observable:StateChangeEffectFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3131,51 +3131,45 @@ observable:StateChangeEffect
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:oldObject ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:newObject ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "StateChangeEffect"@en ;
+	rdfs:label "StateChangeEffectFacet"@en ;
 	rdfs:comment "Characterizes the effects of actions upon cyberitems where the some state of the cyberitem is changed."@en ;
 	.
 
-observable:SymbolicLink
+observable:SymbolicLinkFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:targetFile ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "SymbolicLink"@en ;
+	rdfs:label "SymbolicLinkFacet"@en ;
 	rdfs:comment "Characteristics of a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution."@en ;
 	.
 
-observable:TCPConnection
+observable:TCPConnectionFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "TCPConnection"@en ;
+	rdfs:label "TCPConnectionFacet"@en ;
 	rdfs:comment "Specifies TCP-specific network connection properties."@en ;
 	.
 
 observable:TaskActionType
 	a owl:Class ;
 	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:iEmailAction ;
-			owl:onClass observable:CyberItem ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:iComHandlerAction ;
@@ -3192,6 +3186,12 @@ observable:TaskActionType
 			a owl:Restriction ;
 			owl:onProperty observable:iShowMessageAction ;
 			owl:onClass observable:IShowMessageActionType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:iEmailAction ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3265,7 +3265,7 @@ observable:TriggerType
 	rdfs:comment "Characterizes task triggers. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.85).aspx."@en ;
 	.
 
-observable:UNIXAccount
+observable:UNIXAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3282,24 +3282,24 @@ observable:UNIXAccount
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "UNIXAccount"@en ;
+	rdfs:label "UNIXAccountFacet"@en ;
 	.
 
-observable:UNIXFilePermissions
+observable:UNIXFilePermissionsFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "UNIXFilePermissions"@en ;
+	rdfs:label "UNIXFilePermissionsFacet"@en ;
 	rdfs:comment "Characteristics of permissions or access rights for a UNIX file."@en ;
 	.
 
-observable:UNIXProcess
+observable:UNIXProcessFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "UNIXProcess"@en ;
+	rdfs:label "UNIXProcessFacet"@en ;
 	rdfs:comment "Characterization of a UNIX process."@en ;
 	.
 
-observable:UNIXVolume
+observable:UNIXVolumeFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3316,24 +3316,24 @@ observable:UNIXVolume
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "UNIXVolume"@en ;
+	rdfs:label "UNIXVolumeFacet"@en ;
 	rdfs:comment "Characterizes a Unix disk volume."@en ;
 	.
 
-observable:URL
+observable:URLFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:host ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:userName ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3379,11 +3379,11 @@ observable:URL
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "URL"@en ;
+	rdfs:label "URLFacet"@en ;
 	rdfs:comment "Characteristics of a uniform resource locator (URL)."@en ;
 	.
 
-observable:UserAccount
+observable:UserAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3412,10 +3412,10 @@ observable:UserAccount
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "UserAccount"@en ;
+	rdfs:label "UserAccountFacet"@en ;
 	.
 
-observable:UserSession
+observable:UserSessionFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3432,7 +3432,7 @@ observable:UserSession
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:effectiveUser ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3448,11 +3448,11 @@ observable:UserSession
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "UserSession"@en ;
+	rdfs:label "UserSessionFacet"@en ;
 	rdfs:comment "Characterizes a user session."@en ;
 	.
 
-observable:ValuesEnumeratedEffect
+observable:ValuesEnumeratedEffectFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3464,11 +3464,11 @@ observable:ValuesEnumeratedEffect
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "ValuesEnumeratedEffect"@en ;
+	rdfs:label "ValuesEnumeratedEffectFacet"@en ;
 	rdfs:comment "Characterizes the effects of actions upon cyberitems where some values of the cyberitem are enumerated, such as the values of a registry key."@en ;
 	.
 
-observable:Volume
+observable:VolumeFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3485,11 +3485,11 @@ observable:Volume
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "Volume"@en ;
+	rdfs:label "VolumeFacet"@en ;
 	rdfs:comment "Characteristics of a single accessible storage area (Volume) with a single file system."@en ;
 	.
 
-observable:WhoIs
+observable:WhoIsFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3516,19 +3516,19 @@ observable:WhoIs
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:domainName ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:ipAddress ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:serverName ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3574,7 +3574,7 @@ observable:WhoIs
 			owl:onDataRange vocab:WhoisStatusTypeVocab ;
 		]
 		;
-	rdfs:label "WhoIs"@en ;
+	rdfs:label "WhoIsFacet"@en ;
 	rdfs:comment "Characterizes Whois information for a domain."@en ;
 	.
 
@@ -3594,19 +3594,19 @@ observable:WhoisContactType
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:emailAddress ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:faxNumber ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:phone ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3643,25 +3643,25 @@ observable:WhoisRegistrarInfoType
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:emailAddress ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:phone ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:referralURL ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:whoisServer ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3687,7 +3687,7 @@ observable:WhoisRegistrarInfoType
 	rdfs:comment "Registrar-related properties from a Whois record."@en ;
 	.
 
-observable:WifiAddress
+observable:WifiAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3698,17 +3698,17 @@ observable:WifiAddress
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "WifiAddress"@en ;
+	rdfs:label "WifiAddressFacet"@en ;
 	rdfs:comment "Properties of a WiFI address."@en ;
 	.
 
-observable:WindowsAccount
+observable:WindowsAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "WindowsAccount"@en ;
+	rdfs:label "WindowsAccountFacet"@en ;
 	.
 
-observable:WindowsActiveDirectoryAccount
+observable:WindowsActiveDirectoryAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3719,10 +3719,10 @@ observable:WindowsActiveDirectoryAccount
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "WindowsActiveDirectoryAccount"@en ;
+	rdfs:label "WindowsActiveDirectoryAccountFacet"@en ;
 	.
 
-observable:WindowsComputerSpecification
+observable:WindowsComputerSpecificationFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3739,19 +3739,19 @@ observable:WindowsComputerSpecification
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:windowsDirectory ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:windowsSystemDirectory ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:windowsTempDirectory ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3773,11 +3773,11 @@ observable:WindowsComputerSpecification
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "WindowsComputerSpecification"@en ;
+	rdfs:label "WindowsComputerSpecificationFacet"@en ;
 	rdfs:comment "Specifies Windows-specific system properties."@en ;
 	.
 
-observable:WindowsPEBinaryFile
+observable:WindowsPEBinaryFileFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3822,7 +3822,7 @@ observable:WindowsPEBinaryFile
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "WindowsPEBinaryFile"@en ;
+	rdfs:label "WindowsPEBinaryFileFacet"@en ;
 	rdfs:comment "Properties specific to Windows portable executable (PE) files."@en ;
 	.
 
@@ -3886,7 +3886,7 @@ observable:WindowsPESection
 	rdfs:label "WindowsPESection"@en ;
 	.
 
-observable:WindowsPrefetch
+observable:WindowsPrefetchFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3903,7 +3903,7 @@ observable:WindowsPrefetch
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:volume ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3925,11 +3925,11 @@ observable:WindowsPrefetch
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "WindowsPrefetch"@en ;
+	rdfs:label "WindowsPrefetchFacet"@en ;
 	rdfs:comment "Characterizes entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup."@en ;
 	.
 
-observable:WindowsProcess
+observable:WindowsProcessFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3969,10 +3969,10 @@ observable:WindowsProcess
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "WindowsProcess"@en ;
+	rdfs:label "WindowsProcessFacet"@en ;
 	.
 
-observable:WindowsRegistryHive
+observable:WindowsRegistryHiveFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3983,11 +3983,11 @@ observable:WindowsRegistryHive
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "WindowsRegistryHive"@en ;
+	rdfs:label "WindowsRegistryHiveFacet"@en ;
 	rdfs:comment "Characteristics of a particular logical group of keys, subkeys, and values in a Windows registry."@en ;
 	.
 
-observable:WindowsRegistryKey
+observable:WindowsRegistryKeyFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3999,7 +3999,7 @@ observable:WindowsRegistryKey
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:creator ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -4015,7 +4015,7 @@ observable:WindowsRegistryKey
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "WindowsRegistryKey"@en ;
+	rdfs:label "WindowsRegistryKeyFacet"@en ;
 	rdfs:comment "Characteristics of a particular key within a Windows registry."@en ;
 	.
 
@@ -4044,7 +4044,7 @@ observable:WindowsRegistryValue
 	rdfs:comment "Properties of a particular value within a Windows registry."@en ;
 	.
 
-observable:WindowsService
+observable:WindowsServiceFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -4088,7 +4088,7 @@ observable:WindowsService
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "WindowsService"@en ;
+	rdfs:label "WindowsServiceFacet"@en ;
 	rdfs:comment "Properties specific to Windows services."@en ;
 	.
 
@@ -4180,7 +4180,7 @@ observable:WindowsServiceType
 	] ;
 	.
 
-observable:WindowsTask
+observable:WindowsTaskFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -4202,25 +4202,25 @@ observable:WindowsTask
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:account ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:workItemData ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:workingDirectory ;
-			owl:onClass observable:CyberItem ;
+			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -4284,11 +4284,11 @@ observable:WindowsTask
 			owl:onDataRange vocab:TaskStatusVocab ;
 		]
 		;
-	rdfs:label "WindowsTask"@en ;
+	rdfs:label "WindowsTaskFacet"@en ;
 	rdfs:comment "Characterize Windows task scheduler tasks. See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx."@en ;
 	.
 
-observable:WindowsThread
+observable:WindowsThreadFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -4321,11 +4321,11 @@ observable:WindowsThread
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "WindowsThread"@en ;
+	rdfs:label "WindowsThreadFacet"@en ;
 	rdfs:comment "Characteristics of a single thread of execution within a Windows process."@en ;
 	.
 
-observable:WindowsVolume
+observable:WindowsVolumeFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -4348,11 +4348,11 @@ observable:WindowsVolume
 			owl:onDataRange vocab:WindowsVolumeAttributeVocab ;
 		]
 		;
-	rdfs:label "WindowsVolume"@en ;
+	rdfs:label "WindowsVolumeFacet"@en ;
 	rdfs:comment "Characterizes a Windows disk volume."@en ;
 	.
 
-observable:WirelessNetworkConnection
+observable:WirelessNetworkConnectionFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -4369,11 +4369,11 @@ observable:WirelessNetworkConnection
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "WirelessNetworkConnection"@en ;
+	rdfs:label "WirelessNetworkConnectionFacet"@en ;
 	rdfs:comment "Connection to a wireless network."@en ;
 	.
 
-observable:X509Certificate
+observable:X509CertificateFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -4405,7 +4405,7 @@ observable:X509Certificate
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:x509v3extensions ;
-			owl:onClass observable:X509V3Extensions ;
+			owl:onClass observable:X509V3ExtensionsFacet ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -4469,10 +4469,10 @@ observable:X509Certificate
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "X509Certificate"@en ;
+	rdfs:label "X509CertificateFacet"@en ;
 	.
 
-observable:X509V3Extensions
+observable:X509V3ExtensionsFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -4571,7 +4571,7 @@ observable:X509V3Extensions
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "X509V3Extensions"@en ;
+	rdfs:label "X509V3ExtensionsFacet"@en ;
 	rdfs:comment "Extended properties of X.509 v3 digital certificates."@en ;
 	.
 
@@ -4586,14 +4586,14 @@ observable:accessedDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "accessedDirectory"@en ;
 	rdfs:comment "Directories accessed by the prefetch application during startup."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:accessedFile
 	a owl:ObjectProperty ;
 	rdfs:label "accessedFile"@en ;
 	rdfs:comment "Files (e.g., DLLs and other support files) used by the application during startup."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:accessedTime
@@ -4607,7 +4607,7 @@ observable:account
 	a owl:ObjectProperty ;
 	rdfs:label "account"@en ;
 	rdfs:comment "Specifies the account used to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:accountIdentifier
@@ -4724,7 +4724,7 @@ observable:application
 	a owl:ObjectProperty ;
 	rdfs:label "application"@en ;
 	rdfs:comment "The application associated with this object."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:applicationFileName
@@ -4816,13 +4816,13 @@ observable:basicConstraints
 observable:bcc
 	a owl:ObjectProperty ;
 	rdfs:label "bcc"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:binary
 	a owl:ObjectProperty ;
 	rdfs:label "binary"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:biosDate
@@ -4910,7 +4910,7 @@ observable:bodyMultipart
 observable:bodyRaw
 	a owl:ObjectProperty ;
 	rdfs:label "bodyRaw"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:bookmarkPath
@@ -4943,7 +4943,7 @@ observable:camera
 	a owl:ObjectProperty ;
 	rdfs:label "camera"@en ;
 	rdfs:comment "The name/make of the camera that was used for taking the picture."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:canEscalatePrivs
@@ -4969,7 +4969,7 @@ observable:categories
 observable:cc
 	a owl:ObjectProperty ;
 	rdfs:label "cc"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:certificateIssuer
@@ -5121,7 +5121,7 @@ observable:context
 observable:controlCode
 	a owl:DatatypeProperty ;
 	rdfs:label "controlCode"@en ;
-	rdfs:comment "Specifies the actual control code that was sent to the cyberitem."@en ;
+	rdfs:comment "Specifies the actual control code that was sent to the observable object."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5129,7 +5129,7 @@ observable:cookieDomain
 	a owl:ObjectProperty ;
 	rdfs:label "cookieDomain"@en ;
 	rdfs:comment "The domain for which the cookie is stored, for example nfi.minjus.nl."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:cookieName
@@ -5197,14 +5197,14 @@ observable:creator
 	a owl:ObjectProperty ;
 	rdfs:label "creator"@en ;
 	rdfs:comment "Specifies the name of the creator of the registry key."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:creatorUser
 	a owl:ObjectProperty ;
 	rdfs:label "creatorUser"@en ;
 	rdfs:comment "The user that created/owns the process."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:crlDistributionPoints
@@ -5230,7 +5230,7 @@ observable:cyberAction
 	a owl:ObjectProperty ;
 	rdfs:label "cyberAction"@en ;
 	rdfs:comment "The action taken in response to the event."@en ;
-	rdfs:range observable:CyberAction ;
+	rdfs:range observable:ObservableAction ;
 	.
 
 observable:data
@@ -5248,7 +5248,7 @@ observable:dataPayload
 observable:dataPayloadReferenceURL
 	a owl:ObjectProperty ;
 	rdfs:label "dataPayloadReferenceURL"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:dataType
@@ -5314,7 +5314,7 @@ observable:dhcpServer
 	a owl:ObjectProperty ;
 	rdfs:label "dhcpServer"@en ;
 	rdfs:comment "Specifies the list of DHCP server IP Addresses used by the network interface."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:diskPartitionType
@@ -5375,7 +5375,7 @@ observable:domainID
 	a owl:DatatypeProperty ;
 	rdfs:label "domainID"@en ;
 	rdfs:comment "Specifies the domain id for the domain associated with a Whois entry."@en ;
-	rdfs:domain observable:WhoIs ;
+	rdfs:domain observable:WhoIsFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5383,7 +5383,7 @@ observable:domainName
 	a owl:ObjectProperty ;
 	rdfs:label "domainName"@en ;
 	rdfs:comment "Specifies the corresponding domain name for a whois entry."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:driveLetter
@@ -5404,7 +5404,7 @@ observable:dst
 	a owl:ObjectProperty ;
 	rdfs:label "dst"@en ;
 	rdfs:comment "Specifies the destination(s) of the network connection."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:dstBytes
@@ -5422,7 +5422,7 @@ observable:dstPackets
 observable:dstPayload
 	a owl:ObjectProperty ;
 	rdfs:label "dstPayload"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:duration
@@ -5450,14 +5450,14 @@ observable:effectiveUser
 	a owl:ObjectProperty ;
 	rdfs:label "effectiveUser"@en ;
 	rdfs:comment "Specifies the effective user details used in the user session."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:emailAddress
 	a owl:ObjectProperty ;
 	rdfs:label "emailAddress"@en ;
 	rdfs:comment "An email address."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:encoding
@@ -5708,7 +5708,7 @@ observable:faxNumber
 	a owl:ObjectProperty ;
 	rdfs:label "faxNumber"@en ;
 	rdfs:comment "A phone number(account) of a fax."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:fileAlignment
@@ -5805,7 +5805,7 @@ observable:from
 	a owl:ObjectProperty ;
 	rdfs:label "from"@en ;
 	rdfs:comment "The phone number of the initiating party."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:fullValue
@@ -5818,7 +5818,7 @@ observable:fullValue
 observable:geoLocationEntry
 	a owl:ObjectProperty ;
 	rdfs:label "geoLocationEntry"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:gid
@@ -5883,7 +5883,7 @@ observable:hashes
 observable:headerRaw
 	a owl:ObjectProperty ;
 	rdfs:label "headerRaw"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:hexadecimalValue
@@ -5910,7 +5910,7 @@ observable:host
 	a owl:ObjectProperty ;
 	rdfs:label "host"@en ;
 	rdfs:comment "Domain name or IP address where the resource is located."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:hostname
@@ -5931,7 +5931,7 @@ observable:httpMessageBodyData
 	a owl:ObjectProperty ;
 	rdfs:label "httpMessageBodyData"@en ;
 	rdfs:comment "Specifies the data contained in an HTTP message body."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:httpRequestHeader
@@ -5952,7 +5952,7 @@ observable:iEmailAction
 	a owl:ObjectProperty ;
 	rdfs:label "iEmailAction"@en ;
 	rdfs:comment "Specifies an action that sends an e-mail, which in this context refers to actual email message sent. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380693(v=vs.85).aspx."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:iExecAction
@@ -6021,7 +6021,7 @@ observable:inReplyTo
 	a owl:ObjectProperty ;
 	rdfs:label "inReplyTo"@en ;
 	rdfs:comment "One of more unique identifiers for identifying the email(s) this email is a reply to."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:inhibitAnyPolicy
@@ -6041,21 +6041,21 @@ observable:ip
 	a owl:ObjectProperty ;
 	rdfs:label "ip"@en ;
 	rdfs:comment "Specifies the list of IP addresses used by the network interface."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:ipAddress
 	a owl:ObjectProperty ;
 	rdfs:label "ipAddress"@en ;
 	rdfs:comment "Specifies the corresponding ip address for a whois entry. Usually corresponds to a nameserver lookup."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:ipGateway
 	a owl:ObjectProperty ;
 	rdfs:label "ipGateway"@en ;
 	rdfs:comment "Specifies the list of IP Gateway IP Addresses used by the network interface."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:ipfix
@@ -6337,7 +6337,7 @@ observable:macAddress
 	a owl:ObjectProperty ;
 	rdfs:label "macAddress"@en ;
 	rdfs:comment "Specifies the MAC or hardware address of the physical network card. "@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:machine
@@ -6404,7 +6404,7 @@ observable:maxRunTime
 observable:message
 	a owl:ObjectProperty ;
 	rdfs:label "message"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:messageID
@@ -6605,7 +6605,7 @@ observable:nameserver
 	a owl:ObjectProperty ;
 	rdfs:label "nameserver"@en ;
 	rdfs:comment "Specifies a list of nameserver entries for a Whois entry."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:netBIOSName
@@ -6626,14 +6626,14 @@ observable:networkInterface
 	a owl:ObjectProperty ;
 	rdfs:label "networkInterface"@en ;
 	rdfs:comment "Specifies the list of network interfaces present on the system."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:newObject
 	a owl:ObjectProperty ;
 	rdfs:label "newObject"@en ;
-	rdfs:comment "Specifies the cyberitem and its properties as they are after the state change effect occurred."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:comment "Specifies the observable object and its properties as they are after the state change effect occurred."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:nextRunTime
@@ -6713,8 +6713,8 @@ observable:objectGUID
 observable:oldObject
 	a owl:ObjectProperty ;
 	rdfs:label "oldObject"@en ;
-	rdfs:comment "Specifies the cyberitem and its properties as they were before the state change effect occurred."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:comment "Specifies the observable object and its properties as they were before the state change effect occurred."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:openFileDescriptor
@@ -6727,7 +6727,7 @@ observable:openFileDescriptor
 observable:operatingSystem
 	a owl:ObjectProperty ;
 	rdfs:label "operatingSystem"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:optionalHeader
@@ -6759,7 +6759,7 @@ observable:owner
 		;
 	rdfs:range
 		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
-		observable:CyberItem
+		observable:ObservableObject
 		;
 	.
 
@@ -6786,20 +6786,20 @@ observable:parent
 	a owl:ObjectProperty ;
 	rdfs:label "parent"@en ;
 	rdfs:comment "The process that created this process."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:participant
 	a owl:ObjectProperty ;
 	rdfs:label "participant"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:partition
 	a owl:ObjectProperty ;
 	rdfs:label "partition"@en ;
 	rdfs:comment "The partitions that reside on the disk."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:partitionID
@@ -6877,7 +6877,7 @@ observable:phone
 	a owl:ObjectProperty ;
 	rdfs:label "phone"@en ;
 	rdfs:comment "A phone number(account)."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:phoneActivationTime
@@ -6984,14 +6984,14 @@ observable:processorArchitecture
 	a owl:DatatypeProperty ;
 	rdfs:label "processorArchitecture"@en ;
 	rdfs:comment "Specifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
-	rdfs:domain observable:ComputerSpecification ;
+	rdfs:domain observable:ComputerSpecificationFacet ;
 	rdfs:range xsd:string ;
 	.
 
 observable:properties
 	a owl:DatatypeProperty ;
 	rdfs:label "properties"@en ;
-	rdfs:comment "Specifies the properties that were enumerated as a result of the action on the cyberitem."@en ;
+	rdfs:comment "Specifies the properties that were enumerated as a result of the action on the observable object."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7061,14 +7061,14 @@ observable:references
 	a owl:ObjectProperty ;
 	rdfs:label "references"@en ;
 	rdfs:comment "A list of email message identifiers this email relates to."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:referralURL
 	a owl:ObjectProperty ;
 	rdfs:label "referralURL"@en ;
 	rdfs:comment "Specifies the corresponding referral URL for a registrar."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:regionSize
@@ -7260,7 +7260,7 @@ observable:securityAttributes
 observable:sender
 	a owl:ObjectProperty ;
 	rdfs:label "sender"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:sentTime
@@ -7280,7 +7280,7 @@ observable:serverName
 	a owl:ObjectProperty ;
 	rdfs:label "serverName"@en ;
 	rdfs:comment "Specifies the corresponding server name for a whois entry. This usually corresponds to a nameserver lookup."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:serviceName
@@ -7507,7 +7507,7 @@ observable:srcPackets
 observable:srcPayload
 	a owl:ObjectProperty ;
 	rdfs:label "srcPayload"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:ssid
@@ -7673,7 +7673,7 @@ observable:targetFile
 	a owl:ObjectProperty ;
 	rdfs:label "targetFile"@en ;
 	rdfs:comment "Specifies the file targeted by a symbolic link."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:taskComment
@@ -7741,7 +7741,7 @@ observable:to
 	a owl:ObjectProperty ;
 	rdfs:label "to"@en ;
 	rdfs:comment "The receiver's phone number."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:totalFragments
@@ -7851,7 +7851,7 @@ observable:userName
 	a owl:ObjectProperty ;
 	rdfs:label "userName"@en ;
 	rdfs:comment "Username used to authenticate to this resource."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:validityNotAfter
@@ -7902,7 +7902,7 @@ observable:volume
 	a owl:ObjectProperty ;
 	rdfs:label "volume"@en ;
 	rdfs:comment "The volume from which the prefetch application was run. If the applicatin was run from multiple volumes, there will be a separate prefetch file for each."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:volumeID
@@ -7916,7 +7916,7 @@ observable:whoisServer
 	a owl:ObjectProperty ;
 	rdfs:label "whoisServer"@en ;
 	rdfs:comment "Specifies the corresponding whois server for a registrar."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:win32VersionValue
@@ -7936,21 +7936,21 @@ observable:windowsDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "windowsDirectory"@en ;
 	rdfs:comment "The Windows_Directory field specifies the fully-qualified path to the Windows install directory."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:windowsSystemDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "windowsSystemDirectory"@en ;
 	rdfs:comment "The Windows_System_Directory field specifies the fully-qualified path to the Windows system directory."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:windowsTempDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "windowsTempDirectory"@en ;
 	rdfs:comment "The Windows_Temp_Directory field specifies the fully-qualified path to the Windows temporary files directory."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:windowsVolumeAttributes
@@ -7964,20 +7964,20 @@ observable:workItemData
 	a owl:ObjectProperty ;
 	rdfs:label "workItemData"@en ;
 	rdfs:comment "Specifies application defined data associated with the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381271(v=vs.85).aspx."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:workingDirectory
 	a owl:ObjectProperty ;
 	rdfs:label "workingDirectory"@en ;
 	rdfs:comment "Specifies the working directory for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381878(v=vs.85).aspx."@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:x509v3extensions
 	a owl:ObjectProperty ;
 	rdfs:label "x509V3Extensions"@en ;
-	rdfs:range observable:X509V3Extensions ;
+	rdfs:range observable:X509V3ExtensionsFacet ;
 	.
 
 observable:xMailer
@@ -7989,6 +7989,6 @@ observable:xMailer
 observable:xOriginatingIP
 	a owl:ObjectProperty ;
 	rdfs:label "xOriginatingIP"@en ;
-	rdfs:range observable:CyberItem ;
+	rdfs:range observable:ObservableObject ;
 	.
 
