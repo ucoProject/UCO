@@ -463,6 +463,77 @@ vocab:CharacterEncodingVocab
 	) ;
 	.
 
+vocab:DiskTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Disk Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of disk types."@en ;
+	owl:oneOf (
+		"CDRom"^^vocab:DiskTypeVocab
+		"Fixed"^^vocab:DiskTypeVocab
+		"RAMDisk"^^vocab:DiskTypeVocab
+		"Remote"^^vocab:DiskTypeVocab
+		"Removable"^^vocab:DiskTypeVocab
+	) ;
+	.
+
+vocab:EndiannessTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Endianness Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of byte ordering methods."@en ;
+	owl:oneOf (
+		"Big-endian"^^vocab:EndiannessTypeVocab
+		"Little-endian"^^vocab:EndiannessTypeVocab
+		"Middle-endian"^^vocab:EndiannessTypeVocab
+	) ;
+	.
+
+vocab:HashNameVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Hash Name Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
+	owl:oneOf (
+		"MD5"^^vocab:HashNameVocab
+		"MD6"^^vocab:HashNameVocab
+		"SHA1"^^vocab:HashNameVocab
+		"SHA224"^^vocab:HashNameVocab
+		"SHA256"^^vocab:HashNameVocab
+		"SHA384"^^vocab:HashNameVocab
+		"SHA512"^^vocab:HashNameVocab
+		"SSDEEP"^^vocab:HashNameVocab
+	) ;
+	.
+
+vocab:LibraryTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Library Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of library types."@en ;
+	owl:oneOf (
+		"Dynamic"^^vocab:LibraryTypeVocab
+		"Other"^^vocab:LibraryTypeVocab
+		"Remote"^^vocab:LibraryTypeVocab
+		"Shared"^^vocab:LibraryTypeVocab
+		"Static"^^vocab:LibraryTypeVocab
+	) ;
+	.
+
+vocab:MemoryBlockTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Memory Block Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of types of memory blocks."@en ;
+	owl:oneOf (
+		"Bit-mapped"^^vocab:MemoryBlockTypeVocab
+		"Byte-mapped"^^vocab:MemoryBlockTypeVocab
+		"Initialized"^^vocab:MemoryBlockTypeVocab
+		"Overlay"^^vocab:MemoryBlockTypeVocab
+		"Uninitialized"^^vocab:MemoryBlockTypeVocab
+	) ;
+	.
+
 vocab:ObservableObjectRelationshipVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
@@ -624,77 +695,6 @@ vocab:ObservableObjectStateVocab
 		"Started"^^vocab:ObservableObjectStateVocab
 		"Stopped"^^vocab:ObservableObjectStateVocab
 		"Unlocked"^^vocab:ObservableObjectStateVocab
-	) ;
-	.
-
-vocab:DiskTypeVocab
-	a rdfs:Datatype ;
-	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Disk Type Vocabulary"@en-US ;
-	rdfs:comment "Defines an open-vocabulary of disk types."@en ;
-	owl:oneOf (
-		"CDRom"^^vocab:DiskTypeVocab
-		"Fixed"^^vocab:DiskTypeVocab
-		"RAMDisk"^^vocab:DiskTypeVocab
-		"Remote"^^vocab:DiskTypeVocab
-		"Removable"^^vocab:DiskTypeVocab
-	) ;
-	.
-
-vocab:EndiannessTypeVocab
-	a rdfs:Datatype ;
-	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Endianness Type Vocabulary"@en-US ;
-	rdfs:comment "Defines an open-vocabulary of byte ordering methods."@en ;
-	owl:oneOf (
-		"Big-endian"^^vocab:EndiannessTypeVocab
-		"Little-endian"^^vocab:EndiannessTypeVocab
-		"Middle-endian"^^vocab:EndiannessTypeVocab
-	) ;
-	.
-
-vocab:HashNameVocab
-	a rdfs:Datatype ;
-	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Hash Name Vocabulary"@en-US ;
-	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
-	owl:oneOf (
-		"MD5"^^vocab:HashNameVocab
-		"MD6"^^vocab:HashNameVocab
-		"SHA1"^^vocab:HashNameVocab
-		"SHA224"^^vocab:HashNameVocab
-		"SHA256"^^vocab:HashNameVocab
-		"SHA384"^^vocab:HashNameVocab
-		"SHA512"^^vocab:HashNameVocab
-		"SSDEEP"^^vocab:HashNameVocab
-	) ;
-	.
-
-vocab:LibraryTypeVocab
-	a rdfs:Datatype ;
-	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Library Type Vocabulary"@en-US ;
-	rdfs:comment "Defines an open-vocabulary of library types."@en ;
-	owl:oneOf (
-		"Dynamic"^^vocab:LibraryTypeVocab
-		"Other"^^vocab:LibraryTypeVocab
-		"Remote"^^vocab:LibraryTypeVocab
-		"Shared"^^vocab:LibraryTypeVocab
-		"Static"^^vocab:LibraryTypeVocab
-	) ;
-	.
-
-vocab:MemoryBlockTypeVocab
-	a rdfs:Datatype ;
-	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Memory Block Type Vocabulary"@en-US ;
-	rdfs:comment "Defines an open-vocabulary of types of memory blocks."@en ;
-	owl:oneOf (
-		"Bit-mapped"^^vocab:MemoryBlockTypeVocab
-		"Byte-mapped"^^vocab:MemoryBlockTypeVocab
-		"Initialized"^^vocab:MemoryBlockTypeVocab
-		"Overlay"^^vocab:MemoryBlockTypeVocab
-		"Uninitialized"^^vocab:MemoryBlockTypeVocab
 	) ;
 	.
 
@@ -1060,3 +1060,4 @@ vocab:WindowsVolumeAttributeVocab
 		"ShadowCopy"^^vocab:WindowsVolumeAttributeVocab
 	) ;
 	.
+
