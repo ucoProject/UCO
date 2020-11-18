@@ -1288,10 +1288,6 @@ observable:oldObject
 	rdfs:domain observable:StateChangeEffectFacet ;
 	.
 
-observable:taskComment
-	rdfs:domain observable:WindowsTaskFacet ;
-	.
-
 observable:openFileDescriptor
 	rdfs:domain observable:UNIXProcessFacet ;
 	.
@@ -1869,6 +1865,10 @@ observable:targetFile
 	rdfs:domain observable:SymbolicLinkFacet ;
 	.
 
+observable:taskComment
+	rdfs:domain observable:WindowsTaskFacet ;
+	.
+
 observable:taskCreator
 	rdfs:domain observable:WindowsTaskFacet ;
 	.
@@ -2055,3 +2055,4 @@ observable:xMailer
 observable:xOriginatingIP
 	rdfs:domain observable:EmailMessageFacet ;
 	.
+
