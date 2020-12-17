@@ -7086,9 +7086,9 @@ observable:regionStartAddress
 	rdfs:range xsd:hexBinary ;
 	.
 
-observable:region_end_address
+observable:regionEndAddress
 	a owl:DatatypeProperty ;
-	rdfs:label "region_End_Address"@en ;
+	rdfs:label "regionEndAddress"@en ;
 	rdfs:comment "The regionEndAddress property specifies the ending address of the particular memory region."@en ;
 	rdfs:range xsd:hexBinary ;
 	.
