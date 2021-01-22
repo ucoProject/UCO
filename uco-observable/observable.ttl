@@ -11,7 +11,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -1835,7 +1835,7 @@ observable:MemoryFacet
 			a owl:Restriction ;
 			owl:onProperty observable:blockType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:MemoryBlockTypeVocab ;
+			owl:onDataRange vocabulary:MemoryBlockTypeVocab ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -3204,7 +3204,7 @@ observable:TaskActionType
 			a owl:Restriction ;
 			owl:onProperty observable:actionType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TaskActionTypeVocab ;
+			owl:onDataRange vocabulary:TaskActionTypeVocab ;
 		]
 		;
 	rdfs:label "TaskActionType"@en ;
@@ -3252,13 +3252,13 @@ observable:TriggerType
 			a owl:Restriction ;
 			owl:onProperty observable:triggerFrequency ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TriggerFrequencyVocab ;
+			owl:onDataRange vocabulary:TriggerFrequencyVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:triggerType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TriggerTypeVocab ;
+			owl:onDataRange vocabulary:TriggerTypeVocab ;
 		]
 		;
 	rdfs:label "TriggerType"@en ;
@@ -3559,19 +3559,19 @@ observable:WhoIsFacet
 			a owl:Restriction ;
 			owl:onProperty observable:regionalInternetRegistry ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:RegionalRegistryTypeVocab ;
+			owl:onDataRange vocabulary:RegionalRegistryTypeVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:dnssec ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WhoisDNSSECTypeVocab ;
+			owl:onDataRange vocabulary:WhoisDNSSECTypeVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:status ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WhoisStatusTypeVocab ;
+			owl:onDataRange vocabulary:WhoisStatusTypeVocab ;
 		]
 		;
 	rdfs:label "WhoIsFacet"@en ;
@@ -3625,7 +3625,7 @@ observable:WhoisContactType
 			a owl:Restriction ;
 			owl:onProperty observable:contactType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WhoisContactTypeVocab ;
+			owl:onDataRange vocabulary:WhoisContactTypeVocab ;
 		]
 		;
 	rdfs:label "WhoisContactType"@en ;
@@ -4275,13 +4275,13 @@ observable:WindowsTaskFacet
 			a owl:Restriction ;
 			owl:onProperty observable:priority ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TaskPriorityVocab ;
+			owl:onDataRange vocabulary:TaskPriorityVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:status ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TaskStatusVocab ;
+			owl:onDataRange vocabulary:TaskStatusVocab ;
 		]
 		;
 	rdfs:label "WindowsTaskFacet"@en ;
@@ -4339,13 +4339,13 @@ observable:WindowsVolumeFacet
 			a owl:Restriction ;
 			owl:onProperty observable:driveType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WindowsDriveTypeVocab ;
+			owl:onDataRange vocabulary:WindowsDriveTypeVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:windowsVolumeAttributes ;
 			owl:maxQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WindowsVolumeAttributeVocab ;
+			owl:onDataRange vocabulary:WindowsVolumeAttributeVocab ;
 		]
 		;
 	rdfs:label "WindowsVolumeFacet"@en ;
@@ -4649,7 +4649,7 @@ observable:accountType
 	a owl:DatatypeProperty ;
 	rdfs:label "accountType"@en ;
 	rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
-	rdfs:range vocab:AccountTypeVocab ;
+	rdfs:range vocabulary:AccountTypeVocab ;
 	.
 
 observable:actionID
@@ -4670,7 +4670,7 @@ observable:actionType
 	a owl:DatatypeProperty ;
 	rdfs:label "actionType"@en ;
 	rdfs:comment "Specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
-	rdfs:range vocab:TaskActionTypeVocab ;
+	rdfs:range vocabulary:TaskActionTypeVocab ;
 	.
 
 observable:activeDirectoryGroups
@@ -4884,7 +4884,7 @@ observable:blockType
 	a owl:DatatypeProperty ;
 	rdfs:label "blockType"@en ;
 	rdfs:comment "The blockType property specifies the block type of a particular memory object."@en ;
-	rdfs:range vocab:MemoryBlockTypeVocab ;
+	rdfs:range vocabulary:MemoryBlockTypeVocab ;
 	.
 
 observable:bluetoothDeviceName
@@ -5097,7 +5097,7 @@ observable:contactType
 	a owl:DatatypeProperty ;
 	rdfs:label "contactType"@en ;
 	rdfs:comment "Specifies what type of contact this is."@en ;
-	rdfs:range vocab:WhoisContactTypeVocab ;
+	rdfs:range vocabulary:WhoisContactTypeVocab ;
 	.
 
 observable:contentDisposition
@@ -5355,7 +5355,7 @@ observable:dnssec
 	a owl:DatatypeProperty ;
 	rdfs:label "dnssec"@en ;
 	rdfs:comment "Specifies the DNSSEC property associated with a Whois entry. Acceptable values are: 'Signed' or 'Unsigned'."@en ;
-	rdfs:range vocab:WhoisDNSSECTypeVocab ;
+	rdfs:range vocabulary:WhoisDNSSECTypeVocab ;
 	.
 
 observable:documentInformationDictionary
@@ -5397,7 +5397,7 @@ observable:driveType
 	a owl:DatatypeProperty ;
 	rdfs:label "driveType"@en ;
 	rdfs:comment "Specifies the drive type of a windows volume."@en ;
-	rdfs:range vocab:WindowsDriveTypeVocab ;
+	rdfs:range vocabulary:WindowsDriveTypeVocab ;
 	.
 
 observable:dst
@@ -5771,7 +5771,7 @@ observable:flags
 	a owl:DatatypeProperty ;
 	rdfs:label "flags"@en ;
 	rdfs:comment "Specifies any flags that modify the behavior of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.85).aspx."@en ;
-	rdfs:range vocab:TaskFlagVocab ;
+	rdfs:range vocabulary:TaskFlagVocab ;
 	.
 
 observable:format
@@ -7097,7 +7097,7 @@ observable:regionalInternetRegistry
 	a owl:DatatypeProperty ;
 	rdfs:label "regionalInternetRegistry"@en ;
 	rdfs:comment "specifies the name of the Regional Internet Registry (RIR) which allocated the IP address contained in a WHOIS entry."@en ;
-	rdfs:range vocab:RegionalRegistryTypeVocab ;
+	rdfs:range vocabulary:RegionalRegistryTypeVocab ;
 	.
 
 observable:registeredOrganization
@@ -7563,7 +7563,7 @@ observable:status
 	a owl:DatatypeProperty ;
 	rdfs:label "status"@en ;
 	rdfs:comment "Specifies a list of statuses for a given Whois entry."@en ;
-	rdfs:range vocab:WhoisStatusTypeVocab ;
+	rdfs:range vocabulary:WhoisStatusTypeVocab ;
 	.
 
 observable:storageCapacityInBytes
@@ -7789,7 +7789,7 @@ observable:triggerFrequency
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerFrequency"@en ;
 	rdfs:comment "Specifies the frequency at which the trigger repeats."@en ;
-	rdfs:range vocab:TriggerFrequencyVocab ;
+	rdfs:range vocabulary:TriggerFrequencyVocab ;
 	.
 
 observable:triggerList
@@ -7817,7 +7817,7 @@ observable:triggerType
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerType"@en ;
 	rdfs:comment "Specifies the type of the task trigger."@en ;
-	rdfs:range vocab:TriggerTypeVocab ;
+	rdfs:range vocabulary:TriggerTypeVocab ;
 	.
 
 observable:updatedDate
@@ -7957,7 +7957,7 @@ observable:windowsVolumeAttributes
 	a owl:DatatypeProperty ;
 	rdfs:label "windowsVolumeAttributes"@en ;
 	rdfs:comment "Specifies the attributes of a windows volume."@en ;
-	rdfs:range vocab:WindowsVolumeAttributeVocab ;
+	rdfs:range vocabulary:WindowsVolumeAttributeVocab ;
 	.
 
 observable:workItemData
