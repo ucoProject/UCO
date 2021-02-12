@@ -21,7 +21,7 @@ tool:AnalyticTool
 	rdfs:comment "An instrument useful for accomplishing an analytical task or purpose."@en ;
 	.
 
-tool:Build
+tool:BuildFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -32,7 +32,7 @@ tool:Build
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Build"@en ;
+	rdfs:label "BuildFacet"@en ;
 	rdfs:comment "Characteristics of a particular build of a tool."@en ;
 	.
 
@@ -278,10 +278,10 @@ tool:Tool
 	rdfs:comment "An element of hardware and/or software utilized to carry out a particular function."@en ;
 	.
 
-tool:ToolConfigurationType
+tool:ToolConfigurationTypeFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "ToolConfigurationType"@en ;
+	rdfs:label "ToolConfigurationTypeFacet"@en ;
 	rdfs:comment "Characterizes the configuration for a tool."@en ;
 	.
 

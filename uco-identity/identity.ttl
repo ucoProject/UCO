@@ -18,7 +18,7 @@
 		;
 	.
 
-identity:Address
+identity:AddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		identity:IdentityFacet ,
@@ -29,18 +29,18 @@ identity:Address
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Address"@en ;
+	rdfs:label "AddressFacet"@en ;
 	rdfs:comment "The location address of an identity."@en ;
 	.
 
-identity:Affiliation
+identity:AffiliationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Affiliation"@en ;
+	rdfs:label "AffiliationFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:BirthInformation
+identity:BirthInformationFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		identity:IdentityFacet ,
@@ -51,28 +51,28 @@ identity:BirthInformation
 			owl:onDataRange xsd:dateTime ;
 		]
 		;
-	rdfs:label "BirthInformation"@en ;
+	rdfs:label "BirthInformationFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:CountriesOfResidence
+identity:CountriesOfResidenceFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "CountriesOfResidence"@en ;
+	rdfs:label "CountriesOfResidenceFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:Events
+identity:EventsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Events"@en ;
+	rdfs:label "EventsFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:Identifier
+identity:IdentifierFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Identifier"@en ;
+	rdfs:label "IdentifierFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
@@ -90,24 +90,24 @@ identity:IdentityFacet
 	rdfs:comment "Characteristic properties of a particular aspect of an identity."@en ;
 	.
 
-identity:Languages
+identity:LanguagesFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Languages"@en ;
+	rdfs:label "LanguagesFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:Nationality
+identity:NationalityFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Nationality"@en ;
+	rdfs:label "NationalityFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:Occupation
+identity:OccupationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Occupation"@en ;
+	rdfs:label "OccupationFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
@@ -118,10 +118,10 @@ identity:Organization
 	rdfs:comment "Characterization of the identifying properties of an organization."@en ;
 	.
 
-identity:OrganizationDetails
+identity:OrganizationDetailsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "OrganizationDetails"@en ;
+	rdfs:label "OrganizationDetailsFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
@@ -132,45 +132,45 @@ identity:Person
 	rdfs:comment "Characterization of the identifying properties of an individual person."@en ;
 	.
 
-identity:PersonalDetails
+identity:PersonalDetailsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "PersonalDetails"@en ;
+	rdfs:label "PersonalDetailsFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:PhysicalInfo
+identity:PhysicalInfoFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "PhysicalInfo"@en ;
+	rdfs:label "PhysicalInfoFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:Qualification
+identity:QualificationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Qualification"@en ;
+	rdfs:label "QualificationFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:RelatedIdentity
+identity:RelatedIdentityFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Related Identity"@en ;
+	rdfs:label "RelatedIdentityFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:SimpleName
+identity:SimpleNameFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "SimpleName"@en ;
+	rdfs:label "SimpleNameFacet"@en ;
 	rdfs:comment "Very simple name properties of an identity."@en ;
 	.
 
-identity:Visa
+identity:VisaFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Visa"@en ;
+	rdfs:label "VisaFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
