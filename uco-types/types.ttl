@@ -29,7 +29,7 @@ types:ControlledDictionary
 		owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 	] ;
 	rdfs:label "ControlledDictionary"@en ;
-	rdfs:comment "A list of terms/keys and their values where the set of terms/keys is constrained to an explicitly defined set of values."@en ;
+	rdfs:comment "A controlled dictionary is a list of (term/key, value) pairs where each term/key exists no more than once and is constrained to an explicitly defined set of values."@en ;
 	.
 
 types:ControlledDictionaryEntry
@@ -48,7 +48,7 @@ types:ControlledDictionaryEntry
 		]
 		;
 	rdfs:label "ControlledDictionaryEntry"@en ;
-	rdfs:comment "A single term/key and its value where the term/key is constrained to an explicitly defined set of values."@en ;
+	rdfs:comment "A controlled dictionary entry is a single (term/key, value) pair where the term/key is constrained to an explicitly defined set of values."@en ;
 	.
 
 types:Dictionary
@@ -60,7 +60,7 @@ types:Dictionary
 		owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 	] ;
 	rdfs:label "Dictionary"@en ;
-	rdfs:comment "A list of terms/keys and their values."@en ;
+	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
 	.
 
 types:DictionaryEntry
@@ -80,7 +80,7 @@ types:DictionaryEntry
 		]
 		;
 	rdfs:label "DictionaryEntry"@en ;
-	rdfs:comment "A single of term/key and its value."@en ;
+	rdfs:comment "A dictionary entry is a single (term/key, value) pair."@en ;
 	.
 
 types:Hash
@@ -99,12 +99,12 @@ types:Hash
 		]
 		;
 	rdfs:label "Hash"@en ;
-	rdfs:comment "A cryptographic hash of data."@en ;
+	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
 	.
 
 types:Identifier
 	a rdfs:Datatype ;
-	rdfs:comment "UCO standard format for object identifiers. UUID-based."@en ;
+	rdfs:comment "An identifier is a string conformant to the specified UUID-based format for UCO object identifiers."@en ;
 	.
 
 types:NativeFormatString

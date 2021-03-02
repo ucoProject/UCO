@@ -18,27 +18,27 @@ role:BenevolentRole
 	a owl:Class ;
 	rdfs:subClassOf role:Role ;
 	rdfs:label "BenevolentRole"@en ;
-	rdfs:comment " A role with postive and/or beneficial intent."@en ;
+	rdfs:comment "A benevolent role is a role with positive and/or beneficial intent."@en ;
 	.
 
 role:MaliciousRole
 	a owl:Class ;
 	rdfs:subClassOf role:Role ;
 	rdfs:label "MaliciousRole"@en ;
-	rdfs:comment " A role with malicious intent."@en ;
+	rdfs:comment "A malicious role is a role with malevolent intent."@en ;
 	.
 
 role:NeutralRole
 	a owl:Class ;
 	rdfs:subClassOf role:Role ;
 	rdfs:label "NeutralRole"@en ;
-	rdfs:comment " A role with neutral intent."@en ;
+	rdfs:comment "A neutral role is a role with impartial or unknown intent."@en ;
 	.
 
 role:Role
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	rdfs:label "Role"@en ;
-	rdfs:comment "Usual or customary function based on contextual perspective."@en ;
+	rdfs:comment "A role is a usual or customary function based on contextual perspective."@en ;
 	.
 

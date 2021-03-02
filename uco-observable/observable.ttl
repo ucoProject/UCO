@@ -51,6 +51,7 @@ observable:AccountAuthenticationFacet
 		]
 		;
 	rdfs:label "AccountAuthenticationFacet"@en ;
+	rdfs:comment "An account authentication facet is a grouping of characteristics unique to the mechanism of accessing an account."@en ;
 	.
 
 observable:AccountFacet
@@ -101,7 +102,7 @@ observable:AccountFacet
 		]
 		;
 	rdfs:label "AccountFacet"@en ;
-	rdfs:comment "The fundamental properties of an account."@en ;
+	rdfs:comment "An account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of some capability or service."@en ;
 	.
 
 observable:AlternateDataStream
@@ -126,6 +127,7 @@ observable:AlternateDataStream
 		]
 		;
 	rdfs:label "AlternateDataStream"@en ;
+	rdfs:comment "An alternate data stream is metadata content stored within an NTFS file that is independent of the standard content of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
 	.
 
 observable:ApplicationAccountFacet
@@ -140,7 +142,7 @@ observable:ApplicationAccountFacet
 		]
 		;
 	rdfs:label "ApplicationAccountFacet"@en ;
-	rdfs:comment "Characteristics of an account within a particular application."@en ;
+	rdfs:comment "An application account facet is a grouping of characteristics unique to an account within a particular software program designed for end users."@en ;
 	.
 
 observable:ApplicationFacet
@@ -173,7 +175,7 @@ observable:ApplicationFacet
 		]
 		;
 	rdfs:label "ApplicationFacet"@en ;
-	rdfs:comment "Characteristics of a software application."@en ;
+	rdfs:comment "An application facet is a grouping of characteristics unique to a particular software program designed for ends users."@en ;
 	.
 
 observable:ArchiveFileFacet
@@ -200,12 +202,14 @@ observable:ArchiveFileFacet
 		]
 		;
 	rdfs:label "ArchiveFileFacet"@en ;
+	rdfs:comment "An archive file facet is a grouping of characteristics unique to a file that is composed of one or more computer files along with metadata."@en ;
 	.
 
 observable:AttachmentFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "AttachmentFacet"@en ;
+	rdfs:comment "An attachment facet is a grouping of characteristics unique to the inclusion of an associated object as part of a message."@en ;
 	.
 
 observable:AudioFacet
@@ -238,7 +242,7 @@ observable:AudioFacet
 		]
 		;
 	rdfs:label "AudioFacet"@en ;
-	rdfs:comment "Characteristics of piece of digital audio."@en ;
+	rdfs:comment "An audio facet is a grouping of characteristics unique to a digital representation of sound."@en ;
 	.
 
 observable:AutonomousSystemFacet
@@ -279,7 +283,7 @@ observable:BluetoothAddressFacet
 		]
 		;
 	rdfs:label "BluetoothAddressFacet"@en ;
-	rdfs:comment "Properties of a Bluetooth address."@en ;
+	rdfs:comment "A Bluetooth address facet is a grouping of characteristics unique to a Bluetooth standard conformant identifier assigned to a Bluetooth device to enable routing and management of Bluetooth standards conformant communication to or from that device."@en ;
 	.
 
 observable:BrowserBookmarkFacet
@@ -321,7 +325,7 @@ observable:BrowserBookmarkFacet
 		]
 		;
 	rdfs:label "BrowserBookmarkFacet"@en ;
-	rdfs:comment "A bookmark to a web pages or files using a web browser."@en ;
+	rdfs:comment "A browser bookmark facet is a grouping of characteristics unique to a saved shortcut that directs a WWW (World Wide Web) browser software program to a particular WWW accessible resource. [based on https://techterms.com/definition/bookmark]"@en ;
 	.
 
 observable:BrowserCookieFacet
@@ -375,7 +379,7 @@ observable:BrowserCookieFacet
 		]
 		;
 	rdfs:label "BrowserCookieFacet"@en ;
-	rdfs:comment "A piece of data used by a (remote) web page, stored on the local machine."@en ;
+	rdfs:comment "A browser cookie facet is a grouping of characteristics unique to a piece of data sent from a website and stored on the user's computer by the user's web browser while the user is browsing. [based on https://en.wikipedia.org/wiki/HTTP_cookie]"@en ;
 	.
 
 observable:CalendarEntryFacet
@@ -461,7 +465,7 @@ observable:CalendarEntryFacet
 		]
 		;
 	rdfs:label "CalendarEntryFacet"@en ;
-	rdfs:comment "Characteristics of an entry (appointment, meeting, event) within a calendar."@en ;
+	rdfs:comment "A calendar entry facet is a grouping of characteristics unique to an appointment, meeting, or event within a collection of appointments, meetings, and events."@en ;
 	.
 
 observable:CalendarFacet
@@ -482,7 +486,7 @@ observable:CalendarFacet
 		]
 		;
 	rdfs:label "CalendarFacet"@en ;
-	rdfs:comment "A collection of appointments and meetings."@en ;
+	rdfs:comment "A calendar facet is a grouping of characteristics unique to a collection of appointments, meetings, and events."@en ;
 	.
 
 observable:CompressedStreamFacet
@@ -503,7 +507,7 @@ observable:CompressedStreamFacet
 		]
 		;
 	rdfs:label "CompressedStreamFacet"@en ;
-	rdfs:comment "Characteristics of compression applied to a body of data content."@en ;
+	rdfs:comment "A compressed stream facet is a grouping of characteristics unique to the application of a size-reduction process to a body of data content."@en ;
 	.
 
 observable:ComputerSpecificationFacet
@@ -622,7 +626,7 @@ observable:ComputerSpecificationFacet
 		]
 		;
 	rdfs:label "ComputerSpecificationFacet"@en ;
-	rdfs:comment "Characterizes a computer system (as a combination of both software and hardware)."@en ;
+	rdfs:comment "A computer specificaiton facet is a grouping of characteristics unique to the hardware and software of a programmable electronic device that can store, retrieve, and process data. [based on merriam-webster.com/dictionary/computer]"@en ;
 	.
 
 observable:ContactFacet
@@ -741,7 +745,7 @@ observable:ContentDataFacet
 		]
 		;
 	rdfs:label "ContentDataFacet"@en ;
-	rdfs:comment "Characteristics of a block of digital data."@en ;
+	rdfs:comment "A content data facet is a grouping of characteristics unique to a block of digital data."@en ;
 	.
 
 observable:DataRangeFacet
@@ -768,14 +772,14 @@ observable:DataRangeFacet
 		]
 		;
 	rdfs:label "DataRangeFacet"@en ;
-	rdfs:comment "Bounding characteristics of a range within a block of digital data."@en ;
+	rdfs:comment "A data range facet is a grouping of characteristics unique to a particular contiguous scope within a block of digital data."@en ;
 	.
 
 observable:DefinedEffectFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "DefinedEffectFacet"@en ;
-	rdfs:comment "A set of properties characterizing some defined effect of a observable action in relation to one or more observable objects."@en ;
+	rdfs:comment "A defined effect facet is a grouping of characteristics unique to the effect of an observable action in relation to one or more observable objects."@en ;
 	.
 
 observable:DeviceFacet
@@ -838,7 +842,7 @@ observable:DigitalAccountFacet
 		]
 		;
 	rdfs:label "DigitalAccountFacet"@en ;
-	rdfs:comment "Characteristics of an account within the digital domain."@en ;
+	rdfs:comment "A digital account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of some capability or service within the digital domain."@en ;
 	.
 
 observable:DigitalSignatureInfoFacet
@@ -875,7 +879,7 @@ observable:DigitalSignatureInfoFacet
 		]
 		;
 	rdfs:label "DigitalSignatureInfoFacet"@en ;
-	rdfs:comment "Characteristics of a value calculated via a mathematical scheme for demonstrating the authenticity of a digital message or documents."@en ;
+	rdfs:comment "A digital signature info facet is a grouping of characteristics unique to a value calculated via a mathematical scheme for demonstrating the authenticity of an electronic message or document."@en ;
 	.
 
 observable:DiskFacet
@@ -901,6 +905,7 @@ observable:DiskFacet
 		]
 		;
 	rdfs:label "DiskFacet"@en ;
+	rdfs:comment "A disk facet is a grouping of characteristics unique to a storage mechanism where data is recorded by various electronic, magnetic, optical, or mechanical changes to a surface layer of one or more rotating disks."@en ;
 	.
 
 observable:DiskPartitionFacet
@@ -961,7 +966,7 @@ observable:DiskPartitionFacet
 		]
 		;
 	rdfs:label "DiskPartitionFacet"@en ;
-	rdfs:comment "Characteristics of a region on a hard disk or other secondary storage."@en ;
+	rdfs:comment "A disk partition facet is a grouping of characteristics unique to a particular managed region on a storage mechanism where data is recorded by various electronic, magnetic, optical, or mechanical changes to a surface layer of one or more rotating disks. [based on https://en.wikipedia.org/wiki/Disk_storage]"@en ;
 	.
 
 observable:DomainNameFacet
@@ -982,7 +987,7 @@ observable:DomainNameFacet
 		]
 		;
 	rdfs:label "DomainNameFacet"@en ;
-	rdfs:comment "Characteristics of an identification string that defines a realm of administrative autonomy, authority or control within the Internet."@en ;
+	rdfs:comment "A domain name facet is a grouping of characteristics unique to an identification string that defines a realm of administrative autonomy, authority or control within the Internet. [based on https://en.wikipedia.org/wiki/Domain_name]"@en ;
 	.
 
 observable:ESN
@@ -1004,7 +1009,7 @@ observable:EXIFFacet
 		]
 		;
 	rdfs:label "EXIFFacet"@en ;
-	rdfs:comment "Specifies exchangeable image file format (Exif) metadata tags for image and sound files recorded by digital cameras."@en ;
+	rdfs:comment "An EXIF (exchangeable image file format) facet is a grouping of characteristics unique to the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras conformant to JEIDA/JEITA/CIPA specifications. [based on https://en.wikipedia.org/wiki/Exif]"@en ;
 	.
 
 observable:EmailAccountFacet
@@ -1019,7 +1024,7 @@ observable:EmailAccountFacet
 		]
 		;
 	rdfs:label "EmailAccountFacet"@en ;
-	rdfs:comment "Characteristics of an account within an email domain."@en ;
+	rdfs:comment "An email account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of electronic mail (email) capabilities or services."@en ;
 	.
 
 observable:EmailAddressFacet
@@ -1040,7 +1045,7 @@ observable:EmailAddressFacet
 		]
 		;
 	rdfs:label "EmailAddressFacet"@en ;
-	rdfs:comment "Characteristics of an identifier for an email box to which email messages are delivered."@en ;
+	rdfs:comment "An email address facet is a grouping of characteristics unique to an identifier for an electronic mailbox to which electronic mail messages (conformant to the Simple Mail Transfer Protocol (SMTP)) are sent from and delivered to."@en ;
 	.
 
 observable:EmailMessageFacet
@@ -1171,7 +1176,7 @@ observable:EmailMessageFacet
 		]
 		;
 	rdfs:label "EmailMessageFacet"@en ;
-	rdfs:comment "An instance of an email message, corresponding to the internet message format described in RFC 5322 and related RFCs."@en ;
+	rdfs:comment "An email message facet is a grouping of characteristics unique to a message that is an instance of an electronic mail correspondence conformant to the internet message format described in RFC 5322 and related RFCs."@en ;
 	.
 
 observable:EncodedStreamFacet
@@ -1186,7 +1191,7 @@ observable:EncodedStreamFacet
 		]
 		;
 	rdfs:label "EncodedStreamFacet"@en ;
-	rdfs:comment "Represents the encoding-related properties of some encoded thing."@en ;
+	rdfs:comment "An encoded stream facet is a grouping of characteristics unique to the conversion of a body of data content from one form to another form."@en ;
 	.
 
 observable:EncryptedStreamFacet
@@ -1205,7 +1210,7 @@ observable:EncryptedStreamFacet
 		]
 		;
 	rdfs:label "EncryptedStreamFacet"@en ;
-	rdfs:comment "Represents the encryption-related properties of some encrypted thing."@en ;
+	rdfs:comment "An encrypted stream facet is a grouping of characteristics unique to the conversion of a body of data content from one form to another obfuscated form in such a way that reversing the conversion to obtain the original data form can only be accomplished through possession and use of a specific key."@en ;
 	.
 
 observable:EnvironmentVariable
@@ -1225,7 +1230,7 @@ observable:EnvironmentVariable
 		]
 		;
 	rdfs:label "EnvironmentVariable"@en ;
-	rdfs:comment "Represents the properties of an environment variable."@en ;
+	rdfs:comment "An environment variable is a grouping of characteristics unique to a dynamic-named value that can affect the way running processes will behave on a computer. [based on https://en.wikipedia.org/wiki/Environment_variable]"@en ;
 	.
 
 observable:EventFacet
@@ -1275,7 +1280,7 @@ observable:EventFacet
 		]
 		;
 	rdfs:label "EventFacet"@en ;
-	rdfs:comment "An event, mainly used for operating system events."@en ;
+	rdfs:comment "An event facet is a grouping of characteristics unique to something that happens in a digital context (e.g., operating system events)."@en ;
 	.
 
 observable:ExtInodeFacet
@@ -1336,7 +1341,7 @@ observable:ExtInodeFacet
 		]
 		;
 	rdfs:label "ExtInodeFacet"@en ;
-	rdfs:comment "Characterizes the details of a single EXT file."@en ;
+	rdfs:comment "An extInode facet is a grouping of characteristics unique to a file system object (file, directory, etc.) conformant to the extended file system (EXT or related derivations) specification."@en ;
 	.
 
 observable:ExtractedString
@@ -1382,14 +1387,14 @@ observable:ExtractedString
 		]
 		;
 	rdfs:label "ExtractedString"@en ;
-	rdfs:comment "A string extracted from a cyber item."@en ;
+	rdfs:comment "An extracted string is a grouping of characteristics unique to a series of characters pulled from an observable object."@en ;
 	.
 
 observable:ExtractedStringsFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "ExtractedStringsFacet"@en ;
-	rdfs:comment "One or more strings extracted from a cyber item."@en ;
+	rdfs:comment "An extracted strings facet is a grouping of characteristics unique to one or more sequences of characters pulled from an observable object."@en ;
 	.
 
 observable:FileFacet
@@ -1441,7 +1446,7 @@ observable:FileFacet
 		]
 		;
 	rdfs:label "FileFacet"@en ;
-	rdfs:comment "The basic properties associated with the storage of a file on a file system."@en ;
+	rdfs:comment "A file facet is a grouping of characteristics unique to the storage of a file (computer resource for recording data discretely in a computer storage device) on a file system (process that manages how and where data on a storage device is stored, accessed and managed). [based on https://en.wikipedia.org/Computer_file and https://www.techopedia.com/definition/5510/file-system]"@en ;
 	.
 
 observable:FilePermissionsFacet
@@ -1456,7 +1461,7 @@ observable:FilePermissionsFacet
 		]
 		;
 	rdfs:label "FilePermissionsFacet"@en ;
-	rdfs:comment "Characteristics of permissions or access rights for a file."@en ;
+	rdfs:comment "A file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on a file system."@en ;
 	.
 
 observable:FileSystemFacet
@@ -1476,14 +1481,14 @@ observable:FileSystemFacet
 		]
 		;
 	rdfs:label "FileSystemFacet"@en ;
-	rdfs:comment "Represents the properties of a file system."@en ;
+	rdfs:comment "A file system facet is a grouping of characteristics unique to the process that manages how and where data on a storage medium is stored, accessed and managed. [based on https://www.techopedia.com/definition/5510/file-system]"@en ;
 	.
 
 observable:FragmentFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "FragmentFacet"@en ;
-	rdfs:comment "Characteristics of an individual fragment of a file."@en ;
+	rdfs:comment "A fragment facet is a grouping of characteristics unique to an individual piece of the content of a file."@en ;
 	.
 
 observable:GeoLocationEntryFacet
@@ -1579,7 +1584,7 @@ observable:GlobalFlagType
 		]
 		;
 	rdfs:label "GlobalFlagType"@en ;
-	rdfs:comment "Characterizes Windows global flags."@en ;
+	rdfs:comment "A global flag type is a grouping of characteristics unique to the Windows systemwide global variable named NtGlobalFlag that enables various internal debugging, tracing, and validation support in the operating system. [based on "Windows Global Flags, Chapter 3: System Mechanisms of Windows Internals by Solomon, Russinovich, and Ionescu]"@en ;
 	.
 
 observable:HTTPConnectionFacet
@@ -1623,7 +1628,7 @@ observable:HTTPConnectionFacet
 		]
 		;
 	rdfs:label "HTTPConnectionFacet"@en ;
-	rdfs:comment "Specifies HTTP-specific network connection properties."@en ;
+	rdfs:comment "An HTTP connection facet is a grouping of characteristics unique to portions of a network connection that are conformant to the Hypertext Transfer Protocol (HTTP) standard."@en ;
 	.
 
 observable:ICCID
@@ -1638,7 +1643,7 @@ observable:ICMPConnectionFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "ICMPConnectionFacet"@en ;
-	rdfs:comment "Specifies ICMP-specific network connection properties."@en ;
+	rdfs:comment "An ICMP connection facet is a grouping of characteristics unique to portions of a network connection that are conformant to the Internet Control Message Protocol (ICMP) standard."@en ;
 	.
 
 observable:IComHandlerActionType
@@ -1658,7 +1663,7 @@ observable:IComHandlerActionType
 		]
 		;
 	rdfs:label "IComHandlerActionType"@en ;
-	rdfs:comment "Characterizes IComHandler actions."@en ;
+	rdfs:comment "An IComHandler action type is a grouping of characteristics unique to a Windows Task-related action that fires a Windows COM handler (smart code in the client address space that can optimize calls between a client and server). [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/comhandleraction]"@en ;
 	.
 
 observable:IExecActionType
@@ -1684,7 +1689,7 @@ observable:IExecActionType
 		]
 		;
 	rdfs:label "IExecActionType"@en ;
-	rdfs:comment "Characterizes IExec actions."@en ;
+	rdfs:comment "An IExec action type is a grouping of characteristics unique to an action that executes a command-line operation on a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-iexecaction?redirectedfrom=MSDN]"@en ;
 	.
 
 observable:IMEI
@@ -1718,7 +1723,7 @@ observable:IPv4AddressFacet
 		]
 		;
 	rdfs:label "IPv4AddressFacet"@en ;
-	rdfs:comment "Characteristics of an IPv4 internet protocol address."@en ;
+	rdfs:comment "An IPv4 (Internet Protocol version 4) address facet is a grouping of characteristics unique to an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
 	.
 
 observable:IPv6AddressFacet
@@ -1733,7 +1738,7 @@ observable:IPv6AddressFacet
 		]
 		;
 	rdfs:label "IPv6AddressFacet"@en ;
-	rdfs:comment "Characteristics of an IPv6 internet protocol address."@en ;
+	rdfs:comment "An IPv6 (Internet Protocol version 6) address facet is a grouping of characteristics unique to an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
 	.
 
 observable:IShowMessageActionType
@@ -1753,7 +1758,7 @@ observable:IShowMessageActionType
 		]
 		;
 	rdfs:label "IShowMessageActionType"@en ;
-	rdfs:comment "Characterizes IShowMessage actions."@en ;
+	rdfs:comment "An IShow message action type is a grouping of characteristics unique to an action that shows a message box when a task is activate. [based on https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-ishowmessageaction?redirectedfrom=MSDN]"@en ;
 	.
 
 observable:ImageFacet
@@ -1768,7 +1773,7 @@ observable:ImageFacet
 		]
 		;
 	rdfs:label "ImageFacet"@en ;
-	rdfs:comment "Characteristics of a complete copy of a hard disk, memory or other digital media."@en ;
+	rdfs:comment "An image facet is a grouping of characteristics unique to a complete copy of a hard disk, memory, or other digital media."@en ;
 	.
 
 observable:LibraryFacet
@@ -1782,10 +1787,7 @@ observable:LibraryFacet
 		]
 		;
 	rdfs:label "LibraryFacet"@en ;
-	rdfs:comment """A characterization of a software library.
-
-
-What about Android Package and iOS Package and Windows MSI?"""@en ;
+	rdfs:comment "A library facet is a grouping of characteristics unique to a suite of data and programming code that is used to develop software programs and applications. [based on https://www.techopedia.com/definition/3828/software-library]"@en ;
 	.
 
 observable:MACAddressFacet
@@ -1800,7 +1802,7 @@ observable:MACAddressFacet
 		]
 		;
 	rdfs:label "MACAddressFacet"@en ;
-	rdfs:comment "Characteristics of a media access control (MAC) address identifier assigned to network interfaces for communications at the data link layer of a network segment."@en ;
+	rdfs:comment "A MAC address facet is a grouping of characteristics unique to a media access control standards conformant identifier assigned to a network interface to enable routing and management of communications at the data link layer of a network segment."@en ;
 	.
 
 observable:MSISDN
@@ -1863,7 +1865,7 @@ observable:MemoryFacet
 		]
 		;
 	rdfs:label "MemoryFacet"@en ;
-	rdfs:comment "Characteristics of a region of computer memory."@en ;
+	rdfs:comment "A memory facet is a grouping of characteristics unique to a particular region of temporary information storage (e.g., RAM (random access memory), ROM (read only memory)) on a digital device."@en ;
 	.
 
 observable:MessageFacet
@@ -1913,7 +1915,7 @@ observable:MessageFacet
 		]
 		;
 	rdfs:label "MessageFacet"@en ;
-	rdfs:comment "Characteristics of an electronic message."@en ;
+	rdfs:comment "A message facet is a grouping of characteristics unique to a discrete unit of electronic communication intended by the source for consumption by some recipient or group of recipients. [based on https://en.wikipedia.org/wiki/Message]"@en ;
 	.
 
 observable:MessageThreadFacet
@@ -1934,7 +1936,7 @@ observable:MessageThreadFacet
 		]
 		;
 	rdfs:label "MessageThreadFacet"@en ;
-	rdfs:comment "Characteristics of a running commentary of electronic messages pertaining to one topic or question."@en ;
+	rdfs:comment "A message thread facet is a grouping of characteristics unique to a running commentary of electronic messages pertaining to one topic or question."@en ;
 	.
 
 observable:MftRecordFacet
@@ -2010,7 +2012,7 @@ observable:MftRecordFacet
 		]
 		;
 	rdfs:label "MftRecordFacet"@en ;
-	rdfs:comment "Characterizes the details of a single NTFS file."@en ;
+	rdfs:comment "An MFT record facet is a grouping of characteristics unique to the details of a single file as managed in an NTFS (new technology filesystem) master file table (which is a collection of information about all files on an NTFS filesystem). [based on https://docs.microsoft.com/en-us/windows/win32/devnotes/master-file-table]"@en ;
 	.
 
 observable:MimePartType
@@ -2042,8 +2044,7 @@ observable:MimePartType
 		]
 		;
 	rdfs:label "MimePartType"@en ;
-	rdfs:comment """Specifies a component of a multi-part email body.
-"""@en ;
+	rdfs:comment "A mime part type is a grouping of characteristics unique to a component of a multi-part email body."@en ;
 	.
 
 observable:MobileAccountFacet
@@ -2070,7 +2071,7 @@ observable:MobileAccountFacet
 		]
 		;
 	rdfs:label "MobileAccountFacet"@en ;
-	rdfs:comment "Properties of a Mobile Account."@en ;
+	rdfs:comment "A mobile account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of some capability or service on a portable computing device. [based on https://www.lexico.com/definition/mobile_device]"@en ;
 	.
 
 observable:MobileDeviceFacet
@@ -2133,7 +2134,7 @@ observable:MobileDeviceFacet
 		]
 		;
 	rdfs:label "MobileDeviceFacet"@en ;
-	rdfs:comment "Properties of a Mobile Device."@en ;
+	rdfs:comment "A mobile device facet is a grouping of characteristics unique to a portable computing device. [based on https://www.lexico.com/definition/mobile_device]"@en ;
 	.
 
 observable:MutexFacet
@@ -2154,7 +2155,7 @@ observable:NTFSFilePermissionsFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "NTFSFilePermissionsFacet"@en ;
-	rdfs:comment "Characteristics of permissions or access rights for an NTFS file."@en ;
+	rdfs:comment "An NTFS file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on an NTFS (new technology filesystem) file system."@en ;
 	.
 
 observable:NTFSFileSystemFacet
@@ -2175,6 +2176,7 @@ observable:NTFSFileSystemFacet
 		]
 		;
 	rdfs:label "NTFSFileSystemFacet"@en ;
+	rdfs:comment "An NTFS file system facet is a grouping of characteristics unique to a file on an NTFS (new technology filesystem) file system."@en ;
 	.
 
 observable:NetworkConnectionFacet
@@ -2216,7 +2218,7 @@ observable:NetworkConnectionFacet
 		]
 		;
 	rdfs:label "NetworkConnectionFacet"@en ;
-	rdfs:comment "Characteristics of connection (completed or attempted) across a digital network."@en ;
+	rdfs:comment "A network connection facet is a grouping of characteristics unique to a connection (complete or attempted) accross a digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
 	.
 
 observable:NetworkFlowFacet
@@ -2266,7 +2268,7 @@ observable:NetworkFlowFacet
 		]
 		;
 	rdfs:label "NetworkFlowFacet"@en ;
-	rdfs:comment "Characteristics of a sequence of data transiting a one or more digital network connections."@en ;
+	rdfs:comment "A network flow facet is a grouping of characteristics unique to a sequence of data transiting one or more digital network (a group of two or more computer systems linked together) connections. [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
 	.
 
 observable:NetworkInterfaceFacet
@@ -2297,6 +2299,7 @@ observable:NetworkInterfaceFacet
 		]
 		;
 	rdfs:label "NetworkInterfaceFacet"@en ;
+	rdfs:comment "A network interface facet is a grouping of characteristics unique to a software or hardware interface between two pieces of equipment or protocol layers in a computer network."@en ;
 	.
 
 observable:NetworkSocketAddressFamily
@@ -2503,15 +2506,14 @@ observable:NoteFacet
 		]
 		;
 	rdfs:label "NoteFacet"@en ;
-	rdfs:comment "Characteristics of digital textual note."@en ;
+	rdfs:comment "A note facet is a grouping of characteristics unique to a brief textual record."@en ;
 	.
 
 observable:Observable
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	rdfs:label "Observable"@en ;
-	rdfs:comment """A characterizable item or action within the digital domain.
-"""@en ;
+	rdfs:comment "An observable is a characterizable item or action within the digital domain."@en ;
 	.
 
 observable:ObservableAction
@@ -2521,7 +2523,7 @@ observable:ObservableAction
 		observable:Observable
 		;
 	rdfs:label "ObservableAction"@en ;
-	rdfs:comment "Something that may be done or performed within the digital domain."@en ;
+	rdfs:comment "An observable action is a grouping of characteristics unique to something that may be done or performed within the digital domain."@en ;
 	.
 
 observable:ObservableObject
@@ -2542,14 +2544,14 @@ observable:ObservableObject
 		]
 		;
 	rdfs:label "ObservableObject"@en ;
-	rdfs:comment "A distinct article or unit within the digital domain."@en ;
+	rdfs:comment "An observable object is a grouping of characteristics unique to a distinct article or unit within the digital domain."@en ;
 	.
 
 observable:ObservablePattern
 	a owl:Class ;
 	rdfs:subClassOf observable:Observable ;
 	rdfs:label "ObservablePattern"@en ;
-	rdfs:comment "A logical pattern composed of observable object and observable action properties."@en ;
+	rdfs:comment "An observable pattern is a grouping of characteristics unique to a logical pattern composed of observable object and observable action properties."@en ;
 	.
 
 observable:ObservableRelationship
@@ -2559,7 +2561,7 @@ observable:ObservableRelationship
 		observable:Observable
 		;
 	rdfs:label "ObservableRelationship"@en ;
-	rdfs:comment "An association or link between two cyber observable objects."@en ;
+	rdfs:comment "An observable relationship is a grouping of characteristics unique to an assertion of an association between two observable objects."@en ;
 	.
 
 observable:Observation
@@ -2614,7 +2616,7 @@ observable:OperatingSystemFacet
 		]
 		;
 	rdfs:label "OperatingSystemFacet"@en ;
-	rdfs:comment "Specifies information about an operating system."@en ;
+	rdfs:comment "An operating system facet is a grouping of characteristics unique to the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	.
 
 observable:PDFFileFacet
@@ -2646,6 +2648,7 @@ observable:PDFFileFacet
 		]
 		;
 	rdfs:label "PDFFileFacet"@en ;
+	rdfs:comment "A PDF file facet is a grouping of characteristics unique to a PDF (Portable Document Format) file."@en ;
 	.
 
 observable:PIN
@@ -2668,7 +2671,7 @@ observable:PathRelationFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "PathRelationFacet"@en ;
-	rdfs:comment "Specifies the location of one object within another containing object."@en ;
+	rdfs:comment "A path relation facet is a grouping of characteristics unique to the location of one object within another containing object."@en ;
 	.
 
 observable:PhoneAccountFacet
@@ -2683,7 +2686,7 @@ observable:PhoneAccountFacet
 		]
 		;
 	rdfs:label "PhoneAccountFacet"@en ;
-	rdfs:comment "Characteristics of a telephone service account."@en ;
+	rdfs:comment "A phone account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of a telephony capability or service."@en ;
 	.
 
 observable:PhoneCallFacet
@@ -2732,7 +2735,7 @@ observable:PhoneCallFacet
 		]
 		;
 	rdfs:label "PhoneCallFacet"@en ;
-	rdfs:comment "Characteristics of a specific phone call."@en ;
+	rdfs:comment "A phone call facet is a grouping of characteristics unique to a connection over a telephone network between the called party and the calling party. [based on https://en.wikipedia.org/wiki/Telephone_call]"@en ;
 	.
 
 observable:ProcessFacet
@@ -2804,7 +2807,7 @@ observable:ProcessFacet
 		]
 		;
 	rdfs:label "ProcessFacet"@en ;
-	rdfs:comment "Characteristics of an instance of a computer program as executed on an operating system."@en ;
+	rdfs:comment "A process facet is a grouping of characteristics unique to an instance of a computer program executed on an operating system."@en ;
 	.
 
 observable:PropertiesEnumeratedEffectFacet
@@ -2820,7 +2823,7 @@ observable:PropertiesEnumeratedEffectFacet
 		]
 		;
 	rdfs:label "PropertiesEnumeratedEffectFacet"@en ;
-	rdfs:comment "Characterizes the effects of actions upon cyberitems where some properties of the cyberitem are enumerated, such as the startup parameters for a process."@en ;
+	rdfs:comment "A properties enumerated effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a characteristic of the observable object is enumerated. An example of this would be startup parameters for a process."@en ;
 	.
 
 observable:PropertyReadEffectFacet
@@ -2842,7 +2845,7 @@ observable:PropertyReadEffectFacet
 		]
 		;
 	rdfs:label "PropertyReadEffectFacet"@en ;
-	rdfs:comment "Characterize the effects of actions upon cyberitems where some specific property is read from an cyberitem, such as the current running state of a process."@en ;
+	rdfs:comment "A properties read effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a characteristic is read from an observable object. An example of this would be the current running state of a process."@en ;
 	.
 
 observable:RasterPictureFacet
@@ -2887,6 +2890,7 @@ observable:RasterPictureFacet
 		]
 		;
 	rdfs:label "RasterPictureFacet"@en ;
+	rdfs:comment "A raster picture facet is a grouping of characteristics unique to a raster (or bitmap) image."@en ;
 	.
 
 observable:RegistryDatatype
@@ -3003,7 +3007,7 @@ observable:SIMCardFacet
 		]
 		;
 	rdfs:label "SIMCardFacet"@en ;
-	rdfs:comment "Properties of a Mobile SIM card."@en ;
+	rdfs:comment "A SIM card facet is a grouping of characteristics unique to a subscriber identification module card intended to securely store the international mobile subscriber identity (IMSI) number and its related key, which are used to identify and authenticate subscribers on mobile telephony devices (such as mobile phones and computers). [based on https://en.wikipedia.org/wiki/SIM_card]"@en ;
 	.
 
 observable:SIMForm
@@ -3034,7 +3038,7 @@ observable:SMSMessageFacet
 		]
 		;
 	rdfs:label "SMSMessageFacet"@en ;
-	rdfs:comment "Characteristics of a Short Message Service (SMS) 'text' message."@en ;
+	rdfs:comment "A SMS message facet is a grouping of characteristics unique to a message conformant to the short message service (SMS) communication protocol standards."@en ;
 	.
 
 observable:SQLiteBlobFacet
@@ -3061,7 +3065,7 @@ observable:SQLiteBlobFacet
 		]
 		;
 	rdfs:label "SQLiteBlobFacet"@en ;
-	rdfs:comment "Characteristics of blob of data within a SQLite database."@en ;
+	rdfs:comment "An SQLite blob facet is a grouping of characteristics unique to a blob (binary large object) of data within an SQLite database. [based on https://en.wikipedia.org/wiki/SQLite]"@en ;
 	.
 
 observable:SendControlCodeEffectFacet
@@ -3077,7 +3081,7 @@ observable:SendControlCodeEffectFacet
 		]
 		;
 	rdfs:label "SendControlCodeEffectFacet"@en ;
-	rdfs:comment "Characterizes the effects of actions upon cyberitems where some control code, or other control-oriented communication signal, is sent to the cyberitem. For example, an action may send a control code to change the running state of a process."@en ;
+	rdfs:comment "A send control code effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a control code, or other control-oriented communication signal, is sent to the observable object. An example of this would be an action sending a control code changing the running state of a process."@en ;
 	.
 
 observable:SoftwareFacet
@@ -3116,11 +3120,7 @@ observable:SoftwareFacet
 		]
 		;
 	rdfs:label "SoftwareFacet"@en ;
-	rdfs:comment """High-level properties associated with software, including software products.
-
-How does this relate to Application?
-
-"""@en ;
+	rdfs:comment "A software facet is a grouping of characteristics unique to a software program (a definitively scoped instance of a collection of data or computer instructions that tell the computer how to work). [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	.
 
 observable:StateChangeEffectFacet
@@ -3142,7 +3142,7 @@ observable:StateChangeEffectFacet
 		]
 		;
 	rdfs:label "StateChangeEffectFacet"@en ;
-	rdfs:comment "Characterizes the effects of actions upon cyberitems where the some state of the cyberitem is changed."@en ;
+	rdfs:comment "A state change effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a state of the observable object is changed."@en ;
 	.
 
 observable:SymbolicLinkFacet
@@ -3157,14 +3157,14 @@ observable:SymbolicLinkFacet
 		]
 		;
 	rdfs:label "SymbolicLinkFacet"@en ;
-	rdfs:comment "Characteristics of a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution."@en ;
+	rdfs:comment "A symbolic link facet is a grouping of characteristics unique to a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. [based on https://en.wikipedia.org/wiki/Symbolic_link]"@en ;
 	.
 
 observable:TCPConnectionFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "TCPConnectionFacet"@en ;
-	rdfs:comment "Specifies TCP-specific network connection properties."@en ;
+	rdfs:comment "A TCP connection facet is a grouping of characteristics unique to portions of a network connection that are conformant to the Transmission Control Protocl (TCP) standard."@en ;
 	.
 
 observable:TaskActionType
@@ -3208,7 +3208,7 @@ observable:TaskActionType
 		]
 		;
 	rdfs:label "TaskActionType"@en ;
-	rdfs:comment "Characterizes scheduled task actions."@en ;
+	rdfs:comment "A task action type is a grouping of characteristics for a scheduled action to be completed."@en ;
 	.
 
 observable:TriggerType
@@ -3262,7 +3262,7 @@ observable:TriggerType
 		]
 		;
 	rdfs:label "TriggerType"@en ;
-	rdfs:comment "Characterizes task triggers. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.85).aspx."@en ;
+	rdfs:comment "A trigger type is a grouping of characterizes unique to a set of criteria that, when met, starts the execution of a task within a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/task-triggers]"@en ;
 	.
 
 observable:UNIXAccountFacet
@@ -3283,20 +3283,21 @@ observable:UNIXAccountFacet
 		]
 		;
 	rdfs:label "UNIXAccountFacet"@en ;
+	rdfs:comment "A UNIX account facet is a grouping of characteristics unique to an account on a UNIX operating system."@en ;
 	.
 
 observable:UNIXFilePermissionsFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "UNIXFilePermissionsFacet"@en ;
-	rdfs:comment "Characteristics of permissions or access rights for a UNIX file."@en ;
+	rdfs:comment "A UNIX file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on a UNIX file system."@en ;
 	.
 
 observable:UNIXProcessFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "UNIXProcessFacet"@en ;
-	rdfs:comment "Characterization of a UNIX process."@en ;
+	rdfs:comment "A UNIX process facet is a grouping of characteristics unique to an instance of a computer program executed on a UNIX operating system."@en ;
 	.
 
 observable:UNIXVolumeFacet
@@ -3317,7 +3318,7 @@ observable:UNIXVolumeFacet
 		]
 		;
 	rdfs:label "UNIXVolumeFacet"@en ;
-	rdfs:comment "Characterizes a Unix disk volume."@en ;
+	rdfs:comment "A UNIX volume facet is a grouping of characteristics unique to a single accessible storage area (volume) with a single UNIX file system. [based on https://en.wikipedia.org/wiki/Volume_(computing)]"@en ;
 	.
 
 observable:URLFacet
@@ -3380,7 +3381,7 @@ observable:URLFacet
 		]
 		;
 	rdfs:label "URLFacet"@en ;
-	rdfs:comment "Characteristics of a uniform resource locator (URL)."@en ;
+	rdfs:comment "A URL facet is a grouping of characteristics unique to a uniform resource locator (URL) acting as a resolvable address to a particular WWW (World Wide Web) accessible resource."@en ;
 	.
 
 observable:UserAccountFacet
@@ -3413,6 +3414,7 @@ observable:UserAccountFacet
 		]
 		;
 	rdfs:label "UserAccountFacet"@en ;
+	rdfs:comment "A user account facet is a grouping of characteristics unique to an account controlling a user's access to a network, system, or platform."@en ;
 	.
 
 observable:UserSessionFacet
@@ -3449,7 +3451,7 @@ observable:UserSessionFacet
 		]
 		;
 	rdfs:label "UserSessionFacet"@en ;
-	rdfs:comment "Characterizes a user session."@en ;
+	rdfs:comment "A user session facet is a grouping of characteristics unique to a temporary and interactive information interchange between two or more communicating devices within the managed scope of a single user. [based on https://en.wikipedia.org/wiki/Session_(computer_science)]"@en ;
 	.
 
 observable:ValuesEnumeratedEffectFacet
@@ -3465,7 +3467,7 @@ observable:ValuesEnumeratedEffectFacet
 		]
 		;
 	rdfs:label "ValuesEnumeratedEffectFacet"@en ;
-	rdfs:comment "Characterizes the effects of actions upon cyberitems where some values of the cyberitem are enumerated, such as the values of a registry key."@en ;
+	rdfs:comment "A values enumerated effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a value of the observable object is enumerated. An example of this would be the values of a registry key."@en ;
 	.
 
 observable:VolumeFacet
@@ -3486,7 +3488,7 @@ observable:VolumeFacet
 		]
 		;
 	rdfs:label "VolumeFacet"@en ;
-	rdfs:comment "Characteristics of a single accessible storage area (Volume) with a single file system."@en ;
+	rdfs:comment "A volume facet is a grouping of characteristics unique to a single accessible storage area (volume) with a single file system. [based on https://en.wikipedia.org/wiki/Volume_(computing)]"@en ;
 	.
 
 observable:WhoIsFacet
@@ -3575,7 +3577,7 @@ observable:WhoIsFacet
 		]
 		;
 	rdfs:label "WhoIsFacet"@en ;
-	rdfs:comment "Characterizes Whois information for a domain."@en ;
+	rdfs:comment "A whois facet is a grouping of characteristics unique to a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	.
 
 observable:WhoisContactType
@@ -3629,7 +3631,7 @@ observable:WhoisContactType
 		]
 		;
 	rdfs:label "WhoisContactType"@en ;
-	rdfs:comment "Contact-related properties from a Whois record."@en ;
+	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	.
 
 observable:WhoisRegistrarInfoType
@@ -3684,7 +3686,7 @@ observable:WhoisRegistrarInfoType
 		]
 		;
 	rdfs:label "WhoisRegistrarInfoType"@en ;
-	rdfs:comment "Registrar-related properties from a Whois record."@en ;
+	rdfs:comment "A Whois registrar info type is a grouping of characteristics unique to registrar-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	.
 
 observable:WifiAddressFacet
@@ -3699,13 +3701,14 @@ observable:WifiAddressFacet
 		]
 		;
 	rdfs:label "WifiAddressFacet"@en ;
-	rdfs:comment "Properties of a WiFI address."@en ;
+	rdfs:comment "A Wi-Fi address facet is a grouping of characteristics unique to a media access control (MAC) standards conformant identifier assigned to a device network interface to enable routing and management of IEEE 802.11 standards-conformant communications to and from that device."@en ;
 	.
 
 observable:WindowsAccountFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "WindowsAccountFacet"@en ;
+	rdfs:comment "A Windows account facet is a grouping of characteristics unique to a user account on a Windows operating system."@en ;
 	.
 
 observable:WindowsActiveDirectoryAccountFacet
@@ -3720,6 +3723,7 @@ observable:WindowsActiveDirectoryAccountFacet
 		]
 		;
 	rdfs:label "WindowsActiveDirectoryAccountFacet"@en ;
+	rdfs:comment "A Windows Active Directory account facet is a grouping of characteristics unique to an account managed by directory-based identity-related services of a Windows operating system."@en ;
 	.
 
 observable:WindowsComputerSpecificationFacet
@@ -3774,7 +3778,7 @@ observable:WindowsComputerSpecificationFacet
 		]
 		;
 	rdfs:label "WindowsComputerSpecificationFacet"@en ;
-	rdfs:comment "Specifies Windows-specific system properties."@en ;
+	rdfs:comment "A Windows computer specification facet is a grouping of characteristics unique to the hardware and software of a programmable electronic device that can store, retrieve, and process data running a Microsoft Windows operating system. [based on merriam-webster.com/dictionary/computer]"@en ;
 	.
 
 observable:WindowsPEBinaryFileFacet
@@ -3823,7 +3827,7 @@ observable:WindowsPEBinaryFileFacet
 		]
 		;
 	rdfs:label "WindowsPEBinaryFileFacet"@en ;
-	rdfs:comment "Properties specific to Windows portable executable (PE) files."@en ;
+	rdfs:comment "A Windows PE binary file facet is a grouping of characteristics unique to a Windows portable executable (PE) file."@en ;
 	.
 
 observable:WindowsPEBinaryType
@@ -3854,11 +3858,13 @@ observable:WindowsPEFileHeader
 		owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 	] ;
 	rdfs:label "WindowsPEFileHeader"@en ;
+	rdfs:comment "A Windows PE file header is a grouping of characteristics unique to the 'header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the overall nature and structure of the file."@en ;
 	.
 
 observable:WindowsPEOptionalHeader
 	a owl:Class ;
 	rdfs:label "WindowsPEOptionalHeader"@en ;
+	rdfs:comment "A Windows PE optional header is a grouping of characteristics unique to the 'optional header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the executable code structure of the file."@en ;
 	.
 
 observable:WindowsPESection
@@ -3884,6 +3890,7 @@ observable:WindowsPESection
 		]
 		;
 	rdfs:label "WindowsPESection"@en ;
+	rdfs:comment "A Windows PE section is a grouping of characteristics unique to a specific default or custom-defined region of a Windows PE (Portable Executable) file, consisting of an individual portion of the actual executable content of the file delineated according to unique purpose and memory protection requirements."@en ;
 	.
 
 observable:WindowsPrefetchFacet
@@ -3926,7 +3933,7 @@ observable:WindowsPrefetchFacet
 		]
 		;
 	rdfs:label "WindowsPrefetchFacet"@en ;
-	rdfs:comment "Characterizes entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup."@en ;
+	rdfs:comment "A Windows prefetch facet is a grouping of characteristics unique to entries in the Windows prefetch file (used to speed up application startup starting with Windows XP)."@en ;
 	.
 
 observable:WindowsProcessFacet
@@ -3970,6 +3977,7 @@ observable:WindowsProcessFacet
 		]
 		;
 	rdfs:label "WindowsProcessFacet"@en ;
+	rdfs:comment "A Windows process facet is a grouping of characteristics unique to a program running on a Windows operating system."@en ;
 	.
 
 observable:WindowsRegistryHiveFacet
@@ -3984,7 +3992,7 @@ observable:WindowsRegistryHiveFacet
 		]
 		;
 	rdfs:label "WindowsRegistryHiveFacet"@en ;
-	rdfs:comment "Characteristics of a particular logical group of keys, subkeys, and values in a Windows registry."@en ;
+	rdfs:comment "A Windows registry hive facet is a grouping of characteristics unique to a particular logical group of keys, subkeys, and values in a Windows registry (a hierarchical database that stores low-level settings for the Microsoft Windows operating system and for applications that opt to use the registry). [based on https://en.wikipedia.org/wiki/Windows_Registry]"@en ;
 	.
 
 observable:WindowsRegistryKeyFacet
@@ -4016,7 +4024,7 @@ observable:WindowsRegistryKeyFacet
 		]
 		;
 	rdfs:label "WindowsRegistryKeyFacet"@en ;
-	rdfs:comment "Characteristics of a particular key within a Windows registry."@en ;
+	rdfs:comment "A Windows registry key facet is a grouping of characteristics unique to a particular key within a Windows registry (A hierarchical database that stores low-level settings for the Microsoft Windows operating system and for applications that opt to use the registry). [based on https://en.wikipedia.org/wiki/Windows_Registry]"@en ;
 	.
 
 observable:WindowsRegistryValue
@@ -4041,7 +4049,7 @@ observable:WindowsRegistryValue
 		]
 		;
 	rdfs:label "WindowsRegistryValue"@en ;
-	rdfs:comment "Properties of a particular value within a Windows registry."@en ;
+	rdfs:comment "A Windows registry value is a grouping of characteristics unique to a particular value within a Windows registry (a hierarchical database that stores low-level settings for the Microsoft Windows operating system and for applications that opt to use the registry. [based on https://en.wikipedia.org/wiki/Windows_Registry]"@en ;
 	.
 
 observable:WindowsServiceFacet
@@ -4089,7 +4097,7 @@ observable:WindowsServiceFacet
 		]
 		;
 	rdfs:label "WindowsServiceFacet"@en ;
-	rdfs:comment "Properties specific to Windows services."@en ;
+	rdfs:comment "A Windows service facet is a grouping of characteristics unique to a specific Windows service (a computer program that operates in the background of a Windows operating system, similar to the way a UNIX daemon runs on UNIX). [based on https://en.wikipedia.org/wiki/Windows_service]"@en ;
 	.
 
 observable:WindowsServiceStartType
@@ -4285,7 +4293,7 @@ observable:WindowsTaskFacet
 		]
 		;
 	rdfs:label "WindowsTaskFacet"@en ;
-	rdfs:comment "Characterize Windows task scheduler tasks. See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx."@en ;
+	rdfs:comment "A Windows Task facet is a grouping of characteristics unique to a Windows Task (a process that is scheduled to execute on a Windows operating system by the Windows Task Scheduler). [based on http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx]"@en ;
 	.
 
 observable:WindowsThreadFacet
@@ -4322,7 +4330,7 @@ observable:WindowsThreadFacet
 		]
 		;
 	rdfs:label "WindowsThreadFacet"@en ;
-	rdfs:comment "Characteristics of a single thread of execution within a Windows process."@en ;
+	rdfs:comment "A Windows thread facet is a grouping os characteristics unique to a single thread of execution within a Windows process."@en ;
 	.
 
 observable:WindowsVolumeFacet
@@ -4349,7 +4357,7 @@ observable:WindowsVolumeFacet
 		]
 		;
 	rdfs:label "WindowsVolumeFacet"@en ;
-	rdfs:comment "Characterizes a Windows disk volume."@en ;
+	rdfs:comment "A Windows volume facet is a grouping of characteristics unique to a single accessible storage area (volume) with a single Windows file system. [based on https://en.wikipedia.org/wiki/Volume_(computing)]"@en ;
 	.
 
 observable:WirelessNetworkConnectionFacet
@@ -4370,7 +4378,7 @@ observable:WirelessNetworkConnectionFacet
 		]
 		;
 	rdfs:label "WirelessNetworkConnectionFacet"@en ;
-	rdfs:comment "Connection to a wireless network."@en ;
+	rdfs:comment "A wireless network connection facet is a grouping of characteristics unique to a connection (completed or attempted) across an IEEE 802.11 standards-conformant digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
 	.
 
 observable:X509CertificateFacet
@@ -4470,6 +4478,7 @@ observable:X509CertificateFacet
 		]
 		;
 	rdfs:label "X509CertificateFacet"@en ;
+	rdfs:comment "A X.509 certificate facet is a grouping of characteristics unique to a public key digital identity certificate conformant to the X.509 PKI (Public Key Infrastructure) standard."@en ;
 	.
 
 observable:X509V3ExtensionsFacet
@@ -4572,7 +4581,7 @@ observable:X509V3ExtensionsFacet
 		]
 		;
 	rdfs:label "X509V3ExtensionsFacet"@en ;
-	rdfs:comment "Extended properties of X.509 v3 digital certificates."@en ;
+	rdfs:comment "An X.509 v3 extensions facet is a grouping of characteristics unique to a public key digital identity certificate conformant to the X.509 v3 PKI (Public Key Infrastructure) standard."@en ;
 	.
 
 observable:abbreviation

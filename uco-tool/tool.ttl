@@ -18,7 +18,7 @@ tool:AnalyticTool
 	a owl:Class ;
 	rdfs:subClassOf tool:Tool ;
 	rdfs:label "AnalyticTool"@en ;
-	rdfs:comment "An instrument useful for accomplishing an analytical task or purpose."@en ;
+	rdfs:comment "An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning."@en ;
 	.
 
 tool:Build
@@ -33,7 +33,7 @@ tool:Build
 		]
 		;
 	rdfs:label "Build"@en ;
-	rdfs:comment "Characteristics of a particular build of a tool."@en ;
+	rdfs:comment "A build facet is a grouping of characteristics unique to a particular version of a software."@en ;
 	.
 
 tool:BuildConfigurationType
@@ -45,7 +45,7 @@ tool:BuildConfigurationType
 		owl:onDataRange xsd:string ;
 	] ;
 	rdfs:label "BuildConfigurationType"@en ;
-	rdfs:comment "Describes how the build utility was configured for a particular build of a particular software."@en ;
+	rdfs:comment "A build configuration type is a characterization of how a particular version of software can or should be built."@en ;
 	.
 
 tool:BuildInformationType
@@ -106,7 +106,7 @@ tool:BuildInformationType
 		]
 		;
 	rdfs:label "BuildInformationType"@en ;
-	rdfs:comment "Characterizes how a software was built."@en ;
+	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
 	.
 
 tool:BuildUtilityType
@@ -132,7 +132,7 @@ tool:BuildUtilityType
 		]
 		;
 	rdfs:label "BuildUtilityType"@en ;
-	rdfs:comment "Identifies the utility used to build a particular software."@en ;
+	rdfs:comment "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."@en ;
 	.
 
 tool:CompilerType
@@ -157,7 +157,7 @@ tool:CompilerType
 		]
 		;
 	rdfs:label "CompilerType"@en ;
-	rdfs:comment "A compiler utilized during a particular build of a particular software."@en ;
+	rdfs:comment "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"@en ;
 	.
 
 tool:ConfigurationSettingType
@@ -189,14 +189,14 @@ tool:ConfigurationSettingType
 		]
 		;
 	rdfs:label "ConfigurationSettingType"@en ;
-	rdfs:comment "Describes a particular configuration setting for a tool, application or other cyber object."@en ;
+	rdfs:comment "A configuration setting type is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, or other cyber object."@en ;
 	.
 
 tool:DefensiveTool
 	a owl:Class ;
 	rdfs:subClassOf tool:Tool ;
 	rdfs:label "DefensiveTool"@en ;
-	rdfs:comment "An instrument useful for accomplishing a defensive task or purpose."@en ;
+	rdfs:comment "A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding."@en ;
 	.
 
 tool:DependencyType
@@ -215,7 +215,7 @@ tool:DependencyType
 		]
 		;
 	rdfs:label "DependencyType"@en ;
-	rdfs:comment "Describes a single dependency for a tool."@en ;
+	rdfs:comment "A dependency type is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
 	.
 
 tool:LibraryType
@@ -235,14 +235,14 @@ tool:LibraryType
 		]
 		;
 	rdfs:label "LibraryType"@en ;
-	rdfs:comment "A library incorporated into the build of a software."@en ;
+	rdfs:comment "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."@en ;
 	.
 
 tool:MaliciousTool
 	a owl:Class ;
 	rdfs:subClassOf tool:Tool ;
 	rdfs:label "MaliciousTool"@en ;
-	rdfs:comment "An instrument useful for accomplishing a malicious task or purpose."@en ;
+	rdfs:comment "A malicious tool is an artifact of hardware and/or software utilized to accomplish a malevolent task or purpose."@en ;
 	.
 
 tool:Tool
@@ -275,14 +275,14 @@ tool:Tool
 		]
 		;
 	rdfs:label "Tool"@en ;
-	rdfs:comment "An element of hardware and/or software utilized to carry out a particular function."@en ;
+	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
 	.
 
 tool:ToolConfigurationType
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "ToolConfigurationType"@en ;
-	rdfs:comment "Characterizes the configuration for a tool."@en ;
+	rdfs:comment "A tool configuration type facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
 	.
 
 tool:buildConfiguration
