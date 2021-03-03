@@ -2581,6 +2581,28 @@ observable:Observation
 	rdfs:comment "An observation of something."@en ;
 	.
 
+	observable:OnlineService
+	  rdf:type owl:Class ;
+	  rdfs:comment "An online service facet is a grouping of characteristics unique to a particular provision mechanism of information access, distribution or manipulation over the Internet."@en-US ;
+	  rdfs:label "Online Service"@en-US ;
+	  rdfs:subClassOf <https://unifiedcyberontology/ontology/uco/core#Facet> ;
+	  rdfs:subClassOf [
+	      rdf:type owl:Restriction ;
+	      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+	      owl:onProperty <https://unifiedcyberontology/ontology/uco/core#name> ;
+	    ] ;
+	  rdfs:subClassOf [
+	      rdf:type owl:Restriction ;
+	      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+	      owl:onProperty <https://unifiedcyberontology/ontology/uco/observable#inetLocation> ;
+	    ] ;
+	  rdfs:subClassOf [
+	      rdf:type owl:Restriction ;
+	      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+	      owl:onProperty <https://unifiedcyberontology/ontology/uco/observable#location> ;
+	    ] ;
+	.
+	
 observable:OperatingSystemFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -6017,6 +6039,13 @@ observable:impHash
 	rdfs:range xsd:string ;
 	.
 
+	observable:inetLocation
+	  rdf:type owl:ObjectProperty ;
+	  rdfs:comment "Specifies a location on the Internet."@en-US ;
+	  rdfs:label "Internet Location"@en-US ;
+	  rdfs:range <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
 observable:inReplyTo
 	a owl:ObjectProperty ;
 	rdfs:label "inReplyTo"@en ;
@@ -7991,4 +8020,3 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
-
