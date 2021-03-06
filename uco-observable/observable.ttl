@@ -625,123 +625,13 @@ observable:ComputerSpecificationFacet
 	rdfs:comment "Characterizes a computer system (as a combination of both software and hardware)."@en ;
 	.
 
-observable:Contact
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "Contact"@en ;
-	rdfs:comment "A contact is a set of identification and communication related details for a single entity."@en ;
-	.
-
-observable:ContactAddress
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactAddressScope ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:unionOf (xsd:string vocab:ContactAddressScopeVocab) ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:geolocationAddress ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
-		]
-		 ;
-	rdfs:label "ContactAddress"@en ;
-	rdfs:comment "A contact address is a grouping of characteristics unique to a geolocation address of a contact entity."@en ;
-	.
-
-observable:ContactAffiliation
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactOrganization ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange identity:Organization ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:organizationPosition ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:organizationDepartment ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:organizationLocation ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactAddress ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:contactPhone ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactPhone ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:contactEmail ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactEmail ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:contactMessaging ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactMessaging ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:contactURL ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactURL ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:contactProfile ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactProfile ;
-		]
-		 ;
-	rdfs:label "ContactListAffiliation"@en ;
-	rdfs:comment "A contact affiliation is a grouping of characteristics unique to details of an organizational affiliation for a single contact entity."@en ;
-	.
-
-observable:ContactEmail
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactEmailScope ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:unionOf (xsd:string vocab:ContactEmailScopeVocab) ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:emailAddress ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		]
-		 ;
-	rdfs:label "ContactEmail"@en ;
-	rdfs:comment "A contact email is a grouping of characteristics unique to details for contacting a contact entity by email."@en ;
-	.
-
 observable:ContactFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:sourceApplication ;
+			owl:onProperty observable:application ;
 			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -753,7 +643,13 @@ observable:ContactFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:namePrefix ;
+			owl:onProperty observable:contactName ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -777,238 +673,13 @@ observable:ContactFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:nameSuffix ;
+			owl:onProperty observable:screenName ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:namePhonetic ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:nickname ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:displayName ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactAffiliation ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactAffiliation ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty identity:birthdate ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:dateTime ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactAddress ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactAddress ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactPhone ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactPhone ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactEmail ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactEmail ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactMessaging ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ContactMessaging ;
-		],
-	[
-		a owl:Restriction ;
-		owl:onProperty observable:contactURL ;
-		owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-		owl:onDataRange observable:ContactURL ;
-	],
-	[
-		a owl:Restriction ;
-		owl:onProperty observable:contactProfile ;
-		owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-		owl:onDataRange observable:ContactProfile ;
-		],
-	[
-		a owl:Restriction ;
-		owl:onProperty observable:contactSIP ;
-		owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-		owl:onDataRange observable:ContactSIP ;
-	],
-	[
-		a owl:Restriction ;
-		owl:onProperty observable:numberTimesContacted ;
-		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		owl:onDataRange xsd:integer ;
-	],
-	[
-		a owl:Restriction ;
-		owl:onProperty observable:lastTimeContacted ;
-		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		owl:onDataRange xsd:dateTime ;
-	],
-	[
-		a owl:Restriction ;
-		owl:onProperty observable:contactGroup ;
-		owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-		owl:onDataRange xsd:string ;
-	],
-	[
-		a owl:Restriction ;
-		owl:onProperty observable:contactNote ;
-		owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-		owl:onDataRange xsd:string ;
-	]
+		]
 		;
 	rdfs:label "ContactFacet"@en ;
 	rdfs:comment "Contact found in an application, for example an entry in an address book."@en ;
-	.
-
-observable:ContactList
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "ContactList"@en ;
-	rdfs:comment "A contact list is a set of multiple individual contacts such as that found in a digital address book."@en ;
-	.
-
-observable:ContactListFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet>,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contact ;
-			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:sourceApplication ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		]
-		 ;
-	rdfs:label "ContactListFacet"@en ;
-	rdfs:comment "A contact list facet is a grouping of characteristics unique to a set of multiple individual contacts such as that found in a digital address book."@en ;
-	.
-
-observable:ContactMessaging
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:contactMessagingPlatform ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:contactAddress ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		]
-		 ;
-	rdfs:label "ContactMessaging"@en ;
-	rdfs:comment "A contact messaging is a grouping of characteristics unique to details for contacting a contact entity by digital messaging."@en ;
-	.
-
-observable:ContactPhone
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactPhoneScope ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:unionOf (xsd:string vocab:ContactPhoneScopeVocab) ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:contactPhoneNumber ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		]
-		 ;
-	rdfs:label "ContactPhone"@en ;
-	rdfs:comment "A contact phone is a grouping of characteristics unique to details for contacting a contact entity by telephone."@en ;
-	.
-
-observable:ContactProfile
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactProfilePlatform ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:profile ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		]
-		 ;
-	rdfs:label "ContactProfile"@en ;
-	rdfs:comment "A contact profile is a grouping of characteristics unique to details for contacting a contact entity by online service."@en ;
-	.
-
-observable:ContactSIP
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactSIPScope ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:unionOf (xsd:string vocab:ContactSIPScopeVocab) ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:sipAddress ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		]
-		 ;
-	rdfs:label "ContactSIP"@en ;
-	rdfs:comment "A contact SIP is a grouping of characteristics unique to details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
-	.
-
-observable:ContactURL
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:contactURLScope ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:unionOf (xsd:string vocab:ContactURLScopeVocab) ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:observable:url ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange observable:ObservableObject ;
-		]
-		 ;
-	rdfs:label "ContactURL"@en ;
-	rdfs:comment "A contact URL is a grouping of characteristics unique to details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
 	.
 
 observable:ContentDataFacet
@@ -1673,6 +1344,11 @@ observable:ExtractedString
 	rdfs:subClassOf
 		[
 			a owl:Restriction ;
+			owl:onProperty observable:address ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
 			owl:onProperty observable:byteStringValue ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -1706,14 +1382,14 @@ observable:ExtractedString
 		]
 		;
 	rdfs:label "ExtractedString"@en ;
-	rdfs:comment "A string extracted from an observable object."@en ;
+	rdfs:comment "A string extracted from a cyber item."@en ;
 	.
 
 observable:ExtractedStringsFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "ExtractedStringsFacet"@en ;
-	rdfs:comment "One or more strings extracted from an observable object."@en ;
+	rdfs:comment "One or more strings extracted from a cyber item."@en ;
 	.
 
 observable:FileFacet
@@ -3346,21 +3022,6 @@ observable:SIMType
 	rdfs:range xsd:string ;
 	.
 
-observable:SIPAddressFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:addressValue ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "SIPAddressFacet"@en ;
-	rdfs:comment "A SIP address facet is a grouping of characteristics unique to an identifier for Session Initiation Protocol (SIP) communication."@en ;
-	.
-
 observable:SMSMessageFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -3878,12 +3539,6 @@ observable:WhoIsFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:registrantContactInfo ;
-			owl:onClass observable:ObservableObject ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty observable:domainID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
@@ -3923,26 +3578,17 @@ observable:WhoIsFacet
 	rdfs:comment "Characterizes Whois information for a domain."@en ;
 	.
 
-observable:WhoisContactFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/observable#ContactFacet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:whoisContactType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:unionOf (xsd:string observable:WhoisContactTypeVocab);
-		] ;
-	rdfs:label "WhoIsContactFacet"@en ;
-	rdfs:comment "A WHOIS contact facet is a grouping of characteristics unique to Whois contact information for a domain."@en ;
-	.
-
-observable:WhoisRegistrarInfoType
+observable:WhoisContactType
 	a owl:Class ;
 	rdfs:subClassOf
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:geolocationAddress ;
+			owl:onProperty observable:address ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactOrganization ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3953,7 +3599,56 @@ observable:WhoisRegistrarInfoType
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:contactPhoneNumber ;
+			owl:onProperty observable:faxNumber ;
+			owl:onClass observable:ObservableObject ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:phone ;
+			owl:onClass observable:ObservableObject ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactID ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactName ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange vocab:WhoisContactTypeVocab ;
+		]
+		;
+	rdfs:label "WhoisContactType"@en ;
+	rdfs:comment "Contact-related properties from a Whois record."@en ;
+	.
+
+observable:WhoisRegistrarInfoType
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:address ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:emailAddress ;
+			owl:onClass observable:ObservableObject ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:phone ;
 			owl:onClass observable:ObservableObject ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -4991,10 +4686,10 @@ observable:adapterName
 	rdfs:range xsd:string ;
 	.
 
-observable:geolocationAddress
+observable:address
 	a owl:ObjectProperty ;
-	rdfs:label "geolocationAddress"@en ;
-	rdfs:comment "An administrative address for a particular geolocation."@en ;
+	rdfs:label "address"@en ;
+	rdfs:comment "An address"@en ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
 	.
 
@@ -5370,158 +5065,39 @@ observable:computerName
 	rdfs:range xsd:string ;
 	.
 
-observable:contact
-	a owl:ObjectProperty ;
-	rdfs:label "contact"@en ;
-	rdfs:comment "Contact specifies information characterizing contact details for a single entity."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
-observable:contactAddress
-	a owl:ObjectProperty ;
-	rdfs:label "contactAddress"@en ;
-	rdfs:comment "Contact address specifies information characterizing a geolocation address of a contact entity."@en ;
-	rdfs:range observable:ContactAddress ;
-	.
-
-observable:contactAddressScope
-	a owl:DatatypeProperty ;
-	rdfs:label "contactAddressScope"@en ;
-	rdfs:comment "Contact address scope specifies the relevant scope (home, work, school, etc) for a geolocation address of a contact entity."@en ;
-	rdfs:range owl:unionOf (xsd:string vocab:ContactAddressScopeVocab) ;
-	.
-
-observable:contactAffiliation
-	a owl:ObjectProperty ;
-	rdfs:label "contactAffiliation"@en ;
-	rdfs:comment "Contact affiliation specifies information characterizing details of an organizational affiliation for a single contact entity."@en ;
-	rdfs:range observable:ContactAffiliation ;
-	.
-
-observable:contactEmail
-	a owl:ObjectProperty ;
-	rdfs:label "contactEmail"@en ;
-	rdfs:comment "Contact email specifies information characterizing details for contacting a contact entity by email."@en ;
-	rdfs:range observable:ContactEmail ;
-	.
-
-observable:contactEmailScope
-	a owl:DatatypeProperty ;
-	rdfs:label "contactEmailScope"@en ;
-	rdfs:comment "Contact email scope specifies the relevant scope (home, work, school, etc) of details for contacting a contact entity by email."@en ;
-	rdfs:range owl:unionOf (xsd:string vocab:ContactEmailScopeVocab) ;
-	.
-
-observable:contactGroup
-	a owl:DatatypeProperty ;
-	rdfs:label "contactGroup"@en ;
-	rdfs:comment "Contact group specifies the name/tag of a particular named/tagged grouping of contacts."@en ;
-	rdfs:range xsd:string ;
-	.
-
 observable:contactID
 	a owl:DatatypeProperty ;
 	rdfs:label "contactID"@en ;
-	rdfs:comment "Specifies an ID for the contact."@en ;
+	rdfs:comment "Specifies an ID for the contact. This can be presented as Contact ID, Billing ID, Admin ID, Tech ID, etc."@en ;
 	rdfs:range xsd:string ;
 	.
 
-observable:contactMessaging
+observable:contactInfo
 	a owl:ObjectProperty ;
-	rdfs:label "contactMessaging"@en ;
-	rdfs:comment "Contact messaging specifies information characterizing details for contacting a contact entity by digital messaging."@en ;
-	rdfs:range observable:ContactMessaging ;
+	rdfs:label "contactInfo"@en ;
+	rdfs:comment "Specifies contact info that would be returned from a contact lookup."@en ;
+	rdfs:range observable:WhoisContactType ;
 	.
 
-observable:contactMessagingPlatform
-	a owl:ObjectProperty ;
-	rdfs:label "contactMessagingPlatform"@en ;
-	rdfs:comment "A contact messaging platform specifies a digital messaging platform associated with a contact."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
-observable:contactNote
+observable:contactName
 	a owl:DatatypeProperty ;
-	rdfs:label "contactNote"@en ;
-	rdfs:comment "Contact note specifies a comment/note associated with a given contact."@en ;
+	rdfs:label "contactName"@en ;
+	rdfs:comment "The name of a contact."@en ;
 	rdfs:range xsd:string ;
 	.
 
 observable:contactOrganization
 	a owl:ObjectProperty ;
 	rdfs:label "contactOrganization"@en ;
-	rdfs:comment "The name of the organization a contact works for or is assocciated with."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Organization> ;
+	rdfs:comment "The name of the organization a contact works for or is assoicated with."@en ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
-observable:contactPhone
-	a owl:ObjectProperty ;
-	rdfs:label "contactPhone"@en ;
-	rdfs:comment "Contact phone specifies information characterizing details for contacting a contact entity by telephone."@en ;
-	rdfs:range observable:ContactPhone ;
-	.
-
-observable:contactPhoneNumber
-	a owl:ObjectProperty ;
-	rdfs:label "contactPhoneNumber"@en ;
-	rdfs:comment "Contact phone number specifies a telephone service account number for contacting a contact entity by telephone."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
-observable:contactPhoneScope
+observable:contactType
 	a owl:DatatypeProperty ;
-	rdfs:label "contactPhoneScope"@en ;
-	rdfs:comment "Contact phone scope specifies the relevant scope (home, work, school, etc) of details for contacting a contact entity by telephone."@en ;
-	rdfs:range owl:unionOf (xsd:string vocab:ContactPhoneScopeVocab) ;
-	.
-
-observable:contactProfile
-	a owl:ObjectProperty ;
-	rdfs:label "contactProfile"@en ;
-	rdfs:comment "Contact profile specifies information characterizing details for contacting a contact entity by online service."@en ;
-	rdfs:range observable:ContactProfile ;
-	.
-
-observable:contactProfilePlatform
-	a owl:ObjectProperty ;
-	rdfs:label "contactProfilePlatform"@en ;
-	rdfs:comment "A contact profile platform specifies an online service platform associated with a contact."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
-observable:contactSIP
-	a owl:ObjectProperty ;
-	rdfs:label "contactSIP"@en ;
-	rdfs:comment "Contact SIP specifies information characterizing details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
-	rdfs:range observable:ContactSIP ;
-	.
-
-observable:contactSIPScope
-	a owl:DatatypeProperty ;
-	rdfs:label "contactSIPScope"@en ;
-	rdfs:comment "Contact SIP scope specifies the relevant scope (home, work, school, etc) of details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
-	rdfs:range owl:unionOf (xsd:string vocab:ContactSIPScopeVocab) ;
-	.
-
-observable:contactURL
-	a owl:ObjectProperty ;
-	rdfs:label "contactURL"@en ;
-	rdfs:comment "Contact URL specifies information characterizing details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
-	rdfs:range observable:ContactURL ;
-	.
-
-observable:contactURLScope
-	a owl:DatatypeProperty ;
-	rdfs:label "contactURLScope"@en ;
-	rdfs:comment "Contact url scope specifies the relevant scope (homepage, home, work, school, etc) of details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
-	rdfs:range owl:unionOf (xsd:string vocab:ContactURLScopeVocab) ;
-	.
-
-observable:whoisContactType
-	a owl:DatatypeProperty ;
-	rdfs:label "whoisContactType"@en ;
-	rdfs:comment "Specifies what type of WHOIS contact this is."@en ;
-	rdfs:range owl:unionOf (xsd:string vocab:WhoisContactTypeVocab) ;
+	rdfs:label "contactType"@en ;
+	rdfs:comment "Specifies what type of contact this is."@en ;
+	rdfs:range vocab:WhoisContactTypeVocab ;
 	.
 
 observable:contentDisposition
@@ -5765,7 +5341,6 @@ observable:diskType
 observable:displayName
 	a owl:DatatypeProperty ;
 	rdfs:label "displayName"@en ;
-	rdfs:comment "Display name specifies the name to display for some entity within a user interface."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5800,6 +5375,7 @@ observable:domainID
 	a owl:DatatypeProperty ;
 	rdfs:label "domainID"@en ;
 	rdfs:comment "Specifies the domain id for the domain associated with a Whois entry."@en ;
+	rdfs:domain observable:WhoIsFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6180,7 +5756,7 @@ observable:firstLoginTime
 observable:firstName
 	a owl:DatatypeProperty ;
 	rdfs:label "firstName"@en ;
-	rdfs:comment "The first name of a person."@en ;
+	rdfs:comment "The first name of the contact."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6690,7 +6266,7 @@ observable:lastLoginTime
 observable:lastName
 	a owl:DatatypeProperty ;
 	rdfs:label "lastName"@en ;
-	rdfs:comment "The last name of a person."@en ;
+	rdfs:comment "The last name of the contact."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6698,13 +6274,6 @@ observable:lastRun
 	a owl:DatatypeProperty ;
 	rdfs:label "lastRun"@en ;
 	rdfs:comment "Timestamp of when the prefetch application was last run."@en ;
-	rdfs:range xsd:dateTime ;
-	.
-
-observable:lastTimeContacted
-	a owl:DatatypeProperty ;
-	rdfs:label "lastTimeContacted"@en ;
-	rdfs:comment "Last time contacted specifies the date and time that a particular contact was last contacted."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -6845,13 +6414,6 @@ observable:messageID
 	rdfs:range xsd:string ;
 	.
 
-observable:messagingAddress
-	a owl:ObjectProperty ;
-	rdfs:label "messagingAddress"@en ;
-	rdfs:comment "A messaging address specifies details of an identifier for digital messsaging communication."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:messageText
 	a owl:DatatypeProperty ;
 	rdfs:label "messageText"@en ;
@@ -6939,7 +6501,7 @@ observable:mftRecordChangeTime
 observable:middleName
 	a owl:DatatypeProperty ;
 	rdfs:label "middleName"@en ;
-	rdfs:comment "The middle name of a person."@en ;
+	rdfs:comment "The middle name of the contact."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7039,32 +6601,11 @@ observable:nameConstraints
 	rdfs:range xsd:string ;
 	.
 
-observable:namePhonetic
-	a owl:DatatypeProperty ;
-	rdfs:label "namePhonetic"@en ;
-	rdfs:comment "Name phonetic specifies the phonetic pronunciation of the name of a person."@en ;
-	rdfs:range xsd:string ;
-	.
-
-observable:namePrefix
-	a owl:DatatypeProperty ;
-	rdfs:label "namePrefix"@en ;
-	rdfs:comment "Name prefix specifies an honorific prefix (coming ordinally before first/given name) for the name of a person."@en ;
-	rdfs:range xsd:string ;
-	.
-
 observable:nameserver
 	a owl:ObjectProperty ;
 	rdfs:label "nameserver"@en ;
 	rdfs:comment "Specifies a list of nameserver entries for a Whois entry."@en ;
 	rdfs:range observable:ObservableObject ;
-	.
-
-observable:nameSuffix
-	a owl:DatatypeProperty ;
-	rdfs:label "nameSuffix"@en ;
-	rdfs:comment "Name suffix specifies an suffix (coming ordinally after last/family name) for the name of a person."@en ;
-	rdfs:range xsd:string ;
 	.
 
 observable:netBIOSName
@@ -7100,13 +6641,6 @@ observable:nextRunTime
 	rdfs:label "nextRunTime"@en ;
 	rdfs:comment "Specifies the next run date/time of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381257(v=vs.85).aspx."@en ;
 	rdfs:range xsd:dateTime ;
-	.
-
-observable:nickname
-	a owl:DatatypeProperty ;
-	rdfs:label "nickname"@en ;
-	rdfs:comment "Nickname specifies an alternate, unofficial and typically informal name for a person independent of their official name."@en ;
-	rdfs:range xsd:string ;
 	.
 
 observable:ntfsHardLinkCount
@@ -7152,7 +6686,8 @@ observable:numberOfRVAAndSizes
 observable:numberOfSections
 	a owl:DatatypeProperty ;
 	rdfs:label "numberOfSections"@en ;
-	rdfs:comment "Specifies the number of sections in the PE binary, as a non-negative integer."@en ;
+	rdfs:comment """Specifies the number of sections in the PE binary, as a non-negative integer.
+          """@en ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7166,13 +6701,6 @@ observable:numberOfSymbols
 	a owl:DatatypeProperty ;
 	rdfs:label "numberOfSymbols"@en ;
 	rdfs:comment "Specifies the number of entries in the symbol table of the PE binary, as a non-negative integer."@en ;
-	rdfs:range xsd:integer ;
-	.
-
-observable:numberTimesContacted
-	a owl:DatatypeProperty ;
-	rdfs:label "numberTimesContacted"@en ;
-	rdfs:comment "Number times contacted specifies the number of times a particular contact has been contacted."@en ;
 	rdfs:range xsd:integer ;
 	.
 
@@ -7213,27 +6741,6 @@ observable:options
 	a owl:DatatypeProperty ;
 	rdfs:label "options"@en ;
 	rdfs:comment "Specifies any options used when mounting the volume."@en ;
-	rdfs:range xsd:string ;
-	.
-
-observable:organizationDepartment
-	a owl:DatatypeProperty ;
-	rdfs:label "organizationDepartment"@en ;
-	rdfs:comment "Specifies a particular suborganization (division, branch, office, etc.) that exists within a larger organization."@en ;
-	rdfs:range xsd:string ;
-	.
-
-observable:organizationLocation
-	a owl:ObjectProperty ;
-	rdfs:label "organizationLocation"@en ;
-	rdfs:comment "Specifies a geolocation address of an organization."@en ;
-	rdfs:range observable:ContactAddress ;
-	.
-
-observable:organizationPosition
-	a owl:DatatypeProperty ;
-	rdfs:label "organizationPosition"@en ;
-	rdfs:comment "Specifies the title or role that a person plays within an organization."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7366,6 +6873,13 @@ observable:peType
 	rdfs:range xsd:string ;
 	.
 
+observable:phone
+	a owl:ObjectProperty ;
+	rdfs:label "phone"@en ;
+	rdfs:comment "A phone number(account)."@en ;
+	rdfs:range observable:ObservableObject ;
+	.
+
 observable:phoneActivationTime
 	a owl:DatatypeProperty ;
 	rdfs:label "phoneActivationTime"@en ;
@@ -7377,6 +6891,13 @@ observable:phoneNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "phoneNumber"@en ;
 	rdfs:comment "A phone number(account)."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:phoneNumbers
+	a owl:DatatypeProperty ;
+	rdfs:label "phoneNumbers"@en ;
+	rdfs:comment "The phone numbers of the contact."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7465,13 +6986,6 @@ observable:processorArchitecture
 	rdfs:comment "Specifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
 	rdfs:domain observable:ComputerSpecificationFacet ;
 	rdfs:range xsd:string ;
-	.
-
-observable:profile
-	a owl:ObjectProperty ;
-	rdfs:label "profile"@en ;
-	rdfs:comment "A profile specifies a particular online service profile."@en ;
-	rdfs:range observable:ObservableObject ;
 	.
 
 observable:properties
@@ -7600,13 +7114,6 @@ observable:registeredOwner
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
-observable:registrantContactInfo
-	a owl:ObjectProperty ;
-	rdfs:label "registrantContactInfo"@en ;
-	rdfs:comment "Specifies contact info for the registrant of a domain within a WHOIS entity."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:registrantIDs
 	a owl:DatatypeProperty ;
 	rdfs:label "registrantIDs"@en ;
@@ -7716,7 +7223,12 @@ observable:scheme
 	rdfs:range xsd:string ;
 	.
 
-
+observable:screenName
+	a owl:DatatypeProperty ;
+	rdfs:label "screenName"@en ;
+	rdfs:comment "The display name of the contact."@en ;
+	rdfs:range xsd:string ;
+	.
 
 observable:sectionAlignment
 	a owl:DatatypeProperty ;
@@ -7853,13 +7365,6 @@ observable:signatureVerified
 	rdfs:range xsd:boolean ;
 	.
 
-observable:sipAddress
-	a owl:ObjectProperty ;
-	rdfs:label "sipAddress"@en ;
-	rdfs:comment "A SIP address specifies Session Initiation Protocol (SIP) identifier."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:size
 	a owl:DatatypeProperty ;
 	rdfs:label "size"@en ;
@@ -7942,13 +7447,6 @@ observable:sizeOfUninitializedData
 	rdfs:label "sizeOfUninitializedData"@en ;
 	rdfs:comment "Specifies the size of the uninitialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section."@en ;
 	rdfs:range xsd:unsignedInt ;
-	.
-
-observable:sourceApplication
-	a owl:ObjectProperty ;
-	rdfs:label "sourceApplication"@en ;
-	rdfs:comment "Source application specifies the software application that a particular contact or contact list is associated with."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	.
 
 observable:sourceFlags
@@ -8339,7 +7837,7 @@ observable:uptime
 observable:url
 	a owl:DatatypeProperty ;
 	rdfs:label "url"@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:anyURI ;
 	.
 
 observable:urlTargeted
@@ -8493,3 +7991,4 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
+
