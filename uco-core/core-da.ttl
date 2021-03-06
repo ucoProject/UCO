@@ -35,7 +35,7 @@ core:createdBy
 	rdfs:domain core:UcoObject ;
 	.
 
-core:createdTime
+core:objectCreatedTime
 	rdfs:domain core:UcoObject ;
 	.
 
@@ -133,4 +133,3 @@ core:type
 core:value
 	rdfs:domain core:ControlledVocabulary ;
 	.
-

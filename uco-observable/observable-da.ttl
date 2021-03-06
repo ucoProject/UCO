@@ -369,7 +369,7 @@ observable:cpuFamily
 	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
-observable:createdTime
+observable:observableCreatedTime
 	rdfs:domain observable:FileFacet ;
 	.
 
@@ -2055,4 +2055,3 @@ observable:xMailer
 observable:xOriginatingIP
 	rdfs:domain observable:EmailMessageFacet ;
 	.
-
