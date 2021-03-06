@@ -6424,7 +6424,7 @@ observable:messageText
 observable:messageType
 	a owl:DatatypeProperty ;
 	rdfs:label "messageType"@en ;
-	rdfs:comment "The type of a message, for example incoming, draft or outgoing."@en ;
+	rdfs:comment "Message type specifies what sort of message (email, chat, SMS, etc) a Message is."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7991,4 +7991,3 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
-
