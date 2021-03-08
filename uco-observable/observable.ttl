@@ -127,7 +127,7 @@ observable:AlternateDataStream
 		]
 		;
 	rdfs:label "AlternateDataStream"@en ;
-	rdfs:comment "An alternate data stream is metadata content stored within an NTFS file that is independent of the standard content of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
+	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
 	.
 
 observable:ApplicationAccountFacet
@@ -966,7 +966,7 @@ observable:DiskPartitionFacet
 		]
 		;
 	rdfs:label "DiskPartitionFacet"@en ;
-	rdfs:comment "A disk partition facet is a grouping of characteristics unique to a particular managed region on a storage mechanism where data is recorded by various electronic, magnetic, optical, or mechanical changes to a surface layer of one or more rotating disks. [based on https://en.wikipedia.org/wiki/Disk_storage]"@en ;
+	rdfs:comment "A disk partition facet is a grouping of characteristics unique to a particular managed region on a storage mechanism."@en ;
 	.
 
 observable:DomainNameFacet
