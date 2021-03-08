@@ -4581,7 +4581,7 @@ observable:X509V3ExtensionsFacet
 		]
 		;
 	rdfs:label "X509V3ExtensionsFacet"@en ;
-	rdfs:comment "An X.509 v3 extensions facet is a grouping of characteristics unique to a public key digital identity certificate conformant to the X.509 v3 PKI (Public Key Infrastructure) standard."@en ;
+	rdfs:comment "An X.509 v3 certificate extensions facet is a grouping of characteristics unique to a public key digital identity certificate conformant to the X.509 v3 PKI (Public Key Infrastructure) standard."@en ;
 	.
 
 observable:abbreviation
@@ -8000,4 +8000,3 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
-
