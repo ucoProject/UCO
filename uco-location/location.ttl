@@ -123,7 +123,7 @@ location:SimpleAddress
 		]
 		;
 	rdfs:label "SimpleAddress"@en ;
-	rdfs:comment "A simple address facet is a grouping of characteristics unique to a geolocation expressed as a simple administrative address."@en ;
+	rdfs:comment "A simple address facet is a grouping of characteristics unique to a geolocation expressed as an administrative address."@en ;
 	.
 
 location:addressType
@@ -216,4 +216,3 @@ location:vdop
 	rdfs:comment "The vertical dilution of precision of the GPS location."@en ;
 	rdfs:range xsd:double ;
 	.
-
