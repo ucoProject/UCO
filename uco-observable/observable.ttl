@@ -268,7 +268,7 @@ observable:AutonomousSystemFacet
 		]
 		;
 	rdfs:label "AutonomousSystemFacet"@en ;
-	rdfs:comment "Basic characteristics of an Internet autonomous system."@en ;
+	rdfs:comment "An autonomous system facet is a grouping of characteristics unique to a collection of connected Internet Protocol (IP) routing prefixes under the control of one or more network operators on behalf of a single administrative entity or domain that presents a common, clearly defined routing policy to the Internet. [based on https://en.wikipedia.org/wiki/Autonomous_system_(Internet)]"@en ;
 	.
 
 observable:BluetoothAddressFacet
@@ -683,7 +683,7 @@ observable:ContactFacet
 		]
 		;
 	rdfs:label "ContactFacet"@en ;
-	rdfs:comment "Contact found in an application, for example an entry in an address book."@en ;
+	rdfs:comment "A contact facet is a grouping of characteristics unique to a set of identification and communication related details for a single entity."@en ;
 	.
 
 observable:ContentDataFacet
@@ -811,7 +811,7 @@ observable:DeviceFacet
 		]
 		;
 	rdfs:label "DeviceFacet"@en ;
-	rdfs:comment "Characteristics of a piece of electronic equipment."@en ;
+	rdfs:comment "A device facet is a grouping of characteristics unique to a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	.
 
 observable:DigitalAccountFacet
@@ -1513,7 +1513,7 @@ observable:GeoLocationEntryFacet
 		]
 		;
 	rdfs:label "GeoLocationEntryFacet"@en ;
-	rdfs:comment "Characteristics of a single application-specific geolocation entry."@en ;
+	rdfs:comment "A geolocation entry facet is a grouping of characteristics unique to a single application-specific geolocation entry."@en ;
 	.
 
 observable:GeoLocationLogFacet
@@ -1533,7 +1533,7 @@ observable:GeoLocationLogFacet
 		]
 		;
 	rdfs:label "GeoLocationLogFacet"@en ;
-	rdfs:comment "A log containing geolocation tracks and/or geolocation entries."@en ;
+	rdfs:comment "A geolocation log facet is a grouping of characteristics unique to a record containing geolocation tracks and/or geolocation entries."@en ;
 	.
 
 observable:GeoLocationTrackFacet
@@ -1558,7 +1558,7 @@ observable:GeoLocationTrackFacet
 		]
 		;
 	rdfs:label "GeoLocationTrackFacet"@en ;
-	rdfs:comment "Characteristics of a set of contiguous geolocation entries representing a path/track taken."@en ;
+	rdfs:comment "A geolocation track facet is a grouping of characteristics unique to a set of contiguous geolocation entries representing a path/track taken."@en ;
 	.
 
 observable:GlobalFlagType
@@ -2149,6 +2149,7 @@ observable:MutexFacet
 		]
 		;
 	rdfs:label "MutexFacet"@en ;
+	rdfs:comment "A mutex facet is a grouping of characteristics unique to a mechanism that enforces limits on access to a resource when there are many threads of execution. A mutex is designed to enforce a mutual exclusion concurrency control policy, and with a variety of possible methods there exists multiple unique implementations for different applications. [based on https://en.wikipedia.org/wiki/Lock_(computer_science)]"@en ;
 	.
 
 observable:NTFSFilePermissionsFacet
@@ -2580,7 +2581,7 @@ observable:Observation
 		]
 		;
 	rdfs:label "Observation"@en ;
-	rdfs:comment "An observation of something."@en ;
+	rdfs:comment "An observation is a temporal perception of an observable."@en ;
 	.
 
 observable:OperatingSystemFacet
