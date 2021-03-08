@@ -28,26 +28,7 @@
 		;
 	.
 
-observable:API
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "API"@en ;
-	rdfs:comment ""@en ;
-	.
 
-observable:ARPCache
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "ARPCache"@en ;
-	rdfs:comment ""@en ;
-	.
-
-observable:ARPCacheEntry
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "ARPCacheEntry"@en ;
-	rdfs:comment ""@en ;
-	.
 
 observable:Account
 	a owl:Class ;
@@ -136,7 +117,7 @@ observable:Address
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Address:@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "An address is an identifier assigned to enable routing and management of information."@en ;
 	.
 
 observable:AlternateDataStream
@@ -163,11 +144,18 @@ observable:AlternateDataStream
 	rdfs:label "AlternateDataStream"@en ;
 	.
 
+observable:API
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	rdfs:label "API"@en ;
+	rdfs:comment "An API (application programming interface) is a computing interface that defines interactions between multiple software or mixed hardware-software intermediaries. It defines the kinds of calls or requests that can be made, how to make them, the data formats that should be used, the conventions to follow, etc. [based on https://en.wikipedia.org/wiki/API]"@en ;
+	.
+
 observable:Appliance
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Device> ;
 	rdfs:label "Appliance"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "An appliance is a purpose-built computer with software or firmware that is designed to provide a specific computing capability or resource. [based on https://en.wikipedia.org/wiki/Computer_appliance]"@en ;
 	.
 
 observable:ApplicationAccount
@@ -265,6 +253,20 @@ observable:ArchiveFileFacet
 	rdfs:label "ArchiveFileFacet"@en ;
 	.
 
+observable:ARPCache
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	rdfs:label "ARPCache"@en ;
+	rdfs:comment "An ARP cache is a collection of Address Resolution Protocol (ARP) entries (mostly dynamic) that are created when an IP address is resolved to a MAC address (so the computer can effectively communicate with the IP address). [based on https://en.wikipedia.org/wiki/ARP_cache]"@en ;
+	.
+
+observable:ARPCacheEntry
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	rdfs:label "ARPCacheEntry"@en ;
+	rdfs:comment "An ARP cache entry is a single Address Resolution Protocol (ARP) response record that is created when an IP address is resolved to a MAC address (so the computer can effectively communicate with the IP address). [based on https://en.wikipedia.org/wiki/ARP_cache]"@en ;
+	.
+
 observable:AttachmentFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
@@ -315,7 +317,7 @@ observable:AutonomousSystem
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "AutonomousSystem"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "An autonomous system is a collection of connected Internet Protocol (IP) routing prefixes under the control of one or more network operators on behalf of a single administrative entity or domain that presents a common, clearly defined routing policy to the Internet. [based on https://en.wikipedia.org/wiki/Autonomous_system_(Internet)]"@en ;
 	.
 
 observable:AutonomousSystemFacet
@@ -377,7 +379,7 @@ observable:BotConfiguration
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "BotConfiguration"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A bot configuration is a set of contextual settings for a software application that runs automated tasks (scripts) over the Internet at a much higher rate than would be possible for a human alone."@en ;
 	.
 
 observable:BrowserBookmark
@@ -622,7 +624,7 @@ observable:Code
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Code"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "Code is a direct representation (source, byte or binary) of a collection of computer instructions that form software which tell a computer how to work. [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	.
 
 observable:CompressedStreamFacet
@@ -776,7 +778,7 @@ observable:Contact
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Contact"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A contact is a set of identification and communication related details for a single entity."@en ;
 	.
 
 observable:ContactFacet
@@ -909,35 +911,21 @@ observable:CookieHistory
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "CookieHistory"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A cookie history is the stored web cookie history for a particular web browser."@en ;
 	.
 
 observable:Credential
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Credential"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A credential is a single specific login and password combination for authorization of access to a digital account or system."@en ;
 	.
 
 observable:CredentialDump
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "CredentialDump"@en ;
-	rdfs:comment ""@en ;
-	.
-
-observable:DNSCache
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "DNSCache"@en ;
-	rdfs:comment ""@en ;
-	.
-
-observable:DNSRecord
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> :
-	rdfs:label "DNSRecord"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A credential dump is a collection (typically forcibly extracted from a system) of specific login and password combinations for authorization of access to a digital account or system."@en ;
 	.
 
 observable:DataRangeFacet
@@ -974,18 +962,11 @@ observable:DefinedEffectFacet
 	rdfs:comment "A set of properties characterizing some defined effect of a observable action in relation to one or more observable objects."@en ;
 	.
 
-observable:DetectionSignature
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "DetectionSignature"@en ;
-	rdfs:comment ""@en ;
-	.
-
 observable:Device
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Device"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A device is a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	.
 
 observable:DeviceFacet
@@ -1056,6 +1037,13 @@ observable:DigitalAccountFacet
 		;
 	rdfs:label "DigitalAccountFacet"@en ;
 	rdfs:comment "Characteristics of an account within the digital domain."@en ;
+	.
+
+observable:DigitalAddress
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
+	rdfs:label "DigitalAddress"@en ;
+	rdfs:comment "A digital address is an identifier assigned to enable routing and management of digital communication."@en ;
 	.
 
 observable:DigitalSignatureInfo
@@ -1216,6 +1204,20 @@ observable:DiskPartitionFacet
 	rdfs:comment "Characteristics of a region on a hard disk or other secondary storage."@en ;
 	.
 
+observable:DNSCache
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	rdfs:label "DNSCache"@en ;
+	rdfs:comment "An DNS cache is a temporary locally stored collection of previous Domain Name System (DNS) query results (created when an domain name is resolved to a IP address) for a particular computer."@en ;
+	.
+
+observable:DNSRecord
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> :
+	rdfs:label "DNSRecord"@en ;
+	rdfs:comment "A DNS record is a single Domain Name System (DNS) artifact specifying information of a particular type (routing, authority, responsibility, security, etc.) for a specific Internet domain name."@en ;
+	.
+
 observable:DomainName
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
@@ -1290,7 +1292,7 @@ observable:EmailAccountFacet
 
 observable:EmailAddress
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
 	rdfs:label "EmailAddress"@en ;
 	rdfs:comment "An email address is an identifier for an electronic mailbox to which electronic mail messages (conformant to the Simple Mail Transfer Protocol (SMTP)) are sent from and delivered to."@en ;
 	.
@@ -1569,7 +1571,7 @@ observable:EventLog
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "EventLog"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "An event log is a recorded collection of events."@en ;
 	.
 
 observable:ExtInodeFacet
@@ -1805,14 +1807,14 @@ observable:ForumPost
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
 	rdfs:label "ForumPost"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A forum post is message submitted by a user account to an online forum where the message content (and typically metadata including who posted it and when) is viewable by any party with viewing permissions on the forum."@en ;
 	.
 
 observable:ForumPrivateMessage
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
 	rdfs:label "ForumPrivateMessage"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A forum private message (aka PM or DM (direct message)) is a one-to-one message from one specific user account to another specific user account on an online form where transmission is managed by the online forum platform and the message is only viewable by the parties directly involved."@en ;
 	.
 
 observable:FragmentFacet
@@ -1820,13 +1822,6 @@ observable:FragmentFacet
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "FragmentFacet"@en ;
 	rdfs:comment "Characteristics of an individual fragment of a file."@en ;
-	.
-
-observable:GUI
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "GUI"@en ;
-	rdfs:comment ""@en ;
 	.
 
 observable:GenericObservableObject
@@ -1840,7 +1835,7 @@ observable:GeoLocationEntry
 	a owl:Class ;
 	rdfs:subCassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "GeoLocationEntry"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A geolocation entry is a single application-specific geolocation entry."@en ;
 	.
 
 observable:GeoLocationEntryFacet
@@ -1865,14 +1860,14 @@ observable:GeoLocationEntryFacet
 		]
 		;
 	rdfs:label "GeoLocationEntryFacet"@en ;
-	rdfs:comment "Characteristics of a single application-specific geolocation entry."@en ;
+	rdfs:comment "A geolocation entry facet is a grouping of characteristics unique to a single application-specific geolocation entry."@en ;
 	.
 
 observable:GeoLocationLog
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "GeoLocationLog"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A geolocation log is a record containing geolocation tracks and/or geolocation entries."@en ;
 	.
 
 observable:GeoLocationLogFacet
@@ -1892,14 +1887,14 @@ observable:GeoLocationLogFacet
 		]
 		;
 	rdfs:label "GeoLocationLogFacet"@en ;
-	rdfs:comment "A log containing geolocation tracks and/or geolocation entries."@en ;
+	rdfs:comment "A geolocation log facet is a grouping of characteristics unique to a record containing geolocation tracks and/or geolocation entries."@en ;
 	.
 
 observable:GeoLocationTrack
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "GeoLocationTrack"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A geolocation track is a set of contiguous geolocation entries representing a path/track taken."@en ;
 	.
 
 observable:GeoLocationTrackFacet
@@ -1924,7 +1919,7 @@ observable:GeoLocationTrackFacet
 		]
 		;
 	rdfs:label "GeoLocationTrackFacet"@en ;
-	rdfs:comment "Characteristics of a set of contiguous geolocation entries representing a path/track taken."@en ;
+	rdfs:comment "A geolocation track facet is a grouping of characteristics unique to a set of contiguous geolocation entries representing a path/track taken."@en ;
 	.
 
 observable:GlobalFlagType
@@ -1951,6 +1946,20 @@ observable:GlobalFlagType
 		;
 	rdfs:label "GlobalFlagType"@en ;
 	rdfs:comment "Characterizes Windows global flags."@en ;
+	.
+
+observable:GUI
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	rdfs:label "GUI"@en ;
+	rdfs:comment "A GUI is a graphical user interface that allows users to interact with electronic devices through graphical icons and audio indicators such as primary notation, instead of text-based user interfaces, typed command labels or text navigation. [based on https://en.wikipedia.org/wiki/Graphical_user_interface]"@en ;
+	.
+
+observable:Hostname
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	rdfs:label "Hostname"@en ;
+	rdfs:comment "A hostname is a label that is assigned to a device connected to a computer network and that is used to identify the device in various forms of electronic communication, such as the World Wide Web. A hostname may be a domain name, if it is properly organized into the domain name system. A domain name may be a hostname if it has been assigned to an Internet host and associated with the host's IP address. [based on https://en.wikipedia.org/wiki/Hostname]"@en ;
 	.
 
 observable:HTTPConnection
@@ -2002,13 +2011,6 @@ observable:HTTPConnectionFacet
 		;
 	rdfs:label "HTTPConnectionFacet"@en ;
 	rdfs:comment "Specifies HTTP-specific network connection properties."@en ;
-	.
-
-observable:Hostname
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "Hostname"@en ;
-	rdfs:comment ""@en ;
 	.
 
 observable:ICCID
@@ -2102,12 +2104,19 @@ observable:IPNetmask
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "IPNetmask"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "An IP netmask is a 32-bit "mask" used to divide an IP address into subnets and specify the network's available hosts."@en ;
+	.
+
+observable:IPAddress
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
+	rdfs:label "IPAddress"@en ;
+	rdfs:comment "An IP address is an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
 	.
 
 observable:IPv4Address
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#IPAddress> ;
 	rdfs:label "IPv4Address"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address is an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
 	.
@@ -2129,7 +2138,7 @@ observable:IPv4AddressFacet
 
 observable:IPv6Address
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#IPAddress> ;
 	rdfs:label "IPv6Address"@en ;
 	rdfs:comment "An IPv6 (Internet Protocol version 6) address is an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
 	.
@@ -2193,7 +2202,7 @@ observable:ImageFacet
 
 observable:InstantMessagingAddress
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
 	rdfs:label "InstantMessagingAddress"@en ;
 	rdfs:comment ""@en ;
 	.
@@ -2231,7 +2240,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 
 observable:MACAddress
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
 	rdfs:label "MACAddress"@en ;
 	rdfs:comment "A MAC address is a media access control standards conformant identifier assigned to a network interface to enable routing and management of communications at the data link layer of a network segment."@en ;
 	.
@@ -2623,7 +2632,7 @@ observable:Mutex
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Mutex"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A mutex is a mechanism that enforces limits on access to a resource when there are many threads of execution. A mutex is designed to enforce a mutual exclusion concurrency control policy, and with a variety of possible methods there exists multiple unique implementations for different applications. [based on https://en.wikipedia.org/wiki/Lock_(computer_science)]"@en ;
 	.
 
 observable:MutexFacet
@@ -2640,45 +2649,18 @@ observable:MutexFacet
 	rdfs:label "MutexFacet"@en ;
 	.
 
-observable:NTFSFile
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#File> ;
-	rdfs:label "NTFSFile"@en ;
-	rdfs:comment "An NTFS file is a New Technology File System (NTFS) file."@en ;
-	.
-
-observable:NTFSFilePermissionsFacet
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "NTFSFilePermissionsFacet"@en ;
-	rdfs:comment "Characteristics of permissions or access rights for an NTFS file."@en ;
-	.
-
-observable:NTFSFileSystemFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:entryID ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:sid ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
-		;
-	rdfs:label "NTFSFileSystemFacet"@en ;
-	.
+	observable:NamedPipe
+		a owl:Class ;
+		rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+		rdfs:label "NamedPipe"@en ;
+		rdfs:comment "A named pipe is a mechanism for FIFO (first-in-first-out) inter-process communication. It is persisted as a filesystem object (that can be deleted like any other file), can be written to or read from by any process and exists beyond the lifespan of any process interacting with it (unlike simple anonymous pipes). [based on https://en.wikipedia.org/wiki/Named_pipe]"@en ;
+		.
 
 observable:NetworkAppliance
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Appliance> ;
 	rdfs:label "NetworkAppliance"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A network appliance is a purpose-built computer with software or firmware that is designed to provide a specific network management function."@en ;
 	.
 
 observable:NetworkConnetion
@@ -2828,14 +2810,14 @@ observable:NetworkProtocol
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs;label "NetworkProtocol"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A network protocol is an established set of structured rules that determine how data is transmitted between different devices in the same network. Essentially, it allows connected devices to communicate with each other, regardless of any differences in their internal processes, structure or design. [based on https://www.comptia.org/content/guides/what-is-a-network-protocol]"@en ;
 	.
 
 observable:NetworkRoute
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "NetworkRoute"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A network route is a specific path (of specific network nodes, connections and protocols) for traffic in a network or between or across multiple networks."@en ;
 	.
 
 observable:NetworkSocketAddressFamily
@@ -3018,7 +3000,7 @@ observable:NetworkSubnet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "NetworkSubnet"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A network subnet is a logical subdivision of an IP network. [based on https://en.wikipedia.org/wiki/Subnetwork]"@en ;
 	.
 
 observable:Note
@@ -3057,6 +3039,40 @@ observable:NoteFacet
 		;
 	rdfs:label "NoteFacet"@en ;
 	rdfs:comment "Characteristics of digital textual note."@en ;
+	.
+
+observable:NTFSFile
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#File> ;
+	rdfs:label "NTFSFile"@en ;
+	rdfs:comment "An NTFS file is a New Technology File System (NTFS) file."@en ;
+	.
+
+observable:NTFSFilePermissionsFacet
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:label "NTFSFilePermissionsFacet"@en ;
+	rdfs:comment "Characteristics of permissions or access rights for an NTFS file."@en ;
+	.
+
+observable:NTFSFileSystemFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:entryID ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:long ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:sid ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "NTFSFileSystemFacet"@en ;
 	.
 
 observable:Observable
@@ -3138,7 +3154,7 @@ observable:OnlineService
 	a owl:Class ;
 	rdfs:subClasOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "OnlineService"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "An online service is a particular provision mechanism of information access, distribution or manipulation over the Internet."@en ;
 	.
 
 observable:OperatingSystem
@@ -3249,7 +3265,7 @@ observable:PaymentCard
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "PaymentCard"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A payment card is a physical token that is part of a payment system issued by financial institutions, such as a bank, to a customer that enables its owner (the cardholder) to access the funds in the customer's designated bank accounts, or through a credit account and make payments by electronic funds transfer and access automated teller machines (ATMs). [based on https://en.wikipedia.org/wiki/Payment_card]"@en ;
 	.
 
 observable:PhoneAccount
@@ -3332,16 +3348,16 @@ observable:PhoneCallFacet
 
 observable:Pipe
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Pipe"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A pipe is a mechanism for one-way inter-process communication using message passing where data written by one process is buffered by the operating system until it is read by the next process, and this uni-directional channel disappears when the processes are completed. [based on https://en.wikipedia.org/wiki/Pipeline_(Unix) ; https://en.wikipedia.org/wiki/Anonymous_pipe]"@en ;
 	.
 
 observable:Post
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
 	rdfs:label "Post"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A post is message submitted to an online discussion/publishing site (forum, blog, etc.)."@en ;
 	.
 
 observable:Process
@@ -3427,7 +3443,7 @@ observable:Profile
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Profile"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A profile is an explicit digital representation of identity and characteristics of the owner of a single user account associated with an online service or application. [based on https://en.wikipedia.org/wiki/User_profile]"@en ;
 	.
 
 observable:PropertiesEnumeratedEffectFacet
@@ -3695,6 +3711,13 @@ observable:ShopListing
 	rdfs:comment ""@en ;
 	.
 
+observable:SIPAddress
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
+	rdfs:label "SIPAddress"@en ;
+	rdfs:comment "A SIP address is an identifier for Session Initiation Protocol (SIP) communication."@en ;
+	.
+
 observable:Snapshot
 	a owl:Class ;
 	rdfs:subClasOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
@@ -3713,7 +3736,7 @@ observable:SocketAddress
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
 	rdfs:label "SocketAddress"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A socket address (combining and IP address and a port number) is a composite identifier for a network socket endpoint supporting internet protocol communications."@en ;
 	.
 
 observable:SQLiteBlob
@@ -3754,7 +3777,7 @@ observable:SecurityAppliance
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Appliance> ;
 	rdfs:label "SecurityAppliance"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A security appliance is a purpose-built computer with software or firmware that is designed to provide a specific security function to protect computer networks."@en ;
 	.
 
 observable:SendControlCodeEffectFacet
@@ -3990,7 +4013,7 @@ observable:Tweet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
 	rdfs:label "Tweet"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A tweet is message submitted by a Twitter user account to the Twitter microblogging platform."@en ;
 	.
 
 observable:UNIXAccount
@@ -8978,4 +9001,3 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
-
