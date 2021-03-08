@@ -2807,10 +2807,10 @@ observable:ProcessFacet
 	rdfs:comment "Characteristics of an instance of a computer program as executed on an operating system."@en ;
 	.
 
-	observable:Profile
+	observable:ProfileFacet
 	  rdf:type owl:Class ;
-	  rdfs:comment "A profile facet is a grouping of characteristics unique to a single online profile."@en-US ;
-	  rdfs:label "Profile"@en-US ;
+	  rdfs:comment "A profile facet is a grouping of characteristics unique to an explicit digital representation of identity and characteristics of the owner of a single user account associated with an online service or application. [based on https://en.wikipedia.org/wiki/User_profile]"@en-US ;
+	  rdfs:label "ProfileFacet"@en-US ;
 	  rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	  rdfs:subClassOf [
 	      rdf:type owl:Restriction ;
@@ -2874,10 +2874,10 @@ observable:ProcessFacet
 	    ] ;
 	.
 
-	observable:TwitterProfile
+	observable:TwitterProfileFacet
 	  rdf:type owl:Class ;
-	  rdfs:comment "A twitter profile facet is a grouping of characteristics unique to a Twitter profile." ;
-	  rdfs:label "Twitter Profile" ;
+	  rdfs:comment "A twitter profile facet is a grouping of characteristics unique to an explicit digital representation of identity and characteristics of the owner of a single Twitter user account. [based on https://en.wikipedia.org/wiki/User_profile]" ;
+	  rdfs:label "TwitterProfileFacet" ;
 	  rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	  rdfs:subClassOf [
 	      rdf:type owl:Restriction ;
@@ -8133,7 +8133,7 @@ observable:urlTargeted
 	  rdfs:label "User Location String"@en-US ;
 	  rdfs:range xsd:string ;
 	.
-	
+
 observable:userName
 	a owl:ObjectProperty ;
 	rdfs:label "userName"@en ;
