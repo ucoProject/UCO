@@ -350,7 +350,7 @@ observable:BlockDeviceNode
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
 	rdfs:label "BlockDeviceNode"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A block device node is a UNIX filesystem special file that serves as a conduit to communicate with devices, providing buffered randomly accesible input and output. Block device nodes are used to apply access rights to the devices and to direct operations on the files to the appropriate device drivers. [based on https://en.wikipedia.org/wiki/Unix_file_types]"@en ;
 	.
 
 observable:BluetoothAddress
@@ -617,7 +617,7 @@ observable:CharacterDeviceNode
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
 	rdfs:label "CharacterDeviceNode"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A character device node is a UNIX filesystem special file that serves as a conduit to communicate with devices, providing only a serial stream of input or accepting a serial stream of output. Character device nodes are used to apply access rights to the devices and to direct operations on the files to the appropriate device drivers. [based on https://en.wikipedia.org/wiki/Unix_file_types]"@en ;
 	.
 
 observable:Code
@@ -1094,14 +1094,7 @@ observable:Directory
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
 	rdfs:label "Directory"@en ;
-	rdfs:comment ""@en ;
-	.
-
-observable:DirectoryReparsePoint
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
-	rdfs:label "DirectoryReparsePoint"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A directory is a file system cataloging structure which contains references to other computer files, and possibly other directories. On many computers, directories are known as folders, or drawers, analogous to a workbench or the traditional office filing cabinet. In UNIX a directory is implemented as a special file. [based on https://en.wikipedia.org/wiki/Directory_(computing)]"@en ;
 	.
 
 observable:Disk
@@ -1762,13 +1755,6 @@ observable:FilePermissionsFacet
 	rdfs:comment "Characteristics of permissions or access rights for a file."@en ;
 	.
 
-observable:FileReparsePoint
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
-	rdfs:label "FileReparsePoint"@en ;
-	rdfs:comment ""@en ;
-	.
-
 observable:FileSystem
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
@@ -1800,7 +1786,7 @@ observable:FileSystemObject
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "FileSystemObject"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A file system object is an informational object represented and managed within a file system."@en ;
 	.
 
 observable:ForumPost
@@ -2211,7 +2197,7 @@ observable:Junction
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
 	rdfs:label "Junction"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A junction is a specific NTFS (New Technology File System) reparse point to redirect a directory access to another directory which can be on the same volume or another volume. A junction is similar to a directory symbolic link but may differ on whether they are processed on the local system or on the remote file server. [based on https://jp-andre.pagesperso-orange.fr/junctions.html]"@en ;
 	.
 
 observable:Library
@@ -3595,6 +3581,13 @@ observable:RegistryDatatype
 	] ;
 	.
 
+observable:ReparsePoint
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	rdfs:label "ReparsePoint"@en ;
+	rdfs:comment "A reparse point is a type of NTFS (New Technology File System) object which is an optional attribute of files and directories meant to define some sort of preprocessing before accessing the said file or directory. For instance reparse points can be used to redirect access to files which have been moved to long term storage so that some application would retrieve them and make them directly accessible. A reparse point contains a reparse tag and data that are interpreted by a filesystem filter identified by the tag. [based on https://jp-andre.pagesperso-orange.fr/junctions.html ; https://en.wikipedia.org/wiki/NTFS_reparse_point]"@en ;
+	.
+
 observable:SIMCard
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Device> ;
@@ -3701,14 +3694,14 @@ observable:Semaphore
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Semaphore"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A semaphore is a variable or abstract data type used to control access to a common resource by multiple processes and avoid critical section problems in a concurrent system such as a multitasking operating system. [based on https://en.wikipedia.org/wiki/Semaphore_(programming)]"@en ;
 	.
 
 observable:ShopListing
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "ShopListing"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A shop listing is a listing of offered products on an online marketplace/shop."@en ;
 	.
 
 observable:SIPAddress
@@ -3722,14 +3715,14 @@ observable:Snapshot
 	a owl:Class ;
 	rdfs:subClasOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
 	rdfs:label "Snapshot"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A snapshot is a file system object representing a snapshot of the contents of a part of a file system at a point in time."@en ;
 	.
 
 observable:Socket
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
 	rdfs:label "Socket"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A socket is a special file used for inter-process communication, which enables communication between two processes. In addition to sending data, processes can send file descriptors across a Unix domain socket connection using the sendmsg() and recvmsg() system calls. Unlike named pipes which allow only unidirectional data flow, sockets are fully duplex-capable. [based on https://en.wikipedia.org/wiki/Unix_file_types]"@en ;
 	.
 
 observable:SocketAddress
@@ -3872,7 +3865,7 @@ observable:SymbolicLink
 	a owl:Class ;
 	rdfs:subClassOf <https://unifedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
 	rdfs:label "SymbolicLink"@en ;
-	rdfs:comment "A symbolic link ia a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. [based on https://en.wikipedia.org/wiki/Symbolic_link]"@en ;
+	rdfs:comment "A symbolic link is a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. [based on https://en.wikipedia.org/wiki/Symbolic_link]"@en ;
 	.
 
 observable:SymbolicLinkFacet
@@ -3952,7 +3945,7 @@ observable:Thread
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Thread"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
 	.
 
 observable:TriggerType
@@ -4166,14 +4159,14 @@ observable:URLHistory
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "URLHistory"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A URL history characterizes the stored URL history for a particular web browser"@en ;
 	.
 
 observable:URLVisit
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "URLVisit"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A URL visit characterizes the properties of a visit of a URL within a particular browser."@en ;
 	.
 
 observable:UserAccount
@@ -4307,7 +4300,7 @@ observable:WebPage
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WebPage"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A web page is a specific collection of information provided by a website and displayed to a user in a web browser. A website typically consists of many web pages linked together in a coherent fashion. [based on https://en.wikipedia.org/wiki/Web_page]"@en ;
 	.
 
 observable:WhoIs
@@ -4541,14 +4534,14 @@ observable:Wiki
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "Wiki"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A wiki is an online hypertext publication collaboratively edited and managed by its own audience directly using a web browser. A typical wiki contains multiple pages/articles for the subjects or scope of the project and could be either open to the public or limited to use within an organization for maintaining its internal knowledge base. [based on https://en.wikipedia.org/wiki/Wiki]"@en ;
 	.
 
 observable:WikiArticle
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WikiArticle"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A wiki article is one or more pages in a wiki focused on characterizing a particular topic."@en ;
 	.
 
 observable:WindowsAccount
@@ -4651,49 +4644,49 @@ observable:WindowsCriticalSection
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsCriticalSection"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows critical section is a Windows object that provides synchronization similar to that provided by a mutex object, except that a critical section can be used only by the threads of a single process. Critical section objects cannot be shared across processes. Event, mutex, and semaphore objects can also be used in a single-process application, but critical section objects provide a slightly faster, more efficient mechanism for mutual-exclusion synchronization (a processor-specific test and set instruction). Like a mutex object, a critical section object can be owned by only one thread at a time, which makes it useful for protecting a shared resource from simultaneous access. Unlike a mutex object, there is no way to tell whether a critical section has been abandoned. [based on https://docs.microsoft.com/en-us/windows/win32/sync/critical-section-objects]"@en ;
 	.
 
 observable:WindowsEvent
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsEvent"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows event is a notification record of an occurance of interest (system, security, application, etc.) on a Windows operating system."@en ;
 	.
 
 observable:WindowsFilemapping
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsFilemapping"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows file mapping is the association of a file's contents with a portion of the virtual address space of a process within a Windows operating system. The system creates a file mapping object (also known as a section object) to maintain this association. A file view is the portion of virtual address space that a process uses to access the file's contents. File mapping allows the process to use both random input and output (I/O) and sequential I/O. It also allows the process to work efficiently with a large data file, such as a database, without having to map the whole file into memory. Multiple processes can also use memory-mapped files to share data. Processes read from and write to the file view using pointers, just as they would with dynamically allocated memory. The use of file mapping improves efficiency because the file resides on disk, but the file view resides in memory.[based on https://docs.microsoft.com/en-us/windows/win32/memory/file-mapping]"@en ;
 	.
 
 observable:WindowsHandle
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsHandle"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows handle is an abstract reference to a resource within the Windows operating system, such as a window, memory, an open file or a pipe. It is the mechanism by which applications interact with such resources in the Windows operating system."@en ;
 	.
 
 observable:WindowsHook
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsHook"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows hook is a mechanism by which an application can intercept events, such as messages, mouse actions, and keystrokes within the Windows operating system. A function that intercepts a particular type of event is known as a hook procedure. A hook procedure can act on each event it receives, and then modify or discard the event. [based on https://docs.microsoft.com/en-us/windows/win32/winmsg/about-hooks]"@en ;
 	.
 
 observable:WindowsMailslot
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsMailslot"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows mailslot is is a pseudofile that resides in memory, and may be accessed using standard file functions. The data in a mailslot message can be in any form, but cannot be larger than 424 bytes when sent between computers. Unlike disk files, mailslots are temporary. When all handles to a mailslot are closed, the mailslot and all the data it contains are deleted. [based on https://docs.microsoft.com/en-us/windows/win32/ipc/about-mailslots]"@en ;
 	.
 
 observable:WindowsNetworkShare
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsNetworkShare"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows network share is a Windows computer resource made available from one host to other hosts on a computer network. It is a device or piece of information on a computer that can be remotely accessed from another computer transparently as if it were a resource in the local machine. Network sharing is made possible by inter-process communication over the network. [based on https://en.wikipedia.org/wiki/Shared_resource]"@en ;
 	.
 
 observable:WindowsPEBinaryFile
@@ -5145,7 +5138,7 @@ observable:WindowsSystemRestore
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsSystemRestore"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows system restore is a capture of a Windows computer's state (including system files, installed applications, Windows Registry, and system settings) at a particular point in time such that the computer can be reverted to that state in the event of system malfunctions or other problems. [based on https://en.wikipedia.org/wiki/System_Restore]"@en ;
 	.
 
 observable:WindowsTask
@@ -5338,7 +5331,7 @@ observable:WindowsWaitableTime
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "WindowsWaitableTime"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A Windows waitable timer is a synchronization object within the Windows operating system whose state is set to signaled when a specified due time arrives. There are two types of waitable timers that can be created: manual-reset and synchronization. A timer of either type can also be a periodic timer. [based on https://docs.microsoft.com/en-us/windows/win32/sync/waitable-timer-objects]"@en ;
 	.
 
 observable:WirelessNetworkConnection
@@ -5473,13 +5466,14 @@ observable:X509CertificateFacet
 		]
 		;
 	rdfs:label "X509CertificateFacet"@en ;
+	rdfs:comment "A X.509 certificate facet is a grouping of characteristics unique to a public key digital identity certificate conformant to the X.509 PKI (Public Key Infrastructure) standard. "@en ;
 	.
 
 observable:X509V3Certificate
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "X509V3Certificate"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "An X.509 v3 certificate is a public key digital identity certificate conformant to the X.509 v3 PKI (Public Key Infrastructure) standard. "@en ;
 	.
 
 observable:X509V3ExtensionsFacet
@@ -5582,7 +5576,7 @@ observable:X509V3ExtensionsFacet
 		]
 		;
 	rdfs:label "X509V3ExtensionsFacet"@en ;
-	rdfs:comment "Extended properties of X.509 v3 digital certificates."@en ;
+	rdfs:comment "An X.509 v3 certificate facet is a grouping of characteristics unique to a public key digital identity certificate conformant to the X.509 v3 PKI (Public Key Infrastructure) standard."@en ;
 	.
 
 observable:abbreviation
