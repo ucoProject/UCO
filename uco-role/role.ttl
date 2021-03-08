@@ -32,7 +32,7 @@ role:NeutralRole
 	a owl:Class ;
 	rdfs:subClassOf role:Role ;
 	rdfs:label "NeutralRole"@en ;
-	rdfs:comment "A neutral role is a role with impartial or unknown intent."@en ;
+	rdfs:comment "A neutral role is a role with impartial intent."@en ;
 	.
 
 role:Role
@@ -41,4 +41,3 @@ role:Role
 	rdfs:label "Role"@en ;
 	rdfs:comment "A role is a usual or customary function based on contextual perspective."@en ;
 	.
-
