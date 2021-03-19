@@ -5170,7 +5170,7 @@ observable:cpuFamily
 observable:observableCreatedTime
 	a owl:DatatypeProperty ;
 	rdfs:label "observableCreatedTime"@en ;
-	rdfs:comment “The date and time at which the observable object being characterized was created. This time pertains to an intrinsic characteristic of the observable object, and would be consistent across independent characterizations or observations of the observable object."@en ;
+	rdfs:comment "The date and time at which the observable object being characterized was created. This time pertains to an intrinsic characteristic of the observable object, and would be consistent across independent characterizations or observations of the observable object."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
