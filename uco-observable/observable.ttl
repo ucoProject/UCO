@@ -69,7 +69,7 @@ observable:AccountFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -293,7 +293,7 @@ observable:BrowserBookmarkFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -335,7 +335,7 @@ observable:BrowserCookieFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -384,7 +384,7 @@ observable:CalendarEntryFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -909,7 +909,7 @@ observable:DiskPartitionFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1234,7 +1234,7 @@ observable:EventFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1403,7 +1403,7 @@ observable:FileFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1492,7 +1492,7 @@ observable:GeoLocationEntryFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1517,7 +1517,7 @@ observable:GeoLocationLogFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2481,7 +2481,7 @@ observable:NoteFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2741,7 +2741,7 @@ observable:ProcessFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -4186,7 +4186,7 @@ observable:WindowsTaskFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:observableCreatedTime ;
+			owl:onProperty observable:createdTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -5167,7 +5167,7 @@ observable:cpuFamily
 	rdfs:range xsd:string ;
 	.
 
-observable:observableCreatedTime
+observable:createdTime
 	a owl:DatatypeProperty ;
 	rdfs:label "observableCreatedTime"@en ;
 	rdfs:comment "The date and time at which the observable object being characterized was created. This time pertains to an intrinsic characteristic of the observable object, and would be consistent across independent characterizations or observations of the observable object."@en ;
