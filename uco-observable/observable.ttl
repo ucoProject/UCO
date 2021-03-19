@@ -116,7 +116,7 @@ observable:AccountFacet
 observable:Address
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs:label "Address:@en ;
+	rdfs:label "Address"@en ;
 	rdfs:comment "An address is an identifier assigned to enable routing and management of information."@en ;
 	.
 
@@ -1206,7 +1206,7 @@ observable:DNSCache
 
 observable:DNSRecord
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> :
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "DNSRecord"@en ;
 	rdfs:comment "A DNS record is a single Domain Name System (DNS) artifact specifying information of a particular type (routing, authority, responsibility, security, etc.) for a specific Internet domain name."@en ;
 	.
@@ -2090,7 +2090,7 @@ observable:IPNetmask
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
 	rdfs:label "IPNetmask"@en ;
-	rdfs:comment "An IP netmask is a 32-bit "mask" used to divide an IP address into subnets and specify the network's available hosts."@en ;
+	rdfs:comment """An IP netmask is a 32-bit "mask" used to divide an IP address into subnets and specify the network's available hosts."""@en ;
 	.
 
 observable:IPAddress
@@ -2795,7 +2795,7 @@ observable:NetworkInterfaceFacet
 observable:NetworkProtocol
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
-	rdfs;label "NetworkProtocol"@en ;
+	rdfs:label "NetworkProtocol"@en ;
 	rdfs:comment "A network protocol is an established set of structured rules that determine how data is transmitted between different devices in the same network. Essentially, it allows connected devices to communicate with each other, regardless of any differences in their internal processes, structure or design. [based on https://www.comptia.org/content/guides/what-is-a-network-protocol]"@en ;
 	.
 
