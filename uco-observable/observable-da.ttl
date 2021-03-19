@@ -369,10 +369,6 @@ observable:cpuFamily
 	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
-observable:observableCreatedTime
-	rdfs:domain observable:FileFacet ;
-	.
-
 observable:creationDate
 	rdfs:domain observable:WhoIsFacet ;
 	.
@@ -1284,6 +1280,10 @@ observable:objectGUID
 	rdfs:domain observable:WindowsActiveDirectoryAccountFacet ;
 	.
 
+observable:observableCreatedTime
+	rdfs:domain observable:FileFacet ;
+	.
+
 observable:oldObject
 	rdfs:domain observable:StateChangeEffectFacet ;
 	.
@@ -2055,3 +2055,4 @@ observable:xMailer
 observable:xOriginatingIP
 	rdfs:domain observable:EmailMessageFacet ;
 	.
+
