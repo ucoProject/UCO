@@ -281,13 +281,6 @@ core:createdBy
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
 	.
 
-core:objectCreatedTime
-	a owl:DatatypeProperty ;
-	rdfs:label "objectCreatedTime"@en ;
-	rdfs:comment "The time at which a characterization of a concept is created. This time pertains to the time of creating the record object, and is not an intrinsic characteristic of the concept."@en ;
-	rdfs:range xsd:dateTime ;
-	.
-
 core:definingContext
 	a owl:DatatypeProperty ;
 	rdfs:label "definingContext"@en ;
@@ -366,6 +359,13 @@ core:object
 		"One or more UcoObjects."@en
 		;
 	rdfs:range core:UcoObject ;
+	.
+
+core:objectCreatedTime
+	a owl:DatatypeProperty ;
+	rdfs:label "objectCreatedTime"@en ;
+	rdfs:comment "The time at which a characterization of a concept is created. This time pertains to the time of creating the record object, and is not an intrinsic characteristic of the concept."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 core:objectMarking
@@ -452,3 +452,4 @@ core:value
 <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
 	a owl:Class ;
 	.
+

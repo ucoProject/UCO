@@ -35,10 +35,6 @@ core:createdBy
 	rdfs:domain core:UcoObject ;
 	.
 
-core:objectCreatedTime
-	rdfs:domain core:UcoObject ;
-	.
-
 core:definingContext
 	rdfs:domain core:ExternalReference ;
 	.
@@ -90,6 +86,10 @@ core:object
 		;
 	.
 
+core:objectCreatedTime
+	rdfs:domain core:UcoObject ;
+	.
+
 core:objectMarking
 	rdfs:domain core:UcoObject ;
 	.
@@ -133,3 +133,4 @@ core:type
 core:value
 	rdfs:domain core:ControlledVocabulary ;
 	.
+
