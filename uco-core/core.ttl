@@ -135,21 +135,23 @@ core:EnclosingCompilation
 
 core:ExternalReference
 	a owl:Class ;
-	rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <https://unifiedcyberontology/ontology/uco/core#definingContext> ;
-    ] ;
-    rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <https://unifiedcyberontology/ontology/uco/core#externalIdentifier> ;
-    ] ;
-    rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <https://unifiedcyberontology/ontology/uco/core#referenceURL> ;
-    ] ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology/ontology/uco/core#definingContext> ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology/ontology/uco/core#externalIdentifier> ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology/ontology/uco/core#referenceURL> ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
 	rdfs:label "ExternalReference"@en ;
 	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
 	.
@@ -243,16 +245,16 @@ core:UcoObject
 		] ,
 		[
 			a owl:Restriction ;
+			owl:onProperty core:externalReference ;
+			owl:onClass core:ExternalReference ;
+			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
 			owl:onProperty core:id ;
 			owl:onDataRange <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		],
-		[
-			a owl:Restriction ;
-			owl:onProperty core:externalReference ;
-			owl:onClass <https://unifiedcyberontology.org/ontology/uco/core#ExternalReference> ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-		] 
+		]
 		;
 	rdfs:label "UcoObject"@en ;
 	rdfs:comment "A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Unified Cyber Ontology (uco)."@en ;
@@ -336,11 +338,11 @@ core:externalIdentifier
 	rdfs:range xsd:string ;
 	.
 
-	core:externalReference
-	  rdf:type owl:ObjectProperty ;
-	  rdfs:comment "Specifies a reference to a resource outside of the UCO."@en-US ;
-	  rdfs:label "External Reference"@en-US ;
-	  rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#ExternalReference> ;
+core:externalReference
+	a owl:ObjectProperty ;
+	rdfs:label "External Reference"@en-US ;
+	rdfs:comment "Specifies a reference to a resource outside of the UCO."@en-US ;
+	rdfs:range core:ExternalReference ;
 	.
 
 core:hasFacet
@@ -479,3 +481,4 @@ core:value
 <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
 	a owl:Class ;
 	.
+
