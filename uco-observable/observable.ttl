@@ -640,7 +640,7 @@ observable:ContactAddress
 			a owl:Restriction ;
 			owl:onProperty observable:contactAddressScope ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:DataUnionOf(xsd:string vocab:ContactAddressScopeVocab) ;
+			owl:onDataRange owl:DataUnionOf( xsd:string vocab:ContactAddressScopeVocab ) ;
 		],
 		[
 			a owl:Restriction ;
@@ -722,7 +722,7 @@ observable:ContactEmail
 			a owl:Restriction ;
 			owl:onProperty observable:contactEmailScope ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:DataUnionOf(xsd:string vocab:ContactEmailScopeVocab) ;
+			owl:onDataRange owl:DataUnionOf( xsd:string vocab:ContactEmailScopeVocab ) ;
 		],
 		[
 			a owl:Restriction ;
@@ -938,7 +938,7 @@ observable:ContactPhone
 			a owl:Restriction ;
 			owl:onProperty observable:contactPhoneScope ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:DataUnionOf(xsd:string vocab:ContactPhoneScopeVocab) ;
+			owl:onDataRange owl:DataUnionOf( xsd:string vocab:ContactPhoneScopeVocab ) ;
 		],
 		[
 			a owl:Restriction ;
@@ -978,7 +978,7 @@ observable:ContactSIP
 			a owl:Restriction ;
 			owl:onProperty observable:contactSIPScope ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:DataUnionOf(xsd:string vocab:ContactSIPScopeVocab) ;
+			owl:onDataRange owl:DataUnionOf( xsd:string vocab:ContactSIPScopeVocab ) ;
 		],
 		[
 			a owl:Restriction ;
@@ -998,7 +998,7 @@ observable:ContactURL
 			a owl:Restriction ;
 			owl:onProperty observable:contactURLScope ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:DataUnionOf(xsd:string vocab:ContactURLScopeVocab) ;
+			owl:onDataRange owl:DataUnionOf( xsd:string vocab:ContactURLScopeVocab ) ;
 		],
 		[
 			a owl:Restriction ;
@@ -3931,7 +3931,7 @@ observable:WhoisContactFacet
 			a owl:Restriction ;
 			owl:onProperty observable:whoisContactType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange owl:DataUnionOf(xsd:string observable:WhoisContactTypeVocab);
+			owl:onDataRange owl:DataUnionOf( xsd:string observable:WhoisContactTypeVocab );
 		] ;
 	rdfs:label "WhoIsContactFacet"@en ;
 	rdfs:comment "A WHOIS contact facet is a grouping of characteristics unique to Whois contact information for a domain."@en ;
@@ -5388,7 +5388,7 @@ observable:contactAddressScope
 	a owl:DatatypeProperty ;
 	rdfs:label "contactAddressScope"@en ;
 	rdfs:comment "Contact address scope specifies the relevant scope (home, work, school, etc) for a geolocation address of a contact entity."@en ;
-	rdfs:range owl:DataUnionOf(xsd:string vocab:ContactAddressScopeVocab) ;
+	rdfs:range owl:DataUnionOf( xsd:string vocab:ContactAddressScopeVocab ) ;
 	.
 
 observable:contactAffiliation
@@ -5409,7 +5409,7 @@ observable:contactEmailScope
 	a owl:DatatypeProperty ;
 	rdfs:label "contactEmailScope"@en ;
 	rdfs:comment "Contact email scope specifies the relevant scope (home, work, school, etc) of details for contacting a contact entity by email."@en ;
-	rdfs:range owl:DataUnionOf(xsd:string vocab:ContactEmailScopeVocab) ;
+	rdfs:range owl:DataUnionOf( xsd:string vocab:ContactEmailScopeVocab ) ;
 	.
 
 observable:contactGroup
@@ -5472,7 +5472,7 @@ observable:contactPhoneScope
 	a owl:DatatypeProperty ;
 	rdfs:label "contactPhoneScope"@en ;
 	rdfs:comment "Contact phone scope specifies the relevant scope (home, work, school, etc) of details for contacting a contact entity by telephone."@en ;
-	rdfs:range owl:DataUnionOf(xsd:string vocab:ContactPhoneScopeVocab) ;
+	rdfs:range owl:DataUnionOf( xsd:string vocab:ContactPhoneScopeVocab ) ;
 	.
 
 observable:contactProfile
@@ -5500,7 +5500,7 @@ observable:contactSIPScope
 	a owl:DatatypeProperty ;
 	rdfs:label "contactSIPScope"@en ;
 	rdfs:comment "Contact SIP scope specifies the relevant scope (home, work, school, etc) of details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
-	rdfs:range owl:DataUnionOf(xsd:string vocab:ContactSIPScopeVocab) ;
+	rdfs:range owl:DataUnionOf( xsd:string vocab:ContactSIPScopeVocab ) ;
 	.
 
 observable:contactURL
@@ -5514,14 +5514,14 @@ observable:contactURLScope
 	a owl:DatatypeProperty ;
 	rdfs:label "contactURLScope"@en ;
 	rdfs:comment "Contact url scope specifies the relevant scope (homepage, home, work, school, etc) of details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
-	rdfs:range owl:DataUnionOf(xsd:string vocab:ContactURLScopeVocab) ;
+	rdfs:range owl:DataUnionOf( xsd:string vocab:ContactURLScopeVocab ) ;
 	.
 
 observable:whoisContactType
 	a owl:DatatypeProperty ;
 	rdfs:label "whoisContactType"@en ;
 	rdfs:comment "Specifies what type of WHOIS contact this is."@en ;
-	rdfs:range owl:DataUnionOf(xsd:string vocab:WhoisContactTypeVocab) ;
+	rdfs:range owl:DataUnionOf( xsd:string vocab:WhoisContactTypeVocab ) ;
 	.
 
 observable:contentDisposition
