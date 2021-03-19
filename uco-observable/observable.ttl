@@ -3383,134 +3383,140 @@ observable:URLFacet
 	rdfs:comment "Characteristics of a uniform resource locator (URL)."@en ;
 	.
 
-	observable:URLHistory
-	  a owl:Class ;
-	  rdfs:comment "A URL history characterizes the stored URL history for a particular web browser"@en-US ;
-	  rdfs:label "URLHistory"@en-US ;
-	  rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject>
-	  .
+observable:URLHistory
+	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "URLHistory"@en-US ;
+	rdfs:comment "A URL history characterizes the stored URL history for a particular web browser"@en-US ;
+	.
 
-	observable:URLHistoryFacet
-	  a owl:Class ;
-	  rdfs:comment "A URL history facet is a grouping of characteristics unique to the stored URL history for a particular web browser"@en-US ;
-	  rdfs:label "URLHistoryFacet"@en-US ;
-	  rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	  rdfs:subClassOf [
-	      rdf:type owl:Restriction ;
-	      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-	      owl:onProperty observable:browserInformation ;
-	    ] ;
-	  rdfs:subClassOf [
-	      rdf:type owl:Restriction ;
-	      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-	      owl:onProperty observable:urlHistoryEntry ;
-	    ] ;
-.
+observable:URLHistoryEntry
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:browserUserProfile ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:expirationTime ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:firstVisit ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:hostname ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:lastVisit ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:manuallyEnteredCount ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:pageTitle ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:url ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:visitCount ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:keywordSearchTerm ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:referrerUrl ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "URL History Entry"@en-US ;
+	rdfs:comment "A URL history entry is a grouping of characteristics unique to the properties of a single URL history entry for a particular browser."@en-US ;
+	.
 
-			observable:URLHistoryEntry
-			  a owl:Class ;
-			  rdfs:comment "A URL history entry is a grouping of characteristics unique to the properties of a single URL history entry for a particular browser."@en-US ;
-			  rdfs:label "URL History Entry"@en-US ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:expirationTime ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:firstVisit ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:hostname ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:lastVisit ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:manuallyEnteredCount ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:pageTitle ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:referrerUrl ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:url ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:browserUserProfile ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:visitCount ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:keywordSearchTerm ;
-			    ] ;
-			.
+observable:URLHistoryFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:browserInformation ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:urlHistoryEntry ;
+			owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "URLHistoryFacet"@en-US ;
+	rdfs:comment "A URL history facet is a grouping of characteristics unique to the stored URL history for a particular web browser"@en-US ;
+	.
 
-			observable:URLVisit
-			  a owl:Class ;
-				rdfs:label "URLVisit"@en ;
-			  rdfs:comment "A URL visit characterizes the properties of a visit of a URL within a particular browser."@en ;
-			  rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject>
-			  .
+observable:URLVisit
+	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "URLVisit"@en ;
+	rdfs:comment "A URL visit characterizes the properties of a visit of a URL within a particular browser."@en ;
+	.
 
-			observable:URLVisitFacet
-			  a owl:Class ;
-				rdfs:label "URLVisitFacet"@en ;
-			  rdfs:comment "A URL visit facet is a grouping of characteristics unique to the properties of a visit of a URL within a particular browser."@en ;
-			  rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:url ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:browserInformation ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:visitTime ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:visitDuration ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:fromURLVisit ;
-			    ] ;
-			  rdfs:subClassOf [
-			      rdf:type owl:Restriction ;
-			      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-			      owl:onProperty observable:urlTransitionType ;
-			    ] ;
-			.
+observable:URLVisitFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:browserInformation ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:fromURLVisit ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:url ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:urlTransitionType ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:visitDuration ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:visitTime ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "URLVisitFacet"@en ;
+	rdfs:comment "A URL visit facet is a grouping of characteristics unique to the properties of a visit of a URL within a particular browser."@en ;
+	.
 
 observable:UserAccountFacet
 	a owl:Class ;
@@ -5049,18 +5055,18 @@ observable:bookmarkPath
 	rdfs:range xsd:string ;
 	.
 
-	observable:browserInformation
-	  a owl:ObjectProperty ;
-		rdfs:label "Browser Information"@en ;
-	  rdfs:comment "Specifies information about the particular Web Browser."@en ;
-	  rdfs:range <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+observable:browserInformation
+	a owl:ObjectProperty ;
+	rdfs:label "Browser Information"@en ;
+	rdfs:comment "Specifies information about the particular Web Browser."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
-	observable:browserUserProfile
-	  a owl:DatatypeProperty ;
-		rdfs:label "Browser User Profile"@en ;
-	  rdfs:comment "Specifies the web browser user profile for which the URL history entry was created."@en ;
-	  rdfs:range xsd:string ;
+observable:browserUserProfile
+	a owl:DatatypeProperty ;
+	rdfs:label "Browser User Profile"@en ;
+	rdfs:comment "Specifies the web browser user profile for which the URL history entry was created."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:byteOrder
@@ -5910,11 +5916,11 @@ observable:firstRun
 	rdfs:range xsd:dateTime ;
 	.
 
-	observable:firstVisit
-	  a owl:DatatypeProperty ;
-		rdfs:label "First Visit Time"@en ;
-	  rdfs:comment "Specifies the date/time that the URL referred to by the URL field was first visited."@en-US ;
-	  rdfs:range xsd:dateTime ;
+observable:firstVisit
+	a owl:DatatypeProperty ;
+	rdfs:label "First Visit Time"@en ;
+	rdfs:comment "Specifies the date/time that the URL referred to by the URL field was first visited."@en-US ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:flags
@@ -5958,11 +5964,11 @@ observable:from
 	rdfs:range observable:ObservableObject ;
 	.
 
-	observable:fromURLVisit
-	  a owl:ObjectProperty ;
-		rdfs:label "From URL Visit"@en ;
-	  rdfs:comment "Specifies the URL visit origination point (i.e., URL) of the URL captured in the URL history entry, if applicable."@en ;
-	  rdfs:range <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+observable:fromURLVisit
+	a owl:ObjectProperty ;
+	rdfs:label "From URL Visit"@en ;
+	rdfs:comment "Specifies the URL visit origination point (i.e., URL) of the URL captured in the URL history entry, if applicable."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:fullValue
@@ -6391,17 +6397,17 @@ observable:keyUsage
 	rdfs:range xsd:string ;
 	.
 
-	observable:keywordSearchTerm
-	  a owl:DatatypeProperty ;
-	  rdfs:label "Keyword Search Term"@en ;
-	  rdfs:comment "Specifies a string representing a keyword search term contained within the URL field."@en ;
-	  rdfs:range xsd:string ;
-	.
-
 observable:keypadUnlockCode
 	a owl:DatatypeProperty ;
 	rdfs:label "keypadUnlockCode"@en ;
 	rdfs:comment "A code or password set on a device for security that must be entered to gain access to the device."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:keywordSearchTerm
+	a owl:DatatypeProperty ;
+	rdfs:label "Keyword Search Term"@en ;
+	rdfs:comment "Specifies a string representing a keyword search term contained within the URL field."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6441,11 +6447,11 @@ observable:lastRun
 	rdfs:range xsd:dateTime ;
 	.
 
-	observable:lastVisit
-	  a owl:DatatypeProperty ;
-		rdfs:label "Last Visit Time"@en ;
-	  rdfs:comment "Specifies the date/time that the URL referred to by the URL field was last visited."@en ;
-	  rdfs:range xsd:dateTime ;
+observable:lastVisit
+	a owl:DatatypeProperty ;
+	rdfs:label "Last Visit Time"@en ;
+	rdfs:comment "Specifies the date/time that the URL referred to by the URL field was last visited."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:length
@@ -6559,17 +6565,17 @@ observable:majorSubsystemVersion
 	rdfs:range xsd:unsignedShort ;
 	.
 
-observable:manufacturer
-	a owl:DatatypeProperty ;
-	rdfs:label "manufacturer"@en ;
-	rdfs:range xsd:string ;
-	.
-
 observable:manuallyEnteredCount
 	a owl:DatatypeProperty ;
 	rdfs:label "Manually-Entered Count"@en ;
 	rdfs:comment "Specifies the number of times the URL referred to by the URL field was manually entered into the browser's address field by the user. This field is only applicable for URL history entries generated by Google's Chrome browser."@en ;
 	rdfs:range xsd:nonNegativeInteger ;
+	.
+
+observable:manufacturer
+	a owl:DatatypeProperty ;
+	rdfs:label "manufacturer"@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:maxRunTime
@@ -6947,11 +6953,11 @@ observable:ownerSID
 	rdfs:range xsd:string ;
 	.
 
-	observable:pageTitle
-	  a owl:DatatypeProperty ;
-		rdfs:label "Page Title"@en ;
-	  rdfs:comment "Specifies the title of a web page."@en ;
-	  rdfs:range xsd:string ;
+observable:pageTitle
+	a owl:DatatypeProperty ;
+	rdfs:label "Page Title"@en ;
+	rdfs:comment "Specifies the title of a web page."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:parameterAddress
@@ -7256,11 +7262,11 @@ observable:referralURL
 	rdfs:range observable:ObservableObject ;
 	.
 
-	observable:referrerUrl
-	  a owl:ObjectProperty ;
-		rdfs:label "Referrer URL"@en ;
-	  rdfs:comment "Specifies the origination point (i.e., URL) of a URL request."@en ;
-	  rdfs:range <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+observable:referrerUrl
+	a owl:ObjectProperty ;
+	rdfs:label "Referrer URL"@en ;
+	rdfs:comment "Specifies the origination point (i.e., URL) of a URL request."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:regionSize
@@ -8033,11 +8039,11 @@ observable:url
 	rdfs:range observable:ObservableObject ;
 	.
 
-	observable:urlHistoryEntry
-	  a owl:ObjectProperty ;
-		rdfs:label "URL History Entries"@en ;
-	  rdfs:comment "Specifies a URL history record stored in the browser's history."@en ;
-	  rdfs:range observable:URLHistoryEntry ;
+observable:urlHistoryEntry
+	a owl:ObjectProperty ;
+	rdfs:label "URL History Entries"@en ;
+	rdfs:comment "Specifies a URL history record stored in the browser's history."@en ;
+	rdfs:range observable:URLHistoryEntry ;
 	.
 
 observable:urlTargeted
@@ -8047,17 +8053,17 @@ observable:urlTargeted
 	rdfs:range xsd:anyURI ;
 	.
 
-	observable:urlTransitionType
-	  a owl:DatatypeProperty ;
-		rdfs:label "Transition Type"@en ;
-	  rdfs:comment "Specifies how a browser navigated to a particular URL on a particular visit."@en ;
-	  rdfs:range [
-	      a rdfs:Datatype ;
-	      owl:unionOf (
-	          xsd:string
-	          vocab:URLTransitionTypeVocab
-	        ) ;
-	    ] ;
+observable:urlTransitionType
+	a owl:DatatypeProperty ;
+	rdfs:label "Transition Type"@en ;
+	rdfs:comment "Specifies how a browser navigated to a particular URL on a particular visit."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:string
+			vocab:URLTransitionTypeVocab
+		) ;
+	] ;
 	.
 
 observable:userName
@@ -8111,18 +8117,18 @@ observable:visitCount
 	rdfs:range xsd:integer ;
 	.
 
-	observable:visitDuration
-	  a owl:DatatypeProperty ;
-		rdfs:label "Visit Duration"@en ;
-	  rdfs:comment "Specifies the duration of a specific visit of a URL within a particular browser."@en ;
-	  rdfs:range xsd:duration ;
+observable:visitDuration
+	a owl:DatatypeProperty ;
+	rdfs:label "Visit Duration"@en ;
+	rdfs:comment "Specifies the duration of a specific visit of a URL within a particular browser."@en ;
+	rdfs:range xsd:duration ;
 	.
 
-	observable:visitTime
-	  a owl:DatatypeProperty ;
-		rdfs:label "Visit Time"@en ;
-	  rdfs:comment "Specifies the date/time of a specific visit of a URL within a particular browser."@en ;
-	  rdfs:range xsd:dateTime ;
+observable:visitTime
+	a owl:DatatypeProperty ;
+	rdfs:label "Visit Time"@en ;
+	rdfs:comment "Specifies the date/time of a specific visit of a URL within a particular browser."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:volume
@@ -8218,3 +8224,4 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
+
