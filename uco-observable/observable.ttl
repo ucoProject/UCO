@@ -1584,7 +1584,7 @@ observable:GlobalFlagType
 		]
 		;
 	rdfs:label "GlobalFlagType"@en ;
-	rdfs:comment "A global flag type is a grouping of characteristics unique to the Windows systemwide global variable named NtGlobalFlag that enables various internal debugging, tracing, and validation support in the operating system. [based on "Windows Global Flags, Chapter 3: System Mechanisms of Windows Internals by Solomon, Russinovich, and Ionescu]"@en ;
+	rdfs:comment """A global flag type is a grouping of characteristics unique to the Windows systemwide global variable named NtGlobalFlag that enables various internal debugging, tracing, and validation support in the operating system. [based on "Windows Global Flags, Chapter 3: System Mechanisms of Windows Internals by Solomon, Russinovich, and Ionescu]"""@en ;
 	.
 
 observable:HTTPConnectionFacet
