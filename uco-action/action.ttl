@@ -251,7 +251,7 @@ action:actionStatus
 
 action:argumentName
 	a owl:DatatypeProperty ;
-	rdfs:label "name"@en ;
+	rdfs:label "argumentName"@en ;
 	rdfs:comment "The identifying label of an argument."@en ;
 	rdfs:range xsd:string ;
 	.
