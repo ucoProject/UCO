@@ -415,10 +415,6 @@ observable:cpuFamily
 	rdfs:domain observable:ComputerSpecificationFacet ;
 	.
 
-observable:createdTime
-	rdfs:domain observable:FileFacet ;
-	.
-
 observable:creationDate
 	rdfs:domain observable:WhoIsFacet ;
 	.
@@ -1328,6 +1324,10 @@ observable:numberOfSymbols
 
 observable:objectGUID
 	rdfs:domain observable:WindowsActiveDirectoryAccountFacet ;
+	.
+
+observable:observableCreatedTime
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:oldObject

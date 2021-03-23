@@ -35,10 +35,6 @@ core:createdBy
 	rdfs:domain core:UcoObject ;
 	.
 
-core:createdTime
-	rdfs:domain core:UcoObject ;
-	.
-
 core:definingContext
 	rdfs:domain core:ExternalReferenceFacet ;
 	.
@@ -88,6 +84,10 @@ core:object
 		core:ContextualCompilation ,
 		core:EnclosingCompilation
 		;
+	.
+
+core:objectCreatedTime
+	rdfs:domain core:UcoObject ;
 	.
 
 core:objectMarking

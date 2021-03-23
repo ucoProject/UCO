@@ -211,7 +211,7 @@ core:UcoObject
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:createdTime ;
+			owl:onProperty core:objectCreatedTime ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:dateTime ;
 		] ,
@@ -279,13 +279,6 @@ core:createdBy
 	rdfs:label "createdBy"@en ;
 	rdfs:comment "The identity that created a characterization of a concept."@en ;
 	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
-	.
-
-core:createdTime
-	a owl:DatatypeProperty ;
-	rdfs:label "createdTime"@en ;
-	rdfs:comment "The time at which a characterization of a concept is created."@en ;
-	rdfs:range xsd:dateTime ;
 	.
 
 core:definingContext
@@ -366,6 +359,13 @@ core:object
 		"One or more UcoObjects."@en
 		;
 	rdfs:range core:UcoObject ;
+	.
+
+core:objectCreatedTime
+	a owl:DatatypeProperty ;
+	rdfs:label "objectCreatedTime"@en ;
+	rdfs:comment "The time at which a characterization of a concept is created. This time pertains to the time of creating the record object, and is not an intrinsic characteristic of the concept."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 core:objectMarking
