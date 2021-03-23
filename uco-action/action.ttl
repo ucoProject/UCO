@@ -10,7 +10,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/action>
@@ -54,10 +54,10 @@ action:Action
 		]
 		;
 	rdfs:label "Action"@en ;
-	rdfs:comment "Something that may be done or performed."@en ;
+	rdfs:comment "An action is something that may be done or performed."@en ;
 	.
 
-action:ActionArgument
+action:ActionArgumentFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -74,11 +74,11 @@ action:ActionArgument
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "ActionArgument"@en ;
-	rdfs:comment "A grouping of properties characterizing a single parameter for an action."@en ;
+	rdfs:label "ActionArgumentFacet"@en ;
+	rdfs:comment "An action argument facet is a grouping of characteristics unique to a single parameter of an action."@en ;
 	.
 
-action:ActionEstimation
+action:ActionEstimationFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -107,11 +107,11 @@ action:ActionEstimation
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "ActionEstimation"@en ;
-	rdfs:comment "A grouping of properties characterizing decision-focused estimation aspects for an action that may potentially be performed."@en ;
+	rdfs:label "ActionEstimationFacet"@en ;
+  rdfs:comment "An action estimation facet is a grouping of characteristics unique to decision-focused approximation aspects for an action that may potentially be performed."@en ;
 	.
 
-action:ActionFrequency
+action:ActionFrequencyFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -136,12 +136,12 @@ action:ActionFrequency
 		[
 			a owl:Restriction ;
 			owl:onProperty action:trend ;
-			owl:onDataRange vocab:TrendVocab ;
+			owl:onDataRange vocabulary:TrendVocab ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "ActionFrequency"@en ;
-	rdfs:comment "A grouping of properties characterizing the frequency of occurence for an action."@en ;
+	rdfs:label "ActionFrequencyFacet"@en ;
+	rdfs:comment "An action frequency facet is a grouping of characteristics unique to the frequency of occurrence for an action."@en ;
 	.
 
 action:ActionLifecycle
@@ -182,7 +182,7 @@ action:ActionLifecycle
 		]
 		;
 	rdfs:label "ActionLifecycle"@en ;
-	rdfs:comment "An action pattern consisting of an ordered set of multiple actions or sub action-lifecycles."@en ;
+	rdfs:comment "An action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action lifecycles."@en ;
 	.
 
 action:ActionPattern
@@ -192,10 +192,10 @@ action:ActionPattern
 		<https://unifiedcyberontology.org/ontology/uco/pattern#Pattern>
 		;
 	rdfs:label "ActionPattern"@en ;
-	rdfs:comment "A logical pattern of characteristic action property values."@en ;
+	rdfs:comment "An action pattern is a grouping of characteristics unique to a combination of actions forming a consistent or characteristic arrangement."@en ;
 	.
 
-action:ActionReferences
+action:ActionReferencesFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -212,8 +212,8 @@ action:ActionReferences
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "ActionReferences"@en ;
-	rdfs:comment """A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action. The properties consist of identifier references to separate UCO objects detailing the particular property.
+	rdfs:label "ActionReferencesFacet"@en ;
+	rdfs:comment """An action references facet is a grouping of characteristics unique to the core elements (who, how, with what, where, etc.) for an action. The characteristics are references to separate UCO objects detailing the particular characteristic.
   """@en ;
 	.
 
@@ -225,7 +225,7 @@ action:ArrayOfAction
 		owl:minCardinality "1"^^xsd:nonNegativeInteger ;
 	] ;
 	rdfs:label "ArrayOfAction"@en ;
-	rdfs:comment "An ordered list of action object references."@en ;
+	rdfs:comment "An array of action is an ordered list of references to things that may be done or performed."@en ;
 	.
 
 action:action
@@ -246,12 +246,12 @@ action:actionStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "actionStatus"@en ;
 	rdfs:comment "The current state of the action."@en ;
-	rdfs:range vocab:ActionStatusTypeVocab ;
+	rdfs:range vocabulary:ActionStatusTypeVocab ;
 	.
 
 action:argumentName
 	a owl:DatatypeProperty ;
-	rdfs:label "name"@en ;
+	rdfs:label "argumentName"@en ;
 	rdfs:comment "The identifying label of an argument."@en ;
 	rdfs:range xsd:string ;
 	.
@@ -387,7 +387,7 @@ action:trend
 	a owl:DatatypeProperty ;
 	rdfs:label "trend"@en ;
 	rdfs:comment "A characterization of the frequency trend for the occurence of an action."@en ;
-	rdfs:range vocab:TrendVocab ;
+	rdfs:range vocabulary:TrendVocab ;
 	.
 
 action:units

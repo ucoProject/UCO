@@ -26,23 +26,20 @@ pattern:LogicalPattern
 		]
 		;
 	rdfs:label "LogicalPattern"@en ;
-	rdfs:comment "An informational pattern instantiated in UCO content and expressed as a logical pattern expression."@en ;
+	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
 	.
 
 pattern:Pattern
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	rdfs:label "Pattern"@en ;
-	rdfs:comment
-		"A combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ,
-		"An explicit logical specification of a UCO informational pattern."@en
-		;
+	rdfs:comment "A pattern is a combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ;
 	.
 
 pattern:PatternExpression
 	a owl:Class ;
 	rdfs:label "PatternExpression"@en ;
-	rdfs:comment "An explicit logical pattern expression."@en ;
+	rdfs:comment "A pattern expression is a grouping of characteristics unique to an explicit logical expression defining a pattern (e.g., regular expression, SQL Select expression, etc.)."@en ;
 	.
 
 pattern:patternExpression
