@@ -132,12 +132,6 @@ observable:addressOfEntryPoint
 	rdfs:domain observable:WindowsPEOptionalHeader ;
 	.
 
-observable:addressValue
-	rdfs:domain
-		observable:BluetoothAddressFacet ,
-		observable:WifiAddressFacet
-		;
-	.
 
 observable:allocationStatus
 	rdfs:domain observable:FileFacet ;
@@ -2023,10 +2017,6 @@ observable:validityNotBefore
 	rdfs:domain observable:X509CertificateFacet ;
 	.
 
-observable:value
-	rdfs:domain observable:IPv4AddressFacet ;
-	.
-
 observable:values
 	rdfs:domain observable:ValuesEnumeratedEffectFacet ;
 	.
@@ -2101,4 +2091,3 @@ observable:xMailer
 observable:xOriginatingIP
 	rdfs:domain observable:EmailMessageFacet ;
 	.
-

@@ -365,7 +365,7 @@ observable:BluetoothAddress
 observable:BluetoothAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#MACAddressFacet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -1069,6 +1069,27 @@ observable:DigitalSignatureInfo
 	rdfs:comment "A digital signature info is a value calculated via a mathematical scheme for demonstrating the authenticity of an electronic message or document."@en ;
 	.
 
+observable:DigitalAddressFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:addressValue ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:displayName ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "DigitalAddressFacet"@en ;
+	rdfs:comment "A digital address facet is a grouping of characteristics unique to an identifier assigned to enable routing and management of digital communication."@en ;
+	.
+
 observable:DigitalSignatureInfoFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -1295,7 +1316,7 @@ observable:EmailAddress
 observable:EmailAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:displayName ;
@@ -1304,7 +1325,7 @@ observable:EmailAddressFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:value ;
+			owl:onProperty observable:addressValue ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -2082,6 +2103,26 @@ observable:IMSI
 	rdfs:range xsd:string ;
 	.
 
+observable:IPAddressFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:addressValue ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:displayName ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "IPAddressFacet"@en ;
+	rdfs:comment "An IP address facet is a grouping of characteristics unique to an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
+
 observable:IPAddress
 	a owl:Class ;
 	rdfs:subClassOf observable:DigitalAddress ;
@@ -2101,15 +2142,16 @@ observable:IPv4Address
 	rdfs:subClassOf observable:IPAddress ;
 	rdfs:label "IPv4Address"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address is an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
+
 	.
 
 observable:IPv4AddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#IPAddressFacet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:value ;
+			owl:onProperty observable:addressValue ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -2128,10 +2170,10 @@ observable:IPv6Address
 observable:IPv6AddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#IPAddressFacet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:value ;
+			owl:onProperty observable:addressValue ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -2203,6 +2245,27 @@ observable:Library
 	rdfs:comment "A library is a suite of data and programming code that is used to develop software programs and applications. [based on https://www.techopedia.com/definition/3828/software-library]"@en ;
 	.
 
+observable:InstantMessagingAddressFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:addressValue ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:displayName ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "InstantMessagingAddressFacet"@en ;
+	rdfs:comment "An instant messaging address facet is a grouping of characteristics unique to an identifier assigned to enable routing and management of instant messaging digital communication."@en ;
+	.
+
 observable:LibraryFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -2227,10 +2290,10 @@ observable:MACAddress
 observable:MACAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:value ;
+			owl:onProperty observable:addressValue ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -3655,6 +3718,26 @@ observable:SIMType
 	rdfs:range xsd:string ;
 	.
 
+observable:SIPAddressFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:addressValue ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:displayName ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "SIPAddressFacet"@en ;
+	rdfs:comment "A SIP address facet is a grouping of characteristics unique to a Session Initiation Protocol (SIP) standards conformant identifier assigned to a user to enable routing and management of SIP standards conformant communication to or from that user loosely coupled from any particular devices."@en ;
+
 observable:SIPAddress
 	a owl:Class ;
 	rdfs:subClassOf observable:DigitalAddress ;
@@ -4638,7 +4721,7 @@ observable:WifiAddress
 observable:WifiAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#MACAddressFacet> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
