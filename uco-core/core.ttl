@@ -41,6 +41,21 @@ core:Assertion
 	rdfs:comment "An assertion is a statement declared to be true."@en ;
 	.
 
+core:AttributedName
+	a owl:Class ;
+	rdfs:subClassOf
+		core:UcoObject ,
+		[
+			a owl:Restriction ;
+			owl:onProperty core:namingAuthority ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "AttributedName"@en ;
+	rdfs:comment "An attributed name is a name of an entity issued by some attributed naming authority."@en ;
+	.
+
 core:Bundle
 	a owl:Class ;
 	rdfs:subClassOf core:EnclosingCompilation ;
@@ -348,6 +363,13 @@ core:name
 	a owl:DatatypeProperty ;
 	rdfs:label "name"@en ;
 	rdfs:comment "The name of a particular concept characterization."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:namingAuthority
+	a owl:DatatypeProperty ;
+	rdfs:label "namingAuthority"@en ;
+	rdfs:comment "Specifies the naming authority that issued the name of the entity."@en ;
 	rdfs:range xsd:string ;
 	.
 
