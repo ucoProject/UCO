@@ -31,28 +31,28 @@ core:Annotation
 		]
 		;
 	rdfs:label "Annotation"@en ;
-	rdfs:comment "An assertion made in relation to one or more objects."@en ;
+	rdfs:comment "An annotation is an assertion made in relation to one or more objects."@en ;
 	.
 
 core:Assertion
 	a owl:Class ;
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Assertion"@en ;
-	rdfs:comment "A statement asserted to be true."@en ;
+	rdfs:comment "An assertion is a statement declared to be true."@en ;
 	.
 
 core:Bundle
 	a owl:Class ;
 	rdfs:subClassOf core:EnclosingCompilation ;
 	rdfs:label "Bundle"@en ;
-	rdfs:comment "A contained compilation of UCO content with no presumption of shared context."@en ;
+	rdfs:comment "A bundle is a container for a grouping of UCO content with no presumption of shared context."@en ;
 	.
 
 core:Compilation
 	a owl:Class ;
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Compilation"@en ;
-	rdfs:comment "A grouping of things."@en ;
+	rdfs:comment "A compilation is a grouping of things."@en ;
 	.
 
 core:ConfidenceFacet
@@ -67,7 +67,7 @@ core:ConfidenceFacet
 		]
 		;
 	rdfs:label "ConfidenceFacet"@en ;
-	rdfs:comment "An asserted level of certainty in the accuracy of some information."@en ;
+	rdfs:comment "A confidence is a grouping of characteristics unique to an asserted level of certainty in the accuracy of some information."@en ;
 	.
 
 core:ContextualCompilation
@@ -82,7 +82,7 @@ core:ContextualCompilation
 		]
 		;
 	rdfs:label "ContextualCompilation"@en ;
-	rdfs:comment "A grouping of things sharing some context."@en ;
+	rdfs:comment "A contextual compilation is a grouping of things sharing some context (e.g., a set of network connections observed on a given day, all accounts associated with a given person)."@en ;
 	.
 
 core:ControlledVocabulary
@@ -109,7 +109,7 @@ core:ControlledVocabulary
 		]
 		;
 	rdfs:label "ControlledVocabulary"@en ;
-	rdfs:comment "A string value from an explicitly constrained set of string values."@en ;
+	rdfs:comment "A controlled vocabulary is an explicitly constrained set of string values."@en ;
 	.
 
 core:EnclosingCompilation
@@ -130,41 +130,41 @@ core:EnclosingCompilation
 		]
 		;
 	rdfs:label "EnclosingCompilation"@en ;
-	rdfs:comment "A container for one or more objects."@en ;
+	rdfs:comment "An enclosing compilation is a container for a grouping of things."@en ;
 	.
 
 core:ExternalReferenceFacet
 	a owl:Class ;
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "ExternalReferenceFacet"@en ;
-	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
+	rdfs:comment "An external reference is a grouping of characteristics unique to the identity, location and context of a resource outside of the scope of UCO content."@en ;
 	.
 
 core:Facet
 	a owl:Class ;
 	rdfs:label "Facet"@en ;
-	rdfs:comment "A grouping of properties characterizing a particular aspect/facet of an object."@en ;
+	rdfs:comment "A facet is a grouping of characteristics unique to a particular aspect of an object."@en ;
 	.
 
 core:Grouping
 	a owl:Class ;
 	rdfs:subClassOf core:ContextualCompilation ;
 	rdfs:label "Grouping"@en ;
-	rdfs:comment "A compilation of referenced UCO content with a shared context."@en ;
+	rdfs:comment "A grouping is a compilation of referenced UCO content with a shared context."@en ;
 	.
 
 core:Item
 	a owl:Class ;
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Item"@en ;
-	rdfs:comment "A distinct article or unit."@en ;
+	rdfs:comment "An item is a distinct article or unit."@en ;
 	.
 
 core:ModusOperandi
 	a owl:Class ;
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "ModusOperandi"@en ;
-	rdfs:comment "A particular method of operation (how a particular entity behaves or the resources they use)."@en ;
+	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	.
 
 core:Relationship
@@ -197,7 +197,7 @@ core:Relationship
 		]
 		;
 	rdfs:label "Relationship"@en ;
-	rdfs:comment "An assertion that one or more objects are related to another object in some way."@en ;
+	rdfs:comment "A relationship is a grouping of characteristics unique to an assertion that one or more objects are related to another object in some way."@en ;
 	.
 
 core:UcoObject
@@ -235,7 +235,7 @@ core:UcoObject
 		]
 		;
 	rdfs:label "UcoObject"@en ;
-	rdfs:comment "A cyber-relevant concept. This is the base object defining the minimal core set of properties to act as a consistent, unifying and interoperable foundation for all explicit and interrelateable content objects within the Unified Cyber Ontology (uco)."@en ;
+	rdfs:comment "A UCO object is a representation of a fundamental concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is the base class acting as a consistent, unifying and interoperable foundation for all explicit and inter-relatable content objects."@en ;
 	.
 
 core:confidence

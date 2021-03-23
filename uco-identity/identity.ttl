@@ -30,14 +30,14 @@ identity:AddressFacet
 		]
 		;
 	rdfs:label "AddressFacet"@en ;
-	rdfs:comment "The location address of an identity."@en ;
+	rdfs:comment "An address facet is a grouping of characteristics unique to an administrative identifier for a geolocation associated with a specific identity."@en ;
 	.
 
 identity:AffiliationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "AffiliationFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "An affiliation is a grouping of characteristics unique to the established affiliations of an entity."@en ;
 	.
 
 identity:BirthInformationFacet
@@ -52,105 +52,105 @@ identity:BirthInformationFacet
 		]
 		;
 	rdfs:label "BirthInformationFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Birth information is a grouping of characteristics unique to information pertaining to the birth of an entity."@en ;
 	.
 
 identity:CountriesOfResidenceFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "CountriesOfResidenceFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Countries of residence is a grouping of characteristics unique to information related to the country, or countries, where an entity resides."@en ;
 	.
 
 identity:EventsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "EventsFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Events is a grouping of characteristics unique to information related to specific relevant things that happen in the lifetime of an entity."@en ;
 	.
 
 identity:IdentifierFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "IdentifierFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Identifier is a grouping of characteristics unique to information that uniquely and specifically identities an entity."@en ;
 	.
 
 identity:Identity
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	rdfs:label "Identity"@en ;
-	rdfs:comment "Characterization of the identifying properties of an individual or organization."@en ;
+	rdfs:comment "An identity is a grouping of identifying characteristics unique to an individual or organization."@en ;
 	.
 
 identity:IdentityFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	rdfs:label "IdentityFacet"@en ;
-	rdfs:comment "Characteristic properties of a particular aspect of an identity."@en ;
+	rdfs:comment "An identity facet is a grouping of characteristics unique to a particular aspect of an identity."@en ;
 	.
 
 identity:LanguagesFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "LanguagesFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Languages is a grouping of characteristics unique to specific syntactically and grammatically standardized forms of communication (human or computer) in which an entity has proficiency (comprehends, speaks, reads, or writes)."@en ;
 	.
 
 identity:NationalityFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "NationalityFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Nationality is a grouping of characteristics unique to the condition of an entity belonging to a particular nation."@en ;
 	.
 
 identity:OccupationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "OccupationFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Occupation is a grouping of characteristics unique to the job or profession of an entity."@en ;
 	.
 
 identity:Organization
 	a owl:Class ;
 	rdfs:subClassOf identity:Identity ;
 	rdfs:label "Organization"@en ;
-	rdfs:comment "Characterization of the identifying properties of an organization."@en ;
+	rdfs:comment "An organization is a grouping of identifying characteristics unique to a group of people who work together in an organized way for a shared purpose. [based on https://dictionary.cambridge.org/us/dictionary/english/organization]"@en ;
 	.
 
 identity:OrganizationDetailsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "OrganizationDetailsFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Organization details is a grouping of characteristics unique to an identity representing an administrative and functional structure."@en ;
 	.
 
 identity:Person
 	a owl:Class ;
 	rdfs:subClassOf identity:Identity ;
 	rdfs:label "Person"@en ;
-	rdfs:comment "Characterization of the identifying properties of an individual person."@en ;
+	rdfs:comment "A person is a grouping of identifying characteristics unique to a human being regarded as an individual. [based on https://www.lexico.com/en/definition/person]"@en ;
 	.
 
 identity:PersonalDetailsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "PersonalDetailsFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Personal details is a grouping of characteristics unique to an identity representing an individual person."@en ;
 	.
 
 identity:PhysicalInfoFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "PhysicalInfoFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Physical info is a grouping of characteristics unique to the outwardly observable nature of an individual person."@en ;
 	.
 
 identity:QualificationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "QualificationFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Qualification is a grouping of characteristics unique to particular skills, capabilities or their related achievements (educational, professional, etc.) of an entity."@en ;
 	.
 
 identity:RelatedIdentityFacet
@@ -164,14 +164,14 @@ identity:SimpleNameFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "SimpleNameFacet"@en ;
-	rdfs:comment "Very simple name properties of an identity."@en ;
+	rdfs:comment "A simple name facet is a grouping of characteristics unique to the personal name (e.g., Dr. John Smith Jr.) held by an identity."@en ;
 	.
 
 identity:VisaFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
 	rdfs:label "VisaFacet"@en ;
-	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	rdfs:comment "Visa is a grouping of characteristics unique to information related to a person's ability to enter, leave, or stay for a specified period of time in a country."@en ;
 	.
 
 identity:address

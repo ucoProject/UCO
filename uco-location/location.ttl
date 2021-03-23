@@ -44,7 +44,7 @@ location:GPSCoordinatesFacet
 		]
 		;
 	rdfs:label "GPSCoordinatesFacet"@en ;
-	rdfs:comment "A GPS location, a possibly timed global position."@en ;
+	rdfs:comment "A GPS coordinates facet is a grouping of characteristics unique to the expression of quantified dilution of precision (DOP) for an asserted set of geolocation coordinates typically associated with satellite navigation such as the Global Positioning System (GPS)."@en ;
 	.
 
 location:LatLongCoordinatesFacet
@@ -71,14 +71,14 @@ location:LatLongCoordinatesFacet
 		]
 		;
 	rdfs:label "LatLongCoordinatesFacet"@en ;
-	rdfs:comment "A geolocation expressed as latitude and longitude."@en ;
+	rdfs:comment "A lat long coordinates facet is a grouping of characteristics unique to the expression of a geolocation as the intersection of specific latitude, longitude, and altitude values."@en ;
 	.
 
 location:Location
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
 	rdfs:label "Location"@en ;
-	rdfs:comment "A geophysical place, site or position."@en ;
+	rdfs:comment "A location is a geospatial place, site, or position."@en ;
 	.
 
 location:SimpleAddressFacet
@@ -123,7 +123,7 @@ location:SimpleAddressFacet
 		]
 		;
 	rdfs:label "SimpleAddressFacet"@en ;
-	rdfs:comment "A geolocation expressed as a simple administrative address."@en ;
+	rdfs:comment "A simple address facet is a grouping of characteristics unique to a geolocation expressed as an administrative address."@en ;
 	.
 
 location:addressType

@@ -22,13 +22,13 @@ victim:Victim
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#NeutralRole> ;
 	rdfs:label "Victim"@en ;
-	rdfs:comment "Person or organization that is the target of some malicious action."@en ;
+	rdfs:comment "A victim is a role played by a person or organization that is/was the target of some malicious action."@en ;
 	.
 
 victim:VictimTargeting
 	a owl:Class ;
 	rdfs:subClassOf victim:Victim ;
 	rdfs:label "VictimTargeting"@en ;
-	rdfs:comment "Characteristics of people or organizations that are the target of some malicious activity."@en ;
+	rdfs:comment "A victim targeting is a grouping of characteristics unique to people or organizations that are the target of some malicious activity."@en ;
 	.
 
