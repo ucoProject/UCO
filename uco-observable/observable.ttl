@@ -3483,6 +3483,75 @@ observable:Profile
 	rdfs:comment "A profile is an explicit digital representation of identity and characteristics of the owner of a single user account associated with an online service or application. [based on https://en.wikipedia.org/wiki/User_profile]"@en ;
 	.
 
+observable:ProfileFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactAddress ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactEmail ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactMessaging ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactPhone ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:contactURL ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:displayName ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileAccount ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileCreated ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileIdentity ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileService ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileLanguage ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "ProfileFacet"@en-US ;
+	rdfs:comment "A profile facet is a grouping of characteristics unique to an explicit digital representation of identity and characteristics of the owner of a single user account associated with an online service or application. [based on https://en.wikipedia.org/wiki/User_profile]"@en-US ;
+	.
+
 observable:PropertiesEnumeratedEffectFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -4080,6 +4149,95 @@ observable:UNIXAccount
 	rdfs:subClassOf observable:DigitalAccount ;
 	rdfs:label "UNIXAccount"@en ;
 	rdfs:comment "A UNIX account is an account on a UNIX operating system."@en ;
+	.
+
+observable:TwitterProfileFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:twitterId ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:favoritesCount ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:followersCount ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:friendsCount ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:listedCount ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileBackgroundLocation ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileBannerLocation ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileImageLocation ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileIsProtected ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileIsVerified ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:statusesCount ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:twitterHandle ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:userLocationString ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileBackgroundHash ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileBannerHash ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:profileImageHash ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "TwitterProfileFacet" ;
+	rdfs:comment "A twitter profile facet is a grouping of characteristics unique to an explicit digital representation of identity and characteristics of the owner of a single Twitter user account. [based on https://en.wikipedia.org/wiki/User_profile]" ;
 	.
 
 observable:UNIXAccountFacet
@@ -6930,6 +7088,13 @@ observable:extension
 	rdfs:range xsd:string ;
 	.
 
+observable:favoritesCount
+	a owl:DatatypeProperty ;
+	rdfs:label "Favorites Count"@en-US ;
+	rdfs:comment "Specifies the number of times that this profile has favorited a tweet."@en-US ;
+	rdfs:range xsd:nonNegativeInteger ;
+	.
+
 observable:faxNumber
 	a owl:ObjectProperty ;
 	rdfs:label "faxNumber"@en ;
@@ -7007,6 +7172,13 @@ observable:flags
 	rdfs:range vocabulary:TaskFlagVocab ;
 	.
 
+observable:followersCount
+	a owl:DatatypeProperty ;
+	rdfs:label "Followers Count"@en-US ;
+	rdfs:comment "Specifies the followers count associated with the twitter profile."@en-US ;
+	rdfs:range xsd:nonNegativeInteger ;
+	.
+
 observable:format
 	a owl:DatatypeProperty ;
 	rdfs:label "format"@en ;
@@ -7032,6 +7204,13 @@ observable:freeSpace
 	rdfs:label "freeSpace"@en ;
 	rdfs:comment "The amount of free space on the disk, in bytes."@en ;
 	rdfs:range xsd:integer ;
+	.
+
+observable:friendsCount
+	a owl:DatatypeProperty ;
+	rdfs:label "Friends Count"@en-US ;
+	rdfs:comment "Specifies the friends count associated with the twitter profile."@en-US ;
+	rdfs:range xsd:nonNegativeInteger ;
 	.
 
 observable:from
@@ -8262,6 +8441,104 @@ observable:processorArchitecture
 	rdfs:range xsd:string ;
 	.
 
+observable:profileAccount
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Account"@en-US ;
+	rdfs:comment "Specifies the online service account associated with the profile."@en-US ;
+	rdfs:range observable:ObservableObject ;
+	.
+
+observable:profileBackgroundHash
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Background Hash"@en-US ;
+	rdfs:comment "Specifies hashes of the background associated with the profile."@en-US ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	.
+
+observable:profileBackgroundLocation
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Background Location"@en-US ;
+	rdfs:comment "Specifies the network location of the background associated with the profile."@en-US ;
+	rdfs:range observable:ObservableObject ;
+	.
+
+observable:profileBannerHash
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Banner Hash"@en-US ;
+	rdfs:comment "Specifies hashes of the banner associated with the profile."@en-US ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	.
+
+observable:profileBannerLocation
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Banner Location"@en-US ;
+	rdfs:comment "Specifies the network location of the banner associated with the profile."@en-US ;
+	rdfs:range observable:ObservableObject ;
+	.
+
+observable:profileCreated
+	a owl:DatatypeProperty ;
+	rdfs:label "Profile Created"@en-US ;
+	rdfs:comment "Specifies the date and time the profile was created."@en-US ;
+	rdfs:range xsd:dateTime ;
+	.
+
+observable:profileIdentity
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Identity"@en-US ;
+	rdfs:comment "Specifies the identity associated with the profile."@en-US ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	.
+
+observable:profileImageHash
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Image Hash"@en-US ;
+	rdfs:comment "Specifies hashes of the profile image associated with the profile."@en-US ;
+	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	.
+
+observable:profileImageLocation
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Image Location"@en-US ;
+	rdfs:comment "Specifies the network location of the profile image associated with the profile."@en-US ;
+	rdfs:range observable:ObservableObject ;
+	.
+
+observable:profileIsProtected
+	a owl:DatatypeProperty ;
+	rdfs:label "Is_Protected"@en-US ;
+	rdfs:comment "Specifies whether the twitter profile is protected."@en-US ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:profileIsVerified
+	a owl:DatatypeProperty ;
+	rdfs:label "Is_Verified"@en-US ;
+	rdfs:comment "Specifies whether the twitter profile is verified."@en-US ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:profileService
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Service"@en-US ;
+	rdfs:comment "Specifies the online service associated with the profile."@en-US ;
+	rdfs:range observable:ObservableObject ;
+	.
+
+observable:profileWebsite
+	a owl:ObjectProperty ;
+	rdfs:label "Profile Website"@en-US ;
+	rdfs:comment "Specifies the website URL associated with the profile."@en-US ;
+	rdfs:range observable:ObservableObject ;
+	.
+
+observable:profilelanguage
+	a owl:DatatypeProperty ;
+	rdfs:label "Profile Language"@en-US ;
+	rdfs:comment "Specifies the language associated with the profile. When present, it MUST be a language code conformant to RFC 5646/BCP47."@en-US ;
+	rdfs:range xsd:string ;
+	.
+
 observable:properties
 	a owl:DatatypeProperty ;
 	rdfs:label "properties"@en ;
@@ -8846,6 +9123,13 @@ observable:status
 	rdfs:range vocabulary:WhoisStatusTypeVocab ;
 	.
 
+observable:statusesCount
+	a owl:DatatypeProperty ;
+	rdfs:label "Statuses Count"@en-US ;
+	rdfs:comment "Specifies the number of tweets that this profile has issued."@en-US ;
+	rdfs:range xsd:nonNegativeInteger ;
+	.
+
 observable:storageCapacityInBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "storageCapacityInBytes"@en ;
@@ -9100,6 +9384,20 @@ observable:triggerType
 	rdfs:range vocabulary:TriggerTypeVocab ;
 	.
 
+observable:twitterHandle
+	a owl:DatatypeProperty ;
+	rdfs:label "Twitter Handle"@en-US ;
+	rdfs:comment "Specifies the twitter handle associated with the profile."@en-US ;
+	rdfs:range xsd:string ;
+	.
+
+observable:twitterId
+	a owl:DatatypeProperty ;
+	rdfs:label "Twitter ID"@en-US ;
+	rdfs:comment "Specifies the twitter id associated with the profile."@en-US ;
+	rdfs:range xsd:string ;
+	.
+
 observable:updatedDate
 	a owl:DatatypeProperty ;
 	rdfs:label "updatedDate"@en ;
@@ -9134,6 +9432,12 @@ observable:urlTargeted
 	rdfs:comment "The target of the bookmark."@en ;
 	rdfs:range xsd:anyURI ;
 	.
+
+observable:userLocationString
+	a owl:DatatypeProperty ;
+	rdfs:label "User Location String"@en-US ;
+	rdfs:comment "Specifies the user-provided location string associated with the profile."@en-US ;
+	rdfs:range xsd:string ;
 
 observable:urlTransitionType
 	a owl:DatatypeProperty ;
