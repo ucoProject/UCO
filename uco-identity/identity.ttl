@@ -156,7 +156,7 @@ identity:QualificationFacet
 identity:RelatedIdentityFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Related IdentityFacet"@en ;
+	rdfs:label "RelatedIdentityFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
