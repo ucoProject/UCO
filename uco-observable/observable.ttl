@@ -3202,7 +3202,7 @@ observable:OperatingSystem
 	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	.
 
-observable:OnlineService
+observable:OnlineServiceFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology/ontology/uco/core#Facet> ,
@@ -3222,7 +3222,7 @@ observable:OnlineService
 			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Online Service"@en-US ;
+	rdfs:label "OnlineServiceFacet"@en-US ;
 	rdfs:comment "An online service facet is a grouping of characteristics unique to a particular provision mechanism of information access, distribution or manipulation over the Internet."@en-US ;
 	.
 
