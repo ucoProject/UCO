@@ -14,7 +14,7 @@
 	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ;
 	.
 
-location:GPSCoordinates
+location:GPSCoordinatesFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -43,11 +43,11 @@ location:GPSCoordinates
 			owl:onDataRange xsd:double ;
 		]
 		;
-	rdfs:label "GPSCoordinates"@en ;
+	rdfs:label "GPSCoordinatesFacet"@en ;
 	rdfs:comment "A GPS coordinates facet is a grouping of characteristics unique to the expression of quantified dilution of precision (DOP) for an asserted set of geolocation coordinates typically associated with satellite navigation such as the Global Positioning System (GPS)."@en ;
 	.
 
-location:LatLongCoordinates
+location:LatLongCoordinatesFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -70,7 +70,7 @@ location:LatLongCoordinates
 			owl:onDataRange xsd:decimal ;
 		]
 		;
-	rdfs:label "LatLongCoordinates"@en ;
+	rdfs:label "LatLongCoordinatesFacet"@en ;
 	rdfs:comment "A lat long coordinates facet is a grouping of characteristics unique to the expression of a geolocation as the intersection of specific latitude, longitude, and altitude values."@en ;
 	.
 
@@ -81,7 +81,7 @@ location:Location
 	rdfs:comment "A location is a geospatial place, site, or position."@en ;
 	.
 
-location:SimpleAddress
+location:SimpleAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -122,7 +122,7 @@ location:SimpleAddress
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "SimpleAddress"@en ;
+	rdfs:label "SimpleAddressFacet"@en ;
 	rdfs:comment "A simple address facet is a grouping of characteristics unique to a geolocation expressed as an administrative address."@en ;
 	.
 

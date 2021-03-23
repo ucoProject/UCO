@@ -11,7 +11,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -70,17 +70,17 @@ observable:AccountFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty observable:expirationTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:modifiedTime ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -220,13 +220,13 @@ observable:AudioFacet
 			a owl:Restriction ;
 			owl:onProperty observable:bitRate ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:duration ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -297,12 +297,12 @@ observable:BrowserBookmarkFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
+			owl:onProperty observable:modifiedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:modifiedTime ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -339,12 +339,12 @@ observable:BrowserCookieFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
+			owl:onProperty observable:expirationTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:expirationTime ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -388,11 +388,6 @@ observable:CalendarEntryFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty observable:endTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -404,6 +399,11 @@ observable:CalendarEntryFacet
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:modifiedTime ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -437,7 +437,7 @@ observable:CalendarEntryFacet
 			a owl:Restriction ;
 			owl:onProperty observable:duration ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -544,13 +544,13 @@ observable:ComputerSpecificationFacet
 			a owl:Restriction ;
 			owl:onProperty observable:availableRam ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:totalRam ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -717,7 +717,7 @@ observable:ContentDataFacet
 			a owl:Restriction ;
 			owl:onProperty observable:sizeInBytes ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -762,7 +762,7 @@ observable:DataRangeFacet
 			a owl:Restriction ;
 			owl:onProperty observable:rangeSize ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -895,13 +895,13 @@ observable:DiskFacet
 			a owl:Restriction ;
 			owl:onProperty observable:diskSize ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:freeSpace ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		]
 		;
 	rdfs:label "DiskFacet"@en ;
@@ -914,12 +914,12 @@ observable:DiskPartitionFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
+			owl:onProperty observable:diskPartitionType ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:diskPartitionType ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -932,31 +932,31 @@ observable:DiskPartitionFacet
 			a owl:Restriction ;
 			owl:onProperty observable:partitionLength ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:partitionOffset ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:spaceLeft ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:spaceUsed ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:totalSpace ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -994,7 +994,6 @@ observable:ESN
 	a owl:DatatypeProperty ;
 	rdfs:label "ESN"@en ;
 	rdfs:comment "Electronic Serial Number ."@en ;
-	rdfs:domain observable:MobileDeviceFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1239,7 +1238,7 @@ observable:EventFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1408,11 +1407,6 @@ observable:FileFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty observable:fileSystemType ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -1424,6 +1418,11 @@ observable:FileFacet
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:modifiedTime ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1497,12 +1496,12 @@ observable:GeoLocationEntryFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
+			owl:onProperty observable:location ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:location ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1522,7 +1521,7 @@ observable:GeoLocationLogFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -1635,7 +1634,6 @@ observable:ICCID
 	a owl:DatatypeProperty ;
 	rdfs:label "ICCID"@en ;
 	rdfs:comment "Integrated circuit card identifier (http://www.itu.int/)."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1696,7 +1694,6 @@ observable:IMEI
 	a owl:DatatypeProperty ;
 	rdfs:label "IMEI"@en ;
 	rdfs:comment "International Mobile Equipment Identity (IMEI)."@en ;
-	rdfs:domain observable:MobileDeviceFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1704,10 +1701,6 @@ observable:IMSI
 	a owl:DatatypeProperty ;
 	rdfs:label "IMSI"@en ;
 	rdfs:comment "An International Mobile Subscriber Identity (IMSI) is a unique identification associated with all GSM and UMTS network mobile phone users. It is stored as a 64-bit field in the SIM inside the phone and is sent by the phone to the network."@en ;
-	rdfs:domain
-		observable:MobileAccountFacet ,
-		observable:SIMCardFacet
-		;
 	rdfs:range xsd:string ;
 	.
 
@@ -1809,10 +1802,6 @@ observable:MSISDN
 	a owl:DatatypeProperty ;
 	rdfs:label "MSISDN"@en ;
 	rdfs:comment "Mobile Station International Subscriber Directory Number (MSISDN) is a number used to identify a mobile phone number internationally. MSISDN is defined by the E.164 numbering plan. This number includes a country code and a National Destination Code which identifies the subscriber's operator."@en ;
-	rdfs:domain
-		observable:MobileAccountFacet ,
-		observable:MobileDeviceFacet
-		;
 	rdfs:range xsd:string ;
 	.
 
@@ -1820,7 +1809,6 @@ observable:MSISDNType
 	a owl:DatatypeProperty ;
 	rdfs:label "MSISDNType"@en ;
 	rdfs:comment "???."@en ;
-	rdfs:domain observable:MobileAccountFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1837,7 +1825,7 @@ observable:MemoryFacet
 			a owl:Restriction ;
 			owl:onProperty observable:blockType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:MemoryBlockTypeVocab ;
+			owl:onDataRange vocabulary:MemoryBlockTypeVocab ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -2082,7 +2070,7 @@ observable:MobileDeviceFacet
 			a owl:Restriction ;
 			owl:onProperty observable:storageCapacityInBytes ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -2167,7 +2155,7 @@ observable:NTFSFileSystemFacet
 			a owl:Restriction ;
 			owl:onProperty observable:entryID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -2485,12 +2473,12 @@ observable:NoteFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
+			owl:onProperty observable:modifiedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:modifiedTime ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2656,7 +2644,6 @@ observable:PIN
 	a owl:DatatypeProperty ;
 	rdfs:label "PIN"@en ;
 	rdfs:comment "Personal Identification Number (PIN)."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -2664,7 +2651,6 @@ observable:PUK
 	a owl:DatatypeProperty ;
 	rdfs:label "PUK"@en ;
 	rdfs:comment "Personal Unlocking Key (PUK) to unlock the SIM card."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -2720,7 +2706,7 @@ observable:PhoneCallFacet
 			a owl:Restriction ;
 			owl:onProperty observable:duration ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -2745,17 +2731,17 @@ observable:ProcessFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty observable:environmentVariables ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:exitTime ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -2784,15 +2770,15 @@ observable:ProcessFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:pid ;
+			owl:onProperty observable:exitStatus ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:exitStatus ;
+			owl:onProperty observable:pid ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -2968,7 +2954,7 @@ observable:SIMCardFacet
 			a owl:Restriction ;
 			owl:onProperty observable:storageCapacityInBytes ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -3015,7 +3001,6 @@ observable:SIMForm
 	a owl:DatatypeProperty ;
 	rdfs:label "SIMForm"@en ;
 	rdfs:comment "The form of SIM card such as SIM, Micro SIM, Nano SIM."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -3023,7 +3008,6 @@ observable:SIMType
 	a owl:DatatypeProperty ;
 	rdfs:label "SIMType"@en ;
 	rdfs:comment "The type of SIM card such as SIM, USIM, UICC."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -3205,7 +3189,7 @@ observable:TaskActionType
 			a owl:Restriction ;
 			owl:onProperty observable:actionType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TaskActionTypeVocab ;
+			owl:onDataRange vocabulary:TaskActionTypeVocab ;
 		]
 		;
 	rdfs:label "TaskActionType"@en ;
@@ -3253,13 +3237,13 @@ observable:TriggerType
 			a owl:Restriction ;
 			owl:onProperty observable:triggerFrequency ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TriggerFrequencyVocab ;
+			owl:onDataRange vocabulary:TriggerFrequencyVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:triggerType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TriggerTypeVocab ;
+			owl:onDataRange vocabulary:TriggerTypeVocab ;
 		]
 		;
 	rdfs:label "TriggerType"@en ;
@@ -3342,7 +3326,7 @@ observable:URLFacet
 			a owl:Restriction ;
 			owl:onProperty observable:port ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -3479,7 +3463,7 @@ observable:VolumeFacet
 			a owl:Restriction ;
 			owl:onProperty observable:sectorSize ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -3562,19 +3546,19 @@ observable:WhoIsFacet
 			a owl:Restriction ;
 			owl:onProperty observable:regionalInternetRegistry ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:RegionalRegistryTypeVocab ;
+			owl:onDataRange vocabulary:RegionalRegistryTypeVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:dnssec ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WhoisDNSSECTypeVocab ;
+			owl:onDataRange vocabulary:WhoisDNSSECTypeVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:status ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WhoisStatusTypeVocab ;
+			owl:onDataRange vocabulary:WhoisStatusTypeVocab ;
 		]
 		;
 	rdfs:label "WhoIsFacet"@en ;
@@ -3628,7 +3612,7 @@ observable:WhoisContactType
 			a owl:Restriction ;
 			owl:onProperty observable:contactType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WhoisContactTypeVocab ;
+			owl:onDataRange vocabulary:WhoisContactTypeVocab ;
 		]
 		;
 	rdfs:label "WhoisContactType"@en ;
@@ -3918,7 +3902,7 @@ observable:WindowsPrefetchFacet
 			a owl:Restriction ;
 			owl:onProperty observable:timesExecuted ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -4195,17 +4179,17 @@ observable:WindowsTaskFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:createdTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty observable:mostRecentRunTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:nextRunTime ;
+			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -4236,13 +4220,13 @@ observable:WindowsTaskFacet
 			a owl:Restriction ;
 			owl:onProperty observable:exitCode ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:maxRunTime ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:long ;
+			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -4284,13 +4268,13 @@ observable:WindowsTaskFacet
 			a owl:Restriction ;
 			owl:onProperty observable:priority ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TaskPriorityVocab ;
+			owl:onDataRange vocabulary:TaskPriorityVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:status ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:TaskStatusVocab ;
+			owl:onDataRange vocabulary:TaskStatusVocab ;
 		]
 		;
 	rdfs:label "WindowsTaskFacet"@en ;
@@ -4348,13 +4332,13 @@ observable:WindowsVolumeFacet
 			a owl:Restriction ;
 			owl:onProperty observable:driveType ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WindowsDriveTypeVocab ;
+			owl:onDataRange vocabulary:WindowsDriveTypeVocab ;
 		] ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:windowsVolumeAttributes ;
 			owl:maxQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
-			owl:onDataRange vocab:WindowsVolumeAttributeVocab ;
+			owl:onDataRange vocabulary:WindowsVolumeAttributeVocab ;
 		]
 		;
 	rdfs:label "WindowsVolumeFacet"@en ;
@@ -4659,7 +4643,7 @@ observable:accountType
 	a owl:DatatypeProperty ;
 	rdfs:label "accountType"@en ;
 	rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
-	rdfs:range vocab:AccountTypeVocab ;
+	rdfs:range vocabulary:AccountTypeVocab ;
 	.
 
 observable:actionID
@@ -4680,7 +4664,7 @@ observable:actionType
 	a owl:DatatypeProperty ;
 	rdfs:label "actionType"@en ;
 	rdfs:comment "Specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
-	rdfs:range vocab:TaskActionTypeVocab ;
+	rdfs:range vocabulary:TaskActionTypeVocab ;
 	.
 
 observable:activeDirectoryGroups
@@ -4800,7 +4784,7 @@ observable:availableRam
 	a owl:DatatypeProperty ;
 	rdfs:label "availableRam"@en ;
 	rdfs:comment "Specifies the amount of physical memory available on the system, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:baseOfCode
@@ -4874,7 +4858,7 @@ observable:bitRate
 	a owl:DatatypeProperty ;
 	rdfs:label "bitRate"@en ;
 	rdfs:comment "The bitrate of the audio in bits per second."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:bitness
@@ -4894,7 +4878,7 @@ observable:blockType
 	a owl:DatatypeProperty ;
 	rdfs:label "blockType"@en ;
 	rdfs:comment "The blockType property specifies the block type of a particular memory object."@en ;
-	rdfs:range vocab:MemoryBlockTypeVocab ;
+	rdfs:range vocabulary:MemoryBlockTypeVocab ;
 	.
 
 observable:bluetoothDeviceName
@@ -4933,7 +4917,7 @@ observable:bookmarkPath
 observable:byteOrder
 	a owl:DatatypeProperty ;
 	rdfs:label "byteOrder"@en ;
-	rdfs:range xsd:string ;
+	rdfs:range vocab:EndiannessTypeVocab ;
 	.
 
 observable:byteStringValue
@@ -5017,7 +5001,7 @@ observable:checksum
 observable:clockSetting
 	a owl:DatatypeProperty ;
 	rdfs:label "clockSetting"@en ;
-	rdfs:comment "The generalizedTime value on the mobile device when it was processes."@en ;
+	rdfs:comment "The generalizedTime value on the mobile device when it was processed."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5107,7 +5091,7 @@ observable:contactType
 	a owl:DatatypeProperty ;
 	rdfs:label "contactType"@en ;
 	rdfs:comment "Specifies what type of contact this is."@en ;
-	rdfs:range vocab:WhoisContactTypeVocab ;
+	rdfs:range vocabulary:WhoisContactTypeVocab ;
 	.
 
 observable:contentDisposition
@@ -5177,10 +5161,10 @@ observable:cpuFamily
 	rdfs:range xsd:string ;
 	.
 
-observable:createdTime
+observable:observableCreatedTime
 	a owl:DatatypeProperty ;
-	rdfs:label "createdTime"@en ;
-	rdfs:comment "The date and time at which the Object was created."@en ;
+	rdfs:label "observableCreatedTime"@en ;
+	rdfs:comment "The date and time at which the observable object being characterized was created. This time pertains to an intrinsic characteristic of the observable object, and would be consistent across independent characterizations or observations of the observable object."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -5338,7 +5322,7 @@ observable:diskSize
 	a owl:DatatypeProperty ;
 	rdfs:label "diskSize"@en ;
 	rdfs:comment "The size of the disk, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:diskType
@@ -5365,7 +5349,7 @@ observable:dnssec
 	a owl:DatatypeProperty ;
 	rdfs:label "dnssec"@en ;
 	rdfs:comment "Specifies the DNSSEC property associated with a Whois entry. Acceptable values are: 'Signed' or 'Unsigned'."@en ;
-	rdfs:range vocab:WhoisDNSSECTypeVocab ;
+	rdfs:range vocabulary:WhoisDNSSECTypeVocab ;
 	.
 
 observable:documentInformationDictionary
@@ -5385,7 +5369,6 @@ observable:domainID
 	a owl:DatatypeProperty ;
 	rdfs:label "domainID"@en ;
 	rdfs:comment "Specifies the domain id for the domain associated with a Whois entry."@en ;
-	rdfs:domain observable:WhoIsFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5407,7 +5390,7 @@ observable:driveType
 	a owl:DatatypeProperty ;
 	rdfs:label "driveType"@en ;
 	rdfs:comment "Specifies the drive type of a windows volume."@en ;
-	rdfs:range vocab:WindowsDriveTypeVocab ;
+	rdfs:range vocabulary:WindowsDriveTypeVocab ;
 	.
 
 observable:dst
@@ -5439,7 +5422,7 @@ observable:duration
 	a owl:DatatypeProperty ;
 	rdfs:label "duration"@en ;
 	rdfs:comment "The duration of the phone call in seconds."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:effectiveGroup
@@ -5531,7 +5514,7 @@ observable:entryID
 	a owl:DatatypeProperty ;
 	rdfs:label "entryID"@en ;
 	rdfs:comment "A unique identifier for the file within the filesystem."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:environmentVariables
@@ -5607,14 +5590,14 @@ observable:exitCode
 	a owl:DatatypeProperty ;
 	rdfs:label "exitCode"@en ;
 	rdfs:comment "Specifies the last exit code of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381245(v=vs.85).aspx."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:exitStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "exitStatus"@en ;
 	rdfs:comment "A small number passed from the process to the parent process when it has finished executing. In general, 0 indicates successful termination, any other number indicates a failure."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:exitTime
@@ -5781,7 +5764,7 @@ observable:flags
 	a owl:DatatypeProperty ;
 	rdfs:label "flags"@en ;
 	rdfs:comment "Specifies any flags that modify the behavior of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.85).aspx."@en ;
-	rdfs:range vocab:TaskFlagVocab ;
+	rdfs:range vocabulary:TaskFlagVocab ;
 	.
 
 observable:format
@@ -5808,7 +5791,7 @@ observable:freeSpace
 	a owl:DatatypeProperty ;
 	rdfs:label "freeSpace"@en ;
 	rdfs:comment "The amount of free space on the disk, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:from
@@ -6408,7 +6391,7 @@ observable:maxRunTime
 	a owl:DatatypeProperty ;
 	rdfs:label "maxRunTime"@en ;
 	rdfs:comment "Specifies the maximum run time of the scheduled task before terminating, in milliseconds. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.85).aspx."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:message
@@ -6434,7 +6417,7 @@ observable:messageText
 observable:messageType
 	a owl:DatatypeProperty ;
 	rdfs:label "messageType"@en ;
-	rdfs:comment "The type of a message, for example incoming, draft or outgoing."@en ;
+	rdfs:comment "Message type specifies what sort of message (email, chat, SMS, etc) a Message is."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6720,6 +6703,13 @@ observable:objectGUID
 	rdfs:range xsd:string ;
 	.
 
+observable:observableCreatedTime
+	a owl:DatatypeProperty ;
+	rdfs:label "observableCreatedTime"@en ;
+	rdfs:comment "The date and time at which the observable object being characterized was created. This time pertains to an intrinsic characteristic of the observable object, and would be consistent across independent characterizations or observations of the observable object."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
 observable:oldObject
 	a owl:ObjectProperty ;
 	rdfs:label "oldObject"@en ;
@@ -6823,14 +6813,14 @@ observable:partitionLength
 	a owl:DatatypeProperty ;
 	rdfs:label "partitionLength"@en ;
 	rdfs:comment "Specifies the length of the partition, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:partitionOffset
 	a owl:DatatypeProperty ;
 	rdfs:label "partitionOffset"@en ;
 	rdfs:comment "Specifies the starting offset of the partition, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:password
@@ -6961,7 +6951,7 @@ observable:port
 	a owl:DatatypeProperty ;
 	rdfs:label "port"@en ;
 	rdfs:comment "Port on which communication takes place."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:prefetchHash
@@ -6994,7 +6984,6 @@ observable:processorArchitecture
 	a owl:DatatypeProperty ;
 	rdfs:label "processorArchitecture"@en ;
 	rdfs:comment "Specifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
-	rdfs:domain observable:ComputerSpecificationFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -7044,7 +7033,7 @@ observable:rangeSize
 	a owl:DatatypeProperty ;
 	rdfs:label "rangeSize"@en ;
 	rdfs:comment "The size of the data in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:receivedLines
@@ -7081,6 +7070,13 @@ observable:referralURL
 	rdfs:range observable:ObservableObject ;
 	.
 
+observable:regionEndAddress
+	a owl:DatatypeProperty ;
+	rdfs:label "regionEndAddress"@en ;
+	rdfs:comment "The regionEndAddress property specifies the ending address of the particular memory region."@en ;
+	rdfs:range xsd:hexBinary ;
+	.
+
 observable:regionSize
 	a owl:DatatypeProperty ;
 	rdfs:label "regionSize"@en ;
@@ -7096,18 +7092,11 @@ observable:regionStartAddress
 	rdfs:range xsd:hexBinary ;
 	.
 
-observable:region_end_address
-	a owl:DatatypeProperty ;
-	rdfs:label "region_End_Address"@en ;
-	rdfs:comment "The regionEndAddress property specifies the ending address of the particular memory region."@en ;
-	rdfs:range xsd:hexBinary ;
-	.
-
 observable:regionalInternetRegistry
 	a owl:DatatypeProperty ;
 	rdfs:label "regionalInternetRegistry"@en ;
 	rdfs:comment "specifies the name of the Regional Internet Registry (RIR) which allocated the IP address contained in a WHOIS entry."@en ;
-	rdfs:range vocab:RegionalRegistryTypeVocab ;
+	rdfs:range vocabulary:RegionalRegistryTypeVocab ;
 	.
 
 observable:registeredOrganization
@@ -7258,7 +7247,7 @@ observable:sectorSize
 	a owl:DatatypeProperty ;
 	rdfs:label "sectorSize"@en ;
 	rdfs:comment "The sector size of the volume in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:securityAttributes
@@ -7386,7 +7375,7 @@ observable:sizeInBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "sizeInBytes"@en ;
 	rdfs:comment "The size of the data in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:sizeOfCode
@@ -7478,14 +7467,14 @@ observable:spaceLeft
 	a owl:DatatypeProperty ;
 	rdfs:label "spaceLeft"@en ;
 	rdfs:comment "Specifies the amount of space left on the partition, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:spaceUsed
 	a owl:DatatypeProperty ;
 	rdfs:label "spaceUsed"@en ;
 	rdfs:comment "Specifies the amount of space used on the partition, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:sponsoringRegistrar
@@ -7573,14 +7562,14 @@ observable:status
 	a owl:DatatypeProperty ;
 	rdfs:label "status"@en ;
 	rdfs:comment "Specifies a list of statuses for a given Whois entry."@en ;
-	rdfs:range vocab:WhoisStatusTypeVocab ;
+	rdfs:range vocabulary:WhoisStatusTypeVocab ;
 	.
 
 observable:storageCapacityInBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "storageCapacityInBytes"@en ;
 	rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:stringValue
@@ -7730,7 +7719,7 @@ observable:timesExecuted
 	a owl:DatatypeProperty ;
 	rdfs:label "timesExecuted"@en ;
 	rdfs:comment "The number of times the prefetch application has executed."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:timezoneDST
@@ -7764,14 +7753,14 @@ observable:totalRam
 	a owl:DatatypeProperty ;
 	rdfs:label "totalRam"@en ;
 	rdfs:comment "Specifies the total amount of physical memory present on the system, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:totalSpace
 	a owl:DatatypeProperty ;
 	rdfs:label "totalSpace"@en ;
 	rdfs:comment "Specifies the total amount of space available on the partition, in bytes."@en ;
-	rdfs:range xsd:long ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:triggerBeginTime
@@ -7799,7 +7788,7 @@ observable:triggerFrequency
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerFrequency"@en ;
 	rdfs:comment "Specifies the frequency at which the trigger repeats."@en ;
-	rdfs:range vocab:TriggerFrequencyVocab ;
+	rdfs:range vocabulary:TriggerFrequencyVocab ;
 	.
 
 observable:triggerList
@@ -7827,7 +7816,7 @@ observable:triggerType
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerType"@en ;
 	rdfs:comment "Specifies the type of the task trigger."@en ;
-	rdfs:range vocab:TriggerTypeVocab ;
+	rdfs:range vocabulary:TriggerTypeVocab ;
 	.
 
 observable:updatedDate
@@ -7967,7 +7956,7 @@ observable:windowsVolumeAttributes
 	a owl:DatatypeProperty ;
 	rdfs:label "windowsVolumeAttributes"@en ;
 	rdfs:comment "Specifies the attributes of a windows volume."@en ;
-	rdfs:range vocab:WindowsVolumeAttributeVocab ;
+	rdfs:range vocabulary:WindowsVolumeAttributeVocab ;
 	.
 
 observable:workItemData

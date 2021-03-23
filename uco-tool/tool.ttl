@@ -21,7 +21,19 @@ tool:AnalyticTool
 	rdfs:comment "An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning."@en ;
 	.
 
-tool:Build
+tool:BuildConfigurationType
+	a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty tool:configurationSettingDescription ;
+		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		owl:onDataRange xsd:string ;
+	] ;
+	rdfs:label "BuildConfigurationType"@en ;
+	rdfs:comment "Describes how the build utility was configured for a particular build of a particular software."@en ;
+	.
+
+tool:BuildFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -32,7 +44,7 @@ tool:Build
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Build"@en ;
+	rdfs:label "BuildFacet"@en ;
 	rdfs:comment "A build facet is a grouping of characteristics unique to a particular version of a software."@en ;
 	.
 
@@ -278,10 +290,10 @@ tool:Tool
 	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
 	.
 
-tool:ToolConfigurationType
+tool:ToolConfigurationTypeFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "ToolConfigurationType"@en ;
+	rdfs:label "ToolConfigurationTypeFacet"@en ;
 	rdfs:comment "A tool configuration type facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
 	.
 

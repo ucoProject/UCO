@@ -18,7 +18,7 @@
 		;
 	.
 
-identity:Address
+identity:AddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		identity:IdentityFacet ,
@@ -29,18 +29,18 @@ identity:Address
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "Address"@en ;
+	rdfs:label "AddressFacet"@en ;
 	rdfs:comment "An address facet is a grouping of characteristics unique to an administrative identifier for a geolocation associated with a specific identity."@en ;
 	.
 
-identity:Affiliation
+identity:AffiliationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Affiliation"@en ;
+	rdfs:label "AffiliationFacet"@en ;
 	rdfs:comment "An affiliation is a grouping of characteristics unique to the established affiliations of an entity."@en ;
 	.
 
-identity:BirthInformation
+identity:BirthInformationFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		identity:IdentityFacet ,
@@ -51,28 +51,28 @@ identity:BirthInformation
 			owl:onDataRange xsd:dateTime ;
 		]
 		;
-	rdfs:label "BirthInformation"@en ;
+	rdfs:label "BirthInformationFacet"@en ;
 	rdfs:comment "Birth information is a grouping of characteristics unique to information pertaining to the birth of an entity."@en ;
 	.
 
-identity:CountriesOfResidence
+identity:CountriesOfResidenceFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "CountriesOfResidence"@en ;
+	rdfs:label "CountriesOfResidenceFacet"@en ;
 	rdfs:comment "Countries of residence is a grouping of characteristics unique to information related to the country, or countries, where an entity resides."@en ;
 	.
 
-identity:Events
+identity:EventsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Events"@en ;
+	rdfs:label "EventsFacet"@en ;
 	rdfs:comment "Events is a grouping of characteristics unique to information related to specific relevant things that happen in the lifetime of an entity."@en ;
 	.
 
-identity:Identifier
+identity:IdentifierFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Identifier"@en ;
+	rdfs:label "IdentifierFacet"@en ;
 	rdfs:comment "Identifier is a grouping of characteristics unique to information that uniquely and specifically identities an entity."@en ;
 	.
 
@@ -90,24 +90,24 @@ identity:IdentityFacet
 	rdfs:comment "An identity facet is a grouping of characteristics unique to a particular aspect of an identity."@en ;
 	.
 
-identity:Languages
+identity:LanguagesFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Languages"@en ;
+	rdfs:label "LanguagesFacet"@en ;
 	rdfs:comment "Languages is a grouping of characteristics unique to specific syntactically and grammatically standardized forms of communication (human or computer) in which an entity has proficiency (comprehends, speaks, reads, or writes)."@en ;
 	.
 
-identity:Nationality
+identity:NationalityFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Nationality"@en ;
+	rdfs:label "NationalityFacet"@en ;
 	rdfs:comment "Nationality is a grouping of characteristics unique to the condition of an entity belonging to a particular nation."@en ;
 	.
 
-identity:Occupation
+identity:OccupationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Occupation"@en ;
+	rdfs:label "OccupationFacet"@en ;
 	rdfs:comment "Occupation is a grouping of characteristics unique to the job or profession of an entity."@en ;
 	.
 
@@ -118,10 +118,10 @@ identity:Organization
 	rdfs:comment "An organization is a grouping of identifying characteristics unique to a group of people who work together in an organized way for a shared purpose. [based on https://dictionary.cambridge.org/us/dictionary/english/organization]"@en ;
 	.
 
-identity:OrganizationDetails
+identity:OrganizationDetailsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "OrganizationDetails"@en ;
+	rdfs:label "OrganizationDetailsFacet"@en ;
 	rdfs:comment "Organization details is a grouping of characteristics unique to an identity representing an administrative and functional structure."@en ;
 	.
 
@@ -132,45 +132,45 @@ identity:Person
 	rdfs:comment "A person is a grouping of identifying characteristics unique to a human being regarded as an individual. [based on https://www.lexico.com/en/definition/person]"@en ;
 	.
 
-identity:PersonalDetails
+identity:PersonalDetailsFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "PersonalDetails"@en ;
+	rdfs:label "PersonalDetailsFacet"@en ;
 	rdfs:comment "Personal details is a grouping of characteristics unique to an identity representing an individual person."@en ;
 	.
 
-identity:PhysicalInfo
+identity:PhysicalInfoFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "PhysicalInfo"@en ;
+	rdfs:label "PhysicalInfoFacet"@en ;
 	rdfs:comment "Physical info is a grouping of characteristics unique to the outwardly observable nature of an individual person."@en ;
 	.
 
-identity:Qualification
+identity:QualificationFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Qualification"@en ;
+	rdfs:label "QualificationFacet"@en ;
 	rdfs:comment "Qualification is a grouping of characteristics unique to particular skills, capabilities or their related achievements (educational, professional, etc.) of an entity."@en ;
 	.
 
-identity:RelatedIdentity
+identity:RelatedIdentityFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Related Identity"@en ;
+	rdfs:label "RelatedIdentityFacet"@en ;
 	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
 	.
 
-identity:SimpleName
+identity:SimpleNameFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "SimpleName"@en ;
+	rdfs:label "SimpleNameFacet"@en ;
 	rdfs:comment "A simple name facet is a grouping of characteristics unique to the personal name (e.g., Dr. John Smith Jr.) held by an identity."@en ;
 	.
 
-identity:Visa
+identity:VisaFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "Visa"@en ;
+	rdfs:label "VisaFacet"@en ;
 	rdfs:comment "Visa is a grouping of characteristics unique to information related to a person's ability to enter, leave, or stay for a specified period of time in a country."@en ;
 	.
 
