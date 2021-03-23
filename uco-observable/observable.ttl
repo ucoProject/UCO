@@ -989,7 +989,6 @@ observable:ESN
 	a owl:DatatypeProperty ;
 	rdfs:label "ESN"@en ;
 	rdfs:comment "Electronic Serial Number ."@en ;
-	rdfs:domain observable:MobileDeviceFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1630,7 +1629,6 @@ observable:ICCID
 	a owl:DatatypeProperty ;
 	rdfs:label "ICCID"@en ;
 	rdfs:comment "Integrated circuit card identifier (http://www.itu.int/)."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1691,7 +1689,6 @@ observable:IMEI
 	a owl:DatatypeProperty ;
 	rdfs:label "IMEI"@en ;
 	rdfs:comment "International Mobile Equipment Identity (IMEI)."@en ;
-	rdfs:domain observable:MobileDeviceFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1699,10 +1696,6 @@ observable:IMSI
 	a owl:DatatypeProperty ;
 	rdfs:label "IMSI"@en ;
 	rdfs:comment "An International Mobile Subscriber Identity (IMSI) is a unique identification associated with all GSM and UMTS network mobile phone users. It is stored as a 64-bit field in the SIM inside the phone and is sent by the phone to the network."@en ;
-	rdfs:domain
-		observable:MobileAccountFacet ,
-		observable:SIMCardFacet
-		;
 	rdfs:range xsd:string ;
 	.
 
@@ -1807,10 +1800,6 @@ observable:MSISDN
 	a owl:DatatypeProperty ;
 	rdfs:label "MSISDN"@en ;
 	rdfs:comment "Mobile Station International Subscriber Directory Number (MSISDN) is a number used to identify a mobile phone number internationally. MSISDN is defined by the E.164 numbering plan. This number includes a country code and a National Destination Code which identifies the subscriber's operator."@en ;
-	rdfs:domain
-		observable:MobileAccountFacet ,
-		observable:MobileDeviceFacet
-		;
 	rdfs:range xsd:string ;
 	.
 
@@ -1818,7 +1807,6 @@ observable:MSISDNType
 	a owl:DatatypeProperty ;
 	rdfs:label "MSISDNType"@en ;
 	rdfs:comment "???."@en ;
-	rdfs:domain observable:MobileAccountFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -2652,7 +2640,6 @@ observable:PIN
 	a owl:DatatypeProperty ;
 	rdfs:label "PIN"@en ;
 	rdfs:comment "Personal Identification Number (PIN)."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -2660,7 +2647,6 @@ observable:PUK
 	a owl:DatatypeProperty ;
 	rdfs:label "PUK"@en ;
 	rdfs:comment "Personal Unlocking Key (PUK) to unlock the SIM card."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -3010,7 +2996,6 @@ observable:SIMForm
 	a owl:DatatypeProperty ;
 	rdfs:label "SIMForm"@en ;
 	rdfs:comment "The form of SIM card such as SIM, Micro SIM, Nano SIM."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -3018,7 +3003,6 @@ observable:SIMType
 	a owl:DatatypeProperty ;
 	rdfs:label "SIMType"@en ;
 	rdfs:comment "The type of SIM card such as SIM, USIM, UICC."@en ;
-	rdfs:domain observable:SIMCardFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -5375,7 +5359,6 @@ observable:domainID
 	a owl:DatatypeProperty ;
 	rdfs:label "domainID"@en ;
 	rdfs:comment "Specifies the domain id for the domain associated with a Whois entry."@en ;
-	rdfs:domain observable:WhoIsFacet ;
 	rdfs:range xsd:string ;
 	.
 
@@ -6984,7 +6967,6 @@ observable:processorArchitecture
 	a owl:DatatypeProperty ;
 	rdfs:label "processorArchitecture"@en ;
 	rdfs:comment "Specifies the specific architecture (e.g. x86) used by the CPU of the system."@en ;
-	rdfs:domain observable:ComputerSpecificationFacet ;
 	rdfs:range xsd:string ;
 	.
 
