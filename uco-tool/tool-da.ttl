@@ -21,7 +21,7 @@ tool:buildID
 	.
 
 tool:buildInformation
-	rdfs:domain tool:Build ;
+	rdfs:domain tool:BuildFacet ;
 	.
 
 tool:buildLabel
@@ -81,7 +81,7 @@ tool:creator
 	.
 
 tool:dependencies
-	rdfs:domain tool:ToolConfigurationType ;
+	rdfs:domain tool:ToolConfigurationTypeFacet ;
 	.
 
 tool:dependencyDescription
@@ -137,7 +137,7 @@ tool:toolType
 	.
 
 tool:usageContextAssumptions
-	rdfs:domain tool:ToolConfigurationType ;
+	rdfs:domain tool:ToolConfigurationTypeFacet ;
 	.
 
 tool:version

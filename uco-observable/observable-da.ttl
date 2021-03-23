@@ -14,6 +14,52 @@
 	rdfs:label "observable domain assertions"@en ;
 	.
 
+observable:ESN
+	rdfs:domain observable:MobileDeviceFacet ;
+	.
+
+observable:ICCID
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
+observable:IMEI
+	rdfs:domain observable:MobileDeviceFacet ;
+	.
+
+observable:IMSI
+	rdfs:domain
+		observable:MobileAccountFacet ,
+		observable:SIMCardFacet
+		;
+	.
+
+observable:MSISDN
+	rdfs:domain
+		observable:MobileAccountFacet ,
+		observable:MobileDeviceFacet
+		;
+	.
+
+observable:MSISDNType
+	rdfs:domain observable:MobileAccountFacet ;
+	.
+
+observable:PIN
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
+observable:PUK
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
+observable:SIMForm
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
+observable:SIMType
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
 observable:abbreviation
 	rdfs:domain observable:GlobalFlagType ;
 	.
@@ -361,10 +407,6 @@ observable:cpu
 
 observable:cpuFamily
 	rdfs:domain observable:ComputerSpecificationFacet ;
-	.
-
-observable:createdTime
-	rdfs:domain observable:FileFacet ;
 	.
 
 observable:creationDate
@@ -1276,6 +1318,10 @@ observable:numberOfSymbols
 
 observable:objectGUID
 	rdfs:domain observable:WindowsActiveDirectoryAccountFacet ;
+	.
+
+observable:observableCreatedTime
+	rdfs:domain observable:FileFacet ;
 	.
 
 observable:oldObject
