@@ -13,26 +13,26 @@
 	.
 
 identity:address
-	rdfs:domain identity:Address ;
+	rdfs:domain identity:AddressFacet ;
 	.
 
 identity:birthdate
-	rdfs:domain identity:BirthInformation ;
+	rdfs:domain identity:BirthInformationFacet ;
 	.
 
 identity:familyName
-	rdfs:domain identity:SimpleName ;
+	rdfs:domain identity:SimpleNameFacet ;
 	.
 
 identity:givenName
-	rdfs:domain identity:SimpleName ;
+	rdfs:domain identity:SimpleNameFacet ;
 	.
 
 identity:honorificPrefix
-	rdfs:domain identity:SimpleName ;
+	rdfs:domain identity:SimpleNameFacet ;
 	.
 
 identity:honorificSuffix
-	rdfs:domain identity:SimpleName ;
+	rdfs:domain identity:SimpleNameFacet ;
 	.
 
