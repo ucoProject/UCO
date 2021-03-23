@@ -7071,6 +7071,13 @@ observable:referralURL
 	rdfs:range observable:ObservableObject ;
 	.
 
+observable:regionEndAddress
+	a owl:DatatypeProperty ;
+	rdfs:label "regionEndAddress"@en ;
+	rdfs:comment "The regionEndAddress property specifies the ending address of the particular memory region."@en ;
+	rdfs:range xsd:hexBinary ;
+	.
+
 observable:regionSize
 	a owl:DatatypeProperty ;
 	rdfs:label "regionSize"@en ;
@@ -7083,13 +7090,6 @@ observable:regionStartAddress
 	rdfs:label "regionStartAddress"@en ;
 	rdfs:comment """The regionStartAddress property specifies the starting address of the particular memory region.
           """@en ;
-	rdfs:range xsd:hexBinary ;
-	.
-
-observable:region_end_address
-	a owl:DatatypeProperty ;
-	rdfs:label "region_End_Address"@en ;
-	rdfs:comment "The regionEndAddress property specifies the ending address of the particular memory region."@en ;
 	rdfs:range xsd:hexBinary ;
 	.
 
