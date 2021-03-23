@@ -463,6 +463,73 @@ vocabulary:CharacterEncodingVocab
 	) ;
 	.
 
+vocabulary:ContactAddressScopeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Contact Address Scope Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of scopes for address entries of digital contacts."@en ;
+	owl:oneOf (
+		"home"^^vocabulary:ContactAddressScopeVocab
+		"work"^^vocabulary:ContactAddressScopeVocab
+		"school"^^vocabulary:ContactAddressScopeVocab
+	) ;
+	.
+
+vocabulary:ContactEmailScopeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Contact Email Scope Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of scopes for email entries of digital contacts."@en ;
+	owl:oneOf (
+		"home"^^vocabulary:ContactAddressScopeVocab
+		"work"^^vocabulary:ContactAddressScopeVocab
+		"school"^^vocabulary:ContactAddressScopeVocab
+		"cloud"^^vocabulary:ContactAddressScopeVocab
+	) ;
+	.
+
+vocabulary:ContactPhoneScopeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Contact Phone Scope Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of scopes for phone entries of digital contacts."@en ;
+	owl:oneOf (
+		"home"^^vocabulary:ContactAddressScopeVocab
+		"work"^^vocabulary:ContactAddressScopeVocab
+		"school"^^vocabulary:ContactAddressScopeVocab
+		"mobile"^^vocabulary:ContactAddressScopeVocab
+		"main"^^vocabulary:ContactAddressScopeVocab
+		"home fax"^^vocabulary:ContactAddressScopeVocab
+		"work fax"^^vocabulary:ContactAddressScopeVocab
+		"pager"^^vocabulary:ContactAddressScopeVocab
+	) ;
+	.
+
+vocabulary:ContactSIPScopeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Contact SIP Scope Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of scopes for Session Initiation Protocol (SIP) entries of digital contacts."@en ;
+	owl:oneOf (
+		"home"^^vocabulary:ContactAddressScopeVocab
+		"work"^^vocabulary:ContactAddressScopeVocab
+		"school"^^vocabulary:ContactAddressScopeVocab
+	) ;
+	.
+
+vocabulary:ContactURLScopeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Contact URL Scope Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of scopes for URL entries of digital contacts."@en ;
+	owl:oneOf (
+		"home"^^vocabulary:ContactAddressScopeVocab
+		"work"^^vocabulary:ContactAddressScopeVocab
+		"school"^^vocabulary:ContactAddressScopeVocab
+		"homepage"^^vocabulary:ContactAddressScopeVocab
+	) ;
+	.
+
 vocabulary:DiskTypeVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;

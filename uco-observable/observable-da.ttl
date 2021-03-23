@@ -124,10 +124,6 @@ observable:adapterName
 	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
-observable:address
-	rdfs:domain observable:WhoisContactType ;
-	.
-
 observable:addressOfEntryPoint
 	rdfs:domain observable:WindowsPEOptionalHeader ;
 	.
@@ -349,24 +345,8 @@ observable:computerName
 	rdfs:domain observable:EventFacet ;
 	.
 
-observable:contactID
-	rdfs:domain observable:WhoisContactType ;
-	.
-
 observable:contactInfo
 	rdfs:domain observable:WhoIsFacet ;
-	.
-
-observable:contactName
-	rdfs:domain observable:WhoisContactType ;
-	.
-
-observable:contactOrganization
-	rdfs:domain observable:WhoisContactType ;
-	.
-
-observable:contactType
-	rdfs:domain observable:WhoisContactType ;
 	.
 
 observable:contentDisposition
@@ -577,10 +557,6 @@ observable:effectiveUser
 	rdfs:domain observable:UserSessionFacet ;
 	.
 
-observable:emailAddress
-	rdfs:domain observable:WhoisContactType ;
-	.
-
 observable:encoding
 	rdfs:domain observable:ExtractedString ;
 	.
@@ -723,10 +699,6 @@ observable:extendedKeyUsage
 
 observable:extension
 	rdfs:domain observable:FileFacet ;
-	.
-
-observable:faxNumber
-	rdfs:domain observable:WhoisContactType ;
 	.
 
 observable:fileAlignment
@@ -1422,20 +1394,12 @@ observable:peType
 	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
-observable:phone
-	rdfs:domain observable:WhoisContactType ;
-	.
-
 observable:phoneActivationTime
 	rdfs:domain observable:MobileDeviceFacet ;
 	.
 
 observable:phoneNumber
 	rdfs:domain observable:PhoneAccountFacet ;
-	.
-
-observable:phoneNumbers
-	rdfs:domain observable:ContactFacet ;
 	.
 
 observable:pictureHeight
@@ -1626,7 +1590,7 @@ observable:scheme
 	rdfs:domain observable:URLFacet ;
 	.
 
-observable:screenName
+observable:displayName
 	rdfs:domain observable:ContactFacet ;
 	.
 
