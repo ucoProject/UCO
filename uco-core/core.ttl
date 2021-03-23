@@ -41,20 +41,20 @@ core:Assertion
 	rdfs:comment "A statement asserted to be true."@en ;
 	.
 
-	core:AttributedName
-		a owl:Class ;
-		rdfs:subClassOf
-			core:UcoObject ,
-			[
-				a owl:Restriction ;
-				owl:onProperty core:namingAuthority ;
-				owl:onDataRange xsd:string ;
-				owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			]
-			;
-		rdfs:label "AttributedName"@en ;
-		rdfs:comment "An attributed name is a name of an entity issued by some attributed naming authority."@en ;
-		.
+core:AttributedName
+	a owl:Class ;
+	rdfs:subClassOf
+		core:UcoObject ,
+		[
+			a owl:Restriction ;
+			owl:onProperty core:namingAuthority ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		]
+		;
+	rdfs:label "AttributedName"@en ;
+	rdfs:comment "An attributed name is a name of an entity issued by some attributed naming authority."@en ;
+	.
 
 core:Bundle
 	a owl:Class ;
@@ -373,12 +373,12 @@ core:name
 	rdfs:range xsd:string ;
 	.
 
-	core:namingAuthority
-		a owl:DatatypeProperty ;
-		rdfs:label "namingAuthority"@en ;
-		rdfs:comment "Specifies the naming authority that issued the name of the entity."@en ;
-		rdfs:range xsd:string ;
-		.
+core:namingAuthority
+	a owl:DatatypeProperty ;
+	rdfs:label "namingAuthority"@en ;
+	rdfs:comment "Specifies the naming authority that issued the name of the entity."@en ;
+	rdfs:range xsd:string ;
+	.
 
 core:object
 	a owl:ObjectProperty ;
@@ -474,3 +474,4 @@ core:value
 <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
 	a owl:Class ;
 	.
+
