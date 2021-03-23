@@ -2780,13 +2780,13 @@ observable:ProcessFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:pid ;
+			owl:onProperty observable:exitStatus ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:exitStatus ;
+			owl:onProperty observable:pid ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
 		] ,
@@ -7991,3 +7991,4 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
+
