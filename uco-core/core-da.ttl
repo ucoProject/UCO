@@ -2,7 +2,6 @@
 
 @base <https://unifiedcyberontology.org/ontology/uco/core-da> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix investigation: <https://unifiedcyberontology.org/ontology/uco/investigation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -44,10 +43,7 @@ core:description
 	.
 
 core:endTime
-	rdfs:domain
-		core:Relationship ,
-		investigation:Authorization
-		;
+	rdfs:domain core:Relationship ;
 	.
 
 core:externalIdentifier
