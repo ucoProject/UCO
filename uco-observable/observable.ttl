@@ -5151,8 +5151,6 @@ observable:cpuFamily
 	rdfs:range xsd:string ;
 	.
 
-
-=======
 observable:observableCreatedTime
 	a owl:DatatypeProperty ;
 	rdfs:label "observableCreatedTime"@en ;
