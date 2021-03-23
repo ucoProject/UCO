@@ -21,6 +21,18 @@ tool:AnalyticTool
 	rdfs:comment "An instrument useful for accomplishing an analytical task or purpose."@en ;
 	.
 
+tool:BuildConfigurationType
+	a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty tool:configurationSettingDescription ;
+		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		owl:onDataRange xsd:string ;
+	] ;
+	rdfs:label "BuildConfigurationType"@en ;
+	rdfs:comment "Describes how the build utility was configured for a particular build of a particular software."@en ;
+	.
+
 tool:BuildFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -34,18 +46,6 @@ tool:BuildFacet
 		;
 	rdfs:label "BuildFacet"@en ;
 	rdfs:comment "Characteristics of a particular build of a tool."@en ;
-	.
-
-tool:BuildConfigurationType
-	a owl:Class ;
-	rdfs:subClassOf [
-		a owl:Restriction ;
-		owl:onProperty tool:configurationSettingDescription ;
-		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		owl:onDataRange xsd:string ;
-	] ;
-	rdfs:label "BuildConfigurationType"@en ;
-	rdfs:comment "Describes how the build utility was configured for a particular build of a particular software."@en ;
 	.
 
 tool:BuildInformationType
