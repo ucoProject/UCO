@@ -3202,7 +3202,7 @@ observable:OperatingSystem
 	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	.
 
-observable:OnlineService
+observable:OnlineServiceFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology/ontology/uco/core#Facet> ,
