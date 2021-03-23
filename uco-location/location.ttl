@@ -216,3 +216,4 @@ location:vdop
 	rdfs:comment "The vertical dilution of precision of the GPS location."@en ;
 	rdfs:range xsd:double ;
 	.
+

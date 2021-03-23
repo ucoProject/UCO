@@ -41,3 +41,4 @@ role:Role
 	rdfs:label "Role"@en ;
 	rdfs:comment "A role is a usual or customary function based on contextual perspective."@en ;
 	.
+
