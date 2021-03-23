@@ -808,7 +808,7 @@ observable:ContactAddress
 				a rdfs:Datatype ;
 				owl:unionOf (
 					xsd:string
-					vocab:ContactAddressScopeVocab
+					vocabulary:ContactAddressScopeVocab
 				) ;
 			] ;
 		]
@@ -896,7 +896,7 @@ observable:ContactEmail
 				a rdfs:Datatype ;
 				owl:unionOf (
 					xsd:string
-					vocab:ContactEmailScopeVocab
+					vocabulary:ContactEmailScopeVocab
 				) ;
 			] ;
 		]
@@ -1124,7 +1124,7 @@ observable:ContactPhone
 				a rdfs:Datatype ;
 				owl:unionOf (
 					xsd:string
-					vocab:ContactPhoneScopeVocab
+					vocabulary:ContactPhoneScopeVocab
 				) ;
 			] ;
 		]
@@ -1170,7 +1170,7 @@ observable:ContactSIP
 				a rdfs:Datatype ;
 				owl:unionOf (
 					xsd:string
-					vocab:ContactSIPScopeVocab
+					vocabulary:ContactSIPScopeVocab
 				) ;
 			] ;
 		]
@@ -1196,7 +1196,7 @@ observable:ContactURL
 				a rdfs:Datatype ;
 				owl:unionOf (
 					xsd:string
-					vocab:ContactURLScopeVocab
+					vocabulary:ContactURLScopeVocab
 				) ;
 			] ;
 		]
@@ -6650,7 +6650,7 @@ observable:browserUserProfile
 observable:byteOrder
 	a owl:DatatypeProperty ;
 	rdfs:label "byteOrder"@en ;
-	rdfs:range vocab:EndiannessTypeVocab ;
+	rdfs:range vocabulary:EndiannessTypeVocab ;
 	.
 
 observable:byteStringValue
@@ -6814,7 +6814,7 @@ observable:contactAddressScope
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
-			vocab:ContactAddressScopeVocab
+			vocabulary:ContactAddressScopeVocab
 		) ;
 	] ;
 	.
@@ -6841,7 +6841,7 @@ observable:contactEmailScope
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
-			vocab:ContactEmailScopeVocab
+			vocabulary:ContactEmailScopeVocab
 		) ;
 	] ;
 	.
@@ -6910,7 +6910,7 @@ observable:contactPhoneScope
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
-			vocab:ContactPhoneScopeVocab
+			vocabulary:ContactPhoneScopeVocab
 		) ;
 	] ;
 	.
@@ -6944,7 +6944,7 @@ observable:contactSIPScope
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
-			vocab:ContactSIPScopeVocab
+			vocabulary:ContactSIPScopeVocab
 		) ;
 	] ;
 	.
@@ -6964,7 +6964,7 @@ observable:contactURLScope
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
-			vocab:ContactURLScopeVocab
+			vocabulary:ContactURLScopeVocab
 		) ;
 	] ;
 	.
@@ -10020,7 +10020,7 @@ observable:urlTransitionType
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
-			vocab:URLTransitionTypeVocab
+			vocabulary:URLTransitionTypeVocab
 		) ;
 	] ;
 	.
@@ -10112,7 +10112,7 @@ observable:whoisContactType
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
-			vocab:WhoisContactTypeVocab
+			vocabulary:WhoisContactTypeVocab
 		) ;
 	] ;
 	.
