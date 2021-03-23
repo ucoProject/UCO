@@ -965,6 +965,26 @@ vocabulary:TriggerTypeVocab
 	) ;
 	.
 
+vocabulary:URLTransitionTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "URL Transition Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of types of URL transitions."@en ;
+	owl:oneOf (
+		"link"^^vocabulary:URLTransitionTypeVocab
+		"typed"^^vocabulary:URLTransitionTypeVocab
+		"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
+		"auto_subframe"^^vocabulary:URLTransitionTypeVocab
+		"manual_subframe"^^vocabulary:URLTransitionTypeVocab
+		"generated"^^vocabulary:URLTransitionTypeVocab
+		"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
+		"form_submit"^^vocabulary:URLTransitionTypeVocab
+		"reload"^^vocabulary:URLTransitionTypeVocab
+		"keyword"^^vocabulary:URLTransitionTypeVocab
+		"keyword_generated"^^vocabulary:URLTransitionTypeVocab
+	) ;
+	.
+
 vocabulary:UnixProcessStateVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
