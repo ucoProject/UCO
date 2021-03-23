@@ -57,7 +57,7 @@ action:Action
 	rdfs:comment "Something that may be done or performed."@en ;
 	.
 
-action:ActionArgument
+action:ActionArgumentFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -74,11 +74,11 @@ action:ActionArgument
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "ActionArgument"@en ;
+	rdfs:label "ActionArgumentFacet"@en ;
 	rdfs:comment "A grouping of properties characterizing a single parameter for an action."@en ;
 	.
 
-action:ActionEstimation
+action:ActionEstimationFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -107,11 +107,11 @@ action:ActionEstimation
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "ActionEstimation"@en ;
+	rdfs:label "ActionEstimationFacet"@en ;
 	rdfs:comment "A grouping of properties characterizing decision-focused estimation aspects for an action that may potentially be performed."@en ;
 	.
 
-action:ActionFrequency
+action:ActionFrequencyFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -140,7 +140,7 @@ action:ActionFrequency
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "ActionFrequency"@en ;
+	rdfs:label "ActionFrequencyFacet"@en ;
 	rdfs:comment "A grouping of properties characterizing the frequency of occurence for an action."@en ;
 	.
 
@@ -195,7 +195,7 @@ action:ActionPattern
 	rdfs:comment "A logical pattern of characteristic action property values."@en ;
 	.
 
-action:ActionReferences
+action:ActionReferencesFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -212,7 +212,7 @@ action:ActionReferences
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:label "ActionReferences"@en ;
+	rdfs:label "ActionReferencesFacet"@en ;
 	rdfs:comment """A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action. The properties consist of identifier references to separate UCO objects detailing the particular property.
   """@en ;
 	.

@@ -13,55 +13,55 @@
 	.
 
 location:addressType
-	rdfs:domain location:SimpleAddress ;
+	rdfs:domain location:SimpleAddressFacet ;
 	.
 
 location:altitude
-	rdfs:domain location:LatLongCoordinates ;
+	rdfs:domain location:LatLongCoordinatesFacet ;
 	.
 
 location:country
-	rdfs:domain location:SimpleAddress ;
+	rdfs:domain location:SimpleAddressFacet ;
 	.
 
 location:hdop
-	rdfs:domain location:GPSCoordinates ;
+	rdfs:domain location:GPSCoordinatesFacet ;
 	.
 
 location:latitude
-	rdfs:domain location:LatLongCoordinates ;
+	rdfs:domain location:LatLongCoordinatesFacet ;
 	.
 
 location:locality
-	rdfs:domain location:SimpleAddress ;
+	rdfs:domain location:SimpleAddressFacet ;
 	.
 
 location:longitude
-	rdfs:domain location:LatLongCoordinates ;
+	rdfs:domain location:LatLongCoordinatesFacet ;
 	.
 
 location:pdop
-	rdfs:domain location:GPSCoordinates ;
+	rdfs:domain location:GPSCoordinatesFacet ;
 	.
 
 location:postalCode
-	rdfs:domain location:SimpleAddress ;
+	rdfs:domain location:SimpleAddressFacet ;
 	.
 
 location:region
-	rdfs:domain location:SimpleAddress ;
+	rdfs:domain location:SimpleAddressFacet ;
 	.
 
 location:street
-	rdfs:domain location:SimpleAddress ;
+	rdfs:domain location:SimpleAddressFacet ;
 	.
 
 location:tdop
-	rdfs:domain location:GPSCoordinates ;
+	rdfs:domain location:GPSCoordinatesFacet ;
 	.
 
 location:vdop
 	a owl:DatatypeProperty ;
-	rdfs:domain location:GPSCoordinates ;
+	rdfs:domain location:GPSCoordinatesFacet ;
 	.
 

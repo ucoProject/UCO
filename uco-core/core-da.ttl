@@ -16,7 +16,7 @@
 	.
 
 core:confidence
-	rdfs:domain core:Confidence ;
+	rdfs:domain core:ConfidenceFacet ;
 	.
 
 core:constrainingVocabularyName
@@ -40,7 +40,7 @@ core:createdTime
 	.
 
 core:definingContext
-	rdfs:domain core:ExternalReference ;
+	rdfs:domain core:ExternalReferenceFacet ;
 	.
 
 core:description
@@ -55,7 +55,7 @@ core:endTime
 	.
 
 core:externalIdentifier
-	rdfs:domain core:ExternalReference ;
+	rdfs:domain core:ExternalReferenceFacet ;
 	.
 
 core:hasFacet
@@ -95,7 +95,7 @@ core:objectMarking
 	.
 
 core:referenceURL
-	rdfs:domain core:ExternalReference ;
+	rdfs:domain core:ExternalReferenceFacet ;
 	.
 
 core:role

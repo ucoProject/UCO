@@ -21,21 +21,6 @@ tool:AnalyticTool
 	rdfs:comment "An instrument useful for accomplishing an analytical task or purpose."@en ;
 	.
 
-tool:Build
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildInformation ;
-			owl:onClass tool:BuildInformationType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
-		;
-	rdfs:label "Build"@en ;
-	rdfs:comment "Characteristics of a particular build of a tool."@en ;
-	.
-
 tool:BuildConfigurationType
 	a owl:Class ;
 	rdfs:subClassOf [
@@ -46,6 +31,21 @@ tool:BuildConfigurationType
 	] ;
 	rdfs:label "BuildConfigurationType"@en ;
 	rdfs:comment "Describes how the build utility was configured for a particular build of a particular software."@en ;
+	.
+
+tool:BuildFacet
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty tool:buildInformation ;
+			owl:onClass tool:BuildInformationType ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "BuildFacet"@en ;
+	rdfs:comment "Characteristics of a particular build of a tool."@en ;
 	.
 
 tool:BuildInformationType
@@ -278,10 +278,10 @@ tool:Tool
 	rdfs:comment "An element of hardware and/or software utilized to carry out a particular function."@en ;
 	.
 
-tool:ToolConfigurationType
+tool:ToolConfigurationTypeFacet
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "ToolConfigurationType"@en ;
+	rdfs:label "ToolConfigurationTypeFacet"@en ;
 	rdfs:comment "Characterizes the configuration for a tool."@en ;
 	.
 

@@ -26,7 +26,7 @@ action:actionStatus
 	.
 
 action:argumentName
-	rdfs:domain action:ActionArgument ;
+	rdfs:domain action:ActionArgumentFacet ;
 	.
 
 action:endTime
@@ -34,7 +34,7 @@ action:endTime
 	.
 
 action:environment
-	rdfs:domain action:ActionReferences ;
+	rdfs:domain action:ActionReferencesFacet ;
 	.
 
 action:error
@@ -42,39 +42,39 @@ action:error
 	.
 
 action:estimatedCost
-	rdfs:domain action:ActionEstimation ;
+	rdfs:domain action:ActionEstimationFacet ;
 	.
 
 action:estimatedEfficacy
-	rdfs:domain action:ActionEstimation ;
+	rdfs:domain action:ActionEstimationFacet ;
 	.
 
 action:estimatedImpact
-	rdfs:domain action:ActionEstimation ;
+	rdfs:domain action:ActionEstimationFacet ;
 	.
 
 action:instrument
-	rdfs:domain action:ActionReferences ;
+	rdfs:domain action:ActionReferencesFacet ;
 	.
 
 action:location
-	rdfs:domain action:ActionReferences ;
+	rdfs:domain action:ActionReferencesFacet ;
 	.
 
 action:object
-	rdfs:domain action:ActionReferences ;
+	rdfs:domain action:ActionReferencesFacet ;
 	.
 
 action:objective
-	rdfs:domain action:ActionEstimation ;
+	rdfs:domain action:ActionEstimationFacet ;
 	.
 
 action:participant
-	rdfs:domain action:ActionReferences ;
+	rdfs:domain action:ActionReferencesFacet ;
 	.
 
 action:performer
-	rdfs:domain action:ActionReferences ;
+	rdfs:domain action:ActionReferencesFacet ;
 	.
 
 action:phase
@@ -82,15 +82,15 @@ action:phase
 	.
 
 action:rate
-	rdfs:domain action:ActionFrequency ;
+	rdfs:domain action:ActionFrequencyFacet ;
 	.
 
 action:result
-	rdfs:domain action:ActionReferences ;
+	rdfs:domain action:ActionReferencesFacet ;
 	.
 
 action:scale
-	rdfs:domain action:ActionFrequency ;
+	rdfs:domain action:ActionFrequencyFacet ;
 	.
 
 action:startTime
@@ -102,14 +102,14 @@ action:subaction
 	.
 
 action:trend
-	rdfs:domain action:ActionFrequency ;
+	rdfs:domain action:ActionFrequencyFacet ;
 	.
 
 action:units
-	rdfs:domain action:ActionFrequency ;
+	rdfs:domain action:ActionFrequencyFacet ;
 	.
 
 action:value
-	rdfs:domain action:ActionArgument ;
+	rdfs:domain action:ActionArgumentFacet ;
 	.
 
