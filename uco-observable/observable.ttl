@@ -4907,7 +4907,7 @@ observable:bookmarkPath
 observable:byteOrder
 	a owl:DatatypeProperty ;
 	rdfs:label "byteOrder"@en ;
-	rdfs:range xsd:string ;
+	rdfs:range vocab:EndiannessTypeVocab ;
 	.
 
 observable:byteStringValue
