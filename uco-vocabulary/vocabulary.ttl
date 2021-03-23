@@ -965,6 +965,26 @@ vocab:TriggerTypeVocab
 	) ;
 	.
 
+vocab:URLTransitionTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "URL Transition Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of types of URL transitions."@en ;
+	owl:oneOf (
+		"link"^^vocab:URLTransitionTypeVocab
+		"typed"^^vocab:URLTransitionTypeVocab
+		"auto_bookmark"^^vocab:URLTransitionTypeVocab
+		"auto_subframe"^^vocab:URLTransitionTypeVocab
+		"manual_subframe"^^vocab:URLTransitionTypeVocab
+		"generated"^^vocab:URLTransitionTypeVocab
+		"auto_toplevel"^^vocab:URLTransitionTypeVocab
+		"form_submit"^^vocab:URLTransitionTypeVocab
+		"reload"^^vocab:URLTransitionTypeVocab
+		"keyword"^^vocab:URLTransitionTypeVocab
+		"keyword_generated"^^vocab:URLTransitionTypeVocab
+	) ;
+	.
+
 vocab:UnixProcessStateVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
@@ -979,26 +999,6 @@ vocab:UnixProcessStateVocab
 		"UninterruptibleSleep"^^vocab:UnixProcessStateVocab
 		"Zombie"^^vocab:UnixProcessStateVocab
 	) ;
-	.
-
-	vocab:URLTransitionTypeVocab
-		a rdfs:Datatype ;
-		rdfs:subClassOf rdfs:Resource ;
-		rdfs:label "URL Transition Type Vocabulary"@en-US ;
-		rdfs:comment "Defines an open-vocabulary of types of URL transitions."@en ;
-		owl:oneOf (
-			"link"^^vocab:URLTransitionTypeVocab
-	    "typed"^^vocab:URLTransitionTypeVocab
-	    "auto_bookmark"^^vocab:URLTransitionTypeVocab
-	    "auto_subframe"^^vocab:URLTransitionTypeVocab
-	    "manual_subframe"^^vocab:URLTransitionTypeVocab
-	    "generated"^^vocab:URLTransitionTypeVocab
-	    "auto_toplevel"^^vocab:URLTransitionTypeVocab
-	    "form_submit"^^vocab:URLTransitionTypeVocab
-			"reload"^^vocab:URLTransitionTypeVocab
-	    "keyword"^^vocab:URLTransitionTypeVocab
-	    "keyword_generated"^^vocab:URLTransitionTypeVocab
-		) ;
 	.
 
 vocab:WhoisContactTypeVocab
@@ -1080,3 +1080,4 @@ vocab:WindowsVolumeAttributeVocab
 		"ShadowCopy"^^vocab:WindowsVolumeAttributeVocab
 	) ;
 	.
+
