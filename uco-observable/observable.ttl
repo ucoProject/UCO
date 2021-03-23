@@ -3202,6 +3202,30 @@ observable:OperatingSystem
 	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	.
 
+observable:OnlineService
+	a owl:Class ;
+	rdfs:subClassOf
+		<https://unifiedcyberontology/ontology/uco/core#Facet> ,
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology/ontology/uco/core#name> ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology/ontology/uco/observable#inetLocation> ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty <https://unifiedcyberontology/ontology/uco/observable#location> ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "Online Service"@en-US ;
+	rdfs:comment "An online service facet is a grouping of characteristics unique to a particular provision mechanism of information access, distribution or manipulation over the Internet."@en-US ;
+	.
+
 observable:OperatingSystemFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -7440,6 +7464,13 @@ observable:inReplyTo
 	a owl:ObjectProperty ;
 	rdfs:label "inReplyTo"@en ;
 	rdfs:comment "One of more unique identifiers for identifying the email(s) this email is a reply to."@en ;
+	rdfs:range observable:ObservableObject ;
+	.
+
+observable:inetLocation
+	a owl:ObjectProperty ;
+	rdfs:label "Internet Location"@en-US ;
+	rdfs:comment "Specifies a location on the Internet."@en-US ;
 	rdfs:range observable:ObservableObject ;
 	.
 
