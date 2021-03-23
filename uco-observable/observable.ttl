@@ -4991,7 +4991,7 @@ observable:checksum
 observable:clockSetting
 	a owl:DatatypeProperty ;
 	rdfs:label "clockSetting"@en ;
-	rdfs:comment "The generalizedTime value on the mobile device when it was processes."@en ;
+	rdfs:comment "The generalizedTime value on the mobile device when it was processed."@en ;
 	rdfs:range xsd:string ;
 	.
 
