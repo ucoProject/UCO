@@ -2475,6 +2475,7 @@ observable:IPAddressFacet
 		;
 	rdfs:label "IPAddressFacet"@en ;
 	rdfs:comment "An IP address facet is a grouping of characteristics unique to an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
+	.
 
 observable:IPAddress
 	a owl:Class ;
@@ -4183,6 +4184,7 @@ observable:SIPAddressFacet
 		;
 	rdfs:label "SIPAddressFacet"@en ;
 	rdfs:comment "A SIP address facet is a grouping of characteristics unique to a Session Initiation Protocol (SIP) standards conformant identifier assigned to a user to enable routing and management of SIP standards conformant communication to or from that user loosely coupled from any particular devices."@en ;
+	.
 
 observable:SIPAddress
 	a owl:Class ;
@@ -8206,6 +8208,7 @@ observable:lastTimeContacted
 	a owl:DatatypeProperty ;
 	rdfs:label "lastTimeContacted"@en ;
 	rdfs:comment "Last time contacted specifies the date and time that a particular contact was last contacted."@en ;
+	.
 
 observable:lastVisit
 	a owl:DatatypeProperty ;
@@ -9186,6 +9189,7 @@ observable:referrerUrl
 	rdfs:label "referrerURL"@en ;
 	rdfs:comment "Specifies the origination point (i.e., URL) of a URL request."@en ;
 	rdfs:range observable:ObservableObject ;
+	.
 
 observable:regionEndAddress
 	a owl:DatatypeProperty ;
@@ -10011,6 +10015,7 @@ observable:userLocationString
 	rdfs:label "User Location String"@en-US ;
 	rdfs:comment "Specifies the user-provided location string associated with the profile."@en-US ;
 	rdfs:range xsd:string ;
+	.
 
 observable:urlTransitionType
 	a owl:DatatypeProperty ;
