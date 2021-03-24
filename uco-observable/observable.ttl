@@ -4754,14 +4754,8 @@ observable:URLFacet
 observable:URLHistory
 	a owl:Class ;
 	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label
-		"URLHistory"@en-US ,
-		"URLHistory"@en
-		;
-	rdfs:comment
-		"A URL history characterizes the stored URL history for a particular web browser"@en-US ,
-		"A URL history characterizes the stored URL history for a particular web browser"@en
-		;
+	rdfs:label "URLHistory"@en ;
+	rdfs:comment "A URL history characterizes the stored URL history for a particular web browser"@en ;
 	.
 
 observable:URLHistoryEntry
