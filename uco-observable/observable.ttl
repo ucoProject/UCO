@@ -784,13 +784,6 @@ observable:Contact
 	rdfs:comment "A contact is a set of identification and communication related details for a single entity."@en ;
 	.
 
-observable:Contact
-	a owl:Class ;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "Contact"@en ;
-	rdfs:comment "A contact is a set of identification and communication related details for a single entity."@en ;
-	.
-
 observable:ContactAddress
 	a owl:Class ;
 	rdfs:subClassOf
@@ -1052,13 +1045,6 @@ observable:ContactFacet
 	rdfs:comment "A contact facet is a grouping of characteristics unique to a set of identification and communication related details for a single entity."@en ;
 	.
 
-observable:ContentData
-	a owl:Class ;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "ContentData"@en ;
-	rdfs:comment "Content data is a block of digital data."@en ;
-	.
-
 observable:ContactList
 	a owl:Class ;
 	rdfs:subClassOf observable:ObservableObject ;
@@ -1203,6 +1189,13 @@ observable:ContactURL
 		;
 	rdfs:label "ContactURL"@en ;
 	rdfs:comment "A contact URL is a grouping of characteristics unique to details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
+	.
+
+observable:ContentData
+	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "ContentData"@en ;
+	rdfs:comment "Content data is a block of digital data."@en ;
 	.
 
 observable:ContentDataFacet
@@ -1420,13 +1413,6 @@ observable:DigitalAddress
 	rdfs:comment "A digital address is an identifier assigned to enable routing and management of digital communication."@en ;
 	.
 
-observable:DigitalSignatureInfo
-	a owl:Class ;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "DigitalSignatureInfo"@en ;
-	rdfs:comment "A digital signature info is a value calculated via a mathematical scheme for demonstrating the authenticity of an electronic message or document."@en ;
-	.
-
 observable:DigitalAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -1446,6 +1432,13 @@ observable:DigitalAddressFacet
 		;
 	rdfs:label "DigitalAddressFacet"@en ;
 	rdfs:comment "A digital address facet is a grouping of characteristics unique to an identifier assigned to enable routing and management of digital communication."@en ;
+	.
+
+observable:DigitalSignatureInfo
+	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "DigitalSignatureInfo"@en ;
+	rdfs:comment "A digital signature info is a value calculated via a mathematical scheme for demonstrating the authenticity of an electronic message or document."@en ;
 	.
 
 observable:DigitalSignatureInfoFacet
@@ -2456,6 +2449,13 @@ observable:IMSI
 	rdfs:range xsd:string ;
 	.
 
+observable:IPAddress
+	a owl:Class ;
+	rdfs:subClassOf observable:DigitalAddress ;
+	rdfs:label "IPAddress"@en ;
+	rdfs:comment "An IP address is an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
+	.
+
 observable:IPAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -2475,12 +2475,6 @@ observable:IPAddressFacet
 		;
 	rdfs:label "IPAddressFacet"@en ;
 	rdfs:comment "An IP address facet is a grouping of characteristics unique to an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
-
-observable:IPAddress
-	a owl:Class ;
-	rdfs:subClassOf observable:DigitalAddress ;
-	rdfs:label "IPAddress"@en ;
-	rdfs:comment "An IP address is an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
 	.
 
 observable:IPNetmask
@@ -2495,7 +2489,6 @@ observable:IPv4Address
 	rdfs:subClassOf observable:IPAddress ;
 	rdfs:label "IPv4Address"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address is an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
-
 	.
 
 observable:IPv4AddressFacet
@@ -2584,20 +2577,6 @@ observable:InstantMessagingAddress
 	rdfs:comment ""@en ;
 	.
 
-observable:Junction
-	a owl:Class ;
-	rdfs:subClassOf observable:FileSystemObject ;
-	rdfs:label "Junction"@en ;
-	rdfs:comment "A junction is a specific NTFS (New Technology File System) reparse point to redirect a directory access to another directory which can be on the same volume or another volume. A junction is similar to a directory symbolic link but may differ on whether they are processed on the local system or on the remote file server. [based on https://jp-andre.pagesperso-orange.fr/junctions.html]"@en ;
-	.
-
-observable:Library
-	a owl:Class ;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "Library"@en ;
-	rdfs:comment "A library is a suite of data and programming code that is used to develop software programs and applications. [based on https://www.techopedia.com/definition/3828/software-library]"@en ;
-	.
-
 observable:InstantMessagingAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -2617,6 +2596,20 @@ observable:InstantMessagingAddressFacet
 		;
 	rdfs:label "InstantMessagingAddressFacet"@en ;
 	rdfs:comment "An instant messaging address facet is a grouping of characteristics unique to an identifier assigned to enable routing and management of instant messaging digital communication."@en ;
+	.
+
+observable:Junction
+	a owl:Class ;
+	rdfs:subClassOf observable:FileSystemObject ;
+	rdfs:label "Junction"@en ;
+	rdfs:comment "A junction is a specific NTFS (New Technology File System) reparse point to redirect a directory access to another directory which can be on the same volume or another volume. A junction is similar to a directory symbolic link but may differ on whether they are processed on the local system or on the remote file server. [based on https://jp-andre.pagesperso-orange.fr/junctions.html]"@en ;
+	.
+
+observable:Library
+	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "Library"@en ;
+	rdfs:comment "A library is a suite of data and programming code that is used to develop software programs and applications. [based on https://www.techopedia.com/definition/3828/software-library]"@en ;
 	.
 
 observable:LibraryFacet
@@ -3548,13 +3541,6 @@ observable:OnlineService
 	rdfs:subClasOf observable:ObservableObject ;
 	.
 
-observable:OperatingSystem
-	a owl:Class ;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "OperatingSystem"@en ;
-	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
-	.
-
 observable:OnlineServiceFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -3577,6 +3563,13 @@ observable:OnlineServiceFacet
 		;
 	rdfs:label "OnlineServiceFacet"@en-US ;
 	rdfs:comment "An online service facet is a grouping of characteristics unique to a particular provision mechanism of information access, distribution or manipulation over the Internet."@en-US ;
+	.
+
+observable:OperatingSystem
+	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "OperatingSystem"@en ;
+	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	.
 
 observable:OperatingSystemFacet
@@ -4164,6 +4157,13 @@ observable:SIMType
 	rdfs:range xsd:string ;
 	.
 
+observable:SIPAddress
+	a owl:Class ;
+	rdfs:subClassOf observable:DigitalAddress ;
+	rdfs:label "SIPAddress"@en ;
+	rdfs:comment "A SIP address is an identifier for Session Initiation Protocol (SIP) communication."@en ;
+	.
+
 observable:SIPAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -4183,12 +4183,6 @@ observable:SIPAddressFacet
 		;
 	rdfs:label "SIPAddressFacet"@en ;
 	rdfs:comment "A SIP address facet is a grouping of characteristics unique to a Session Initiation Protocol (SIP) standards conformant identifier assigned to a user to enable routing and management of SIP standards conformant communication to or from that user loosely coupled from any particular devices."@en ;
-
-observable:SIPAddress
-	a owl:Class ;
-	rdfs:subClassOf observable:DigitalAddress ;
-	rdfs:label "SIPAddress"@en ;
-	rdfs:comment "A SIP address is an identifier for Session Initiation Protocol (SIP) communication."@en ;
 	.
 
 observable:SMSMessage
@@ -4521,13 +4515,6 @@ observable:Tweet
 	rdfs:comment "A tweet is message submitted by a Twitter user account to the Twitter microblogging platform."@en ;
 	.
 
-observable:UNIXAccount
-	a owl:Class ;
-	rdfs:subClassOf observable:DigitalAccount ;
-	rdfs:label "UNIXAccount"@en ;
-	rdfs:comment "A UNIX account is an account on a UNIX operating system."@en ;
-	.
-
 observable:TwitterProfileFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -4615,6 +4602,13 @@ observable:TwitterProfileFacet
 		;
 	rdfs:label "TwitterProfileFacet" ;
 	rdfs:comment "A twitter profile facet is a grouping of characteristics unique to an explicit digital representation of identity and characteristics of the owner of a single Twitter user account. [based on https://en.wikipedia.org/wiki/User_profile]" ;
+	.
+
+observable:UNIXAccount
+	a owl:Class ;
+	rdfs:subClassOf observable:DigitalAccount ;
+	rdfs:label "UNIXAccount"@en ;
+	rdfs:comment "A UNIX account is an account on a UNIX operating system."@en ;
 	.
 
 observable:UNIXAccountFacet
@@ -4764,27 +4758,6 @@ observable:URLHistory
 	rdfs:comment "A URL history characterizes the stored URL history for a particular web browser"@en ;
 	.
 
-observable:URLVisit
-	a owl:Class ;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "URLVisit"@en ;
-	rdfs:comment "A URL visit characterizes the properties of a visit of a URL within a particular browser."@en ;
-	.
-
-observable:UserAccount
-	a owl:Class ;
-	rdfs:subClassOf observable:DigitalAccount ;
-	rdfs:label "UserAccount"@en ;
-	rdfs:comment "A user account is an account controlling a user's access to a network, system or platform."@en ;
-	.
-
-observable:URLHistory
-	a owl:Class ;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "URLHistory"@en-US ;
-	rdfs:comment "A URL history characterizes the stored URL history for a particular web browser"@en-US ;
-	.
-
 observable:URLHistoryEntry
 	a owl:Class ;
 	rdfs:subClassOf
@@ -4911,6 +4884,13 @@ observable:URLVisitFacet
 		;
 	rdfs:label "URLVisitFacet"@en ;
 	rdfs:comment "A URL visit facet is a grouping of characteristics unique to the properties of a visit of a URL within a particular browser."@en ;
+	.
+
+observable:UserAccount
+	a owl:Class ;
+	rdfs:subClassOf observable:DigitalAccount ;
+	rdfs:label "UserAccount"@en ;
+	rdfs:comment "A user account is an account controlling a user's access to a network, system or platform."@en ;
 	.
 
 observable:UserAccountFacet
@@ -5158,7 +5138,8 @@ observable:WhoisContactFacet
 					observable:WhoisContactTypeVocab
 				) ;
 			] ;
-		] ;
+		]
+		;
 	rdfs:label "WhoIsContactFacet"@en ;
 	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	.
@@ -7036,13 +7017,6 @@ observable:cpuFamily
 	rdfs:range xsd:string ;
 	.
 
-observable:observableCreatedTime
-	a owl:DatatypeProperty ;
-	rdfs:label "observableCreatedTime"@en ;
-	rdfs:comment "The date and time at which the observable object being characterized was created. This time pertains to an intrinsic characteristic of the observable object, and would be consistent across independent characterizations or observations of the observable object."@en ;
-	rdfs:range xsd:dateTime ;
-	.
-
 observable:creationDate
 	a owl:DatatypeProperty ;
 	rdfs:label "creationDate"@en ;
@@ -8206,6 +8180,7 @@ observable:lastTimeContacted
 	a owl:DatatypeProperty ;
 	rdfs:label "lastTimeContacted"@en ;
 	rdfs:comment "Last time contacted specifies the date and time that a particular contact was last contacted."@en ;
+	.
 
 observable:lastVisit
 	a owl:DatatypeProperty ;
@@ -8993,6 +8968,13 @@ observable:processorArchitecture
 	rdfs:range xsd:string ;
 	.
 
+observable:profile
+	a owl:ObjectProperty ;
+	rdfs:label "profile"@en ;
+	rdfs:comment "A profile specifies a particular online service profile."@en ;
+	rdfs:range observable:ObservableObject ;
+	.
+
 observable:profileAccount
 	a owl:ObjectProperty ;
 	rdfs:label "Profile Account"@en-US ;
@@ -9039,7 +9021,7 @@ observable:profileIdentity
 	a owl:ObjectProperty ;
 	rdfs:label "Profile Identity"@en-US ;
 	rdfs:comment "Specifies the identity associated with the profile."@en-US ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:profileImageHash
@@ -9089,13 +9071,6 @@ observable:profilelanguage
 	rdfs:label "Profile Language"@en-US ;
 	rdfs:comment "Specifies the language associated with the profile. When present, it MUST be a language code conformant to RFC 5646/BCP47."@en-US ;
 	rdfs:range xsd:string ;
-	.
-
-observable:profile
-	a owl:ObjectProperty ;
-	rdfs:label "profile"@en ;
-	rdfs:comment "A profile specifies a particular online service profile."@en ;
-	rdfs:range observable:ObservableObject ;
 	.
 
 observable:properties
@@ -9186,6 +9161,7 @@ observable:referrerUrl
 	rdfs:label "referrerURL"@en ;
 	rdfs:comment "Specifies the origination point (i.e., URL) of a URL request."@en ;
 	rdfs:range observable:ObservableObject ;
+	.
 
 observable:regionEndAddress
 	a owl:DatatypeProperty ;
@@ -10006,12 +9982,6 @@ observable:urlTargeted
 	rdfs:range xsd:anyURI ;
 	.
 
-observable:userLocationString
-	a owl:DatatypeProperty ;
-	rdfs:label "User Location String"@en-US ;
-	rdfs:comment "Specifies the user-provided location string associated with the profile."@en-US ;
-	rdfs:range xsd:string ;
-
 observable:urlTransitionType
 	a owl:DatatypeProperty ;
 	rdfs:label "Transition Type"@en ;
@@ -10023,6 +9993,13 @@ observable:urlTransitionType
 			vocabulary:URLTransitionTypeVocab
 		) ;
 	] ;
+	.
+
+observable:userLocationString
+	a owl:DatatypeProperty ;
+	rdfs:label "User Location String"@en-US ;
+	rdfs:comment "Specifies the user-provided location string associated with the profile."@en-US ;
+	rdfs:range xsd:string ;
 	.
 
 observable:userName
