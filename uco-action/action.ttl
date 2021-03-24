@@ -108,7 +108,7 @@ action:ActionEstimationFacet
 		]
 		;
 	rdfs:label "ActionEstimationFacet"@en ;
-  rdfs:comment "An action estimation facet is a grouping of characteristics unique to decision-focused approximation aspects for an action that may potentially be performed."@en ;
+	rdfs:comment "An action estimation facet is a grouping of characteristics unique to decision-focused approximation aspects for an action that may potentially be performed."@en ;
 	.
 
 action:ActionFrequencyFacet
