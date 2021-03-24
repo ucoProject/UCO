@@ -17,7 +17,6 @@
 		<https://unifiedcyberontology.org/ontology/uco/core> ,
 		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
 		;
-	owl:versionInfo "0.4.0" ;
 	.
 
 types:ControlledDictionary
