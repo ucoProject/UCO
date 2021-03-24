@@ -30,7 +30,7 @@ tool:BuildConfigurationType
 		owl:onDataRange xsd:string ;
 	] ;
 	rdfs:label "BuildConfigurationType"@en ;
-	rdfs:comment "Describes how the build utility was configured for a particular build of a particular software."@en ;
+	rdfs:comment "A build configuration type is a characterization of how a particular version of software can or should be built."@en ;
 	.
 
 tool:BuildFacet
@@ -46,18 +46,6 @@ tool:BuildFacet
 		;
 	rdfs:label "BuildFacet"@en ;
 	rdfs:comment "A build facet is a grouping of characteristics unique to a particular version of a software."@en ;
-	.
-
-tool:BuildConfigurationType
-	a owl:Class ;
-	rdfs:subClassOf [
-		a owl:Restriction ;
-		owl:onProperty tool:configurationSettingDescription ;
-		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		owl:onDataRange xsd:string ;
-	] ;
-	rdfs:label "BuildConfigurationType"@en ;
-	rdfs:comment "A build configuration type is a characterization of how a particular version of software can or should be built."@en ;
 	.
 
 tool:BuildInformationType
