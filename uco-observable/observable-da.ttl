@@ -14,6 +14,52 @@
 	rdfs:label "observable domain assertions"@en ;
 	.
 
+observable:ESN
+	rdfs:domain observable:MobileDeviceFacet ;
+	.
+
+observable:ICCID
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
+observable:IMEI
+	rdfs:domain observable:MobileDeviceFacet ;
+	.
+
+observable:IMSI
+	rdfs:domain
+		observable:MobileAccountFacet ,
+		observable:SIMCardFacet
+		;
+	.
+
+observable:MSISDN
+	rdfs:domain
+		observable:MobileAccountFacet ,
+		observable:MobileDeviceFacet
+		;
+	.
+
+observable:MSISDNType
+	rdfs:domain observable:MobileAccountFacet ;
+	.
+
+observable:PIN
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
+observable:PUK
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
+observable:SIMForm
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
+observable:SIMType
+	rdfs:domain observable:SIMCardFacet ;
+	.
+
 observable:abbreviation
 	rdfs:domain observable:GlobalFlagType ;
 	.
@@ -78,20 +124,10 @@ observable:adapterName
 	rdfs:domain observable:NetworkInterfaceFacet ;
 	.
 
-observable:address
-	rdfs:domain observable:WhoisContactType ;
-	.
-
 observable:addressOfEntryPoint
 	rdfs:domain observable:WindowsPEOptionalHeader ;
 	.
 
-observable:addressValue
-	rdfs:domain
-		observable:BluetoothAddressFacet ,
-		observable:WifiAddressFacet
-		;
-	.
 
 observable:allocationStatus
 	rdfs:domain observable:FileFacet ;
@@ -309,24 +345,8 @@ observable:computerName
 	rdfs:domain observable:EventFacet ;
 	.
 
-observable:contactID
-	rdfs:domain observable:WhoisContactType ;
-	.
-
 observable:contactInfo
 	rdfs:domain observable:WhoIsFacet ;
-	.
-
-observable:contactName
-	rdfs:domain observable:WhoisContactType ;
-	.
-
-observable:contactOrganization
-	rdfs:domain observable:WhoisContactType ;
-	.
-
-observable:contactType
-	rdfs:domain observable:WhoisContactType ;
 	.
 
 observable:contentDisposition
@@ -367,10 +387,6 @@ observable:cpu
 
 observable:cpuFamily
 	rdfs:domain observable:ComputerSpecificationFacet ;
-	.
-
-observable:createdTime
-	rdfs:domain observable:FileFacet ;
 	.
 
 observable:creationDate
@@ -541,10 +557,6 @@ observable:effectiveUser
 	rdfs:domain observable:UserSessionFacet ;
 	.
 
-observable:emailAddress
-	rdfs:domain observable:WhoisContactType ;
-	.
-
 observable:encoding
 	rdfs:domain observable:ExtractedString ;
 	.
@@ -687,10 +699,6 @@ observable:extendedKeyUsage
 
 observable:extension
 	rdfs:domain observable:FileFacet ;
-	.
-
-observable:faxNumber
-	rdfs:domain observable:WhoisContactType ;
 	.
 
 observable:fileAlignment
@@ -1284,6 +1292,10 @@ observable:objectGUID
 	rdfs:domain observable:WindowsActiveDirectoryAccountFacet ;
 	.
 
+observable:observableCreatedTime
+	rdfs:domain observable:FileFacet ;
+	.
+
 observable:oldObject
 	rdfs:domain observable:StateChangeEffectFacet ;
 	.
@@ -1382,20 +1394,12 @@ observable:peType
 	rdfs:domain observable:WindowsPEBinaryFileFacet ;
 	.
 
-observable:phone
-	rdfs:domain observable:WhoisContactType ;
-	.
-
 observable:phoneActivationTime
 	rdfs:domain observable:MobileDeviceFacet ;
 	.
 
 observable:phoneNumber
 	rdfs:domain observable:PhoneAccountFacet ;
-	.
-
-observable:phoneNumbers
-	rdfs:domain observable:ContactFacet ;
 	.
 
 observable:pictureHeight
@@ -1586,7 +1590,7 @@ observable:scheme
 	rdfs:domain observable:URLFacet ;
 	.
 
-observable:screenName
+observable:displayName
 	rdfs:domain observable:ContactFacet ;
 	.
 
@@ -1977,10 +1981,6 @@ observable:validityNotBefore
 	rdfs:domain observable:X509CertificateFacet ;
 	.
 
-observable:value
-	rdfs:domain observable:IPv4AddressFacet ;
-	.
-
 observable:values
 	rdfs:domain observable:ValuesEnumeratedEffectFacet ;
 	.
@@ -2055,4 +2055,3 @@ observable:xMailer
 observable:xOriginatingIP
 	rdfs:domain observable:EmailMessageFacet ;
 	.
-
