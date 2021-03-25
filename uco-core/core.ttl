@@ -4,9 +4,12 @@
 @base <https://unifiedcyberontology.org/ontology/uco/core> .
 @prefix : <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
+@prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
 @prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -206,7 +209,7 @@ core:UcoObject
 		[
 			a owl:Restriction ;
 			owl:onProperty core:createdBy ;
-			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+			owl:onClass identity:Identity ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -230,7 +233,7 @@ core:UcoObject
 		[
 			a owl:Restriction ;
 			owl:onProperty core:id ;
-			owl:onDataRange <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
+			owl:onDataRange types:Identifier ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -278,7 +281,7 @@ core:createdBy
 	a owl:ObjectProperty ;
 	rdfs:label "createdBy"@en ;
 	rdfs:comment "The identity that created a characterization of a concept."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range identity:Identity ;
 	.
 
 core:createdTime
@@ -327,7 +330,7 @@ core:id
 	a owl:DatatypeProperty ;
 	rdfs:label "id"@en ;
 	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
+	rdfs:range types:Identifier ;
 	.
 
 core:isDirectional
@@ -372,7 +375,7 @@ core:objectMarking
 	a owl:ObjectProperty ;
 	rdfs:label "objectMarking"@en ;
 	rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition> ;
+	rdfs:range marking:MarkingDefinition ;
 	.
 
 core:referenceURL
@@ -445,10 +448,10 @@ core:value
 	rdfs:range xsd:string ;
 	.
 
-<https://unifiedcyberontology.org/ontology/uco/identity#Identity>
+identity:Identity
 	a owl:Class ;
 	.
 
-<https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
+marking:MarkingDefinition
 	a owl:Class ;
 	.

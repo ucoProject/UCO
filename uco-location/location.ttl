@@ -2,6 +2,7 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/location> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -17,7 +18,7 @@
 location:GPSCoordinates
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty location:hdop ;
@@ -50,7 +51,7 @@ location:GPSCoordinates
 location:LatLongCoordinates
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty location:altitude ;
@@ -76,7 +77,7 @@ location:LatLongCoordinates
 
 location:Location
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Location"@en ;
 	rdfs:comment "A geophysical place, site or position."@en ;
 	.
@@ -84,7 +85,7 @@ location:Location
 location:SimpleAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty location:addressType ;

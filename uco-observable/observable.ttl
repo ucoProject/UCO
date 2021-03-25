@@ -7,10 +7,15 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/observable> .
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
+@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
 @prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
 @prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -31,7 +36,7 @@
 observable:Account
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:accountIssuer ;
@@ -82,7 +87,7 @@ observable:Account
 observable:AccountAuthentication
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:passwordLastChanged ;
@@ -120,7 +125,7 @@ observable:AlternateDataStream
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:onProperty core:name ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -131,7 +136,7 @@ observable:AlternateDataStream
 observable:Application
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:operatingSystem ;
@@ -164,7 +169,7 @@ observable:Application
 observable:ApplicationAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
@@ -179,7 +184,7 @@ observable:ApplicationAccount
 observable:ArchiveFile
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:archiveType ;
@@ -204,14 +209,14 @@ observable:ArchiveFile
 
 observable:Attachment
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "Attachment"@en ;
 	.
 
 observable:Audio
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:bitRate ;
@@ -244,7 +249,7 @@ observable:Audio
 observable:AutonomousSystem
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:regionalInternetRegistry ;
@@ -270,7 +275,7 @@ observable:AutonomousSystem
 observable:BluetoothAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -285,7 +290,7 @@ observable:BluetoothAddress
 observable:BrowserBookmark
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:accessedTime ;
@@ -327,7 +332,7 @@ observable:BrowserBookmark
 observable:BrowserCookie
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:accessedTime ;
@@ -381,7 +386,7 @@ observable:BrowserCookie
 observable:Calendar
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
@@ -402,7 +407,7 @@ observable:Calendar
 observable:CalendarEntry
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:createdTime ;
@@ -488,7 +493,7 @@ observable:CalendarEntry
 observable:CompressedStream
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:compressionRatio ;
@@ -509,7 +514,7 @@ observable:CompressedStream
 observable:ComputerSpecification
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:biosDate ;
@@ -628,7 +633,7 @@ observable:ComputerSpecification
 observable:Contact
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:application ;
@@ -685,7 +690,7 @@ observable:Contact
 observable:ContentData
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:byteOrder ;
@@ -747,7 +752,7 @@ observable:ContentData
 observable:CyberAction
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
+		action:Action ,
 		observable:Observable
 		;
 	rdfs:label "CyberAction"@en ;
@@ -757,7 +762,7 @@ observable:CyberAction
 observable:CyberItem
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Item> ,
+		core:Item ,
 		observable:Observable ,
 		[
 			a owl:Restriction ;
@@ -785,7 +790,7 @@ observable:CyberObservablePattern
 observable:CyberRelationship
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Relationship> ,
+		core:Relationship ,
 		observable:Observable
 		;
 	rdfs:label "CyberRelationship"@en ;
@@ -795,7 +800,7 @@ observable:CyberRelationship
 observable:DataRange
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:rangeOffset ;
@@ -821,7 +826,7 @@ observable:DataRange
 
 observable:DefinedEffectFacet
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "DefinedEffectFacet"@en ;
 	rdfs:comment "A set of properties characterizing some defined effect of a cyberaction in relation to one or more cyberitems."@en ;
 	.
@@ -829,7 +834,7 @@ observable:DefinedEffectFacet
 observable:Device
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:deviceType ;
@@ -861,7 +866,7 @@ observable:Device
 observable:DigitalAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:firstLoginTime ;
@@ -892,7 +897,7 @@ observable:DigitalAccount
 observable:DigitalSignatureInfo
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:certificateIssuer ;
@@ -929,7 +934,7 @@ observable:DigitalSignatureInfo
 observable:Disk
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:diskType ;
@@ -954,7 +959,7 @@ observable:Disk
 observable:DiskPartition
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:createdTime ;
@@ -1015,7 +1020,7 @@ observable:DiskPartition
 observable:DomainName
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:isTLD ;
@@ -1044,7 +1049,7 @@ observable:ESN
 observable:EXIF
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:exifData ;
@@ -1058,7 +1063,7 @@ observable:EXIF
 observable:EmailAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:emailAddress ;
@@ -1073,7 +1078,7 @@ observable:EmailAccount
 observable:EmailAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:displayName ;
@@ -1094,7 +1099,7 @@ observable:EmailAddress
 observable:EmailMessage
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:modifiedTime ;
@@ -1225,7 +1230,7 @@ observable:EmailMessage
 observable:EncodedStream
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:encodingMethod ;
@@ -1240,7 +1245,7 @@ observable:EncodedStream
 observable:EncryptedStream
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:encryptionMethod ;
@@ -1267,7 +1272,7 @@ observable:EnvironmentVariable
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:onProperty core:name ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -1279,7 +1284,7 @@ observable:EnvironmentVariable
 observable:Event
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:createdTime ;
@@ -1329,7 +1334,7 @@ observable:Event
 observable:ExtInode
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:extDeletionTime ;
@@ -1435,7 +1440,7 @@ observable:ExtractedString
 
 observable:ExtractedStrings
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "ExtractedStrings"@en ;
 	rdfs:comment "One or more strings extracted from a cyber item."@en ;
 	.
@@ -1443,7 +1448,7 @@ observable:ExtractedStrings
 observable:File
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:accessedTime ;
@@ -1495,7 +1500,7 @@ observable:File
 observable:FilePermissions
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:owner ;
@@ -1510,7 +1515,7 @@ observable:FilePermissions
 observable:FileSystem
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:fileSystemType ;
@@ -1529,7 +1534,7 @@ observable:FileSystem
 
 observable:Fragment
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "Fragment"@en ;
 	rdfs:comment "Characteristics of an individual fragment of a file."@en ;
 	.
@@ -1537,7 +1542,7 @@ observable:Fragment
 observable:GeoLocationEntry
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:createdTime ;
@@ -1562,7 +1567,7 @@ observable:GeoLocationEntry
 observable:GeoLocationLog
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:createdTime ;
@@ -1582,7 +1587,7 @@ observable:GeoLocationLog
 observable:GeoLocationTrack
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:endTime ;
@@ -1633,7 +1638,7 @@ observable:GlobalFlagType
 observable:HTTPConnection
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:httpRequestHeader ;
@@ -1684,7 +1689,7 @@ observable:ICCID
 
 observable:ICMPConnection
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "ICMPConnection"@en ;
 	rdfs:comment "Specifies ICMP-specific network connection properties."@en ;
 	.
@@ -1757,7 +1762,7 @@ observable:IMSI
 observable:IPv4Address
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:value ;
@@ -1772,7 +1777,7 @@ observable:IPv4Address
 observable:IPv6Address
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:value ;
@@ -1807,7 +1812,7 @@ observable:IShowMessageActionType
 observable:Image
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:imageType ;
@@ -1822,7 +1827,7 @@ observable:Image
 observable:Library
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:libraryType ;
@@ -1839,7 +1844,7 @@ What about Android Package and iOS Package and Windows MSI?"""@en ;
 observable:MACAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:value ;
@@ -1873,7 +1878,7 @@ observable:MSISDNType
 observable:Memory
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:regionSize ;
@@ -1917,7 +1922,7 @@ observable:Memory
 observable:Message
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:sentTime ;
@@ -1967,7 +1972,7 @@ observable:Message
 observable:MessageThread
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:visibility ;
@@ -1988,7 +1993,7 @@ observable:MessageThread
 observable:MftRecord
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:mftFileNameAccessedTime ;
@@ -2097,7 +2102,7 @@ observable:MimePartType
 observable:MobileAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:IMSI ;
@@ -2124,7 +2129,7 @@ observable:MobileAccount
 observable:MobileDevice
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:storageCapacityInBytes ;
@@ -2187,7 +2192,7 @@ observable:MobileDevice
 observable:Mutex
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:isNamed ;
@@ -2200,7 +2205,7 @@ observable:Mutex
 
 observable:NTFSFilePermissions
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "NTFSFilePermissions"@en ;
 	rdfs:comment "Characteristics of permissions or access rights for an NTFS file."@en ;
 	.
@@ -2208,7 +2213,7 @@ observable:NTFSFilePermissions
 observable:NTFSFileSystem
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:entryID ;
@@ -2228,7 +2233,7 @@ observable:NTFSFileSystem
 observable:NetworkConnection
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:endTime ;
@@ -2270,7 +2275,7 @@ observable:NetworkConnection
 observable:NetworkFlow
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:ipfix ;
@@ -2320,7 +2325,7 @@ observable:NetworkFlow
 observable:NetworkInterface
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:dhcpLeaseExpires ;
@@ -2526,7 +2531,7 @@ observable:NetworkSocketType
 observable:Note
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:createdTime ;
@@ -2556,7 +2561,7 @@ observable:Note
 
 observable:Observable
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Observable"@en ;
 	rdfs:comment """A characterizable item or action within the digital domain.
 """@en ;
@@ -2565,15 +2570,15 @@ observable:Observable
 observable:Observation
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
+		action:Action ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:onProperty core:name ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:onProperty core:name ;
 			owl:hasValue "observe" ;
 		]
 		;
@@ -2584,7 +2589,7 @@ observable:Observation
 observable:OperatingSystem
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:bitness ;
@@ -2620,7 +2625,7 @@ observable:OperatingSystem
 observable:PDFFile
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:documentInformationDictionary ;
@@ -2666,7 +2671,7 @@ observable:PUK
 
 observable:PathRelation
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "PathRelation"@en ;
 	rdfs:comment "Specifies the location of one object within another containing object."@en ;
 	.
@@ -2674,7 +2679,7 @@ observable:PathRelation
 observable:PhoneAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:phoneNumber ;
@@ -2689,7 +2694,7 @@ observable:PhoneAccount
 observable:PhoneCall
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:endTime ;
@@ -2738,7 +2743,7 @@ observable:PhoneCall
 observable:Process
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:createdTime ;
@@ -2810,7 +2815,7 @@ observable:Process
 observable:PropertiesEnumeratedEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		observable:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -2826,7 +2831,7 @@ observable:PropertiesEnumeratedEffect
 observable:PropertyReadEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		observable:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -2848,7 +2853,7 @@ observable:PropertyReadEffect
 observable:RasterPicture
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:camera ;
@@ -2952,11 +2957,11 @@ observable:RegistryDatatype
 observable:SIMCard
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:carrier ;
-			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+			owl:onClass identity:Identity ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -3025,7 +3030,7 @@ observable:SIMType
 observable:SMSMessage
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:isRead ;
@@ -3040,7 +3045,7 @@ observable:SMSMessage
 observable:SQLiteBlob
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:columnName ;
@@ -3067,7 +3072,7 @@ observable:SQLiteBlob
 observable:SendControlCodeEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		observable:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -3083,7 +3088,7 @@ observable:SendControlCodeEffect
 observable:Software
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:cpeid ;
@@ -3126,7 +3131,7 @@ How does this relate to Application?
 observable:StateChangeEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		observable:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -3148,7 +3153,7 @@ observable:StateChangeEffect
 observable:SymbolicLink
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:targetFile ;
@@ -3162,7 +3167,7 @@ observable:SymbolicLink
 
 observable:TCPConnection
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "TCPConnection"@en ;
 	rdfs:comment "Specifies TCP-specific network connection properties."@en ;
 	.
@@ -3268,7 +3273,7 @@ observable:TriggerType
 observable:UNIXAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:gid ;
@@ -3287,14 +3292,14 @@ observable:UNIXAccount
 
 observable:UNIXFilePermissions
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "UNIXFilePermissions"@en ;
 	rdfs:comment "Characteristics of permissions or access rights for a UNIX file."@en ;
 	.
 
 observable:UNIXProcess
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "UNIXProcess"@en ;
 	rdfs:comment "Characterization of a UNIX process."@en ;
 	.
@@ -3302,7 +3307,7 @@ observable:UNIXProcess
 observable:UNIXVolume
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:mountPoint ;
@@ -3323,7 +3328,7 @@ observable:UNIXVolume
 observable:URL
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:host ;
@@ -3386,7 +3391,7 @@ observable:URL
 observable:UserAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:canEscalatePrivs ;
@@ -3418,7 +3423,7 @@ observable:UserAccount
 observable:UserSession
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:loginTime ;
@@ -3455,7 +3460,7 @@ observable:UserSession
 observable:ValuesEnumeratedEffect
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		observable:DefinedEffectFacet ,
 		[
 			a owl:Restriction ;
@@ -3471,7 +3476,7 @@ observable:ValuesEnumeratedEffect
 observable:Volume
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:sectorSize ;
@@ -3492,7 +3497,7 @@ observable:Volume
 observable:WhoIs
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:creationDate ;
@@ -3690,7 +3695,7 @@ observable:WhoisRegistrarInfoType
 observable:WifiAddress
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -3704,14 +3709,14 @@ observable:WifiAddress
 
 observable:WindowsAccount
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "WindowsAccount"@en ;
 	.
 
 observable:WindowsActiveDirectoryAccount
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:objectGUID ;
@@ -3725,7 +3730,7 @@ observable:WindowsActiveDirectoryAccount
 observable:WindowsComputerSpecification
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:registeredOrganization ;
@@ -3780,7 +3785,7 @@ observable:WindowsComputerSpecification
 observable:WindowsPEBinaryFile
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:peType ;
@@ -3878,7 +3883,7 @@ observable:WindowsPESection
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:onProperty core:name ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -3889,7 +3894,7 @@ observable:WindowsPESection
 observable:WindowsPrefetch
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:firstRun ;
@@ -3932,7 +3937,7 @@ observable:WindowsPrefetch
 observable:WindowsProcess
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:startupInfo ;
@@ -3975,7 +3980,7 @@ observable:WindowsProcess
 observable:WindowsRegistryHive
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:hiveType ;
@@ -3990,7 +3995,7 @@ observable:WindowsRegistryHive
 observable:WindowsRegistryKey
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:modifiedTime ;
@@ -4035,7 +4040,7 @@ observable:WindowsRegistryValue
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
+			owl:onProperty core:name ;
 			owl:onDataRange xsd:string ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
@@ -4047,7 +4052,7 @@ observable:WindowsRegistryValue
 observable:WindowsService
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:serviceStatus ;
@@ -4183,7 +4188,7 @@ observable:WindowsServiceType
 observable:WindowsTask
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:createdTime ;
@@ -4291,7 +4296,7 @@ observable:WindowsTask
 observable:WindowsThread
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:creationTime ;
@@ -4328,7 +4333,7 @@ observable:WindowsThread
 observable:WindowsVolume
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:driveLetter ;
@@ -4355,7 +4360,7 @@ observable:WindowsVolume
 observable:WirelessNetworkConnection
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:baseStation ;
@@ -4376,7 +4381,7 @@ observable:WirelessNetworkConnection
 observable:X509Certificate
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:issuerHash ;
@@ -4475,7 +4480,7 @@ observable:X509Certificate
 observable:X509V3Extensions
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:privateKeyUsagePeriodNotAfter ;
@@ -4621,7 +4626,7 @@ observable:accountIssuer
 	a owl:ObjectProperty ;
 	rdfs:label "accountIssuer"@en ;
 	rdfs:comment "The issuer of this account."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	rdfs:range core:UcoObject ;
 	.
 
 observable:accountLogin
@@ -4690,7 +4695,7 @@ observable:address
 	a owl:ObjectProperty ;
 	rdfs:label "address"@en ;
 	rdfs:comment "An address"@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
+	rdfs:range location:Location ;
 	.
 
 observable:addressOfEntryPoint
@@ -4770,7 +4775,7 @@ observable:attendant
 	a owl:ObjectProperty ;
 	rdfs:label "attendant"@en ;
 	rdfs:comment "The attendants of the event."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:audioType
@@ -4956,7 +4961,7 @@ observable:carrier
 	a owl:ObjectProperty ;
 	rdfs:label "carrier"@en ;
 	rdfs:comment "Telecommunications service provider that sold the SIM card."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:categories
@@ -4975,7 +4980,7 @@ observable:cc
 observable:certificateIssuer
 	a owl:ObjectProperty ;
 	rdfs:label "certificateIssuer"@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:certificatePolicies
@@ -4987,7 +4992,7 @@ observable:certificatePolicies
 observable:certificateSubject
 	a owl:ObjectProperty ;
 	rdfs:label "certificateSubject"@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	rdfs:range core:UcoObject ;
 	.
 
 observable:characteristics
@@ -5090,7 +5095,7 @@ observable:contactOrganization
 	a owl:ObjectProperty ;
 	rdfs:label "contactOrganization"@en ;
 	rdfs:comment "The name of the organization a contact works for or is assoicated with."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:contactType
@@ -5361,7 +5366,7 @@ observable:dnssec
 observable:documentInformationDictionary
 	a owl:ObjectProperty ;
 	rdfs:label "documentInformationDictionary"@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
+	rdfs:range types:ControlledDictionary ;
 	.
 
 observable:domain
@@ -5528,7 +5533,7 @@ observable:environmentVariables
 	a owl:ObjectProperty ;
 	rdfs:label "environmentVariables"@en ;
 	rdfs:comment "A list of environment variables associated with the process. "@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
+	rdfs:range types:Dictionary ;
 	.
 
 observable:eventID
@@ -5570,7 +5575,7 @@ observable:execProgramHashes
 	a owl:ObjectProperty ;
 	rdfs:label "execProgramHashes"@en ;
 	rdfs:comment "Specifies the hashes of the executable file launched by the action."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	rdfs:range types:Hash ;
 	.
 
 observable:execProgramPath
@@ -5590,7 +5595,7 @@ observable:execWorkingDirectory
 observable:exifData
 	a owl:ObjectProperty ;
 	rdfs:label "exifData"@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
+	rdfs:range types:ControlledDictionary ;
 	.
 
 observable:exitCode
@@ -5722,7 +5727,7 @@ observable:fileHeaderHashes
 	a owl:ObjectProperty ;
 	rdfs:label "fileHeaderHashes"@en ;
 	rdfs:comment "Specifies any hashes that were computed for the file header."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	rdfs:range types:Hash ;
 	.
 
 observable:fileName
@@ -5870,14 +5875,14 @@ observable:hash
 	a owl:ObjectProperty ;
 	rdfs:label "hash"@en ;
 	rdfs:comment "Hash values of the data."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	rdfs:range types:Hash ;
 	.
 
 observable:hashes
 	a owl:ObjectProperty ;
 	rdfs:label "hashes"@en ;
 	rdfs:comment "Specifies any hashes computed over the section."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	rdfs:range types:Hash ;
 	.
 
 observable:headerRaw
@@ -5938,7 +5943,7 @@ observable:httpRequestHeader
 	a owl:ObjectProperty ;
 	rdfs:label "httpRequestHeader"@en ;
 	rdfs:comment "Specifies all of the HTTP header fields that may be found in the HTTP client request"@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
+	rdfs:range types:Dictionary ;
 	.
 
 observable:iComHandlerAction
@@ -6062,7 +6067,7 @@ observable:ipfix
 	a owl:ObjectProperty ;
 	rdfs:label "ipfix"@en ;
 	rdfs:comment "Specifies any IP Flow Information Export (IPFIX) data for the network traffic flow."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
+	rdfs:range types:Dictionary ;
 	.
 
 observable:isActive
@@ -6219,7 +6224,7 @@ observable:issuerHash
 	a owl:ObjectProperty ;
 	rdfs:label "issuerHash"@en ;
 	rdfs:comment "A hash calculated on the certificate issuer name."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	rdfs:range types:Hash ;
 	.
 
 observable:key
@@ -6309,7 +6314,7 @@ observable:location
 	a owl:ObjectProperty ;
 	rdfs:label "location"@en ;
 	rdfs:comment "An associated location."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
+	rdfs:range location:Location ;
 	.
 
 observable:loginTime
@@ -6747,7 +6752,7 @@ observable:options
 observable:otherHeaders
 	a owl:ObjectProperty ;
 	rdfs:label "otherHeaders"@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
+	rdfs:range types:Dictionary ;
 	.
 
 observable:owner
@@ -6758,7 +6763,7 @@ observable:owner
 		"The owner of this account."@en
 		;
 	rdfs:range
-		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
+		core:UcoObject ,
 		observable:CyberItem
 		;
 	.
@@ -7006,7 +7011,7 @@ observable:protocols
 	a owl:ObjectProperty ;
 	rdfs:label "protocols"@en ;
 	rdfs:comment "Specifies the protocols involved in the network connection, along with their corresponding state. "@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary> ;
+	rdfs:range types:ControlledDictionary ;
 	.
 
 observable:query
@@ -7104,14 +7109,14 @@ observable:registeredOrganization
 	a owl:ObjectProperty ;
 	rdfs:label "registeredOrganization"@en ;
 	rdfs:comment "The organization that this copy of Windows is registered to."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:registeredOwner
 	a owl:ObjectProperty ;
 	rdfs:label "registeredOwner"@en ;
 	rdfs:comment "The person or organization that is the registered owner of this copy of Windows."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:registrantIDs
@@ -7489,7 +7494,7 @@ observable:src
 	a owl:ObjectProperty ;
 	rdfs:label "src"@en ;
 	rdfs:comment "Specifies the source(s) of the network connection."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	rdfs:range core:UcoObject ;
 	.
 
 observable:srcBytes
@@ -7550,7 +7555,7 @@ observable:startType
 observable:startupInfo
 	a owl:ObjectProperty ;
 	rdfs:label "startupInfo"@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Dictionary> ;
+	rdfs:range types:Dictionary ;
 	.
 
 observable:state
@@ -7609,7 +7614,7 @@ observable:subjectHash
 	a owl:ObjectProperty ;
 	rdfs:label "subjectHash"@en ;
 	rdfs:comment "A hash calculated on the certificate subject name."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	rdfs:range types:Hash ;
 	.
 
 observable:subjectKeyIdentifier
@@ -7706,7 +7711,7 @@ observable:thumbprintHash
 	a owl:ObjectProperty ;
 	rdfs:label "thumbprintHash"@en ;
 	rdfs:comment "A hash calculated on the entire certificate including signature."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Hash> ;
+	rdfs:range types:Hash ;
 	.
 
 observable:timeDateStamp

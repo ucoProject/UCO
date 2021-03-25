@@ -2,6 +2,7 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/pattern> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -31,7 +32,7 @@ pattern:LogicalPattern
 
 pattern:Pattern
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Pattern"@en ;
 	rdfs:comment
 		"A combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ,

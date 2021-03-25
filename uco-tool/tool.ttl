@@ -2,6 +2,7 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/tool> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -24,7 +25,7 @@ tool:AnalyticTool
 tool:Build
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		core:Facet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty tool:buildInformation ;
@@ -248,7 +249,7 @@ tool:MaliciousTool
 tool:Tool
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
+		core:UcoObject ,
 		[
 			a owl:Restriction ;
 			owl:onProperty tool:creator ;
@@ -280,7 +281,7 @@ tool:Tool
 
 tool:ToolConfigurationType
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "ToolConfigurationType"@en ;
 	rdfs:comment "Characterizes the configuration for a tool."@en ;
 	.

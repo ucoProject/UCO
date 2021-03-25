@@ -2,6 +2,7 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/marking> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -43,7 +44,7 @@ marking:LicenseMarking
 marking:MarkingDefinition
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
+		core:UcoObject ,
 		[
 			a owl:Restriction ;
 			owl:onProperty marking:definitionType ;

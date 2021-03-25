@@ -6,6 +6,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix victim: <https://unifiedcyberontology.org/ontology/uco/victim#> .
 @prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -20,7 +21,7 @@
 
 victim:Victim
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#NeutralRole> ;
+	rdfs:subClassOf role:NeutralRole ;
 	rdfs:label "Victim"@en ;
 	rdfs:comment "Person or organization that is the target of some malicious action."@en ;
 	.

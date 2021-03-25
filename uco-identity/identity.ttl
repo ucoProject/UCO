@@ -3,7 +3,9 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/location
 
 @base <https://unifiedcyberontology.org/ontology/uco/identity> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
+@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -25,7 +27,7 @@ identity:Address
 		[
 			a owl:Restriction ;
 			owl:onProperty identity:address ;
-			owl:onClass <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
+			owl:onClass location:Location ;
 			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -78,14 +80,14 @@ identity:Identifier
 
 identity:Identity
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Identity"@en ;
 	rdfs:comment "Characterization of the identifying properties of an individual or organization."@en ;
 	.
 
 identity:IdentityFacet
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "IdentityFacet"@en ;
 	rdfs:comment "Characteristic properties of a particular aspect of an identity."@en ;
 	.
@@ -178,7 +180,7 @@ identity:address
 	a owl:ObjectProperty ;
 	rdfs:label "address"@en ;
 	rdfs:comment ""@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/location#Location> ;
+	rdfs:range location:Location ;
 	.
 
 identity:birthdate
