@@ -1,19 +1,19 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/action
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/location
-# imports: https://unifiedcyberontology.org/ontology/uco/pattern
-# imports: https://unifiedcyberontology.org/ontology/uco/types
-# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/location/0.4.1
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/pattern/0.4.1
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/types/0.4.1
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/vocabulary/0.4.1
 
 @base <https://unifiedcyberontology.org/ontology/uco/action> .
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
+@prefix action: <https://archive.unifiedcyberontology.org/ontology/uco/action/0.4.1#> .
+@prefix core: <https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1#> .
+@prefix location: <https://archive.unifiedcyberontology.org/ontology/uco/location/0.4.1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
-@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix pattern: <https://archive.unifiedcyberontology.org/ontology/uco/pattern/0.4.1#> .
+@prefix vocab: <https://archive.unifiedcyberontology.org/ontology/uco/vocabulary/0.4.1#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/action>
@@ -21,13 +21,15 @@
 	rdfs:label "uco-action"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing actions."@en-US ;
 	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/location> ,
-		<https://unifiedcyberontology.org/ontology/uco/pattern> ,
-		<https://unifiedcyberontology.org/ontology/uco/types> ,
-		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+		<https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/location/0.4.1> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/pattern/0.4.1> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/types/0.4.1> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/vocabulary/0.4.1>
 		;
-	owl:versionInfo "0.4.0" ;
+	owl:ontologyIRI <https://unifiedcyberontology.org/ontology/uco/action> ;
+	owl:versionIRI <https://archive.unifiedcyberontology.org/ontology/uco/action/0.4.1> ;
+	owl:versionInfo "0.4.1" ;
 	.
 
 action:Action

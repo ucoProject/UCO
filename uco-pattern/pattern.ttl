@@ -1,10 +1,10 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/pattern
-# imports: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1
 
 @base <https://unifiedcyberontology.org/ontology/uco/pattern> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix core: <https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
+@prefix pattern: <https://archive.unifiedcyberontology.org/ontology/uco/pattern/0.4.1#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -12,7 +12,10 @@
 <https://unifiedcyberontology.org/ontology/uco/pattern>
 	a owl:Ontology ;
 	rdfs:label "uco-pattern"@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ;
+	owl:imports <https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1> ;
+	owl:ontologyIRI <https://unifiedcyberontology.org/ontology/uco/pattern> ;
+	owl:versionIRI <https://archive.unifiedcyberontology.org/ontology/uco/pattern/0.4.1> ;
+	owl:versionInfo "0.4.1" ;
 	.
 
 pattern:LogicalPattern

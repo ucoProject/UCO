@@ -2,7 +2,7 @@
 
 @base <https://unifiedcyberontology.org/ontology/uco/pattern-da> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
+@prefix pattern: <https://archive.unifiedcyberontology.org/ontology/uco/pattern/0.4.1#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -10,6 +10,9 @@
 <https://unifiedcyberontology.org/ontology/uco/pattern-da>
 	a owl:Ontology ;
 	rdfs:label "pattern domain assertions"@en ;
+	owl:ontologyIRI <https://unifiedcyberontology.org/ontology/uco/pattern-da> ;
+	owl:versionIRI <https://archive.unifiedcyberontology.org/ontology/uco/pattern-da/0.4.1> ;
+	owl:versionInfo "0.4.1" ;
 	.
 
 pattern:patternExpression

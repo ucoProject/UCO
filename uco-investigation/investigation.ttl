@@ -1,29 +1,32 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/investigation
-# imports: https://unifiedcyberontology.org/ontology/uco/action
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/location
-# imports: https://unifiedcyberontology.org/ontology/uco/role
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/action/0.4.1
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/location/0.4.1
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/role/0.4.1
 
 @base <https://unifiedcyberontology.org/ontology/uco/investigation> .
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix investigation: <https://unifiedcyberontology.org/ontology/uco/investigation#> .
+@prefix action: <https://archive.unifiedcyberontology.org/ontology/uco/action/0.4.1#> .
+@prefix core: <https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1#> .
+@prefix investigation: <https://archive.unifiedcyberontology.org/ontology/uco/investigation/0.4.1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
-@prefix vocab: <https://unifiedcyberontology.org/ontology/uco/vocab#> .
+@prefix role: <https://archive.unifiedcyberontology.org/ontology/uco/role/0.4.1#> .
+@prefix vocab: <https://archive.unifiedcyberontology.org/ontology/uco/vocabulary/0.4.1#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/investigation>
 	a owl:Ontology ;
 	rdfs:label "uco-investigation"@en ;
 	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/action> ,
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/location> ,
-		<https://unifiedcyberontology.org/ontology/uco/role>
+		<https://archive.unifiedcyberontology.org/ontology/uco/action/0.4.1> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/location/0.4.1> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/role/0.4.1>
 		;
+	owl:ontologyIRI <https://unifiedcyberontology.org/ontology/uco/investigation> ;
+	owl:versionIRI <https://archive.unifiedcyberontology.org/ontology/uco/investigation/0.4.1> ;
+	owl:versionInfo "0.4.1" ;
 	.
 
 core:endTime

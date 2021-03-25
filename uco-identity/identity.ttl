@@ -1,11 +1,11 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/identity
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/location
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/location/0.4.1
 
 @base <https://unifiedcyberontology.org/ontology/uco/identity> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
-@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
+@prefix core: <https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1#> .
+@prefix identity: <https://archive.unifiedcyberontology.org/ontology/uco/identity/0.4.1#> .
+@prefix location: <https://archive.unifiedcyberontology.org/ontology/uco/location/0.4.1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -15,9 +15,12 @@
 	a owl:Ontology ;
 	rdfs:label "uco-identity"@en ;
 	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/location>
+		<https://archive.unifiedcyberontology.org/ontology/uco/core/0.4.1> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/location/0.4.1>
 		;
+	owl:ontologyIRI <https://unifiedcyberontology.org/ontology/uco/identity> ;
+	owl:versionIRI <https://archive.unifiedcyberontology.org/ontology/uco/identity/0.4.1> ;
+	owl:versionInfo "0.4.1" ;
 	.
 
 identity:Address
