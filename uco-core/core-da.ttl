@@ -2,7 +2,6 @@
 
 @base <https://unifiedcyberontology.org/ontology/uco/core-da> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix investigation: <https://unifiedcyberontology.org/ontology/uco/investigation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -12,11 +11,10 @@
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
-	owl:versionInfo "0.2.1" ;
 	.
 
 core:confidence
-	rdfs:domain core:Confidence ;
+	rdfs:domain core:ConfidenceFacet ;
 	.
 
 core:constrainingVocabularyName
@@ -35,12 +33,8 @@ core:createdBy
 	rdfs:domain core:UcoObject ;
 	.
 
-core:createdTime
-	rdfs:domain core:UcoObject ;
-	.
-
 core:definingContext
-	rdfs:domain core:ExternalReference ;
+	rdfs:domain core:ExternalReferenceFacet ;
 	.
 
 core:description
@@ -48,14 +42,11 @@ core:description
 	.
 
 core:endTime
-	rdfs:domain
-		core:Relationship ,
-		investigation:Authorization
-		;
+	rdfs:domain core:Relationship ;
 	.
 
 core:externalIdentifier
-	rdfs:domain core:ExternalReference ;
+	rdfs:domain core:ExternalReferenceFacet ;
 	.
 
 core:hasFacet
@@ -90,12 +81,16 @@ core:object
 		;
 	.
 
+core:objectCreatedTime
+	rdfs:domain core:UcoObject ;
+	.
+
 core:objectMarking
 	rdfs:domain core:UcoObject ;
 	.
 
 core:referenceURL
-	rdfs:domain core:ExternalReference ;
+	rdfs:domain core:ExternalReferenceFacet ;
 	.
 
 core:role
