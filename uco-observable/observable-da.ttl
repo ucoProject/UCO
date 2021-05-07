@@ -128,7 +128,6 @@ observable:addressOfEntryPoint
 	rdfs:domain observable:WindowsPEOptionalHeader ;
 	.
 
-
 observable:allocationStatus
 	rdfs:domain observable:FileFacet ;
 	.
@@ -490,7 +489,10 @@ observable:diskType
 	.
 
 observable:displayName
-	rdfs:domain observable:WindowsServiceFacet ;
+	rdfs:domain
+		observable:ContactFacet ,
+		observable:WindowsServiceFacet
+		;
 	.
 
 observable:dllCharacteristics
@@ -1590,10 +1592,6 @@ observable:scheme
 	rdfs:domain observable:URLFacet ;
 	.
 
-observable:displayName
-	rdfs:domain observable:ContactFacet ;
-	.
-
 observable:sectionAlignment
 	rdfs:domain observable:WindowsPEOptionalHeader ;
 	.
@@ -2055,3 +2053,4 @@ observable:xMailer
 observable:xOriginatingIP
 	rdfs:domain observable:EmailMessageFacet ;
 	.
+
