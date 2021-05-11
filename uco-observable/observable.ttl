@@ -1541,12 +1541,6 @@ observable:DiskPartitionFacet
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty observable:partitionID ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:integer ;
-		] ,
-		[
-			a owl:Restriction ;
 			owl:onProperty observable:partitionLength ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
@@ -1578,6 +1572,12 @@ observable:DiskPartitionFacet
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:mountPoint ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty observable:partitionID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		]
