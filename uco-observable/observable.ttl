@@ -1543,7 +1543,7 @@ observable:DiskPartitionFacet
 			a owl:Restriction ;
 			owl:onProperty observable:partitionID ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:integer ;
+			owl:onDataRange xsd:string ;
 		] ,
 		[
 			a owl:Restriction ;
