@@ -1230,7 +1230,7 @@ observable:nameConstraints
 	rdfs:domain observable:X509V3ExtensionsFacet ;
 	.
 
-observable:nameserver
+observable:nameServer
 	rdfs:domain observable:WhoIsFacet ;
 	.
 
