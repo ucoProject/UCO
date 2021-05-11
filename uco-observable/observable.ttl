@@ -3039,14 +3039,7 @@ observable:NTFSFile
 	rdfs:comment "An NTFS file is a New Technology File System (NTFS) file."@en ;
 	.
 
-observable:NTFSFilePermissionsFacet
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "NTFSFilePermissionsFacet"@en ;
-	rdfs:comment "An NTFS file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on an NTFS (new technology filesystem) file system."@en ;
-	.
-
-observable:NTFSFileSystemFacet
+observable:NTFSFileFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3063,8 +3056,15 @@ observable:NTFSFileSystemFacet
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "NTFSFileSystemFacet"@en ;
-	rdfs:comment "An NTFS file system facet is a grouping of characteristics unique to a file on an NTFS (new technology filesystem) file system."@en ;
+	rdfs:label "NTFSFileFacet"@en ;
+	rdfs:comment "An NTFS file facet is a grouping of characteristics unique to a file on an NTFS (new technology filesystem) file system."@en ;
+	.
+
+observable:NTFSFilePermissionsFacet
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:label "NTFSFilePermissionsFacet"@en ;
+	rdfs:comment "An NTFS file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on an NTFS (new technology filesystem) file system."@en ;
 	.
 
 observable:NamedPipe

@@ -133,7 +133,7 @@ observable:allocationStatus
 	.
 
 observable:alternateDataStreams
-	rdfs:domain observable:NTFSFileSystemFacet ;
+	rdfs:domain observable:NTFSFileFacet ;
 	.
 
 observable:application
@@ -596,7 +596,7 @@ observable:entropy
 	.
 
 observable:entryID
-	rdfs:domain observable:NTFSFileSystemFacet ;
+	rdfs:domain observable:NTFSFileFacet ;
 	.
 
 observable:environmentVariables
@@ -1653,7 +1653,7 @@ observable:showMessageTitle
 	.
 
 observable:sid
-	rdfs:domain observable:NTFSFileSystemFacet ;
+	rdfs:domain observable:NTFSFileFacet ;
 	.
 
 observable:signature
