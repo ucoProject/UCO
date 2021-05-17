@@ -7939,7 +7939,7 @@ observable:ip
 observable:ipAddress
 	a owl:ObjectProperty ;
 	rdfs:label "ipAddress"@en ;
-	rdfs:comment "Specifies the corresponding ip address for a whois entry. Usually corresponds to a nameserver lookup."@en ;
+	rdfs:comment "Specifies the corresponding ip address for a whois entry. Usually corresponds to a name server lookup."@en ;
 	rdfs:range observable:ObservableObject ;
 	.
 
@@ -8541,18 +8541,18 @@ observable:namePrefix
 	rdfs:range xsd:string ;
 	.
 
+observable:nameServer
+	a owl:ObjectProperty ;
+	rdfs:label "nameServer"@en ;
+	rdfs:comment "Specifies a list of name server entries for a Whois entry."@en ;
+	rdfs:range observable:ObservableObject ;
+	.
+
 observable:nameSuffix
 	a owl:DatatypeProperty ;
 	rdfs:label "nameSuffix"@en ;
 	rdfs:comment "Name suffix specifies an suffix (coming ordinally after last/family name) for the name of a person."@en ;
 	rdfs:range xsd:string ;
-	.
-
-observable:nameserver
-	a owl:ObjectProperty ;
-	rdfs:label "nameserver"@en ;
-	rdfs:comment "Specifies a list of nameserver entries for a Whois entry."@en ;
-	rdfs:range observable:ObservableObject ;
 	.
 
 observable:netBIOSName
@@ -9371,7 +9371,7 @@ observable:serialNumber
 observable:serverName
 	a owl:ObjectProperty ;
 	rdfs:label "serverName"@en ;
-	rdfs:comment "Specifies the corresponding server name for a whois entry. This usually corresponds to a nameserver lookup."@en ;
+	rdfs:comment "Specifies the corresponding server name for a whois entry. This usually corresponds to a name server lookup."@en ;
 	rdfs:range observable:ObservableObject ;
 	.
 
