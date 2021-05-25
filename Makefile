@@ -13,7 +13,7 @@
 
 SHELL := /bin/bash
 
-turtle_directories := $(wildcard uco-*)
+turtle_directories := $(shell find uco-* -type d -maxdepth 0 | sort)
 
 all_directories := $(foreach turtle_directory,$(turtle_directories),all-$(turtle_directory))
 
