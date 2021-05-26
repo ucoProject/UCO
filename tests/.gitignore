@@ -1,0 +1,4 @@
+.venv.done.log
+__pycache__
+uco_monolithic.ttl
+venv

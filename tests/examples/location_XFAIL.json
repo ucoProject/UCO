@@ -1,0 +1,55 @@
+{
+    "@context": {
+        "acme": "http://custompb.acme.org/core#",
+        "core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "kb": "http://example.org/kb/",
+        "location": "https://unifiedcyberontology.org/ontology/uco/location#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:location1",
+            "@type": "location:Location",
+            "core:description": "First of two locations in example.",
+            "core:hasFacet": [
+                {
+                    "@type": "location:SimpleAddress",
+                    "location:locality": "Seattle",
+                    "location:region": "WA",
+                    "location:postalCode": 98052,
+                    "location:street": "20341 Whitworth Institute 405 N. Whitworth"
+                },
+                {
+                    "@type": "acme:InternalLocation",
+                    "acme:floor": 3,
+                    "acme:roomNumber": "345"
+                }
+            ]
+        },
+        {
+            "@id": "kb:location2",
+            "@type": "location:Location",
+            "core:descriptionButWrongName": "Second of two locations in example.",
+            "core:hasFacet": [
+                {
+                    "@type": "location:SimpleAddress",
+                    "location:locality": "Paris",
+                    "location:country": "France",
+                    "location:postalCode": "F-75002",
+                    "location:street": "38 Bad Guy Headquarters st."
+                },
+                {
+                    "@type": "location:LatLongCoordinates",
+                    "location:latitude": {
+                        "@type": "xsd:decimal",
+                        "@value": "48.860346"
+                    },
+                    "location:longitude": {
+                        "@type": "xsd:decimal",
+                        "@value": "2.331199"
+                    }
+                }
+            ]
+        }
+    ]
+}
