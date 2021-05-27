@@ -3544,20 +3544,20 @@ observable:OnlineService
 observable:OnlineServiceFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology/ontology/uco/core#name> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#name> ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology/ontology/uco/observable#inetLocation> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/observable#inetLocation> ;
 			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology/ontology/uco/observable#location> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/observable#location> ;
 			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
 		]
 		;

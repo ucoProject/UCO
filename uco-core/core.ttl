@@ -152,17 +152,17 @@ core:ExternalReference
 	rdfs:subClassOf
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology/ontology/uco/core#definingContext> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#definingContext> ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology/ontology/uco/core#externalIdentifier> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#externalIdentifier> ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology/ontology/uco/core#referenceURL> ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#referenceURL> ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
