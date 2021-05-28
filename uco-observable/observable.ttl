@@ -2091,6 +2091,7 @@ observable:FileFacet
 			owl:onProperty observable:sizeInBytes ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
+			rdfs:comment: "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -10173,4 +10174,3 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
-
