@@ -55,11 +55,11 @@ identity:BirthInformationFacet
 	rdfs:comment "Birth information is a grouping of characteristics unique to information pertaining to the birth of an entity."@en ;
 	.
 
-identity:CountriesOfResidenceFacet
+identity:CountryOfResidenceFacet
 	a owl:Class ;
 	rdfs:subClassOf identity:IdentityFacet ;
-	rdfs:label "CountriesOfResidenceFacet"@en ;
-	rdfs:comment "Countries of residence is a grouping of characteristics unique to information related to the country, or countries, where an entity resides."@en ;
+	rdfs:label "CountryOfResidenceFacet"@en ;
+	rdfs:comment "Country of residence is a grouping of characteristics unique to information related to the country, or countries, where an entity resides."@en ;
 	.
 
 identity:EventsFacet
@@ -215,4 +215,3 @@ identity:honorificSuffix
 	rdfs:comment ""@en ;
 	rdfs:range xsd:string ;
 	.
-
