@@ -2128,7 +2128,7 @@ observable:FileSystem
 	a owl:Class ;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "FileSystem"@en ;
-	rdfs:commenet "A file system is the process that manages how and where data on a storage medium is stored, accessed and managed. [based on https://www.techopedia.com/definition/5510/file-system]"@en ;
+	rdfs:comment "A file system is the process that manages how and where data on a storage medium is stored, accessed and managed. [based on https://www.techopedia.com/definition/5510/file-system]"@en ;
 	.
 
 observable:FileSystemFacet
@@ -2197,7 +2197,7 @@ observable:GeoLocationEntry
 	a owl:Class ;
 	rdfs:label "GeoLocationEntry"@en ;
 	rdfs:comment "A geolocation entry is a single application-specific geolocation entry."@en ;
-	rdfs:subCassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:ObservableObject ;
 	.
 
 observable:GeoLocationEntryFacet
@@ -3538,7 +3538,7 @@ observable:OnlineService
 	a owl:Class ;
 	rdfs:label "OnlineService"@en ;
 	rdfs:comment "An online service is a particular provision mechanism of information access, distribution or manipulation over the Internet."@en ;
-	rdfs:subClasOf observable:ObservableObject ;
+	rdfs:subClassOf observable:ObservableObject ;
 	.
 
 observable:OnlineServiceFacet
@@ -4282,7 +4282,7 @@ observable:Snapshot
 	a owl:Class ;
 	rdfs:label "Snapshot"@en ;
 	rdfs:comment "A snapshot is a file system object representing a snapshot of the contents of a part of a file system at a point in time."@en ;
-	rdfs:subClasOf observable:FileSystemObject ;
+	rdfs:subClassOf observable:FileSystemObject ;
 	.
 
 observable:Socket
@@ -10173,4 +10173,3 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
-
