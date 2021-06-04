@@ -2063,6 +2063,13 @@ observable:FileFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
+			owl:onProperty observable:sizeInBytes ;
+			rdfs:comment: "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:integer ;
+		] ,
+		[
+			a owl:Restriction ;
 			owl:onProperty observable:accessedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -2085,13 +2092,6 @@ observable:FileFacet
 			a owl:Restriction ;
 			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:sizeInBytes ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:integer ;
-			rdfs:comment: "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -10174,3 +10174,4 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
+
