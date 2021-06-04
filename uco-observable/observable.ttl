@@ -2195,9 +2195,9 @@ observable:GenericObservableObject
 
 observable:GeoLocationEntry
 	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "GeoLocationEntry"@en ;
 	rdfs:comment "A geolocation entry is a single application-specific geolocation entry."@en ;
-	rdfs:subClassOf observable:ObservableObject ;
 	.
 
 observable:GeoLocationEntryFacet
@@ -3536,9 +3536,9 @@ observable:Observation
 
 observable:OnlineService
 	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "OnlineService"@en ;
 	rdfs:comment "An online service is a particular provision mechanism of information access, distribution or manipulation over the Internet."@en ;
-	rdfs:subClassOf observable:ObservableObject ;
 	.
 
 observable:OnlineServiceFacet
@@ -4280,9 +4280,9 @@ observable:ShopListing
 
 observable:Snapshot
 	a owl:Class ;
+	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "Snapshot"@en ;
 	rdfs:comment "A snapshot is a file system object representing a snapshot of the contents of a part of a file system at a point in time."@en ;
-	rdfs:subClassOf observable:FileSystemObject ;
 	.
 
 observable:Socket
@@ -10173,3 +10173,4 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
+
