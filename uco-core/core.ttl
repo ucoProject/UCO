@@ -183,6 +183,13 @@ core:Grouping
 	rdfs:comment "A grouping is a compilation of referenced UCO content with a shared context."@en ;
 	.
 
+core:Identity
+	a owl:Class ;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Identity"@en ;
+	rdfs:comment "An identity is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
+	.
+
 core:Item
 	a owl:Class ;
 	rdfs:subClassOf core:UcoObject ;
@@ -190,19 +197,12 @@ core:Item
 	rdfs:comment "An item is a distinct article or unit."@en ;
 	.
 
-core:Identity
-    a owl:Class ;
-    rdfs:subClassOf core:UcoObject ;
-    rdfs:label "Identity"@en ;
-    rdfs:comment "An identity is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
-    .
-
 core:MarkingDefinition
-    a owl:Class ;
-    rdfs:subClassOf core:UcoObject ;
-    rdfs:label "MarkingDefinition"@en ;
-    rdfs:comment "A marking definition is a grouping of characteristics unique to the expression of a specific data marking conveying restrictions, permissions, and other guidance for how marked data can be used and shared. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the marking:MarkingDefinition class."@en ;
-    .
+	a owl:Class ;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "MarkingDefinition"@en ;
+	rdfs:comment "A marking definition is a grouping of characteristics unique to the expression of a specific data marking conveying restrictions, permissions, and other guidance for how marked data can be used and shared. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the marking:MarkingDefinition class."@en ;
+	.
 
 core:ModusOperandi
 	a owl:Class ;
@@ -508,3 +508,4 @@ core:value
 	rdfs:comment "A string value."@en ;
 	rdfs:range xsd:string ;
 	.
+
