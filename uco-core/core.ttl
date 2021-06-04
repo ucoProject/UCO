@@ -499,3 +499,4 @@ core:value
 <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
 	a owl:Class ;
 	.
+
