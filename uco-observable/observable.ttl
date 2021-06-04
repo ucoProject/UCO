@@ -3490,8 +3490,8 @@ observable:ObservableObject
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:hasChanged ;
-			owl:onDataRange xsd:boolean ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:boolean ;
 		]
 		;
 	rdfs:label "ObservableObject"@en ;
@@ -10173,3 +10173,4 @@ observable:xOriginatingIP
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
 	.
+
