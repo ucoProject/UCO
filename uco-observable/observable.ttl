@@ -8742,10 +8742,7 @@ observable:otherHeaders
 observable:owner
 	a owl:ObjectProperty ;
 	rdfs:label "owner"@en ;
-	rdfs:comment
-		"The owner of the file."@en ,
-		"The owner of this account."@en
-		;
+	rdfs:comment "Specifies the owner of an Observable Object."@en ;
 	rdfs:range
 		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
 		observable:ObservableObject
@@ -8822,10 +8819,7 @@ observable:partitionOffset
 observable:password
 	a owl:DatatypeProperty ;
 	rdfs:label "password"@en ;
-	rdfs:comment
-		"Password used to authenticate to this resource."@en ,
-		"The account authentication password."@en
-		;
+	rdfs:comment "Specifies an authentication password."@en ;
 	rdfs:range xsd:string ;
 	.
 

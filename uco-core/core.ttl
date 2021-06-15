@@ -404,10 +404,7 @@ core:namingAuthority
 core:object
 	a owl:ObjectProperty ;
 	rdfs:label "object"@en ;
-	rdfs:comment
-		"One or more UcoObject identifers referencing other objects."@en ,
-		"One or more UcoObjects."@en
-		;
+	rdfs:comment "Specifies one or more UcoObjects."@en ;
 	rdfs:range core:UcoObject ;
 	.
 
