@@ -2954,6 +2954,12 @@ observable:MobileDeviceFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
+			owl:onProperty observable:clockSetting ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:dateTime ;
+		] ,
+		[
+			a owl:Restriction ;
 			owl:onProperty observable:storageCapacityInBytes ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
@@ -2973,12 +2979,6 @@ observable:MobileDeviceFacet
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:bluetoothDeviceName ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:clockSetting ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -6717,7 +6717,7 @@ observable:clockSetting
 	a owl:DatatypeProperty ;
 	rdfs:label "clockSetting"@en ;
 	rdfs:comment "The generalizedTime value on the mobile device when it was processed."@en ;
-	rdfs:range xsd:string ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:clusterSize
