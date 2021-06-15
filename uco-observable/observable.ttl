@@ -2063,6 +2063,13 @@ observable:FileFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
+			owl:onProperty observable:sizeInBytes ;
+			rdfs:comment: "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:integer ;
+		] ,
+		[
+			a owl:Restriction ;
 			owl:onProperty observable:accessedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
@@ -2085,12 +2092,6 @@ observable:FileFacet
 			a owl:Restriction ;
 			owl:onProperty observable:observableCreatedTime ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:sizeInBytes ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:integer ;
 		] ,
 		[
 			a owl:Restriction ;
@@ -2128,7 +2129,7 @@ observable:FileSystem
 	a owl:Class ;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "FileSystem"@en ;
-	rdfs:commenet "A file system is the process that manages how and where data on a storage medium is stored, accessed and managed. [based on https://www.techopedia.com/definition/5510/file-system]"@en ;
+	rdfs:comment "A file system is the process that manages how and where data on a storage medium is stored, accessed and managed. [based on https://www.techopedia.com/definition/5510/file-system]"@en ;
 	.
 
 observable:FileSystemFacet
@@ -2195,9 +2196,9 @@ observable:GenericObservableObject
 
 observable:GeoLocationEntry
 	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "GeoLocationEntry"@en ;
 	rdfs:comment "A geolocation entry is a single application-specific geolocation entry."@en ;
-	rdfs:subCassOf observable:ObservableObject ;
 	.
 
 observable:GeoLocationEntryFacet
@@ -2953,6 +2954,12 @@ observable:MobileDeviceFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
+			owl:onProperty observable:clockSetting ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:dateTime ;
+		] ,
+		[
+			a owl:Restriction ;
 			owl:onProperty observable:storageCapacityInBytes ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
@@ -2972,12 +2979,6 @@ observable:MobileDeviceFacet
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:bluetoothDeviceName ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty observable:clockSetting ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
 		] ,
@@ -3039,14 +3040,7 @@ observable:NTFSFile
 	rdfs:comment "An NTFS file is a New Technology File System (NTFS) file."@en ;
 	.
 
-observable:NTFSFilePermissionsFacet
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	rdfs:label "NTFSFilePermissionsFacet"@en ;
-	rdfs:comment "An NTFS file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on an NTFS (new technology filesystem) file system."@en ;
-	.
-
-observable:NTFSFileSystemFacet
+observable:NTFSFileFacet
 	a owl:Class ;
 	rdfs:subClassOf
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
@@ -3063,8 +3057,15 @@ observable:NTFSFileSystemFacet
 			owl:onDataRange xsd:string ;
 		]
 		;
-	rdfs:label "NTFSFileSystemFacet"@en ;
-	rdfs:comment "An NTFS file system facet is a grouping of characteristics unique to a file on an NTFS (new technology filesystem) file system."@en ;
+	rdfs:label "NTFSFileFacet"@en ;
+	rdfs:comment "An NTFS file facet is a grouping of characteristics unique to a file on an NTFS (new technology filesystem) file system."@en ;
+	.
+
+observable:NTFSFilePermissionsFacet
+	a owl:Class ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	rdfs:label "NTFSFilePermissionsFacet"@en ;
+	rdfs:comment "An NTFS file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on an NTFS (new technology filesystem) file system."@en ;
 	.
 
 observable:NamedPipe
@@ -3490,8 +3491,8 @@ observable:ObservableObject
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:hasChanged ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:boolean ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
 	rdfs:label "ObservableObject"@en ;
@@ -3536,9 +3537,9 @@ observable:Observation
 
 observable:OnlineService
 	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "OnlineService"@en ;
 	rdfs:comment "An online service is a particular provision mechanism of information access, distribution or manipulation over the Internet."@en ;
-	rdfs:subClasOf observable:ObservableObject ;
 	.
 
 observable:OnlineServiceFacet
@@ -4280,9 +4281,9 @@ observable:ShopListing
 
 observable:Snapshot
 	a owl:Class ;
+	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "Snapshot"@en ;
 	rdfs:comment "A snapshot is a file system object representing a snapshot of the contents of a part of a file system at a point in time."@en ;
-	rdfs:subClasOf observable:FileSystemObject ;
 	.
 
 observable:Socket
@@ -6716,7 +6717,7 @@ observable:clockSetting
 	a owl:DatatypeProperty ;
 	rdfs:label "clockSetting"@en ;
 	rdfs:comment "The generalizedTime value on the mobile device when it was processed."@en ;
-	rdfs:range xsd:string ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:clusterSize
@@ -8741,10 +8742,7 @@ observable:otherHeaders
 observable:owner
 	a owl:ObjectProperty ;
 	rdfs:label "owner"@en ;
-	rdfs:comment
-		"The owner of the file."@en ,
-		"The owner of this account."@en
-		;
+	rdfs:comment "Specifies the owner of an Observable Object."@en ;
 	rdfs:range
 		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
 		observable:ObservableObject
@@ -8821,10 +8819,7 @@ observable:partitionOffset
 observable:password
 	a owl:DatatypeProperty ;
 	rdfs:label "password"@en ;
-	rdfs:comment
-		"Password used to authenticate to this resource."@en ,
-		"The account authentication password."@en
-		;
+	rdfs:comment "Specifies an authentication password."@en ;
 	rdfs:range xsd:string ;
 	.
 
