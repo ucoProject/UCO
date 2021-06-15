@@ -2063,8 +2063,8 @@ observable:FileFacet
 		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
 		[
 			a owl:Restriction ;
+			rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
 			owl:onProperty observable:sizeInBytes ;
-			rdfs:comment: "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:integer ;
 		] ,
