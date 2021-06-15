@@ -3491,8 +3491,8 @@ observable:ObservableObject
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:hasChanged ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:boolean ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
 	rdfs:label "ObservableObject"@en ;
