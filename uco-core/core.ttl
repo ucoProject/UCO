@@ -449,7 +449,7 @@ core:source
 core:specVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "specVersion"@en ;
-	rdfs:comment "The version of UCO used to characterize a concept."@en ;
+	rdfs:comment "The version of UCO ontology or subontology specification used to characterize a concept."@en ;
 	rdfs:range xsd:string ;
 	.
 
