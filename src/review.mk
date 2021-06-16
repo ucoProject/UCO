@@ -25,7 +25,7 @@ srcdir_without_ucohyphen := $(subst uco-,,$(shell basename "$(srcdir)"))
 ifeq ($(srcdir_without_ucohyphen),master)
 ttl_basenames := uco.ttl
 else
-ttl_basenames := $(wildcard $(srcdir_without_ucohyphen)*.ttl)
+ttl_basenames := $(shell find $(srcdir_without_ucohyphen)*.ttl -type f | sort)
 endif
 
 # These are reference files, named with a leading dot.
