@@ -250,7 +250,7 @@ core:UcoObject
 		[
 			a owl:Restriction ;
 			owl:onProperty core:createdBy ;
-			owl:onClass <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+			owl:onClass core:IdentityAbstraction ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -328,7 +328,7 @@ core:createdBy
 	a owl:ObjectProperty ;
 	rdfs:label "createdBy"@en ;
 	rdfs:comment "The identity that created a characterization of a concept."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	rdfs:range core:IdentityAbstraction ;
 	.
 
 core:definingContext
@@ -433,7 +433,7 @@ core:objectMarking
 	a owl:ObjectProperty ;
 	rdfs:label "objectMarking"@en ;
 	rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition> ;
+	rdfs:range core:MarkingDefinitionAbstraction ;
 	.
 
 core:referenceURL
