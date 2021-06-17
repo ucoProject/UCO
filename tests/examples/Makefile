@@ -36,6 +36,15 @@ location_PASS_validation.ttl: \
 	    $<
 	mv _$@ $@
 
+# NOTE - this recipe makes an allowance for a certain failure type
+# reported by pyshacl.  Pyshacl will exit status 1 in the case where
+# "DataGraph is Non-Conformant".  This XFAIL test is intenced to
+# generate a non-conformance result, and feed that result forward to
+# pytest.  Hence, the Make recipe allows for an exit status of 0 or 1.
+# (0 would cause an expected failure later in pytest.)
+# Note that should another issue cause an exit status of 1, pytest will
+# fail because the result validation-graph file would not have expected
+# characteristics.
 location_XFAIL_validation.ttl: \
   location_XFAIL.json \
   $(tests_srcdir)/.venv.done.log \
@@ -48,7 +57,8 @@ location_XFAIL_validation.ttl: \
 	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
 	    --output _$@ \
-	    $<
+	    $< \
+	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
 	mv _$@ $@
 
 check: \
