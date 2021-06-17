@@ -1,6 +1,6 @@
 {
     "@context": {
-        "acme": "http://custompb.acme.org/core#",
+        "acme": "http://example.org/ontology/acme/core/",
         "core": "https://unifiedcyberontology.org/ontology/uco/core#",
         "kb": "http://example.org/kb/",
         "location": "https://unifiedcyberontology.org/ontology/uco/location#",
