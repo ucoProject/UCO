@@ -9061,7 +9061,7 @@ observable:profileWebsite
 	rdfs:range observable:ObservableObject ;
 	.
 
-observable:profilelanguage
+observable:profileLanguage
 	a owl:DatatypeProperty ;
 	rdfs:label "Profile Language"@en-US ;
 	rdfs:comment "Specifies the language associated with the profile. When present, it MUST be a language code conformant to RFC 5646/BCP47."@en-US ;
