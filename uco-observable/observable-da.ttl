@@ -1504,15 +1504,15 @@ observable:referralURL
 	rdfs:domain observable:WhoisRegistrarInfoType ;
 	.
 
+observable:regionEndAddress
+	rdfs:domain observable:MemoryFacet ;
+	.
+
 observable:regionSize
 	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:regionStartAddress
-	rdfs:domain observable:MemoryFacet ;
-	.
-
-observable:region_end_address
 	rdfs:domain observable:MemoryFacet ;
 	.
 
