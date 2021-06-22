@@ -429,13 +429,6 @@ core:referenceURL
 	rdfs:range xsd:anyURI ;
 	.
 
-core:role
-	a owl:DatatypeProperty ;
-	rdfs:label "role"@en ;
-	rdfs:comment "Usual or customary function based on contextual perspective."@en ;
-	rdfs:range xsd:string ;
-	.
-
 core:source
 	a owl:ObjectProperty ;
 	rdfs:label "source"@en ;
