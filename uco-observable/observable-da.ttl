@@ -1408,11 +1408,11 @@ observable:pictureHeight
 	rdfs:domain observable:RasterPictureFacet ;
 	.
 
-observable:pictureWidth
+observable:pictureType
 	rdfs:domain observable:RasterPictureFacet ;
 	.
 
-observable:picturetype
+observable:pictureWidth
 	rdfs:domain observable:RasterPictureFacet ;
 	.
 
