@@ -78,7 +78,7 @@ identity:IdentifierFacet
 
 identity:Identity
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#IdentityAbstraction> ;
 	rdfs:label "Identity"@en ;
 	rdfs:comment "An identity is a grouping of identifying characteristics unique to an individual or organization."@en ;
 	.

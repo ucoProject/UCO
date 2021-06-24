@@ -43,7 +43,7 @@ marking:LicenseMarking
 marking:MarkingDefinition
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
+		<https://unifiedcyberontology.org/ontology/uco/core#MarkingDefinitionAbstraction> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty marking:definitionType ;
