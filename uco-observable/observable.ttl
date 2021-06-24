@@ -7555,13 +7555,6 @@ observable:favoritesCount
 	rdfs:range xsd:nonNegativeInteger ;
 	.
 
-observable:faxNumber
-	a owl:ObjectProperty ;
-	rdfs:label "faxNumber"@en ;
-	rdfs:comment "A phone number(account) of a fax."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:fileAlignment
 	a owl:DatatypeProperty ;
 	rdfs:label "fileAlignment"@en ;
