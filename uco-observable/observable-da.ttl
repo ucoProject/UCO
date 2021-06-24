@@ -344,10 +344,6 @@ observable:computerName
 	rdfs:domain observable:EventFacet ;
 	.
 
-observable:contactInfo
-	rdfs:domain observable:WhoIsFacet ;
-	.
-
 observable:contentDisposition
 	rdfs:domain observable:EmailMessageFacet ;
 	.
@@ -1408,11 +1404,11 @@ observable:pictureHeight
 	rdfs:domain observable:RasterPictureFacet ;
 	.
 
-observable:pictureWidth
+observable:pictureType
 	rdfs:domain observable:RasterPictureFacet ;
 	.
 
-observable:picturetype
+observable:pictureWidth
 	rdfs:domain observable:RasterPictureFacet ;
 	.
 
@@ -1504,15 +1500,15 @@ observable:referralURL
 	rdfs:domain observable:WhoisRegistrarInfoType ;
 	.
 
+observable:regionEndAddress
+	rdfs:domain observable:MemoryFacet ;
+	.
+
 observable:regionSize
 	rdfs:domain observable:MemoryFacet ;
 	.
 
 observable:regionStartAddress
-	rdfs:domain observable:MemoryFacet ;
-	.
-
-observable:region_end_address
 	rdfs:domain observable:MemoryFacet ;
 	.
 
@@ -1526,6 +1522,10 @@ observable:registeredOrganization
 
 observable:registeredOwner
 	rdfs:domain observable:WindowsComputerSpecificationFacet ;
+	.
+
+observable:registrantContactInfo
+	rdfs:domain observable:WhoIsFacet ;
 	.
 
 observable:registrantIDs
