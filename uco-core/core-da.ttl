@@ -93,10 +93,6 @@ core:referenceURL
 	rdfs:domain core:ExternalReferenceFacet ;
 	.
 
-core:role
-	rdfs:domain core:RelatedIdentity ;
-	.
-
 core:source
 	rdfs:domain core:Relationship ;
 	.
