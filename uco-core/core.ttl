@@ -273,15 +273,15 @@ core:UcoObject
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:externalReference ;
-			owl:onClass core:ExternalReference ;
-			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+			owl:onProperty core:id ;
+			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onDataRange <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty core:id ;
-			owl:onDataRange <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onProperty core:externalReference ;
+			owl:onClass core:ExternalReference ;
+			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
 		]
 		;
 	rdfs:label "UcoObject"@en ;
