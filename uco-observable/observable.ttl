@@ -9040,6 +9040,13 @@ observable:profileIsVerified
 	rdfs:range xsd:boolean ;
 	.
 
+observable:profileLanguage
+	a owl:DatatypeProperty ;
+	rdfs:label "Profile Language"@en-US ;
+	rdfs:comment "Specifies the language associated with the profile. When present, it MUST be a language code conformant to RFC 5646/BCP47."@en-US ;
+	rdfs:range xsd:string ;
+	.
+
 observable:profileService
 	a owl:ObjectProperty ;
 	rdfs:label "Profile Service"@en-US ;
@@ -9052,13 +9059,6 @@ observable:profileWebsite
 	rdfs:label "Profile Website"@en-US ;
 	rdfs:comment "Specifies the website URL associated with the profile."@en-US ;
 	rdfs:range observable:ObservableObject ;
-	.
-
-observable:profilelanguage
-	a owl:DatatypeProperty ;
-	rdfs:label "Profile Language"@en-US ;
-	rdfs:comment "Specifies the language associated with the profile. When present, it MUST be a language code conformant to RFC 5646/BCP47."@en-US ;
-	rdfs:range xsd:string ;
 	.
 
 observable:properties
