@@ -4380,12 +4380,12 @@ observable:ProfileFacet
 			sh:path observable:profileService ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:integer ;
-			sh:path observable:profileLanguage ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path observable:profileWebsite ;
 		] ,
 		[
 			sh:minCount "0"^^xsd:integer ;
-			sh:path observable:profileWebsite ;
+			sh:path observable:profileLanguage ;
 		]
 		;
 	sh:targetClass observable:ProfileFacet ;
