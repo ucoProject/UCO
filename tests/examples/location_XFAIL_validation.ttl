@@ -1,6 +1,21 @@
+@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] a sh:ValidationReport ;
-    sh:conforms true .
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode [ a location:SimpleAddressFacet ;
+                    location:locality "Seattle" ;
+                    location:postalCode 98052 ;
+                    location:region "WA" ;
+                    location:street "20341 Whitworth Institute 405 N. Whitworth" ] ;
+            sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+            sh:resultPath location:postalCode ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:path location:postalCode ] ;
+            sh:value 98052 ] .
 
