@@ -2507,12 +2507,12 @@ observable:ContactMessaging
 		[
 			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:path observable:contactAddress ;
+			sh:path observable:contactMessagingPlatform ;
 		] ,
 		[
 			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:path observable:contactMessagingPlatform ;
+			sh:path observable:messagingAddress ;
 		]
 		;
 	sh:targetClass observable:ContactMessaging ;
