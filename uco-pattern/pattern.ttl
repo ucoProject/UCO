@@ -2,13 +2,20 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/pattern> .
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
+@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
+@prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/pattern>
 	a owl:Ontology ;
@@ -24,11 +31,61 @@ pattern:LogicalPattern
 	rdfs:subClassOf pattern:Pattern ;
 	rdfs:label "LogicalPattern"@en ;
 	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
-	sh:property [
-		sh:datatype pattern:PatternExpression ;
-		sh:maxCount "1"^^xs:nonNegativeInteger ;
-		sh:path pattern:patternExpression ;
-	] ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype pattern:PatternExpression ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path pattern:patternExpression ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:id ;
+		] ,
+		[
+			sh:path core:description ;
+		] ,
+		[
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:path core:tag ;
+		] ,
+		[
+			sh:path core:type ;
+		]
+		;
 	sh:targetClass pattern:LogicalPattern ;
 	.
 
@@ -40,6 +97,56 @@ pattern:Pattern
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Pattern"@en ;
 	rdfs:comment "A pattern is a combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:id ;
+		] ,
+		[
+			sh:path core:description ;
+		] ,
+		[
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:path core:tag ;
+		] ,
+		[
+			sh:path core:type ;
+		]
+		;
 	sh:targetClass pattern:Pattern ;
 	.
 

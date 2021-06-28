@@ -2,13 +2,20 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/role> .
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
+@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
+@prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/role>
 	a owl:Ontology ;
@@ -24,6 +31,56 @@ role:BenevolentRole
 	rdfs:subClassOf role:Role ;
 	rdfs:label "BenevolentRole"@en ;
 	rdfs:comment "A benevolent role is a role with positive and/or beneficial intent."@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:id ;
+		] ,
+		[
+			sh:path core:description ;
+		] ,
+		[
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:path core:tag ;
+		] ,
+		[
+			sh:path core:type ;
+		]
+		;
 	sh:targetClass role:BenevolentRole ;
 	.
 
@@ -35,6 +92,56 @@ role:MaliciousRole
 	rdfs:subClassOf role:Role ;
 	rdfs:label "MaliciousRole"@en ;
 	rdfs:comment "A malicious role is a role with malevolent intent."@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:id ;
+		] ,
+		[
+			sh:path core:description ;
+		] ,
+		[
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:path core:tag ;
+		] ,
+		[
+			sh:path core:type ;
+		]
+		;
 	sh:targetClass role:MaliciousRole ;
 	.
 
@@ -46,6 +153,56 @@ role:NeutralRole
 	rdfs:subClassOf role:Role ;
 	rdfs:label "NeutralRole"@en ;
 	rdfs:comment "A neutral role is a role with impartial intent."@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:id ;
+		] ,
+		[
+			sh:path core:description ;
+		] ,
+		[
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:path core:tag ;
+		] ,
+		[
+			sh:path core:type ;
+		]
+		;
 	sh:targetClass role:NeutralRole ;
 	.
 
@@ -57,6 +214,56 @@ role:Role
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Role"@en ;
 	rdfs:comment "A role is a usual or customary function based on contextual perspective."@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path core:id ;
+		] ,
+		[
+			sh:path core:description ;
+		] ,
+		[
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:path core:tag ;
+		] ,
+		[
+			sh:path core:type ;
+		]
+		;
 	sh:targetClass role:Role ;
 	.
 
