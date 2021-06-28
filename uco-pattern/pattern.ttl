@@ -2,11 +2,13 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/pattern> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/pattern>
 	a owl:Ontology ;
@@ -15,31 +17,40 @@
 	.
 
 pattern:LogicalPattern
-	a owl:Class ;
-	rdfs:subClassOf
-		pattern:Pattern ,
-		[
-			a owl:Restriction ;
-			owl:onProperty pattern:patternExpression ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange pattern:PatternExpression ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf pattern:Pattern ;
 	rdfs:label "LogicalPattern"@en ;
 	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
+	sh:property [
+		sh:datatype pattern:PatternExpression ;
+		sh:maxCount "1"^^xs:nonNegativeInteger ;
+		sh:path pattern:patternExpression ;
+	] ;
+	sh:targetClass pattern:LogicalPattern ;
 	.
 
 pattern:Pattern
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Pattern"@en ;
 	rdfs:comment "A pattern is a combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ;
+	sh:targetClass pattern:Pattern ;
 	.
 
 pattern:PatternExpression
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:label "PatternExpression"@en ;
 	rdfs:comment "A pattern expression is a grouping of characteristics unique to an explicit logical expression defining a pattern (e.g., regular expression, SQL Select expression, etc.)."@en ;
+	sh:targetClass pattern:PatternExpression ;
 	.
 
 pattern:patternExpression

@@ -6,6 +6,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
 @prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -20,85 +21,103 @@
 	.
 
 types:ControlledDictionary
-	a owl:Class ;
-	rdfs:subClassOf [
-		a owl:Restriction ;
-		owl:onProperty types:entry ;
-		owl:onClass types:ControlledDictionaryEntry ;
-		owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	] ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:label "ControlledDictionary"@en ;
 	rdfs:comment "A controlled dictionary is a list of (term/key, value) pairs where each term/key exists no more than once and is constrained to an explicitly defined set of values."@en ;
+	sh:property [
+		sh:class types:ControlledDictionaryEntry ;
+		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:path types:entry ;
+	] ;
+	sh:targetClass types:ControlledDictionary ;
 	.
 
 types:ControlledDictionaryEntry
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty types:key ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty types:value ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "ControlledDictionaryEntry"@en ;
 	rdfs:comment "A controlled dictionary entry is a single (term/key, value) pair where the term/key is constrained to an explicitly defined set of values."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path types:value ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path types:key ;
+		]
+		;
+	sh:targetClass types:ControlledDictionaryEntry ;
 	.
 
 types:Dictionary
-	a owl:Class ;
-	rdfs:subClassOf [
-		a owl:Restriction ;
-		owl:onProperty types:entry ;
-		owl:onClass types:DictionaryEntry ;
-		owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	] ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:label "Dictionary"@en ;
 	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
+	sh:property [
+		sh:class types:DictionaryEntry ;
+		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:path types:entry ;
+	] ;
+	sh:targetClass types:Dictionary ;
 	.
 
 types:DictionaryEntry
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty types:key ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty types:value ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "DictionaryEntry"@en ;
 	rdfs:comment "A dictionary entry is a single (term/key, value) pair."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path types:key ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path types:value ;
+		]
+		;
+	sh:targetClass types:DictionaryEntry ;
 	.
 
 types:Hash
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty types:hashMethod ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty types:hashValue ;
-			owl:onDataRange xsd:hexBinary ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
+	sh:property
+		[
+			sh:datatype xsd:hexBinary ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path types:hashValue ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path types:hashMethod ;
+		]
+		;
+	sh:targetClass types:Hash ;
 	.
 
 types:Identifier

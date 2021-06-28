@@ -22,14 +22,13 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/victim
 
 @base <https://unifiedcyberontology.org/ontology/uco/uco> .
-@prefix : <https://unifiedcyberontology.org/ontology/uco/uco#> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix uco: <https://unifiedcyberontology.org/ontology/uco/uco#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
 @prefix xs: <http://www.w3.org/2001/XMLSchema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/uco>
 	a owl:Ontology ;
@@ -60,7 +59,7 @@
 	owl:versionInfo "0.6.0" ;
 	.
 
-<https://unifiedcyberontology.org/ontology/uco/core#id>
-	rdfs:range <https://unifiedcyberontology.org/ontology/uco/types#Identifier> ;
+core:id
+	rdfs:range types:Identifier ;
 	.
 

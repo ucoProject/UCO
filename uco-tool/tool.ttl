@@ -2,9 +2,11 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/tool> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -15,274 +17,323 @@
 	.
 
 tool:AnalyticTool
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf tool:Tool ;
 	rdfs:label "AnalyticTool"@en ;
 	rdfs:comment "An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning."@en ;
+	sh:targetClass tool:AnalyticTool ;
 	.
 
 tool:BuildConfigurationType
-	a owl:Class ;
-	rdfs:subClassOf [
-		a owl:Restriction ;
-		owl:onProperty tool:configurationSettingDescription ;
-		owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		owl:onDataRange xsd:string ;
-	] ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:label "BuildConfigurationType"@en ;
 	rdfs:comment "A build configuration type is a characterization of how a particular version of software can or should be built."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:configurationSettingDescription ;
+		] ,
+		[
+			sh:path tool:configurationSettings ;
+		]
+		;
+	sh:targetClass tool:BuildConfigurationType ;
 	.
 
 tool:BuildFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildInformation ;
-			owl:onClass tool:BuildInformationType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "BuildFacet"@en ;
 	rdfs:comment "A build facet is a grouping of characteristics unique to a particular version of a software."@en ;
+	sh:property [
+		sh:class tool:BuildInformationType ;
+		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:path tool:buildInformation ;
+	] ;
+	sh:targetClass tool:BuildFacet ;
 	.
 
 tool:BuildInformationType
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:compilationDate ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildConfiguration ;
-			owl:onClass tool:BuildConfigurationType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildUtility ;
-			owl:onClass tool:BuildUtilityType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildID ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildLabel ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildOutputLog ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildProject ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildScript ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildVersion ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "BuildInformationType"@en ;
 	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
+	sh:property
+		[
+			sh:class tool:BuildConfigurationType ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildConfiguration ;
+		] ,
+		[
+			sh:class tool:BuildUtilityType ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildUtility ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildLabel ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildOutputLog ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildProject ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildScript ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildVersion ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:compilationDate ;
+		] ,
+		[
+			sh:path tool:compilers ;
+		] ,
+		[
+			sh:path tool:libraries ;
+		]
+		;
+	sh:targetClass tool:BuildInformationType ;
 	.
 
 tool:BuildUtilityType
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:cpeid ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:swid ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:buildUtilityName ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "BuildUtilityType"@en ;
 	rdfs:comment "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:buildUtilityName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:cpeid ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:swid ;
+		]
+		;
+	sh:targetClass tool:BuildUtilityType ;
 	.
 
 tool:CompilerType
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:compilerInformalDescription ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:cpeid ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:swid ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "CompilerType"@en ;
 	rdfs:comment "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:cpeid ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:swid ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:compilerInformalDescription ;
+		]
+		;
+	sh:targetClass tool:CompilerType ;
 	.
 
 tool:ConfigurationSettingType
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:itemDescription ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:itemType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:itemName ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:itemValue ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "ConfigurationSettingType"@en ;
 	rdfs:comment "A configuration setting type is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, or other cyber object."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:itemName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:itemValue ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:itemDescription ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:itemType ;
+		]
+		;
+	sh:targetClass tool:ConfigurationSettingType ;
 	.
 
 tool:DefensiveTool
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf tool:Tool ;
 	rdfs:label "DefensiveTool"@en ;
 	rdfs:comment "A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding."@en ;
+	sh:targetClass tool:DefensiveTool ;
 	.
 
 tool:DependencyType
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:dependencyDescription ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:dependencyType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "DependencyType"@en ;
 	rdfs:comment "A dependency type is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:dependencyType ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:dependencyDescription ;
+		]
+		;
+	sh:targetClass tool:DependencyType ;
 	.
 
 tool:LibraryType
-	a owl:Class ;
-	rdfs:subClassOf
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:libraryName ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:libraryVersion ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
 	rdfs:label "LibraryType"@en ;
 	rdfs:comment "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:libraryName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:libraryVersion ;
+		]
+		;
+	sh:targetClass tool:LibraryType ;
 	.
 
 tool:MaliciousTool
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf tool:Tool ;
 	rdfs:label "MaliciousTool"@en ;
 	rdfs:comment "A malicious tool is an artifact of hardware and/or software utilized to accomplish a malevolent task or purpose."@en ;
+	sh:targetClass tool:MaliciousTool ;
 	.
 
 tool:Tool
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:creator ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:servicePack ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:toolType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty tool:version ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Tool"@en ;
 	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:creator ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:servicePack ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:toolType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path tool:version ;
+		] ,
+		[
+			sh:path tool:references ;
+		]
+		;
+	sh:targetClass tool:Tool ;
 	.
 
 tool:ToolConfigurationTypeFacet
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "ToolConfigurationTypeFacet"@en ;
 	rdfs:comment "A tool configuration type facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
+	sh:property
+		[
+			sh:path tool:dependencies ;
+		] ,
+		[
+			sh:path tool:usageContextAssumptions ;
+		]
+		;
+	sh:targetClass tool:ToolConfigurationTypeFacet ;
 	.
 
 tool:buildConfiguration

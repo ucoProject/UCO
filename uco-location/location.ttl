@@ -2,10 +2,12 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/location> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/location>
@@ -15,115 +17,118 @@
 	.
 
 location:GPSCoordinatesFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:hdop ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:double ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:pdop ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:double ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:tdop ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:double ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:vdop ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:double ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "GPSCoordinatesFacet"@en ;
 	rdfs:comment "A GPS coordinates facet is a grouping of characteristics unique to the expression of quantified dilution of precision (DOP) for an asserted set of geolocation coordinates typically associated with satellite navigation such as the Global Positioning System (GPS)."@en ;
+	sh:property
+		[
+			sh:datatype xsd:double ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:hdop ;
+		] ,
+		[
+			sh:datatype xsd:double ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:pdop ;
+		] ,
+		[
+			sh:datatype xsd:double ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:tdop ;
+		] ,
+		[
+			sh:datatype xsd:double ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:vdop ;
+		]
+		;
+	sh:targetClass location:GPSCoordinatesFacet ;
 	.
 
 location:LatLongCoordinatesFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:altitude ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:decimal ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:latitude ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:decimal ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:longitude ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:decimal ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "LatLongCoordinatesFacet"@en ;
 	rdfs:comment "A lat long coordinates facet is a grouping of characteristics unique to the expression of a geolocation as the intersection of specific latitude, longitude, and altitude values."@en ;
+	sh:property
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:altitude ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:latitude ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:longitude ;
+		]
+		;
+	sh:targetClass location:LatLongCoordinatesFacet ;
 	.
 
 location:Location
-	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Location"@en ;
 	rdfs:comment "A location is a geospatial place, site, or position."@en ;
+	sh:targetClass location:Location ;
 	.
 
 location:SimpleAddressFacet
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:addressType ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:country ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:locality ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:postalCode ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:region ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty location:street ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "SimpleAddressFacet"@en ;
 	rdfs:comment "A simple address facet is a grouping of characteristics unique to a geolocation expressed as an administrative address."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:addressType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:country ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:locality ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:postalCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:region ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:path location:street ;
+		]
+		;
+	sh:targetClass location:SimpleAddressFacet ;
 	.
 
 location:addressType

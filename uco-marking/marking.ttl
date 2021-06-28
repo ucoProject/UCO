@@ -2,10 +2,12 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 
 @base <https://unifiedcyberontology.org/ontology/uco/marking> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/marking>
@@ -16,107 +18,141 @@
 	.
 
 marking:GranularMarking
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:label "GranularMarking"@en ;
 	rdfs:comment "A granular marking is a grouping of characteristics unique to specification of marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) that apply to particular portions of a particular UCO object."@en ;
+	sh:property
+		[
+			sh:path marking:contentSelectors ;
+		] ,
+		[
+			sh:path marking:marking ;
+		]
+		;
+	sh:targetClass marking:GranularMarking ;
 	.
 
 marking:LicenseMarking
-	a owl:Class ;
-	rdfs:subClassOf
-		marking:MarkingModel ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:license ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:definitionType ;
-			owl:hasValue "license" ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf marking:MarkingModel ;
 	rdfs:label "License Marking"@en ;
 	rdfs:comment "A license marking is a grouping of characteristics unique to the expression of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) to convey details of license restrictions that apply to the data."@en-US ;
+	sh:property
+		[
+			sh:hasValue "license" ;
+			sh:path marking:definitionType ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path marking:license ;
+		]
+		;
+	sh:targetClass marking:LicenseMarking ;
 	.
 
 marking:MarkingDefinition
-	a owl:Class ;
-	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#MarkingDefinitionAbstraction> ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:definitionType ;
-			owl:onDataRange xsd:string ;
-			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf core:MarkingDefinitionAbstraction ;
 	rdfs:label "MarkingDefinition"@en ;
 	rdfs:comment "A marking definition is a grouping of characteristics unique to the expression of a specific data marking conveying restrictions, permissions, and other guidance for how marked data can be used and shared."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path marking:definitionType ;
+		] ,
+		[
+			sh:path marking:definition ;
+		]
+		;
+	sh:targetClass marking:MarkingDefinition ;
 	.
 
 marking:MarkingModel
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:label "MarkingModel"@en ;
 	rdfs:comment "A marking model is a grouping of characteristics unique to the expression of a particular form of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared)."@en ;
+	sh:targetClass marking:MarkingModel ;
 	.
 
 marking:ReleaseToMarking
-	a owl:Class ;
-	rdfs:subClassOf
-		marking:MarkingModel ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:definitionType ;
-			owl:hasValue "release-to" ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:authorizedIdentities ;
-			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf marking:MarkingModel ;
 	rdfs:label "Release-To Marking"@en ;
 	rdfs:comment "A release-to marking is a grouping of characteristics unique to the expression of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) to convey details of authorized persons and/or organizations to which to the associated content may be released. The existence of the Release-To marking restricts access to ONLY those identities explicitly listed, regardless of whether another data marking exists that allows sharing with other members of the community."@en-US ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path marking:authorizedIdentities ;
+		] ,
+		[
+			sh:hasValue "release-to" ;
+			sh:path marking:definitionType ;
+		]
+		;
+	sh:targetClass marking:ReleaseToMarking ;
 	.
 
 marking:StatementMarking
-	a owl:Class ;
-	rdfs:subClassOf
-		marking:MarkingModel ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:statement ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:definitionType ;
-			owl:hasValue "statement" ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf marking:MarkingModel ;
 	rdfs:label "Statement Marking"@en ;
 	rdfs:comment "A statement marking is a grouping of characteristics unique to the expression of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) to convey details of a textual marking statement, (e.g., copyright) whose semantic meaning should apply to the associated content. Statement markings are generally not machine-readable. An example of this would be a simple marking to apply copyright information, such as 'Copyright 2014 Acme Inc.'."@en ;
+	sh:property
+		[
+			sh:hasValue "statement" ;
+			sh:path marking:definitionType ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path marking:statement ;
+		]
+		;
+	sh:targetClass marking:StatementMarking ;
 	.
 
 marking:TermsOfUseMarking
-	a owl:Class ;
-	rdfs:subClassOf
-		marking:MarkingModel ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:termsOfUse ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty marking:definitionType ;
-			owl:hasValue "terms-of-use" ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf marking:MarkingModel ;
 	rdfs:label "Terms Of Use Marking"@en ;
 	rdfs:comment "A terms of use marking is a grouping of characteristics unique to the expression of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) to convey details of a textual statement specifying the Terms of Use (that is, the conditions under which the content may be shared, applied, or otherwise used) of the marked content. An example of this would be used to communicate a simple statement, such as 'Acme Inc. is not responsible for the content of this file'."@en ;
+	sh:property
+		[
+			sh:hasValue "terms-of-use" ;
+			sh:path marking:definitionType ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:path marking:termsOfUse ;
+		]
+		;
+	sh:targetClass marking:TermsOfUseMarking ;
 	.
 
 marking:authorizedIdentities
