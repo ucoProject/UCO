@@ -4382,6 +4382,10 @@ observable:ProfileFacet
 		[
 			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:profileLanguage ;
+		] ,
+		[
+			sh:minCount "0"^^xsd:integer ;
+			sh:path observable:profileWebsite ;
 		]
 		;
 	sh:targetClass observable:ProfileFacet ;
