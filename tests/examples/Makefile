@@ -21,8 +21,12 @@ all: \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl
 
-location_PASS_validation.ttl: \
-  location_PASS.json \
+.PRECIOUS: \
+  %_PASS_validation.ttl \
+  %_XFAIL_validation.ttl
+
+%_PASS_validation.ttl: \
+  %_PASS.json \
   $(tests_srcdir)/.venv.done.log \
   $(tests_srcdir)/uco_monolithic.ttl
 	source $(tests_srcdir)/venv/bin/activate \
@@ -45,8 +49,8 @@ location_PASS_validation.ttl: \
 # Note that should another issue cause an exit status of 1, pytest will
 # fail because the result validation-graph file would not have expected
 # characteristics.
-location_XFAIL_validation.ttl: \
-  location_XFAIL.json \
+%_XFAIL_validation.ttl: \
+  %_XFAIL.json \
   $(tests_srcdir)/.venv.done.log \
   $(tests_srcdir)/uco_monolithic.ttl
 	source $(tests_srcdir)/venv/bin/activate \
