@@ -41,6 +41,14 @@ def load_validation_graph(
     assert expected_conformace == conforms
     return g
 
+def test_action_inheritance_PASS_validation():
+    g = load_validation_graph("action_inheritance_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
+
+def test_action_inheritance_XFAIL_validation():
+    g = load_validation_graph("action_inheritance_XFAIL_validation.ttl", False)
+    assert isinstance(g, rdflib.Graph)
+
 def test_location_PASS_validation():
     g = load_validation_graph("location_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)

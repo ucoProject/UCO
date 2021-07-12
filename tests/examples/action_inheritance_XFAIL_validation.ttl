@@ -1,0 +1,15 @@
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/action-lifecycle1> ;
+            sh:resultMessage "More than 0 values on kb:action-lifecycle1->action:actionStatus" ;
+            sh:resultPath action:actionStatus ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+            sh:sourceShape [ sh:maxCount 0 ;
+                    sh:path action:actionStatus ] ] .
+
