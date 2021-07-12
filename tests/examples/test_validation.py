@@ -26,26 +26,25 @@ WHERE {
 
 nsdict = {"sh": "http://www.w3.org/ns/shacl#"}
 
-def load_validation_graph(filename):
+def load_validation_graph(
+  filename : str,
+  expected_conformance : bool
+) -> rdflib.Graph:
     g = rdflib.Graph()
     g.parse(filename, format="turtle")
     g.namespace_manager.bind("sh", "http://www.w3.org/ns/shacl#")
+    query = rdflib.plugins.sparql.prepareQuery(query_text, initNs=nsdict)
+    computed_conformance = None
+    for result in g.query(query):
+        (l_conforms,) = result
+        computed_conformance = bool(l_conforms)
+    assert expected_conformance == computed_conformance
     return g
 
 def test_location_PASS_validation():
-    g = load_validation_graph("location_PASS_validation.ttl")
-    query = rdflib.plugins.sparql.prepareQuery(query_text, initNs=nsdict)
-    conforms = None
-    for result in g.query(query):
-        (l_conforms,) = result
-        conforms = bool(l_conforms)
-    assert conforms
+    g = load_validation_graph("location_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
 
 def test_location_XFAIL_validation():
-    g = load_validation_graph("location_XFAIL_validation.ttl")
-    query = rdflib.plugins.sparql.prepareQuery(query_text, initNs=nsdict)
-    conforms = None
-    for result in g.query(query):
-        (l_conforms,) = result
-        conforms = bool(l_conforms)
-    assert conforms == False
+    g = load_validation_graph("location_XFAIL_validation.ttl", False)
+    assert isinstance(g, rdflib.Graph)
