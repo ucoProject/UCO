@@ -18,6 +18,8 @@ top_srcdir := $(shell cd ../.. ; pwd)
 tests_srcdir := $(top_srcdir)/tests
 
 all: \
+  action_inheritance_PASS_validation.ttl \
+  action_inheritance_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl
 
@@ -66,6 +68,8 @@ all: \
 	mv _$@ $@
 
 check: \
+  action_inheritance_PASS_validation.ttl \
+  action_inheritance_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl
 	source $(tests_srcdir)/venv/bin/activate \
