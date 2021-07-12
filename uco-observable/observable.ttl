@@ -8879,7 +8879,9 @@ observable:Observation
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:hasValue "observe" ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path core:name ;
 		] ,
 		[
@@ -8891,12 +8893,6 @@ observable:Observation
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:hasValue "observe" ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:path core:name ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;

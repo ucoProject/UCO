@@ -273,9 +273,6 @@ core:Bundle
 			sh:path core:id ;
 		] ,
 		[
-			sh:path core:description ;
-		] ,
-		[
 			sh:path core:hasFacet ;
 		] ,
 		[
