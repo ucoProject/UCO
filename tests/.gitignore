@@ -1,4 +1,5 @@
 .venv.done.log
 _*
+inheritance_review.ttl
 uco_monolithic.ttl
 venv

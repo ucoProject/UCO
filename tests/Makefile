@@ -21,7 +21,11 @@ uco_turtle_files := $(shell /bin/ls $(top_srcdir)/uco-*/*.ttl)
 
 all:
 
+# The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
 .venv.done.log: \
+  $(top_srcdir)/.git_submodule_init.done.log \
+  $(top_srcdir)/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py \
+  $(top_srcdir)/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg \
   requirements.txt
 	rm -rf venv
 	$(PYTHON3) -m venv \
@@ -30,13 +34,18 @@ all:
 	  && pip install \
 	    --upgrade \
 	    pip \
-	    setuptools
+	    setuptools \
+	    wheel
+	source venv/bin/activate \
+	  && pip install \
+	    $(top_srcdir)/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer
 	source venv/bin/activate \
 	  && pip install \
 	    --requirement requirements.txt
 	touch $@
 
 check: \
+  inheritance_review.ttl \
   uco_monolithic.ttl
 	$(MAKE) \
 	  --directory examples \
@@ -51,6 +60,18 @@ clean:
 	  uco_monolithic.ttl
 	@rm -rf \
 	  venv
+
+inheritance_review.ttl: \
+  $(uco_turtle_files) \
+  .venv.done.log
+	rm -f _$@
+	source venv/bin/activate \
+	  && case_shacl_inheritance_reviewer \
+	    --strict \
+	    _$@ \
+	    $(uco_turtle_files) \
+	    || (cat _$@ && exit 1)
+	mv _$@ $@
 
 uco_monolithic.ttl: \
   $(top_srcdir)/.lib.done.log \
