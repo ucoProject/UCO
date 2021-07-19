@@ -9,7 +9,7 @@
 @prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix victim: <https://unifiedcyberontology.org/ontology/uco/victim#> .
-@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/victim>
 	a owl:Ontology ;
