@@ -1,21 +1,11 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/vocabulary> .
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
-@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
-@prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
 @prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/vocabulary>
 	a owl:Ontology ;

@@ -2,19 +2,12 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/core> .
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
-@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
-@prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/core>
@@ -36,58 +29,79 @@ core:Annotation
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:object ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:statement ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:statement ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:Annotation ;
@@ -105,53 +119,73 @@ core:Assertion
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:statement ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:statement ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:Assertion ;
@@ -169,55 +203,74 @@ core:AttributedName
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:namingAuthority ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:AttributedName ;
@@ -235,57 +288,75 @@ core:Bundle
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:object ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:description ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:Bundle ;
@@ -303,50 +374,68 @@ core:Compilation
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:Compilation ;
@@ -364,6 +453,7 @@ core:ConfidenceFacet
 		sh:datatype xsd:integer ;
 		sh:maxCount "1"^^xsd:integer ;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
 		sh:path core:confidence ;
 	] ;
 	sh:targetClass core:ConfidenceFacet ;
@@ -381,55 +471,74 @@ core:ContextualCompilation
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:object ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:ContextualCompilation ;
@@ -447,66 +556,87 @@ core:ControlledVocabulary
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:anyURI ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:constrainingVocabularyReference ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:value ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:constrainingVocabularyName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:ControlledVocabulary ;
@@ -524,60 +654,80 @@ core:EnclosingCompilation
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:object ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:description ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:EnclosingCompilation ;
@@ -592,16 +742,22 @@ core:ExternalReference
 	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
 	sh:property
 		[
+			sh:datatype xsd:anyURI ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:referenceURL ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:definingContext ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:externalIdentifier ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path core:referenceURL ;
 		]
 		;
 	sh:targetClass core:ExternalReference ;
@@ -629,58 +785,79 @@ core:Grouping
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:object ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:context ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:context ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:Grouping ;
@@ -698,50 +875,68 @@ core:IdentityAbstraction
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:IdentityAbstraction ;
@@ -759,50 +954,68 @@ core:Item
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:Item ;
@@ -820,50 +1033,68 @@ core:MarkingDefinitionAbstraction
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:MarkingDefinitionAbstraction ;
@@ -881,50 +1112,68 @@ core:ModusOperandi
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:ModusOperandi ;
@@ -942,78 +1191,104 @@ core:Relationship
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:target ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:source ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:isDirectional ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:startTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:kindOfRelationship ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:endTime ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:startTime ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:Relationship ;
@@ -1030,50 +1305,68 @@ core:UcoObject
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:UcoObject ;

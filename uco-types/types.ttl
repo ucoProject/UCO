@@ -3,20 +3,12 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/types> .
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
-@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
-@prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
 @prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/types>
@@ -36,8 +28,12 @@ types:ControlledDictionary
 	rdfs:label "ControlledDictionary"@en ;
 	rdfs:comment "A controlled dictionary is a list of (term/key, value) pairs where each term/key exists no more than once and is constrained to an explicitly defined set of values."@en ;
 	sh:property [
-		sh:class types:ControlledDictionaryEntry ;
+		sh:class
+			types:ControlledDictionaryEntry ,
+			types:DictionaryEntry
+			;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path types:entry ;
 	] ;
 	sh:targetClass types:ControlledDictionary ;
@@ -55,12 +51,15 @@ types:ControlledDictionaryEntry
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:path types:value ;
+			sh:nodeKind sh:Literal ;
+			sh:path types:key ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:path types:key ;
+			sh:nodeKind sh:Literal ;
+			sh:path types:value ;
 		]
 		;
 	sh:targetClass types:ControlledDictionaryEntry ;
@@ -76,6 +75,7 @@ types:Dictionary
 	sh:property [
 		sh:class types:DictionaryEntry ;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path types:entry ;
 	] ;
 	sh:targetClass types:Dictionary ;
@@ -93,12 +93,14 @@ types:DictionaryEntry
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path types:key ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path types:value ;
 		]
 		;
@@ -117,11 +119,14 @@ types:Hash
 			sh:datatype xsd:hexBinary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path types:hashValue ;
 		] ,
 		[
+			sh:datatype vocabulary:HashNameVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path types:hashMethod ;
 		]
 		;

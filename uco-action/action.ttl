@@ -8,18 +8,14 @@
 @base <https://unifiedcyberontology.org/ontology/uco/action> .
 @prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
 @prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
-@prefix marking: <https://unifiedcyberontology.org/ontology/uco/marking#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
 @prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/action>
@@ -45,75 +41,104 @@ action:Action
 	rdfs:comment "An action is something that may be done or performed."@en ;
 	sh:property
 		[
+			sh:class action:Action ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:subaction ;
+		] ,
+		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:error ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:startTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:actionCount ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
 		] ,
 		[
+			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:actionStatus ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path action:endTime ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path action:startTime ;
-		] ,
-		[
-			sh:path action:error ;
-		] ,
-		[
-			sh:path action:subaction ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass action:Action ;
@@ -132,12 +157,14 @@ action:ActionArgumentFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:argumentName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:value ;
 		]
 		;
@@ -156,21 +183,25 @@ action:ActionEstimationFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:estimatedCost ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:estimatedEfficacy ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:estimatedImpact ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:objective ;
 		]
 		;
@@ -190,24 +221,28 @@ action:ActionFrequencyFacet
 			sh:datatype xsd:float ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:rate ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:scale ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:units ;
 		] ,
 		[
 			sh:datatype vocabulary:TrendVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:trend ;
 		]
 		;
@@ -224,85 +259,117 @@ action:ActionLifecycle
 	rdfs:comment "An action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action lifecycles."@en ;
 	sh:property
 		[
+			sh:class action:Action ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:subaction ;
+		] ,
+		[
 			sh:class action:ArrayOfAction ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:phase ;
 		] ,
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:error ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:error ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:startTime ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:actionCount ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
 		] ,
 		[
+			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:actionStatus ;
-		] ,
-		[
-			sh:maxCount "0"^^xsd:integer ;
-			sh:path action:endTime ;
-		] ,
-		[
-			sh:maxCount "0"^^xsd:integer ;
-			sh:path action:error ;
-		] ,
-		[
-			sh:maxCount "0"^^xsd:integer ;
-			sh:path action:startTime ;
-		] ,
-		[
-			sh:path action:error ;
-		] ,
-		[
-			sh:path action:subaction ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass action:ActionLifecycle ;
@@ -321,75 +388,104 @@ action:ActionPattern
 	rdfs:comment "An action pattern is a grouping of characteristics unique to a combination of actions forming a consistent or characteristic arrangement."@en ;
 	sh:property
 		[
+			sh:class action:Action ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:subaction ;
+		] ,
+		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:error ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:startTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:actionCount ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
 		] ,
 		[
+			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:actionStatus ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path action:endTime ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path action:startTime ;
-		] ,
-		[
-			sh:path action:error ;
-		] ,
-		[
-			sh:path action:subaction ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass action:ActionPattern ;
@@ -408,27 +504,39 @@ action:ActionReferencesFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:environment ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:performer ;
 		] ,
 		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:instrument ;
 		] ,
 		[
-			sh:path action:location ;
-		] ,
-		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:object ;
 		] ,
 		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:participant ;
 		] ,
 		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:result ;
+		] ,
+		[
+			sh:class location:Location ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:location ;
 		]
 		;
 	sh:targetClass action:ActionReferencesFacet ;
@@ -442,7 +550,9 @@ action:ArrayOfAction
 	rdfs:label "ArrayOfAction"@en ;
 	rdfs:comment "An array of action is an ordered list of references to things that may be done or performed."@en ;
 	sh:property [
+		sh:class action:Action ;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path action:action ;
 	] ;
 	sh:targetClass action:ArrayOfAction ;
