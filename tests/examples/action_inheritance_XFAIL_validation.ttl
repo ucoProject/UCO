@@ -1,15 +1,123 @@
 @prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
+            sh:focusNode _:N5c6506fd6f6c4c47840947db546b5f93 ;
+            sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+            sh:resultPath action:action ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+            sh:sourceShape _:ub2bL693C14 ;
+            sh:value "kb:action2" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/action1> ;
+            sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+            sh:resultPath action:actionStatus ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape _:ub2bL278C3 ;
+            sh:value "Pending" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N5c6506fd6f6c4c47840947db546b5f93 ;
+            sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+            sh:resultPath action:action ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+            sh:sourceShape _:ub2bL693C14 ;
+            sh:value "kb:action1" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N5c6506fd6f6c4c47840947db546b5f93 ;
+            sh:resultMessage "Value does not have class action:Action" ;
+            sh:resultPath action:action ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:ub2bL693C14 ;
+            sh:value "kb:action1" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N5c6506fd6f6c4c47840947db546b5f93 ;
+            sh:resultMessage "Value does not have class action:Action" ;
+            sh:resultPath action:action ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:ub2bL693C14 ;
+            sh:value "kb:action2" ],
+        [ a sh:ValidationResult ;
             sh:focusNode <http://example.org/kb/action-lifecycle1> ;
             sh:resultMessage "More than 0 values on kb:action-lifecycle1->action:actionStatus" ;
             sh:resultPath action:actionStatus ;
             sh:resultSeverity sh:Violation ;
             sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
-            sh:sourceShape [ sh:maxCount 0 ;
-                    sh:path action:actionStatus ] ] .
+            sh:sourceShape _:ub2bL509C3 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/action2> ;
+            sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+            sh:resultPath action:actionStatus ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape _:ub2bL278C3 ;
+            sh:value "Pending" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N5c6506fd6f6c4c47840947db546b5f93 ;
+            sh:resultMessage "Value does not have class action:Action" ;
+            sh:resultPath action:action ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:ub2bL693C14 ;
+            sh:value "kb:action3" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/action-lifecycle1> ;
+            sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+            sh:resultPath action:actionStatus ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape _:ub2bL509C3 ;
+            sh:value "Pending" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/action3> ;
+            sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+            sh:resultPath action:actionStatus ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape _:ub2bL278C3 ;
+            sh:value "Pending" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/action-lifecycle1> ;
+            sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+            sh:resultPath action:actionStatus ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape _:ub2bL278C3 ;
+            sh:value "Pending" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N5c6506fd6f6c4c47840947db546b5f93 ;
+            sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+            sh:resultPath action:action ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+            sh:sourceShape _:ub2bL693C14 ;
+            sh:value "kb:action3" ] .
+
+_:ub2bL509C3 sh:datatype vocabulary:ActionStatusTypeVocab ;
+    sh:maxCount 0 ;
+    sh:nodeKind sh:Literal ;
+    sh:path action:actionStatus .
+
+_:ub2bL278C3 sh:datatype vocabulary:ActionStatusTypeVocab ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:path action:actionStatus .
+
+_:N5c6506fd6f6c4c47840947db546b5f93 a action:ArrayOfAction ;
+    action:action "kb:action1",
+        "kb:action2",
+        "kb:action3" .
+
+_:ub2bL693C14 sh:class action:Action ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path action:action .
 
