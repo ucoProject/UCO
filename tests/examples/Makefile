@@ -36,6 +36,8 @@ all: \
 	    --data-file-format json-ld \
 	    --format turtle \
 	    --inference none \
+	    --ont-file-format turtle \
+	    --ont-graph $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
 	    --output _$@ \
@@ -60,6 +62,8 @@ all: \
 	    --data-file-format json-ld \
 	    --format turtle \
 	    --inference none \
+	    --ont-file-format turtle \
+	    --ont-graph $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
 	    --output _$@ \
