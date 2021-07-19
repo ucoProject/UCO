@@ -1,9 +1,10 @@
 {
     "@context": {
         "acme": "http://example.org/ontology/acme/core/",
+        "action": "https://unifiedcyberontology.org/ontology/uco/action#",
         "core": "https://unifiedcyberontology.org/ontology/uco/core#",
         "kb": "http://example.org/kb/",
-        "action": "https://unifiedcyberontology.org/ontology/uco/action#",
+        "vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -11,19 +12,28 @@
             "@id": "kb:action1",
             "@type": "action:Action",
             "core:name": "Open File",
-            "action:actionStatus": "Pending"
+            "action:actionStatus": {
+                "@type": "vocabulary:ActionStatusTypeVocab",
+                "@value": "Pending"
+            }
         },
         {
             "@id": "kb:action2",
             "@type": "action:Action",
             "core:name": "Modify File",
-            "action:actionStatus": "Pending"
+            "action:actionStatus": {
+                "@type": "vocabulary:ActionStatusTypeVocab",
+                "@value": "Pending"
+            }
         },
         {
             "@id": "kb:action3",
             "@type": "action:Action",
             "core:name": "Save File",
-            "action:actionStatus": "Pending"
+            "action:actionStatus": {
+                "@type": "vocabulary:ActionStatusTypeVocab",
+                "@value": "Pending"
+            }
         },
         {
             "@id": "kb:action-lifecycle1",
@@ -32,9 +42,15 @@
             "action:phase": {
               "@type": "action:ArrayOfAction",
               "action:action": [
-                "kb:action1",
-                "kb:action2",
-                "kb:action3"
+                {
+                    "@id": "kb:action1"
+                },
+                {
+                    "@id": "kb:action2"
+                },
+                {
+                    "@id": "kb:action3"
+                }
               ]
             }
         }

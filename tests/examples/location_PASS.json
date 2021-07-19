@@ -20,7 +20,10 @@
                     "location:street": "20341 Whitworth Institute 405 N. Whitworth"
                 },
                 {
-                    "@type": "acme:InternalLocationFacet",
+                    "@type": [
+                        "acme:InternalLocationFacet",
+                        "core:Facet"
+                    ],
                     "acme:floor": 3,
                     "acme:roomNumber": 345
                 }
