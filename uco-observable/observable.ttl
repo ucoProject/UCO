@@ -366,7 +366,7 @@ observable:BluetoothAddress
 observable:BluetoothAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#MACAddressFacet> ,
+		observable:MACAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -1667,7 +1667,7 @@ observable:EmailAddress
 observable:EmailAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
+		observable:DigitalAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:displayName ;
@@ -2460,7 +2460,7 @@ observable:IPAddress
 observable:IPAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
+		observable:DigitalAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -2495,7 +2495,7 @@ observable:IPv4Address
 observable:IPv4AddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#IPAddressFacet> ,
+		observable:IPAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -2517,7 +2517,7 @@ observable:IPv6Address
 observable:IPv6AddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#IPAddressFacet> ,
+		observable:IPAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -2581,7 +2581,7 @@ observable:InstantMessagingAddress
 observable:InstantMessagingAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
+		observable:DigitalAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -2637,7 +2637,7 @@ observable:MACAddress
 observable:MACAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
+		observable:DigitalAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -3082,6 +3082,13 @@ observable:NetworkAppliance
 	rdfs:comment "A network appliance is a purpose-built computer with software or firmware that is designed to provide a specific network management function."@en ;
 	.
 
+observable:NetworkConnection
+	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "NetworkConnection"@en ;
+	rdfs:comment "A network connection is a connection (completed or attempted) across a digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
+	.
+
 observable:NetworkConnectionFacet
 	a owl:Class ;
 	rdfs:subClassOf
@@ -3122,13 +3129,6 @@ observable:NetworkConnectionFacet
 		;
 	rdfs:label "NetworkConnectionFacet"@en ;
 	rdfs:comment "A network connection facet is a grouping of characteristics unique to a connection (complete or attempted) accross a digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
-	.
-
-observable:NetworkConnetion
-	a owl:Class ;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "NetworkConnection"@en ;
-	rdfs:comment "A network connection is a connection (completed or attempted) across a digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
 	.
 
 observable:NetworkFlow
@@ -4168,7 +4168,7 @@ observable:SIPAddress
 observable:SIPAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#DigitalAddressFacet> ,
+		observable:DigitalAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
@@ -4370,7 +4370,7 @@ observable:StateChangeEffectFacet
 
 observable:SymbolicLink
 	a owl:Class ;
-	rdfs:subClassOf <https://unifedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "SymbolicLink"@en ;
 	rdfs:comment "A symbolic link is a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. [based on https://en.wikipedia.org/wiki/Symbolic_link]"@en ;
 	.
@@ -5210,7 +5210,7 @@ observable:WifiAddress
 observable:WifiAddressFacet
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#MACAddressFacet> ,
+		observable:MACAddressFacet ,
 		[
 			a owl:Restriction ;
 			owl:onProperty observable:addressValue ;
