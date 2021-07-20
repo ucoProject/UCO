@@ -14141,6 +14141,86 @@ observable:SymbolicLink
 	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "SymbolicLink"@en ;
 	rdfs:comment "A symbolic link is a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. [based on https://en.wikipedia.org/wiki/Symbolic_link]"@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:hasChanged ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:state ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:id ;
+		]
+		;
 	sh:targetClass observable:SymbolicLink ;
 	.
 
