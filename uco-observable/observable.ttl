@@ -485,6 +485,7 @@ observable:BluetoothAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -6610,6 +6611,7 @@ observable:WifiAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
