@@ -3189,7 +3189,7 @@ observable:IPv4AddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:IPAddressFacet ;
+	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv4AddressFacet"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address facet is a grouping of characteristics unique to an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
 	sh:property [
@@ -3218,7 +3218,7 @@ observable:IPv6AddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:IPAddressFacet ;
+	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv6AddressFacet"@en ;
 	rdfs:comment "An IPv6 (Internet Protocol version 6) address facet is a grouping of characteristics unique to an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
 	sh:property [
