@@ -479,7 +479,7 @@ observable:BluetoothAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:MACAddressFacet ;
+	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "BluetoothAddressFacet"@en ;
 	rdfs:comment "A Bluetooth address facet is a grouping of characteristics unique to a Bluetooth standard conformant identifier assigned to a Bluetooth device to enable routing and management of Bluetooth standards conformant communication to or from that device."@en ;
 	sh:property [
@@ -6604,7 +6604,7 @@ observable:WifiAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:MACAddressFacet ;
+	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "WifiAddressFacet"@en ;
 	rdfs:comment "A Wi-Fi address facet is a grouping of characteristics unique to a media access control (MAC) standards conformant identifier assigned to a device network interface to enable routing and management of IEEE 802.11 standards-conformant communications to and from that device."@en ;
 	sh:property [
