@@ -5554,7 +5554,7 @@ observable:SymbolicLink
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf <https://unifedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "SymbolicLink"@en ;
 	rdfs:comment "A symbolic link is a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. [based on https://en.wikipedia.org/wiki/Symbolic_link]"@en ;
 	sh:targetClass observable:SymbolicLink ;
