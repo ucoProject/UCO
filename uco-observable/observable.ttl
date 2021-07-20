@@ -7114,6 +7114,86 @@ observable:HTTPConnection
 	rdfs:subClassOf observable:NetworkConnection ;
 	rdfs:label "HTTPConnection"@en ;
 	rdfs:comment "An HTTP connection is network connection that is conformant to the Hypertext Transfer Protocol (HTTP) standard."@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:hasChanged ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:state ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:id ;
+		]
+		;
 	sh:targetClass observable:HTTPConnection ;
 	.
 
@@ -7274,6 +7354,86 @@ observable:ICMPConnection
 	rdfs:subClassOf observable:NetworkConnection ;
 	rdfs:label "ICMPConnection"@en ;
 	rdfs:comment "An ICMP connection is a network connection that is conformant to the Internet Control Message Protocol (ICMP) standard."@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:hasChanged ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:state ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:id ;
+		]
+		;
 	sh:targetClass observable:ICMPConnection ;
 	.
 
@@ -7680,13 +7840,21 @@ observable:IPv4AddressFacet
 	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv4AddressFacet"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address facet is a grouping of characteristics unique to an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:addressValue ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:displayName ;
+		]
+		;
 	sh:targetClass observable:IPv4AddressFacet ;
 	.
 
@@ -7789,13 +7957,21 @@ observable:IPv6AddressFacet
 	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv6AddressFacet"@en ;
 	rdfs:comment "An IPv6 (Internet Protocol version 6) address facet is a grouping of characteristics unique to an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:addressValue ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:displayName ;
+		]
+		;
 	sh:targetClass observable:IPv6AddressFacet ;
 	.
 
@@ -9634,66 +9810,7 @@ observable:NetworkAppliance
 	sh:targetClass observable:NetworkAppliance ;
 	.
 
-observable:NetworkConnectionFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "NetworkConnectionFacet"@en ;
-	rdfs:comment "A network connection facet is a grouping of characteristics unique to a connection (complete or attempted) accross a digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
-	sh:property
-		[
-			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:src ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:dst ;
-		] ,
-		[
-			sh:class types:ControlledDictionary ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:protocols ;
-		] ,
-		[
-			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:isActive ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:endTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:startTime ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:destinationPort ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:sourcePort ;
-		]
-		;
-	sh:targetClass observable:NetworkConnectionFacet ;
-	.
-
-observable:NetworkConnetion
+observable:NetworkConnection
 	a
 		owl:Class ,
 		sh:NodeShape
@@ -9781,7 +9898,66 @@ observable:NetworkConnetion
 			sh:path core:id ;
 		]
 		;
-	sh:targetClass observable:NetworkConnetion ;
+	sh:targetClass observable:NetworkConnection ;
+	.
+
+observable:NetworkConnectionFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "NetworkConnectionFacet"@en ;
+	rdfs:comment "A network connection facet is a grouping of characteristics unique to a connection (complete or attempted) accross a digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
+	sh:property
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:src ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:dst ;
+		] ,
+		[
+			sh:class types:ControlledDictionary ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:protocols ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isActive ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:destinationPort ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:sourcePort ;
+		]
+		;
+	sh:targetClass observable:NetworkConnectionFacet ;
 	.
 
 observable:NetworkFlow
@@ -14266,6 +14442,86 @@ observable:TCPConnection
 	rdfs:subClassOf observable:NetworkConnection ;
 	rdfs:label "TCPConnection"@en ;
 	rdfs:comment "A TCP connection is a network connection that is conformant to the Transfer "@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:hasChanged ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:state ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:id ;
+		]
+		;
 	sh:targetClass observable:TCPConnection ;
 	.
 
@@ -19594,6 +19850,86 @@ observable:WirelessNetworkConnection
 	rdfs:subClassOf observable:NetworkConnection ;
 	rdfs:label "WirelessNetworkConnection"@en ;
 	rdfs:comment "A wireless network connection is a connection (completed or attempted) across an IEEE 802.11 standards-confromant digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:hasChanged ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:state ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:id ;
+		]
+		;
 	sh:targetClass observable:WirelessNetworkConnection ;
 	.
 
