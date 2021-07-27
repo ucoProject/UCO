@@ -8,7 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://unifiedcyberontology.org/ontology/uco/role>
 	a owl:Ontology ;
