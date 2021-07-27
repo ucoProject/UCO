@@ -1,6 +1,6 @@
-@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ns1: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] a sh:ValidationReport ;
-    sh:conforms true .
+[] a ns1:ValidationReport ;
+    ns1:conforms true .
 
