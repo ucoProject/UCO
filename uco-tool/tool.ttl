@@ -36,12 +36,15 @@ tool:BuildConfigurationType
 	rdfs:comment "A build configuration type is a characterization of how a particular version of software can or should be built."@en ;
 	sh:property
 		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path tool:configurationSettingDescription ;
+			sh:class tool:ConfigurationSettingType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:configurationSettings ;
 		] ,
 		[
-			sh:path tool:configurationSettings ;
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:configurationSettingDescription ;
 		]
 		;
 	sh:targetClass tool:BuildConfigurationType ;
@@ -58,6 +61,7 @@ tool:BuildFacet
 	sh:property [
 		sh:class tool:BuildInformationType ;
 		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path tool:buildInformation ;
 	] ;
 	sh:targetClass tool:BuildFacet ;
@@ -74,52 +78,66 @@ tool:BuildInformationType
 		[
 			sh:class tool:BuildConfigurationType ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path tool:buildConfiguration ;
 		] ,
 		[
 			sh:class tool:BuildUtilityType ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path tool:buildUtility ;
+		] ,
+		[
+			sh:class tool:CompilerType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:compilers ;
+		] ,
+		[
+			sh:class tool:LibraryType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:libraries ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:compilationDate ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:buildID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:buildLabel ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:buildOutputLog ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:buildProject ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:buildScript ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:buildVersion ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path tool:compilationDate ;
-		] ,
-		[
-			sh:path tool:compilers ;
-		] ,
-		[
-			sh:path tool:libraries ;
 		]
 		;
 	sh:targetClass tool:BuildInformationType ;
@@ -137,16 +155,19 @@ tool:BuildUtilityType
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:buildUtilityName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:cpeid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:swid ;
 		]
 		;
@@ -164,16 +185,20 @@ tool:CompilerType
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:compilerInformalDescription ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:cpeid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:swid ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path tool:compilerInformalDescription ;
 		]
 		;
 	sh:targetClass tool:CompilerType ;
@@ -191,22 +216,26 @@ tool:ConfigurationSettingType
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:itemName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:itemValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:itemDescription ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:itemType ;
 		]
 		;
@@ -235,12 +264,15 @@ tool:DependencyType
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:path tool:dependencyType ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:dependencyDescription ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:path tool:dependencyDescription ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:dependencyType ;
 		]
 		;
 	sh:targetClass tool:DependencyType ;
@@ -258,12 +290,14 @@ tool:LibraryType
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:libraryName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:libraryVersion ;
 		]
 		;
@@ -291,27 +325,33 @@ tool:Tool
 	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
 	sh:property
 		[
+			sh:datatype xsd:anyURI ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:references ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:creator ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:servicePack ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:toolType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:version ;
-		] ,
-		[
-			sh:path tool:references ;
 		]
 		;
 	sh:targetClass tool:Tool ;
@@ -327,9 +367,13 @@ tool:ToolConfigurationTypeFacet
 	rdfs:comment "A tool configuration type facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
 	sh:property
 		[
+			sh:class tool:DependencyType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path tool:dependencies ;
 		] ,
 		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
 			sh:path tool:usageContextAssumptions ;
 		]
 		;

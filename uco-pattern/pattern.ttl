@@ -27,6 +27,7 @@ pattern:LogicalPattern
 	sh:property [
 		sh:datatype pattern:PatternExpression ;
 		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
 		sh:path pattern:patternExpression ;
 	] ;
 	sh:targetClass pattern:LogicalPattern ;

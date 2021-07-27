@@ -40,27 +40,38 @@ action:Action
 	rdfs:comment "An action is something that may be done or performed."@en ;
 	sh:property
 		[
-			sh:datatype xsd:nonNegativeInteger ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path action:actionCount ;
+			sh:class action:Action ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:subaction ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path action:actionStatus ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path action:endTime ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path action:startTime ;
-		] ,
-		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:error ;
 		] ,
 		[
-			sh:path action:subaction ;
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:startTime ;
+		] ,
+		[
+			sh:datatype xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:actionCount ;
+		] ,
+		[
+			sh:datatype vocabulary:ActionStatusTypeVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:actionStatus ;
 		]
 		;
 	sh:targetClass action:Action ;
@@ -79,12 +90,14 @@ action:ActionArgumentFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:argumentName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:value ;
 		]
 		;
@@ -103,21 +116,25 @@ action:ActionEstimationFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:estimatedCost ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:estimatedEfficacy ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:estimatedImpact ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:objective ;
 		]
 		;
@@ -137,24 +154,28 @@ action:ActionFrequencyFacet
 			sh:datatype xsd:float ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:rate ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:scale ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:units ;
 		] ,
 		[
 			sh:datatype vocabulary:TrendVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:trend ;
 		]
 		;
@@ -174,28 +195,38 @@ action:ActionLifecycle
 			sh:class action:ArrayOfAction ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:phase ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:error ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:startTime ;
 		] ,
 		[
 			sh:datatype xsd:nonNegativeInteger ;
 			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:actionCount ;
 		] ,
 		[
+			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:actionStatus ;
-		] ,
-		[
-			sh:maxCount "0"^^xsd:integer ;
-			sh:path action:endTime ;
-		] ,
-		[
-			sh:maxCount "0"^^xsd:integer ;
-			sh:path action:error ;
-		] ,
-		[
-			sh:maxCount "0"^^xsd:integer ;
-			sh:path action:startTime ;
 		]
 		;
 	sh:targetClass action:ActionLifecycle ;
@@ -228,27 +259,39 @@ action:ActionReferencesFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:environment ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:performer ;
 		] ,
 		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:instrument ;
 		] ,
 		[
-			sh:path action:location ;
-		] ,
-		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:object ;
 		] ,
 		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:participant ;
 		] ,
 		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:result ;
+		] ,
+		[
+			sh:class location:Location ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:location ;
 		]
 		;
 	sh:targetClass action:ActionReferencesFacet ;
@@ -262,7 +305,9 @@ action:ArrayOfAction
 	rdfs:label "ArrayOfAction"@en ;
 	rdfs:comment "An array of action is an ordered list of references to things that may be done or performed."@en ;
 	sh:property [
+		sh:class action:Action ;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path action:action ;
 	] ;
 	sh:targetClass action:ArrayOfAction ;

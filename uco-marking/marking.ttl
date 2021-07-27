@@ -26,10 +26,14 @@ marking:GranularMarking
 	rdfs:comment "A granular marking is a grouping of characteristics unique to specification of marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) that apply to particular portions of a particular UCO object."@en ;
 	sh:property
 		[
-			sh:path marking:contentSelectors ;
+			sh:class marking:MarkingDefinition ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path marking:marking ;
 		] ,
 		[
-			sh:path marking:marking ;
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path marking:contentSelectors ;
 		]
 		;
 	sh:targetClass marking:GranularMarking ;
@@ -45,12 +49,16 @@ marking:LicenseMarking
 	rdfs:comment "A license marking is a grouping of characteristics unique to the expression of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) to convey details of license restrictions that apply to the data."@en-US ;
 	sh:property
 		[
+			sh:datatype xsd:string ;
 			sh:hasValue "license" ;
+			sh:nodeKind sh:Literal ;
 			sh:path marking:definitionType ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path marking:license ;
 		]
 		;
@@ -67,13 +75,16 @@ marking:MarkingDefinition
 	rdfs:comment "A marking definition is a grouping of characteristics unique to the expression of a specific data marking conveying restrictions, permissions, and other guidance for how marked data can be used and shared."@en ;
 	sh:property
 		[
+			sh:class marking:MarkingModel ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path marking:definition ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path marking:definitionType ;
-		] ,
-		[
-			sh:path marking:definition ;
 		]
 		;
 	sh:targetClass marking:MarkingDefinition ;
@@ -100,12 +111,15 @@ marking:ReleaseToMarking
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:path marking:authorizedIdentities ;
+			sh:hasValue "release-to" ;
+			sh:nodeKind sh:Literal ;
+			sh:path marking:definitionType ;
 		] ,
 		[
-			sh:hasValue "release-to" ;
-			sh:path marking:definitionType ;
+			sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path marking:authorizedIdentities ;
 		]
 		;
 	sh:targetClass marking:ReleaseToMarking ;
@@ -121,12 +135,16 @@ marking:StatementMarking
 	rdfs:comment "A statement marking is a grouping of characteristics unique to the expression of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) to convey details of a textual marking statement, (e.g., copyright) whose semantic meaning should apply to the associated content. Statement markings are generally not machine-readable. An example of this would be a simple marking to apply copyright information, such as 'Copyright 2014 Acme Inc.'."@en ;
 	sh:property
 		[
+			sh:datatype xsd:string ;
 			sh:hasValue "statement" ;
+			sh:nodeKind sh:Literal ;
 			sh:path marking:definitionType ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path marking:statement ;
 		]
 		;
@@ -143,12 +161,16 @@ marking:TermsOfUseMarking
 	rdfs:comment "A terms of use marking is a grouping of characteristics unique to the expression of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) to convey details of a textual statement specifying the Terms of Use (that is, the conditions under which the content may be shared, applied, or otherwise used) of the marked content. An example of this would be used to communicate a simple statement, such as 'Acme Inc. is not responsible for the content of this file'."@en ;
 	sh:property
 		[
+			sh:datatype xsd:string ;
 			sh:hasValue "terms-of-use" ;
+			sh:nodeKind sh:Literal ;
 			sh:path marking:definitionType ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path marking:termsOfUse ;
 		]
 		;

@@ -28,6 +28,7 @@ core:Annotation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:Annotation ;
@@ -42,6 +43,8 @@ core:Assertion
 	rdfs:label "Assertion"@en ;
 	rdfs:comment "An assertion is a statement declared to be true."@en ;
 	sh:property [
+		sh:datatype xsd:string ;
+		sh:nodeKind sh:Literal ;
 		sh:path core:statement ;
 	] ;
 	sh:targetClass core:Assertion ;
@@ -58,6 +61,7 @@ core:AttributedName
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
 		sh:path core:namingAuthority ;
 	] ;
 	sh:targetClass core:AttributedName ;
@@ -97,6 +101,7 @@ core:ConfidenceFacet
 		sh:datatype xsd:nonNegativeInteger ;
 		sh:maxCount "1"^^xsd:integer ;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
 		sh:path core:confidence ;
 	] ;
 	sh:targetClass core:ConfidenceFacet ;
@@ -113,6 +118,7 @@ core:ContextualCompilation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:ContextualCompilation ;
@@ -130,17 +136,20 @@ core:ControlledVocabulary
 		[
 			sh:datatype xsd:anyURI ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:constrainingVocabularyReference ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:value ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:constrainingVocabularyName ;
 		]
 		;
@@ -159,11 +168,13 @@ core:EnclosingCompilation
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:object ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:description ;
 		]
 		;
@@ -179,16 +190,22 @@ core:ExternalReference
 	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
 	sh:property
 		[
+			sh:datatype xsd:anyURI ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:referenceURL ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:definingContext ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:externalIdentifier ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path core:referenceURL ;
 		]
 		;
 	sh:targetClass core:ExternalReference ;
@@ -213,6 +230,8 @@ core:Grouping
 	rdfs:label "Grouping"@en ;
 	rdfs:comment "A grouping is a compilation of referenced UCO content with a shared context."@en ;
 	sh:property [
+		sh:datatype xsd:string ;
+		sh:nodeKind sh:Literal ;
 		sh:path core:context ;
 	] ;
 	sh:targetClass core:Grouping ;
@@ -275,29 +294,37 @@ core:Relationship
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:target ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:source ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:isDirectional ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:startTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:kindOfRelationship ;
-		] ,
-		[
-			sh:path core:endTime ;
-		] ,
-		[
-			sh:path core:startTime ;
 		]
 		;
 	sh:targetClass core:Relationship ;
@@ -314,50 +341,68 @@ core:UcoObject
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
 		] ,
 		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:id ;
-		] ,
-		[
-			sh:path core:description ;
-		] ,
-		[
-			sh:path core:hasFacet ;
-		] ,
-		[
-			sh:path core:modifiedTime ;
-		] ,
-		[
-			sh:path core:objectMarking ;
-		] ,
-		[
-			sh:path core:tag ;
-		] ,
-		[
-			sh:path core:type ;
 		]
 		;
 	sh:targetClass core:UcoObject ;

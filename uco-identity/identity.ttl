@@ -33,6 +33,7 @@ identity:AddressFacet
 		sh:class location:Location ;
 		sh:maxCount "1"^^xsd:integer ;
 		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path identity:address ;
 	] ;
 	sh:targetClass identity:AddressFacet ;
@@ -60,6 +61,7 @@ identity:BirthInformationFacet
 	sh:property [
 		sh:datatype xsd:dateTime ;
 		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
 		sh:path identity:birthdate ;
 	] ;
 	sh:targetClass identity:BirthInformationFacet ;
@@ -240,15 +242,23 @@ identity:SimpleNameFacet
 	rdfs:comment "A simple name facet is a grouping of characteristics unique to the personal name (e.g., Dr. John Smith Jr.) held by an identity."@en ;
 	sh:property
 		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
 			sh:path identity:familyName ;
 		] ,
 		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
 			sh:path identity:givenName ;
 		] ,
 		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
 			sh:path identity:honorificPrefix ;
 		] ,
 		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
 			sh:path identity:honorificSuffix ;
 		]
 		;
