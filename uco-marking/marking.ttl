@@ -49,8 +49,8 @@ marking:LicenseMarking
 			sh:path marking:definitionType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path marking:license ;
 		]
 		;
@@ -68,8 +68,8 @@ marking:MarkingDefinition
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path marking:definitionType ;
 		] ,
 		[
@@ -100,7 +100,7 @@ marking:ReleaseToMarking
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path marking:authorizedIdentities ;
 		] ,
 		[
@@ -125,8 +125,8 @@ marking:StatementMarking
 			sh:path marking:definitionType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path marking:statement ;
 		]
 		;
@@ -147,8 +147,8 @@ marking:TermsOfUseMarking
 			sh:path marking:definitionType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path marking:termsOfUse ;
 		]
 		;

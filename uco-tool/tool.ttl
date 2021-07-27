@@ -37,7 +37,7 @@ tool:BuildConfigurationType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:configurationSettingDescription ;
 		] ,
 		[
@@ -57,7 +57,7 @@ tool:BuildFacet
 	rdfs:comment "A build facet is a grouping of characteristics unique to a particular version of a software."@en ;
 	sh:property [
 		sh:class tool:BuildInformationType ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path tool:buildInformation ;
 	] ;
 	sh:targetClass tool:BuildFacet ;
@@ -73,46 +73,46 @@ tool:BuildInformationType
 	sh:property
 		[
 			sh:class tool:BuildConfigurationType ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:buildConfiguration ;
 		] ,
 		[
 			sh:class tool:BuildUtilityType ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:buildUtility ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:buildID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:buildLabel ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:buildOutputLog ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:buildProject ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:buildScript ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:buildVersion ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:compilationDate ;
 		] ,
 		[
@@ -135,18 +135,18 @@ tool:BuildUtilityType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path tool:buildUtilityName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:cpeid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:swid ;
 		]
 		;
@@ -163,16 +163,16 @@ tool:CompilerType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:cpeid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:swid ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:compilerInformalDescription ;
 		]
 		;
@@ -189,24 +189,24 @@ tool:ConfigurationSettingType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path tool:itemName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path tool:itemValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:itemDescription ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:itemType ;
 		]
 		;
@@ -234,12 +234,12 @@ tool:DependencyType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:dependencyType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path tool:dependencyDescription ;
 		]
 		;
@@ -256,14 +256,14 @@ tool:LibraryType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path tool:libraryName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path tool:libraryVersion ;
 		]
 		;
@@ -292,22 +292,22 @@ tool:Tool
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:creator ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:servicePack ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:toolType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path tool:version ;
 		] ,
 		[

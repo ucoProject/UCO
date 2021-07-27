@@ -88,16 +88,16 @@ observable:AccountAuthenticationFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:password ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:passwordType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:passwordLastChanged ;
 		]
 		;
@@ -115,37 +115,37 @@ observable:AccountFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isActive ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:accountIdentifier ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:accountIssuer ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:accountType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:expirationTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:modifiedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:owner ;
 		]
 		;
@@ -173,17 +173,17 @@ observable:AlternateDataStream
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:size ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path core:name ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:hashes ;
 		]
 		;
@@ -233,8 +233,8 @@ observable:ApplicationAccountFacet
 	rdfs:comment "An application account facet is a grouping of characteristics unique to an account within a particular software program designed for end users."@en ;
 	sh:property [
 		sh:class observable:ObservableObject ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:application ;
 	] ;
 	sh:targetClass observable:ApplicationAccountFacet ;
@@ -251,22 +251,22 @@ observable:ApplicationFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:operatingSystem ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:numberOfLaunches ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:applicationIdentifier ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:version ;
 		]
 		;
@@ -295,17 +295,17 @@ observable:ArchiveFileFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:archiveType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:comment ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:version ;
 		]
 		;
@@ -348,22 +348,22 @@ observable:AudioFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:bitRate ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:duration ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:audioType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:format ;
 		]
 		;
@@ -392,17 +392,17 @@ observable:AutonomousSystemFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:number ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:asHandle ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:regionalInternetRegistry ;
 		]
 		;
@@ -441,7 +441,7 @@ observable:BluetoothAddressFacet
 	rdfs:comment "A Bluetooth address facet is a grouping of characteristics unique to a Bluetooth standard conformant identifier assigned to a Bluetooth device to enable routing and management of Bluetooth standards conformant communication to or from that device."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:addressValue ;
 	] ;
 	sh:targetClass observable:BluetoothAddressFacet ;
@@ -480,29 +480,29 @@ observable:BrowserBookmarkFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:visitCount ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:bookmarkPath ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:accessedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:modifiedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -534,39 +534,39 @@ observable:BrowserCookieFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:cookieDomain ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isSecure ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:cookieName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:cookiePath ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:accessedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:expirationTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		]
 		;
@@ -606,65 +606,65 @@ observable:CalendarEntryFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isPrivate ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:duration ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:eventStatus ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:eventType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:recurrence ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subject ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:endTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:location ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:modifiedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:owner ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:remindTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:startTime ;
 		] ,
 		[
@@ -685,12 +685,12 @@ observable:CalendarFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:owner ;
 		]
 		;
@@ -730,12 +730,12 @@ observable:CompressedStreamFacet
 	sh:property
 		[
 			sh:datatype xsd:double ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:compressionRatio ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:compressionMethod ;
 		]
 		;
@@ -764,93 +764,93 @@ observable:ComputerSpecificationFacet
 	sh:property
 		[
 			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:currentSystemDate ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:availableRam ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:totalRam ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:biosManufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:biosSerialNumber ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:biosVersion ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:cpu ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:cpuFamily ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:gpu ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:gpuFamily ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:hostname ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:processorArchitecture ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:timezoneDST ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:timezoneStandard ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:uptime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:biosDate ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:biosReleaseDate ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:localTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:systemTime ;
 		] ,
 		[
@@ -881,12 +881,12 @@ observable:ContactAddress
 	sh:property
 		[
 			sh:datatype location:Location ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
 			sh:datatype vocabulary:ContactAddressScopeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactAddressScope ;
 		]
 		;
@@ -903,48 +903,48 @@ observable:ContactAffiliation
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:organizationDepartment ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:organizationPosition ;
 		] ,
 		[
 			sh:datatype identity:Organization ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:contactOrganization ;
 		] ,
 		[
 			sh:datatype observable:ContactAddress ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:organizationLocation ;
 		] ,
 		[
 			sh:datatype observable:ContactEmail ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:datatype observable:ContactMessaging ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:datatype observable:ContactPhone ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:datatype observable:ContactProfile ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:datatype observable:ContactURL ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactURL ;
 		]
 		;
@@ -961,12 +961,12 @@ observable:ContactEmail
 	sh:property
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:emailAddress ;
 		] ,
 		[
 			sh:datatype vocabulary:ContactEmailScopeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactEmailScope ;
 		]
 		;
@@ -984,117 +984,117 @@ observable:ContactFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path identity:birthdate ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:lastTimeContacted ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:numberTimesContacted ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:firstName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:lastName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:middleName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:namePhonetic ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:namePrefix ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:nameSuffix ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactGroup ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactNote ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:nickname ;
 		] ,
 		[
 			sh:datatype observable:ContactAddress ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:datatype observable:ContactAffiliation ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactAffiliation ;
 		] ,
 		[
 			sh:datatype observable:ContactEmail ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:datatype observable:ContactMessaging ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:datatype observable:ContactPhone ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:datatype observable:ContactProfile ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:datatype observable:ContactSIP ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactSIP ;
 		] ,
 		[
 			sh:datatype observable:ContactURL ;
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:contactURL ;
 		]
 		;
@@ -1123,12 +1123,12 @@ observable:ContactListFacet
 	sh:property
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:contact ;
 		]
 		;
@@ -1145,12 +1145,12 @@ observable:ContactMessaging
 	sh:property
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactMessagingPlatform ;
 		]
 		;
@@ -1167,12 +1167,12 @@ observable:ContactPhone
 	sh:property
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
 			sh:datatype vocabulary:ContactPhoneScopeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactPhoneScope ;
 		]
 		;
@@ -1189,12 +1189,12 @@ observable:ContactProfile
 	sh:property
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactProfilePlatform ;
 		] ,
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profile ;
 		]
 		;
@@ -1211,12 +1211,12 @@ observable:ContactSIP
 	sh:property
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sipAddress ;
 		] ,
 		[
 			sh:datatype vocabulary:ContactSIPScopeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactSIPScope ;
 		]
 		;
@@ -1233,12 +1233,12 @@ observable:ContactURL
 	sh:property
 		[
 			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:url ;
 		] ,
 		[
 			sh:datatype vocabulary:ContactURLScopeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactURLScope ;
 		]
 		;
@@ -1267,46 +1267,46 @@ observable:ContentDataFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dataPayloadReferenceURL ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isEncrypted ;
 		] ,
 		[
 			sh:datatype xsd:double ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:entropy ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sizeInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dataPayload ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:magicNumber ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mimeClass ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mimeType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:byteOrder ;
 		] ,
 		[
@@ -1382,17 +1382,17 @@ observable:DataRangeFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:rangeOffset ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:rangeSize ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:rangeOffsetType ;
 		]
 		;
@@ -1432,21 +1432,21 @@ observable:DeviceFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:model ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:serialNumber ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:deviceType ;
 		]
 		;
@@ -1475,20 +1475,20 @@ observable:DigitalAccountFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isDisabled ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:firstLoginTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:lastLoginTime ;
 		] ,
 		[
@@ -1520,13 +1520,13 @@ observable:DigitalAddressFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:addressValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		]
 		;
@@ -1555,27 +1555,27 @@ observable:DigitalSignatureInfoFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:signatureExists ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:signatureVerified ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:signatureDescription ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:certificateIssuer ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:certificateSubject ;
 		]
 		;
@@ -1615,16 +1615,16 @@ observable:DiskFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:diskSize ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:freeSpace ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:diskType ;
 		] ,
 		[
@@ -1656,45 +1656,45 @@ observable:DiskPartitionFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:partitionLength ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:partitionOffset ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:spaceLeft ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:spaceUsed ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:totalSpace ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mountPoint ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:partitionID ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:diskPartitionType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		]
 		;
@@ -1723,13 +1723,13 @@ observable:DomainNameFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isTLD ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:value ;
 		]
 		;
@@ -1752,7 +1752,7 @@ observable:EXIFFacet
 	rdfs:label "EXIFFacet"@en ;
 	rdfs:comment "An EXIF (exchangeable image file format) facet is a grouping of characteristics unique to the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras conformant to JEIDA/JEITA/CIPA specifications. [based on https://en.wikipedia.org/wiki/Exif]"@en ;
 	sh:property [
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:exifData ;
 	] ;
 	sh:targetClass observable:EXIFFacet ;
@@ -1779,8 +1779,8 @@ observable:EmailAccountFacet
 	rdfs:comment "An email account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of electronic mail (email) capabilities or services."@en ;
 	sh:property [
 		sh:class observable:ObservableObject ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:emailAddress ;
 	] ;
 	sh:targetClass observable:EmailAccountFacet ;
@@ -1808,13 +1808,13 @@ observable:EmailAddressFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:addressValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		]
 		;
@@ -1843,105 +1843,105 @@ observable:EmailMessageFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:bodyRaw ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:headerRaw ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:inReplyTo ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sender ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:xOriginatingIP ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:isMimeEncoded ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:isMultipart ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isRead ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:body ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contentDisposition ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contentType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:messageID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:priority ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subject ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:xMailer ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:modifiedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:otherHeaders ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:receivedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sentTime ;
 		] ,
 		[
@@ -1979,7 +1979,7 @@ observable:EncodedStreamFacet
 	rdfs:comment "An encoded stream facet is a grouping of characteristics unique to the conversion of a body of data content from one form to another form."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:encodingMethod ;
 	] ;
 	sh:targetClass observable:EncodedStreamFacet ;
@@ -1995,11 +1995,11 @@ observable:EncryptedStreamFacet
 	rdfs:comment "An encrypted stream facet is a grouping of characteristics unique to the conversion of a body of data content from one form to another obfuscated form in such a way that reversing the conversion to obtain the original data form can only be accomplished through possession and use of a specific key."@en ;
 	sh:property
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:encryptionMethod ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:encryptionMode ;
 		] ,
 		[
@@ -2022,13 +2022,13 @@ observable:EnvironmentVariable
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:value ;
 		]
 		;
@@ -2057,37 +2057,37 @@ observable:EventFacet
 	sh:property
 		[
 			sh:class observable:ObservableAction ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:cyberAction ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:computerName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:eventID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:eventText ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:eventType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		]
 		;
@@ -2116,45 +2116,45 @@ observable:ExtInodeFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extFileType ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extFlags ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extHardLinkCount ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extInodeID ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extPermissions ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extSGID ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extSUID ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extDeletionTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extInodeChangeTime ;
 		]
 		;
@@ -2171,29 +2171,29 @@ observable:ExtractedString
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:length ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:englishTranslation ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:stringValue ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:byteStringValue ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:encoding ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:language ;
 		]
 		;
@@ -2237,37 +2237,37 @@ observable:FileFacet
 		[
 			rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sizeInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:allocationStatus ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extension ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:accessedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:fileSystemType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:metadataChangeTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:modifiedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -2293,7 +2293,7 @@ observable:FilePermissionsFacet
 	rdfs:comment "A file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on a file system."@en ;
 	sh:property [
 		sh:class observable:ObservableObject ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:owner ;
 	] ;
 	sh:targetClass observable:FilePermissionsFacet ;
@@ -2321,11 +2321,11 @@ observable:FileSystemFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:clusterSize ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:fileSystemType ;
 		]
 		;
@@ -2428,16 +2428,16 @@ observable:GeoLocationEntryFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:location ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		]
 		;
@@ -2466,12 +2466,12 @@ observable:GeoLocationLogFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		]
 		;
@@ -2500,16 +2500,16 @@ observable:GeoLocationTrackFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:endTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:startTime ;
 		] ,
 		[
@@ -2529,17 +2529,17 @@ observable:GlobalFlagType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:abbreviation ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:destination ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:symbolicName ;
 		] ,
 		[
@@ -2571,33 +2571,33 @@ observable:HTTPConnectionFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:httpMessageBodyData ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:httpMesageBodyLength ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:requestMethod ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:requestValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:requestVersion ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:httpRequestHeader ;
 		]
 		;
@@ -2662,12 +2662,12 @@ observable:IComHandlerActionType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:comClassID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:comData ;
 		]
 		;
@@ -2684,17 +2684,17 @@ observable:IExecActionType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:execArguments ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:execProgramPath ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:execWorkingDirectory ;
 		] ,
 		[
@@ -2740,13 +2740,13 @@ observable:IPAddressFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:addressValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		]
 		;
@@ -2785,8 +2785,8 @@ observable:IPv4AddressFacet
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address facet is a grouping of characteristics unique to an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:addressValue ;
 	] ;
 	sh:targetClass observable:IPv4AddressFacet ;
@@ -2813,8 +2813,8 @@ observable:IPv6AddressFacet
 	rdfs:comment "An IPv6 (Internet Protocol version 6) address facet is a grouping of characteristics unique to an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:addressValue ;
 	] ;
 	sh:targetClass observable:IPv6AddressFacet ;
@@ -2830,12 +2830,12 @@ observable:IShowMessageActionType
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:showMessageBody ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:showMessageTitle ;
 		]
 		;
@@ -2863,7 +2863,7 @@ observable:ImageFacet
 	rdfs:comment "An image facet is a grouping of characteristics unique to a complete copy of a hard disk, memory, or other digital media."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:imageType ;
 	] ;
 	sh:targetClass observable:ImageFacet ;
@@ -2891,13 +2891,13 @@ observable:InstantMessagingAddressFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:addressValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		]
 		;
@@ -2935,7 +2935,7 @@ observable:LibraryFacet
 	rdfs:label "LibraryFacet"@en ;
 	rdfs:comment "A library facet is a grouping of characteristics unique to a suite of data and programming code that is used to develop software programs and applications. [based on https://www.techopedia.com/definition/3828/software-library]"@en ;
 	sh:property [
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:libraryType ;
 	] ;
 	sh:targetClass observable:LibraryFacet ;
@@ -2962,8 +2962,8 @@ observable:MACAddressFacet
 	rdfs:comment "A MAC address facet is a grouping of characteristics unique to a media access control standards conformant identifier assigned to a network interface to enable routing and management of communications at the data link layer of a network segment."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:addressValue ;
 	] ;
 	sh:targetClass observable:MACAddressFacet ;
@@ -3005,35 +3005,35 @@ observable:MemoryFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:isInjected ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:isMapped ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:isProtected ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:isVolatile ;
 		] ,
 		[
 			sh:datatype vocabulary:MemoryBlockTypeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:blockType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:regionSize ;
 		] ,
 		[
@@ -3068,36 +3068,36 @@ observable:MessageFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:messageID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:messageText ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:messageType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sessionID ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sentTime ;
 		]
 		;
@@ -3126,12 +3126,12 @@ observable:MessageThreadFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:message ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:visibility ;
 		] ,
 		[
@@ -3152,57 +3152,57 @@ observable:MftRecordFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftFileID ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftFileNameLength ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftFlags ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftParentID ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ntfsHardLinkCount ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ntfsOwnerID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ntfsOwnerSID ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftFileNameAccessedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftFileNameCreatedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftFileNameModifiedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftFileNameRecordChangeTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mftRecordChangeTime ;
 		]
 		;
@@ -3219,22 +3219,22 @@ observable:MimePartType
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:bodyRaw ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:body ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contentDisposition ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contentType ;
 		]
 		;
@@ -3263,17 +3263,17 @@ observable:MobileAccountFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:IMSI ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:MSISDN ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:MSISDNType ;
 		]
 		;
@@ -3302,47 +3302,47 @@ observable:MobileDeviceFacet
 	sh:property
 		[
 			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:clockSetting ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:storageCapacityInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ESN ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:IMEI ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:bluetoothDeviceName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:keypadUnlockCode ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mockLocationsAllowed ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:network ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:phoneActivationTime ;
 		] ,
 		[
@@ -3373,8 +3373,8 @@ observable:MutexFacet
 	rdfs:comment "A mutex facet is a grouping of characteristics unique to a mechanism that enforces limits on access to a resource when there are many threads of execution. A mutex is designed to enforce a mutual exclusion concurrency control policy, and with a variety of possible methods there exists multiple unique implementations for different applications. [based on https://en.wikipedia.org/wiki/Lock_(computer_science)]"@en ;
 	sh:property [
 		sh:datatype xsd:boolean ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:isNamed ;
 	] ;
 	sh:targetClass observable:MutexFacet ;
@@ -3402,12 +3402,12 @@ observable:NTFSFileFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:entryID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sid ;
 		] ,
 		[
@@ -3461,29 +3461,29 @@ observable:NetworkConnectionFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isActive ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:destinationPort ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sourcePort ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:endTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:protocols ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:startTime ;
 		] ,
 		[
@@ -3529,36 +3529,36 @@ observable:NetworkFlowFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dstPayload ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:srcPayload ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dstBytes ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dstPackets ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:srcBytes ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:srcPackets ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ipfix ;
 		]
 		;
@@ -3587,20 +3587,20 @@ observable:NetworkInterfaceFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:macAddress ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:adapterName ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dhcpLeaseExpires ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dhcpLeaseObtained ;
 		] ,
 		[
@@ -3847,21 +3847,21 @@ observable:NoteFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:text ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:modifiedTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		]
 		;
@@ -3907,11 +3907,11 @@ observable:ObservableObject
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:hasChanged ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:state ;
 		]
 		;
@@ -3953,8 +3953,8 @@ observable:Observation
 	rdfs:comment "An observation is a temporal perception of an observable."@en ;
 	sh:property [
 		sh:hasValue "observe" ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path core:name ;
 	] ;
 	sh:targetClass observable:Observation ;
@@ -3981,16 +3981,16 @@ observable:OnlineServiceFacet
 	rdfs:comment "An online service facet is a grouping of characteristics unique to a particular provision mechanism of information access, distribution or manipulation over the Internet."@en-US ;
 	sh:property
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path core:name ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:inetLocation ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:location ;
 		]
 		;
@@ -4019,24 +4019,24 @@ observable:OperatingSystemFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:version ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:bitness ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:environmentVariables ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:installDate ;
 		]
 		;
@@ -4065,21 +4065,21 @@ observable:PDFFileFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isOptimized ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:pdfId1 ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:version ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:documentInformationDictionary ;
 		] ,
 		[
@@ -4149,8 +4149,8 @@ observable:PhoneAccountFacet
 	rdfs:comment "A phone account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of a telephony capability or service."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:phoneNumber ;
 	] ;
 	sh:targetClass observable:PhoneAccountFacet ;
@@ -4178,36 +4178,36 @@ observable:PhoneCallFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:to ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:duration ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:callType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:endTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:startTime ;
 		]
 		;
@@ -4258,54 +4258,54 @@ observable:ProcessFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:binary ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:creatorUser ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:parent ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isHidden ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:exitStatus ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:pid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:currentWorkingDirectory ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:status ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:environmentVariables ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:exitTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -4336,51 +4336,51 @@ observable:ProfileFacet
 	rdfs:comment "A profile facet is a grouping of characteristics unique to an explicit digital representation of identity and characteristics of the owner of a single user account associated with an online service or application. [based on https://en.wikipedia.org/wiki/User_profile]"@en-US ;
 	sh:property
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path core:name ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactURL ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileAccount ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileCreated ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileIdentity ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileService ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:profileLanguage ;
 		]
 		;
@@ -4400,8 +4400,8 @@ observable:PropertiesEnumeratedEffectFacet
 	rdfs:comment "A properties enumerated effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a characteristic of the observable object is enumerated. An example of this would be startup parameters for a process."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:properties ;
 	] ;
 	sh:targetClass observable:PropertiesEnumeratedEffectFacet ;
@@ -4421,12 +4421,12 @@ observable:PropertyReadEffectFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:propertyName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:value ;
 		]
 		;
@@ -4455,32 +4455,32 @@ observable:RasterPictureFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:camera ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:bitsPerPixel ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:pictureHeight ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:pictureWidth ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:imageCompressionMethod ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:pictureType ;
 		]
 		;
@@ -4580,42 +4580,42 @@ observable:SIMCardFacet
 	sh:property
 		[
 			sh:class identity:Identity ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:carrier ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:storageCapacityInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ICCID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:IMSI ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:PIN ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:PUK ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:SIMForm ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:SIMType ;
 		]
 		;
@@ -4658,13 +4658,13 @@ observable:SIPAddressFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:addressValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		]
 		;
@@ -4692,7 +4692,7 @@ observable:SMSMessageFacet
 	rdfs:comment "A SMS message facet is a grouping of characteristics unique to a message conformant to the short message service (SMS) communication protocol standards."@en ;
 	sh:property [
 		sh:datatype xsd:boolean ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:isRead ;
 	] ;
 	sh:targetClass observable:SMSMessageFacet ;
@@ -4720,17 +4720,17 @@ observable:SQLiteBlobFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:columnName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:rowCondition ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:tableName ;
 		] ,
 		[
@@ -4775,8 +4775,8 @@ observable:SendControlCodeEffectFacet
 	rdfs:comment "A send control code effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a control code, or other control-oriented communication signal, is sent to the observable object. An example of this would be an action sending a control code changing the running state of a process."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:controlCode ;
 	] ;
 	sh:targetClass observable:SendControlCodeEffectFacet ;
@@ -4848,27 +4848,27 @@ observable:SoftwareFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:cpeid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:language ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:swid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:version ;
 		]
 		;
@@ -4889,13 +4889,13 @@ observable:StateChangeEffectFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:newObject ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:oldObject ;
 		]
 		;
@@ -4923,8 +4923,8 @@ observable:SymbolicLinkFacet
 	rdfs:comment "A symbolic link facet is a grouping of characteristics unique to a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. [based on https://en.wikipedia.org/wiki/Symbolic_link]"@en ;
 	sh:property [
 		sh:class observable:ObservableObject ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:targetFile ;
 	] ;
 	sh:targetClass observable:SymbolicLinkFacet ;
@@ -4970,32 +4970,32 @@ observable:TaskActionType
 	sh:property
 		[
 			sh:class observable:IComHandlerActionType ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:iComHandlerAction ;
 		] ,
 		[
 			sh:class observable:IExecActionType ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:iExecAction ;
 		] ,
 		[
 			sh:class observable:IShowMessageActionType ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:iShowMessageAction ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:iEmailAction ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:actionID ;
 		] ,
 		[
 			sh:datatype vocabulary:TaskActionTypeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:actionType ;
 		]
 		;
@@ -5023,40 +5023,40 @@ observable:TriggerType
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isEnabled ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:triggerDelay ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:triggerMaxRunTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:triggerSessionChangeType ;
 		] ,
 		[
 			sh:datatype vocabulary:TriggerFrequencyVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:triggerFrequency ;
 		] ,
 		[
 			sh:datatype vocabulary:TriggerTypeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:triggerType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:triggerBeginTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:triggerEndTime ;
 		]
 		;
@@ -5084,68 +5084,68 @@ observable:TwitterProfileFacet
 	rdfs:comment "A twitter profile facet is a grouping of characteristics unique to an explicit digital representation of identity and characteristics of the owner of a single Twitter user account. [based on https://en.wikipedia.org/wiki/User_profile]" ;
 	sh:property
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:twitterId ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:favoritesCount ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:followersCount ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:friendsCount ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:listedCount ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileBackgroundLocation ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileBannerLocation ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileImageLocation ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileIsProtected ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:profileIsVerified ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:statusesCount ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:twitterHandle ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:userLocationString ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:profileBackgroundHash ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:profileBannerHash ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:profileImageHash ;
 		]
 		;
@@ -5174,12 +5174,12 @@ observable:UNIXAccountFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:gid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:shell ;
 		]
 		;
@@ -5249,12 +5249,12 @@ observable:UNIXVolumeFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mountPoint ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:options ;
 		]
 		;
@@ -5283,48 +5283,48 @@ observable:URLFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:host ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:userName ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:port ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:fullValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:fragment ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:password ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:path ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:query ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:scheme ;
 		]
 		;
@@ -5351,47 +5351,47 @@ observable:URLHistoryEntry
 	rdfs:comment "A URL history entry is a grouping of characteristics unique to the properties of a single URL history entry for a particular browser."@en-US ;
 	sh:property
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:browserUserProfile ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:expirationTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:firstVisit ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:hostname ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:lastVisit ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:manuallyEnteredCount ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:pageTitle ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:url ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:visitCount ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:keywordSearchTerm ;
 		] ,
 		[
-			sh:minCount "0"^^xsd:nonNegativeInteger ;
+			sh:minCount "0"^^xsd:integer ;
 			sh:path observable:referrerUrl ;
 		]
 		;
@@ -5408,11 +5408,11 @@ observable:URLHistoryFacet
 	rdfs:comment "A URL history facet is a grouping of characteristics unique to the stored URL history for a particular web browser"@en-US ;
 	sh:property
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:browserInformation ;
 		] ,
 		[
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:urlHistoryEntry ;
 		]
 		;
@@ -5440,27 +5440,27 @@ observable:URLVisitFacet
 	rdfs:comment "A URL visit facet is a grouping of characteristics unique to the properties of a visit of a URL within a particular browser."@en ;
 	sh:property
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:browserInformation ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:fromURLVisit ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:url ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:urlTransitionType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:visitDuration ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:visitTime ;
 		]
 		;
@@ -5489,22 +5489,22 @@ observable:UserAccountFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:canEscalatePrivs ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isPrivileged ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isServiceAccount ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:homeDirectory ;
 		]
 		;
@@ -5533,25 +5533,25 @@ observable:UserSessionFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:effectiveUser ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:effectiveGroup ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:effectiveGroupID ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:loginTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:logoutTime ;
 		]
 		;
@@ -5571,8 +5571,8 @@ observable:ValuesEnumeratedEffectFacet
 	rdfs:comment "A values enumerated effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a value of the observable object is enumerated. An example of this would be the values of a registry key."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
-		sh:minCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:path observable:values ;
 	] ;
 	sh:targetClass observable:ValuesEnumeratedEffectFacet ;
@@ -5600,12 +5600,12 @@ observable:VolumeFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sectorSize ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:volumeID ;
 		]
 		;
@@ -5645,73 +5645,73 @@ observable:WhoIsFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:domainName ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ipAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:registrantContactInfo ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:serverName ;
 		] ,
 		[
 			sh:class observable:WhoisRegistrarInfoType ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:registrarInfo ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:domainID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:remarks ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sponsoringRegistrar ;
 		] ,
 		[
 			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:regionalInternetRegistry ;
 		] ,
 		[
 			sh:datatype vocabulary:WhoisDNSSECTypeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dnssec ;
 		] ,
 		[
 			sh:datatype vocabulary:WhoisStatusTypeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:status ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:creationDate ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:expirationDate ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:lookupDate ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:updatedDate ;
 		] ,
 		[
@@ -5734,7 +5734,7 @@ observable:WhoisContactFacet
 	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property [
 		sh:datatype observable:WhoisContactTypeVocab ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:whoisContactType ;
 	] ;
 	sh:targetClass observable:WhoisContactFacet ;
@@ -5750,41 +5750,41 @@ observable:WhoisRegistrarInfoType
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:emailAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:referralURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:whoisServer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:registrarGUID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:registrarID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:registrarName ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:geolocationAddress ;
 		]
 		;
@@ -5812,7 +5812,7 @@ observable:WifiAddressFacet
 	rdfs:comment "A Wi-Fi address facet is a grouping of characteristics unique to a media access control (MAC) standards conformant identifier assigned to a device network interface to enable routing and management of IEEE 802.11 standards-conformant communications to and from that device."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:addressValue ;
 	] ;
 	sh:targetClass observable:WifiAddressFacet ;
@@ -5887,8 +5887,8 @@ observable:WindowsActiveDirectoryAccountFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:objectGUID ;
 		] ,
 		[
@@ -5920,40 +5920,40 @@ observable:WindowsComputerSpecificationFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:windowsDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:windowsSystemDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:windowsTempDirectory ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:msProductID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:msProductName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:netBIOSName ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:registeredOrganization ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:registeredOwner ;
 		] ,
 		[
@@ -6065,35 +6065,35 @@ observable:WindowsPEBinaryFileFacet
 	sh:property
 		[
 			sh:class observable:WindowsPEOptionalHeader ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:optionalHeader ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:numberOfSections ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:numberOfSymbols ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:sizeOfOptionalHeader ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:impHash ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:peType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:timeDateStamp ;
 		] ,
 		[
@@ -6143,7 +6143,7 @@ observable:WindowsPEFileHeader
 	rdfs:label "WindowsPEFileHeader"@en ;
 	rdfs:comment "A Windows PE file header is a grouping of characteristics unique to the 'header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the overall nature and structure of the file."@en ;
 	sh:property [
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:timeDateStamp ;
 	] ;
 	sh:targetClass observable:WindowsPEFileHeader ;
@@ -6258,18 +6258,18 @@ observable:WindowsPESection
 	sh:property
 		[
 			sh:datatype xsd:float ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:entropy ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:size ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path core:name ;
 		] ,
 		[
@@ -6301,30 +6301,30 @@ observable:WindowsPrefetchFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:volume ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:timesExecuted ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:applicationFileName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:prefetchHash ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:firstRun ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:lastRun ;
 		] ,
 		[
@@ -6359,31 +6359,31 @@ observable:WindowsProcessFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:aslrEnabled ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:depEnabled ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ownerSID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:priority ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:windowTitle ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:startupInfo ;
 		]
 		;
@@ -6411,7 +6411,7 @@ observable:WindowsRegistryHiveFacet
 	rdfs:comment "A Windows registry hive facet is a grouping of characteristics unique to a particular logical group of keys, subkeys, and values in a Windows registry (a hierarchical database that stores low-level settings for the Microsoft Windows operating system and for applications that opt to use the registry). [based on https://en.wikipedia.org/wiki/Windows_Registry]"@en ;
 	sh:property [
 		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
 		sh:path observable:hiveType ;
 	] ;
 	sh:targetClass observable:WindowsRegistryHiveFacet ;
@@ -6439,22 +6439,22 @@ observable:WindowsRegistryKeyFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:creator ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:numberOfSubkeys ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:key ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:modifiedTime ;
 		] ,
 		[
@@ -6474,17 +6474,17 @@ observable:WindowsRegistryValue
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path core:name ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:data ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:dataType ;
 		]
 		;
@@ -6513,35 +6513,35 @@ observable:WindowsServiceFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
-			sh:minCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
 			sh:path observable:serviceName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:displayName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:groupName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:startCommandLine ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:serviceStatus ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:serviceType ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:startType ;
 		] ,
 		[
@@ -6672,84 +6672,84 @@ observable:WindowsTaskFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:account ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:workItemData ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:workingDirectory ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:exitCode ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:maxRunTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:accountLogonType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:accountRunLevel ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:imageName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:parameters ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:taskComment ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:taskCreator ;
 		] ,
 		[
 			sh:datatype vocabulary:TaskPriorityVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:priority ;
 		] ,
 		[
 			sh:datatype vocabulary:TaskStatusVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:status ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:mostRecentRunTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:nextRunTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -6787,25 +6787,25 @@ observable:WindowsThreadFacet
 	sh:property
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:priority ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:context ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:securityAttributes ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:creationTime ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:runningStatus ;
 		] ,
 		[
@@ -6838,17 +6838,17 @@ observable:WindowsVolumeFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:driveLetter ;
 		] ,
 		[
 			sh:datatype vocabulary:WindowsDriveTypeVocab ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:driveType ;
 		] ,
 		[
 			sh:datatype vocabulary:WindowsVolumeAttributeVocab ;
-			sh:maxCount "4"^^xsd:nonNegativeInteger ;
+			sh:maxCount "4"^^xsd:integer ;
 			sh:path observable:windowsVolumeAttributes ;
 		]
 		;
@@ -6888,12 +6888,12 @@ observable:WirelessNetworkConnectionFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:baseStation ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:ssid ;
 		]
 		;
@@ -6922,77 +6922,77 @@ observable:X509CertificateFacet
 	sh:property
 		[
 			sh:class observable:X509V3ExtensionsFacet ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:x509v3extensions ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:isSelfSigned ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subjectPublicKeyExponent ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:issuer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:serialNumber ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:signature ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:signatureAlgorithm ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subject ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subjectPublicKeyAlgorithm ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subjectPublicKeyModulus ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:version ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:issuerHash ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subjectHash ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:thumbprintHash ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:validityNotAfter ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:validityNotBefore ;
 		]
 		;
@@ -7021,80 +7021,80 @@ observable:X509V3ExtensionsFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:authorityKeyIdentifier ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:basicConstraints ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:certificatePolicies ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:crlDistributionPoints ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:extendedKeyUsage ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:inhibitAnyPolicy ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:issuerAlternativeName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:keyUsage ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:nameConstraints ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:policyConstraints ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:policyMappings ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subjectAlternativeName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subjectDirectoryAttributes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:subjectKeyIdentifier ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:privateKeyUsagePeriodNotAfter ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:path observable:privateKeyUsagePeriodNotBefore ;
 		]
 		;
