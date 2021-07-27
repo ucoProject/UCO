@@ -129,3 +129,16 @@ def test_location_XFAIL_validation():
         str(NS_UCO_LOCATION.postalCode)
       }
     )
+
+@pytest.mark.xfail(strict=True)
+def test_location_XFAIL_validation_XPASS_wrong_concept_name():
+    """
+    Report the XFAIL instance data XPASSes one of the induced errors - the non-existent concept core:descriptionButWrongName is not reported as an error.
+    Should a SHACL mechanism later be identified to detect this error, this test can be retired, adding NS_UCO_CORE.descriptionButWrongName to the expected IRI set in test_location_XFAIL_validation().
+    """
+    confirm_validation_errors(
+      "location_XFAIL_validation.ttl",
+      {
+        str(NS_UCO_CORE.descriptionButWrongName)
+      }
+    )
