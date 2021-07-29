@@ -111,6 +111,13 @@ def test_action_inheritance_XFAIL_validation():
       }
     )
 
+def test_action_result_PASS_validation():
+    """
+    Confirm the PASS instance data passes validation.
+    """
+    g = load_validation_graph("action_result_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
+
 def test_location_PASS_validation():
     """
     Confirm the PASS instance data passes validation.
