@@ -36,7 +36,7 @@ all: \
 	  && pyshacl \
 	    --data-file-format json-ld \
 	    --format turtle \
-	    --inference none \
+	    --inference rdfs \
 	    --ont-file-format turtle \
 	    --ont-graph $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
@@ -63,7 +63,7 @@ all: \
 	  && pyshacl \
 	    --data-file-format json-ld \
 	    --format turtle \
-	    --inference none \
+	    --inference rdfs \
 	    --ont-file-format turtle \
 	    --ont-graph $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
