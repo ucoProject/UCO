@@ -38,6 +38,9 @@ all-%: \
 
 check: \
   $(check_directories)
+	$(MAKE) \
+	  --directory tests \
+	  check
 
 check-%: \
   % \
@@ -48,7 +51,8 @@ check-%: \
 	  check
 
 clean: \
-  $(clean_directories)
+  $(clean_directories) \
+  clean-tests
 	@rm -f .lib.done.log
 
 clean-%: \
@@ -56,4 +60,9 @@ clean-%: \
 	@$(MAKE) \
 	  --directory $< \
 	  --file $$PWD/src/review.mk \
+	  clean
+
+clean-tests:
+	@$(MAKE) \
+	  --directory tests \
 	  clean
