@@ -41,7 +41,8 @@ all: \
 	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
 	    --output _$@ \
-	    $<
+	    $< \
+	    || (cat _$@ ; exit 1)
 	mv _$@ $@
 
 # NOTE - this recipe makes an allowance for a certain failure type
