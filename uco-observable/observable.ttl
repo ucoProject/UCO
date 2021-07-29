@@ -479,12 +479,13 @@ observable:BluetoothAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:MACAddressFacet ;
+	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "BluetoothAddressFacet"@en ;
 	rdfs:comment "A Bluetooth address facet is a grouping of characteristics unique to a Bluetooth standard conformant identifier assigned to a Bluetooth device to enable routing and management of Bluetooth standards conformant communication to or from that device."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -2059,7 +2060,7 @@ observable:EmailAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:DigitalAddressFacet ;
+	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "EmailAddressFacet"@en ;
 	rdfs:comment "An email address facet is a grouping of characteristics unique to an identifier for an electronic mailbox to which electronic mail messages (conformant to the Simple Mail Transfer Protocol (SMTP)) are sent from and delivered to."@en ;
 	sh:property
@@ -3140,7 +3141,7 @@ observable:IPAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:DigitalAddressFacet ;
+	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "IPAddressFacet"@en ;
 	rdfs:comment "An IP address facet is a grouping of characteristics unique to an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
 	sh:property
@@ -3188,7 +3189,7 @@ observable:IPv4AddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:IPAddressFacet ;
+	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv4AddressFacet"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address facet is a grouping of characteristics unique to an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
 	sh:property [
@@ -3217,7 +3218,7 @@ observable:IPv6AddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:IPAddressFacet ;
+	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv6AddressFacet"@en ;
 	rdfs:comment "An IPv6 (Internet Protocol version 6) address facet is a grouping of characteristics unique to an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
 	sh:property [
@@ -3298,7 +3299,7 @@ observable:InstantMessagingAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:DigitalAddressFacet ;
+	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "InstantMessagingAddressFacet"@en ;
 	rdfs:comment "An instant messaging address facet is a grouping of characteristics unique to an identifier assigned to enable routing and management of instant messaging digital communication."@en ;
 	sh:property
@@ -3374,7 +3375,7 @@ observable:MACAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:DigitalAddressFacet ;
+	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "MACAddressFacet"@en ;
 	rdfs:comment "A MAC address facet is a grouping of characteristics unique to a media access control standards conformant identifier assigned to a network interface to enable routing and management of communications at the data link layer of a network segment."@en ;
 	sh:property [
@@ -5282,7 +5283,7 @@ observable:SIPAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:DigitalAddressFacet ;
+	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "SIPAddressFacet"@en ;
 	rdfs:comment "A SIP address facet is a grouping of characteristics unique to a Session Initiation Protocol (SIP) standards conformant identifier assigned to a user to enable routing and management of SIP standards conformant communication to or from that user loosely coupled from any particular devices."@en ;
 	sh:property
@@ -5553,7 +5554,7 @@ observable:SymbolicLink
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf <https://unifedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "SymbolicLink"@en ;
 	rdfs:comment "A symbolic link is a file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. [based on https://en.wikipedia.org/wiki/Symbolic_link]"@en ;
 	sh:targetClass observable:SymbolicLink ;
@@ -6604,12 +6605,13 @@ observable:WifiAddressFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:MACAddressFacet ;
+	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "WifiAddressFacet"@en ;
 	rdfs:comment "A Wi-Fi address facet is a grouping of characteristics unique to a media access control (MAC) standards conformant identifier assigned to a device network interface to enable routing and management of IEEE 802.11 standards-conformant communications to and from that device."@en ;
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
