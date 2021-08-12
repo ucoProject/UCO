@@ -44,3 +44,4 @@
 core:id
 	rdfs:range types:Identifier ;
 	.
+
