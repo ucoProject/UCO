@@ -1,24 +1,15 @@
 # baseURI: https://unifiedcyberontology.org/ontology/uco/uco
 # imports: https://unifiedcyberontology.org/ontology/uco/action
-# imports: https://unifiedcyberontology.org/ontology/uco/action-da
 # imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/core-da
 # imports: https://unifiedcyberontology.org/ontology/uco/identity
-# imports: https://unifiedcyberontology.org/ontology/uco/identity-da
 # imports: https://unifiedcyberontology.org/ontology/uco/location
-# imports: https://unifiedcyberontology.org/ontology/uco/location-da
 # imports: https://unifiedcyberontology.org/ontology/uco/marking
-# imports: https://unifiedcyberontology.org/ontology/uco/marking-da
 # imports: https://unifiedcyberontology.org/ontology/uco/observable
-# imports: https://unifiedcyberontology.org/ontology/uco/observable-da
 # imports: https://unifiedcyberontology.org/ontology/uco/pattern
-# imports: https://unifiedcyberontology.org/ontology/uco/pattern-da
 # imports: https://unifiedcyberontology.org/ontology/uco/role
 # imports: https://unifiedcyberontology.org/ontology/uco/time
 # imports: https://unifiedcyberontology.org/ontology/uco/tool
-# imports: https://unifiedcyberontology.org/ontology/uco/tool-da
 # imports: https://unifiedcyberontology.org/ontology/uco/types
-# imports: https://unifiedcyberontology.org/ontology/uco/types-da
 # imports: https://unifiedcyberontology.org/ontology/uco/victim
 
 @base <https://unifiedcyberontology.org/ontology/uco/uco> .
