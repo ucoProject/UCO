@@ -35,25 +35,16 @@
 	rdfs:label "uco-master"@en ;
 	owl:imports
 		<https://unifiedcyberontology.org/ontology/uco/action> ,
-		<https://unifiedcyberontology.org/ontology/uco/action-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/core-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/identity> ,
-		<https://unifiedcyberontology.org/ontology/uco/identity-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/location> ,
-		<https://unifiedcyberontology.org/ontology/uco/location-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/marking> ,
-		<https://unifiedcyberontology.org/ontology/uco/marking-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/observable> ,
-		<https://unifiedcyberontology.org/ontology/uco/observable-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/pattern> ,
-		<https://unifiedcyberontology.org/ontology/uco/pattern-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/role> ,
 		<https://unifiedcyberontology.org/ontology/uco/time> ,
 		<https://unifiedcyberontology.org/ontology/uco/tool> ,
-		<https://unifiedcyberontology.org/ontology/uco/tool-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/types> ,
-		<https://unifiedcyberontology.org/ontology/uco/types-da> ,
 		<https://unifiedcyberontology.org/ontology/uco/victim>
 		;
 	owl:versionInfo "0.6.0" ;
@@ -62,4 +53,3 @@
 core:id
 	rdfs:range types:Identifier ;
 	.
-
