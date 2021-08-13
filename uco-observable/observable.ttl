@@ -7711,18 +7711,15 @@ observable:WindowsTaskFacet
 			sh:path observable:taskCreator ;
 		] ,
 		[
-			sh:datatype
-				xsd:string ,
-				vocabulary:TaskPriorityVocab
-				;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:priority ;
-		] ,
-		[
 			sh:datatype vocabulary:TaskFlagVocab ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:flags ;
+		] ,
+		[
+			sh:datatype vocabulary:TaskPriorityVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:priority ;
 		] ,
 		[
 			sh:datatype
@@ -7774,10 +7771,7 @@ observable:WindowsThreadFacet
 			sh:path observable:startAddress ;
 		] ,
 		[
-			sh:datatype
-				xsd:integer ,
-				xsd:string
-				;
+			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:priority ;
@@ -10794,7 +10788,11 @@ observable:priority
 	a owl:DatatypeProperty ;
 	rdfs:label "priority"@en ;
 	rdfs:comment "The priority of the email."@en ;
-	rdfs:range xsd:string ;
+	rdfs:range
+		xsd:integer ,
+		xsd:string ,
+		vocabulary:TaskPriorityVocab
+		;
 	.
 
 observable:privateKeyUsagePeriodNotAfter
