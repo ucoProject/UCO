@@ -4883,17 +4883,14 @@ observable:ProcessFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:arguments ;
-		] ,
-		[
-			sh:datatype
-				xsd:string ,
-				vocabulary:WhoisStatusTypeVocab
-				;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:status ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:arguments ;
 		]
 		;
 	sh:targetClass observable:ProcessFacet ;
@@ -11526,7 +11523,11 @@ observable:status
 	a owl:DatatypeProperty ;
 	rdfs:label "status"@en ;
 	rdfs:comment "Specifies a list of statuses for a given Whois entry."@en ;
-	rdfs:range vocabulary:WhoisStatusTypeVocab ;
+	rdfs:range
+		xsd:string ,
+		vocabulary:TaskStatusVocab ,
+		vocabulary:WhoisStatusTypeVocab
+		;
 	.
 
 observable:statusesCount
