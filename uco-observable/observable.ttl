@@ -7731,10 +7731,7 @@ observable:WindowsTaskFacet
 			sh:path observable:flags ;
 		] ,
 		[
-			sh:datatype
-				vocabulary:TaskStatusVocab ,
-				vocabulary:WhoisStatusTypeVocab
-				;
+			sh:datatype vocabulary:TaskStatusVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:status ;
@@ -11523,11 +11520,14 @@ observable:status
 	a owl:DatatypeProperty ;
 	rdfs:label "status"@en ;
 	rdfs:comment "Specifies a list of statuses for a given Whois entry."@en ;
-	rdfs:range
-		xsd:string ,
-		vocabulary:TaskStatusVocab ,
-		vocabulary:WhoisStatusTypeVocab
-		;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:string
+			vocabulary:TaskStatusVocab
+			vocabulary:WhoisStatusTypeVocab
+		) ;
+	] ;
 	.
 
 observable:statusesCount
