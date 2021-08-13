@@ -7151,10 +7151,7 @@ observable:WindowsPESection
 			sh:path observable:hashes ;
 		] ,
 		[
-			sh:datatype
-				xsd:double ,
-				xsd:float
-				;
+			sh:datatype xsd:double ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:entropy ;
