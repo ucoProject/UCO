@@ -28,10 +28,7 @@ types:ControlledDictionary
 	rdfs:label "ControlledDictionary"@en ;
 	rdfs:comment "A controlled dictionary is a list of (term/key, value) pairs where each term/key exists no more than once and is constrained to an explicitly defined set of values."@en ;
 	sh:property [
-		sh:class
-			types:ControlledDictionaryEntry ,
-			types:DictionaryEntry
-			;
+		sh:class types:ControlledDictionaryEntry ;
 		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path types:entry ;
@@ -152,7 +149,10 @@ types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
 	rdfs:comment "A dictionary entry."@en ;
-	rdfs:range types:DictionaryEntry ;
+	rdfs:range
+		types:ControlledDictionaryEntry ,
+		types:DictionaryEntry
+		;
 	.
 
 types:hashMethod
