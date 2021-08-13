@@ -149,10 +149,13 @@ types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
 	rdfs:comment "A dictionary entry."@en ;
-	rdfs:range
-		types:ControlledDictionaryEntry ,
-		types:DictionaryEntry
-		;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			types:ControlledDictionaryEntry
+			types:DictionaryEntry
+		) ;
+	] ;
 	.
 
 types:hashMethod
