@@ -124,10 +124,7 @@ observable:AccountFacet
 			sh:path observable:accountIssuer ;
 		] ,
 		[
-			sh:class
-				core:UcoObject ,
-				observable:ObservableObject
-				;
+			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:owner ;
@@ -672,10 +669,7 @@ observable:CalendarEntryFacet
 	rdfs:comment "A calendar entry facet is a grouping of characteristics unique to an appointment, meeting, or event within a collection of appointments, meetings, and events."@en ;
 	sh:property
 		[
-			sh:class
-				core:UcoObject ,
-				observable:ObservableObject
-				;
+			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:owner ;
@@ -777,10 +771,7 @@ observable:CalendarFacet
 	rdfs:comment "A calendar facet is a grouping of characteristics unique to a collection of appointments, meetings, and events."@en ;
 	sh:property
 		[
-			sh:class
-				core:UcoObject ,
-				observable:ObservableObject
-				;
+			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:owner ;
@@ -2650,10 +2641,7 @@ observable:FilePermissionsFacet
 	rdfs:label "FilePermissionsFacet"@en ;
 	rdfs:comment "A file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on a file system."@en ;
 	sh:property [
-		sh:class
-			core:UcoObject ,
-			observable:ObservableObject
-			;
+		sh:class core:UcoObject ;
 		sh:maxCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:owner ;
@@ -10605,10 +10593,7 @@ observable:owner
 	a owl:ObjectProperty ;
 	rdfs:label "owner"@en ;
 	rdfs:comment "Specifies the owner of an Observable Object."@en ;
-	rdfs:range
-		core:UcoObject ,
-		observable:ObservableObject
-		;
+	rdfs:range core:UcoObject ;
 	.
 
 observable:ownerSID
