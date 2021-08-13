@@ -5778,6 +5778,12 @@ observable:TwitterProfileFacet
 			sh:path observable:profileIsVerified ;
 		] ,
 		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:listedCount ;
+		] ,
+		[
 			sh:datatype xsd:nonNegativeInteger ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5819,10 +5825,6 @@ observable:TwitterProfileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:userLocationString ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path observable:listedCount ;
 		]
 		;
 	sh:targetClass observable:TwitterProfileFacet ;
@@ -10034,6 +10036,13 @@ observable:libraryType
 	rdfs:label "libraryType"@en ;
 	rdfs:comment "Specifies the type of library being characterized."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:listedCount
+	a owl:DatatypeProperty ;
+	rdfs:label "listedCount"@en ;
+	rdfs:comment "Specifies the number of public lists that this profile is associated with."@en ;
+	rdfs:range xsd:integer ;
 	.
 
 observable:loaderFlags
