@@ -3767,10 +3767,7 @@ observable:MobileDeviceFacet
 	rdfs:comment "A mobile device facet is a grouping of characteristics unique to a portable computing device. [based on https://www.lexico.com/definition/mobile_device]"@en ;
 	sh:property
 		[
-			sh:datatype
-				xsd:boolean ,
-				xsd:string
-				;
+			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mockLocationsAllowed ;
@@ -3782,10 +3779,7 @@ observable:MobileDeviceFacet
 			sh:path observable:clockSetting ;
 		] ,
 		[
-			sh:datatype
-				xsd:dateTime ,
-				xsd:string
-				;
+			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:phoneActivationTime ;
