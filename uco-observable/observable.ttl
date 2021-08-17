@@ -124,10 +124,7 @@ observable:AccountFacet
 			sh:path observable:accountIssuer ;
 		] ,
 		[
-			sh:class
-				core:UcoObject ,
-				observable:ObservableObject
-				;
+			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:owner ;
@@ -672,10 +669,7 @@ observable:CalendarEntryFacet
 	rdfs:comment "A calendar entry facet is a grouping of characteristics unique to an appointment, meeting, or event within a collection of appointments, meetings, and events."@en ;
 	sh:property
 		[
-			sh:class
-				core:UcoObject ,
-				observable:ObservableObject
-				;
+			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:owner ;
@@ -777,10 +771,7 @@ observable:CalendarFacet
 	rdfs:comment "A calendar facet is a grouping of characteristics unique to a collection of appointments, meetings, and events."@en ;
 	sh:property
 		[
-			sh:class
-				core:UcoObject ,
-				observable:ObservableObject
-				;
+			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:owner ;
@@ -2650,10 +2641,7 @@ observable:FilePermissionsFacet
 	rdfs:label "FilePermissionsFacet"@en ;
 	rdfs:comment "A file permissions facet is a grouping of characteristics unique to the access rights (e.g., view, change, navigate, execute) of a file on a file system."@en ;
 	sh:property [
-		sh:class
-			core:UcoObject ,
-			observable:ObservableObject
-			;
+		sh:class core:UcoObject ;
 		sh:maxCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:owner ;
@@ -3767,10 +3755,7 @@ observable:MobileDeviceFacet
 	rdfs:comment "A mobile device facet is a grouping of characteristics unique to a portable computing device. [based on https://www.lexico.com/definition/mobile_device]"@en ;
 	sh:property
 		[
-			sh:datatype
-				xsd:boolean ,
-				xsd:string
-				;
+			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mockLocationsAllowed ;
@@ -3782,10 +3767,7 @@ observable:MobileDeviceFacet
 			sh:path observable:clockSetting ;
 		] ,
 		[
-			sh:datatype
-				xsd:dateTime ,
-				xsd:string
-				;
+			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:phoneActivationTime ;
@@ -4883,17 +4865,14 @@ observable:ProcessFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:arguments ;
-		] ,
-		[
-			sh:datatype
-				xsd:string ,
-				vocabulary:WhoisStatusTypeVocab
-				;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:status ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:arguments ;
 		]
 		;
 	sh:targetClass observable:ProcessFacet ;
@@ -5799,6 +5778,12 @@ observable:TwitterProfileFacet
 			sh:path observable:profileIsVerified ;
 		] ,
 		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:listedCount ;
+		] ,
+		[
 			sh:datatype xsd:nonNegativeInteger ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5840,10 +5825,6 @@ observable:TwitterProfileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:userLocationString ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path observable:listedCount ;
 		]
 		;
 	sh:targetClass observable:TwitterProfileFacet ;
@@ -7160,10 +7141,7 @@ observable:WindowsPESection
 			sh:path observable:hashes ;
 		] ,
 		[
-			sh:datatype
-				xsd:double ,
-				xsd:float
-				;
+			sh:datatype xsd:double ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:entropy ;
@@ -7720,24 +7698,18 @@ observable:WindowsTaskFacet
 			sh:path observable:taskCreator ;
 		] ,
 		[
-			sh:datatype
-				xsd:string ,
-				vocabulary:TaskPriorityVocab
-				;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:priority ;
-		] ,
-		[
 			sh:datatype vocabulary:TaskFlagVocab ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:flags ;
 		] ,
 		[
-			sh:datatype
-				vocabulary:TaskStatusVocab ,
-				vocabulary:WhoisStatusTypeVocab
-				;
+			sh:datatype vocabulary:TaskPriorityVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:datatype vocabulary:TaskStatusVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:status ;
@@ -7783,10 +7755,7 @@ observable:WindowsThreadFacet
 			sh:path observable:startAddress ;
 		] ,
 		[
-			sh:datatype
-				xsd:integer ,
-				xsd:string
-				;
+			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:priority ;
@@ -10066,6 +10035,13 @@ observable:libraryType
 	rdfs:range xsd:string ;
 	.
 
+observable:listedCount
+	a owl:DatatypeProperty ;
+	rdfs:label "listedCount"@en ;
+	rdfs:comment "Specifies the number of public lists that this profile is associated with."@en ;
+	rdfs:range xsd:integer ;
+	.
+
 observable:loaderFlags
 	a owl:DatatypeProperty ;
 	rdfs:label "loaderFlags"@en ;
@@ -10605,10 +10581,7 @@ observable:owner
 	a owl:ObjectProperty ;
 	rdfs:label "owner"@en ;
 	rdfs:comment "Specifies the owner of an Observable Object."@en ;
-	rdfs:range
-		core:UcoObject ,
-		observable:ObservableObject
-		;
+	rdfs:range core:UcoObject ;
 	.
 
 observable:ownerSID
@@ -10803,7 +10776,14 @@ observable:priority
 	a owl:DatatypeProperty ;
 	rdfs:label "priority"@en ;
 	rdfs:comment "The priority of the email."@en ;
-	rdfs:range xsd:string ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:integer
+			xsd:string
+			vocabulary:TaskPriorityVocab
+		) ;
+	] ;
 	.
 
 observable:privateKeyUsagePeriodNotAfter
@@ -11526,7 +11506,14 @@ observable:status
 	a owl:DatatypeProperty ;
 	rdfs:label "status"@en ;
 	rdfs:comment "Specifies a list of statuses for a given Whois entry."@en ;
-	rdfs:range vocabulary:WhoisStatusTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:string
+			vocabulary:TaskStatusVocab
+			vocabulary:WhoisStatusTypeVocab
+		) ;
+	] ;
 	.
 
 observable:statusesCount
