@@ -47,6 +47,10 @@ all:
 check: \
   inheritance_review.ttl \
   uco_monolithic.ttl
+	source venv/bin/activate \
+	  && pytest \
+	    --ignore examples \
+	    --log-level=DEBUG
 	$(MAKE) \
 	  --directory examples \
 	  check
