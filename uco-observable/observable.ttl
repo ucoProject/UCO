@@ -10776,11 +10776,14 @@ observable:priority
 	a owl:DatatypeProperty ;
 	rdfs:label "priority"@en ;
 	rdfs:comment "The priority of the email."@en ;
-	rdfs:range
-		xsd:integer ,
-		xsd:string ,
-		vocabulary:TaskPriorityVocab
-		;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:integer
+			xsd:string
+			vocabulary:TaskPriorityVocab
+		) ;
+	] ;
 	.
 
 observable:privateKeyUsagePeriodNotAfter
