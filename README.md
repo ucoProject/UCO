@@ -13,8 +13,8 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is 0.6.0
+The current release of UCO is 0.7.0
 
-UCO Version 0.6.0 is primarily focused on adding several community needed classes (URLHistory, refactoring Contact, OnlineService, Profile, etc.) and properties, refactoring and cleaning up Address subclass structure, adding specific subclasses of ObservableObject, renaming of non-observable namespace Facet subclasses to include "Facet" at the end, clarifying and normalizing all class definitions to make the ontology more robust and complete, and cleanup of several minor issues and bugs.
+UCO Version 0.7.0 is primarily focused on conversion of UCO ontologies to leverage the Shapes Constraint Language (SHACL) rather than domain assertions and owl property restrictions to define class shapes. In addition, it added a continuous integration (CI) method for testing and verifying the ontology and it corrects several minor issues and bugs.
 
 Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.

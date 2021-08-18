@@ -38,7 +38,7 @@
 		<https://unifiedcyberontology.org/ontology/uco/types> ,
 		<https://unifiedcyberontology.org/ontology/uco/victim>
 		;
-	owl:versionInfo "0.6.0" ;
+	owl:versionInfo "0.7.0" ;
 	.
 
 core:id
