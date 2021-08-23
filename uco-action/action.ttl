@@ -151,7 +151,7 @@ action:ActionFrequencyFacet
 	rdfs:comment "An action frequency facet is a grouping of characteristics unique to the frequency of occurrence for an action."@en ;
 	sh:property
 		[
-			sh:datatype xsd:float ;
+			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -437,7 +437,7 @@ action:rate
 	a owl:DatatypeProperty ;
 	rdfs:label "rate"@en ;
 	rdfs:comment "The frequency rate for the occurence of an action."@en ;
-	rdfs:range xsd:float ;
+	rdfs:range xsd:decimal ;
 	.
 
 action:result

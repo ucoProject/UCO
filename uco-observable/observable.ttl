@@ -818,7 +818,7 @@ observable:CompressedStreamFacet
 	rdfs:comment "A compressed stream facet is a grouping of characteristics unique to the application of a size-reduction process to a body of data content."@en ;
 	sh:property
 		[
-			sh:datatype xsd:double ;
+			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:compressionRatio ;
@@ -1473,7 +1473,7 @@ observable:ContentDataFacet
 			sh:path observable:isEncrypted ;
 		] ,
 		[
-			sh:datatype xsd:double ;
+			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:entropy ;
@@ -7141,7 +7141,7 @@ observable:WindowsPESection
 			sh:path observable:hashes ;
 		] ,
 		[
-			sh:datatype xsd:double ;
+			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:entropy ;
@@ -8602,7 +8602,7 @@ observable:compressionRatio
 	a owl:DatatypeProperty ;
 	rdfs:label "compressionRatio"@en ;
 	rdfs:comment "The compression ratio of the compressed data."@en ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	.
 
 observable:computerName
@@ -9196,7 +9196,7 @@ observable:entropy
 	a owl:DatatypeProperty ;
 	rdfs:label "entropy"@en ;
 	rdfs:comment "Shannon entropy (a measure of randomness) of the data."@en ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	.
 
 observable:entryID

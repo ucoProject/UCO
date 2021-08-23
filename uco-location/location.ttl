@@ -26,25 +26,25 @@ location:GPSCoordinatesFacet
 	rdfs:comment "A GPS coordinates facet is a grouping of characteristics unique to the expression of quantified dilution of precision (DOP) for an asserted set of geolocation coordinates typically associated with satellite navigation such as the Global Positioning System (GPS)."@en ;
 	sh:property
 		[
-			sh:datatype xsd:double ;
+			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path location:hdop ;
 		] ,
 		[
-			sh:datatype xsd:double ;
+			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path location:pdop ;
 		] ,
 		[
-			sh:datatype xsd:double ;
+			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path location:tdop ;
 		] ,
 		[
-			sh:datatype xsd:double ;
+			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path location:vdop ;
@@ -169,7 +169,7 @@ location:hdop
 	a owl:DatatypeProperty ;
 	rdfs:label "hdop"@en ;
 	rdfs:comment "The horizontal dilution of precision of the GPS location."@en ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	.
 
 location:latitude
@@ -197,7 +197,7 @@ location:pdop
 	a owl:DatatypeProperty ;
 	rdfs:label "pdop"@en ;
 	rdfs:comment "The positional (3D) dilution of precision of the GPS location."@en ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	.
 
 location:postalCode
@@ -225,13 +225,13 @@ location:tdop
 	a owl:DatatypeProperty ;
 	rdfs:label "tdop"@en ;
 	rdfs:comment "The temporal dilution of precision of the GPS location."@en ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	.
 
 location:vdop
 	a owl:DatatypeProperty ;
 	rdfs:label "vdop"@en ;
 	rdfs:comment "The vertical dilution of precision of the GPS location."@en ;
-	rdfs:range xsd:double ;
+	rdfs:range xsd:decimal ;
 	.
 
