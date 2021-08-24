@@ -609,6 +609,7 @@ vocabulary:ObservableObjectRelationshipVocab
 	owl:oneOf (
 		"Allocated"^^vocabulary:ObservableObjectRelationshipVocab
 		"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
+		"Attachment_Of"^^vocabulary:ObservableObjectRelationshipVocab
 		"Bound"^^vocabulary:ObservableObjectRelationshipVocab
 		"Bound_By"^^vocabulary:ObservableObjectRelationshipVocab
 		"Characterized_By"^^vocabulary:ObservableObjectRelationshipVocab
