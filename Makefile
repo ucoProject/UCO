@@ -45,10 +45,13 @@ check: \
 	  check
 
 clean: \
-  clean-tests
+  clean-tests \
+  clean-ontology
 	@rm -f \
 	  .git_submodule_init.done.log \
 	  .lib.done.log
+
+clean-ontology:
 	@$(MAKE) \
 	  --directory ontology \
 	  clean
