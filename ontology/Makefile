@@ -45,7 +45,7 @@ check-%: \
 	  check
 
 clean: \
-	$(clean_directories)
+  $(clean_directories)
 
 clean-%: \
   %
