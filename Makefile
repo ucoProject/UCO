@@ -49,7 +49,7 @@ clean: \
 	@rm -f \
 	  .git_submodule_init.done.log \
 	  .lib.done.log
-  	@$(MAKE) \
+	@$(MAKE) \
 	  --directory ontology \
 	  clean
 
