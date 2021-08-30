@@ -11,6 +11,7 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/tool
 # imports: https://unifiedcyberontology.org/ontology/uco/types
 # imports: https://unifiedcyberontology.org/ontology/uco/victim
+# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
 
 @base <https://unifiedcyberontology.org/ontology/uco/uco> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
@@ -36,7 +37,8 @@
 		<https://unifiedcyberontology.org/ontology/uco/time> ,
 		<https://unifiedcyberontology.org/ontology/uco/tool> ,
 		<https://unifiedcyberontology.org/ontology/uco/types> ,
-		<https://unifiedcyberontology.org/ontology/uco/victim>
+		<https://unifiedcyberontology.org/ontology/uco/victim> ,
+		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
 		;
 	owl:versionInfo "0.7.0" ;
 	.
