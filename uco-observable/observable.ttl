@@ -6740,6 +6740,24 @@ observable:WindowsComputerSpecificationFacet
 			sh:path observable:windowsTempDirectory ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:lastShutdownDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:osInstallDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:osLastUpgradeDate ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -6761,24 +6779,6 @@ observable:WindowsComputerSpecificationFacet
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:domain ;
-		] , 
-
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path action:osInstallDate ;
-		] , 
-
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path action:osLastUpgradeDate ;
-		] , 
-
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path action:lastShutdownDate ;
 		]
 		;
 	sh:targetClass observable:WindowsComputerSpecificationFacet ;
@@ -10027,10 +10027,10 @@ observable:lastRun
 	.
 
 observable:lastShutdownDate
-	a owl:DatatypeProperty
+	a owl:DatatypeProperty ;
 	rdfs:label "lastShutdownDate"@en ;
-	rdfs:comment "Specifies the date on which the device was last shutdown."@en;
-	rdfs:range xsd:dateTime
+	rdfs:comment "Specifies the date on which the device was last shutdown."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:lastTimeContacted
@@ -10597,17 +10597,17 @@ observable:organizationPosition
 	.
 
 observable:osInstallDate
-	a owl:DatatypeProperty
+	a owl:DatatypeProperty ;
 	rdfs:label "osInstallDate"@en ;
-	rdfs:comment "Specifies the date on which the operating system (OS) was installed."@en;
-	rdfs:range xsd:dateTime
+	rdfs:comment "Specifies the date on which the operating system (OS) was installed."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:osLastUpgradeDate
-	a owl:DatatypeProperty
+	a owl:DatatypeProperty ;
 	rdfs:label "osLastUpgradeDate"@en ;
-	rdfs:comment "Specifies the date on which the operating system (OS) was last upgraded."@en;
-	rdfs:range xsd:dateTime
+	rdfs:comment "Specifies the date on which the operating system (OS) was last upgraded."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:otherHeaders
