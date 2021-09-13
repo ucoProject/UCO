@@ -3497,6 +3497,12 @@ observable:MessageFacet
 			sh:path observable:from ;
 		] ,
 		[
+			sh:datatype xsd:MessageTypeVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:messageType ;
+		] ,
+		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -3513,12 +3519,6 @@ observable:MessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:messageText ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:messageType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -10182,8 +10182,8 @@ observable:messageText
 observable:messageType
 	a owl:DatatypeProperty ;
 	rdfs:label "messageType"@en ;
-	rdfs:comment "Message type specifies what sort of message (email, chat, SMS, etc) a Message is."@en ;
-	rdfs:range xsd:string ;
+	rdfs:comment "Message type specifies what sort of message (Email, Chat, SMS/MMS, etc) a Message is."@en ;
+	rdfs:range vocabulary:MessageTypeVocab ;
 	.
 
 observable:messagingAddress
