@@ -997,7 +997,6 @@ observable:ContactAddress
 	sh:property
 		[
 			sh:class location:Location ;
-			sh:datatype location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:geolocationAddress ;
@@ -1022,7 +1021,6 @@ observable:ContactAffiliation
 	sh:property
 		[
 			sh:class identity:Organization ;
-			sh:datatype identity:Organization ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -1030,42 +1028,36 @@ observable:ContactAffiliation
 		] ,
 		[
 			sh:class observable:ContactAddress ;
-			sh:datatype observable:ContactAddress ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:organizationLocation ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
-			sh:datatype observable:ContactEmail ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
-			sh:datatype observable:ContactMessaging ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
-			sh:datatype observable:ContactPhone ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactProfile ;
-			sh:datatype observable:ContactProfile ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
-			sh:datatype observable:ContactURL ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactURL ;
@@ -1096,7 +1088,6 @@ observable:ContactEmail
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:emailAddress ;
@@ -1122,56 +1113,48 @@ observable:ContactFacet
 	sh:property
 		[
 			sh:class observable:ContactAddress ;
-			sh:datatype observable:ContactAddress ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:class observable:ContactAffiliation ;
-			sh:datatype observable:ContactAffiliation ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactAffiliation ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
-			sh:datatype observable:ContactEmail ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
-			sh:datatype observable:ContactMessaging ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
-			sh:datatype observable:ContactPhone ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactProfile ;
-			sh:datatype observable:ContactProfile ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:class observable:ContactSIP ;
-			sh:datatype observable:ContactSIP ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactSIP ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
-			sh:datatype observable:ContactURL ;
 			sh:minCount "0"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactURL ;
@@ -1292,14 +1275,12 @@ observable:ContactListFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contact ;
@@ -1318,14 +1299,12 @@ observable:ContactMessaging
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactMessagingPlatform ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:messagingAddress ;
@@ -1344,7 +1323,6 @@ observable:ContactPhone
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactPhoneNumber ;
@@ -1369,14 +1347,12 @@ observable:ContactProfile
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactProfilePlatform ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:profile ;
@@ -1395,7 +1371,6 @@ observable:ContactSIP
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:sipAddress ;
@@ -1420,7 +1395,6 @@ observable:ContactURL
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:url ;
