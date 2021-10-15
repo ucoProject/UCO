@@ -151,7 +151,7 @@ observable:AccountFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -547,7 +547,7 @@ observable:BrowserBookmarkFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
@@ -619,7 +619,7 @@ observable:BrowserCookieFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -713,7 +713,7 @@ observable:CalendarEntryFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -1891,7 +1891,7 @@ observable:DiskPartitionFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
@@ -2373,7 +2373,7 @@ observable:EventFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2598,7 +2598,7 @@ observable:FileFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2800,7 +2800,7 @@ observable:GeoLocationEntryFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		]
 		;
 	sh:targetClass observable:GeoLocationEntryFacet ;
@@ -2837,7 +2837,7 @@ observable:GeoLocationLogFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		]
 		;
 	sh:targetClass observable:GeoLocationLogFacet ;
@@ -4365,7 +4365,7 @@ observable:NoteFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -4843,7 +4843,7 @@ observable:ProcessFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
@@ -7647,7 +7647,7 @@ observable:WindowsTaskFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:observableCreatedTime ;
+			sh:path observable:createdTime ;
 		] ,
 		[
 			sh:datatype xsd:integer ;
@@ -10509,9 +10509,9 @@ observable:objectGUID
 	rdfs:range xsd:string ;
 	.
 
-observable:observableCreatedTime
+observable:createdTime
 	a owl:DatatypeProperty ;
-	rdfs:label "observableCreatedTime"@en ;
+	rdfs:label "createdTime"@en ;
 	rdfs:comment "The date and time at which the observable object being characterized was created. This time pertains to an intrinsic characteristic of the observable object, and would be consistent across independent characterizations or observations of the observable object."@en ;
 	rdfs:range xsd:dateTime ;
 	.
