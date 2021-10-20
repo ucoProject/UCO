@@ -181,13 +181,14 @@ observable:Address
 	sh:targetClass observable:Address ;
 	.
 
-observable:AlternateDataStream
+observable:AlternateDataStreamFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:label "AlternateDataStream"@en ;
-	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AlternateDataStreamFacet"@en ;
+	rdfs:comment "An alternate data stream facet is a grouping of characteristics unique to data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
 	sh:property
 		[
 			sh:class types:Hash ;
@@ -209,7 +210,7 @@ observable:AlternateDataStream
 			sh:path core:name ;
 		]
 		;
-	sh:targetClass observable:AlternateDataStream ;
+	sh:targetClass observable:AlternateDataStreamFacet ;
 	.
 
 observable:Appliance
