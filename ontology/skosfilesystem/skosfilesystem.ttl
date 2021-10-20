@@ -1,0 +1,161 @@
+# baseURI: https://unifiedcyberontology.org/ontology/uco/skosfilesystem
+
+@base <https://unifiedcyberontology.org/ontology/uco/skosfilesystem> .
+@prefix filesystem: <https://unifiedcyberontology.org/ontology/uco/skosfilesystem#> .
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://unifiedcyberontology.org/ontology/uco/skosfilesystem> 
+	a owl:Ontology;
+	dce:title "SKOSified File systems"@en;
+	dce:creator "Paul Brandt (self-employed) and Alexander Nelson (NIST)"@en;
+	dce:contributor "Sean Barnum (Mitre)"@en;
+	dce:publisher "Unified Cyber Ontology (https://unifiedcyberontology.org)"@en;
+	dce:description "Specification of a file systems scheme, categorising various file systems that are used by UCO as a shallow taxonomy."@en .
+
+#
+# SKOS SCHEME AND DATATYPE INSTANCES
+#
+
+# CASE representation of types of File Systems as a skos scheme
+#   #ToDo: Allowing external reuse, consider the specification of authority,
+#   rightsHolder, link to license and (no) warranty
+filesystem:FileSystemScheme 
+	rdf:type skos:ConceptScheme ; 
+    dct:dateSubmitted "2021-11-30T12:00:00+00:00"^^xsd:dateTime ;
+    skos:prefLabel "File System Scheme"@en ;
+    skos:definition "Knowledge organization scheme to differentiate between various file systems."@en ;
+    skos:note "..."@en ;
+	skos:HasTopConcept # Issue-1: To Be Decided .
+
+#
+# USAGE NOTE: 
+#   On using this file system scheme, specify in your ontology scheme the following triples:
+#
+#   @prefix fss: <https://unifiedcyberontology.org/ontology/uco/skosfilesystem#>
+#   @prefix ex: <https://example.com/myontology#>
+#   ex:Computer rdf:type owl:Class .
+#   ex:fileSystemType rdf:type owl:ObjectProperty ;
+#     rdfs:domain ex:Computer;
+#     rdfs:range fss:FileSystemTypeConcept .
+#
+#   This excerpt shows the specification of the hinge ex:fileSystemType that relates two owl:classes, 
+#   one that exists in your own namespace (ex:) as concept ex:Computer, and one that denotes 
+#   the skos-concept that denotes the fss:FileSystemTypeConcept. This part of the specification should 
+#   be considered under your own control, and only uses the fss:FileSystemTypeConcept as a stub. Now,
+#   one can use all the instances from this skos-taxonomy in your data triples, e.g.,
+#       ex:myLaptop123 rdf:type ex:Computer ;
+#           fss:fileSystemType fss:NTFS .
+#   
+
+
+# Define the stub to connect to, the hinge between the external ontology and this skos thesaurus.
+filesystem:FileSystemTypeConcept rdf:type owl:Class;
+  rdfs:subClassOf skos:Concept .
+
+#
+# ANNOTATIONS
+# 
+
+# Let's not use the more generic skos:altLabel for representing an abbreviation 
+# -- we could decide to generalize this concept to be used for any CASE abbrev denotation
+
+filesystem:abbreviation a owl:AnnotationProperty;
+  rdfs:subPropertyOf skos:note .
+
+#
+# INSTANCES
+#
+
+# The various file systems types CASE is to support. Only the first can be considered comprehensible
+# -- before elaborating the others, we need to identify the need for these annotations.
+
+filesystem:YAFFS2 a filesystem:FileSystemTypeConcept;
+  skos:definition "YAFFS2 was designed to accommodate newer chips than supported by YAFFS1. It was based on the YAFFS1 source code, with the major difference being that internal structures are not fixed to assume 512 byte sizing, and a block sequence number is placed on each written page. In this way older pages can be logically overwritten without violating the \"write once\" rule. It was released in late 2003. "@en;
+  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/YAFFS>;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "Yet Another Flash File System"@en;
+  filesystem:abbreviation "YAFFS2"^^rdf:PlainLiteral .
+
+filesystem:NTFS a filesystem:FileSystemTypeConcept;
+  skos:definition "TBD"@en;
+  rdfs:isDefinedBy <https://TBD>;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "New Technology File System"@en;
+  filesystem:abbreviation "NTFS"^^rdf:PlainLiteral .
+
+filesystem:ISO9660 a filesystem:FileSystemTypeConcept;
+  skos:definition "TBD"@en;
+  rdfs:isDefinedBy <https://TBD>;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "ISO 9660"@en;
+  filesystem:abbreviation "ISO9660"^^rdf:PlainLiteral .
+
+filesystem:Ext2 a filesystem:FileSystemTypeConcept;
+  skos:definition "TBD"@en;
+  rdfs:isDefinedBy <https://TBD>;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "second extended file system"@en;
+  skos:broader filesystem:ExtCollection;
+  filesystem:abbreviation "EXT2"^^rdf:PlainLiteral .
+
+filesystem:Ext3 a filesystem:FileSystemTypeConcept;
+  skos:definition "TBD"@en;
+  rdfs:isDefinedBy <https://TBD>;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "third extended file system"@en;
+  skos:broader filesystem:ExtCollection;
+  filesystem:abbreviation "EXT3"^^rdf:PlainLiteral .
+
+filesystem:Ext4 a filesystem:FileSystemTypeConcept;
+  skos:definition "TBD"@en;
+  rdfs:isDefinedBy <https://TBD>;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "fourth extended file system"@en;
+  skos:broader filesystem:ExtCollection;
+  filesystem:abbreviation "EXT4"^^rdf:PlainLiteral .
+
+filesystem:FAT12 a filesystem:FileSystemTypeConcept;
+  skos:definition "TBD"@en;
+  rdfs:isDefinedBy <https://TBD>;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "FAT12"@en;
+  skos:broader filesystem:FATCollection;
+  filesystem:abbreviation "FAT12"^^rdf:PlainLiteral .
+
+filesystem:FAT16 a filesystem:FileSystemTypeConcept;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "FAT16"@en;
+  skos:altLabel "DOS 3.31 Large File System"@en;
+  skos:broader filesystem:FATCollection;
+  filesystem:abbreviation "FAT16"^^rdf:PlainLiteral .
+
+filesystem:FAT32 a filesystem:FileSystemTypeConcept;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "FAT32"@en;
+  skos:broader filesystem:FATCollection;
+  filesystem:abbreviation "FAT32"^^rdf:PlainLiteral .
+
+filesystem:exFAT a filesystem:FileSystemTypeConcept;
+  skos:definition "TBD"@en;
+  rdfs:isDefinedBy <https://TBD>;
+  skos:inScheme filesystem:FileSystemScheme;
+  skos:prefLabel "Extended File Allocation Table"@en;
+  filesystem:abbreviation "exFAT"^^rdf:PlainLiteral .
+
+# Some file system types are closely related. We use skos:Collection as opposed to skos:ConceptScheme
+#   since the latter would introduce another hierarchical level which is irrelevant in this application.
+
+filesystem:FATCollection a skos:Collection;
+  skos:prefLabel "FAT"@en;
+  skos:member filesystem:FAT12, filesystem:FAT16, filesystem:FAT32 .
+
+filesystem:ExtCollection a skos:Collection;
+  skos:prefLabel "Ext"@en;
+  skos:member filesystem:Ext2, filesystem:Ext3, filesystem:Ext4 .
