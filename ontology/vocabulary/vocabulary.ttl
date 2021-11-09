@@ -656,6 +656,7 @@ vocabulary:ObservableObjectRelationshipVocab
 		"FQDN_Of"^^vocabulary:ObservableObjectRelationshipVocab
 		"Freed"^^vocabulary:ObservableObjectRelationshipVocab
 		"Freed_By"^^vocabulary:ObservableObjectRelationshipVocab
+		"Had_Attachment"^^vocabulary:ObservableObjectRelationshipVocab
 		"Hooked"^^vocabulary:ObservableObjectRelationshipVocab
 		"Hooked_By"^^vocabulary:ObservableObjectRelationshipVocab
 		"Initialized_By"^^vocabulary:ObservableObjectRelationshipVocab
