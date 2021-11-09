@@ -13,20 +13,11 @@
 
 SHELL := /bin/bash
 
-# This Makefile is assumed to execute in a repository directory /uco-*.
-top_srcdir := $(shell cd .. ; pwd)
+# This Makefile is assumed to execute in a repository directory ontology/*.
 
-srcdir := $(shell pwd)
+top_srcdir := $(shell cd ../.. ; pwd)
 
-# Determine the basenames of the ontology turtle files.
-# Note plurality - this also identifies domain assertion files ("*-da.ttl").
-# This computation is done to avoid catching temporary render files (".check-*.ttl")
-srcdir_without_ucohyphen := $(subst uco-,,$(shell basename "$(srcdir)"))
-ifeq ($(srcdir_without_ucohyphen),master)
-ttl_basenames := uco.ttl
-else
-ttl_basenames := $(wildcard $(srcdir_without_ucohyphen)*.ttl)
-endif
+ttl_basenames := $(shell find *.ttl -type f | sort)
 
 # These are reference files, named with a leading dot.
 check_reference_basenames := $(foreach ttl_basename,$(ttl_basenames),.check-$(ttl_basename))
@@ -57,7 +48,8 @@ check: \
 check-%.ttl: \
   %.ttl \
   .check-%.ttl
-	diff $^
+	diff $^	\
+	  || (echo "ERROR:src/review.mk:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp $@ $<' while in the sub-folder ontology/$$(basename $< .ttl)/ to get a file ready to commit to Git." >&2 ; exit 1)
 
 clean:
 	@rm -f $(check_reference_basenames)

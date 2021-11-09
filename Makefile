@@ -13,23 +13,21 @@
 
 SHELL := /bin/bash
 
-turtle_directories := $(wildcard uco-*)
-
-all_directories := $(foreach turtle_directory,$(turtle_directories),all-$(turtle_directory))
-
-check_directories := $(foreach turtle_directory,$(turtle_directories),check-$(turtle_directory))
-
-clean_directories := $(foreach turtle_directory,$(turtle_directories),clean-$(turtle_directory))
-
 all: \
-  $(all_directories)
-
-all-%: \
-  % \
   .lib.done.log
 	$(MAKE) \
-	  --directory $< \
-	  --file $$PWD/src/review.mk
+	  --directory ontology
+
+# This recipe guarantees that 'git submodule init' and 'git submodule update' have run at least once.
+# The recipe avoids running 'git submodule update' more than once, in case a user is testing with the submodule at a different commit than what UCO tracks.
+.git_submodule_init.done.log: \
+  .gitmodules
+	# CASE-Utility-SHACL-Inheritance-Reviewer
+	test -r dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/README.md \
+	  || (git submodule init dependencies/CASE-Utility-SHACL-Inheritance-Reviewer && git submodule update dependencies/CASE-Utility-SHACL-Inheritance-Reviewer)
+	@test -r dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/README.md \
+	  || (echo "ERROR:Makefile:CASE-Utility-SHACL-Inheritance-Reviewer submodule README.md file not found, even though that submodule is initialized." >&2 ; exit 2)
+	touch $@
 
 .lib.done.log:
 	$(MAKE) \
@@ -37,23 +35,28 @@ all-%: \
 	touch $@
 
 check: \
-  $(check_directories)
-
-check-%: \
-  % \
+  .git_submodule_init.done.log \
   .lib.done.log
 	$(MAKE) \
-	  --directory $< \
-	  --file $$PWD/src/review.mk \
+	  --directory ontology \
+	  check
+	$(MAKE) \
+	  --directory tests \
 	  check
 
 clean: \
-  $(clean_directories)
-	@rm -f .lib.done.log
+  clean-tests \
+  clean-ontology
+	@rm -f \
+	  .git_submodule_init.done.log \
+	  .lib.done.log
 
-clean-%: \
-  %
+clean-ontology:
 	@$(MAKE) \
-	  --directory $< \
-	  --file $$PWD/src/review.mk \
+	  --directory ontology \
+	  clean
+
+clean-tests:
+	@$(MAKE) \
+	  --directory tests \
 	  clean
