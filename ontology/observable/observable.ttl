@@ -1610,16 +1610,16 @@ observable:DeviceFacet
 	rdfs:comment "A device facet is a grouping of characteristics unique to a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	sh:property
 		[
-			sh:datatype xsd:string ;
+			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:deviceType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
+			sh:path observable:deviceType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -4512,6 +4512,12 @@ observable:OperatingSystemFacet
 	rdfs:comment "An operating system facet is a grouping of characteristics unique to the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	sh:property
 		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -4528,12 +4534,6 @@ observable:OperatingSystemFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:bitness ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -5440,6 +5440,12 @@ observable:SoftwareFacet
 	rdfs:comment "A software facet is a grouping of characteristics unique to a software program (a definitively scoped instance of a collection of data or computer instructions that tell the computer how to work). [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:property
 		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5450,12 +5456,6 @@ observable:SoftwareFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:language ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -10121,9 +10121,9 @@ observable:manuallyEnteredCount
 	.
 
 observable:manufacturer
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "manufacturer"@en ;
-	rdfs:range xsd:string ;
+	rdfs:range core:IdentityAbstraction ;
 	.
 
 observable:maxRunTime

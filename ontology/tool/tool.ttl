@@ -325,15 +325,15 @@ tool:Tool
 	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
 	sh:property
 		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:creator ;
+		] ,
+		[
 			sh:datatype xsd:anyURI ;
 			sh:nodeKind sh:Literal ;
 			sh:path tool:references ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:creator ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -493,10 +493,10 @@ tool:cpeid
 	.
 
 tool:creator
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "creator"@en ;
 	rdfs:comment "The creator organization for a particular tool."@en ;
-	rdfs:range xsd:string ;
+	rdfs:range core:IdentityAbstraction ;
 	.
 
 tool:dependencies
