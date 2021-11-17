@@ -3730,7 +3730,7 @@ observable:MobileDeviceFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Facet ;
+	rdfs:subClassOf observable:DeviceFacet ;
 	rdfs:label "MobileDeviceFacet"@en ;
 	rdfs:comment "A mobile device facet is a grouping of characteristics unique to a portable computing device. [based on https://www.lexico.com/definition/mobile_device]"@en ;
 	sh:property
@@ -3751,12 +3751,6 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:phoneActivationTime ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:storageCapacityInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -5156,7 +5150,7 @@ observable:SIMCardFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Facet ;
+	rdfs:subClassOf core:DeviceFacet ;
 	rdfs:label "SIMCardFacet"@en ;
 	rdfs:comment "A SIM card facet is a grouping of characteristics unique to a subscriber identification module card intended to securely store the international mobile subscriber identity (IMSI) number and its related key, which are used to identify and authenticate subscribers on mobile telephony devices (such as mobile phones and computers). [based on https://en.wikipedia.org/wiki/SIM_card]"@en ;
 	sh:property
@@ -5165,12 +5159,6 @@ observable:SIMCardFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:carrier ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:storageCapacityInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -11506,7 +11494,7 @@ observable:statusesCount
 observable:storageCapacityInBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "storageCapacityInBytes"@en ;
-	rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
+	rdfs:comment "The number of bytes that can be stored on a storage device or chip."@en ;
 	rdfs:range xsd:integer ;
 	.
 
