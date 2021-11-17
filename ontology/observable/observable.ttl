@@ -5150,7 +5150,7 @@ observable:SIMCardFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:DeviceFacet ;
+	rdfs:subClassOf observable:DeviceFacet ;
 	rdfs:label "SIMCardFacet"@en ;
 	rdfs:comment "A SIM card facet is a grouping of characteristics unique to a subscriber identification module card intended to securely store the international mobile subscriber identity (IMSI) number and its related key, which are used to identify and authenticate subscribers on mobile telephony devices (such as mobile phones and computers). [based on https://en.wikipedia.org/wiki/SIM_card]"@en ;
 	sh:property
