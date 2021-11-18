@@ -1610,7 +1610,7 @@ observable:DeviceFacet
 	rdfs:comment "A device facet is a grouping of characteristics unique to a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	sh:property
 		[
-			sh:class core:IdentityAbstraction ;
+			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:manufacturer ;
@@ -4512,7 +4512,7 @@ observable:OperatingSystemFacet
 	rdfs:comment "An operating system facet is a grouping of characteristics unique to the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	sh:property
 		[
-			sh:class core:IdentityAbstraction ;
+			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:manufacturer ;
@@ -5440,7 +5440,7 @@ observable:SoftwareFacet
 	rdfs:comment "A software facet is a grouping of characteristics unique to a software program (a definitively scoped instance of a collection of data or computer instructions that tell the computer how to work). [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:property
 		[
-			sh:class core:IdentityAbstraction ;
+			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:manufacturer ;
@@ -10123,7 +10123,7 @@ observable:manuallyEnteredCount
 observable:manufacturer
 	a owl:ObjectProperty ;
 	rdfs:label "manufacturer"@en ;
-	rdfs:range core:IdentityAbstraction ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:maxRunTime
