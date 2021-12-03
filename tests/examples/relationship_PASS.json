@@ -70,7 +70,7 @@
             "@type": "File",
             "hasFacet": {
               "@type": "FileFacet",
-              "fileName": "example.dat"
+              "fileName": "kindOfRelationship"
             }
         },
         {
@@ -78,7 +78,7 @@
             "@type": "ArchiveFile",
             "hasFacet": {
               "@type": "FileFacet",
-              "fileName": "example.zip"
+              "fileName": "Relationship"
             }
         }
     ]
