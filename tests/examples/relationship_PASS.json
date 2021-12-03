@@ -3,10 +3,13 @@
         "Action": "action:Action",
         "ArchiveFile": "observable:ArchiveFile",
         "File": "observable:File",
+        "FileFacet": "observable:FileFacet",
         "ObservableRelationship": "observable:ObservableRelationship",
         "Relationship": "core:Relationship",
         "action": "https://unifiedcyberontology.org/ontology/uco/action#",
         "core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "fileName": "observable:fileName",
+        "hasFacet": "core:hasFacet",
         "isDirectional": "core:isDirectional",
         "kb": "http://example.org/kb/",
         "kindOfRelationship": "core:kindOfRelationship",
@@ -64,11 +67,19 @@
         },
         {
             "@id": "kb:file1",
-            "@type": "File"
+            "@type": "File",
+            "hasFacet": {
+              "@type": "FileFacet",
+              "fileName": "example.dat"
+            }
         },
         {
             "@id": "kb:zipfile1",
-            "@type": "ArchiveFile"
+            "@type": "ArchiveFile",
+            "hasFacet": {
+              "@type": "FileFacet",
+              "fileName": "example.zip"
+            }
         }
     ]
 }
