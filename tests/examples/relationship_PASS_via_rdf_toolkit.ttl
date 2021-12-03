@@ -20,7 +20,7 @@ kb:file1
 	a observable:File ;
 	core:hasFacet [
 		a observable:FileFacet ;
-		observable:fileName "example.dat" ;
+		observable:fileName "kindOfRelationship" ;
 	] ;
 	.
 
@@ -52,7 +52,7 @@ kb:zipfile1
 	a observable:ArchiveFile ;
 	core:hasFacet [
 		a observable:FileFacet ;
-		observable:fileName "example.zip" ;
+		observable:fileName "Relationship" ;
 	] ;
 	.
 
