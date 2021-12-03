@@ -18,6 +18,10 @@ kb:action2
 
 kb:file1
 	a observable:File ;
+	core:hasFacet [
+		a observable:FileFacet ;
+		observable:fileName "example.dat" ;
+	] ;
 	.
 
 kb:relationship1
@@ -46,5 +50,9 @@ kb:relationship3
 
 kb:zipfile1
 	a observable:ArchiveFile ;
+	core:hasFacet [
+		a observable:FileFacet ;
+		observable:fileName "example.zip" ;
+	] ;
 	.
 
