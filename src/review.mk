@@ -49,7 +49,7 @@ check-%.ttl: \
   %.ttl \
   .check-%.ttl
 	diff $^	\
-	  || (echo "ERROR:src/review.mk:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp $@ $<' while in the sub-folder ontology/$$(basename $< .ttl)/ to get a file ready to commit to Git." >&2 ; exit 1)
+	  || (echo "ERROR:src/review.mk:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp .check-$< $<' while in the sub-folder ontology/$$(basename $< .ttl)/ to get a file ready to commit to Git." >&2 ; exit 1)
 
 clean:
 	@rm -f $(check_reference_basenames)
