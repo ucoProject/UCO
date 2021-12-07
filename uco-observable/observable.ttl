@@ -212,6 +212,49 @@ observable:AlternateDataStream
 	sh:targetClass observable:AlternateDataStream ;
 	.
 
+observable:AndroidDeviceFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AndroidDeviceFacet"@en ;
+	rdfs:comment "An Android device facet is a grouping of characteristics unique to an Android mobile device. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	sh:property
+		[
+			sh:datatype xsd:hexBinary ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidVersion ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isADBRoot ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isSURoot ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:dfDataSystem ;
+		]
+		;
+	sh:targetClass observable:AndroidDeviceFacet ;
+	.
+
 observable:Appliance
 	a
 		owl:Class ,
@@ -8253,6 +8296,20 @@ observable:alternateDataStreams
 	rdfs:range observable:AlternateDataStream ;
 	.
 
+observable:androidID
+	a owl:DatatypeProperty ;
+	rdfs:label "androidID"@en ;
+	rdfs:comment "A 64-bit number (expressed as a hexadecimal string), unique to each combination of app-signing key, user, and device. [based on https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID]"@en ;
+	rdfs:range xsd:hexBinary ;
+	.
+
+observable:androidVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "androidVersion"@en ;
+	rdfs:comment "The user-visible version string. E.g., '1.0' or '3.4b5' or 'bananas'. This field is an opaque string. Do not assume that its value has any particular structure or that values of RELEASE from different releases can be somehow ordered. [based on https://developer.android.com/reference/android/os/Build.VERSION#RELEASE]"@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:application
 	a owl:ObjectProperty ;
 	rdfs:label "application"@en ;
@@ -8975,6 +9032,13 @@ observable:destinationPort
 observable:deviceType
 	a owl:DatatypeProperty ;
 	rdfs:label "deviceType"@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:dfDataSystem
+	a owl:DatatypeProperty ;
+	rdfs:label "dfDataSystem"@en ;
+	rdfs:comment "Information about data and system partitions retrieved via the Linux df command. [based on https://en.wikipedia.org/wiki/Df_(Unix)]"@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -9796,6 +9860,13 @@ observable:isActive
 	rdfs:range xsd:boolean ;
 	.
 
+observable:isADBRoot
+	a owl:DatatypeProperty ;
+	rdfs:label "isADBRoot"@en ;
+	rdfs:comment "Root access through the Android Debug Bridge (ADB) daemon. [based on https://developer.android.com/studio/command-line/adb]"@en ;
+	rdfs:range xsd:boolean ;
+	.
+
 observable:isDirectory
 	a owl:DatatypeProperty ;
 	rdfs:label "isDirectory"@en ;
@@ -9911,6 +9982,13 @@ observable:isSelfSigned
 observable:isServiceAccount
 	a owl:DatatypeProperty ;
 	rdfs:label "isServiceAccount"@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isSURoot
+	a owl:DatatypeProperty ;
+	rdfs:label "isSURoot"@en ;
+	rdfs:comment "Root access through Linux SU binary. [based on https://en.wikipedia.org/wiki/Rooting_(Android)]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
