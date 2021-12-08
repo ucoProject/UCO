@@ -8298,7 +8298,7 @@ observable:alternateDataStreams
 observable:androidFingerprint
 	a owl:DatatypeProperty ;
 	rdfs:label "androidFingerprint"@en ;
-	rdfs:comment "A string that uniquely identifies this build. Do not attempt to parse this value. [based on https://developer.android.com/reference/android/os/Build#FINGERPRINT]"@en ;
+	rdfs:comment "A string that uniquely identifies a build of the Android operating system. [based on https://developer.android.com/reference/android/os/Build#FINGERPRINT]"@en ;
 	rdfs:range xsd:string ;
 	.
 
