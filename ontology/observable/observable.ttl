@@ -237,13 +237,19 @@ observable:AndroidDeviceFacet
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:isADBRoot ;
+			sh:path observable:isADBRootEnabled ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:isSURoot ;
+			sh:path observable:isSURootEnabled ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidFingerprint ;
 		] ,
 		[
 			sh:datatype xsd:hexBinary ;
@@ -256,12 +262,6 @@ observable:AndroidDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:androidVersion ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:dfDataSystem ;
 		]
 		;
 	sh:targetClass observable:AndroidDeviceFacet ;
@@ -8282,6 +8282,13 @@ observable:alternateDataStreams
 	rdfs:range observable:AlternateDataStream ;
 	.
 
+observable:androidFingerprint
+	a owl:DatatypeProperty ;
+	rdfs:label "androidFingerprint"@en ;
+	rdfs:comment "A string that uniquely identifies this build. Do not attempt to parse this value. [based on https://developer.android.com/reference/android/os/Build#FINGERPRINT]"@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:androidID
 	a owl:DatatypeProperty ;
 	rdfs:label "androidID"@en ;
@@ -9018,13 +9025,6 @@ observable:destinationPort
 observable:deviceType
 	a owl:DatatypeProperty ;
 	rdfs:label "deviceType"@en ;
-	rdfs:range xsd:string ;
-	.
-
-observable:dfDataSystem
-	a owl:DatatypeProperty ;
-	rdfs:label "dfDataSystem"@en ;
-	rdfs:comment "Information about data and system partitions retrieved via the Linux df command. [based on https://en.wikipedia.org/wiki/Df_(Unix)]"@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -9839,10 +9839,10 @@ observable:ipfix
 	rdfs:range types:Dictionary ;
 	.
 
-observable:isADBRoot
+observable:isADBRootEnabled
 	a owl:DatatypeProperty ;
-	rdfs:label "isADBRoot"@en ;
-	rdfs:comment "Root access through the Android Debug Bridge (ADB) daemon. [based on https://developer.android.com/studio/command-line/adb]"@en ;
+	rdfs:label "isADBRootEnabled"@en ;
+	rdfs:comment "Root access through the Android Debug Bridge (ADB) daemon observed to be enabled. [based on https://developer.android.com/studio/command-line/adb]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -9952,10 +9952,10 @@ observable:isRead
 	rdfs:range xsd:boolean ;
 	.
 
-observable:isSURoot
+observable:isSURootEnabled
 	a owl:DatatypeProperty ;
-	rdfs:label "isSURoot"@en ;
-	rdfs:comment "Root access through Linux SU binary. [based on https://en.wikipedia.org/wiki/Rooting_(Android)]"@en ;
+	rdfs:label "isSURootEnabled"@en ;
+	rdfs:comment "Root access through Linux SU binary observed to be enabled. [based on https://en.wikipedia.org/wiki/Rooting_(Android)]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
