@@ -246,16 +246,16 @@ observable:AndroidDeviceFacet
 			sh:path observable:isSURootEnabled ;
 		] ,
 		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:androidFingerprint ;
-		] ,
-		[
 			sh:datatype xsd:hexBinary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:androidID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidFingerprint ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -3823,6 +3823,12 @@ observable:MobileDeviceFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:advertisingID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:bluetoothDeviceName ;
 		] ,
 		[
@@ -3841,12 +3847,6 @@ observable:MobileDeviceFacet
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:MSISDN ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:advertisingID ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
