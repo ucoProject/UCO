@@ -3841,6 +3841,12 @@ observable:MobileDeviceFacet
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:MSISDN ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:advertisingID ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
@@ -8266,6 +8272,13 @@ observable:addressValue
 	a owl:DatatypeProperty ;
 	rdfs:label "addressValue"@en ;
 	rdfs:comment "The value of an address."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:advertisingID
+	a owl:DatatypeProperty ;
+	rdfs:label "advertisingID"@en ;
+	rdfs:comment "Advertising ID information. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
 	rdfs:range xsd:string ;
 	.
 
