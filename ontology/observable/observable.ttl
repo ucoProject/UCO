@@ -224,6 +224,17 @@ observable:AlternateDataStreamFacet
 	sh:targetClass observable:AlternateDataStreamFacet ;
 	.
 
+observable:AndroidDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "AndroidDevice"@en ;
+	rdfs:comment "An Android device is a device running the Android operating system. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	sh:targetClass observable:AndroidDevice ;
+	.
+
 observable:AndroidDeviceFacet
 	a
 		owl:Class ,
