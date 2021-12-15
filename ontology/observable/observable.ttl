@@ -3511,6 +3511,12 @@ observable:MessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:sessionID ;
+		] ,
+		[
+			sh:datatype vocabulary:MessageDeliveryStateVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:messageDeliveryState ;
 		]
 		;
 	sh:targetClass observable:MessageFacet ;
@@ -10149,6 +10155,13 @@ observable:message
 	a owl:ObjectProperty ;
 	rdfs:label "message"@en ;
 	rdfs:range observable:ObservableObject ;
+	.
+
+observable:messageDeliveryState
+	a owl:DatatypeProperty ;
+	rdfs:label "messageDeliveryState"@en ;
+	rdfs:comment "The delivery state (i.e. received, delivered, sent, etc.) of an incoming or outgoingmessage (i.e. text message, email, etc.)."@en ;
+	rdfs:range vocabulary:MessageDeliveryStateVocab ;
 	.
 
 observable:messageID

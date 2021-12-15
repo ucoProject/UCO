@@ -601,6 +601,29 @@ vocabulary:MemoryBlockTypeVocab
 	) ;
 	.
 
+vocabulary:MessageDeliveryStateVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Message Delivery State Vocabulary"@en-US ;
+	owl:oneOf (
+		"Archived"^^vocabulary:MessageDeliveryStateVocab
+		"Deleted"^^vocabulary:MessageDeliveryStateVocab
+		"Delivered"^^vocabulary:MessageDeliveryStateVocab
+		"Delivered_Read"^^vocabulary:MessageDeliveryStateVocab
+		"Delivered_Unread"^^vocabulary:MessageDeliveryStateVocab
+		"Forwarded"^^vocabulary:MessageDeliveryStateVocab
+		"Forwarding"^^vocabulary:MessageDeliveryStateVocab
+		"Read"^^vocabulary:MessageDeliveryStateVocab
+		"Replied"^^vocabulary:MessageDeliveryStateVocab
+		"Replying"^^vocabulary:MessageDeliveryStateVocab
+		"Sending_Failed"^^vocabulary:MessageDeliveryStateVocab
+		"Sent"^^vocabulary:MessageDeliveryStateVocab
+		"Unpublished"^^vocabulary:MessageDeliveryStateVocab
+		"Unread"^^vocabulary:MessageDeliveryStateVocab
+		"Unsent"^^vocabulary:MessageDeliveryStateVocab
+	) ;
+	.
+
 vocabulary:ObservableObjectRelationshipVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
