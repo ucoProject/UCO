@@ -2559,6 +2559,12 @@ observable:FileFacet
 		] ,
 		[
 			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isDeleted ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isDirectory ;
 		] ,
@@ -9779,6 +9785,13 @@ observable:isActive
 	a owl:DatatypeProperty ;
 	rdfs:label "isActive"@en ;
 	rdfs:comment "Indicates whether the network connection is still active."@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isDeleted
+	a owl:DatatypeProperty ;
+	rdfs:label "isDeleted"@en ;
+	rdfs:comment "Indicates whether the object is (soft) deleted."@en ;
 	rdfs:range xsd:boolean ;
 	.
 
