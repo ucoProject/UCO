@@ -2541,6 +2541,54 @@ observable:File
 	sh:targetClass observable:File ;
 	.
 
+observable:FileDownloadFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "FileDownloadFacet"@en ;
+	rdfs:comment "A file download facet is a grouping of characteristics unique to an download of a file."@en ;
+	sh:property
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:URL ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:application ;
+		] ,
+		[
+			sh:datatype xsd:ActionStatusTypeVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:actionStatus ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:filePath ;
+		]
+		;
+	sh:targetClass observable:FileDownloadFacet ;
+	.
+
 observable:FileFacet
 	a
 		owl:Class ,
@@ -8227,6 +8275,13 @@ observable:actionList
 	rdfs:label "actionList"@en ;
 	rdfs:comment "Specifies a list of actions to be performed by the scheduled task."@en ;
 	rdfs:range observable:TaskActionType ;
+	.
+
+observable:actionStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "actionStatus"@en ;
+	rdfs:comment "Action status specifies the result of an action (Success, Error, etc)."@en ;
+	rdfs:range vocabulary:ActionStatusTypeVocab ;
 	.
 
 observable:actionType
