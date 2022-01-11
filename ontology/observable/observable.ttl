@@ -4715,14 +4715,8 @@ observable:PhoneCallFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:to ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:participant ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
