@@ -3376,6 +3376,61 @@ observable:MSISDNType
 	rdfs:range xsd:string ;
 	.
 
+observable:Measurement
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "Measurement"@en ;
+	rdfs:comment "Measurement is a particular discrete collected data point from a sensor or other device."@en ;
+	sh:targetClass observable:Measurement ;
+	.
+
+observable:MeasurementFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "MeasurementFacet"@en ;
+	rdfs:comment "A measurement facet is a grouping of characteristics unique to a particular discrete collected data point from a sensor or other device."@en ;
+	sh:property
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:measurement ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:measurementCount ;
+		] ,
+		[
+			sh:datatype vocabulary:MeasurementUnitVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:unitType ;
+		]
+		;
+	sh:targetClass observable:MeasurementFacet ;
+	.
+
 observable:Memory
 	a
 		owl:Class ,
@@ -10145,6 +10200,20 @@ observable:maxRunTime
 	rdfs:range xsd:integer ;
 	.
 
+observable:measurement
+	a owl:DatatypeProperty ;
+	rdfs:label "measurement"@en ;
+	rdfs:comment "The value of a discrete collected data point from a sensor or other device."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
+observable:measurementCount
+	a owl:DatatypeProperty ;
+	rdfs:label "measurementCount"@en ;
+	rdfs:comment "The number of discrete collected data points from a sensor or other device."@en ;
+	rdfs:range xsd:integer ;
+	.
+
 observable:message
 	a owl:ObjectProperty ;
 	rdfs:label "message"@en ;
@@ -11775,6 +11844,13 @@ observable:twitterId
 	rdfs:label "Twitter ID"@en-US ;
 	rdfs:comment "Specifies the twitter id associated with the profile."@en-US ;
 	rdfs:range xsd:string ;
+	.
+
+observable:unitType
+	a owl:DatatypeProperty ;
+	rdfs:label "unitType"@en ;
+	rdfs:comment "Specifies the type of the measurement value."@en ;
+	rdfs:range vocabulary:MeasurementUnitVocab ;
 	.
 
 observable:updatedDate
