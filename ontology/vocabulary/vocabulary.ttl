@@ -723,6 +723,7 @@ vocabulary:ObservableObjectRelationshipVocab
 		"Sent_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
 		"Set_From"^^vocabulary:ObservableObjectRelationshipVocab
 		"Set_To"^^vocabulary:ObservableObjectRelationshipVocab
+		"Signed_By"^^vocabulary:ObservableObjectRelationshipVocab
 		"Sub-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
 		"Supra-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
 		"Suspended"^^vocabulary:ObservableObjectRelationshipVocab
