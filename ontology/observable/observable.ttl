@@ -4438,6 +4438,28 @@ observable:ObservableRelationship
 		;
 	rdfs:label "ObservableRelationship"@en ;
 	rdfs:comment "An observable relationship is a grouping of characteristics unique to an assertion of an association between two observable objects."@en ;
+	sh:property
+		[
+			sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:message "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
+			sh:path core:kindOfRelationship ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:kindOfRelationship ;
+		]
+		;
 	sh:targetClass observable:ObservableRelationship ;
 	.
 

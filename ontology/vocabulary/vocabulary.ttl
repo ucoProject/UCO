@@ -283,8 +283,12 @@ vocabulary:ActionRelationshipTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Action Relationship Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary for capturing types of relationships between actions."@en-US ;
-	owl:oneOf (
-		"Dependent_On"^^vocabulary:ActionRelationshipTypeVocab
+	owl:oneOf vocabulary:ActionRelationshipTypeVocab-members ;
+	.
+
+vocabulary:ActionRelationshipTypeVocab-members
+	rdf:first "Dependent_On"^^vocabulary:ActionRelationshipTypeVocab ;
+	rdf:rest (
 		"Equivalent_To"^^vocabulary:ActionRelationshipTypeVocab
 		"Followed_By"^^vocabulary:ActionRelationshipTypeVocab
 		"Initiated"^^vocabulary:ActionRelationshipTypeVocab
@@ -610,8 +614,12 @@ vocabulary:ObservableObjectRelationshipVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Cyber Item Relationship Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of inter-observable object relationships."@en ;
-	owl:oneOf (
-		"Allocated"^^vocabulary:ObservableObjectRelationshipVocab
+	owl:oneOf vocabulary:ObservableObjectRelationshipVocab-members ;
+	.
+
+vocabulary:ObservableObjectRelationshipVocab-members
+	rdf:first "Allocated"^^vocabulary:ObservableObjectRelationshipVocab ;
+	rdf:rest (
 		"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
 		"Bound"^^vocabulary:ObservableObjectRelationshipVocab
 		"Bound_By"^^vocabulary:ObservableObjectRelationshipVocab
