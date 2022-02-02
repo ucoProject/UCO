@@ -9998,6 +9998,7 @@ observable:lastTimeContacted
 	a owl:DatatypeProperty ;
 	rdfs:label "lastTimeContacted"@en ;
 	rdfs:comment "Last time contacted specifies the date and time that a particular contact was last contacted."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:lastVisit
