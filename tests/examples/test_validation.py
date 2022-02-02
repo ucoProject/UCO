@@ -179,3 +179,32 @@ def test_location_XFAIL_validation_XPASS_wrong_concept_name():
         str(NS_UCO_CORE.descriptionButWrongName)
       }
     )
+
+def test_relationship_PASS() -> None:
+    g = load_validation_graph("relationship_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
+
+def test_relationship_XFAIL() -> None:
+    confirm_validation_errors(
+      "relationship_XFAIL_validation.ttl",
+      expected_focus_node_severities={
+        ("http://example.org/kb/relationship-1-1-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-1-1-2", str(NS_SH.Violation)),
+        ("http://example.org/kb/relationship-1-1-3", str(NS_SH.Violation)),
+        ("http://example.org/kb/relationship-1-2-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-1-2-3", str(NS_SH.Violation)),
+        ("http://example.org/kb/relationship-1-3-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-1-3-2", str(NS_SH.Violation)),
+        ("http://example.org/kb/relationship-2-1-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-1-2", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-1-2", str(NS_SH.Violation)),
+        ("http://example.org/kb/relationship-2-1-3", str(NS_SH.Violation)),
+        ("http://example.org/kb/relationship-2-2-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-2-2", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-2-2", str(NS_SH.Violation)),
+        ("http://example.org/kb/relationship-2-2-3", str(NS_SH.Violation)),
+        ("http://example.org/kb/relationship-2-3-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-3-2", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-3-2", str(NS_SH.Violation)),
+      }
+    )
