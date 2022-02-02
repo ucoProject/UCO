@@ -61,11 +61,12 @@ WHERE {
 
 def confirm_validation_errors(
   filename : str,
-  expected_error_iris : typing.Set[str]
+  *,
+  expected_result_paths : typing.Optional[typing.Set[str]] = None
 ):
     g = load_validation_graph(filename, False)
 
-    computed_error_iris = set()
+    computed_result_paths = set()
 
     query = rdflib.plugins.sparql.prepareQuery("""\
 SELECT DISTINCT ?nResultPath
@@ -84,13 +85,14 @@ WHERE {
 
     for result in g.query(query):
         (n_result_path,) = result
-        computed_error_iris.add(str(n_result_path))
+        computed_result_paths.add(str(n_result_path))
 
-    try:
-        assert expected_error_iris == computed_error_iris
-    except:
-        logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to data properties noted in this function.", filename)
-        raise
+    if not expected_result_paths is None:
+        try:
+            assert expected_result_paths == computed_result_paths
+        except:
+            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to data properties noted in this function.", filename)
+            raise
 
 def test_action_inheritance_PASS_validation():
     """
@@ -105,7 +107,7 @@ def test_action_inheritance_XFAIL_validation():
     """
     confirm_validation_errors(
       "action_inheritance_XFAIL_validation.ttl",
-      {
+      expected_result_paths={
         str(NS_UCO_ACTION.action),
         str(NS_UCO_ACTION.actionStatus)
       }
@@ -131,7 +133,7 @@ def test_location_XFAIL_validation():
     """
     confirm_validation_errors(
       "location_XFAIL_validation.ttl",
-      {
+      expected_result_paths={
         str(NS_UCO_CORE.hasFacet),
         str(NS_UCO_LOCATION.postalCode)
       }
@@ -145,7 +147,7 @@ def test_location_XFAIL_validation_XPASS_wrong_concept_name():
     """
     confirm_validation_errors(
       "location_XFAIL_validation.ttl",
-      {
+      expected_result_paths={
         str(NS_UCO_CORE.descriptionButWrongName)
       }
     )
