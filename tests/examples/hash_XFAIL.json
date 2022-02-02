@@ -38,6 +38,16 @@
                 "@type": "xsd:hexBinary",
                 "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
             }
+        },
+        {
+            "@id": "kb:hash-5",
+            "@type": "types:Hash",
+            "rdfs:comment": "This should trigger sh:Violation from the term not being a string.",
+            "types:hashMethod": 1,
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
         }
     ]
 }

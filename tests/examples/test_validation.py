@@ -142,7 +142,9 @@ def test_hash_XFAIL() -> None:
       expected_focus_node_severities={
         ("http://example.org/kb/hash-2", str(NS_SH.Info)),
         ("http://example.org/kb/hash-3", str(NS_SH.Violation)),
-        ("http://example.org/kb/hash-4", str(NS_SH.Info))
+        ("http://example.org/kb/hash-4", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-5", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-5", str(NS_SH.Violation))
       }
     )
 
