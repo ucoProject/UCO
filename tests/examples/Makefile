@@ -21,6 +21,8 @@ all: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  hash_PASS_validation.ttl \
+  hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl
 
@@ -66,6 +68,8 @@ check: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  hash_PASS_validation.ttl \
+  hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl
 	source $(tests_srcdir)/venv/bin/activate \

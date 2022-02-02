@@ -62,14 +62,16 @@ WHERE {
 def confirm_validation_errors(
   filename : str,
   *,
+  expected_focus_node_severities : typing.Optional[typing.Tuple[typing.Set[str], str]] = None,
   expected_result_paths : typing.Optional[typing.Set[str]] = None
 ):
     g = load_validation_graph(filename, False)
 
+    computed_focus_node_severities = set()
     computed_result_paths = set()
 
     query = rdflib.plugins.sparql.prepareQuery("""\
-SELECT DISTINCT ?nResultPath
+SELECT DISTINCT ?nFocusNode ?nResultPath ?nSeverity
 WHERE {
   ?nReport
     a sh:ValidationReport ;
@@ -78,14 +80,24 @@ WHERE {
 
   ?nValidationResult
     a sh:ValidationResult ;
+    sh:focusNode ?nFocusNode ;
     sh:resultPath ?nResultPath ;
+    sh:resultSeverity ?nSeverity ;
     .
 }
 """, initNs=NSDICT)
 
     for result in g.query(query):
-        (n_result_path,) = result
+        (n_focus_node, n_result_path, n_severity) = result
+        computed_focus_node_severities.add((str(n_focus_node), str(n_severity)))
         computed_result_paths.add(str(n_result_path))
+
+    if not expected_focus_node_severities is None:
+        try:
+            assert expected_focus_node_severities == computed_focus_node_severities
+        except:
+            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to focus nodes noted in this function.", filename)
+            raise
 
     if not expected_result_paths is None:
         try:
@@ -119,6 +131,20 @@ def test_action_result_PASS_validation():
     """
     g = load_validation_graph("action_result_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
+
+def test_hash_PASS() -> None:
+    g = load_validation_graph("hash_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
+
+def test_hash_XFAIL() -> None:
+    confirm_validation_errors(
+      "hash_XFAIL_validation.ttl",
+      expected_focus_node_severities={
+        ("http://example.org/kb/hash-2", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-3", str(NS_SH.Violation)),
+        ("http://example.org/kb/hash-4", str(NS_SH.Info))
+      }
+    )
 
 def test_location_PASS_validation():
     """
