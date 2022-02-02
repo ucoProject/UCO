@@ -120,10 +120,28 @@ types:Hash
 			sh:path types:hashValue ;
 		] ,
 		[
-			sh:datatype vocabulary:HashNameVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:HashNameVocab ;
+				]
+				[
+					sh:and (
+						[
+							sh:datatype xsd:string ;
+						]
+						[
+							sh:not [
+								sh:datatype vocabulary:HashNameVocab ;
+							] ;
+						]
+					) ;
+					sh:message "Value outside default vocabulary." ;
+					sh:severity sh:Info ;
+				]
+			) ;
 			sh:path types:hashMethod ;
 		]
 		;
@@ -162,7 +180,13 @@ types:hashMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "hashMethod"@en ;
 	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
-	rdfs:range vocabulary:HashNameVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:HashNameVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 types:hashValue

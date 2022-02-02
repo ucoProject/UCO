@@ -2,46 +2,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
-@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
 	a sh:ValidationReport ;
-	sh:conforms "false"^^xsd:boolean ;
-	sh:result
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/hash-2> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:HashNameVocab" ;
-			sh:resultPath types:hashMethod ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:HashNameVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path types:hashMethod ;
-			] ;
-			sh:value "CUSTOM_hash" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/hash-4> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:HashNameVocab" ;
-			sh:resultPath types:hashMethod ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:HashNameVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path types:hashMethod ;
-			] ;
-			sh:value "SHA1" ;
-		]
-		;
+	sh:conforms "true"^^xsd:boolean ;
 	.
 
