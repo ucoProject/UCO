@@ -561,8 +561,12 @@ vocabulary:HashNameVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Hash Name Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
-	owl:oneOf (
-		"MD5"^^vocabulary:HashNameVocab
+	owl:oneOf vocabulary:HashNameVocab-members ;
+	.
+
+vocabulary:HashNameVocab-members
+	rdf:first "MD5"^^vocabulary:HashNameVocab ;
+	rdf:rest (
 		"MD6"^^vocabulary:HashNameVocab
 		"SHA1"^^vocabulary:HashNameVocab
 		"SHA224"^^vocabulary:HashNameVocab
