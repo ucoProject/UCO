@@ -224,6 +224,37 @@ observable:AlternateDataStreamFacet
 	sh:targetClass observable:AlternateDataStreamFacet ;
 	.
 
+observable:AntennaAlignmentFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AntennaAlignmentFacet"@en ;
+	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
+	sh:property
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:azimuth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:elevation ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:skew ;
+		]
+		;
+	sh:targetClass observable:AntennaAlignmentFacet ;
+	.
+
 observable:Appliance
 	a
 		owl:Class ,
@@ -796,6 +827,91 @@ observable:CalendarFacet
 		]
 		;
 	sh:targetClass observable:CalendarFacet ;
+	.
+
+observable:CapturedTelecommunicationsInformationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CapturedTelecommunicationsInformationFacet"@en ;
+	rdfs:comment "A captured telecommunications information facet represents certain information within captured or intercepted telecommunications data."@en ;
+	sh:property
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:captureCellTower ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:partyDevice ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:partySubscription ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:interceptedCallState ;
+		]
+		;
+	sh:targetClass observable:CapturedTelecommunicationsInformationFacet ;
+	.
+
+observable:CellTowerFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CellTowerFacet"@en ;
+	rdfs:comment "A cell tower facet contains the metadata surrounding the cell tower."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:towerCid ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:towerLac ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:towerMcc ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:towerMnc ;
+		]
+		;
+	sh:targetClass observable:CellTowerFacet ;
 	.
 
 observable:CharacterDeviceNode
@@ -8312,6 +8428,13 @@ observable:availableRam
 	rdfs:range xsd:integer ;
 	.
 
+observable:azimuth
+	a owl:DatatypeProperty ;
+	rdfs:label "azimuth"@en ;
+	rdfs:comment "The median rotation in degrees around a vertical axis of the cell antenna sector accessed."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:baseOfCode
 	a owl:DatatypeProperty ;
 	rdfs:label "baseOfCode"@en ;
@@ -8483,6 +8606,13 @@ observable:canEscalatePrivs
 	a owl:DatatypeProperty ;
 	rdfs:label "canEscalatePrivs"@en ;
 	rdfs:range xsd:boolean ;
+	.
+
+observable:captureCellTower
+	a owl:ObjectProperty ;
+	rdfs:label "captureCellTower"@en ;
+	rdfs:comment "Specifies the cell tower accessed."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:carrier
@@ -9121,6 +9251,13 @@ observable:effectiveUser
 	rdfs:range observable:ObservableObject ;
 	.
 
+observable:elevation
+	a owl:DatatypeProperty ;
+	rdfs:label "elevation"@en ;
+	rdfs:comment "The angle in degrees of the antenna from the local horizontal plane."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:emailAddress
 	a owl:ObjectProperty ;
 	rdfs:label "emailAddress"@en ;
@@ -9745,6 +9882,13 @@ observable:installDate
 	rdfs:label "installDate"@en ;
 	rdfs:comment "Specifies the date the operating system was installed."@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+observable:interceptedCallState
+	a owl:DatatypeProperty ;
+	rdfs:label "interceptedCallState"@en ;
+	rdfs:comment "State of the call in a Call Detail Record (e.g. idle)."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:ip
@@ -10637,6 +10781,20 @@ observable:partitionOffset
 	rdfs:range xsd:integer ;
 	.
 
+observable:partyDevice
+	a owl:ObjectProperty ;
+	rdfs:label "partyDevice"@en ;
+	rdfs:comment "The IMEI of the device connected to the cell tower."@en ;
+	rdfs:range observable:ObservableObject ;
+	.
+
+observable:partySubscription
+	a owl:ObjectProperty ;
+	rdfs:label "partySubscription"@en ;
+	rdfs:comment "The addresses of the device connected to the cell tower (references IMSI, MSISDN SIP address, 5G supi)."@en ;
+	rdfs:range observable:ObservableObject ;
+	.
+
 observable:password
 	a owl:DatatypeProperty ;
 	rdfs:label "password"@en ;
@@ -11371,6 +11529,13 @@ observable:sizeOfUninitializedData
 	rdfs:range xsd:unsignedInt ;
 	.
 
+observable:skew
+	a owl:DatatypeProperty ;
+	rdfs:label "skew"@en ;
+	rdfs:comment "The angle in degrees of the radial rotation around its main beam direction."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:sourceApplication
 	a owl:ObjectProperty ;
 	rdfs:label "sourceApplication"@en ;
@@ -11705,6 +11870,34 @@ observable:totalSpace
 	rdfs:label "totalSpace"@en ;
 	rdfs:comment "Specifies the total amount of space available on the partition, in bytes."@en ;
 	rdfs:range xsd:integer ;
+	.
+
+observable:towerCid
+	a owl:DatatypeProperty ;
+	rdfs:label "towerCid"@en ;
+	rdfs:comment "Specifies the global identifier network code of the cell tower."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:towerLac
+	a owl:DatatypeProperty ;
+	rdfs:label "towerLac"@en ;
+	rdfs:comment "The Location Area Code (LAC) is a fixed length code (of 2 octets) identifying a location area within a PLMN."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:towerMcc
+	a owl:DatatypeProperty ;
+	rdfs:label "towerMcc"@en ;
+	rdfs:comment "The Mobile Country Code (MCC) is a three digit code representing the country of the cell tower."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:towerMnc
+	a owl:DatatypeProperty ;
+	rdfs:label "towerMnc"@en ;
+	rdfs:comment "The Mobile Network Code (MNC) is a two or three digit code representing the network of the cell tower."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:triggerBeginTime
