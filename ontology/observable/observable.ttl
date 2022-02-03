@@ -1622,9 +1622,9 @@ observable:DeviceFacet
 	rdfs:comment "A device facet is a grouping of characteristics unique to a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	sh:property
 		[
-			sh:datatype xsd:string ;
+			sh:class observable:DeviceTypeConcept ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:deviceType ;
 		] ,
 		[
@@ -1647,6 +1647,12 @@ observable:DeviceFacet
 		]
 		;
 	sh:targetClass observable:DeviceFacet ;
+	.
+
+observable:DeviceTypeConcept
+	a owl:Class ;
+	rdfs:subClassOf core:TaxonomicConcept ;
+	rdfs:comment "DeviceTypeConcept is a hinge between UCO concepts and the UCO Taxonomy on Device Types and any other extension taxonomies."@en ;
 	.
 
 observable:DigitalAccount
@@ -8959,9 +8965,9 @@ observable:destinationPort
 	.
 
 observable:deviceType
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "deviceType"@en ;
-	rdfs:range xsd:string ;
+	rdfs:range observable:DeviceTypeConcept ;
 	.
 
 observable:dhcpLeaseExpires
