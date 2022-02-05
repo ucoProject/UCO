@@ -10784,7 +10784,7 @@ observable:partitionOffset
 observable:partyDevice
 	a owl:ObjectProperty ;
 	rdfs:label "partyDevice"@en ;
-	rdfs:comment "The IMEI of the device connected to the cell tower."@en ;
+	rdfs:comment "A device connected to the cell tower."@en ;
 	rdfs:range observable:Device ;
 	.
 
