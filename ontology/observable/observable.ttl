@@ -8431,7 +8431,7 @@ observable:availableRam
 observable:azimuth
 	a owl:DatatypeProperty ;
 	rdfs:label "azimuth"@en ;
-	rdfs:comment "The median rotation in degrees around a vertical axis of the cell antenna sector accessed."@en ;
+	rdfs:comment "The rotation in degrees around a vertical axis of the cell antenna sector accessed."@en ;
 	rdfs:range xsd:decimal ;
 	.
 
