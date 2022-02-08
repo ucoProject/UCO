@@ -120,30 +120,33 @@ types:Hash
 			sh:path types:hashValue ;
 		] ,
 		[
-  		sh:path types:hashMethod ;
-  		sh:nodeKind sh:Literal ;
-  		sh:minCount "1"^^xsd:integer ;
-  		sh:maxCount "1"^^xsd:integer ;
-  		sh:or (
-    			[ rdfs:comment: "Should not trigger any issues if the literal value is asserted as correct vocab type and value is within the correct vocab list of values.",
-      				sh:and (
-      					[ sh:datatype vocabulary:HashNameVocab ; ]
-      					[ sh:in vocabulary:HashNameVocab-members ; ]
-      				)
-    			]
-    			[ rdfs:comment: "Should not trigger any issues if the literal value is within the correct vocab list of values even though it is not explicitly asserted as the vocab type.",
-      				sh:and (
-      					[ sh:datatype xsd:string ; ]
-      					[ sh:in vocabulary:HashNameVocab-members ; ]
-      				)
-    			]
-    			[ "rdfs:comment": "Should trigger sh:Info message if the literal value is a simple string and not within the correct vocab list of values.",
-      				sh:and (
-      					[ sh:datatype xsd:string ; ]
-      					[ sh:not [ sh:in vocabulary:HashNameVocab-members ; ]]
-      				) ;
-      				sh:severity sh:Info ; sh:message "Value outside default vocabulary." ;
-    			]
+  			sh:path types:hashMethod ;
+  			sh:nodeKind sh:Literal ;
+  			sh:minCount "1"^^xsd:integer ;
+  			sh:maxCount "1"^^xsd:integer ;
+  			sh:or (
+    				[ 
+					rdfs:comment: "Should not trigger any issues if the literal value is asserted as correct vocab type and value is within the correct vocab list of values." ;
+      					sh:and (
+      						[ sh:datatype vocabulary:HashNameVocab ; ]
+      						[ sh:in vocabulary:HashNameVocab-members ; ]
+      					) ;
+    				]
+    				[ 
+					rdfs:comment: "Should not trigger any issues if the literal value is within the correct vocab list of values even though it is not explicitly asserted as the vocab type." ;
+      					sh:and (
+      						[ sh:datatype xsd:string ; ]
+      						[ sh:in vocabulary:HashNameVocab-members ; ]
+      					) ;
+    				]
+    				[ 
+					rdfs:comment: "Should trigger sh:Info message if the literal value is a simple string and not within the correct vocab list of values." ;
+      					sh:and (
+      						[ sh:datatype xsd:string ; ]
+      						[ sh:not [ sh:in vocabulary:HashNameVocab-members ; ]]
+      					) ;
+      					sh:severity sh:Info ; sh:message "Value outside default vocabulary." ;
+    				]
   			) ;
 		] 
 		;
