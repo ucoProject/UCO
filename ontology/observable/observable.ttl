@@ -805,7 +805,7 @@ observable:Call
 		;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "Call"@en ;
-	rdfs:comment "A call facet is a connection as part of a realtime cyber communication between one or more parties."@en ;
+	rdfs:comment "A call is a connection as part of a realtime cyber communication between one or more parties."@en ;
 	sh:targetClass observable:Call ;
 	.
 
