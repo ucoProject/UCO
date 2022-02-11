@@ -2105,6 +2105,12 @@ observable:EmailMessageFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:headerRaw ;
 		] ,
 		[
@@ -3481,6 +3487,12 @@ observable:MessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:from ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
