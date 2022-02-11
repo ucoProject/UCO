@@ -2103,11 +2103,6 @@ observable:EmailMessageFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:to ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:headerRaw ;
@@ -2144,6 +2139,11 @@ observable:EmailMessageFacet
 			sh:class observable:ObservableObject ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:references ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
 		] ,
 		[
 			sh:class types:Dictionary ;
