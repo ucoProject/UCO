@@ -2600,12 +2600,6 @@ observable:FileFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:fileSystemType ;
-		] ,
-		[
-			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:fileName ;
 		] ,
