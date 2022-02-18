@@ -593,11 +593,16 @@ vocabulary:MeasurementUnitVocab
 	rdfs:label "Measurement Unit Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of units for measurement values."@en ;
 	owl:oneOf (
-		"KilometersPerHour"^^vocabulary:MeasurementUnitVocab
-		"MilesPerHour"^^vocabulary:MeasurementUnitVocab
+		"Calories"^^vocabulary:MeasurementUnitVocab
+		"Grams"^^vocabulary:MeasurementUnitVocab
+		"Joules"^^vocabulary:MeasurementUnitVocab
+		"Liters"^^vocabulary:MeasurementUnitVocab
+		"MetersPerHour"^^vocabulary:MeasurementUnitVocab
+		"Meters"^^vocabulary:MeasurementUnitVocab
 		"OccurrencesPerHour"^^vocabulary:MeasurementUnitVocab
 		"OccurrencesPerMinute"^^vocabulary:MeasurementUnitVocab
 		"Occurrences"^^vocabulary:MeasurementUnitVocab
+		"Pascals"^^vocabulary:MeasurementUnitVocab
 	) ;
 	.
 
