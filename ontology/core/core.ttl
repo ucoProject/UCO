@@ -164,20 +164,12 @@ core:EnclosingCompilation
 	rdfs:subClassOf core:Compilation ;
 	rdfs:label "EnclosingCompilation"@en ;
 	rdfs:comment "An enclosing compilation is a container for a grouping of things."@en ;
-	sh:property
-		[
-			sh:class core:UcoObject ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path core:object ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path core:description ;
-		]
-		;
+	sh:property [
+		sh:class core:UcoObject ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path core:object ;
+	] ;
 	sh:targetClass core:EnclosingCompilation ;
 	.
 
