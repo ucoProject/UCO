@@ -1148,3 +1148,19 @@ vocabulary:WindowsVolumeAttributeVocab
 	) ;
 	.
 
+vocabulary:WirelessNetworkSecurityModeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Wirelss Network Security Mode Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of security modes that may be configured for wireless network connections."@en ;
+	owl:oneOf (
+		"None"^^vocabulary:WirelessNetworkSecurityModeVocab
+		"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
+		"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
+		"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
+		"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+		"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
+		"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+	) ;
+	.
+
