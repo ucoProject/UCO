@@ -242,7 +242,7 @@ observable:AndroidDeviceFacet
 		;
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "AndroidDeviceFacet"@en ;
-	rdfs:comment "An Android device facet is a grouping of characteristics unique to an Android mobile device. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	rdfs:comment "An Android device facet is a grouping of characteristics unique to an Android device. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
