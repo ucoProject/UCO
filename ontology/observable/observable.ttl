@@ -8278,7 +8278,7 @@ observable:addressValue
 observable:advertisingID
 	a owl:DatatypeProperty ;
 	rdfs:label "advertisingID"@en ;
-	rdfs:comment "Advertising ID information. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
+	rdfs:comment "Advertising ID as a UUID. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
 	rdfs:range xsd:string ;
 	.
 
