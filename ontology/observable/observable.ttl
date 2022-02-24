@@ -3798,6 +3798,12 @@ observable:MobileDeviceFacet
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:isLimitAdTrackingEnabled ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:mockLocationsAllowed ;
 		] ,
 		[
@@ -8289,7 +8295,7 @@ observable:addressValue
 observable:advertisingID
 	a owl:DatatypeProperty ;
 	rdfs:label "advertisingID"@en ;
-	rdfs:comment "Advertising ID information. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
+	rdfs:comment "Advertising ID as a UUID. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -9916,6 +9922,13 @@ observable:isInjected
 	a owl:DatatypeProperty ;
 	rdfs:label "isInjected"@en ;
 	rdfs:comment "The isInjected property specifies whether or not the particular memory object has had data/code injected into it by another process."@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isLimitAdTrackingEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isLimitAdTrackingEnabled"@en ;
+	rdfs:comment "Limits advertising tracking if enabled. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
