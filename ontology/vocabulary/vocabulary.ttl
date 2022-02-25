@@ -601,6 +601,21 @@ vocabulary:MemoryBlockTypeVocab
 	) ;
 	.
 
+vocabulary:MessageTypeVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Message Type Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of message types that specify which type of message (email, chat, SMS, etc) a Message is."@en ;
+	owl:oneOf (
+		"SMS/MMS"^^vocabulary:MessageTypeVocab
+		"Email"^^vocabulary:MessageTypeVocab
+		"Chat"^^vocabulary:MessageTypeVocab
+		"Phone"^^vocabulary:MessageTypeVocab
+		"Mail"^^vocabulary:MessageTypeVocab
+		"Human"^^vocabulary:MessageTypeVocab
+	) ;
+	.
+
 vocabulary:ObservableObjectRelationshipVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
