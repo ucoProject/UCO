@@ -1,22 +1,20 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/types
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
-@base <https://unifiedcyberontology.org/ontology/uco/types> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
-@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/types>
+<https://ontology.unifiedcyberontology.org/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
 	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
 	.
 

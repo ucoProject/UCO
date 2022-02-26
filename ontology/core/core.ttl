@@ -1,20 +1,18 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
-@base <https://unifiedcyberontology.org/ontology/uco/core> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/core>
+<https://ontology.unifiedcyberontology.org/uco/core>
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/vocabulary> ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/vocabulary> ;
 	.
 
 core:Annotation
