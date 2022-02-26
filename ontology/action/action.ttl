@@ -46,8 +46,45 @@ action:Action
 		] ,
 		[
 			sh:class core:UcoObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:environment ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:performer ;
+		] ,
+		[
+			sh:class core:UcoObject ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path action:error ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:instrument ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:object ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:participant ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:result ;
+		] ,
+		[
+			sh:class location:Location ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:location ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -244,57 +281,6 @@ action:ActionPattern
 	rdfs:label "ActionPattern"@en ;
 	rdfs:comment "An action pattern is a grouping of characteristics unique to a combination of actions forming a consistent or characteristic arrangement."@en ;
 	sh:targetClass action:ActionPattern ;
-	.
-
-action:ActionReferencesFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "ActionReferencesFacet"@en ;
-	rdfs:comment """An action references facet is a grouping of characteristics unique to the core elements (who, how, with what, where, etc.) for an action. The characteristics are references to separate UCO objects detailing the particular characteristic.
-  """@en ;
-	sh:property
-		[
-			sh:class core:UcoObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path action:environment ;
-		] ,
-		[
-			sh:class core:UcoObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path action:performer ;
-		] ,
-		[
-			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path action:instrument ;
-		] ,
-		[
-			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path action:object ;
-		] ,
-		[
-			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path action:participant ;
-		] ,
-		[
-			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path action:result ;
-		] ,
-		[
-			sh:class location:Location ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path action:location ;
-		]
-		;
-	sh:targetClass action:ActionReferencesFacet ;
 	.
 
 action:ArrayOfAction

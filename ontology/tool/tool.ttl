@@ -3,6 +3,7 @@
 
 @base <https://unifiedcyberontology.org/ontology/uco/tool> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -325,15 +326,15 @@ tool:Tool
 	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
 	sh:property
 		[
+			sh:class identity:Identity ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:creator ;
+		] ,
+		[
 			sh:datatype xsd:anyURI ;
 			sh:nodeKind sh:Literal ;
 			sh:path tool:references ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:creator ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -493,10 +494,10 @@ tool:cpeid
 	.
 
 tool:creator
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "creator"@en ;
 	rdfs:comment "The creator organization for a particular tool."@en ;
-	rdfs:range xsd:string ;
+	rdfs:range identity:Identity ;
 	.
 
 tool:dependencies

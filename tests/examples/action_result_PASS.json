@@ -11,35 +11,32 @@
             "@id": "kb:action-1",
             "@type": "action:Action",
             "rdfs:comment": "This node is some action that has some ObservableObjects as results.  By the ontology, the results need to be some UcoObject or subclass of UcoObject.  They are serialized here as ObservableObjects, and are redundantly assigned types of some of their superclasses.  For completeness-tracking, let the id slug's number be a binary number tracking which superclasses are present, 2^0=core:UcoObject, 2^1=core:Item, 2^2=observable:Observable.",
-            "core:hasFacet": {
-                "@type": "action:ActionReferencesFacet",
-                "action:result": [
-                    {
-                        "@id": "kb:node-0"
-                    },
-                    {
-                        "@id": "kb:node-1"
-                    },
-                    {
-                        "@id": "kb:node-2"
-                    },
-                    {
-                        "@id": "kb:node-3"
-                    },
-                    {
-                        "@id": "kb:node-4"
-                    },
-                    {
-                        "@id": "kb:node-5"
-                    },
-                    {
-                        "@id": "kb:node-6"
-                    },
-                    {
-                        "@id": "kb:node-7"
-                    }
-                ]
-            }
+            "action:result": [
+                {
+                    "@id": "kb:node-0"
+                },
+                {
+                    "@id": "kb:node-1"
+                },
+                {
+                    "@id": "kb:node-2"
+                },
+                {
+                    "@id": "kb:node-3"
+                },
+                {
+                    "@id": "kb:node-4"
+                },
+                {
+                    "@id": "kb:node-5"
+                },
+                {
+                    "@id": "kb:node-6"
+                },
+                {
+                    "@id": "kb:node-7"
+                }
+            ]
         },
         {
             "@id": "kb:node-0",

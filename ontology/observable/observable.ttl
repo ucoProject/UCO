@@ -798,6 +798,77 @@ observable:CalendarFacet
 	sh:targetClass observable:CalendarFacet ;
 	.
 
+observable:Call
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "Call"@en ;
+	rdfs:comment "A call is a connection as part of a realtime cyber communication between one or more parties."@en ;
+	sh:targetClass observable:Call ;
+	.
+
+observable:CallFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CallFacet"@en ;
+	rdfs:comment "A call facet is a grouping of characteristics unique to a connection as part of a realtime cyber communication between one or more parties."@en ;
+	sh:property
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:application ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:from ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:participant ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:duration ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:callType ;
+		]
+		;
+	sh:targetClass observable:CallFacet ;
+	.
+
 observable:CharacterDeviceNode
 	a
 		owl:Class ,
@@ -1622,16 +1693,16 @@ observable:DeviceFacet
 	rdfs:comment "A device facet is a grouping of characteristics unique to a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	sh:property
 		[
-			sh:datatype xsd:string ;
+			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:deviceType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
+			sh:path observable:deviceType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2597,12 +2668,6 @@ observable:FileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:extension ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:fileSystemType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -4546,6 +4611,12 @@ observable:OperatingSystemFacet
 	rdfs:comment "An operating system facet is a grouping of characteristics unique to the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	sh:property
 		[
+			sh:class identity:Identity ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -4562,12 +4633,6 @@ observable:OperatingSystemFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:bitness ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -4700,73 +4765,6 @@ observable:PhoneAccountFacet
 		sh:path observable:phoneNumber ;
 	] ;
 	sh:targetClass observable:PhoneAccountFacet ;
-	.
-
-observable:PhoneCall
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "PhoneCall"@en ;
-	rdfs:comment "A phone call is a connection over a telephone network between the called party and the calling party. [based on https://en.wikipedia.org/wiki/Telephone_call]"@en ;
-	sh:targetClass observable:PhoneCall ;
-	.
-
-observable:PhoneCallFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "PhoneCallFacet"@en ;
-	rdfs:comment "A phone call facet is a grouping of characteristics unique to a connection over a telephone network between the called party and the calling party. [based on https://en.wikipedia.org/wiki/Telephone_call]"@en ;
-	sh:property
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:application ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:from ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:to ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:endTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:startTime ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:duration ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:callType ;
-		]
-		;
-	sh:targetClass observable:PhoneCallFacet ;
 	.
 
 observable:Pipe
@@ -5474,6 +5472,12 @@ observable:SoftwareFacet
 	rdfs:comment "A software facet is a grouping of characteristics unique to a software program (a definitively scoped instance of a collection of data or computer instructions that tell the computer how to work). [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:property
 		[
+			sh:class identity:Identity ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5484,12 +5488,6 @@ observable:SoftwareFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:language ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -10020,6 +10018,7 @@ observable:lastTimeContacted
 	a owl:DatatypeProperty ;
 	rdfs:label "lastTimeContacted"@en ;
 	rdfs:comment "Last time contacted specifies the date and time that a particular contact was last contacted."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:lastVisit
@@ -10155,9 +10154,9 @@ observable:manuallyEnteredCount
 	.
 
 observable:manufacturer
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "manufacturer"@en ;
-	rdfs:range xsd:string ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:maxRunTime
