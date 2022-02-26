@@ -1,0 +1,50 @@
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix kb: <http://example.org/kb/> .
+@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kb:action1
+	a action:Action ;
+	.
+
+kb:action2
+	a action:Action ;
+	.
+
+kb:file1
+	a observable:File ;
+	.
+
+kb:relationship1
+	a core:Relationship ;
+	core:isDirectional "true"^^xsd:boolean ;
+	core:kindOfRelationship "CUSTOM_Influenced" ;
+	core:source kb:file1 ;
+	core:target kb:zipfile1 ;
+	.
+
+kb:relationship2
+	a observable:ObservableRelationship ;
+	core:isDirectional "true"^^xsd:boolean ;
+	core:kindOfRelationship "Contained_Within"^^vocabulary:ObservableObjectRelationshipVocab ;
+	core:source kb:file1 ;
+	core:target kb:zipfile1 ;
+	.
+
+kb:relationship3
+	a core:Relationship ;
+	core:isDirectional "true"^^xsd:boolean ;
+	core:kindOfRelationship "Initiated"^^vocabulary:ActionRelationshipVocab ;
+	core:source kb:action1 ;
+	core:target kb:action2 ;
+	.
+
+kb:zipfile1
+	a observable:ArchiveFile ;
+	.
+

@@ -61,14 +61,17 @@ WHERE {
 
 def confirm_validation_errors(
   filename : str,
-  expected_error_iris : typing.Set[str]
+  *,
+  expected_error_iris : typing.Optional[typing.Set[str]] = None,
+  expected_focus_nodes : typing.Optional[typing.Set[str]] = None
 ):
     g = load_validation_graph(filename, False)
 
     computed_error_iris = set()
+    computed_focus_nodes = set()
 
     query = rdflib.plugins.sparql.prepareQuery("""\
-SELECT DISTINCT ?nResultPath
+SELECT DISTINCT ?nFocusNode ?nResultPath
 WHERE {
   ?nReport
     a sh:ValidationReport ;
@@ -77,20 +80,30 @@ WHERE {
 
   ?nValidationResult
     a sh:ValidationResult ;
+    sh:focusNode ?nFocusNode ;
     sh:resultPath ?nResultPath ;
     .
 }
 """, initNs=NSDICT)
 
     for result in g.query(query):
-        (n_result_path,) = result
+        (n_focus_node, n_result_path) = result
+        computed_focus_nodes.add(str(n_focus_node))
         computed_error_iris.add(str(n_result_path))
 
-    try:
-        assert expected_error_iris == computed_error_iris
-    except:
-        logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to data properties noted in this function.", filename)
-        raise
+    if not expected_error_iris is None:
+        try:
+            assert expected_error_iris == computed_error_iris
+        except:
+            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to data properties noted in this function.", filename)
+            raise
+
+    if not expected_focus_nodes is None:
+        try:
+            assert expected_focus_nodes == computed_focus_nodes
+        except:
+            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to focus nodes noted in this function.", filename)
+            raise
 
 def test_action_inheritance_PASS_validation():
     """
@@ -105,7 +118,7 @@ def test_action_inheritance_XFAIL_validation():
     """
     confirm_validation_errors(
       "action_inheritance_XFAIL_validation.ttl",
-      {
+      expected_error_iris={
         str(NS_UCO_ACTION.action),
         str(NS_UCO_ACTION.actionStatus)
       }
@@ -131,7 +144,7 @@ def test_location_XFAIL_validation():
     """
     confirm_validation_errors(
       "location_XFAIL_validation.ttl",
-      {
+      expected_error_iris={
         str(NS_UCO_CORE.hasFacet),
         str(NS_UCO_LOCATION.postalCode)
       }
@@ -145,7 +158,35 @@ def test_location_XFAIL_validation_XPASS_wrong_concept_name():
     """
     confirm_validation_errors(
       "location_XFAIL_validation.ttl",
-      {
+      expected_error_iris={
         str(NS_UCO_CORE.descriptionButWrongName)
       }
     )
+
+def test_relationship_PASS_validation():
+    """
+    Confirm the PASS instance data passes validation.
+    """
+    g = load_validation_graph("relationship_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
+
+def test_relationship_XFAIL_validation():
+    """
+    Confirm the PASS instance data passes validation.
+    """
+    confirm_validation_errors(
+      "relationship_XFAIL_validation.ttl",
+      expected_focus_nodes={
+        "http://example.org/kb/relationship1",
+        "http://example.org/kb/relationship2",
+        "http://example.org/kb/relationship3"
+      }
+    )
+
+def test_relationship_PASS_via_rdf_toolkit_validation_after_translation():
+    g = load_validation_graph("relationship_PASS_via_rdf_toolkit_validation_after_translation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
+
+def relationship_PASS_via_rdflib_validation_after_translation():
+    g = load_validation_graph("relationship_PASS_via_rdflib_validation_after_translation.ttl", True)
+    assert isinstance(g, rdflib.Graph)

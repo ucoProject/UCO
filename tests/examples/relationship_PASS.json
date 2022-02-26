@@ -1,0 +1,70 @@
+{
+    "@context": {
+        "action": "https://unifiedcyberontology.org/ontology/uco/action#",
+        "core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "kb": "http://example.org/kb/",
+        "observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:relationship1",
+            "@type": "core:Relationship",
+            "core:isDirectional": true,
+            "core:kindOfRelationship": "CUSTOM_Influenced",
+            "core:source": {
+                "@id": "kb:file1"
+            },
+            "core:target": {
+                "@id": "kb:zipfile1"
+            }
+        },
+        {
+            "@id": "kb:relationship2",
+            "@type": "observable:ObservableRelationship",
+            "core:isDirectional": true,
+            "core:kindOfRelationship": {
+                "@type": "vocabulary:ObservableObjectRelationshipVocab",
+                "@value": "Contained_Within"
+            },
+            "core:source": {
+                "@id": "kb:file1"
+            },
+            "core:target": {
+                "@id": "kb:zipfile1"
+            }
+        },
+        {
+            "@id": "kb:relationship3",
+            "@type": "core:Relationship",
+            "core:isDirectional": true,
+            "core:kindOfRelationship": {
+                "@type": "vocabulary:ActionRelationshipVocab",
+                "@value": "Initiated"
+            },
+            "core:source": {
+                "@id": "kb:action1"
+            },
+            "core:target": {
+                "@id": "kb:action2"
+            }
+        },
+        {
+            "@id": "kb:action1",
+            "@type": "action:Action"
+        },
+        {
+            "@id": "kb:action2",
+            "@type": "action:Action"
+        },
+        {
+            "@id": "kb:file1",
+            "@type": "observable:File"
+        },
+        {
+            "@id": "kb:zipfile1",
+            "@type": "observable:ArchiveFile"
+        }
+    ]
+}
