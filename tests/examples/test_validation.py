@@ -59,13 +59,14 @@ WHERE {
     assert expected_conformance == computed_conformance
     return g
 
-def confirm_validation_errors(
+def confirm_validation_results(
   filename : str,
+  expected_conformance: bool,
   *,
   expected_focus_node_severities : typing.Optional[typing.Tuple[typing.Set[str], str]] = None,
   expected_result_paths : typing.Optional[typing.Set[str]] = None
 ):
-    g = load_validation_graph(filename, False)
+    g = load_validation_graph(filename, expected_conformance)
 
     computed_focus_node_severities = set()
     computed_result_paths = set()
@@ -117,8 +118,9 @@ def test_action_inheritance_XFAIL_validation():
     """
     Confirm the XFAIL instance data fails validation based on an expected set of properties not conforming to shape constraints.
     """
-    confirm_validation_errors(
+    confirm_validation_results(
       "action_inheritance_XFAIL_validation.ttl",
+      False,
       expected_result_paths={
         str(NS_UCO_ACTION.action),
         str(NS_UCO_ACTION.actionStatus)
@@ -137,8 +139,9 @@ def test_hash_PASS() -> None:
     assert isinstance(g, rdflib.Graph)
 
 def test_hash_XFAIL() -> None:
-    confirm_validation_errors(
+    confirm_validation_results(
       "hash_XFAIL_validation.ttl",
+      False,
       expected_focus_node_severities={
         ("http://example.org/kb/hash-2", str(NS_SH.Info)),
         ("http://example.org/kb/hash-3", str(NS_SH.Violation)),
@@ -159,8 +162,9 @@ def test_location_XFAIL_validation():
     """
     Confirm the XFAIL instance data fails validation based on an expected set of properties not conforming to shape constraints.
     """
-    confirm_validation_errors(
+    confirm_validation_results(
       "location_XFAIL_validation.ttl",
+      False,
       expected_result_paths={
         str(NS_UCO_CORE.hasFacet),
         str(NS_UCO_LOCATION.postalCode)
@@ -173,20 +177,24 @@ def test_location_XFAIL_validation_XPASS_wrong_concept_name():
     Report the XFAIL instance data XPASSes one of the induced errors - the non-existent concept core:descriptionButWrongName is not reported as an error.
     Should a SHACL mechanism later be identified to detect this error, this test can be retired, adding NS_UCO_CORE.descriptionButWrongName to the expected IRI set in test_location_XFAIL_validation().
     """
-    confirm_validation_errors(
+    confirm_validation_results(
       "location_XFAIL_validation.ttl",
+      False,
       expected_result_paths={
         str(NS_UCO_CORE.descriptionButWrongName)
       }
     )
 
 def test_relationship_PASS() -> None:
-    g = load_validation_graph("relationship_PASS_validation.ttl", True)
-    assert isinstance(g, rdflib.Graph)
+    confirm_validation_results(
+      "relationship_PASS_validation.ttl",
+      True,
+    )
 
 def test_relationship_XFAIL() -> None:
-    confirm_validation_errors(
+    confirm_validation_results(
       "relationship_XFAIL_validation.ttl",
+      False,
       expected_focus_node_severities={
         ("http://example.org/kb/relationship-1-1-1", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-1-1-2", str(NS_SH.Violation)),
