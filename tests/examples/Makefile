@@ -46,6 +46,7 @@ all: \
   $(tests_srcdir)/uco_monolithic.ttl
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pyshacl \
+	    --allow-warnings \
 	    --data-file-format json-ld \
 	    --format turtle \
 	    --inference none \

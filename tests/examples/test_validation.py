@@ -189,6 +189,14 @@ def test_relationship_PASS() -> None:
     confirm_validation_results(
       "relationship_PASS_validation.ttl",
       True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/relationship-1-1-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-1-2-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-1-3-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-1-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-2-1", str(NS_SH.Info)),
+        ("http://example.org/kb/relationship-2-3-1", str(NS_SH.Info)),
+      }
     )
 
 def test_relationship_XFAIL() -> None:
@@ -196,22 +204,16 @@ def test_relationship_XFAIL() -> None:
       "relationship_XFAIL_validation.ttl",
       False,
       expected_focus_node_severities={
-        ("http://example.org/kb/relationship-1-1-1", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-1-1-2", str(NS_SH.Violation)),
         ("http://example.org/kb/relationship-1-1-3", str(NS_SH.Violation)),
-        ("http://example.org/kb/relationship-1-2-1", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-1-2-3", str(NS_SH.Violation)),
-        ("http://example.org/kb/relationship-1-3-1", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-1-3-2", str(NS_SH.Violation)),
-        ("http://example.org/kb/relationship-2-1-1", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-2-1-2", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-2-1-2", str(NS_SH.Violation)),
         ("http://example.org/kb/relationship-2-1-3", str(NS_SH.Violation)),
-        ("http://example.org/kb/relationship-2-2-1", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-2-2-2", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-2-2-2", str(NS_SH.Violation)),
         ("http://example.org/kb/relationship-2-2-3", str(NS_SH.Violation)),
-        ("http://example.org/kb/relationship-2-3-1", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-2-3-2", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-2-3-2", str(NS_SH.Violation)),
       }
