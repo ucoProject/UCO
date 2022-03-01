@@ -111,8 +111,13 @@ def test_action_inheritance_PASS_validation():
     """
     Confirm the PASS instance data passes validation.
     """
-    g = load_validation_graph("action_inheritance_PASS_validation.ttl", True)
-    assert isinstance(g, rdflib.Graph)
+    confirm_validation_results(
+      "action_inheritance_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/action1", str(NS_SH.Info)),
+      }
+    )
 
 def test_action_inheritance_XFAIL_validation():
     """

@@ -12,10 +12,7 @@
             "@id": "kb:action1",
             "@type": "action:Action",
             "core:name": "Open File",
-            "action:actionStatus": {
-                "@type": "vocabulary:ActionStatusTypeVocab",
-                "@value": "Pending"
-            }
+            "action:actionStatus": "CUSTOM Started"
         },
         {
             "@id": "kb:action2",
