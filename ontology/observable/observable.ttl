@@ -3798,12 +3798,6 @@ observable:MobileDeviceFacet
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:isLimitAdTrackingEnabled ;
-		] ,
-		[
-			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:mockLocationsAllowed ;
 		] ,
 		[
@@ -3835,12 +3829,6 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:IMEI ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:advertisingID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -4596,6 +4584,12 @@ observable:OperatingSystemFacet
 			sh:path observable:environmentVariables ;
 		] ,
 		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isLimitAdTrackingEnabled ;
+		] ,
+		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -4618,6 +4612,11 @@ observable:OperatingSystemFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:version ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:advertisingID ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
