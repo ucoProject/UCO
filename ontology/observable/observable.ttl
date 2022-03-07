@@ -5569,6 +5569,7 @@ observable:TCPConnectionFacet
 			sh:path observable:sourceFlags ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:destinationFlags ;
 		]
@@ -8949,6 +8950,7 @@ observable:destinationFlags
 	rdfs:label "destinationFlags"@en ;
 	rdfs:comment """Specifies the destination TCP flags.
           """@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:destinationPort
