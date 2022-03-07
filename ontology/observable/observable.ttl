@@ -6177,6 +6177,7 @@ observable:URLVisitFacet
 			sh:path observable:visitDuration ;
 		] ,
 		[
+			sh:datatype vocabulary:URLTransitionTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:urlTransitionType ;
