@@ -22,10 +22,19 @@ all: \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
   location_PASS_validation.ttl \
-  location_XFAIL_validation.ttl
+  location_XFAIL_validation.ttl \
+  relationship_PASS_validation.ttl \
+  relationship_PASS_via_rdflib_validation_after_translation.ttl \
+  relationship_PASS_via_rdf_toolkit_validation_after_translation.ttl \
+  relationship_XFAIL_validation.ttl
+
+.PHONY: \
+  check-context
 
 .PRECIOUS: \
-  %_validation.ttl
+  %_validation.ttl \
+  relationship_PASS_via_rdflib.ttl \
+  relationship_PASS_via_rdf_toolkit.ttl
 
 # NOTE - this recipe makes an allowance for a certain failure type
 # reported by pyshacl.  Pyshacl will exit status 1 in the case where
@@ -62,16 +71,82 @@ all: \
 	rm __$@
 	mv _$@ $@
 
+%_validation_after_translation.ttl: \
+  %.ttl \
+  $(tests_srcdir)/.venv.done.log \
+  $(tests_srcdir)/uco_monolithic.ttl
+	source $(tests_srcdir)/venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --ont-file-format turtle \
+	    --ont-graph $(tests_srcdir)/uco_monolithic.ttl \
+	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
+	    --shacl-file-format turtle \
+	    --output __$@ \
+	    $< \
+	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	  --infer-base-iri \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
+	mv _$@ $@
+
 check: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  check-context \
   location_PASS_validation.ttl \
-  location_XFAIL_validation.ttl
+  location_XFAIL_validation.ttl \
+  relationship_PASS_validation.ttl \
+  relationship_PASS_via_rdflib_validation_after_translation.ttl \
+  relationship_PASS_via_rdf_toolkit_validation_after_translation.ttl \
+  relationship_XFAIL_validation.ttl
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG
 
+# These Turtle renders of the JSON file are for confirming data characteristics are preserved when consumed by multiple RDF applications.
+check-context: \
+  relationship_PASS_via_rdflib.ttl \
+  relationship_PASS_via_rdf_toolkit.ttl
+	diff $^
+
 clean:
 	@rm -f \
-	  *_validation.ttl
+	  *_validation*.ttl
+
+relationship_PASS_via_rdf_toolkit.ttl: \
+  relationship_PASS.json
+	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	  --infer-base-iri \
+	  --inline-blank-nodes \
+	  --source $< \
+	  --source-format json-ld \
+	  --target _$@ \
+	  --target-format turtle
+	mv _$@ $@
+
+relationship_PASS_via_rdflib.ttl: \
+  relationship_PASS.json \
+  $(tests_srcdir)/.venv.done.log \
+  $(tests_srcdir)/src/glom_graph.py
+	source $(tests_srcdir)/venv/bin/activate \
+	  && python3 $(tests_srcdir)/src/glom_graph.py \
+	    __$@ \
+	    $<
+	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	  --infer-base-iri \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
+	mv _$@ $@

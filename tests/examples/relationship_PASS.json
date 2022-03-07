@@ -1,0 +1,85 @@
+{
+    "@context": {
+        "Action": "action:Action",
+        "ArchiveFile": "observable:ArchiveFile",
+        "File": "observable:File",
+        "FileFacet": "observable:FileFacet",
+        "ObservableRelationship": "observable:ObservableRelationship",
+        "Relationship": "core:Relationship",
+        "action": "https://unifiedcyberontology.org/ontology/uco/action#",
+        "core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "fileName": "observable:fileName",
+        "hasFacet": "core:hasFacet",
+        "isDirectional": "core:isDirectional",
+        "kb": "http://example.org/kb/",
+        "kindOfRelationship": "core:kindOfRelationship",
+        "observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "source": {
+            "@id": "core:source",
+            "@type": "@id"
+        },
+        "target": {
+            "@id": "core:target",
+            "@type": "@id"
+        },
+        "vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+
+        {
+            "@id": "kb:relationship1",
+            "@type": "Relationship",
+            "isDirectional": true,
+            "kindOfRelationship": "CUSTOM_Influenced",
+            "source": "kb:file1",
+            "target": "kb:zipfile1"
+        },
+        {
+            "@id": "kb:relationship2",
+            "@type": "ObservableRelationship",
+            "isDirectional": true,
+            "kindOfRelationship": {
+                "@type": "vocabulary:ObservableObjectRelationshipVocab",
+                "@value": "Contained_Within"
+            },
+            "source": "kb:file1",
+            "target": "kb:zipfile1"
+        },
+        {
+            "@id": "kb:relationship3",
+            "@type": "Relationship",
+            "isDirectional": true,
+            "kindOfRelationship": {
+                "@type": "vocabulary:ActionRelationshipVocab",
+                "@value": "Initiated"
+            },
+            "source": "kb:action1",
+            "target": "kb:action2"
+        },
+        {
+            "@id": "kb:action1",
+            "@type": "Action"
+        },
+        {
+            "@id": "kb:action2",
+            "@type": "Action"
+        },
+        {
+            "@id": "kb:file1",
+            "@type": "File",
+            "hasFacet": {
+              "@type": "FileFacet",
+              "fileName": "kindOfRelationship"
+            }
+        },
+        {
+            "@id": "kb:zipfile1",
+            "@type": "ArchiveFile",
+            "hasFacet": {
+              "@type": "FileFacet",
+              "fileName": "Relationship"
+            }
+        }
+    ]
+}
