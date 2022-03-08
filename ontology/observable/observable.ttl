@@ -224,6 +224,60 @@ observable:AlternateDataStreamFacet
 	sh:targetClass observable:AlternateDataStreamFacet ;
 	.
 
+observable:AndroidDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "AndroidDevice"@en ;
+	rdfs:comment "An Android device is a device running the Android operating system. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	sh:targetClass observable:AndroidDevice ;
+	.
+
+observable:AndroidDeviceFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AndroidDeviceFacet"@en ;
+	rdfs:comment "An Android device facet is a grouping of characteristics unique to an Android device. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	sh:property
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isADBRootEnabled ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isSURootEnabled ;
+		] ,
+		[
+			sh:datatype xsd:hexBinary ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidFingerprint ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidVersion ;
+		]
+		;
+	sh:targetClass observable:AndroidDeviceFacet ;
+	.
+
 observable:Appliance
 	a
 		owl:Class ,
@@ -4601,6 +4655,12 @@ observable:OperatingSystemFacet
 			sh:path observable:environmentVariables ;
 		] ,
 		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isLimitAdTrackingEnabled ;
+		] ,
+		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -4617,6 +4677,11 @@ observable:OperatingSystemFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:version ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:advertisingID ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
@@ -8235,6 +8300,13 @@ observable:addressValue
 	rdfs:range xsd:string ;
 	.
 
+observable:advertisingID
+	a owl:DatatypeProperty ;
+	rdfs:label "advertisingID"@en ;
+	rdfs:comment "Advertising ID as a UUID. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:allocationStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "allocationStatus"@en ;
@@ -8246,6 +8318,27 @@ observable:alternateDataStreams
 	a owl:ObjectProperty ;
 	rdfs:label "alternateDataStreams"@en ;
 	rdfs:range observable:AlternateDataStream ;
+	.
+
+observable:androidFingerprint
+	a owl:DatatypeProperty ;
+	rdfs:label "androidFingerprint"@en ;
+	rdfs:comment "A string that uniquely identifies a build of the Android operating system. [based on https://developer.android.com/reference/android/os/Build#FINGERPRINT]"@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:androidID
+	a owl:DatatypeProperty ;
+	rdfs:label "androidID"@en ;
+	rdfs:comment "A 64-bit number (expressed as a hexadecimal string), unique to each combination of app-signing key, user, and device. [based on https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID]"@en ;
+	rdfs:range xsd:hexBinary ;
+	.
+
+observable:androidVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "androidVersion"@en ;
+	rdfs:comment "The user-visible version string. E.g., '1.0' or '3.4b5' or 'bananas'. This field is an opaque string. Do not assume that its value has any particular structure or that values of RELEASE from different releases can be somehow ordered. [based on https://developer.android.com/reference/android/os/Build.VERSION#RELEASE]"@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:application
@@ -9784,6 +9877,13 @@ observable:ipfix
 	rdfs:range types:Dictionary ;
 	.
 
+observable:isADBRootEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isADBRootEnabled"@en ;
+	rdfs:comment "Root access through the Android Debug Bridge (ADB) daemon observed to be enabled. [based on https://developer.android.com/studio/command-line/adb]"@en ;
+	rdfs:range xsd:boolean ;
+	.
+
 observable:isActive
 	a owl:DatatypeProperty ;
 	rdfs:label "isActive"@en ;
@@ -9830,6 +9930,13 @@ observable:isInjected
 	a owl:DatatypeProperty ;
 	rdfs:label "isInjected"@en ;
 	rdfs:comment "The isInjected property specifies whether or not the particular memory object has had data/code injected into it by another process."@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isLimitAdTrackingEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isLimitAdTrackingEnabled"@en ;
+	rdfs:comment "Limits advertising tracking if enabled. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -9887,6 +9994,13 @@ observable:isProtected
 observable:isRead
 	a owl:DatatypeProperty ;
 	rdfs:label "isRead"@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isSURootEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isSURootEnabled"@en ;
+	rdfs:comment "Root access through Linux SU binary observed to be enabled. [based on https://en.wikipedia.org/wiki/Rooting_(Android)]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
