@@ -7853,7 +7853,18 @@ observable:WirelessNetworkConnectionFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:password ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:ssid ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
@@ -11969,6 +11980,19 @@ observable:windowsVolumeAttributes
 	rdfs:label "windowsVolumeAttributes"@en ;
 	rdfs:comment "Specifies the attributes of a windows volume."@en ;
 	rdfs:range vocabulary:WindowsVolumeAttributeVocab ;
+	.
+
+observable:wirelessNetworkSecurityMode
+	a owl:DatatypeProperty ;
+	rdfs:label "wirelessNetworkSecurityMode"@en ;
+	rdfs:comment "Specifies the security mode of a wireless network (None, WEP, WPA, etc)."@en ;
+	rdfs:range [
+		a rdfs:DataType ;
+		owl:unionOf (
+			vocabulary:WirelessNetworkSecurityModeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:workItemData
