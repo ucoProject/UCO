@@ -1,8 +1,8 @@
 {
     "@context": {
         "kb": "http://example.org/kb/",
-        "types": "https://unifiedcyberontology.org/ontology/uco/types#",
-        "vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [

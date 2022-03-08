@@ -1,10 +1,10 @@
 {
     "@context": {
-        "action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
-        "observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
