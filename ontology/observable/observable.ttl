@@ -7862,7 +7862,6 @@ observable:WirelessNetworkConnectionFacet
 			sh:path observable:ssid ;
 		] ,
 		[
-			sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:wirelessNetworkSecurityMode ;
@@ -11987,7 +11986,13 @@ observable:wirelessNetworkSecurityMode
 	a owl:DatatypeProperty ;
 	rdfs:label "wirelessNetworkSecurityMode"@en ;
 	rdfs:comment "Specifies the security mode of a wireless network (None, WEP, WPA, etc)."@en ;
-	rdfs:range vocabulary:WirelessNetworkSecurityModeVocab ;
+	rdfs:range [
+		a rdfs:DataType ;
+		owl:unionOf (
+			vocabulary:WirelessNetworkSecurityModeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:workItemData
