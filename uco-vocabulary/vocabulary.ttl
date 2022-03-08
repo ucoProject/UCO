@@ -481,10 +481,10 @@ vocabulary:ContactEmailScopeVocab
 	rdfs:label "Contact Email Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for email entries of digital contacts."@en ;
 	owl:oneOf (
-		"home"^^vocabulary:ContactAddressScopeVocab
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
-		"cloud"^^vocabulary:ContactAddressScopeVocab
+		"home"^^vocabulary:ContactEmailScopeVocab
+		"work"^^vocabulary:ContactEmailScopeVocab
+		"school"^^vocabulary:ContactEmailScopeVocab
+		"cloud"^^vocabulary:ContactEmailScopeVocab
 	) ;
 	.
 
@@ -494,14 +494,14 @@ vocabulary:ContactPhoneScopeVocab
 	rdfs:label "Contact Phone Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for phone entries of digital contacts."@en ;
 	owl:oneOf (
-		"home"^^vocabulary:ContactAddressScopeVocab
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
-		"mobile"^^vocabulary:ContactAddressScopeVocab
-		"main"^^vocabulary:ContactAddressScopeVocab
-		"home fax"^^vocabulary:ContactAddressScopeVocab
-		"work fax"^^vocabulary:ContactAddressScopeVocab
-		"pager"^^vocabulary:ContactAddressScopeVocab
+		"home"^^vocabulary:ContactPhoneScopeVocab
+		"work"^^vocabulary:ContactPhoneScopeVocab
+		"school"^^vocabulary:ContactPhoneScopeVocab
+		"mobile"^^vocabulary:ContactPhoneScopeVocab
+		"main"^^vocabulary:ContactPhoneScopeVocab
+		"home fax"^^vocabulary:ContactPhoneScopeVocab
+		"work fax"^^vocabulary:ContactPhoneScopeVocab
+		"pager"^^vocabulary:ContactPhoneScopeVocab
 	) ;
 	.
 
@@ -511,9 +511,9 @@ vocabulary:ContactSIPScopeVocab
 	rdfs:label "Contact SIP Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for Session Initiation Protocol (SIP) entries of digital contacts."@en ;
 	owl:oneOf (
-		"home"^^vocabulary:ContactAddressScopeVocab
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
+		"home"^^vocabulary:ContactSIPScopeVocab
+		"work"^^vocabulary:ContactSIPScopeVocab
+		"school"^^vocabulary:ContactSIPScopeVocab
 	) ;
 	.
 
@@ -523,10 +523,10 @@ vocabulary:ContactURLScopeVocab
 	rdfs:label "Contact URL Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for URL entries of digital contacts."@en ;
 	owl:oneOf (
-		"home"^^vocabulary:ContactAddressScopeVocab
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
-		"homepage"^^vocabulary:ContactAddressScopeVocab
+		"home"^^vocabulary:ContactURLScopeVocab
+		"work"^^vocabulary:ContactURLScopeVocab
+		"school"^^vocabulary:ContactURLScopeVocab
+		"homepage"^^vocabulary:ContactURLScopeVocab
 	) ;
 	.
 
