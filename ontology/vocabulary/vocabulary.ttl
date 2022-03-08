@@ -1219,8 +1219,12 @@ vocabulary:WirelessNetworkSecurityModeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Wireless Network Security Mode Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of security modes that may be configured for wireless network connections."@en ;
-	owl:oneOf (
-		"None"^^vocabulary:WirelessNetworkSecurityModeVocab
+	owl:oneOf vocabulary:WirelessNetworkSecurityModeVocab-members ;
+	.
+
+vocabulary:WirelessNetworkSecurityModeVocab-members
+	rdf:first "None"^^vocabulary:WirelessNetworkSecurityModeVocab ;
+	rdf:rest (
 		"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
 		"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
 		"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab

@@ -8452,6 +8452,27 @@ observable:WirelessNetworkConnectionFacet
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:wirelessNetworkSecurityMode ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
+					sh:in vocabulary:WirelessNetworkSecurityModeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
