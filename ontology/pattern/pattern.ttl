@@ -1,19 +1,17 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/pattern
-# imports: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/core
 
-@base <https://unifiedcyberontology.org/ontology/uco/pattern> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pattern: <https://unifiedcyberontology.org/ontology/uco/pattern#> .
+@prefix pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/pattern>
+<https://ontology.unifiedcyberontology.org/uco/pattern>
 	a owl:Ontology ;
 	rdfs:label "uco-pattern"@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
 	.
 
 pattern:LogicalPattern

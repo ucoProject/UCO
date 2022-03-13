@@ -28,9 +28,9 @@ import pytest
 import rdflib.plugins.sparql
 
 NS_SH = rdflib.SH
-NS_UCO_ACTION = rdflib.Namespace("https://unifiedcyberontology.org/ontology/uco/action#")
-NS_UCO_CORE = rdflib.Namespace("https://unifiedcyberontology.org/ontology/uco/core#")
-NS_UCO_LOCATION = rdflib.Namespace("https://unifiedcyberontology.org/ontology/uco/location#")
+NS_UCO_ACTION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/action/")
+NS_UCO_CORE = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/core/")
+NS_UCO_LOCATION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/location/")
 
 NSDICT = {"sh": NS_SH}
 

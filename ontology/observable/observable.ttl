@@ -1,35 +1,33 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/observable
-# imports: https://unifiedcyberontology.org/ontology/uco/action
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/identity
-# imports: https://unifiedcyberontology.org/ontology/uco/location
-# imports: https://unifiedcyberontology.org/ontology/uco/types
-# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/uco/action
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/identity
+# imports: https://ontology.unifiedcyberontology.org/uco/location
+# imports: https://ontology.unifiedcyberontology.org/uco/types
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
-@base <https://unifiedcyberontology.org/ontology/uco/observable> .
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
-@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
-@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
-@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/observable>
+<https://ontology.unifiedcyberontology.org/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
 	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/action> ,
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/identity> ,
-		<https://unifiedcyberontology.org/ontology/uco/location> ,
-		<https://unifiedcyberontology.org/ontology/uco/types> ,
-		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+		<https://ontology.unifiedcyberontology.org/uco/action> ,
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/identity> ,
+		<https://ontology.unifiedcyberontology.org/uco/location> ,
+		<https://ontology.unifiedcyberontology.org/uco/types> ,
+		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
 	.
 
@@ -186,8 +184,20 @@ observable:AlternateDataStream
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "AlternateDataStream"@en ;
 	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
+	sh:targetClass observable:AlternateDataStream ;
+	.
+
+observable:AlternateDataStreamFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AlternateDataStreamFacet"@en ;
+	rdfs:comment "An alternate data stream facet is a grouping of characteristics unique to data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
 	sh:property
 		[
 			sh:class types:Hash ;
@@ -209,7 +219,61 @@ observable:AlternateDataStream
 			sh:path core:name ;
 		]
 		;
-	sh:targetClass observable:AlternateDataStream ;
+	sh:targetClass observable:AlternateDataStreamFacet ;
+	.
+
+observable:AndroidDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "AndroidDevice"@en ;
+	rdfs:comment "An Android device is a device running the Android operating system. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	sh:targetClass observable:AndroidDevice ;
+	.
+
+observable:AndroidDeviceFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AndroidDeviceFacet"@en ;
+	rdfs:comment "An Android device facet is a grouping of characteristics unique to an Android device. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	sh:property
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isADBRootEnabled ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isSURootEnabled ;
+		] ,
+		[
+			sh:datatype xsd:hexBinary ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidFingerprint ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidVersion ;
+		]
+		;
+	sh:targetClass observable:AndroidDeviceFacet ;
 	.
 
 observable:Appliance
@@ -784,6 +848,76 @@ observable:CalendarFacet
 		]
 		;
 	sh:targetClass observable:CalendarFacet ;
+	.
+
+observable:Call
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "Call"@en ;
+	rdfs:comment "A call is a connection as part of a realtime cyber communication between one or more parties."@en ;
+	sh:targetClass observable:Call ;
+	.
+
+observable:CallFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CallFacet"@en ;
+	rdfs:comment "A call facet is a grouping of characteristics unique to a connection as part of a realtime cyber communication between one or more parties."@en ;
+	sh:property
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:application ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:from ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:participant ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:duration ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:callType ;
+		]
+		;
+	sh:targetClass observable:CallFacet ;
 	.
 
 observable:CharacterDeviceNode
@@ -1610,6 +1744,7 @@ observable:DeviceFacet
 	rdfs:comment "A device facet is a grouping of characteristics unique to a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	sh:property
 		[
+<<<<<<< HEAD
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -1617,15 +1752,18 @@ observable:DeviceFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
+=======
+			sh:class identity:Identity ;
+>>>>>>> bfb4c57399b555b83bec736d7e73de27cfcd8ba8
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:deviceType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
+			sh:path observable:deviceType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2135,6 +2273,11 @@ observable:EmailMessageFacet
 			sh:path observable:references ;
 		] ,
 		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
+		] ,
+		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -2591,12 +2734,6 @@ observable:FileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:extension ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:fileSystemType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -3477,6 +3614,11 @@ observable:MessageFacet
 			sh:path observable:from ;
 		] ,
 		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
+		] ,
+		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -4325,7 +4467,6 @@ observable:NoteFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -4512,10 +4653,22 @@ observable:OperatingSystemFacet
 	rdfs:comment "An operating system facet is a grouping of characteristics unique to the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	sh:property
 		[
+			sh:class identity:Identity ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:environmentVariables ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isLimitAdTrackingEnabled ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -4533,13 +4686,12 @@ observable:OperatingSystemFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
+			sh:path observable:version ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:version ;
+			sh:path observable:advertisingID ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
@@ -4666,73 +4818,6 @@ observable:PhoneAccountFacet
 		sh:path observable:phoneNumber ;
 	] ;
 	sh:targetClass observable:PhoneAccountFacet ;
-	.
-
-observable:PhoneCall
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "PhoneCall"@en ;
-	rdfs:comment "A phone call is a connection over a telephone network between the called party and the calling party. [based on https://en.wikipedia.org/wiki/Telephone_call]"@en ;
-	sh:targetClass observable:PhoneCall ;
-	.
-
-observable:PhoneCallFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "PhoneCallFacet"@en ;
-	rdfs:comment "A phone call facet is a grouping of characteristics unique to a connection over a telephone network between the called party and the calling party. [based on https://en.wikipedia.org/wiki/Telephone_call]"@en ;
-	sh:property
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:application ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:from ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:to ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:endTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:startTime ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:duration ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:callType ;
-		]
-		;
-	sh:targetClass observable:PhoneCallFacet ;
 	.
 
 observable:Pipe
@@ -5434,6 +5519,12 @@ observable:SoftwareFacet
 	rdfs:comment "A software facet is a grouping of characteristics unique to a software program (a definitively scoped instance of a collection of data or computer instructions that tell the computer how to work). [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:property
 		[
+			sh:class identity:Identity ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5444,12 +5535,6 @@ observable:SoftwareFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:language ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -7837,7 +7922,18 @@ observable:WirelessNetworkConnectionFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:password ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:ssid ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
@@ -8208,6 +8304,13 @@ observable:addressValue
 	rdfs:range xsd:string ;
 	.
 
+observable:advertisingID
+	a owl:DatatypeProperty ;
+	rdfs:label "advertisingID"@en ;
+	rdfs:comment "Advertising ID as a UUID. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:allocationStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "allocationStatus"@en ;
@@ -8219,6 +8322,27 @@ observable:alternateDataStreams
 	a owl:ObjectProperty ;
 	rdfs:label "alternateDataStreams"@en ;
 	rdfs:range observable:AlternateDataStream ;
+	.
+
+observable:androidFingerprint
+	a owl:DatatypeProperty ;
+	rdfs:label "androidFingerprint"@en ;
+	rdfs:comment "A string that uniquely identifies a build of the Android operating system. [based on https://developer.android.com/reference/android/os/Build#FINGERPRINT]"@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:androidID
+	a owl:DatatypeProperty ;
+	rdfs:label "androidID"@en ;
+	rdfs:comment "A 64-bit number (expressed as a hexadecimal string), unique to each combination of app-signing key, user, and device. [based on https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID]"@en ;
+	rdfs:range xsd:hexBinary ;
+	.
+
+observable:androidVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "androidVersion"@en ;
+	rdfs:comment "The user-visible version string. E.g., '1.0' or '3.4b5' or 'bananas'. This field is an opaque string. Do not assume that its value has any particular structure or that values of RELEASE from different releases can be somehow ordered. [based on https://developer.android.com/reference/android/os/Build.VERSION#RELEASE]"@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:application
@@ -9757,6 +9881,13 @@ observable:ipfix
 	rdfs:range types:Dictionary ;
 	.
 
+observable:isADBRootEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isADBRootEnabled"@en ;
+	rdfs:comment "Root access through the Android Debug Bridge (ADB) daemon observed to be enabled. [based on https://developer.android.com/studio/command-line/adb]"@en ;
+	rdfs:range xsd:boolean ;
+	.
+
 observable:isActive
 	a owl:DatatypeProperty ;
 	rdfs:label "isActive"@en ;
@@ -9803,6 +9934,13 @@ observable:isInjected
 	a owl:DatatypeProperty ;
 	rdfs:label "isInjected"@en ;
 	rdfs:comment "The isInjected property specifies whether or not the particular memory object has had data/code injected into it by another process."@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isLimitAdTrackingEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isLimitAdTrackingEnabled"@en ;
+	rdfs:comment "Limits advertising tracking if enabled. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -9860,6 +9998,13 @@ observable:isProtected
 observable:isRead
 	a owl:DatatypeProperty ;
 	rdfs:label "isRead"@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isSURootEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isSURootEnabled"@en ;
+	rdfs:comment "Root access through Linux SU binary observed to be enabled. [based on https://en.wikipedia.org/wiki/Rooting_(Android)]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -9980,6 +10125,7 @@ observable:lastTimeContacted
 	a owl:DatatypeProperty ;
 	rdfs:label "lastTimeContacted"@en ;
 	rdfs:comment "Last time contacted specifies the date and time that a particular contact was last contacted."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:lastVisit
@@ -10115,9 +10261,9 @@ observable:manuallyEnteredCount
 	.
 
 observable:manufacturer
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "manufacturer"@en ;
-	rdfs:range xsd:string ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:maxRunTime
@@ -11952,6 +12098,19 @@ observable:windowsVolumeAttributes
 	rdfs:label "windowsVolumeAttributes"@en ;
 	rdfs:comment "Specifies the attributes of a windows volume."@en ;
 	rdfs:range vocabulary:WindowsVolumeAttributeVocab ;
+	.
+
+observable:wirelessNetworkSecurityMode
+	a owl:DatatypeProperty ;
+	rdfs:label "wirelessNetworkSecurityMode"@en ;
+	rdfs:comment "Specifies the security mode of a wireless network (None, WEP, WPA, etc)."@en ;
+	rdfs:range [
+		a rdfs:DataType ;
+		owl:unionOf (
+			vocabulary:WirelessNetworkSecurityModeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:workItemData
