@@ -1744,20 +1744,17 @@ observable:DeviceFacet
 	rdfs:comment "A device facet is a grouping of characteristics unique to a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	sh:property
 		[
-<<<<<<< HEAD
+			sh:class identity:Identity ;
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:storageCapacityInBytes ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-=======
-			sh:class identity:Identity ;
->>>>>>> bfb4c57399b555b83bec736d7e73de27cfcd8ba8
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -3872,7 +3869,7 @@ observable:MobileDeviceFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:DeviceFacet ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "MobileDeviceFacet"@en ;
 	rdfs:comment "A mobile device facet is a grouping of characteristics unique to a portable computing device. [based on https://www.lexico.com/definition/mobile_device]"@en ;
 	sh:property
@@ -5235,7 +5232,7 @@ observable:SIMCardFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:DeviceFacet ;
+	rdfs:subClassOf core:Facet ;
 	rdfs:label "SIMCardFacet"@en ;
 	rdfs:comment "A SIM card facet is a grouping of characteristics unique to a subscriber identification module card intended to securely store the international mobile subscriber identity (IMSI) number and its related key, which are used to identify and authenticate subscribers on mobile telephony devices (such as mobile phones and computers). [based on https://en.wikipedia.org/wiki/SIM_card]"@en ;
 	sh:property
