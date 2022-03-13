@@ -1745,7 +1745,6 @@ observable:DeviceFacet
 	sh:property
 		[
 			sh:class identity:Identity ;
-			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:manufacturer ;
