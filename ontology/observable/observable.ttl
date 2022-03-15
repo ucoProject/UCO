@@ -4790,6 +4790,20 @@ observable:ObservableRelationship
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
+			sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+					sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:kindOfRelationship ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:or (
 				[
