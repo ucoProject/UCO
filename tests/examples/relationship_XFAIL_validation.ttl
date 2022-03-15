@@ -13,24 +13,14 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-1-1-2> ;
-			sh:resultMessage "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-						sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "CUSTOM_Influenced"^^vocabulary:ActionRelationshipTypeVocab ;
@@ -38,49 +28,44 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-1-1-3> ;
-			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "CUSTOM_Influenced"^^vocabulary:ObservableObjectRelationshipVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-2-3> ;
-			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
+			sh:focusNode <http://example.org/kb/relationship-1-2-2> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Initiated"^^vocabulary:ActionRelationshipTypeVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-1-2-3> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "Initiated"^^vocabulary:ObservableObjectRelationshipVocab ;
@@ -88,112 +73,59 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-1-3-2> ;
-			sh:resultMessage "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-						sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "Contained_Within"^^vocabulary:ActionRelationshipTypeVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-1-2> ;
-			sh:resultMessage 'Node Literal("CUSTOM_Influenced" = None, datatype=vocabulary:ActionRelationshipTypeVocab) does not conform to one or more shapes in [ sh:datatype vocabulary:ObservableObjectRelationshipVocab ] , [ sh:datatype xsd:string ]' ;
+			sh:focusNode <http://example.org/kb/relationship-1-3-3> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "CUSTOM_Influenced"^^vocabulary:ActionRelationshipTypeVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-1-2> ;
-			sh:resultMessage "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-						sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "CUSTOM_Influenced"^^vocabulary:ActionRelationshipTypeVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-1-2> ;
-			sh:resultMessage "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+				sh:datatype xsd:string ;
 				sh:maxCount "1"^^xsd:integer ;
-				sh:message "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
-				sh:severity sh:Info ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-2-1-2> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "CUSTOM_Influenced"^^vocabulary:ActionRelationshipTypeVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-2-1-3> ;
-			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "CUSTOM_Influenced"^^vocabulary:ObservableObjectRelationshipVocab ;
@@ -201,62 +133,29 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-2-2-2> ;
-			sh:resultMessage 'Node Literal("Initiated" = None, datatype=vocabulary:ActionRelationshipTypeVocab) does not conform to one or more shapes in [ sh:datatype vocabulary:ObservableObjectRelationshipVocab ] , [ sh:datatype xsd:string ]' ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "Initiated"^^vocabulary:ActionRelationshipTypeVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-2-2> ;
-			sh:resultMessage "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+				sh:datatype xsd:string ;
 				sh:maxCount "1"^^xsd:integer ;
-				sh:message "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
-				sh:severity sh:Info ;
 			] ;
 			sh:value "Initiated"^^vocabulary:ActionRelationshipTypeVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-2-2-3> ;
-			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "Initiated"^^vocabulary:ObservableObjectRelationshipVocab ;
@@ -264,65 +163,32 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-2-3-2> ;
-			sh:resultMessage 'Node Literal("Contained_Within" = None, datatype=vocabulary:ActionRelationshipTypeVocab) does not conform to one or more shapes in [ sh:datatype vocabulary:ObservableObjectRelationshipVocab ] , [ sh:datatype xsd:string ]' ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "Contained_Within"^^vocabulary:ActionRelationshipTypeVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-3-2> ;
-			sh:resultMessage "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-						sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "Contained_Within"^^vocabulary:ActionRelationshipTypeVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-3-2> ;
-			sh:resultMessage "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+				sh:datatype xsd:string ;
 				sh:maxCount "1"^^xsd:integer ;
-				sh:message "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
+				sh:nodeKind sh:Literal ;
 				sh:path core:kindOfRelationship ;
-				sh:severity sh:Info ;
 			] ;
 			sh:value "Contained_Within"^^vocabulary:ActionRelationshipTypeVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-2-3-3> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary:ObservableObjectRelationshipVocab ;
 		]
 		;
 	.
