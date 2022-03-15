@@ -3867,6 +3867,11 @@ observable:MobileDeviceFacet
 	rdfs:comment "A mobile device facet is a grouping of characteristics unique to a portable computing device. [based on https://www.lexico.com/definition/mobile_device]"@en ;
 	sh:property
 		[
+			sh:class observable:MobileAccountFacet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:mobileAccount ;
+		] ,
+		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -3919,11 +3924,6 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:network ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:MSISDN ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
@@ -5242,6 +5242,11 @@ observable:SIMCardFacet
 			sh:path observable:carrier ;
 		] ,
 		[
+			sh:class observable:MobileAccountFacet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:mobileAccount ;
+		] ,
+		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5252,12 +5257,6 @@ observable:SIMCardFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:ICCID ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:IMSI ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -10426,6 +10425,12 @@ observable:minorSubsystemVersion
 	rdfs:comment """Specifies the minor version number of the subsystem.
           """@en ;
 	rdfs:range xsd:unsignedShort ;
+	.
+
+observable:mobileAccount
+	a owl:ObjectProperty ;
+	rdfs:label "mobileAccount"@en ;
+	rdfs:range observable:MobileAccountFacet ;
 	.
 
 observable:mockLocationsAllowed
