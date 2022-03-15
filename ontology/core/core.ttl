@@ -312,65 +312,10 @@ core:Relationship
 			sh:path core:startTime ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-				]
-				[
-					sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path core:kindOfRelationship ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-				]
-				[
-					sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path core:kindOfRelationship ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-				]
-				[
-					sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path core:kindOfRelationship ;
-		] ,
-		[
-			sh:message "Value is outside the default relationship vocabularies." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-				]
-				[
-					sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-				]
-			) ;
-			sh:path core:kindOfRelationship ;
-			sh:severity sh:Info ;
 		]
 		;
 	sh:targetClass core:Relationship ;
