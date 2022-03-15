@@ -12,106 +12,6 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-1-2> ;
-			sh:resultMessage "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-						sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "CUSTOM_Influenced"^^vocabulary:ActionRelationshipTypeVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-1-3> ;
-			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "CUSTOM_Influenced"^^vocabulary:ObservableObjectRelationshipVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-2-3> ;
-			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "Initiated"^^vocabulary:ObservableObjectRelationshipVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-3-2> ;
-			sh:resultMessage "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-						sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-					]
-					[
-						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "Contained_Within"^^vocabulary:ActionRelationshipTypeVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-2-1-2> ;
 			sh:resultMessage 'Node Literal("CUSTOM_Influenced" = None, datatype=vocabulary:ActionRelationshipTypeVocab) does not conform to one or more shapes in [ sh:datatype vocabulary:ObservableObjectRelationshipVocab ] , [ sh:datatype xsd:string ]' ;
 			sh:resultPath core:kindOfRelationship ;
@@ -135,19 +35,17 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-2-1-2> ;
-			sh:resultMessage "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
+			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:OrConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
 				sh:or (
 					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-						sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-					]
-					[
 						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
 					]
 					[
 						sh:datatype xsd:string ;
@@ -181,11 +79,9 @@
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:OrConstraintComponent ;
 			sh:sourceShape [
+				sh:maxCount "1"^^xsd:integer ;
 				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
 				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					]
 					[
 						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
 						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
@@ -223,6 +119,29 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-2-2-2> ;
+			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceShape [
+				sh:maxCount "1"^^xsd:integer ;
+				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
+				sh:or (
+					[
+						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
+					]
+					[
+						sh:datatype xsd:string ;
+					]
+				) ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Initiated"^^vocabulary:ActionRelationshipTypeVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-2-2-2> ;
 			sh:resultMessage "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Info ;
@@ -244,11 +163,9 @@
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:OrConstraintComponent ;
 			sh:sourceShape [
+				sh:maxCount "1"^^xsd:integer ;
 				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
 				sh:or (
-					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-					]
 					[
 						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
 						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
@@ -286,19 +203,17 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-2-3-2> ;
-			sh:resultMessage "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
+			sh:resultMessage "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:OrConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
 				sh:or (
 					[
-						sh:datatype vocabulary:ActionRelationshipTypeVocab ;
-						sh:in vocabulary:ActionRelationshipTypeVocab-members ;
-					]
-					[
 						sh:datatype vocabulary:ObservableObjectRelationshipVocab ;
+						sh:in vocabulary:ObservableObjectRelationshipVocab-members ;
 					]
 					[
 						sh:datatype xsd:string ;
