@@ -32,7 +32,6 @@ all: \
   %.ttl \
   $(top_srcdir)/.lib.done.log
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source $< \
 	  --source-format turtle \

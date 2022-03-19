@@ -1,20 +1,18 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/tool
-# imports: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/core
 
-@base <https://unifiedcyberontology.org/ontology/uco/tool> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
+@prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/tool>
+<https://ontology.unifiedcyberontology.org/uco/tool>
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
 	.
 
 tool:AnalyticTool

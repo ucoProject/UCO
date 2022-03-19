@@ -1,9 +1,9 @@
 {
     "@context": {
         "kb": "http://example.org/kb/",
-        "action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "core": "https://unifiedcyberontology.org/ontology/uco/core#",
-        "observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
