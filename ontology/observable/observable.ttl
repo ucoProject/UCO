@@ -277,6 +277,10 @@ observable:AndroidDeviceFacet
 	.
 
 observable:AntennaAlignmentFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:label "AntennaAlignmentFacet"@en ;
 	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
 	sh:property
@@ -300,6 +304,7 @@ observable:AntennaAlignmentFacet
 		]
 		;
 	sh:targetClass observable:AntennaAlignmentFacet ;
+	.
 
 observable:Appliance
 	a
