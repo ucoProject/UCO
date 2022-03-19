@@ -276,13 +276,13 @@ observable:AndroidDeviceFacet
 	sh:targetClass observable:AndroidDeviceFacet ;
 	.
 
-observable:AntennaAlignmentFacet
+observable:AntennaFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:label "AntennaAlignmentFacet"@en ;
-	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
+	rdfs:label "AntennaFacet"@en ;
+	rdfs:comment "An antenna facet contains the metadata surrounding the tower's antenna position."@en ;
 	sh:property
 		[
 			sh:datatype xsd:decimal ;
@@ -301,9 +301,15 @@ observable:AntennaAlignmentFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:skew ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:towerHeight ;
 		]
 		;
-	sh:targetClass observable:AntennaAlignmentFacet ;
+	sh:targetClass observable:AntennaFacet ;
 	.
 
 observable:Appliance
@@ -970,6 +976,11 @@ observable:CapturedTelecommunicationsInformationFacet
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:captureCellTower ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:forwardedToPhone ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
@@ -9707,6 +9718,13 @@ observable:format
 	rdfs:range xsd:string ;
 	.
 
+observable:forwardedToPhone
+	a owl:ObjectProperty ;
+	rdfs:label "forwardedToPhone"@en ;
+	rdfs:comment "The phone account to which a call was forwarded."@en ;
+	rdfs:range observable:PhoneAccount ;
+	.
+
 observable:fragment
 	a owl:DatatypeProperty ;
 	rdfs:label "fragment"@en ;
@@ -12006,6 +12024,13 @@ observable:towerCid
 	rdfs:label "towerCid"@en ;
 	rdfs:comment "Specifies the global identifier network code of the cell tower."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:towerHeight
+	a owl:DatatypeProperty ;
+	rdfs:label "towerHeight"@en ;
+	rdfs:comment "Specifies the height (in meters) of the cell tower."@en ;
+	rdfs:range xsd:decimal ;
 	.
 
 observable:towerLac
