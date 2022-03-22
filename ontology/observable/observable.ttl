@@ -160,8 +160,34 @@ observable:AccountFacet
 		] ,
 		[
 			sh:datatype vocabulary:AccountTypeVocab ;
+			sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
+			sh:path observable:accountType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:AccountTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:accountType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:AccountTypeVocab ;
+					sh:in vocabulary:AccountTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:accountType ;
 		]
 		;
@@ -490,6 +516,8 @@ observable:AutonomousSystemFacet
 	rdfs:label "AutonomousSystemFacet"@en ;
 	rdfs:comment "An autonomous system facet is a grouping of characteristics unique to a collection of connected Internet Protocol (IP) routing prefixes under the control of one or more network operators on behalf of a single administrative entity or domain that presents a common, clearly defined routing policy to the Internet. [based on https://en.wikipedia.org/wiki/Autonomous_system_(Internet)]"@en ;
 	sh:property
+		observable:regionalInternetRegistry-shape-value-not-vocabulary-member ,
+		observable:regionalInternetRegistry-shape-value-outside-default-vocabulary ,
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -504,9 +532,16 @@ observable:AutonomousSystemFacet
 			sh:path observable:asHandle ;
 		] ,
 		[
-			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RegionalRegistryTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:regionalInternetRegistry ;
 		]
 		;
@@ -1137,8 +1172,34 @@ observable:ContactAddress
 		] ,
 		[
 			sh:datatype vocabulary:ContactAddressScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactAddressScopeVocab." ;
+			sh:path observable:contactAddressScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactAddressScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactAddressScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactAddressScopeVocab ;
+					sh:in vocabulary:ContactAddressScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactAddressScope ;
 		]
 		;
@@ -1228,8 +1289,34 @@ observable:ContactEmail
 		] ,
 		[
 			sh:datatype vocabulary:ContactEmailScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactEmailScopeVocab." ;
+			sh:path observable:contactEmailScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactEmailScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactEmailScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactEmailScopeVocab ;
+					sh:in vocabulary:ContactEmailScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactEmailScope ;
 		]
 		;
@@ -1463,8 +1550,34 @@ observable:ContactPhone
 		] ,
 		[
 			sh:datatype vocabulary:ContactPhoneScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactPhoneScopeVocab." ;
+			sh:path observable:contactPhoneScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactPhoneScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactPhoneScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactPhoneScopeVocab ;
+					sh:in vocabulary:ContactPhoneScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactPhoneScope ;
 		]
 		;
@@ -1511,8 +1624,34 @@ observable:ContactSIP
 		] ,
 		[
 			sh:datatype vocabulary:ContactSIPScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactSIPScopeVocab." ;
+			sh:path observable:contactSIPScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactSIPScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactSIPScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactSIPScopeVocab ;
+					sh:in vocabulary:ContactSIPScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactSIPScope ;
 		]
 		;
@@ -1535,8 +1674,34 @@ observable:ContactURL
 		] ,
 		[
 			sh:datatype vocabulary:ContactURLScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactURLScopeVocab." ;
+			sh:path observable:contactURLScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactURLScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactURLScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactURLScopeVocab ;
+					sh:in vocabulary:ContactURLScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactURLScope ;
 		]
 		;
@@ -1618,8 +1783,34 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype vocabulary:EndiannessTypeVocab ;
+			sh:message "Value is outside the default vocabulary EndiannessTypeVocab." ;
+			sh:path observable:byteOrder ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:EndiannessTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:byteOrder ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:EndiannessTypeVocab ;
+					sh:in vocabulary:EndiannessTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:byteOrder ;
 		]
 		;
@@ -3563,8 +3754,34 @@ observable:MemoryFacet
 		] ,
 		[
 			sh:datatype vocabulary:MemoryBlockTypeVocab ;
+			sh:message "Value is outside the default vocabulary MemoryBlockTypeVocab." ;
+			sh:path observable:blockType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:MemoryBlockTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:blockType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:MemoryBlockTypeVocab ;
+					sh:in vocabulary:MemoryBlockTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:blockType ;
 		]
 		;
@@ -5685,8 +5902,34 @@ observable:TaskActionType
 		] ,
 		[
 			sh:datatype vocabulary:TaskActionTypeVocab ;
+			sh:message "Value is outside the default vocabulary TaskActionTypeVocab." ;
+			sh:path observable:actionType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskActionTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:actionType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskActionTypeVocab ;
+					sh:in vocabulary:TaskActionTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:actionType ;
 		]
 		;
@@ -5750,14 +5993,66 @@ observable:TriggerType
 		] ,
 		[
 			sh:datatype vocabulary:TriggerFrequencyVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TriggerFrequencyVocab." ;
 			sh:path observable:triggerFrequency ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary:TriggerTypeVocab ;
+			sh:message "Value is outside the default vocabulary TriggerTypeVocab." ;
+			sh:path observable:triggerType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TriggerFrequencyVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerFrequency ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TriggerTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TriggerFrequencyVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TriggerFrequencyVocab ;
+					sh:in vocabulary:TriggerFrequencyVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerFrequency ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TriggerTypeVocab ;
+					sh:in vocabulary:TriggerTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:triggerType ;
 		]
 		;
@@ -6246,8 +6541,35 @@ observable:URLVisitFacet
 			sh:path observable:visitDuration ;
 		] ,
 		[
+			sh:datatype vocabulary:URLTransitionTypeVocab ;
+			sh:message "Value is outside the default vocabulary URLTransitionTypeVocab." ;
+			sh:path observable:urlTransitionType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:URLTransitionTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:urlTransitionType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:URLTransitionTypeVocab ;
+					sh:in vocabulary:URLTransitionTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:urlTransitionType ;
 		]
 		;
@@ -6444,6 +6766,8 @@ observable:WhoIsFacet
 	rdfs:label "WhoIsFacet"@en ;
 	rdfs:comment "A whois facet is a grouping of characteristics unique to a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
+		observable:regionalInternetRegistry-shape-value-not-vocabulary-member ,
+		observable:regionalInternetRegistry-shape-value-outside-default-vocabulary ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -6527,12 +6851,6 @@ observable:WhoIsFacet
 			sh:path observable:registrantIDs ;
 		] ,
 		[
-			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:regionalInternetRegistry ;
-		] ,
-		[
 			sh:datatype vocabulary:WhoisDNSSECTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -6540,8 +6858,47 @@ observable:WhoIsFacet
 		] ,
 		[
 			sh:datatype vocabulary:WhoisStatusTypeVocab ;
+			sh:message "Value is outside the default vocabulary WhoisStatusTypeVocab." ;
+			sh:path observable:status ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RegionalRegistryTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:regionalInternetRegistry ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WhoisStatusTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WhoisStatusTypeVocab ;
+					sh:in vocabulary:WhoisStatusTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:status ;
 		]
 		;
@@ -6556,12 +6913,40 @@ observable:WhoisContactFacet
 	rdfs:subClassOf observable:ContactFacet ;
 	rdfs:label "WhoIsContactFacet"@en ;
 	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
-	sh:property [
-		sh:datatype vocabulary:WhoisContactTypeVocab ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:whoisContactType ;
-	] ;
+	sh:property
+		[
+			sh:datatype vocabulary:WhoisContactTypeVocab ;
+			sh:message "Value is outside the default vocabulary WhoisContactTypeVocab." ;
+			sh:path observable:whoisContactType ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WhoisContactTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:whoisContactType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WhoisContactTypeVocab ;
+					sh:in vocabulary:WhoisContactTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:whoisContactType ;
+		]
+		;
 	sh:targetClass observable:WhoisContactFacet ;
 	.
 
@@ -7754,20 +8139,104 @@ observable:WindowsTaskFacet
 		] ,
 		[
 			sh:datatype vocabulary:TaskFlagVocab ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TaskFlagVocab." ;
 			sh:path observable:flags ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary:TaskPriorityVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TaskPriorityVocab." ;
 			sh:path observable:priority ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary:TaskStatusVocab ;
+			sh:message "Value is outside the default vocabulary TaskStatusVocab." ;
+			sh:path observable:status ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskPriorityVocab ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:status ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskFlagVocab ;
+					sh:in vocabulary:TaskFlagVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:flags ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskPriorityVocab ;
+					sh:in vocabulary:TaskPriorityVocab-members ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskStatusVocab ;
+					sh:in vocabulary:TaskStatusVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskFlagVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:flags ;
 		]
 		;
 	sh:targetClass observable:WindowsTaskFacet ;
@@ -7869,15 +8338,41 @@ observable:WindowsVolumeFacet
 		] ,
 		[
 			sh:datatype vocabulary:WindowsDriveTypeVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary WindowsDriveTypeVocab." ;
 			sh:path observable:driveType ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary:WindowsVolumeAttributeVocab ;
 			sh:maxCount "4"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:windowsVolumeAttributes ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WindowsDriveTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:driveType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WindowsDriveTypeVocab ;
+					sh:in vocabulary:WindowsDriveTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:driveType ;
 		]
 		;
 	sh:targetClass observable:WindowsVolumeFacet ;
@@ -7935,6 +8430,27 @@ observable:WirelessNetworkConnectionFacet
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:wirelessNetworkSecurityMode ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
+					sh:in vocabulary:WirelessNetworkSecurityModeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
@@ -8255,7 +8771,13 @@ observable:accountType
 	a owl:DatatypeProperty ;
 	rdfs:label "accountType"@en ;
 	rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
-	rdfs:range vocabulary:AccountTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:AccountTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:actionID
@@ -8276,7 +8798,13 @@ observable:actionType
 	a owl:DatatypeProperty ;
 	rdfs:label "actionType"@en ;
 	rdfs:comment "Specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
-	rdfs:range vocabulary:TaskActionTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TaskActionTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:activeDirectoryGroups
@@ -8511,7 +9039,13 @@ observable:blockType
 	a owl:DatatypeProperty ;
 	rdfs:label "blockType"@en ;
 	rdfs:comment "The blockType property specifies the block type of a particular memory object."@en ;
-	rdfs:range vocabulary:MemoryBlockTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:MemoryBlockTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:bluetoothDeviceName
@@ -8564,7 +9098,13 @@ observable:browserUserProfile
 observable:byteOrder
 	a owl:DatatypeProperty ;
 	rdfs:label "byteOrder"@en ;
-	rdfs:range vocabulary:EndiannessTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:EndiannessTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:byteStringValue
@@ -9173,7 +9713,13 @@ observable:driveType
 	a owl:DatatypeProperty ;
 	rdfs:label "driveType"@en ;
 	rdfs:comment "Specifies the drive type of a windows volume."@en ;
-	rdfs:range vocabulary:WindowsDriveTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:WindowsDriveTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:dst
@@ -9554,7 +10100,13 @@ observable:flags
 	a owl:DatatypeProperty ;
 	rdfs:label "flags"@en ;
 	rdfs:comment "Specifies any flags that modify the behavior of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.85).aspx."@en ;
-	rdfs:range vocabulary:TaskFlagVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TaskFlagVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:followersCount
@@ -11142,7 +11694,36 @@ observable:regionalInternetRegistry
 	a owl:DatatypeProperty ;
 	rdfs:label "regionalInternetRegistry"@en ;
 	rdfs:comment "specifies the name of the Regional Internet Registry (RIR) which allocated the IP address contained in a WHOIS entry."@en ;
-	rdfs:range vocabulary:RegionalRegistryTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:RegionalRegistryTypeVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
+observable:regionalInternetRegistry-shape-value-not-vocabulary-member
+	a sh:PropertyShape ;
+	sh:message "Value is not member of the vocabulary RegionalRegistryTypeVocab." ;
+	sh:or (
+		[
+			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
+			sh:in vocabulary:RegionalRegistryTypeVocab-members ;
+		]
+		[
+			sh:datatype xsd:string ;
+		]
+	) ;
+	sh:path observable:regionalInternetRegistry ;
+	.
+
+observable:regionalInternetRegistry-shape-value-outside-default-vocabulary
+	a sh:PropertyShape ;
+	sh:datatype vocabulary:RegionalRegistryTypeVocab ;
+	sh:message "Value is outside the default vocabulary RegionalRegistryTypeVocab." ;
+	sh:path observable:regionalInternetRegistry ;
+	sh:severity sh:Info ;
 	.
 
 observable:registeredOrganization
@@ -11862,7 +12443,13 @@ observable:triggerFrequency
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerFrequency"@en ;
 	rdfs:comment "Specifies the frequency at which the trigger repeats."@en ;
-	rdfs:range vocabulary:TriggerFrequencyVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TriggerFrequencyVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:triggerList
@@ -11890,7 +12477,13 @@ observable:triggerType
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerType"@en ;
 	rdfs:comment "Specifies the type of the task trigger."@en ;
-	rdfs:range vocabulary:TriggerTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TriggerTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:twitterHandle

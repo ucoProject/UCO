@@ -104,8 +104,34 @@ action:Action
 		] ,
 		[
 			sh:datatype vocabulary:ActionStatusTypeVocab ;
+			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:path action:actionStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ActionStatusTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:actionStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ActionStatusTypeVocab ;
+					sh:in vocabulary:ActionStatusTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path action:actionStatus ;
 		]
 		;
@@ -208,9 +234,35 @@ action:ActionFrequencyFacet
 		] ,
 		[
 			sh:datatype vocabulary:TrendVocab ;
+			sh:message "Value is outside the default vocabulary TrendVocab." ;
+			sh:path action:trend ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TrendVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:trend ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TrendVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TrendVocab ;
+					sh:in vocabulary:TrendVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path action:trend ;
 		]
 		;
@@ -315,7 +367,13 @@ action:actionStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "actionStatus"@en ;
 	rdfs:comment "The current state of the action."@en ;
-	rdfs:range vocabulary:ActionStatusTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:ActionStatusTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 action:argumentName
@@ -456,7 +514,13 @@ action:trend
 	a owl:DatatypeProperty ;
 	rdfs:label "trend"@en ;
 	rdfs:comment "A characterization of the frequency trend for the occurence of an action."@en ;
-	rdfs:range vocabulary:TrendVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TrendVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 action:units

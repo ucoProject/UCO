@@ -42,60 +42,60 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
+			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
 			] ;
 			sh:value "Pending" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action1> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
+			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
 			] ;
 			sh:value "Pending" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action2> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
+			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
 			] ;
 			sh:value "Pending" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action3> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
+			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
 			] ;
 			sh:value "Pending" ;
 		] ,
