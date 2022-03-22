@@ -498,11 +498,11 @@ vocabulary:ContactEmailScopeVocab
 	.
 
 vocabulary:ContactEmailScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactAddressScopeVocab ;
+	rdf:first "home"^^vocabulary:ContactEmailScopeVocab ;
 	rdf:rest (
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
-		"cloud"^^vocabulary:ContactAddressScopeVocab
+		"work"^^vocabulary:ContactEmailScopeVocab
+		"school"^^vocabulary:ContactEmailScopeVocab
+		"cloud"^^vocabulary:ContactEmailScopeVocab
 	) ;
 	.
 
@@ -515,15 +515,15 @@ vocabulary:ContactPhoneScopeVocab
 	.
 
 vocabulary:ContactPhoneScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactAddressScopeVocab ;
+	rdf:first "home"^^vocabulary:ContactPhoneScopeVocab ;
 	rdf:rest (
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
-		"mobile"^^vocabulary:ContactAddressScopeVocab
-		"main"^^vocabulary:ContactAddressScopeVocab
-		"home fax"^^vocabulary:ContactAddressScopeVocab
-		"work fax"^^vocabulary:ContactAddressScopeVocab
-		"pager"^^vocabulary:ContactAddressScopeVocab
+		"work"^^vocabulary:ContactPhoneScopeVocab
+		"school"^^vocabulary:ContactPhoneScopeVocab
+		"mobile"^^vocabulary:ContactPhoneScopeVocab
+		"main"^^vocabulary:ContactPhoneScopeVocab
+		"home fax"^^vocabulary:ContactPhoneScopeVocab
+		"work fax"^^vocabulary:ContactPhoneScopeVocab
+		"pager"^^vocabulary:ContactPhoneScopeVocab
 	) ;
 	.
 
@@ -536,10 +536,10 @@ vocabulary:ContactSIPScopeVocab
 	.
 
 vocabulary:ContactSIPScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactAddressScopeVocab ;
+	rdf:first "home"^^vocabulary:ContactSIPScopeVocab ;
 	rdf:rest (
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
+		"work"^^vocabulary:ContactSIPScopeVocab
+		"school"^^vocabulary:ContactSIPScopeVocab
 	) ;
 	.
 
@@ -549,10 +549,10 @@ vocabulary:ContactURLScopeVocab
 	rdfs:label "Contact URL Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for URL entries of digital contacts."@en ;
 	owl:oneOf (
-		"home"^^vocabulary:ContactAddressScopeVocab
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
-		"homepage"^^vocabulary:ContactAddressScopeVocab
+		"home"^^vocabulary:ContactURLScopeVocab
+		"work"^^vocabulary:ContactURLScopeVocab
+		"school"^^vocabulary:ContactURLScopeVocab
+		"homepage"^^vocabulary:ContactURLScopeVocab
 	) ;
 	.
 
