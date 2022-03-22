@@ -13,8 +13,12 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is 0.7.0
+The current release of UCO is 0.8.0.
 
-UCO Version 0.7.0 is primarily focused on conversion of UCO ontologies to leverage the Shapes Constraint Language (SHACL) rather than domain assertions and owl property restrictions to define class shapes. In addition, it added a continuous integration (CI) method for testing and verifying the ontology and it corrects several minor issues and bugs.
+UCO Version 0.8.0 provides an initial implementation of Shapes Constraint Language (SHACL) review of semi-open vocabulary usage.  If a suggested term from a UCO controlled vocabulary is not used on a field that permits vocabulary terms or strings, a "Info"-level validation result is reported in the SHACL validation report.
 
-Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.
+However, this data-review feature encountered an issue with the `core:Relationship` object's `core:kindOfRelationship` property.  In UCO 0.8.0, `core:kindOfRelationship` is now enforced as being only a string with no datatype annotations - that is, in JSON-LD that means to express a contained-within relationship, a plain `"Contained_Within"` string value should be used, instead of the datatype-annotating JSON dictionary `{"@type": "vocabulary:ObservableObjectRelationshipVocab", "@value": "Contained_Within"}`.
+
+UCO 0.8.0 also has revised its ontology IRI structure to enable delivery of ontology resources from a new subdomain, `ontology.unifiedcyberontology.org`.  This aligns UCO with an IRI restructuring proposal previously adopted by the Cyber-investigation Analysis Standard Expression (CASE) community.  Users of UCO 0.7.0 and earlier should be aware that their UCO IRI prefixes should be adjusted.  For instance, the prefix of the Action namespace `https://unifiedcyberontology.org/ontology/uco/action#` is now `https://ontology.unifiedcyberontology.org/uco/action/`.
+
+Other improvements are documented in the [UCO 0.8.0 release notes](https://unifiedcyberontology.org/releases/0.8.0/).
