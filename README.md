@@ -15,10 +15,7 @@ The purpose of this repository is to provide a foundation for broader community 
 ### Current Release
 The current release of UCO is 0.8.0.
 
-UCO Version 0.8.0 provides an initial implementation of Shapes Constraint Language (SHACL) review of semi-open vocabulary usage.  If a suggested term from a UCO controlled vocabulary is not used on a field that permits vocabulary terms or strings, a "Info"-level validation result is reported in the SHACL validation report.
+UCO 0.8.0 is primarily focused on an initial implementation of Shapes Constraint Language (SHACL) review of semi-open vocabulary usage, restructuring of all UCO ontology IRIs and file structures to enable delivery of ontology resources from a new subdomain, flattening actionActionReferencesFacet properties directly onto action:Action, normalizing decimal number properties to xsd:decimal, improvements to unit and CI testing, numerous modifications and improvements to the Observable namespace, and correcting several minor issues and bugs.
 
-However, this data-review feature encountered an issue with the `core:Relationship` object's `core:kindOfRelationship` property.  In UCO 0.8.0, `core:kindOfRelationship` is now enforced as being only a string with no datatype annotations - that is, in JSON-LD that means to express a contained-within relationship, a plain `"Contained_Within"` string value should be used, instead of the datatype-annotating JSON dictionary `{"@type": "vocabulary:ObservableObjectRelationshipVocab", "@value": "Contained_Within"}`.
 
-UCO 0.8.0 also has revised its ontology IRI structure to enable delivery of ontology resources from a new subdomain, `ontology.unifiedcyberontology.org`.  This aligns UCO with an IRI restructuring proposal previously adopted by the Cyber-investigation Analysis Standard Expression (CASE) community.  Users of UCO 0.7.0 and earlier should be aware that their UCO IRI prefixes should be adjusted.  For instance, the prefix of the Action namespace `https://unifiedcyberontology.org/ontology/uco/action#` is now `https://ontology.unifiedcyberontology.org/uco/action/`.
-
-Other improvements are documented in the [UCO 0.8.0 release notes](https://unifiedcyberontology.org/releases/0.8.0/).
+More detail of improvements is documented in the [UCO 0.8.0 release notes](https://unifiedcyberontology.org/releases/0.8.0/).
