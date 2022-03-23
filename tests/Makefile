@@ -17,7 +17,7 @@ top_srcdir := $(shell cd .. ; pwd)
 
 PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3)
 
-uco_turtle_files := $(shell /bin/ls $(top_srcdir)/uco-*/*.ttl)
+uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl)
 
 all:
 
@@ -87,7 +87,6 @@ uco_monolithic.ttl: \
 	    __$@ \
 	    $(uco_turtle_files)
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source __$@ \
 	  --source-format turtle \

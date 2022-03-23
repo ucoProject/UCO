@@ -1,0 +1,53 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:hash-2",
+            "@type": "types:Hash",
+            "rdfs:comment": "Should trigger sh:Info from the literal not having its datatype be the HashNameVocab vocabulary.",
+            "types:hashMethod": "CUSTOM_hash",
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "a39a3ee5e6b4b0d3255bfef95601890afd80709d"
+            }
+        },
+        {
+            "@id": "kb:hash-3",
+            "@type": "types:Hash",
+            "rdfs:comment": "Should trigger sh:Violation from the literal declaring itself a member of the vocabulary, but not being a member.  ('SHA1' is in the vocabulary; 'SHA-1' isn't.)",
+            "types:hashMethod": {
+                "@type": "vocabulary:HashNameVocab",
+                "@value": "SHA-1"
+            },
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+        },
+        {
+            "@id": "kb:hash-4",
+            "@type": "types:Hash",
+            "rdfs:comment": "This should trigger sh:Info from the term not having its datatype be the vocabulary.  Currently, no inspection is done on the lexical value.",
+            "types:hashMethod": "SHA1",
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+        },
+        {
+            "@id": "kb:hash-5",
+            "@type": "types:Hash",
+            "rdfs:comment": "This should trigger sh:Violation from the term not being a string.",
+            "types:hashMethod": 1,
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+        }
+    ]
+}

@@ -1,8 +1,8 @@
 {
     "@context": {
         "acme": "http://example.org/ontology/acme/core/",
-        "action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },

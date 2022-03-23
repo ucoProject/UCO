@@ -13,8 +13,8 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is 0.7.0
+The current release of UCO is 0.8.0.
 
-UCO Version 0.7.0 is primarily focused on conversion of UCO ontologies to leverage the Shapes Constraint Language (SHACL) rather than domain assertions and owl property restrictions to define class shapes. In addition, it added a continuous integration (CI) method for testing and verifying the ontology and it corrects several minor issues and bugs.
+UCO 0.8.0 is primarily focused on an initial implementation of Shapes Constraint Language (SHACL) review of semi-open vocabulary usage, restructuring of all UCO ontology IRIs and file structures to enable delivery of ontology resources from a new subdomain, flattening action:ActionReferencesFacet properties directly onto action:Action, normalizing decimal number properties to xsd:decimal, improvements to unit and CI testing, numerous modifications and improvements to the Observable namespace, and correcting several minor issues and bugs.
 
-Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.
+More detail of improvements is documented in the [UCO 0.8.0 release notes](https://unifiedcyberontology.org/releases/0.8.0/).
