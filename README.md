@@ -15,7 +15,6 @@ The purpose of this repository is to provide a foundation for broader community 
 ### Current Release
 The current release of UCO is 0.8.0.
 
-UCO 0.8.0 is primarily focused on an initial implementation of Shapes Constraint Language (SHACL) review of semi-open vocabulary usage, restructuring of all UCO ontology IRIs and file structures to enable delivery of ontology resources from a new subdomain, flattening actionActionReferencesFacet properties directly onto action:Action, normalizing decimal number properties to xsd:decimal, improvements to unit and CI testing, numerous modifications and improvements to the Observable namespace, and correcting several minor issues and bugs.
-
+UCO 0.8.0 is primarily focused on an initial implementation of Shapes Constraint Language (SHACL) review of semi-open vocabulary usage, restructuring of all UCO ontology IRIs and file structures to enable delivery of ontology resources from a new subdomain, flattening action:ActionReferencesFacet properties directly onto action:Action, normalizing decimal number properties to xsd:decimal, improvements to unit and CI testing, numerous modifications and improvements to the Observable namespace, and correcting several minor issues and bugs.
 
 More detail of improvements is documented in the [UCO 0.8.0 release notes](https://unifiedcyberontology.org/releases/0.8.0/).
