@@ -1962,6 +1962,23 @@ observable:DeviceFacet
 	sh:targetClass observable:DeviceFacet ;
 	.
 
+observable:DeviceStorageFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "DeviceStorageFacet"@en ;
+	rdfs:comment "A device storage facet is a grouping of characteristics unique to a the storage capabilities of a piece of equipment or a mechanism designed to serve a special purpose or perform a special function."@en ;
+	sh:property [
+		sh:datatype xsd:integer ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
+		sh:path observable:totalStorageCapacityInBytes ;
+	] ;
+	sh:targetClass observable:DeviceStorageFacet ;
+	.
+
 observable:DigitalAccount
 	a
 		owl:Class ,
@@ -4102,12 +4119,6 @@ observable:MobileDeviceFacet
 			sh:path observable:phoneActivationTime ;
 		] ,
 		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:storageCapacityInBytes ;
-		] ,
-		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5457,12 +5468,6 @@ observable:SIMCardFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:carrier ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:storageCapacityInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -12220,13 +12225,6 @@ observable:statusesCount
 	rdfs:range xsd:nonNegativeInteger ;
 	.
 
-observable:storageCapacityInBytes
-	a owl:DatatypeProperty ;
-	rdfs:label "storageCapacityInBytes"@en ;
-	rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
-	rdfs:range xsd:integer ;
-	.
-
 observable:stringValue
 	a owl:DatatypeProperty ;
 	rdfs:label "stringValue"@en ;
@@ -12415,6 +12413,13 @@ observable:totalSpace
 	a owl:DatatypeProperty ;
 	rdfs:label "totalSpace"@en ;
 	rdfs:comment "Specifies the total amount of space available on the partition, in bytes."@en ;
+	rdfs:range xsd:integer ;
+	.
+
+observable:totalStorageCapacityInBytes
+	a owl:DatatypeProperty ;
+	rdfs:label "totalStorageCapacityInBytes"@en ;
+	rdfs:comment "The number of bytes that can be stored on a storage device."@en ;
 	rdfs:range xsd:integer ;
 	.
 
