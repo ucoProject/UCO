@@ -21,8 +21,12 @@ all: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  hash_PASS_validation.ttl \
+  hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
-  location_XFAIL_validation.ttl
+  location_XFAIL_validation.ttl \
+  relationship_PASS_validation.ttl \
+  relationship_XFAIL_validation.ttl
 
 .PRECIOUS: \
   %_validation.ttl
@@ -42,6 +46,7 @@ all: \
   $(tests_srcdir)/uco_monolithic.ttl
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pyshacl \
+	    --allow-warnings \
 	    --data-file-format json-ld \
 	    --format turtle \
 	    --inference none \
@@ -53,7 +58,6 @@ all: \
 	    $< \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source __$@ \
 	  --source-format turtle \
@@ -66,8 +70,12 @@ check: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  hash_PASS_validation.ttl \
+  hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
-  location_XFAIL_validation.ttl
+  location_XFAIL_validation.ttl \
+  relationship_PASS_validation.ttl \
+  relationship_XFAIL_validation.ttl
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG
