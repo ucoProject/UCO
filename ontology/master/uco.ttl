@@ -1,46 +1,44 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/uco
-# imports: https://unifiedcyberontology.org/ontology/uco/action
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/identity
-# imports: https://unifiedcyberontology.org/ontology/uco/location
-# imports: https://unifiedcyberontology.org/ontology/uco/marking
-# imports: https://unifiedcyberontology.org/ontology/uco/observable
-# imports: https://unifiedcyberontology.org/ontology/uco/pattern
-# imports: https://unifiedcyberontology.org/ontology/uco/role
-# imports: https://unifiedcyberontology.org/ontology/uco/time
-# imports: https://unifiedcyberontology.org/ontology/uco/tool
-# imports: https://unifiedcyberontology.org/ontology/uco/types
-# imports: https://unifiedcyberontology.org/ontology/uco/victim
-# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/uco/action
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/identity
+# imports: https://ontology.unifiedcyberontology.org/uco/location
+# imports: https://ontology.unifiedcyberontology.org/uco/marking
+# imports: https://ontology.unifiedcyberontology.org/uco/observable
+# imports: https://ontology.unifiedcyberontology.org/uco/pattern
+# imports: https://ontology.unifiedcyberontology.org/uco/role
+# imports: https://ontology.unifiedcyberontology.org/uco/time
+# imports: https://ontology.unifiedcyberontology.org/uco/tool
+# imports: https://ontology.unifiedcyberontology.org/uco/types
+# imports: https://ontology.unifiedcyberontology.org/uco/victim
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
-@base <https://unifiedcyberontology.org/ontology/uco/uco> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/uco>
+<https://ontology.unifiedcyberontology.org/uco/uco>
 	a owl:Ontology ;
 	rdfs:label "uco-master"@en ;
 	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/action> ,
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/identity> ,
-		<https://unifiedcyberontology.org/ontology/uco/location> ,
-		<https://unifiedcyberontology.org/ontology/uco/marking> ,
-		<https://unifiedcyberontology.org/ontology/uco/observable> ,
-		<https://unifiedcyberontology.org/ontology/uco/pattern> ,
-		<https://unifiedcyberontology.org/ontology/uco/role> ,
-		<https://unifiedcyberontology.org/ontology/uco/time> ,
-		<https://unifiedcyberontology.org/ontology/uco/tool> ,
-		<https://unifiedcyberontology.org/ontology/uco/types> ,
-		<https://unifiedcyberontology.org/ontology/uco/victim> ,
-		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+		<https://ontology.unifiedcyberontology.org/uco/action> ,
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/identity> ,
+		<https://ontology.unifiedcyberontology.org/uco/location> ,
+		<https://ontology.unifiedcyberontology.org/uco/marking> ,
+		<https://ontology.unifiedcyberontology.org/uco/observable> ,
+		<https://ontology.unifiedcyberontology.org/uco/pattern> ,
+		<https://ontology.unifiedcyberontology.org/uco/role> ,
+		<https://ontology.unifiedcyberontology.org/uco/time> ,
+		<https://ontology.unifiedcyberontology.org/uco/tool> ,
+		<https://ontology.unifiedcyberontology.org/uco/types> ,
+		<https://ontology.unifiedcyberontology.org/uco/victim> ,
+		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
-	owl:versionInfo "0.7.0" ;
+	owl:versionInfo "0.8.0" ;
 	.
 
 core:id

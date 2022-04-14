@@ -1,17 +1,15 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/time
-# imports: https://unifiedcyberontology.org/ontology/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/core
 
-@base <https://unifiedcyberontology.org/ontology/uco/time> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix time: <https://unifiedcyberontology.org/ontology/uco/time#> .
+@prefix time: <https://ontology.unifiedcyberontology.org/uco/time/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/time>
+<https://ontology.unifiedcyberontology.org/uco/time>
 	a owl:Ontology ;
 	rdfs:label "uco-time"@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
 	.
 
 time:Time

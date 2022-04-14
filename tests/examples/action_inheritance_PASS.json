@@ -1,10 +1,10 @@
 {
     "@context": {
         "acme": "http://example.org/ontology/acme/core/",
-        "action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
-        "vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -12,10 +12,7 @@
             "@id": "kb:action1",
             "@type": "action:Action",
             "core:name": "Open File",
-            "action:actionStatus": {
-                "@type": "vocabulary:ActionStatusTypeVocab",
-                "@value": "Pending"
-            }
+            "action:actionStatus": "CUSTOM Started"
         },
         {
             "@id": "kb:action2",
