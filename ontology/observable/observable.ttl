@@ -1777,7 +1777,6 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeType ;
 		] ,
