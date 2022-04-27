@@ -3825,16 +3825,16 @@ observable:MessageFacet
 			sh:path observable:to ;
 		] ,
 		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:sentTime ;
-		] ,
-		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isRead ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:sentTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
