@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: CASE Website
+    url: https://caseontology.org/
+    about: See usage examples and other documentation here.
+  - name: UCO Website
+    url: https://unifiedcyberontology.org/
+    about: See UCO design documentation here.
+  - name: CASE Examples
+    url: https://github.com/casework/CASE-Examples/
+    about: Please request examples for concept usage here.
+  - name: CASE Website (source)
+    url: https://github.com/casework/casework.github.io/
+    about: Please request documentation updates pertaining to CASE and/or UCO here.
+  - name: UCO Website (source)
+    url: https://github.com/ucoProject/ucoproject.github.io/
+    about: Please request documentation updates pertaining to UCO here.
