@@ -7,6 +7,7 @@
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
@@ -1729,6 +1730,11 @@ observable:ContentDataFacet
 	rdfs:comment "A content data facet is a grouping of characteristics unique to a block of digital data."@en ;
 	sh:property
 		[
+			sh:class dcterms:FileFormat ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:mimeType ;
+		] ,
+		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -1774,11 +1780,6 @@ observable:ContentDataFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeClass ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:mimeType ;
 		] ,
 		[
 			sh:datatype vocabulary:EndiannessTypeVocab ;
@@ -10944,10 +10945,10 @@ observable:mimeClass
 	.
 
 observable:mimeType
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "mimeType"@en ;
-	rdfs:comment "MIME type of the data. For example 'text/html' or 'audio/mp3'."@en ;
-	rdfs:range xsd:string ;
+	rdfs:comment "MIME type of the data.  For interoperability with non-UCO resources, dcterms:FileFormat is this property's required range."@en ;
+	rdfs:range dcterms:FileFormat ;
 	.
 
 observable:minorImageVersion
