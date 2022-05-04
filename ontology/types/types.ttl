@@ -1,7 +1,9 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -160,14 +162,39 @@ types:Hash
 	sh:targetClass types:Hash ;
 	.
 
+types:IANAMediaType
+	a owl:Class ;
+	rdfs:subClassOf types:MIMEFormat ;
+	rdfs:label "IANAMediaType"@en ;
+	owl:disjointWith types:NonIANAMediaType ;
+	.
+
 types:Identifier
 	a rdfs:Datatype ;
 	rdfs:comment "An identifier is a string conformant to the specified UUID-based format for UCO object identifiers."@en ;
 	.
 
+types:MIMEFormat
+	a owl:Class ;
+	rdfs:subClassOf
+		dcterms:FileFormat ,
+		core:TaxonomicConcept
+		;
+	rdfs:label "MIMEFormat"@en ;
+	rdfs:comment "This class should be considered an intermediary, 'abstract' class, and should not have individuals defined that are not a member of one of its subclasses.  This class has two purposes.  First, to encode for interoperability with existing frameworks, without relying on RDFS inference, that a UCO MIMEFormat individual is both a SKOS Concept (via core:TaxonomicConcept) and Dublin Core Terms FileFormat.  Second, to guarantee a concept to be used as a UCO MIME type has exactly one skos:notation.  Note that strict SHACL enforcement of the skos:notation presence is not within the UCO Types ontology, but is instead a part of the shapes provided by the UCO MIME Taxonomy.  The warning about skos:notation in the Observable namespace is deactivated on importing the taxonomy's shapes."@en ;
+	rdfs:seeAlso observable:mimeType-notation ;
+	.
+
 types:NativeFormatString
 	a rdfs:Datatype ;
 	rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en ;
+	.
+
+types:NonIANAMediaType
+	a owl:Class ;
+	rdfs:subClassOf types:MIMEFormat ;
+	rdfs:label "NonIANAMediaType"@en ;
+	owl:disjointWith types:IANAMediaType ;
 	.
 
 types:StructuredText

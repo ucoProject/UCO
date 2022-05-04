@@ -28,9 +28,11 @@ import pytest
 import rdflib.plugins.sparql
 
 NS_SH = rdflib.SH
+NS_SKOS = rdflib.SKOS
 NS_UCO_ACTION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/action/")
 NS_UCO_CORE = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/core/")
 NS_UCO_LOCATION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/location/")
+NS_UCO_OBSERVABLE = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/observable/")
 
 NSDICT = {"sh": NS_SH}
 
@@ -187,6 +189,26 @@ def test_location_XFAIL_validation_XPASS_wrong_concept_name():
       False,
       expected_result_paths={
         str(NS_UCO_CORE.descriptionButWrongName)
+      }
+    )
+
+def test_mime_PASS_validation() -> None:
+    confirm_validation_results(
+      "mime_PASS_validation.ttl",
+      True,
+      expected_result_paths={
+        str(NS_SKOS.notation),
+        str(NS_UCO_OBSERVABLE.mimeType)
+      }
+    )
+
+def test_mime_XFAIL_validation() -> None:
+    confirm_validation_results(
+      "mime_XFAIL_validation.ttl",
+      False,
+      expected_result_paths={
+        str(NS_SKOS.notation),
+        str(NS_UCO_OBSERVABLE.mimeType)
       }
     )
 

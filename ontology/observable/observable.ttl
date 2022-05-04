@@ -15,6 +15,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -10947,8 +10948,35 @@ observable:mimeClass
 observable:mimeType
 	a owl:ObjectProperty ;
 	rdfs:label "mimeType"@en ;
-	rdfs:comment "MIME type of the data.  For interoperability with non-UCO resources, dcterms:FileFormat is this property's required range."@en ;
+	rdfs:comment "MIME type of the data. The text form of '${type}/${subtype}' (for example, 'text/html' or 'audio/mp3') can be used to find a UCO-provisioned set of types from the UCO Media Types Taxonomy.  For interoperability with non-UCO resources, dcterms:FileFormat is this property's required range.  The more-specific UCO classes types:IANAMediaType or types:NonIANAMediaType should be used when available."@en ;
 	rdfs:range dcterms:FileFormat ;
+	rdfs:seeAlso
+		types:IANAMediaType ,
+		types:NonIANAMediaType ,
+		<https://taxonomy.unifiedcyberontology.org/uco/mime/>
+		;
+	.
+
+observable:mimeType-class-types-MIMEFormat
+	a sh:PropertyShape ;
+	rdfs:comment "This shape is given an IRI in order to facilitate deactivation on request."@en ;
+	rdfs:seeAlso sh:deactivated ;
+	sh:class types:MIMEFormat ;
+	sh:message "Value is not an instance of types:MIMEFormat or one of its subclasses.  Please consider using a value having type types:IANAMediaType or types:NonIANAMediaType."@en ;
+	sh:path observable:mimeType ;
+	sh:severity sh:Info ;
+	sh:targetSubjectsOf observable:mimeType ;
+	.
+
+observable:mimeType-notation
+	a sh:PropertyShape ;
+	rdfs:comment "This shape is intended to be deactivated by using overriding shapes in the UCO Mime Taxonomy."@en ;
+	rdfs:seeAlso <https://taxonomy.unifiedcyberontology.org/uco/mime/> ;
+	sh:message "The used mimeType value is not a concept with a skos:notation.  Some consumers of this data expect a string with the MIME 'type/subtype' format to be supplied with skos:notation.  Please either add the skos:notation to your input graph or incorporate the UCO MIME Taxonomy."@en ;
+	sh:minCount "1"^^xsd:integer ;
+	sh:path skos:notation ;
+	sh:severity sh:Warning ;
+	sh:targetObjectsOf observable:mimeType ;
 	.
 
 observable:minorImageVersion
