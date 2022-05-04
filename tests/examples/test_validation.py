@@ -212,6 +212,13 @@ def test_mime_XFAIL_validation() -> None:
       }
     )
 
+def test_mime_prefix_PASS_validation() -> None:
+    confirm_validation_results(
+      "mime_prefix_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities=set()
+    )
+
 def test_relationship_PASS_partial() -> None:
     """
     This test should be replaced with test_relationship_XFAIL_full when the semi-open vocabulary design current as of UCO 0.8.0 is re-done.

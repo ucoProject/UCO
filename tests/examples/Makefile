@@ -27,6 +27,7 @@ all: \
   location_XFAIL_validation.ttl \
   mime_PASS_validation.ttl \
   mime_XFAIL_validation.ttl \
+  mime_prefix_PASS_validation.ttl \
   relationship_PASS_validation.ttl \
   relationship_XFAIL_validation.ttl
 
@@ -78,6 +79,7 @@ check: \
   location_XFAIL_validation.ttl \
   mime_PASS_validation.ttl \
   mime_XFAIL_validation.ttl \
+  mime_prefix_PASS_validation.ttl \
   relationship_PASS_validation.ttl \
   relationship_XFAIL_validation.ttl
 	source $(tests_srcdir)/venv/bin/activate \

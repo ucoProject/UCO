@@ -1,0 +1,36 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "ex-mime": "urn:example:mime:custom:",
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "observable:mimeType": {
+            "@type": "@id"
+        },
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/"
+    },
+    "@graph": [
+        {
+            "@id": "ex-mime:application/gzip",
+            "@type": "types:IANAMediaType",
+            "rdfs:comment": "This is a custom media type individual, designed for just this unit test.  A larger taxonomy of individuals should be used outside of testing contexts.",
+            "skos:notation": "application/gzip"
+        },
+        {
+            "@id": "kb:file-8",
+            "@type": "observable:File",
+            "core:hasFacet": [
+                {
+                    "@type": "observable:ContentDataFacet",
+                    "observable:mimeType": "ex-mime:application/gzip"
+                },
+                {
+                    "@type": "observable:FileFacet",
+                    "observable:fileName": "8.gz"
+                }
+            ]
+        }
+    ]
+}
