@@ -606,3 +606,6 @@ core:value
 	rdfs:range xsd:string ;
 	.
 
+core:UcoObject 
+	owl:disjointWith core:Facet 
+	.
