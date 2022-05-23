@@ -16,7 +16,7 @@ SHELL := /bin/bash
 all: \
   .lib.done.log
 	$(MAKE) \
-	  --directory ontology
+	  --directory ontology/uco
 
 # This recipe guarantees that 'git submodule init' and 'git submodule update' have run at least once.
 # The recipe avoids running 'git submodule update' more than once, in case a user is testing with the submodule at a different commit than what UCO tracks.
@@ -38,7 +38,7 @@ check: \
   .git_submodule_init.done.log \
   .lib.done.log
 	$(MAKE) \
-	  --directory ontology \
+	  --directory ontology/uco \
 	  check
 	$(MAKE) \
 	  --directory tests \
@@ -53,7 +53,7 @@ clean: \
 
 clean-ontology:
 	@$(MAKE) \
-	  --directory ontology \
+	  --directory ontology/uco \
 	  clean
 
 clean-tests:
