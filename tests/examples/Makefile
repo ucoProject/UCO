@@ -54,16 +54,9 @@ all: \
 	    --ont-graph $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
-	    --output __$@ \
+	    --output _$@ \
 	    $< \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
-	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
 	mv _$@ $@
 
 check: \
