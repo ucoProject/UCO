@@ -27,8 +27,10 @@ import typing
 import pytest
 import rdflib.plugins.sparql
 
+NS_CO = rdflib.Namespace("http://purl.org/co/")
 NS_SH = rdflib.SH
 NS_UCO_ACTION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/action/")
+NS_UCO_CO = rdflib.Namespace("https://ontology.unifiedcyberontology.org/co/")
 NS_UCO_CORE = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/core/")
 NS_UCO_LOCATION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/location/")
 
@@ -64,15 +66,22 @@ def confirm_validation_results(
   expected_conformance: bool,
   *,
   expected_focus_node_severities : typing.Optional[typing.Tuple[typing.Set[str], str]] = None,
-  expected_result_paths : typing.Optional[typing.Set[str]] = None
-):
+  expected_result_paths : typing.Optional[typing.Set[str]] = None,
+  expected_source_shapes: typing.Optional[typing.Set[str]] = None
+) -> None:
+    """
+    The expected-sets are sets where names are known.
+
+    Blank nodes are omitted, and should be tested with a different set.
+    """
     g = load_validation_graph(filename, expected_conformance)
 
     computed_focus_node_severities = set()
     computed_result_paths = set()
+    computed_source_shapes = set()
 
     query = rdflib.plugins.sparql.prepareQuery("""\
-SELECT DISTINCT ?nFocusNode ?nResultPath ?nSeverity
+SELECT DISTINCT ?nFocusNode ?nResultPath ?nSeverity ?nSourceShape
 WHERE {
   ?nReport
     a sh:ValidationReport ;
@@ -82,22 +91,35 @@ WHERE {
   ?nValidationResult
     a sh:ValidationResult ;
     sh:focusNode ?nFocusNode ;
-    sh:resultPath ?nResultPath ;
     sh:resultSeverity ?nSeverity ;
+    sh:sourceShape ?nSourceShape ;
     .
+
+  # sh:not violations do not have a sh:resultPath.
+  OPTIONAL {
+  ?nValidationResult
+    sh:resultPath ?nResultPath ;
+    .
+  }
 }
 """, initNs=NSDICT)
 
     for result in g.query(query):
-        (n_focus_node, n_result_path, n_severity) = result
+        (n_focus_node, n_result_path, n_severity, n_source_shape) = result
+
         computed_focus_node_severities.add((str(n_focus_node), str(n_severity)))
-        computed_result_paths.add(str(n_result_path))
+
+        if isinstance(n_result_path, rdflib.URIRef):
+            computed_result_paths.add(str(n_result_path))
+
+        if isinstance(n_source_shape, rdflib.URIRef):
+            computed_source_shapes.add(str(n_source_shape))
 
     if not expected_focus_node_severities is None:
         try:
             assert expected_focus_node_severities == computed_focus_node_severities
         except:
-            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to focus nodes noted in this function.", filename)
+            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to named focus nodes noted in this function.", filename)
             raise
 
     if not expected_result_paths is None:
@@ -105,6 +127,13 @@ WHERE {
             assert expected_result_paths == computed_result_paths
         except:
             logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to data properties noted in this function.", filename)
+            raise
+
+    if not expected_source_shapes is None:
+        try:
+            assert expected_source_shapes == computed_source_shapes
+        except:
+            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to named source shapes noted in this function.", filename)
             raise
 
 def test_action_inheritance_PASS_validation():
@@ -153,6 +182,37 @@ def test_hash_XFAIL() -> None:
         ("http://example.org/kb/hash-4", str(NS_SH.Info)),
         ("http://example.org/kb/hash-5", str(NS_SH.Info)),
         ("http://example.org/kb/hash-5", str(NS_SH.Violation))
+      }
+    )
+
+def test_co_PASS_validation():
+    confirm_validation_results("co_PASS_validation.ttl", True)
+
+def test_co_XFAIL_validation():
+    # The "index" entry's spelling is due to Namespace objects being
+    # strings, therefore having the .index() function defined.
+    confirm_validation_results(
+      "co_XFAIL_validation.ttl",
+      False,
+      expected_result_paths={
+        str(NS_CO.firstItem),
+        str(NS_CO["index"]),
+        str(NS_CO.item),
+        str(NS_CO.itemContent),
+        str(NS_CO.lastItem),
+        str(NS_CO.nextItem),
+        str(NS_CO.previousItem),
+        str(NS_CO.size),
+      },
+      expected_source_shapes={
+        str(NS_UCO_CO["firstItem-subjects-shape"]),
+        str(NS_UCO_CO["firstItem-subjects-previousItem-shape"]),
+        str(NS_UCO_CO["item-subjects-shape"]),
+        str(NS_UCO_CO["itemContent-subjects-shape"]),
+        str(NS_UCO_CO["lastItem-subjects-shape"]),
+        str(NS_UCO_CO["nextItem-subjects-shape"]),
+        str(NS_UCO_CO["previousItem-subjects-shape"]),
+        str(NS_UCO_CO["size-subjects-shape"]),
       }
     )
 

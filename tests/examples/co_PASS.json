@@ -1,0 +1,190 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:list-1",
+            "@type": "co:List",
+            "co:element": [
+                {
+                    "@id": "kb:uco-object-1"
+                },
+                {
+                    "@id": "kb:uco-object-2"
+                },
+                {
+                    "@id": "kb:uco-object-3"
+                }
+            ],
+            "co:firstItem": {
+                "@id": "kb:list-1-item-1"
+            },
+            "co:lastItem": {
+                "@id": "kb:list-1-item-4"
+            },
+            "co:item": [
+                {
+                    "@id": "kb:list-1-item-1"
+                },
+                {
+                    "@id": "kb:list-1-item-2"
+                },
+                {
+                    "@id": "kb:list-1-item-3"
+                },
+                {
+                    "@id": "kb:list-1-item-4"
+                }
+            ],
+            "co:size": {
+                "@type": "xsd:nonNegativeInteger",
+                "@value": "4"
+            }
+        },
+        {
+            "@id": "kb:list-1-item-1",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 0
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-1"
+            },
+            "co:nextItem": {
+                "@id": "kb:list-1-item-2"
+            }
+        },
+        {
+            "@id": "kb:list-1-item-2",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-2"
+            },
+            "co:nextItem": {
+                "@id": "kb:list-1-item-3"
+            }
+        },
+        {
+            "@id": "kb:list-1-item-3",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-3"
+            },
+            "co:nextItem": {
+                "@id": "kb:list-1-item-4"
+            }
+        },
+        {
+            "@id": "kb:list-1-item-4",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-1"
+            }
+        },
+        {
+            "@id": "kb:list-2",
+            "@type": "co:List",
+            "rdfs:comment": "This is list is as kb:list-1, except item 3 is missing from the list.  Partial order is maintained with co:followedBy.",
+            "co:element": [
+                {
+                    "@id": "kb:uco-object-1"
+                },
+                {
+                    "@id": "kb:uco-object-2"
+                },
+                {
+                    "@id": "kb:uco-object-3"
+                }
+            ],
+            "co:firstItem": {
+                "@id": "kb:list-2-item-1"
+            },
+            "co:lastItem": {
+                "@id": "kb:list-2-item-4"
+            },
+            "co:item": [
+                {
+                    "@id": "kb:list-2-item-1"
+                },
+                {
+                    "@id": "kb:list-2-item-2"
+                },
+                {
+                    "@id": "kb:list-2-item-4"
+                }
+            ],
+            "co:size": {
+                "@type": "xsd:nonNegativeInteger",
+                "@value": "4"
+            }
+        },
+        {
+            "@id": "kb:list-2-item-1",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 0
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-1"
+            },
+            "co:nextItem": {
+                "@id": "kb:list-2-item-2"
+            }
+        },
+        {
+            "@id": "kb:list-2-item-2",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-2"
+            },
+            "co:followedBy": {
+                "@id": "kb:list-2-item-4"
+            }
+        },
+        {
+            "@id": "kb:list-2-item-4",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-1"
+            }
+        },
+        {
+            "@id": "kb:uco-object-1",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:uco-object-2",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:uco-object-3",
+            "@type": "core:UcoObject"
+        }
+    ]
+}

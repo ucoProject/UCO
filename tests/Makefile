@@ -17,7 +17,7 @@ top_srcdir := $(shell cd .. ; pwd)
 
 PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3)
 
-uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*/*.ttl)
+uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl $(top_srcdir)/ontology/*/*/*.ttl)
 
 all:
 
