@@ -21,6 +21,7 @@ This test was written to be called with the pytest framework, expecting
 the only functions to be called to be named "test_*".
 """
 
+import pathlib
 import logging
 import typing
 
@@ -33,8 +34,16 @@ NS_UCO_ACTION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/
 NS_UCO_CO = rdflib.Namespace("https://ontology.unifiedcyberontology.org/co/")
 NS_UCO_CORE = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/core/")
 NS_UCO_LOCATION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/location/")
+NS_UCO_TYPES = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/types/")
 
 NSDICT = {"sh": NS_SH}
+
+@pytest.fixture(scope="session")
+def monolithic_ontology_graph() -> rdflib.Graph:
+    graph = rdflib.Graph()
+    monolithic_ttl_path = pathlib.Path(__file__).parent.parent / "uco_monolithic.ttl"
+    graph.parse(str(monolithic_ttl_path), format="turtle")
+    return graph
 
 def load_validation_graph(
   filename : str,
@@ -250,6 +259,64 @@ def test_location_XFAIL_validation_XPASS_wrong_concept_name():
       }
     )
 
+def test_message_thread(monolithic_ontology_graph: rdflib.Graph) -> None:
+    r"""
+    Confirm the answer to this question:
+    What are all of the messages that followed the first in the thread kb:message-thread-1?
+
+    message-thread-1 forked, and has these reply paths:
+
+     1     2     3
+    * --- * --- *
+     \     \
+      \     \ 4
+       \     *
+     5  \ 6
+    * --- *
+
+     7
+    *
+
+    (Message 7 is outside the thread.)
+    """
+
+    expected: typing.Set[str] = {
+        "http://example.org/kb/message-2",
+        "http://example.org/kb/message-3",
+        "http://example.org/kb/message-4",
+        "http://example.org/kb/message-6",
+    }
+    computed: typing.Set[str] = set()
+
+    data_graph = rdflib.Graph()
+    data_filepath = pathlib.Path(__file__).parent / "message_thread_PASS.json"
+    data_graph.parse(str(data_filepath), format="json-ld")
+
+    analysis_graph = data_graph + monolithic_ontology_graph
+
+    query_str = """\
+PREFIX co: <http://purl.org/co/>
+PREFIX kb: <http://example.org/kb/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+
+SELECT ?nLaterMessage
+WHERE {
+  ?nFirstMessageItem
+    co:itemContent kb:message-1 ;
+    (types:threadNextItem|types:threadSuccessor)+ / co:itemContent ?nLaterMessage ;
+    .
+}
+"""
+
+    for result in analysis_graph.query(query_str):
+        computed.add(str(result[0]))
+
+    assert expected == computed
+
+def test_message_thread_PASS_validation():
+    confirm_validation_results("message_thread_PASS_validation.ttl", True)
+
 def test_relationship_PASS_partial() -> None:
     """
     This test should be replaced with test_relationship_XFAIL_full when the semi-open vocabulary design current as of UCO 0.8.0 is re-done.
@@ -316,5 +383,19 @@ def test_relationship_XFAIL_full() -> None:
         ("http://example.org/kb/relationship-2-2-3", str(NS_SH.Violation)),
         ("http://example.org/kb/relationship-2-3-2", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-2-3-2", str(NS_SH.Violation)),
+      }
+    )
+
+def test_thread_PASS_validation():
+    confirm_validation_results("thread_PASS_validation.ttl", True)
+
+def test_thread_XFAIL_validation():
+    confirm_validation_results(
+      "thread_XFAIL_validation.ttl",
+      False,
+      expected_result_paths={
+        str(NS_CO.item),
+        str(NS_CO.itemContent),
+        str(NS_UCO_TYPES.threadOriginItem),
       }
     )

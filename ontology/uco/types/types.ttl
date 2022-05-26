@@ -1,6 +1,9 @@
+# imports: https://ontology.unifiedcyberontology.org/co
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
+@prefix co: <http://purl.org/co/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,6 +16,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
 	owl:imports
+		<https://ontology.unifiedcyberontology.org/co> ,
 		<https://ontology.unifiedcyberontology.org/uco/core> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
@@ -169,6 +173,42 @@ types:StructuredText
 	rdfs:comment "Expresses string-based data in some information structuring format (e.g., HTML5)."@en ;
 	.
 
+types:Thread
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		co:Bag ,
+		core:UcoObject
+		;
+	rdfs:label "Thread"@en ;
+	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
+	owl:disjointWith co:List ;
+	sh:property [
+		sh:class types:ThreadItem ;
+		sh:path co:item ;
+	] ;
+	.
+
+types:ThreadItem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		co:Item ,
+		core:UcoObject
+		;
+	rdfs:label "ThreadItem"@en ;
+	rdfs:comment "A ThreadItem is a member of a thread."@en ;
+	owl:disjointWith co:ListItem ;
+	sh:property [
+		sh:class core:UcoObject ;
+		sh:path co:itemContent ;
+	] ;
+	.
+
 types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
@@ -207,6 +247,178 @@ types:key
 	rdfs:label "key"@en ;
 	rdfs:comment "A key property of a single dictionary entry."@en ;
 	rdfs:range xsd:string ;
+	.
+
+types:threadNextItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf types:threadSuccessor ;
+	rdfs:label "threadNextItem"@en ;
+	rdfs:comment "The link to a next item in a thread."@en ;
+	rdfs:seeAlso co:nextItem ;
+	.
+
+types:threadNextItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadNextItem ;
+	sh:targetSubjectsOf types:threadNextItem ;
+	.
+
+types:threadOriginItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf co:item ;
+	rdfs:label "threadOriginItem"@en ;
+	rdfs:comment "A link to an item of the thread known to have no predecessor."@en ;
+	rdfs:domain types:Thread ;
+	rdfs:range [
+		a owl:Class ;
+		owl:intersectionOf (
+			types:ThreadItem
+			[
+				a owl:Restriction ;
+				owl:onProperty types:threadPreviousItem ;
+				owl:cardinality "0"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+	] ;
+	rdfs:seeAlso co:firstItem ;
+	.
+
+types:threadOriginItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:path types:threadOriginItem ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadOriginItem-subjects-threadPredecessor-shape
+	a sh:PropertyShape ;
+	sh:description "An origin item in a thread must not have a predecessor."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		types:threadOriginItem
+		types:threadPredecessor
+	) ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadOriginItem-subjects-threadPreviousItem-shape
+	a sh:PropertyShape ;
+	sh:description "An origin item in a thread must not have a previous item."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		types:threadOriginItem
+		types:threadPreviousItem
+	) ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadPredecessor
+	a
+		owl:ObjectProperty ,
+		owl:TransitiveProperty
+		;
+	rdfs:label "threadPredecessor"@en ;
+	rdfs:comment "The link to the preceding item in a thread."@en ;
+	rdfs:domain types:ThreadItem ;
+	rdfs:range types:ThreadItem ;
+	rdfs:seeAlso co:precededBy ;
+	owl:inverseOf types:threadSuccessor ;
+	.
+
+types:threadPredecessor-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadPredecessor ;
+	sh:targetSubjectsOf types:threadPredecessor ;
+	.
+
+types:threadPreviousItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf types:threadPredecessor ;
+	rdfs:label "threadPreviousItem"@en ;
+	rdfs:comment "A direct link to a previous item in a thread."@en ;
+	rdfs:seeAlso co:previousItem ;
+	owl:inverseOf types:threadNextItem ;
+	.
+
+types:threadPreviousItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadPreviousItem ;
+	sh:targetSubjectsOf types:threadPreviousItem ;
+	.
+
+types:threadSuccessor
+	a
+		owl:ObjectProperty ,
+		owl:TransitiveProperty
+		;
+	rdfs:label "threadSuccessor"@en ;
+	rdfs:comment "A link to a following item in a thread."@en ;
+	rdfs:domain types:ThreadItem ;
+	rdfs:range types:ThreadItem ;
+	rdfs:seeAlso co:followedBy ;
+	.
+
+types:threadSuccessor-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadSuccessor ;
+	sh:targetSubjectsOf types:threadSuccessor ;
+	.
+
+types:threadTerminalItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf co:item ;
+	rdfs:label "threadTerminalItem"@en ;
+	rdfs:comment "A link to an item of the thread known to have no successor."@en ;
+	rdfs:domain types:Thread ;
+	rdfs:range [
+		a owl:Class ;
+		owl:intersectionOf (
+			types:ThreadItem
+			[
+				a owl:Restriction ;
+				owl:onProperty types:threadNextItem ;
+				owl:cardinality "0"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+	] ;
+	rdfs:seeAlso co:lastItem ;
+	.
+
+types:threadTerminalItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:path types:threadTerminalItem ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
+	.
+
+types:threadTerminalItem-subjects-threadNextItem-shape
+	a sh:PropertyShape ;
+	sh:description "A terminal item in a thread must not have a next item."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		types:threadTerminalItem
+		types:threadNextItem
+	) ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
+	.
+
+types:threadTerminalItem-subjects-threadSuccessor-shape
+	a sh:PropertyShape ;
+	sh:description "A terminal item in a thread must not have a successor."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		types:threadTerminalItem
+		types:threadSuccessor
+	) ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
 	.
 
 types:value

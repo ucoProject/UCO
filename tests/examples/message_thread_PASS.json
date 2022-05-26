@@ -1,0 +1,165 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:message-1",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-2",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-3",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-4",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-5",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-6",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-7",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-thread-1",
+            "@type": "observable:MessageThread",
+            "co:size": {
+                "@type": "xsd:nonNegativeInteger",
+                "@value": "6"
+            },
+            "co:item": [
+                {
+                    "@id": "kb:message-thread-1-item-1"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-2"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-3"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-4"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-5"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-6"
+                }
+            ],
+            "types:threadOriginItem": [
+                {
+                    "@id": "kb:message-thread-1-item-1"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-5"
+                }
+            ],
+            "types:threadTerminalItem": [
+                {
+                    "@id": "kb:message-thread-1-item-3"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-4"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-6"
+                }
+            ]
+        },
+        {
+            "@id": "kb:message-thread-1-item-1",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-1"
+            },
+            "types:threadNextItem": [
+                {
+                    "@id": "kb:message-thread-1-item-2"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-6"
+                }
+            ]
+        },
+        {
+            "@id": "kb:message-thread-1-item-2",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-2"
+            },
+            "types:threadNextItem": [
+                {
+                    "@id": "kb:message-thread-1-item-3"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-4"
+                }
+            ],
+            "types:threadPreviousItem": {
+                "@id": "kb:message-thread-1-item-1"
+            }
+        },
+        {
+            "@id": "kb:message-thread-1-item-3",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-3"
+            },
+            "types:threadPreviousItem": {
+                "@id": "kb:message-thread-1-item-2"
+            }
+        },
+        {
+            "@id": "kb:message-thread-1-item-4",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-4"
+            },
+            "types:threadPreviousItem": {
+                "@id": "kb:message-thread-1-item-2"
+            }
+        },
+        {
+            "@id": "kb:message-thread-1-item-5",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-5"
+            },
+            "types:threadNextItem": {
+                "@id": "kb:message-thread-1-item-6"
+            }
+        },
+        {
+            "@id": "kb:message-thread-1-item-6",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-6"
+            },
+            "types:threadPreviousItem": [
+                {
+                    "@id": "kb:message-thread-1-item-1"
+                },
+                {
+                    "@id": "kb:message-thread-1-item-5"
+                }
+            ]
+        }
+    ]
+}
