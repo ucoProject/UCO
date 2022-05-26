@@ -66,16 +66,10 @@ check: \
 	  check
 
 clean: \
-  clean-tests \
-  clean-ontology
+  clean-tests
 	@rm -f \
 	  .git_submodule_init.done.log \
 	  .lib.done.log
-
-clean-ontology:
-	@$(MAKE) \
-	  --directory ontology \
-	  clean
 
 clean-tests:
 	@$(MAKE) \
