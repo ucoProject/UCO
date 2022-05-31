@@ -6323,12 +6323,6 @@ observable:URLFacet
 			sh:path observable:host ;
 		] ,
 		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:userName ;
-		] ,
-		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -6370,6 +6364,12 @@ observable:URLFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:scheme ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:userName ;
 		]
 		;
 	sh:targetClass observable:URLFacet ;
@@ -12555,10 +12555,10 @@ observable:userLocationString
 	.
 
 observable:userName
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "userName"@en ;
 	rdfs:comment "Username used to authenticate to this resource."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:validityNotAfter
