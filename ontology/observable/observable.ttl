@@ -2868,13 +2868,6 @@ observable:FileFacet
 	rdfs:comment "A file facet is a grouping of characteristics unique to the storage of a file (computer resource for recording data discretely in a computer storage device) on a file system (process that manages how and where data on a storage device is stored, accessed and managed). [based on https://en.wikipedia.org/Computer_file and https://www.techopedia.com/definition/5510/file-system]"@en ;
 	sh:property
 		[
-			rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:sizeInBytes ;
-		] ,
-		[
 			sh:datatype xsd:boolean ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isDirectory ;
@@ -2902,6 +2895,13 @@ observable:FileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:description "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:sizeInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
