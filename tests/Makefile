@@ -15,7 +15,7 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd .. ; pwd)
 
-PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3)
+PYTHON3 ?= python3
 
 uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl)
 
@@ -78,19 +78,11 @@ inheritance_review.ttl: \
 	mv _$@ $@
 
 uco_monolithic.ttl: \
-  $(top_srcdir)/.lib.done.log \
   $(uco_turtle_files) \
   .venv.done.log \
   src/glom_graph.py
 	source venv/bin/activate \
-	  && python3 src/glom_graph.py \
-	    __$@ \
+	  && $(PYTHON3) src/glom_graph.py \
+	    _$@ \
 	    $(uco_turtle_files)
-	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
 	mv _$@ $@

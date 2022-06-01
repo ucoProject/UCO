@@ -1,0 +1,7 @@
+repos:
+-   repo: https://github.com/kchason/rdf-toolkit-action
+    rev: 0.2.0
+    hooks:
+    -   id: rdf-toolkit-normalizer
+        args:
+            - --autofix

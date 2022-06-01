@@ -13,10 +13,10 @@
 
 SHELL := /bin/bash
 
+PYTHON3 ?= python3
+
 all: \
-  .lib.done.log
-	$(MAKE) \
-	  --directory ontology
+  .venv-pre-commit/var/.pre-commit-built.log
 
 # This recipe guarantees that 'git submodule init' and 'git submodule update' have run at least once.
 # The recipe avoids running 'git submodule update' more than once, in case a user is testing with the submodule at a different commit than what UCO tracks.
@@ -34,27 +34,42 @@ all: \
 	  --directory lib
 	touch $@
 
+# This virtual environment is meant to be built once and then persist, even through 'make clean'.
+# If a recipe is written to remove this flag file, it should first run `pre-commit uninstall`.
+.venv-pre-commit/var/.pre-commit-built.log:
+	rm -rf .venv-pre-commit
+	test -r .pre-commit-config.yaml \
+	  || (echo "ERROR:Makefile:pre-commit is expected to install for this repository, but .pre-commit-config.yaml does not seem to exist." >&2 ; exit 1)
+	$(PYTHON3) -m venv \
+	  .venv-pre-commit
+	source .venv-pre-commit/bin/activate \
+	  && pip install \
+	    --upgrade \
+	    pip \
+	    setuptools \
+	    wheel
+	source .venv-pre-commit/bin/activate \
+	  && pip install \
+	    pre-commit
+	source .venv-pre-commit/bin/activate \
+	  && pre-commit install
+	mkdir -p \
+	  .venv-pre-commit/var
+	touch $@
+
 check: \
   .git_submodule_init.done.log \
-  .lib.done.log
+  .venv-pre-commit/var/.pre-commit-built.log
 	$(MAKE) \
-	  --directory ontology \
-	  check
-	$(MAKE) \
+	  PYTHON3=$(PYTHON3) \
 	  --directory tests \
 	  check
 
 clean: \
-  clean-tests \
-  clean-ontology
+  clean-tests
 	@rm -f \
 	  .git_submodule_init.done.log \
 	  .lib.done.log
-
-clean-ontology:
-	@$(MAKE) \
-	  --directory ontology \
-	  clean
 
 clean-tests:
 	@$(MAKE) \
