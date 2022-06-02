@@ -2407,12 +2407,6 @@ observable:EmailMessageFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:inReplyTo ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:sender ;
 		] ,
 		[
@@ -2500,6 +2494,12 @@ observable:EmailMessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contentType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:inReplyTo ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -10362,10 +10362,10 @@ observable:impHash
 	.
 
 observable:inReplyTo
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "inReplyTo"@en ;
 	rdfs:comment "One of more unique identifiers for identifying the email(s) this email is a reply to."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:inetLocation
