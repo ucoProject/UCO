@@ -26,12 +26,9 @@ all: \
 # confirmed before moving file into position.  (This practice will
 # probably require frequent updates, unless a signed checksum for the
 # jar can be retrieved somehow.)
-# In case there are concerns on potentially multiple writes to the same
-# file, the documentation for wget's "--output-document file" flag notes
-# that "... file will be truncated immediately, and all downloaded
-# content will be written there."
 rdf-toolkit.jar:
 	test -r rdf-toolkit.jar.sha512
+	rm -f $@_
 	# Try retrieval from files.caseontology.org.
 	wget \
 	  --output-document $@_ \
