@@ -32,13 +32,10 @@ all: \
 # content will be written there."
 rdf-toolkit.jar:
 	test -r rdf-toolkit.jar.sha512
-	# Try retrieval from Github, then from files.caseontology.org.
+	# Try retrieval from files.caseontology.org.
 	wget \
 	  --output-document $@_ \
-	  https://jenkins.edmcouncil.org/view/rdf-toolkit/job/rdf-toolkit-build/lastSuccessfulBuild/artifact/target/rdf-toolkit.jar \
-	  || wget \
-	    --output-document $@_ \
-	    https://files.caseontology.org/rdf-toolkit-1.11.0.jar
+	  https://files.caseontology.org/rdf-toolkit-1.11.0.jar
 	test \
 	  "x$$(openssl dgst -sha512 $@_ | awk '{print($$NF)}')" \
 	  == \
