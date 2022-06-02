@@ -432,22 +432,6 @@ observable:ArchiveFileFacet
 	sh:targetClass observable:ArchiveFileFacet ;
 	.
 
-observable:AttachmentFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "AttachmentFacet"@en ;
-	rdfs:comment "An attachment facet is a grouping of characteristics unique to the inclusion of an associated object as part of a message."@en ;
-	sh:property [
-		sh:class observable:ObservableObject ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
-		sh:path observable:url ;
-	] ;
-	sh:targetClass observable:AttachmentFacet ;
-	.
-
 observable:Audio
 	a
 		owl:Class ,
