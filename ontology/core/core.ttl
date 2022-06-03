@@ -395,6 +395,10 @@ core:UcoObject
 	sh:targetClass core:UcoObject ;
 	.
 
+core:UcoObject 
+	owl:disjointWith core:Facet 
+	.
+
 core:confidence
 	a owl:DatatypeProperty ;
 	rdfs:label "confidence"@en ;
@@ -606,6 +610,3 @@ core:value
 	rdfs:range xsd:string ;
 	.
 
-core:UcoObject 
-	owl:disjointWith core:Facet 
-	.
