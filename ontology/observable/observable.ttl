@@ -2658,6 +2658,12 @@ observable:EventFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
