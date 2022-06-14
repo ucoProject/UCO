@@ -4455,39 +4455,16 @@ observable:NetworkSocketAddressFamily
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "af_appletalk" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "af_bth" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "af_inet" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "af_inet6" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "af_ipx" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "af_irda" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "af_netbios" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "af_unspec" ;
-										rdf:rest rdf:nil ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"af_appletalk"
+			"af_bth"
+			"af_inet"
+			"af_inet6"
+			"af_ipx"
+			"af_irda"
+			"af_netbios"
+			"af_unspec"
+		) ;
 	] ;
 	.
 
@@ -4495,107 +4472,33 @@ observable:NetworkSocketProtocolFamily
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "pf_appletalk" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "pf_ash" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "pf_atmpvc" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "pf_atmsvc" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "pf_ax25" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "pf_bluetooth" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "pf_bridge" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "pf_decnet" ;
-										rdf:rest [
-											a rdf:List ;
-											rdf:first "pf_econet" ;
-											rdf:rest [
-												a rdf:List ;
-												rdf:first "pf_inet" ;
-												rdf:rest [
-													a rdf:List ;
-													rdf:first "pf_inet6" ;
-													rdf:rest [
-														a rdf:List ;
-														rdf:first "pf_ipx" ;
-														rdf:rest [
-															a rdf:List ;
-															rdf:first "pf_irda" ;
-															rdf:rest [
-																a rdf:List ;
-																rdf:first "pf_key" ;
-																rdf:rest [
-																	a rdf:List ;
-																	rdf:first "pf_netbeui" ;
-																	rdf:rest [
-																		a rdf:List ;
-																		rdf:first "pf_netlink" ;
-																		rdf:rest [
-																			a rdf:List ;
-																			rdf:first "pf_netrom" ;
-																			rdf:rest [
-																				a rdf:List ;
-																				rdf:first "pf_packet" ;
-																				rdf:rest [
-																					a rdf:List ;
-																					rdf:first "pf_pppox" ;
-																					rdf:rest [
-																						a rdf:List ;
-																						rdf:first "pf_rose" ;
-																						rdf:rest [
-																							a rdf:List ;
-																							rdf:first "pf_route" ;
-																							rdf:rest [
-																								a rdf:List ;
-																								rdf:first "pf_security" ;
-																								rdf:rest [
-																									a rdf:List ;
-																									rdf:first "pf_sna" ;
-																									rdf:rest [
-																										a rdf:List ;
-																										rdf:first "pf_wanpipe" ;
-																										rdf:rest [
-																											a rdf:List ;
-																											rdf:first "pf_x25" ;
-																											rdf:rest rdf:nil ;
-																										] ;
-																									] ;
-																								] ;
-																							] ;
-																						] ;
-																					] ;
-																				] ;
-																			] ;
-																		] ;
-																	] ;
-																] ;
-															] ;
-														] ;
-													] ;
-												] ;
-											] ;
-										] ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"pf_appletalk"
+			"pf_ash"
+			"pf_atmpvc"
+			"pf_atmsvc"
+			"pf_ax25"
+			"pf_bluetooth"
+			"pf_bridge"
+			"pf_decnet"
+			"pf_econet"
+			"pf_inet"
+			"pf_inet6"
+			"pf_ipx"
+			"pf_irda"
+			"pf_key"
+			"pf_netbeui"
+			"pf_netlink"
+			"pf_netrom"
+			"pf_packet"
+			"pf_pppox"
+			"pf_rose"
+			"pf_route"
+			"pf_security"
+			"pf_sna"
+			"pf_wanpipe"
+			"pf_x25"
+		) ;
 	] ;
 	.
 
@@ -4603,27 +4506,13 @@ observable:NetworkSocketType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "sock_dgram" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "sock_raw" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "sock_rdm" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "sock_seqpacket" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "sock_stream" ;
-							rdf:rest rdf:nil ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"sock_dgram"
+			"sock_raw"
+			"sock_rdm"
+			"sock_seqpacket"
+			"sock_stream"
+		) ;
 	] ;
 	.
 
@@ -5346,59 +5235,21 @@ observable:RegistryDatatype
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "reg_binary" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "reg_dword" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "reg_dword_big_endian" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "reg_expand_sz" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "reg_full_resource_descriptor" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "reg_invalid_type" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "reg_link" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "reg_multi_sz" ;
-										rdf:rest [
-											a rdf:List ;
-											rdf:first "reg_none" ;
-											rdf:rest [
-												a rdf:List ;
-												rdf:first "reg_qword" ;
-												rdf:rest [
-													a rdf:List ;
-													rdf:first "reg_resource_list" ;
-													rdf:rest [
-														a rdf:List ;
-														rdf:first "reg_resource_requirements_list" ;
-														rdf:rest [
-															a rdf:List ;
-															rdf:first "reg_sz" ;
-															rdf:rest rdf:nil ;
-														] ;
-													] ;
-												] ;
-											] ;
-										] ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"reg_binary"
+			"reg_dword"
+			"reg_dword_big_endian"
+			"reg_expand_sz"
+			"reg_full_resource_descriptor"
+			"reg_invalid_type"
+			"reg_link"
+			"reg_multi_sz"
+			"reg_none"
+			"reg_qword"
+			"reg_resource_list"
+			"reg_resource_requirements_list"
+			"reg_sz"
+		) ;
 	] ;
 	.
 
@@ -7359,19 +7210,11 @@ observable:WindowsPEBinaryType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "dll" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "exe" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "sys" ;
-					rdf:rest rdf:nil ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"dll"
+			"exe"
+			"sys"
+		) ;
 	] ;
 	.
 
@@ -7903,27 +7746,13 @@ observable:WindowsServiceStartType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_auto_start" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_boot_start" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_demand_start" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_disabled" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "service_system_alert" ;
-							rdf:rest rdf:nil ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_auto_start"
+			"service_boot_start"
+			"service_demand_start"
+			"service_disabled"
+			"service_system_alert"
+		) ;
 	] ;
 	.
 
@@ -7931,35 +7760,15 @@ observable:WindowsServiceStatus
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_continue_pending" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_pause_pending" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_paused" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_running" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "service_start_pending" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "service_stop_pending" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "service_stopped" ;
-									rdf:rest rdf:nil ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_continue_pending"
+			"service_pause_pending"
+			"service_paused"
+			"service_running"
+			"service_start_pending"
+			"service_stop_pending"
+			"service_stopped"
+		) ;
 	] ;
 	.
 
@@ -7967,23 +7776,12 @@ observable:WindowsServiceType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_file_system_driver" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_kernel_driver" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_win32_own_process" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_win32_share_process" ;
-						rdf:rest rdf:nil ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_file_system_driver"
+			"service_kernel_driver"
+			"service_win32_own_process"
+			"service_win32_share_process"
+		) ;
 	] ;
 	.
 
