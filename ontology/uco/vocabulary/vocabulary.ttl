@@ -651,6 +651,7 @@ vocabulary:ObservableObjectRelationshipVocab-members
 	rdf:first "Allocated"^^vocabulary:ObservableObjectRelationshipVocab ;
 	rdf:rest (
 		"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
+		"Attachment_Of"^^vocabulary:ObservableObjectRelationshipVocab
 		"Bound"^^vocabulary:ObservableObjectRelationshipVocab
 		"Bound_By"^^vocabulary:ObservableObjectRelationshipVocab
 		"Characterized_By"^^vocabulary:ObservableObjectRelationshipVocab
@@ -697,6 +698,7 @@ vocabulary:ObservableObjectRelationshipVocab-members
 		"FQDN_Of"^^vocabulary:ObservableObjectRelationshipVocab
 		"Freed"^^vocabulary:ObservableObjectRelationshipVocab
 		"Freed_By"^^vocabulary:ObservableObjectRelationshipVocab
+		"Had_Attachment"^^vocabulary:ObservableObjectRelationshipVocab
 		"Hooked"^^vocabulary:ObservableObjectRelationshipVocab
 		"Hooked_By"^^vocabulary:ObservableObjectRelationshipVocab
 		"Initialized_By"^^vocabulary:ObservableObjectRelationshipVocab
