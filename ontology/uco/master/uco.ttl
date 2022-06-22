@@ -38,7 +38,7 @@
 		<https://ontology.unifiedcyberontology.org/uco/victim> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
-	owl:versionInfo "0.8.0" ;
+	owl:versionInfo "0.9.0" ;
 	.
 
 core:id
