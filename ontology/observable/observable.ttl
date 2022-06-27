@@ -2853,7 +2853,7 @@ observable:FileFacet
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:isDeleted ;
+			sh:path observable:isAllocated ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
@@ -10234,10 +10234,10 @@ observable:isActive
 	rdfs:range xsd:boolean ;
 	.
 
-observable:isDeleted
+observable:isAllocated
 	a owl:DatatypeProperty ;
-	rdfs:label "isDeleted"@en ;
-	rdfs:comment "Indicates whether the object is (soft) deleted."@en ;
+	rdfs:label "isAllocated"@en ;
+	rdfs:comment "Indicates whether the object is (soft) allocated in the filesystem."@en ;
 	rdfs:range xsd:boolean ;
 	.
 
