@@ -2851,6 +2851,12 @@ observable:FileFacet
 	sh:property
 		[
 			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isAllocated ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isDirectory ;
 		] ,
@@ -10225,6 +10231,13 @@ observable:isActive
 	a owl:DatatypeProperty ;
 	rdfs:label "isActive"@en ;
 	rdfs:comment "Indicates whether the network connection is still active."@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isAllocated
+	a owl:DatatypeProperty ;
+	rdfs:label "isAllocated"@en ;
+	rdfs:comment "Indicates whether the object is (soft) allocated in the filesystem."@en ;
 	rdfs:range xsd:boolean ;
 	.
 
