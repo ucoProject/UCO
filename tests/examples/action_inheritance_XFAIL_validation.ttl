@@ -1,9 +1,9 @@
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -42,60 +42,60 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
+			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
 			] ;
 			sh:value "Pending" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action1> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
+			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
 			] ;
 			sh:value "Pending" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action2> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
+			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
 			] ;
 			sh:value "Pending" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action3> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
+			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
 			] ;
 			sh:value "Pending" ;
 		] ,

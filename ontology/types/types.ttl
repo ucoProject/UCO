@@ -1,22 +1,20 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/types
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
-@base <https://unifiedcyberontology.org/ontology/uco/types> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
-@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/types>
+<https://ontology.unifiedcyberontology.org/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
 	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
 	.
 
@@ -121,9 +119,35 @@ types:Hash
 		] ,
 		[
 			sh:datatype vocabulary:HashNameVocab ;
+			sh:message "Value is outside the default vocabulary HashNameVocab." ;
+			sh:path types:hashMethod ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:HashNameVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path types:hashMethod ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary HashNameVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:HashNameVocab ;
+					sh:in vocabulary:HashNameVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path types:hashMethod ;
 		]
 		;
@@ -162,7 +186,13 @@ types:hashMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "hashMethod"@en ;
 	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
-	rdfs:range vocabulary:HashNameVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:HashNameVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 types:hashValue

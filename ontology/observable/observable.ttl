@@ -1,35 +1,33 @@
-# baseURI: https://unifiedcyberontology.org/ontology/uco/observable
-# imports: https://unifiedcyberontology.org/ontology/uco/action
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/identity
-# imports: https://unifiedcyberontology.org/ontology/uco/location
-# imports: https://unifiedcyberontology.org/ontology/uco/types
-# imports: https://unifiedcyberontology.org/ontology/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/uco/action
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/identity
+# imports: https://ontology.unifiedcyberontology.org/uco/location
+# imports: https://ontology.unifiedcyberontology.org/uco/types
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
-@base <https://unifiedcyberontology.org/ontology/uco/observable> .
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
-@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
-@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
-@prefix vocabulary: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://unifiedcyberontology.org/ontology/uco/observable>
+<https://ontology.unifiedcyberontology.org/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
 	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/action> ,
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/identity> ,
-		<https://unifiedcyberontology.org/ontology/uco/location> ,
-		<https://unifiedcyberontology.org/ontology/uco/types> ,
-		<https://unifiedcyberontology.org/ontology/uco/vocabulary>
+		<https://ontology.unifiedcyberontology.org/uco/action> ,
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/identity> ,
+		<https://ontology.unifiedcyberontology.org/uco/location> ,
+		<https://ontology.unifiedcyberontology.org/uco/types> ,
+		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
 	.
 
@@ -162,8 +160,34 @@ observable:AccountFacet
 		] ,
 		[
 			sh:datatype vocabulary:AccountTypeVocab ;
+			sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
+			sh:path observable:accountType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:AccountTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:accountType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:AccountTypeVocab ;
+					sh:in vocabulary:AccountTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:accountType ;
 		]
 		;
@@ -222,6 +246,60 @@ observable:AlternateDataStreamFacet
 		]
 		;
 	sh:targetClass observable:AlternateDataStreamFacet ;
+	.
+
+observable:AndroidDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "AndroidDevice"@en ;
+	rdfs:comment "An Android device is a device running the Android operating system. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	sh:targetClass observable:AndroidDevice ;
+	.
+
+observable:AndroidDeviceFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AndroidDeviceFacet"@en ;
+	rdfs:comment "An Android device facet is a grouping of characteristics unique to an Android device. [based on https://en.wikipedia.org/wiki/Android_(operating_system)]"@en ;
+	sh:property
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isADBRootEnabled ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isSURootEnabled ;
+		] ,
+		[
+			sh:datatype xsd:hexBinary ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidFingerprint ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:androidVersion ;
+		]
+		;
+	sh:targetClass observable:AndroidDeviceFacet ;
 	.
 
 observable:Appliance
@@ -354,22 +432,6 @@ observable:ArchiveFileFacet
 	sh:targetClass observable:ArchiveFileFacet ;
 	.
 
-observable:AttachmentFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "AttachmentFacet"@en ;
-	rdfs:comment "An attachment facet is a grouping of characteristics unique to the inclusion of an associated object as part of a message."@en ;
-	sh:property [
-		sh:class observable:ObservableObject ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
-		sh:path observable:url ;
-	] ;
-	sh:targetClass observable:AttachmentFacet ;
-	.
-
 observable:Audio
 	a
 		owl:Class ,
@@ -438,6 +500,8 @@ observable:AutonomousSystemFacet
 	rdfs:label "AutonomousSystemFacet"@en ;
 	rdfs:comment "An autonomous system facet is a grouping of characteristics unique to a collection of connected Internet Protocol (IP) routing prefixes under the control of one or more network operators on behalf of a single administrative entity or domain that presents a common, clearly defined routing policy to the Internet. [based on https://en.wikipedia.org/wiki/Autonomous_system_(Internet)]"@en ;
 	sh:property
+		observable:regionalInternetRegistry-shape-value-not-vocabulary-member ,
+		observable:regionalInternetRegistry-shape-value-outside-default-vocabulary ,
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -452,9 +516,16 @@ observable:AutonomousSystemFacet
 			sh:path observable:asHandle ;
 		] ,
 		[
-			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RegionalRegistryTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:regionalInternetRegistry ;
 		]
 		;
@@ -798,6 +869,76 @@ observable:CalendarFacet
 	sh:targetClass observable:CalendarFacet ;
 	.
 
+observable:Call
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "Call"@en ;
+	rdfs:comment "A call is a connection as part of a realtime cyber communication between one or more parties."@en ;
+	sh:targetClass observable:Call ;
+	.
+
+observable:CallFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CallFacet"@en ;
+	rdfs:comment "A call facet is a grouping of characteristics unique to a connection as part of a realtime cyber communication between one or more parties."@en ;
+	sh:property
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:application ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:from ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:participant ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:duration ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:callType ;
+		]
+		;
+	sh:targetClass observable:CallFacet ;
+	.
+
 observable:CharacterDeviceNode
 	a
 		owl:Class ,
@@ -1015,8 +1156,34 @@ observable:ContactAddress
 		] ,
 		[
 			sh:datatype vocabulary:ContactAddressScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactAddressScopeVocab." ;
+			sh:path observable:contactAddressScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactAddressScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactAddressScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactAddressScopeVocab ;
+					sh:in vocabulary:ContactAddressScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactAddressScope ;
 		]
 		;
@@ -1106,8 +1273,34 @@ observable:ContactEmail
 		] ,
 		[
 			sh:datatype vocabulary:ContactEmailScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactEmailScopeVocab." ;
+			sh:path observable:contactEmailScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactEmailScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactEmailScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactEmailScopeVocab ;
+					sh:in vocabulary:ContactEmailScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactEmailScope ;
 		]
 		;
@@ -1341,8 +1534,34 @@ observable:ContactPhone
 		] ,
 		[
 			sh:datatype vocabulary:ContactPhoneScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactPhoneScopeVocab." ;
+			sh:path observable:contactPhoneScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactPhoneScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactPhoneScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactPhoneScopeVocab ;
+					sh:in vocabulary:ContactPhoneScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactPhoneScope ;
 		]
 		;
@@ -1389,8 +1608,34 @@ observable:ContactSIP
 		] ,
 		[
 			sh:datatype vocabulary:ContactSIPScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactSIPScopeVocab." ;
+			sh:path observable:contactSIPScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactSIPScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactSIPScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactSIPScopeVocab ;
+					sh:in vocabulary:ContactSIPScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactSIPScope ;
 		]
 		;
@@ -1413,8 +1658,34 @@ observable:ContactURL
 		] ,
 		[
 			sh:datatype vocabulary:ContactURLScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactURLScopeVocab." ;
+			sh:path observable:contactURLScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactURLScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactURLScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ContactURLScopeVocab ;
+					sh:in vocabulary:ContactURLScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactURLScope ;
 		]
 		;
@@ -1490,14 +1761,39 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeType ;
 		] ,
 		[
 			sh:datatype vocabulary:EndiannessTypeVocab ;
+			sh:message "Value is outside the default vocabulary EndiannessTypeVocab." ;
+			sh:path observable:byteOrder ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:EndiannessTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:byteOrder ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:EndiannessTypeVocab ;
+					sh:in vocabulary:EndiannessTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:byteOrder ;
 		]
 		;
@@ -1622,16 +1918,16 @@ observable:DeviceFacet
 	rdfs:comment "A device facet is a grouping of characteristics unique to a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	sh:property
 		[
-			sh:datatype xsd:string ;
+			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:deviceType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
+			sh:path observable:deviceType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2111,12 +2407,6 @@ observable:EmailMessageFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:inReplyTo ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:sender ;
 		] ,
 		[
@@ -2141,6 +2431,11 @@ observable:EmailMessageFacet
 			sh:path observable:references ;
 		] ,
 		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
+		] ,
+		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -2149,14 +2444,12 @@ observable:EmailMessageFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMimeEncoded ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMultipart ;
 		] ,
@@ -2201,6 +2494,12 @@ observable:EmailMessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contentType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:inReplyTo ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2551,13 +2850,6 @@ observable:FileFacet
 	rdfs:comment "A file facet is a grouping of characteristics unique to the storage of a file (computer resource for recording data discretely in a computer storage device) on a file system (process that manages how and where data on a storage device is stored, accessed and managed). [based on https://en.wikipedia.org/Computer_file and https://www.techopedia.com/definition/5510/file-system]"@en ;
 	sh:property
 		[
-			rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:sizeInBytes ;
-		] ,
-		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -2593,6 +2885,13 @@ observable:FileFacet
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
+			sh:datatype xsd:integer ;
+			sh:description "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:sizeInBytes ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -2603,12 +2902,6 @@ observable:FileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:extension ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:fileSystemType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -3448,8 +3741,34 @@ observable:MemoryFacet
 		] ,
 		[
 			sh:datatype vocabulary:MemoryBlockTypeVocab ;
+			sh:message "Value is outside the default vocabulary MemoryBlockTypeVocab." ;
+			sh:path observable:blockType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:MemoryBlockTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:blockType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:MemoryBlockTypeVocab ;
+					sh:in vocabulary:MemoryBlockTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:blockType ;
 		]
 		;
@@ -3487,6 +3806,11 @@ observable:MessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:from ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:to ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -4137,39 +4461,16 @@ observable:NetworkSocketAddressFamily
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "af_appletalk" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "af_bth" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "af_inet" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "af_inet6" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "af_ipx" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "af_irda" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "af_netbios" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "af_unspec" ;
-										rdf:rest rdf:nil ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"af_appletalk"
+			"af_bth"
+			"af_inet"
+			"af_inet6"
+			"af_ipx"
+			"af_irda"
+			"af_netbios"
+			"af_unspec"
+		) ;
 	] ;
 	.
 
@@ -4177,107 +4478,33 @@ observable:NetworkSocketProtocolFamily
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "pf_appletalk" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "pf_ash" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "pf_atmpvc" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "pf_atmsvc" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "pf_ax25" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "pf_bluetooth" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "pf_bridge" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "pf_decnet" ;
-										rdf:rest [
-											a rdf:List ;
-											rdf:first "pf_econet" ;
-											rdf:rest [
-												a rdf:List ;
-												rdf:first "pf_inet" ;
-												rdf:rest [
-													a rdf:List ;
-													rdf:first "pf_inet6" ;
-													rdf:rest [
-														a rdf:List ;
-														rdf:first "pf_ipx" ;
-														rdf:rest [
-															a rdf:List ;
-															rdf:first "pf_irda" ;
-															rdf:rest [
-																a rdf:List ;
-																rdf:first "pf_key" ;
-																rdf:rest [
-																	a rdf:List ;
-																	rdf:first "pf_netbeui" ;
-																	rdf:rest [
-																		a rdf:List ;
-																		rdf:first "pf_netlink" ;
-																		rdf:rest [
-																			a rdf:List ;
-																			rdf:first "pf_netrom" ;
-																			rdf:rest [
-																				a rdf:List ;
-																				rdf:first "pf_packet" ;
-																				rdf:rest [
-																					a rdf:List ;
-																					rdf:first "pf_pppox" ;
-																					rdf:rest [
-																						a rdf:List ;
-																						rdf:first "pf_rose" ;
-																						rdf:rest [
-																							a rdf:List ;
-																							rdf:first "pf_route" ;
-																							rdf:rest [
-																								a rdf:List ;
-																								rdf:first "pf_security" ;
-																								rdf:rest [
-																									a rdf:List ;
-																									rdf:first "pf_sna" ;
-																									rdf:rest [
-																										a rdf:List ;
-																										rdf:first "pf_wanpipe" ;
-																										rdf:rest [
-																											a rdf:List ;
-																											rdf:first "pf_x25" ;
-																											rdf:rest rdf:nil ;
-																										] ;
-																									] ;
-																								] ;
-																							] ;
-																						] ;
-																					] ;
-																				] ;
-																			] ;
-																		] ;
-																	] ;
-																] ;
-															] ;
-														] ;
-													] ;
-												] ;
-											] ;
-										] ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"pf_appletalk"
+			"pf_ash"
+			"pf_atmpvc"
+			"pf_atmsvc"
+			"pf_ax25"
+			"pf_bluetooth"
+			"pf_bridge"
+			"pf_decnet"
+			"pf_econet"
+			"pf_inet"
+			"pf_inet6"
+			"pf_ipx"
+			"pf_irda"
+			"pf_key"
+			"pf_netbeui"
+			"pf_netlink"
+			"pf_netrom"
+			"pf_packet"
+			"pf_pppox"
+			"pf_rose"
+			"pf_route"
+			"pf_security"
+			"pf_sna"
+			"pf_wanpipe"
+			"pf_x25"
+		) ;
 	] ;
 	.
 
@@ -4285,27 +4512,13 @@ observable:NetworkSocketType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "sock_dgram" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "sock_raw" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "sock_rdm" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "sock_seqpacket" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "sock_stream" ;
-							rdf:rest rdf:nil ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"sock_dgram"
+			"sock_raw"
+			"sock_rdm"
+			"sock_seqpacket"
+			"sock_stream"
+		) ;
 	] ;
 	.
 
@@ -4343,7 +4556,6 @@ observable:NoteFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -4530,10 +4742,22 @@ observable:OperatingSystemFacet
 	rdfs:comment "An operating system facet is a grouping of characteristics unique to the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	sh:property
 		[
+			sh:class identity:Identity ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:environmentVariables ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isLimitAdTrackingEnabled ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -4551,13 +4775,12 @@ observable:OperatingSystemFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
+			sh:path observable:version ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:version ;
+			sh:path observable:advertisingID ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
@@ -4684,73 +4907,6 @@ observable:PhoneAccountFacet
 		sh:path observable:phoneNumber ;
 	] ;
 	sh:targetClass observable:PhoneAccountFacet ;
-	.
-
-observable:PhoneCall
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "PhoneCall"@en ;
-	rdfs:comment "A phone call is a connection over a telephone network between the called party and the calling party. [based on https://en.wikipedia.org/wiki/Telephone_call]"@en ;
-	sh:targetClass observable:PhoneCall ;
-	.
-
-observable:PhoneCallFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "PhoneCallFacet"@en ;
-	rdfs:comment "A phone call facet is a grouping of characteristics unique to a connection over a telephone network between the called party and the calling party. [based on https://en.wikipedia.org/wiki/Telephone_call]"@en ;
-	sh:property
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:application ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:from ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:to ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:endTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:startTime ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:duration ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:callType ;
-		]
-		;
-	sh:targetClass observable:PhoneCallFacet ;
 	.
 
 observable:Pipe
@@ -5085,59 +5241,21 @@ observable:RegistryDatatype
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "reg_binary" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "reg_dword" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "reg_dword_big_endian" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "reg_expand_sz" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "reg_full_resource_descriptor" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "reg_invalid_type" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "reg_link" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "reg_multi_sz" ;
-										rdf:rest [
-											a rdf:List ;
-											rdf:first "reg_none" ;
-											rdf:rest [
-												a rdf:List ;
-												rdf:first "reg_qword" ;
-												rdf:rest [
-													a rdf:List ;
-													rdf:first "reg_resource_list" ;
-													rdf:rest [
-														a rdf:List ;
-														rdf:first "reg_resource_requirements_list" ;
-														rdf:rest [
-															a rdf:List ;
-															rdf:first "reg_sz" ;
-															rdf:rest rdf:nil ;
-														] ;
-													] ;
-												] ;
-											] ;
-										] ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"reg_binary"
+			"reg_dword"
+			"reg_dword_big_endian"
+			"reg_expand_sz"
+			"reg_full_resource_descriptor"
+			"reg_invalid_type"
+			"reg_link"
+			"reg_multi_sz"
+			"reg_none"
+			"reg_qword"
+			"reg_resource_list"
+			"reg_resource_requirements_list"
+			"reg_sz"
+		) ;
 	] ;
 	.
 
@@ -5458,6 +5576,12 @@ observable:SoftwareFacet
 	rdfs:comment "A software facet is a grouping of characteristics unique to a software program (a definitively scoped instance of a collection of data or computer instructions that tell the computer how to work). [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:property
 		[
+			sh:class identity:Identity ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:manufacturer ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5468,12 +5592,6 @@ observable:SoftwareFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:language ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -5622,8 +5740,34 @@ observable:TaskActionType
 		] ,
 		[
 			sh:datatype vocabulary:TaskActionTypeVocab ;
+			sh:message "Value is outside the default vocabulary TaskActionTypeVocab." ;
+			sh:path observable:actionType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskActionTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:actionType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskActionTypeVocab ;
+					sh:in vocabulary:TaskActionTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:actionType ;
 		]
 		;
@@ -5687,14 +5831,66 @@ observable:TriggerType
 		] ,
 		[
 			sh:datatype vocabulary:TriggerFrequencyVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TriggerFrequencyVocab." ;
 			sh:path observable:triggerFrequency ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary:TriggerTypeVocab ;
+			sh:message "Value is outside the default vocabulary TriggerTypeVocab." ;
+			sh:path observable:triggerType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TriggerFrequencyVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerFrequency ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TriggerTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TriggerFrequencyVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TriggerFrequencyVocab ;
+					sh:in vocabulary:TriggerFrequencyVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerFrequency ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TriggerTypeVocab ;
+					sh:in vocabulary:TriggerTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:triggerType ;
 		]
 		;
@@ -5966,12 +6162,6 @@ observable:URLFacet
 			sh:path observable:host ;
 		] ,
 		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:userName ;
-		] ,
-		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -6013,6 +6203,12 @@ observable:URLFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:scheme ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:userName ;
 		]
 		;
 	sh:targetClass observable:URLFacet ;
@@ -6183,8 +6379,35 @@ observable:URLVisitFacet
 			sh:path observable:visitDuration ;
 		] ,
 		[
+			sh:datatype vocabulary:URLTransitionTypeVocab ;
+			sh:message "Value is outside the default vocabulary URLTransitionTypeVocab." ;
+			sh:path observable:urlTransitionType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:URLTransitionTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:urlTransitionType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:URLTransitionTypeVocab ;
+					sh:in vocabulary:URLTransitionTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:urlTransitionType ;
 		]
 		;
@@ -6381,6 +6604,8 @@ observable:WhoIsFacet
 	rdfs:label "WhoIsFacet"@en ;
 	rdfs:comment "A whois facet is a grouping of characteristics unique to a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
+		observable:regionalInternetRegistry-shape-value-not-vocabulary-member ,
+		observable:regionalInternetRegistry-shape-value-outside-default-vocabulary ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -6464,12 +6689,6 @@ observable:WhoIsFacet
 			sh:path observable:registrantIDs ;
 		] ,
 		[
-			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:regionalInternetRegistry ;
-		] ,
-		[
 			sh:datatype vocabulary:WhoisDNSSECTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -6477,8 +6696,47 @@ observable:WhoIsFacet
 		] ,
 		[
 			sh:datatype vocabulary:WhoisStatusTypeVocab ;
+			sh:message "Value is outside the default vocabulary WhoisStatusTypeVocab." ;
+			sh:path observable:status ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RegionalRegistryTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:regionalInternetRegistry ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WhoisStatusTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WhoisStatusTypeVocab ;
+					sh:in vocabulary:WhoisStatusTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:status ;
 		]
 		;
@@ -6493,12 +6751,40 @@ observable:WhoisContactFacet
 	rdfs:subClassOf observable:ContactFacet ;
 	rdfs:label "WhoIsContactFacet"@en ;
 	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
-	sh:property [
-		sh:datatype vocabulary:WhoisContactTypeVocab ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:whoisContactType ;
-	] ;
+	sh:property
+		[
+			sh:datatype vocabulary:WhoisContactTypeVocab ;
+			sh:message "Value is outside the default vocabulary WhoisContactTypeVocab." ;
+			sh:path observable:whoisContactType ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WhoisContactTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:whoisContactType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WhoisContactTypeVocab ;
+					sh:in vocabulary:WhoisContactTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:whoisContactType ;
+		]
+		;
 	sh:targetClass observable:WhoisContactFacet ;
 	.
 
@@ -6930,19 +7216,11 @@ observable:WindowsPEBinaryType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "dll" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "exe" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "sys" ;
-					rdf:rest rdf:nil ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"dll"
+			"exe"
+			"sys"
+		) ;
 	] ;
 	.
 
@@ -7474,27 +7752,13 @@ observable:WindowsServiceStartType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_auto_start" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_boot_start" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_demand_start" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_disabled" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "service_system_alert" ;
-							rdf:rest rdf:nil ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_auto_start"
+			"service_boot_start"
+			"service_demand_start"
+			"service_disabled"
+			"service_system_alert"
+		) ;
 	] ;
 	.
 
@@ -7502,35 +7766,15 @@ observable:WindowsServiceStatus
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_continue_pending" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_pause_pending" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_paused" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_running" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "service_start_pending" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "service_stop_pending" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "service_stopped" ;
-									rdf:rest rdf:nil ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_continue_pending"
+			"service_pause_pending"
+			"service_paused"
+			"service_running"
+			"service_start_pending"
+			"service_stop_pending"
+			"service_stopped"
+		) ;
 	] ;
 	.
 
@@ -7538,23 +7782,12 @@ observable:WindowsServiceType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_file_system_driver" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_kernel_driver" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_win32_own_process" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_win32_share_process" ;
-						rdf:rest rdf:nil ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_file_system_driver"
+			"service_kernel_driver"
+			"service_win32_own_process"
+			"service_win32_share_process"
+		) ;
 	] ;
 	.
 
@@ -7691,20 +7924,104 @@ observable:WindowsTaskFacet
 		] ,
 		[
 			sh:datatype vocabulary:TaskFlagVocab ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TaskFlagVocab." ;
 			sh:path observable:flags ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary:TaskPriorityVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TaskPriorityVocab." ;
 			sh:path observable:priority ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary:TaskStatusVocab ;
+			sh:message "Value is outside the default vocabulary TaskStatusVocab." ;
+			sh:path observable:status ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskPriorityVocab ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:status ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskFlagVocab ;
+					sh:in vocabulary:TaskFlagVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:flags ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskPriorityVocab ;
+					sh:in vocabulary:TaskPriorityVocab-members ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskStatusVocab ;
+					sh:in vocabulary:TaskStatusVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TaskFlagVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:flags ;
 		]
 		;
 	sh:targetClass observable:WindowsTaskFacet ;
@@ -7806,15 +8123,41 @@ observable:WindowsVolumeFacet
 		] ,
 		[
 			sh:datatype vocabulary:WindowsDriveTypeVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary WindowsDriveTypeVocab." ;
 			sh:path observable:driveType ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary:WindowsVolumeAttributeVocab ;
 			sh:maxCount "4"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:windowsVolumeAttributes ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WindowsDriveTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:driveType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WindowsDriveTypeVocab ;
+					sh:in vocabulary:WindowsDriveTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:driveType ;
 		]
 		;
 	sh:targetClass observable:WindowsVolumeFacet ;
@@ -7861,7 +8204,39 @@ observable:WirelessNetworkConnectionFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:password ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:ssid ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:wirelessNetworkSecurityMode ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
+					sh:in vocabulary:WirelessNetworkSecurityModeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
@@ -8181,7 +8556,13 @@ observable:accountType
 	a owl:DatatypeProperty ;
 	rdfs:label "accountType"@en ;
 	rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
-	rdfs:range vocabulary:AccountTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:AccountTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:actionID
@@ -8202,7 +8583,13 @@ observable:actionType
 	a owl:DatatypeProperty ;
 	rdfs:label "actionType"@en ;
 	rdfs:comment "Specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
-	rdfs:range vocabulary:TaskActionTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TaskActionTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:activeDirectoryGroups
@@ -8232,6 +8619,13 @@ observable:addressValue
 	rdfs:range xsd:string ;
 	.
 
+observable:advertisingID
+	a owl:DatatypeProperty ;
+	rdfs:label "advertisingID"@en ;
+	rdfs:comment "Advertising ID as a UUID. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:allocationStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "allocationStatus"@en ;
@@ -8243,6 +8637,27 @@ observable:alternateDataStreams
 	a owl:ObjectProperty ;
 	rdfs:label "alternateDataStreams"@en ;
 	rdfs:range observable:AlternateDataStream ;
+	.
+
+observable:androidFingerprint
+	a owl:DatatypeProperty ;
+	rdfs:label "androidFingerprint"@en ;
+	rdfs:comment "A string that uniquely identifies a build of the Android operating system. [based on https://developer.android.com/reference/android/os/Build#FINGERPRINT]"@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:androidID
+	a owl:DatatypeProperty ;
+	rdfs:label "androidID"@en ;
+	rdfs:comment "A 64-bit number (expressed as a hexadecimal string), unique to each combination of app-signing key, user, and device. [based on https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID]"@en ;
+	rdfs:range xsd:hexBinary ;
+	.
+
+observable:androidVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "androidVersion"@en ;
+	rdfs:comment "The user-visible version string. E.g., '1.0' or '3.4b5' or 'bananas'. This field is an opaque string. Do not assume that its value has any particular structure or that values of RELEASE from different releases can be somehow ordered. [based on https://developer.android.com/reference/android/os/Build.VERSION#RELEASE]"@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:application
@@ -8409,7 +8824,13 @@ observable:blockType
 	a owl:DatatypeProperty ;
 	rdfs:label "blockType"@en ;
 	rdfs:comment "The blockType property specifies the block type of a particular memory object."@en ;
-	rdfs:range vocabulary:MemoryBlockTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:MemoryBlockTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:bluetoothDeviceName
@@ -8462,7 +8883,13 @@ observable:browserUserProfile
 observable:byteOrder
 	a owl:DatatypeProperty ;
 	rdfs:label "byteOrder"@en ;
-	rdfs:range vocabulary:EndiannessTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:EndiannessTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:byteStringValue
@@ -9071,7 +9498,13 @@ observable:driveType
 	a owl:DatatypeProperty ;
 	rdfs:label "driveType"@en ;
 	rdfs:comment "Specifies the drive type of a windows volume."@en ;
-	rdfs:range vocabulary:WindowsDriveTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:WindowsDriveTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:dst
@@ -9452,7 +9885,13 @@ observable:flags
 	a owl:DatatypeProperty ;
 	rdfs:label "flags"@en ;
 	rdfs:comment "Specifies any flags that modify the behavior of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.85).aspx."@en ;
-	rdfs:range vocabulary:TaskFlagVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TaskFlagVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:followersCount
@@ -9727,10 +10166,10 @@ observable:impHash
 	.
 
 observable:inReplyTo
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "inReplyTo"@en ;
 	rdfs:comment "One of more unique identifiers for identifying the email(s) this email is a reply to."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:inetLocation
@@ -9779,6 +10218,13 @@ observable:ipfix
 	rdfs:label "ipfix"@en ;
 	rdfs:comment "Specifies any IP Flow Information Export (IPFIX) data for the network traffic flow."@en ;
 	rdfs:range types:Dictionary ;
+	.
+
+observable:isADBRootEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isADBRootEnabled"@en ;
+	rdfs:comment "Root access through the Android Debug Bridge (ADB) daemon observed to be enabled. [based on https://developer.android.com/studio/command-line/adb]"@en ;
+	rdfs:range xsd:boolean ;
 	.
 
 observable:isActive
@@ -9837,6 +10283,13 @@ observable:isInjected
 	rdfs:range xsd:boolean ;
 	.
 
+observable:isLimitAdTrackingEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isLimitAdTrackingEnabled"@en ;
+	rdfs:comment "Limits advertising tracking if enabled. [based on https://developer.android.com/reference/androidx/ads/identifier/AdvertisingIdInfo]"@en ;
+	rdfs:range xsd:boolean ;
+	.
+
 observable:isMapped
 	a owl:DatatypeProperty ;
 	rdfs:label "isMapped"@en ;
@@ -9891,6 +10344,13 @@ observable:isProtected
 observable:isRead
 	a owl:DatatypeProperty ;
 	rdfs:label "isRead"@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:isSURootEnabled
+	a owl:DatatypeProperty ;
+	rdfs:label "isSURootEnabled"@en ;
+	rdfs:comment "Root access through Linux SU binary observed to be enabled. [based on https://en.wikipedia.org/wiki/Rooting_(Android)]"@en ;
 	rdfs:range xsd:boolean ;
 	.
 
@@ -10011,6 +10471,7 @@ observable:lastTimeContacted
 	a owl:DatatypeProperty ;
 	rdfs:label "lastTimeContacted"@en ;
 	rdfs:comment "Last time contacted specifies the date and time that a particular contact was last contacted."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:lastVisit
@@ -10146,9 +10607,9 @@ observable:manuallyEnteredCount
 	.
 
 observable:manufacturer
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "manufacturer"@en ;
-	rdfs:range xsd:string ;
+	rdfs:range identity:Identity ;
 	.
 
 observable:maxRunTime
@@ -11025,7 +11486,36 @@ observable:regionalInternetRegistry
 	a owl:DatatypeProperty ;
 	rdfs:label "regionalInternetRegistry"@en ;
 	rdfs:comment "specifies the name of the Regional Internet Registry (RIR) which allocated the IP address contained in a WHOIS entry."@en ;
-	rdfs:range vocabulary:RegionalRegistryTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:RegionalRegistryTypeVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
+observable:regionalInternetRegistry-shape-value-not-vocabulary-member
+	a sh:PropertyShape ;
+	sh:message "Value is not member of the vocabulary RegionalRegistryTypeVocab." ;
+	sh:or (
+		[
+			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
+			sh:in vocabulary:RegionalRegistryTypeVocab-members ;
+		]
+		[
+			sh:datatype xsd:string ;
+		]
+	) ;
+	sh:path observable:regionalInternetRegistry ;
+	.
+
+observable:regionalInternetRegistry-shape-value-outside-default-vocabulary
+	a sh:PropertyShape ;
+	sh:datatype vocabulary:RegionalRegistryTypeVocab ;
+	sh:message "Value is outside the default vocabulary RegionalRegistryTypeVocab." ;
+	sh:path observable:regionalInternetRegistry ;
+	sh:severity sh:Info ;
 	.
 
 observable:registeredOrganization
@@ -11745,7 +12235,13 @@ observable:triggerFrequency
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerFrequency"@en ;
 	rdfs:comment "Specifies the frequency at which the trigger repeats."@en ;
-	rdfs:range vocabulary:TriggerFrequencyVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TriggerFrequencyVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:triggerList
@@ -11773,7 +12269,13 @@ observable:triggerType
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerType"@en ;
 	rdfs:comment "Specifies the type of the task trigger."@en ;
-	rdfs:range vocabulary:TriggerTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TriggerTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:twitterHandle
@@ -11846,10 +12348,10 @@ observable:userLocationString
 	.
 
 observable:userName
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "userName"@en ;
 	rdfs:comment "Username used to authenticate to this resource."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:validityNotAfter
@@ -11983,6 +12485,19 @@ observable:windowsVolumeAttributes
 	rdfs:label "windowsVolumeAttributes"@en ;
 	rdfs:comment "Specifies the attributes of a windows volume."@en ;
 	rdfs:range vocabulary:WindowsVolumeAttributeVocab ;
+	.
+
+observable:wirelessNetworkSecurityMode
+	a owl:DatatypeProperty ;
+	rdfs:label "wirelessNetworkSecurityMode"@en ;
+	rdfs:comment "Specifies the security mode of a wireless network (None, WEP, WPA, etc)."@en ;
+	rdfs:range [
+		a rdfs:DataType ;
+		owl:unionOf (
+			vocabulary:WirelessNetworkSecurityModeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:workItemData
