@@ -33,6 +33,7 @@ all-co:
 
 all-uco:
 	$(MAKE) \
+	  --directory uco
 
 check: \
   check-co \

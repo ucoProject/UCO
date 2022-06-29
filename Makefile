@@ -38,7 +38,7 @@ check: \
   .git_submodule_init.done.log \
   .lib.done.log
 	$(MAKE) \
-	  --directory ontology/uco \
+	  --directory ontology \
 	  check
 	$(MAKE) \
 	  --directory tests \
@@ -53,7 +53,7 @@ clean: \
 
 clean-ontology:
 	@$(MAKE) \
-	  --directory ontology/uco \
+	  --directory ontology \
 	  clean
 
 clean-tests:
