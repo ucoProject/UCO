@@ -1,3 +1,9 @@
 [submodule "dependencies/CASE-Utility-SHACL-Inheritance-Reviewer"]
 	path = dependencies/CASE-Utility-SHACL-Inheritance-Reviewer
 	url = https://github.com/casework/CASE-Utility-SHACL-Inheritance-Reviewer.git
+[submodule "dependencies/collections-ontology"]
+	path = dependencies/collections-ontology
+	url = https://github.com/collections-ontology/collections-ontology.git
+[submodule "dependencies/error"]
+	path = dependencies/error
+	url = https://github.com/SPAROntologies/error.git
