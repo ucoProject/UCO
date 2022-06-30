@@ -1092,6 +1092,19 @@ vocabulary:TriggerTypeVocab
 	) ;
 	.
 
+vocabulary:UnallocatedRecoverabilityStatusVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Unallocated Recoverability Status Vocabulary"@en-US ;
+	rdfs:comment "Defines the vocabulary for unallocated recoverability status of data."@en ;
+	owl:oneOf (
+		"recovered"^^vocabulary:UnallocatedRecoverabilityStatusVocab
+		"partially recovered"^^vocabulary:UnallocatedRecoverabilityStatusVocab
+		"overwritten"^^vocabulary:UnallocatedRecoverabilityStatusVocab
+		"unknown"^^vocabulary:UnallocatedRecoverabilityStatusVocab
+	) ;
+	.
+
 vocabulary:URLTransitionTypeVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
