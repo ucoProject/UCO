@@ -13,7 +13,7 @@
 
 SHELL := /bin/bash
 
-top_srcdir := $(shell cd .. ; pwd)
+top_srcdir := $(shell cd ../.. ; pwd)
 
 turtle_directories := $(shell find * -type d -maxdepth 0 | sort)
 

@@ -15,7 +15,7 @@ SHELL := /bin/bash
 
 # This Makefile is assumed to execute in a repository directory ontology/*.
 
-top_srcdir := $(shell cd ../.. ; pwd)
+top_srcdir := $(shell cd ../../.. ; pwd)
 
 ttl_basenames := $(shell find *.ttl -type f | sort)
 
