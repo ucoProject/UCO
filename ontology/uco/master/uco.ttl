@@ -1,4 +1,5 @@
 # imports: https://ontology.unifiedcyberontology.org/co
+# imports: https://ontology.unifiedcyberontology.org/owl
 # imports: https://ontology.unifiedcyberontology.org/uco/action
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/identity
@@ -26,6 +27,7 @@
 	rdfs:label "uco-master"@en ;
 	owl:imports
 		<https://ontology.unifiedcyberontology.org/co> ,
+		<https://ontology.unifiedcyberontology.org/owl> ,
 		<https://ontology.unifiedcyberontology.org/uco/action> ,
 		<https://ontology.unifiedcyberontology.org/uco/core> ,
 		<https://ontology.unifiedcyberontology.org/uco/identity> ,

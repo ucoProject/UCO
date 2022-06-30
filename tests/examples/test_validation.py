@@ -250,6 +250,54 @@ def test_location_XFAIL_validation_XPASS_wrong_concept_name():
       }
     )
 
+def test_owl_axiom_PASS() -> None:
+    confirm_validation_results(
+      "owl_axiom_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities=set()
+    )
+
+def test_owl_axiom_XFAIL() -> None:
+    confirm_validation_results(
+      "owl_axiom_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/axiom-1", str(NS_SH.Violation)),
+      }
+    )
+
+def test_owl_properties_PASS() -> None:
+    confirm_validation_results(
+      "owl_properties_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities=set()
+    )
+
+def test_owl_properties_XFAIL() -> None:
+    confirm_validation_results(
+      "owl_properties_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/cross-property-ad", str(NS_SH.Violation)),
+        ("http://example.org/kb/cross-property-ao", str(NS_SH.Violation)),
+        ("http://example.org/kb/cross-property-do", str(NS_SH.Violation)),
+      }
+    )
+
+def test_rdf_list_PASS() -> None:
+    confirm_validation_results(
+      "rdf_list_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities=set()
+    )
+
+@pytest.mark.xfail(reason="Test expected to fail under semi-open vocabulary design current as of UCO 0.8.0.", strict=True)
+def test_rdf_list_XFAIL() -> None:
+    confirm_validation_results(
+      "rdf_list_XFAIL_validation.ttl",
+      False
+    )
+
 def test_relationship_PASS_partial() -> None:
     """
     This test should be replaced with test_relationship_XFAIL_full when the semi-open vocabulary design current as of UCO 0.8.0 is re-done.

@@ -21,6 +21,9 @@ uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl $(top_srcdir)
 
 all:
 
+.PHONY: \
+  check-dependencies
+
 # The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
 .venv.done.log: \
   $(top_srcdir)/.git_submodule_init.done.log \
@@ -45,6 +48,7 @@ all:
 	touch $@
 
 check: \
+  check-dependencies \
   inheritance_review.ttl \
   uco_monolithic.ttl
 	source venv/bin/activate \
@@ -55,9 +59,18 @@ check: \
 	  --directory examples \
 	  check
 
+check-dependencies: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory dependencies \
+	  check
+
 clean:
 	@$(MAKE) \
 	  --directory examples \
+	  clean
+	@$(MAKE) \
+	  --directory dependencies \
 	  clean
 	@rm -f \
 	  .venv.done.log \
@@ -86,6 +99,17 @@ uco_monolithic.ttl: \
 	  && python3 src/glom_graph.py \
 	    __$@ \
 	    $(uco_turtle_files)
+	# Review UCO for OWL 2 DL conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --allow-warnings \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --ont-file-format turtle \
+	    --shacl $(top_srcdir)/ontology/owl/owl.ttl \
+	    --shacl-file-format turtle \
+	    __$@
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
 	  --inline-blank-nodes \
 	  --source __$@ \

@@ -13,12 +13,8 @@ vocabulary:AccountTypeVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Account Type Vocabulary"@en-US ;
-	owl:oneOf vocabulary:AccountTypeVocab-members ;
-	.
-
-vocabulary:AccountTypeVocab-members
-	rdf:first "ldap"^^vocabulary:AccountTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"ldap"^^vocabulary:AccountTypeVocab
 		"nis"^^vocabulary:AccountTypeVocab
 		"openid"^^vocabulary:AccountTypeVocab
 		"radius"^^vocabulary:AccountTypeVocab
@@ -939,12 +935,8 @@ vocabulary:TaskFlagVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Flag Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the run flags for a task scheduler task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381283(v=vs.85).aspx See Also: http://msdn.microsoft.com/en-us/library/microsoft.office.excel.server.addins.computecluster.taskscheduler.taskflags(v=office.12).aspx."@en ;
-	owl:oneOf vocabulary:TaskFlagVocab-members ;
-	.
-
-vocabulary:TaskFlagVocab-members
-	rdf:first "TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
 		"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
 		"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
 		"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
@@ -965,12 +957,8 @@ vocabulary:TaskPriorityVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Priority Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the priority levels of task scheduler tasks. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383512(v=vs.85).aspx."@en ;
-	owl:oneOf vocabulary:TaskPriorityVocab-members ;
-	.
-
-vocabulary:TaskPriorityVocab-members
-	rdf:first "ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
 		"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
 		"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
 		"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
@@ -1137,12 +1125,8 @@ vocabulary:WhoisContactTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Whois Contact Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of registrar contacts listed in a whois entry."@en ;
-	owl:oneOf vocabulary:WhoisContactTypeVocab-members ;
-	.
-
-vocabulary:WhoisContactTypeVocab-members
-	rdf:first "ADMIN"^^vocabulary:WhoisContactTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"ADMIN"^^vocabulary:WhoisContactTypeVocab
 		"BILLING"^^vocabulary:WhoisContactTypeVocab
 		"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
 	) ;

@@ -257,7 +257,10 @@ action:ActionFrequencyFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:TrendVocab ;
-					sh:in vocabulary:TrendVocab-members ;
+					sh:in (
+						"Decreasing"^^vocabulary:TrendVocab
+						"Increasing"^^vocabulary:TrendVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
