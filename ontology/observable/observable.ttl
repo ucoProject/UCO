@@ -6012,6 +6012,60 @@ observable:TwitterProfileFacet
 	sh:targetClass observable:TwitterProfileFacet ;
 	.
 
+observable:UnallocatedRecoverabilityFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "UnallocatedRecoverabilityFacet"@en ;
+	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
+	rdfs:seeAlso <https://unifiedcyberontology.atlassian.net/browse/ONT-119> ;
+	sh:property
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:UnallocatedRecoverabilityStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:nameRecoverabilityStatus ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:UnallocatedRecoverabilityStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:metadataRecoverabilityStatus ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:UnallocatedRecoverabilityStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contentRecoverabilityStatus ;
+		] , 
+		;
+	sh:targetClass observable:UnallocatedRecoverabilityFacet ;
+	.
+
+
 observable:UNIXAccount
 	a
 		owl:Class ,
@@ -9208,6 +9262,19 @@ observable:contentDisposition
 	rdfs:range xsd:string ;
 	.
 
+observable:contentRecoverabilityStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "contentRecoverabilityStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the content of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:UnallocatedRecoverabilityStatusVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
 observable:contentType
 	a owl:DatatypeProperty ;
 	rdfs:label "contentType"@en ;
@@ -10647,6 +10714,19 @@ observable:metadataChangeTime
 	rdfs:range xsd:dateTime ;
 	.
 
+observable:metadataRecoverabilityStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "metadataRecoverabilityStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the metadata of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:UnallocatedRecoverabilityStatusVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
 observable:mftFileID
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileID"@en ;
@@ -10825,6 +10905,19 @@ observable:namePrefix
 	rdfs:label "namePrefix"@en ;
 	rdfs:comment "Name prefix specifies an honorific prefix (coming ordinally before first/given name) for the name of a person."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:nameRecoverabilityStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "nameRecoverabilityStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the name of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:UnallocatedRecoverabilityStatusVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:nameServer
