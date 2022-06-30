@@ -28,6 +28,7 @@ all: \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
+  message_thread_XFAIL_validation.ttl \
   relationship_PASS_validation.ttl \
   relationship_XFAIL_validation.ttl \
   thread_PASS_validation.ttl \
@@ -82,6 +83,7 @@ check: \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
+  message_thread_XFAIL_validation.ttl \
   relationship_PASS_validation.ttl \
   relationship_XFAIL_validation.ttl \
   thread_PASS_validation.ttl \

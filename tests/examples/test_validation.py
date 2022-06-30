@@ -317,6 +317,9 @@ WHERE {
 def test_message_thread_PASS_validation():
     confirm_validation_results("message_thread_PASS_validation.ttl", True)
 
+def test_message_thread_XFAIL_validation():
+    confirm_validation_results("message_thread_XFAIL_validation.ttl", False)
+
 def test_relationship_PASS_partial() -> None:
     """
     This test should be replaced with test_relationship_XFAIL_full when the semi-open vocabulary design current as of UCO 0.8.0 is re-done.
