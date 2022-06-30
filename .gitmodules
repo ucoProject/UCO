@@ -4,3 +4,6 @@
 [submodule "dependencies/collections-ontology"]
 	path = dependencies/collections-ontology
 	url = https://github.com/collections-ontology/collections-ontology.git
+[submodule "dependencies/error"]
+	path = dependencies/error
+	url = https://github.com/SPAROntologies/error.git
