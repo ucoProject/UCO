@@ -1,0 +1,210 @@
+@prefix co: <http://purl.org/co/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MessageThreadFacet ;
+				observable:message
+					<http://example.org/kb/message-1> ,
+					<http://example.org/kb/message-2> ,
+					<http://example.org/kb/message-3> ,
+					<http://example.org/kb/message-4> ,
+					<http://example.org/kb/message-5> ,
+					<http://example.org/kb/message-6>
+					;
+				observable:messageThread <http://example.org/kb/thread-2> ;
+			] ;
+			sh:resultMessage "Value does not have class observable:Message" ;
+			sh:resultPath (
+				observable:messageThread
+				co:element
+			) ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:Message ;
+				sh:description "The contents of unordered items in the Thread linked by messageThread must be Message objects."@en ;
+				sh:path (
+					observable:messageThread
+					co:element
+				) ;
+			] ;
+			sh:value <http://example.org/kb/message-1> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MessageThreadFacet ;
+				observable:message
+					<http://example.org/kb/message-1> ,
+					<http://example.org/kb/message-2> ,
+					<http://example.org/kb/message-3> ,
+					<http://example.org/kb/message-4> ,
+					<http://example.org/kb/message-5> ,
+					<http://example.org/kb/message-6>
+					;
+				observable:messageThread <http://example.org/kb/thread-2> ;
+			] ;
+			sh:resultMessage "Value does not have class observable:Message" ;
+			sh:resultPath (
+				observable:messageThread
+				co:element
+			) ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:Message ;
+				sh:description "The contents of unordered items in the Thread linked by messageThread must be Message objects."@en ;
+				sh:path (
+					observable:messageThread
+					co:element
+				) ;
+			] ;
+			sh:value <http://example.org/kb/message-6> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MessageThreadFacet ;
+				observable:message
+					<http://example.org/kb/message-1> ,
+					<http://example.org/kb/message-2> ,
+					<http://example.org/kb/message-3> ,
+					<http://example.org/kb/message-4> ,
+					<http://example.org/kb/message-5> ,
+					<http://example.org/kb/message-6>
+					;
+				observable:messageThread <http://example.org/kb/thread-2> ;
+			] ;
+			sh:resultMessage "Value does not have class observable:Message" ;
+			sh:resultPath (
+				observable:messageThread
+				co:item
+				co:itemContent
+			) ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:Message ;
+				sh:description "The contents of ordered items in the Thread linked by messageThread must be Message objects."@en ;
+				sh:path (
+					observable:messageThread
+					co:item
+					co:itemContent
+				) ;
+			] ;
+			sh:value <http://example.org/kb/message-1> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MessageThreadFacet ;
+				observable:message
+					<http://example.org/kb/message-1> ,
+					<http://example.org/kb/message-2> ,
+					<http://example.org/kb/message-3> ,
+					<http://example.org/kb/message-4> ,
+					<http://example.org/kb/message-5> ,
+					<http://example.org/kb/message-6>
+					;
+				observable:messageThread <http://example.org/kb/thread-2> ;
+			] ;
+			sh:resultMessage "Value does not have class observable:Message" ;
+			sh:resultPath (
+				observable:messageThread
+				co:item
+				co:itemContent
+			) ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:Message ;
+				sh:description "The contents of ordered items in the Thread linked by messageThread must be Message objects."@en ;
+				sh:path (
+					observable:messageThread
+					co:item
+					co:itemContent
+				) ;
+			] ;
+			sh:value <http://example.org/kb/message-6> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MessageThreadFacet ;
+				observable:message
+					<http://example.org/kb/message-1> ,
+					<http://example.org/kb/message-2> ,
+					<http://example.org/kb/message-3> ,
+					<http://example.org/kb/message-4> ,
+					<http://example.org/kb/message-5> ,
+					<http://example.org/kb/message-6>
+					;
+				observable:messageThread <http://example.org/kb/thread-2> ;
+			] ;
+			sh:resultMessage "Value does not have class observable:Message" ;
+			sh:resultPath (
+				observable:messageThread
+				types:threadOriginItem
+				co:itemContent
+			) ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:Message ;
+				sh:description "The contents of origin items in the Thread linked by messageThread must be Message objects."@en ;
+				sh:path (
+					observable:messageThread
+					types:threadOriginItem
+					co:itemContent
+				) ;
+			] ;
+			sh:value <http://example.org/kb/message-1> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MessageThreadFacet ;
+				observable:message
+					<http://example.org/kb/message-1> ,
+					<http://example.org/kb/message-2> ,
+					<http://example.org/kb/message-3> ,
+					<http://example.org/kb/message-4> ,
+					<http://example.org/kb/message-5> ,
+					<http://example.org/kb/message-6>
+					;
+				observable:messageThread <http://example.org/kb/thread-2> ;
+			] ;
+			sh:resultMessage "Value does not have class observable:Message" ;
+			sh:resultPath (
+				observable:messageThread
+				types:threadTerminalItem
+				co:itemContent
+			) ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:Message ;
+				sh:description "The contents of terminal items in the Thread linked by messageThread must be Message objects."@en ;
+				sh:path (
+					observable:messageThread
+					types:threadTerminalItem
+					co:itemContent
+				) ;
+			] ;
+			sh:value <http://example.org/kb/message-6> ;
+		]
+		;
+	.
+
