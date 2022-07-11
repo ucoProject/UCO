@@ -1,0 +1,206 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:uco-object-4",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:uco-object-5",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:list-3",
+            "@type": "co:List",
+            "co:firstItem": {
+                "@id": "kb:uco-object-4"
+            },
+            "co:item": {
+                "@id": "kb:uco-object-4"
+            },
+            "co:lastItem": {
+                "@id": "kb:uco-object-4"
+            },
+            "co:size": 4,
+            "rdfs:comment": [
+                "Error - co:firstItem is not a co:ListItem.",
+                "Error - co:item is not a co:Item.",
+                "Error - co:lastItem is not a co:ListItem.",
+                "Error - co:size not designated a xsd:nonNegativeInteger."
+            ]
+        },
+        {
+            "@id": "kb:list-4",
+            "@type": "co:List",
+            "co:item": [
+                {
+                    "@id": "kb:list-4-item-1"
+                },
+                {
+                    "@id": "kb:list-4-item-2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:list-4-item-1",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 0
+            },
+            "co:itemContent": {
+                "@id": "kb:list-4-item-2"
+            },
+            "rdfs:comment": [
+                "Error - co:index should be > 0.  (Though, detecting this awaits resolution of pySHACL PR 122.)",
+                "Error - co:itemContent must not be a co:Item (and co:ListItem is a subclass of co:Item)."
+            ],
+            "rdfs:seeAlso": {
+                "@id": "https://github.com/RDFLib/pySHACL/pull/122"
+            }
+        },
+        {
+            "@id": "kb:list-4-item-2",
+            "@type": "co:ListItem",
+            "co:index": [
+                {
+                    "@type": "xsd:positiveInteger",
+                    "@value": 1
+                },
+                {
+                    "@type": "xsd:positiveInteger",
+                    "@value": 2
+                }
+            ],
+            "co:itemContent": [
+                {
+                    "@id": "kb:uco-object-4"
+                },
+                {
+                    "@id": "kb:uco-object-5"
+                }
+            ],
+            "rdfs:comment": [
+                "Error - 2 values of co:index.",
+                "Error - 2 values of co:itemContent."
+            ]
+        },
+        {
+            "@id": "kb:list-5",
+            "@type": "co:List",
+            "co:item": [
+                {
+                    "@id": "kb:list-5-item-1"
+                },
+                {
+                    "@id": "kb:list-5-item-2"
+                },
+                {
+                    "@id": "kb:list-5-item-3"
+                }
+            ],
+            "rdfs:comment": "Error - list forks, with item 1 directly succeeded by 2 and 3."
+        },
+        {
+            "@id": "kb:list-5-item-1",
+            "@type": "co:ListItem",
+            "co:nextItem": [
+                {
+                    "@id": "kb:list-5-item-2"
+                },
+                {
+                    "@id": "kb:list-5-item-3"
+                }
+            ]
+        },
+        {
+            "@id": "kb:list-5-item-2",
+            "@type": "co:ListItem",
+            "co:previousItem": {
+                "@id": "kb:list-5-item-1"
+            }
+        },
+        {
+            "@id": "kb:list-5-item-3",
+            "@type": "co:ListItem",
+            "co:previousItem": {
+                "@id": "kb:list-5-item-1"
+            }
+        },
+        {
+            "@id": "kb:list-6",
+            "@type": "co:List",
+            "co:item": [
+                {
+                    "@id": "kb:list-6-item-1"
+                },
+                {
+                    "@id": "kb:list-6-item-2"
+                },
+                {
+                    "@id": "kb:list-6-item-3"
+                }
+            ],
+            "rdfs:comment": "Error - list forks, with item 3 directly preceeded by 1 and 2."
+        },
+        {
+            "@id": "kb:list-6-item-1",
+            "@type": "co:ListItem",
+            "co:nextItem": {
+                "@id": "kb:list-6-item-3"
+            }
+        },
+        {
+            "@id": "kb:list-6-item-2",
+            "@type": "co:ListItem",
+            "co:nextItem": {
+                "@id": "kb:list-6-item-3"
+            }
+        },
+        {
+            "@id": "kb:list-6-item-3",
+            "@type": "co:ListItem",
+            "co:previousItem": [
+                {
+                    "@id": "kb:list-6-item-1"
+                },
+                {
+                    "@id": "kb:list-6-item-2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:list-7",
+            "@type": "co:List",
+            "co:firstItem": {
+                "@id": "kb:list-7-item-2"
+            },
+            "co:item": [
+                {
+                    "@id": "kb:list-7-item-1"
+                },
+                {
+                    "@id": "kb:list-7-item-2"
+                }
+            ],
+            "rdfs:comment": "Error - list designates an item with a previous item as the list's first item."
+        },
+        {
+            "@id": "kb:list-7-item-1",
+            "@type": "co:ListItem"
+        },
+        {
+            "@id": "kb:list-7-item-2",
+            "@type": "co:ListItem",
+            "co:previousItem": {
+                "@id": "kb:list-7-item-1"
+            }
+        }
+    ]
+}
