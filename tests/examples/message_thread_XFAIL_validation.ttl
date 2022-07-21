@@ -15,14 +15,6 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:MessageThreadFacet ;
-				observable:message
-					<http://example.org/kb/message-1> ,
-					<http://example.org/kb/message-2> ,
-					<http://example.org/kb/message-3> ,
-					<http://example.org/kb/message-4> ,
-					<http://example.org/kb/message-5> ,
-					<http://example.org/kb/message-6>
-					;
 				observable:messageThread <http://example.org/kb/thread-2> ;
 			] ;
 			sh:resultMessage "Value does not have class observable:Message" ;
@@ -46,14 +38,6 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:MessageThreadFacet ;
-				observable:message
-					<http://example.org/kb/message-1> ,
-					<http://example.org/kb/message-2> ,
-					<http://example.org/kb/message-3> ,
-					<http://example.org/kb/message-4> ,
-					<http://example.org/kb/message-5> ,
-					<http://example.org/kb/message-6>
-					;
 				observable:messageThread <http://example.org/kb/thread-2> ;
 			] ;
 			sh:resultMessage "Value does not have class observable:Message" ;
@@ -77,14 +61,6 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:MessageThreadFacet ;
-				observable:message
-					<http://example.org/kb/message-1> ,
-					<http://example.org/kb/message-2> ,
-					<http://example.org/kb/message-3> ,
-					<http://example.org/kb/message-4> ,
-					<http://example.org/kb/message-5> ,
-					<http://example.org/kb/message-6>
-					;
 				observable:messageThread <http://example.org/kb/thread-2> ;
 			] ;
 			sh:resultMessage "Value does not have class observable:Message" ;
@@ -110,14 +86,6 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:MessageThreadFacet ;
-				observable:message
-					<http://example.org/kb/message-1> ,
-					<http://example.org/kb/message-2> ,
-					<http://example.org/kb/message-3> ,
-					<http://example.org/kb/message-4> ,
-					<http://example.org/kb/message-5> ,
-					<http://example.org/kb/message-6>
-					;
 				observable:messageThread <http://example.org/kb/thread-2> ;
 			] ;
 			sh:resultMessage "Value does not have class observable:Message" ;
@@ -143,14 +111,6 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:MessageThreadFacet ;
-				observable:message
-					<http://example.org/kb/message-1> ,
-					<http://example.org/kb/message-2> ,
-					<http://example.org/kb/message-3> ,
-					<http://example.org/kb/message-4> ,
-					<http://example.org/kb/message-5> ,
-					<http://example.org/kb/message-6>
-					;
 				observable:messageThread <http://example.org/kb/thread-2> ;
 			] ;
 			sh:resultMessage "Value does not have class observable:Message" ;
@@ -176,14 +136,6 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:MessageThreadFacet ;
-				observable:message
-					<http://example.org/kb/message-1> ,
-					<http://example.org/kb/message-2> ,
-					<http://example.org/kb/message-3> ,
-					<http://example.org/kb/message-4> ,
-					<http://example.org/kb/message-5> ,
-					<http://example.org/kb/message-6>
-					;
 				observable:messageThread <http://example.org/kb/thread-2> ;
 			] ;
 			sh:resultMessage "Value does not have class observable:Message" ;
