@@ -41,26 +41,6 @@
             "@type": "observable:MessageThread",
             "core:hasFacet": {
                 "@type": "observable:MessageThreadFacet",
-                "observable:message": [
-                    {
-                        "@id": "kb:message-1"
-                    },
-                    {
-                        "@id": "kb:message-2"
-                    },
-                    {
-                        "@id": "kb:message-3"
-                    },
-                    {
-                        "@id": "kb:message-4"
-                    },
-                    {
-                        "@id": "kb:message-5"
-                    },
-                    {
-                        "@id": "kb:message-6"
-                    }
-                ],
                 "observable:messageThread": {
                     "@id": "kb:thread-1"
                 }
@@ -69,6 +49,26 @@
         {
             "@id": "kb:thread-1",
             "@type": "types:Thread",
+            "co:element": [
+                {
+                    "@id": "kb:message-1"
+                },
+                {
+                    "@id": "kb:message-2"
+                },
+                {
+                    "@id": "kb:message-3"
+                },
+                {
+                    "@id": "kb:message-4"
+                },
+                {
+                    "@id": "kb:message-5"
+                },
+                {
+                    "@id": "kb:message-6"
+                }
+            ],
             "co:size": {
                 "@type": "xsd:nonNegativeInteger",
                 "@value": "6"

@@ -43,26 +43,6 @@
             "@type": "observable:MessageThread",
             "core:hasFacet": {
                 "@type": "observable:MessageThreadFacet",
-                "observable:message": [
-                    {
-                        "@id": "kb:message-1"
-                    },
-                    {
-                        "@id": "kb:message-2"
-                    },
-                    {
-                        "@id": "kb:message-3"
-                    },
-                    {
-                        "@id": "kb:message-4"
-                    },
-                    {
-                        "@id": "kb:message-5"
-                    },
-                    {
-                        "@id": "kb:message-6"
-                    }
-                ],
                 "observable:messageThread": {
                     "@id": "kb:thread-2"
                 }
@@ -96,7 +76,6 @@
                 }
             ],
             "co:item": [
-
                 {
                     "@id": "kb:message-thread-2-item-1"
                 },
@@ -115,7 +94,6 @@
                 {
                     "@id": "kb:message-thread-2-item-6"
                 }
-
             ],
             "types:threadOriginItem": [
                 {

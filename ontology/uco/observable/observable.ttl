@@ -3910,12 +3910,6 @@ observable:MessageThreadFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:message ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:participant ;
 		] ,
@@ -10658,12 +10652,6 @@ observable:maxRunTime
 	rdfs:label "maxRunTime"@en ;
 	rdfs:comment "Specifies the maximum run time of the scheduled task before terminating, in milliseconds. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.85).aspx."@en ;
 	rdfs:range xsd:integer ;
-	.
-
-observable:message
-	a owl:ObjectProperty ;
-	rdfs:label "message"@en ;
-	rdfs:range observable:ObservableObject ;
 	.
 
 observable:messageID
