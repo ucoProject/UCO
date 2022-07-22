@@ -6,6 +6,7 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix co: <http://purl.org/co/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
@@ -2672,7 +2673,19 @@ observable:EventFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -3875,15 +3888,50 @@ observable:MessageThreadFacet
 	rdfs:comment "A message thread facet is a grouping of characteristics unique to a running commentary of electronic messages pertaining to one topic or question."@en ;
 	sh:property
 		[
-			sh:class observable:ObservableObject ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:message ;
+			sh:class observable:Message ;
+			sh:description "The contents of ordered items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				co:item
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of origin items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				types:threadOriginItem
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of terminal items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				types:threadTerminalItem
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of unordered items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				co:element
+			) ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:participant ;
+		] ,
+		[
+			sh:class types:Thread ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:messageThread ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
@@ -5034,6 +5082,17 @@ observable:ProcessFacet
 	sh:targetClass observable:ProcessFacet ;
 	.
 
+observable:ProcessThread
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "ProcessThread"@en ;
+	rdfs:comment "A process thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
+	sh:targetClass observable:ProcessThread ;
+	.
+
 observable:Profile
 	a
 		owl:Class ,
@@ -5780,17 +5839,6 @@ observable:TaskActionType
 		]
 		;
 	sh:targetClass observable:TaskActionType ;
-	.
-
-observable:Thread
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "Thread"@en ;
-	rdfs:comment "A thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
-	sh:targetClass observable:Thread ;
 	.
 
 observable:TriggerType
@@ -8102,7 +8150,7 @@ observable:WindowsThread
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Thread ;
+	rdfs:subClassOf observable:ProcessThread ;
 	rdfs:label "WindowsThread"@en ;
 	rdfs:comment "A Windows thread is a single thread of execution within a Windows process."@en ;
 	sh:targetClass observable:WindowsThread ;
@@ -10690,12 +10738,6 @@ observable:maxRunTime
 	rdfs:range xsd:integer ;
 	.
 
-observable:message
-	a owl:ObjectProperty ;
-	rdfs:label "message"@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:messageID
 	a owl:DatatypeProperty ;
 	rdfs:label "messageID"@en ;
@@ -10708,6 +10750,12 @@ observable:messageText
 	rdfs:label "messageText"@en ;
 	rdfs:comment "The contents of the message."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:messageThread
+	a owl:ObjectProperty ;
+	rdfs:label "messageThread"@en ;
+	rdfs:range types:Thread ;
 	.
 
 observable:messageType
