@@ -6,6 +6,7 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix co: <http://purl.org/co/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
@@ -3873,15 +3874,50 @@ observable:MessageThreadFacet
 	rdfs:comment "A message thread facet is a grouping of characteristics unique to a running commentary of electronic messages pertaining to one topic or question."@en ;
 	sh:property
 		[
-			sh:class observable:ObservableObject ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:message ;
+			sh:class observable:Message ;
+			sh:description "The contents of ordered items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				co:item
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of origin items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				types:threadOriginItem
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of terminal items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				types:threadTerminalItem
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of unordered items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				co:element
+			) ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:participant ;
+		] ,
+		[
+			sh:class types:Thread ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:messageThread ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
@@ -10618,12 +10654,6 @@ observable:maxRunTime
 	rdfs:range xsd:integer ;
 	.
 
-observable:message
-	a owl:ObjectProperty ;
-	rdfs:label "message"@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:messageID
 	a owl:DatatypeProperty ;
 	rdfs:label "messageID"@en ;
@@ -10636,6 +10666,12 @@ observable:messageText
 	rdfs:label "messageText"@en ;
 	rdfs:comment "The contents of the message."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:messageThread
+	a owl:ObjectProperty ;
+	rdfs:label "messageThread"@en ;
+	rdfs:range types:Thread ;
 	.
 
 observable:messageType
