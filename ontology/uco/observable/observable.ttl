@@ -1188,7 +1188,11 @@ observable:ContactAddress
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactAddressScopeVocab ;
-					sh:in vocabulary:ContactAddressScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactAddressScopeVocab
+						"work"^^vocabulary:ContactAddressScopeVocab
+						"school"^^vocabulary:ContactAddressScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1305,7 +1309,12 @@ observable:ContactEmail
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactEmailScopeVocab ;
-					sh:in vocabulary:ContactEmailScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactEmailScopeVocab
+						"work"^^vocabulary:ContactEmailScopeVocab
+						"school"^^vocabulary:ContactEmailScopeVocab
+						"cloud"^^vocabulary:ContactEmailScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1566,7 +1575,16 @@ observable:ContactPhone
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactPhoneScopeVocab ;
-					sh:in vocabulary:ContactPhoneScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactPhoneScopeVocab
+						"work"^^vocabulary:ContactPhoneScopeVocab
+						"school"^^vocabulary:ContactPhoneScopeVocab
+						"mobile"^^vocabulary:ContactPhoneScopeVocab
+						"main"^^vocabulary:ContactPhoneScopeVocab
+						"home fax"^^vocabulary:ContactPhoneScopeVocab
+						"work fax"^^vocabulary:ContactPhoneScopeVocab
+						"pager"^^vocabulary:ContactPhoneScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1640,7 +1658,11 @@ observable:ContactSIP
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactSIPScopeVocab ;
-					sh:in vocabulary:ContactSIPScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactSIPScopeVocab
+						"work"^^vocabulary:ContactSIPScopeVocab
+						"school"^^vocabulary:ContactSIPScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1803,7 +1825,11 @@ observable:ContentDataFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:EndiannessTypeVocab ;
-					sh:in vocabulary:EndiannessTypeVocab-members ;
+					sh:in (
+						"Big-endian"^^vocabulary:EndiannessTypeVocab
+						"Little-endian"^^vocabulary:EndiannessTypeVocab
+						"Middle-endian"^^vocabulary:EndiannessTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -3784,7 +3810,13 @@ observable:MemoryFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:MemoryBlockTypeVocab ;
-					sh:in vocabulary:MemoryBlockTypeVocab-members ;
+					sh:in (
+						"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
+						"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
+						"Initialized"^^vocabulary:MemoryBlockTypeVocab
+						"Overlay"^^vocabulary:MemoryBlockTypeVocab
+						"Uninitialized"^^vocabulary:MemoryBlockTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -5829,7 +5861,12 @@ observable:TaskActionType
 			sh:or (
 				[
 					sh:datatype vocabulary:TaskActionTypeVocab ;
-					sh:in vocabulary:TaskActionTypeVocab-members ;
+					sh:in (
+						"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
+						"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
+						"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
+						"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -6475,7 +6512,19 @@ observable:URLVisitFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:URLTransitionTypeVocab ;
-					sh:in vocabulary:URLTransitionTypeVocab-members ;
+					sh:in (
+						"link"^^vocabulary:URLTransitionTypeVocab
+						"typed"^^vocabulary:URLTransitionTypeVocab
+						"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
+						"auto_subframe"^^vocabulary:URLTransitionTypeVocab
+						"manual_subframe"^^vocabulary:URLTransitionTypeVocab
+						"generated"^^vocabulary:URLTransitionTypeVocab
+						"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
+						"form_submit"^^vocabulary:URLTransitionTypeVocab
+						"reload"^^vocabulary:URLTransitionTypeVocab
+						"keyword"^^vocabulary:URLTransitionTypeVocab
+						"keyword_generated"^^vocabulary:URLTransitionTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -8121,7 +8170,32 @@ observable:WindowsTaskFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:TaskStatusVocab ;
-					sh:in vocabulary:TaskStatusVocab-members ;
+					sh:in (
+						"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
+						"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
+						"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
+						"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
+						"SCHED_E_INVALID_TASK"^^vocabulary:TaskStatusVocab
+						"SCHED_E_NO_SECURITY_SERVICES"^^vocabulary:TaskStatusVocab
+						"SCHED_E_SERVICE_NOT_INSTALLED"^^vocabulary:TaskStatusVocab
+						"SCHED_E_SERVICE_NOT_RUNNING"^^vocabulary:TaskStatusVocab
+						"SCHED_E_TASK_NOT_READY"^^vocabulary:TaskStatusVocab
+						"SCHED_E_TASK_NOT_RUNNING"^^vocabulary:TaskStatusVocab
+						"SCHED_E_TRIGGER_NOT_FOUND"^^vocabulary:TaskStatusVocab
+						"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocabulary:TaskStatusVocab
+						"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocabulary:TaskStatusVocab
+						"SCHED_S_EVENT_TRIGGER"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_DISABLED"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_HAS_NOT_RUN"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_NOT_SCHEDULED"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_NO_MORE_RUNS"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_READY"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_RUNNING"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_TERMINATED"^^vocabulary:TaskStatusVocab
+						"TASK_STATE_QUEUED"^^vocabulary:TaskStatusVocab
+						"TASK_STATE_UNKNOWN"^^vocabulary:TaskStatusVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -8356,7 +8430,15 @@ observable:WirelessNetworkConnectionFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
-					sh:in vocabulary:WirelessNetworkSecurityModeVocab-members ;
+					sh:in (
+						"None"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;

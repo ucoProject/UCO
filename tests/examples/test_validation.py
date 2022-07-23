@@ -361,7 +361,6 @@ def test_rdf_list_PASS() -> None:
       expected_focus_node_severities=set()
     )
 
-@pytest.mark.xfail(reason="Test expected to fail under semi-open vocabulary design current as of UCO 0.8.0.", strict=True)
 def test_rdf_list_XFAIL() -> None:
     confirm_validation_results(
       "rdf_list_XFAIL_validation.ttl",

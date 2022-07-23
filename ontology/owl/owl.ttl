@@ -158,7 +158,6 @@ uco-owl:Disjointedness-DP-OP-shape
 
 uco-owl:List-shape
 	a sh:NodeShape ;
-	sh:deactivated "true"^^xsd:boolean ;
 	sh:property [
 		a sh:PropertyShape ;
 		sh:maxCount "1"^^xsd:integer ;

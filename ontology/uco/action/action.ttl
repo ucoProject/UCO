@@ -126,7 +126,15 @@ action:Action
 			sh:or (
 				[
 					sh:datatype vocabulary:ActionStatusTypeVocab ;
-					sh:in vocabulary:ActionStatusTypeVocab-members ;
+					sh:in (
+						"Complete/Finish"^^vocabulary:ActionStatusTypeVocab
+						"Error"^^vocabulary:ActionStatusTypeVocab
+						"Fail"^^vocabulary:ActionStatusTypeVocab
+						"Ongoing"^^vocabulary:ActionStatusTypeVocab
+						"Pending"^^vocabulary:ActionStatusTypeVocab
+						"Success"^^vocabulary:ActionStatusTypeVocab
+						"Unknown"^^vocabulary:ActionStatusTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
