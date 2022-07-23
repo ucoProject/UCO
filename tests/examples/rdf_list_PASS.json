@@ -1,0 +1,55 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+ 	"skos": "http://www.w3.org/2004/02/skos/core#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:concept-1",
+            "@type": "skos:Concept"
+        },
+        {
+            "@id": "kb:concept-2",
+            "@type": "skos:Concept"
+        },
+        {
+            "@id": "kb:ordered-collection-1",
+            "@type": "skos:OrderedCollection",
+            "skos:memberList": {
+                "@type": "rdf:List",
+                "rdf:first": {
+                    "@id": "kb:concept-1"
+                },
+                "rdf:rest": {
+                    "@type": "rdf:List",
+                    "rdf:first": {
+                        "@id": "kb:concept-2"
+                    },
+                    "rdf:rest": {
+                        "@id": "rdf:nil"
+                    }
+                }
+            }
+        },
+        {
+            "@id": "kb:ordered-collection-2",
+            "@type": "skos:OrderedCollection",
+            "skos:memberList": {
+                "rdf:first": {
+                    "@id": "kb:concept-1"
+                },
+                "rdf:rest": {
+                    "rdf:first": {
+                        "@id": "kb:concept-2"
+                    },
+                    "rdf:rest": {
+                        "@id": "rdf:nil"
+                    }
+                }
+            }
+        }
+    ]
+}

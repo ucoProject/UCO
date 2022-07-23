@@ -86,6 +86,17 @@ uco_monolithic.ttl: \
 	  && python3 src/glom_graph.py \
 	    __$@ \
 	    $(uco_turtle_files)
+	# Review UCO for OWL 2 DL conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --allow-warnings \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --ont-file-format turtle \
+	    --shacl $(top_srcdir)/ontology/owl/owl.ttl \
+	    --shacl-file-format turtle \
+	    __$@
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
 	  --inline-blank-nodes \
 	  --source __$@ \
