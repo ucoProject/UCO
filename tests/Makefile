@@ -21,6 +21,9 @@ uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl $(top_srcdir)
 
 all:
 
+.PHONY: \
+  check-dependencies
+
 # The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
 .venv.done.log: \
   $(top_srcdir)/.git_submodule_init.done.log \
@@ -45,6 +48,7 @@ all:
 	touch $@
 
 check: \
+  check-dependencies \
   inheritance_review.ttl \
   uco_monolithic.ttl
 	source venv/bin/activate \
@@ -55,9 +59,18 @@ check: \
 	  --directory examples \
 	  check
 
+check-dependencies: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory dependencies \
+	  check
+
 clean:
 	@$(MAKE) \
 	  --directory examples \
+	  clean
+	@$(MAKE) \
+	  --directory dependencies \
 	  clean
 	@rm -f \
 	  .venv.done.log \
