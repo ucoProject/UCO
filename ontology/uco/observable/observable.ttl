@@ -2674,11 +2674,17 @@ observable:EventFacet
 			sh:path observable:startTime ;
 		] ,
 		[
-			sh:datatype xsd:string ;
+			sh:datatype observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:computerName ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:device ;
 		] ,
+                [
+                        sh:datatype observable:ObservableObject ;
+                        sh:maxCount "1"^^xsd:integer ;
+                        sh:nodeKind sh:BlankNodeOrIRI ;
+                        sh:path observable:account ;
+                ] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -8555,7 +8561,7 @@ observable:accessedTime
 observable:account
 	a owl:ObjectProperty ;
 	rdfs:label "account"@en ;
-	rdfs:comment "Specifies the account used to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."@en ;
+	rdfs:comment "Specifies the account used referenced in an event log entry or to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."@en ;
 	rdfs:range observable:ObservableObject ;
 	.
 
@@ -9066,13 +9072,6 @@ observable:compressionRatio
 	rdfs:range xsd:decimal ;
 	.
 
-observable:computerName
-	a owl:DatatypeProperty ;
-	rdfs:label "computerName"@en ;
-	rdfs:comment "A name of the computer on which the log entry was created."@en ;
-	rdfs:range xsd:string ;
-	.
-
 observable:contact
 	a owl:ObjectProperty ;
 	rdfs:label "contact"@en ;
@@ -9431,6 +9430,13 @@ observable:destinationPort
 	rdfs:label "destinationPort"@en ;
 	rdfs:comment "Specifies the destination port used in the connection, as an integer in the range of 0 - 65535."@en ;
 	rdfs:range xsd:integer ;
+	.
+
+observable:device
+	a owl:DatatypeProperty ;
+	rdfs:label "device"@en ;
+	rdfs:comment "The device on which the log entry was generated."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:deviceType
