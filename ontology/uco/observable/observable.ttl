@@ -2696,7 +2696,19 @@ observable:EventFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:eventType ;
-		]
+		],
+                [
+                        sh:datatype xsd:string ;
+                        sh:maxCount "1"^^xsd:integer ;
+                        sh:nodeKind sh:Literal ;
+                        sh:path observable:eventRaw ;
+                ],
+                [
+                        sh:datatype xsd:string ;
+                        sh:maxCount "1"^^xsd:integer ;
+                        sh:nodeKind sh:Literal ;
+                        sh:path observable:eventServiceName ;
+                ]
 		;
 	sh:targetClass observable:EventFacet ;
 	.
@@ -9684,6 +9696,20 @@ observable:eventID
 	a owl:DatatypeProperty ;
 	rdfs:label "eventID"@en ;
 	rdfs:comment "The identifier of the event."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventRaw
+	a owl:DatatypeProperty ;
+	rdfs:label "eventRaw"@en ;
+	rdfs:comment "The complete raw content of the event record."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventServiceName
+	a owl:DatatypeProperty ;
+	rdfs:label "eventServiceName"@en ;
+	rdfs:comment "The service that generated the event. A single application can have multiple services generating event records."@en ;
 	rdfs:range xsd:string ;
 	.
 
