@@ -32,6 +32,56 @@
 		;
 	.
 
+observable:AntennaFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AntennaFacet"@en ;
+	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
+	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
+	sh:property
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:azimuth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:elevation ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:height ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:horizontalBeamWidth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:signalStrength ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:skew ;
+		]
+		;
+	sh:targetClass observable:AntennaFacet ;
+	.
+
 observable:API
 	a
 		owl:Class ,
@@ -938,6 +988,111 @@ observable:CallFacet
 		]
 		;
 	sh:targetClass observable:CallFacet ;
+	.
+
+observable:CapturedTelecommunicationsInformation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "CapturedTelecommunicationsInformation"@en ;
+	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
+	sh:targetClass observable:CapturedTelecommunicationsInformation ;
+	.
+
+observable:CapturedTelecommunicationsInformationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CapturedTelecommunicationsInformationFacet"@en ;
+	rdfs:comment "A captured telecommunications information facet represents certain information within captured or intercepted telecommunications data."@en ;
+	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
+	sh:property
+		[
+			sh:class observable:CellSite ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:captureCellSite ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:interceptedCallState ;
+		]
+		;
+	sh:targetClass observable:CapturedTelecommunicationsInformationFacet ;
+	.
+
+observable:CellSite
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "CellSite"@en ;
+	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
+	sh:targetClass observable:CellSite ;
+	.
+
+observable:CellSiteFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CellSiteFacet"@en ;
+	rdfs:comment "A cell site facet contains the metadata surrounding the cell site."@en ;
+	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteCountryCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteIdentifier ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteLocationAreaCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteNetworkCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteType ;
+		]
+		;
+	sh:targetClass observable:CellSiteFacet ;
 	.
 
 observable:CharacterDeviceNode
@@ -8775,6 +8930,13 @@ observable:availableRam
 	rdfs:range xsd:integer ;
 	.
 
+observable:azimuth
+	a owl:DatatypeProperty ;
+	rdfs:label "azimuth"@en ;
+	rdfs:comment "The median rotation in degrees around a vertical axis of the cell antenna sector accessed."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:baseOfCode
 	a owl:DatatypeProperty ;
 	rdfs:label "baseOfCode"@en ;
@@ -8960,6 +9122,13 @@ observable:canEscalatePrivs
 	rdfs:range xsd:boolean ;
 	.
 
+observable:captureCellSite
+	a owl:ObjectProperty ;
+	rdfs:label "captureCellSite"@en ;
+	rdfs:comment "Specifies the cell site accessed."@en ;
+	rdfs:range observable:CellSite ;
+	.
+
 observable:carrier
 	a owl:ObjectProperty ;
 	rdfs:label "carrier"@en ;
@@ -8978,6 +9147,41 @@ observable:cc
 	a owl:ObjectProperty ;
 	rdfs:label "cc"@en ;
 	rdfs:range observable:ObservableObject ;
+	.
+
+observable:cellSiteCountryCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteCountryCode"@en ;
+	rdfs:comment "The country code represents the country of the cell site. For GSM, this is the Mobile Country Code (MCC)."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteIdentifier
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteIdentifier"@en ;
+	rdfs:comment "Specifies the unique number used to identify each Cell Site within a location area code."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteLocationAreaCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteLocationAreaCode"@en ;
+	rdfs:comment "The location area code is a unique number of current location area of the cell site. A location area is a set of cell site that are grouped together to optimize signalling. For GSM, this is the LAC."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteNetworkCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteNetworkCode"@en ;
+	rdfs:comment "This code identifies the mobile operator of the cell site. For GSM, this is the Mobile Network Code (MNC) and for CMDA this is the network identifier (NID)."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteType
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteType"@en ;
+	rdfs:comment "Specifies the technology used by the Cell Site (e.g., GSM, CDMA, or LTE)."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:certificateIssuer
@@ -9602,6 +9806,13 @@ observable:effectiveUser
 	rdfs:range observable:ObservableObject ;
 	.
 
+observable:elevation
+	a owl:DatatypeProperty ;
+	rdfs:label "elevation"@en ;
+	rdfs:comment "The angle in degrees of the antenna from the local horizontal plane."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:emailAddress
 	a owl:ObjectProperty ;
 	rdfs:label "emailAddress"@en ;
@@ -10076,6 +10287,13 @@ observable:headerRaw
 	rdfs:range observable:ObservableObject ;
 	.
 
+observable:height
+	a owl:DatatypeProperty ;
+	rdfs:label "height"@en ;
+	rdfs:comment "The height (in meters) of the antenna from the ground."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:hexadecimalValue
 	a owl:DatatypeProperty ;
 	rdfs:label "hexadecimalValue"@en ;
@@ -10093,6 +10311,13 @@ observable:hiveType
 observable:homeDirectory
 	a owl:DatatypeProperty ;
 	rdfs:label "homeDirectory"@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:horizontalBeamWidth
+	a owl:DatatypeProperty ;
+	rdfs:label "horizontalBeamWidth"@en ;
+	rdfs:comment "The width of the antenna beam in degrees."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -10232,6 +10457,13 @@ observable:installDate
 	rdfs:label "installDate"@en ;
 	rdfs:comment "Specifies the date the operating system was installed."@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+observable:interceptedCallState
+	a owl:DatatypeProperty ;
+	rdfs:label "interceptedCallState"@en ;
+	rdfs:comment "State of the call in a Call Detail Record (e.g. idle)."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:ip
@@ -11784,6 +12016,13 @@ observable:showMessageTitle
 observable:sid
 	a owl:DatatypeProperty ;
 	rdfs:label "sid"@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:signalStrength
+	a owl:DatatypeProperty ;
+	rdfs:label "signalStrength"@en ;
+	rdfs:comment "The strength of the antenna signal."@en ;
 	rdfs:range xsd:string ;
 	.
 
