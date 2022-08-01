@@ -15,7 +15,7 @@ SHELL := /bin/bash
 
 # This Makefile is assumed to execute in a repository directory ontology/*.
 
-top_srcdir := $(shell cd ../.. ; pwd)
+top_srcdir := $(shell cd ../../.. ; pwd)
 
 ttl_basenames := $(shell find *.ttl -type f | sort)
 
@@ -32,7 +32,6 @@ all: \
   %.ttl \
   $(top_srcdir)/.lib.done.log
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source $< \
 	  --source-format turtle \

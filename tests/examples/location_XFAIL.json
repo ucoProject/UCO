@@ -1,9 +1,9 @@
 {
     "@context": {
         "acme": "http://example.org/ontology/acme/core/",
-        "core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
-        "location": "https://unifiedcyberontology.org/ontology/uco/location#",
+        "location": "https://ontology.unifiedcyberontology.org/uco/location/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [

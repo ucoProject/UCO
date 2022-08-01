@@ -1,0 +1,539 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/location
+# imports: https://ontology.unifiedcyberontology.org/uco/pattern
+# imports: https://ontology.unifiedcyberontology.org/uco/types
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
+
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/action>
+	a owl:Ontology ;
+	rdfs:label "uco-action"@en ;
+	rdfs:comment "This ontology defines classes and properties for characterizing actions."@en-US ;
+	owl:imports
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/location> ,
+		<https://ontology.unifiedcyberontology.org/uco/pattern> ,
+		<https://ontology.unifiedcyberontology.org/uco/types> ,
+		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		;
+	.
+
+action:Action
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Action"@en ;
+	rdfs:comment "An action is something that may be done or performed."@en ;
+	sh:property
+		[
+			sh:class action:Action ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:subaction ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:environment ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:performer ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:error ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:instrument ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:object ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:participant ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:result ;
+		] ,
+		[
+			sh:class location:Location ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:location ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:startTime ;
+		] ,
+		[
+			sh:datatype xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:actionCount ;
+		] ,
+		[
+			sh:datatype vocabulary:ActionStatusTypeVocab ;
+			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:path action:actionStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ActionStatusTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:actionStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ActionStatusTypeVocab ;
+					sh:in vocabulary:ActionStatusTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:actionStatus ;
+		]
+		;
+	sh:targetClass action:Action ;
+	.
+
+action:ActionArgumentFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "ActionArgumentFacet"@en ;
+	rdfs:comment "An action argument facet is a grouping of characteristics unique to a single parameter of an action."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:argumentName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:value ;
+		]
+		;
+	sh:targetClass action:ActionArgumentFacet ;
+	.
+
+action:ActionEstimationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "ActionEstimationFacet"@en ;
+	rdfs:comment "An action estimation facet is a grouping of characteristics unique to decision-focused approximation aspects for an action that may potentially be performed."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:estimatedCost ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:estimatedEfficacy ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:estimatedImpact ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:objective ;
+		]
+		;
+	sh:targetClass action:ActionEstimationFacet ;
+	.
+
+action:ActionFrequencyFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "ActionFrequencyFacet"@en ;
+	rdfs:comment "An action frequency facet is a grouping of characteristics unique to the frequency of occurrence for an action."@en ;
+	sh:property
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:rate ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:scale ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:units ;
+		] ,
+		[
+			sh:datatype vocabulary:TrendVocab ;
+			sh:message "Value is outside the default vocabulary TrendVocab." ;
+			sh:path action:trend ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TrendVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:trend ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TrendVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:TrendVocab ;
+					sh:in vocabulary:TrendVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:trend ;
+		]
+		;
+	sh:targetClass action:ActionFrequencyFacet ;
+	.
+
+action:ActionLifecycle
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf action:Action ;
+	rdfs:label "ActionLifecycle"@en ;
+	rdfs:comment "An action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action lifecycles."@en ;
+	sh:property
+		[
+			sh:class action:ArrayOfAction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:phase ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path action:error ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:startTime ;
+		] ,
+		[
+			sh:datatype xsd:nonNegativeInteger ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:actionCount ;
+		] ,
+		[
+			sh:datatype vocabulary:ActionStatusTypeVocab ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:actionStatus ;
+		]
+		;
+	sh:targetClass action:ActionLifecycle ;
+	.
+
+action:ActionPattern
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		action:Action ,
+		pattern:Pattern
+		;
+	rdfs:label "ActionPattern"@en ;
+	rdfs:comment "An action pattern is a grouping of characteristics unique to a combination of actions forming a consistent or characteristic arrangement."@en ;
+	sh:targetClass action:ActionPattern ;
+	.
+
+action:ArrayOfAction
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "ArrayOfAction"@en ;
+	rdfs:comment "An array of action is an ordered list of references to things that may be done or performed."@en ;
+	sh:property [
+		sh:class action:Action ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path action:action ;
+	] ;
+	sh:targetClass action:ArrayOfAction ;
+	.
+
+action:action
+	a owl:ObjectProperty ;
+	rdfs:label "action"@en ;
+	rdfs:comment "A characterization of a single action."@en ;
+	rdfs:range action:Action ;
+	.
+
+action:actionCount
+	a owl:DatatypeProperty ;
+	rdfs:label "actionCount"@en ;
+	rdfs:comment "The number of times that the action was performed."@en ;
+	rdfs:range xsd:nonNegativeInteger ;
+	.
+
+action:actionStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "actionStatus"@en ;
+	rdfs:comment "The current state of the action."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:ActionStatusTypeVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
+action:argumentName
+	a owl:DatatypeProperty ;
+	rdfs:label "argumentName"@en ;
+	rdfs:comment "The identifying label of an argument."@en ;
+	rdfs:range xsd:string ;
+	.
+
+action:endTime
+	a owl:DatatypeProperty ;
+	rdfs:label "endTime"@en ;
+	rdfs:comment "The time at which performance of the action ended."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+action:environment
+	a owl:ObjectProperty ;
+	rdfs:label "environment"@en ;
+	rdfs:comment "The environment wherein an action occurs."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+action:error
+	a owl:ObjectProperty ;
+	rdfs:label "error"@en ;
+	rdfs:comment "A characterization of the differences between the expected and the actual performance of the action."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+action:estimatedCost
+	a owl:DatatypeProperty ;
+	rdfs:label "estimatedCost"@en ;
+	rdfs:comment "An estimation of the cost if the action is performed."@en ;
+	rdfs:range xsd:string ;
+	.
+
+action:estimatedEfficacy
+	a owl:DatatypeProperty ;
+	rdfs:label "estimatedEfficacy"@en ;
+	rdfs:comment "An estimation of the effectiveness of the action at achieving its objective if the action is performed."@en ;
+	rdfs:range xsd:string ;
+	.
+
+action:estimatedImpact
+	a owl:DatatypeProperty ;
+	rdfs:label "estimatedImpact"@en ;
+	rdfs:comment "An estimation of the impact if the action is performed."@en ;
+	rdfs:range xsd:string ;
+	.
+
+action:instrument
+	a owl:ObjectProperty ;
+	rdfs:label "instrument"@en ;
+	rdfs:comment "The things used to perform an action."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+action:location
+	a owl:ObjectProperty ;
+	rdfs:label "location"@en ;
+	rdfs:comment "The locations where an action occurs."@en ;
+	rdfs:range location:Location ;
+	.
+
+action:object
+	a owl:ObjectProperty ;
+	rdfs:label "object"@en ;
+	rdfs:comment "The things that the action is performed on/against."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+action:objective
+	a owl:DatatypeProperty ;
+	rdfs:label "objective"@en ;
+	rdfs:comment "The intended purpose for performing the action."@en ;
+	rdfs:range xsd:string ;
+	.
+
+action:participant
+	a owl:ObjectProperty ;
+	rdfs:label "participant"@en ;
+	rdfs:comment "The supporting (non-primary) performers of an action."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+action:performer
+	a owl:ObjectProperty ;
+	rdfs:label "performer"@en ;
+	rdfs:comment "The primary performer of an action."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+action:phase
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf action:subaction ;
+	rdfs:label "phase"@en ;
+	rdfs:comment "The ordered set of actions or sub action-lifecycles that represent the action lifecycle."@en ;
+	rdfs:range action:ArrayOfAction ;
+	.
+
+action:rate
+	a owl:DatatypeProperty ;
+	rdfs:label "rate"@en ;
+	rdfs:comment "The frequency rate for the occurence of an action."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
+action:result
+	a owl:ObjectProperty ;
+	rdfs:label "result"@en ;
+	rdfs:comment "The things resulting from performing an action."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+action:scale
+	a owl:DatatypeProperty ;
+	rdfs:label "scale"@en ;
+	rdfs:comment "The time scale utilized for the frequency rate count for the occurence of an action."@en ;
+	rdfs:range xsd:string ;
+	.
+
+action:startTime
+	a owl:DatatypeProperty ;
+	rdfs:label "startTime"@en ;
+	rdfs:comment "The time at which performance of the action began."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+action:subaction
+	a owl:ObjectProperty ;
+	rdfs:label "subaction"@en ;
+	rdfs:comment "References to other actions that make up part of a larger more complex action."@en ;
+	rdfs:range action:Action ;
+	.
+
+action:trend
+	a owl:DatatypeProperty ;
+	rdfs:label "trend"@en ;
+	rdfs:comment "A characterization of the frequency trend for the occurence of an action."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:TrendVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
+action:units
+	a owl:DatatypeProperty ;
+	rdfs:label "units"@en ;
+	rdfs:comment "The units of measure utilized for the frequency rate count for the occurence of an action."@en ;
+	rdfs:range xsd:string ;
+	.
+
+action:value
+	a owl:DatatypeProperty ;
+	rdfs:label "value"@en ;
+	rdfs:comment "The value of an action parameter."@en ;
+	rdfs:range xsd:string ;
+	.
+

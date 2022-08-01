@@ -1,0 +1,609 @@
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/core>
+	a owl:Ontology ;
+	rdfs:label "uco-core"@en ;
+	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
+	.
+
+core:Annotation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Assertion ;
+	rdfs:label "Annotation"@en ;
+	rdfs:comment "An annotation is an assertion made in relation to one or more objects."@en ;
+	sh:property [
+		sh:class core:UcoObject ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path core:object ;
+	] ;
+	sh:targetClass core:Annotation ;
+	.
+
+core:Assertion
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Assertion"@en ;
+	rdfs:comment "An assertion is a statement declared to be true."@en ;
+	sh:property [
+		sh:datatype xsd:string ;
+		sh:nodeKind sh:Literal ;
+		sh:path core:statement ;
+	] ;
+	sh:targetClass core:Assertion ;
+	.
+
+core:AttributedName
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "AttributedName"@en ;
+	rdfs:comment "An attributed name is a name of an entity issued by some attributed naming authority."@en ;
+	sh:property [
+		sh:datatype xsd:string ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
+		sh:path core:namingAuthority ;
+	] ;
+	sh:targetClass core:AttributedName ;
+	.
+
+core:Bundle
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:EnclosingCompilation ;
+	rdfs:label "Bundle"@en ;
+	rdfs:comment "A bundle is a container for a grouping of UCO content with no presumption of shared context."@en ;
+	sh:targetClass core:Bundle ;
+	.
+
+core:Compilation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Compilation"@en ;
+	rdfs:comment "A compilation is a grouping of things."@en ;
+	sh:targetClass core:Compilation ;
+	.
+
+core:ConfidenceFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "ConfidenceFacet"@en ;
+	rdfs:comment "A confidence is a grouping of characteristics unique to an asserted level of certainty in the accuracy of some information."@en ;
+	sh:property [
+		sh:datatype xsd:nonNegativeInteger ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
+		sh:path core:confidence ;
+	] ;
+	sh:targetClass core:ConfidenceFacet ;
+	.
+
+core:ContextualCompilation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Compilation ;
+	rdfs:label "ContextualCompilation"@en ;
+	rdfs:comment "A contextual compilation is a grouping of things sharing some context (e.g., a set of network connections observed on a given day, all accounts associated with a given person)."@en ;
+	sh:property [
+		sh:class core:UcoObject ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path core:object ;
+	] ;
+	sh:targetClass core:ContextualCompilation ;
+	.
+
+core:ControlledVocabulary
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "ControlledVocabulary"@en ;
+	rdfs:comment "A controlled vocabulary is an explicitly constrained set of string values."@en ;
+	sh:property
+		[
+			sh:datatype xsd:anyURI ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:constrainingVocabularyReference ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:value ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:constrainingVocabularyName ;
+		]
+		;
+	sh:targetClass core:ControlledVocabulary ;
+	.
+
+core:EnclosingCompilation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Compilation ;
+	rdfs:label "EnclosingCompilation"@en ;
+	rdfs:comment "An enclosing compilation is a container for a grouping of things."@en ;
+	sh:property [
+		sh:class core:UcoObject ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path core:object ;
+	] ;
+	sh:targetClass core:EnclosingCompilation ;
+	.
+
+core:ExternalReference
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "ExternalReference"@en ;
+	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
+	sh:property
+		[
+			sh:datatype xsd:anyURI ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:referenceURL ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:definingContext ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:externalIdentifier ;
+		]
+		;
+	sh:targetClass core:ExternalReference ;
+	.
+
+core:Facet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "Facet"@en ;
+	rdfs:comment "A facet is a grouping of characteristics unique to a particular aspect of an object."@en ;
+	sh:targetClass core:Facet ;
+	.
+
+core:Grouping
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:ContextualCompilation ;
+	rdfs:label "Grouping"@en ;
+	rdfs:comment "A grouping is a compilation of referenced UCO content with a shared context."@en ;
+	sh:property [
+		sh:datatype xsd:string ;
+		sh:nodeKind sh:Literal ;
+		sh:path core:context ;
+	] ;
+	sh:targetClass core:Grouping ;
+	.
+
+core:IdentityAbstraction
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "IdentityAbstraction"@en ;
+	rdfs:comment "An identity abstraction is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
+	sh:targetClass core:IdentityAbstraction ;
+	.
+
+core:Item
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Item"@en ;
+	rdfs:comment "An item is a distinct article or unit."@en ;
+	sh:targetClass core:Item ;
+	.
+
+core:MarkingDefinitionAbstraction
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "MarkingDefinitionAbstraction"@en ;
+	rdfs:comment "A marking definition abstraction is a grouping of characteristics unique to the expression of a specific data marking conveying restrictions, permissions, and other guidance for how marked data can be used and shared. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the marking:MarkingDefinition class."@en ;
+	sh:targetClass core:MarkingDefinitionAbstraction ;
+	.
+
+core:ModusOperandi
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "ModusOperandi"@en ;
+	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
+	sh:targetClass core:ModusOperandi ;
+	.
+
+core:Relationship
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Relationship"@en ;
+	rdfs:comment "A relationship is a grouping of characteristics unique to an assertion that one or more objects are related to another object in some way."@en ;
+	sh:property
+		[
+			sh:class core:UcoObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:target ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:source ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:isDirectional ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:kindOfRelationship ;
+		]
+		;
+	sh:targetClass core:Relationship ;
+	.
+
+core:UcoObject
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "UcoObject"@en ;
+	rdfs:comment "A UCO object is a representation of a fundamental concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is the base class acting as a consistent, unifying and interoperable foundation for all explicit and inter-relatable content objects."@en ;
+	owl:disjointWith core:Facet ;
+	sh:property
+		[
+			sh:class core:ExternalReference ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:externalReference ;
+		] ,
+		[
+			sh:class core:Facet ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:hasFacet ;
+		] ,
+		[
+			sh:class core:IdentityAbstraction ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:createdBy ;
+		] ,
+		[
+			sh:class core:MarkingDefinitionAbstraction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path core:objectMarking ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:specVersion ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:description ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:type ;
+		] ,
+		[
+			sh:datatype types:Identifier ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:id ;
+		]
+		;
+	sh:targetClass core:UcoObject ;
+	.
+
+core:confidence
+	a owl:DatatypeProperty ;
+	rdfs:label "confidence"@en ;
+	rdfs:comment "An asserted level of certainty in the accuracy of some information."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:nonNegativeInteger ;
+		owl:withRestrictions (
+			[
+				xsd:maxInclusive "100"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+	] ;
+	.
+
+core:constrainingVocabularyName
+	a owl:DatatypeProperty ;
+	rdfs:label "constrainingVocabularyName"@en ;
+	rdfs:comment "The name of an explicitly constrained set of string values."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:constrainingVocabularyReference
+	a owl:DatatypeProperty ;
+	rdfs:label "constrainingVocabularyReference"@en ;
+	rdfs:comment "A reference to a specification for an explicitly constrained set of string values. The specification may be unstructured (e.g., web page listing string values) or structured (e.g. RDF/OWL enumeration)."@en ;
+	rdfs:range xsd:anyURI ;
+	.
+
+core:context
+	a owl:DatatypeProperty ;
+	rdfs:label "context"@en ;
+	rdfs:comment "A description of particular contextual affinity."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:createdBy
+	a owl:ObjectProperty ;
+	rdfs:label "createdBy"@en ;
+	rdfs:comment "The identity that created a characterization of a concept."@en ;
+	rdfs:range core:IdentityAbstraction ;
+	.
+
+core:definingContext
+	a owl:DatatypeProperty ;
+	rdfs:label "definingContext"@en ;
+	rdfs:comment "A description of the context relevant to the definition of a particular external reference identifier."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:description
+	a owl:DatatypeProperty ;
+	rdfs:label "description"@en ;
+	rdfs:comment "A description of a particular concept characterization."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:endTime
+	a owl:DatatypeProperty ;
+	rdfs:label "endTime"@en ;
+	rdfs:comment "The ending time of a time range."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+core:externalIdentifier
+	a owl:DatatypeProperty ;
+	rdfs:label "externalIdentifier"@en ;
+	rdfs:comment "An identifier for some information defined external to the UCO context."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:externalReference
+	a owl:ObjectProperty ;
+	rdfs:label "External Reference"@en-US ;
+	rdfs:comment "Specifies a reference to a resource outside of the UCO."@en-US ;
+	rdfs:range core:ExternalReference ;
+	.
+
+core:hasFacet
+	a owl:ObjectProperty ;
+	rdfs:label "hasFacet"@en ;
+	rdfs:comment "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized."@en ;
+	rdfs:range core:Facet ;
+	.
+
+core:id
+	a owl:DatatypeProperty ;
+	rdfs:label "id"@en ;
+	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
+	rdfs:range types:Identifier ;
+	.
+
+core:isDirectional
+	a owl:DatatypeProperty ;
+	rdfs:label "isDirectional"@en ;
+	rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+core:kindOfRelationship
+	a owl:DatatypeProperty ;
+	rdfs:label "kindOfRelationship"@en ;
+	rdfs:comment "A characterization of the nature of a relationship between objects."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:modifiedTime
+	a owl:DatatypeProperty ;
+	rdfs:label "modifiedTime"@en ;
+	rdfs:comment "Specifies the time that this particular version of the object was modified. The object creator can use the time it deems most appropriate as the time this version of the object was modified. The value of the modified property for a given object version MUST be later than or equal to the value of the created property. Object creators MUST update the modified property when creating a new version of an object. The modified timestamp MUST be precise to the nearest millisecond (exactly three digits after the decimal place in seconds)."@en-us ;
+	rdfs:range xsd:dateTime ;
+	.
+
+core:name
+	a owl:DatatypeProperty ;
+	rdfs:label "name"@en ;
+	rdfs:comment "The name of a particular concept characterization."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:namingAuthority
+	a owl:DatatypeProperty ;
+	rdfs:label "namingAuthority"@en ;
+	rdfs:comment "Specifies the naming authority that issued the name of the entity."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:object
+	a owl:ObjectProperty ;
+	rdfs:label "object"@en ;
+	rdfs:comment "Specifies one or more UcoObjects."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+core:objectCreatedTime
+	a owl:DatatypeProperty ;
+	rdfs:label "objectCreatedTime"@en ;
+	rdfs:comment "The time at which a characterization of a concept is created. This time pertains to the time of creating the record object, and is not an intrinsic characteristic of the concept."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+core:objectMarking
+	a owl:ObjectProperty ;
+	rdfs:label "objectMarking"@en ;
+	rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
+	rdfs:range core:MarkingDefinitionAbstraction ;
+	.
+
+core:referenceURL
+	a owl:DatatypeProperty ;
+	rdfs:label "referenceURL"@en ;
+	rdfs:comment "A URL for some information defined external to the UCO context."@en ;
+	rdfs:range xsd:anyURI ;
+	.
+
+core:source
+	a owl:ObjectProperty ;
+	rdfs:label "source"@en ;
+	rdfs:comment "The originating node of a specified relationship."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+core:specVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "specVersion"@en ;
+	rdfs:comment "The version of UCO ontology or subontology specification used to characterize a concept."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:startTime
+	a owl:DatatypeProperty ;
+	rdfs:label "startTime"@en ;
+	rdfs:comment "The initial time of a time range."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+core:statement
+	a owl:DatatypeProperty ;
+	rdfs:label "statement"@en ;
+	rdfs:comment "A textual statement of an assertion."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:tag
+	a owl:DatatypeProperty ;
+	rdfs:label "tag"@en ;
+	rdfs:comment "A generic tag/label."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:target
+	a owl:ObjectProperty ;
+	rdfs:label "target"@en ;
+	rdfs:comment "The terminating node of a specified relationship."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+core:type
+	a owl:DatatypeProperty ;
+	rdfs:label "type"@en ;
+	rdfs:comment "The explicitly-defined type of characterization of a concept."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:value
+	a owl:DatatypeProperty ;
+	rdfs:label "value"@en ;
+	rdfs:comment "A string value."@en ;
+	rdfs:range xsd:string ;
+	.
+
