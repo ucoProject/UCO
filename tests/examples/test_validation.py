@@ -21,18 +21,29 @@ This test was written to be called with the pytest framework, expecting
 the only functions to be called to be named "test_*".
 """
 
+import pathlib
 import logging
 import typing
 
 import pytest
 import rdflib.plugins.sparql
 
+NS_CO = rdflib.Namespace("http://purl.org/co/")
 NS_SH = rdflib.SH
 NS_UCO_ACTION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/action/")
+NS_UCO_CO = rdflib.Namespace("https://ontology.unifiedcyberontology.org/co/")
 NS_UCO_CORE = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/core/")
 NS_UCO_LOCATION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/location/")
+NS_UCO_TYPES = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/types/")
 
 NSDICT = {"sh": NS_SH}
+
+@pytest.fixture(scope="session")
+def monolithic_ontology_graph() -> rdflib.Graph:
+    graph = rdflib.Graph()
+    monolithic_ttl_path = pathlib.Path(__file__).parent.parent / "uco_monolithic.ttl"
+    graph.parse(str(monolithic_ttl_path), format="turtle")
+    return graph
 
 def load_validation_graph(
   filename : str,
@@ -64,15 +75,22 @@ def confirm_validation_results(
   expected_conformance: bool,
   *,
   expected_focus_node_severities : typing.Optional[typing.Tuple[typing.Set[str], str]] = None,
-  expected_result_paths : typing.Optional[typing.Set[str]] = None
-):
+  expected_result_paths : typing.Optional[typing.Set[str]] = None,
+  expected_source_shapes: typing.Optional[typing.Set[str]] = None
+) -> None:
+    """
+    The expected-sets are sets where names are known.
+
+    Blank nodes are omitted, and should be tested with a different set.
+    """
     g = load_validation_graph(filename, expected_conformance)
 
     computed_focus_node_severities = set()
     computed_result_paths = set()
+    computed_source_shapes = set()
 
     query = rdflib.plugins.sparql.prepareQuery("""\
-SELECT DISTINCT ?nFocusNode ?nResultPath ?nSeverity
+SELECT DISTINCT ?nFocusNode ?nResultPath ?nSeverity ?nSourceShape
 WHERE {
   ?nReport
     a sh:ValidationReport ;
@@ -82,22 +100,35 @@ WHERE {
   ?nValidationResult
     a sh:ValidationResult ;
     sh:focusNode ?nFocusNode ;
-    sh:resultPath ?nResultPath ;
     sh:resultSeverity ?nSeverity ;
+    sh:sourceShape ?nSourceShape ;
     .
+
+  # sh:not violations do not have a sh:resultPath.
+  OPTIONAL {
+  ?nValidationResult
+    sh:resultPath ?nResultPath ;
+    .
+  }
 }
 """, initNs=NSDICT)
 
     for result in g.query(query):
-        (n_focus_node, n_result_path, n_severity) = result
+        (n_focus_node, n_result_path, n_severity, n_source_shape) = result
+
         computed_focus_node_severities.add((str(n_focus_node), str(n_severity)))
-        computed_result_paths.add(str(n_result_path))
+
+        if isinstance(n_result_path, rdflib.URIRef):
+            computed_result_paths.add(str(n_result_path))
+
+        if isinstance(n_source_shape, rdflib.URIRef):
+            computed_source_shapes.add(str(n_source_shape))
 
     if not expected_focus_node_severities is None:
         try:
             assert expected_focus_node_severities == computed_focus_node_severities
         except:
-            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to focus nodes noted in this function.", filename)
+            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to named focus nodes noted in this function.", filename)
             raise
 
     if not expected_result_paths is None:
@@ -105,6 +136,13 @@ WHERE {
             assert expected_result_paths == computed_result_paths
         except:
             logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to data properties noted in this function.", filename)
+            raise
+
+    if not expected_source_shapes is None:
+        try:
+            assert expected_source_shapes == computed_source_shapes
+        except:
+            logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to named source shapes noted in this function.", filename)
             raise
 
 def test_action_inheritance_PASS_validation():
@@ -156,6 +194,37 @@ def test_hash_XFAIL() -> None:
       }
     )
 
+def test_co_PASS_validation():
+    confirm_validation_results("co_PASS_validation.ttl", True)
+
+def test_co_XFAIL_validation():
+    # The "index" entry's spelling is due to Namespace objects being
+    # strings, therefore having the .index() function defined.
+    confirm_validation_results(
+      "co_XFAIL_validation.ttl",
+      False,
+      expected_result_paths={
+        str(NS_CO.firstItem),
+        str(NS_CO["index"]),
+        str(NS_CO.item),
+        str(NS_CO.itemContent),
+        str(NS_CO.lastItem),
+        str(NS_CO.nextItem),
+        str(NS_CO.previousItem),
+        str(NS_CO.size),
+      },
+      expected_source_shapes={
+        str(NS_UCO_CO["firstItem-subjects-shape"]),
+        str(NS_UCO_CO["firstItem-subjects-previousItem-shape"]),
+        str(NS_UCO_CO["item-subjects-shape"]),
+        str(NS_UCO_CO["itemContent-subjects-shape"]),
+        str(NS_UCO_CO["lastItem-subjects-shape"]),
+        str(NS_UCO_CO["nextItem-subjects-shape"]),
+        str(NS_UCO_CO["previousItem-subjects-shape"]),
+        str(NS_UCO_CO["size-subjects-shape"]),
+      }
+    )
+
 def test_location_PASS_validation():
     """
     Confirm the PASS instance data passes validation.
@@ -189,6 +258,67 @@ def test_location_XFAIL_validation_XPASS_wrong_concept_name():
         str(NS_UCO_CORE.descriptionButWrongName)
       }
     )
+
+def test_message_thread(monolithic_ontology_graph: rdflib.Graph) -> None:
+    r"""
+    Confirm the answer to this question:
+    What are all of the messages that followed the first in the thread kb:message-thread-1?
+
+    message-thread-1 forked, and has these reply paths:
+
+     1     2     3
+    * --- * --- *
+     \     \
+      \     \ 4
+       \     *
+     5  \ 6
+    * --- *
+
+     7
+    *
+
+    (Message 7 is outside the thread.)
+    """
+
+    expected: typing.Set[str] = {
+        "http://example.org/kb/message-2",
+        "http://example.org/kb/message-3",
+        "http://example.org/kb/message-4",
+        "http://example.org/kb/message-6",
+    }
+    computed: typing.Set[str] = set()
+
+    data_graph = rdflib.Graph()
+    data_filepath = pathlib.Path(__file__).parent / "message_thread_PASS.json"
+    data_graph.parse(str(data_filepath), format="json-ld")
+
+    analysis_graph = data_graph + monolithic_ontology_graph
+
+    query_str = """\
+PREFIX co: <http://purl.org/co/>
+PREFIX kb: <http://example.org/kb/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+
+SELECT ?nLaterMessage
+WHERE {
+  ?nFirstMessageItem
+    co:itemContent kb:message-1 ;
+    (types:threadNextItem|types:threadSuccessor)+ / co:itemContent ?nLaterMessage ;
+    .
+}
+"""
+
+    for result in analysis_graph.query(query_str):
+        computed.add(str(result[0]))
+
+    assert expected == computed
+
+def test_message_thread_PASS_validation():
+    confirm_validation_results("message_thread_PASS_validation.ttl", True)
+
+def test_message_thread_XFAIL_validation():
+    confirm_validation_results("message_thread_XFAIL_validation.ttl", False)
 
 def test_relationship_PASS_partial() -> None:
     """
@@ -256,5 +386,19 @@ def test_relationship_XFAIL_full() -> None:
         ("http://example.org/kb/relationship-2-2-3", str(NS_SH.Violation)),
         ("http://example.org/kb/relationship-2-3-2", str(NS_SH.Info)),
         ("http://example.org/kb/relationship-2-3-2", str(NS_SH.Violation)),
+      }
+    )
+
+def test_thread_PASS_validation():
+    confirm_validation_results("thread_PASS_validation.ttl", True)
+
+def test_thread_XFAIL_validation():
+    confirm_validation_results(
+      "thread_XFAIL_validation.ttl",
+      False,
+      expected_result_paths={
+        str(NS_CO.item),
+        str(NS_CO.itemContent),
+        str(NS_UCO_TYPES.threadOriginItem),
       }
     )

@@ -1,0 +1,52 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:thread-1",
+            "@type": "types:Thread",
+            "co:item": [
+                {
+                    "@id": "kb:thread-1-item-1"
+                },
+                {
+                    "@id": "kb:thread-1-item-2"
+                },
+                {
+                    "@id": "kb:thread-1-item-3"
+                }
+            ]
+        },
+        {
+            "@id": "kb:thread-1-item-1",
+            "@type": "types:ThreadItem",
+            "types:threadNextItem": [
+                {
+                    "@id": "kb:thread-1-item-2"
+                },
+                {
+                    "@id": "kb:thread-1-item-3"
+                }
+            ]
+        },
+        {
+            "@id": "kb:thread-1-item-2",
+            "@type": "types:ThreadItem",
+            "types:threadPreviousItem": {
+                "@id": "kb:thread-1-item-1"
+            }
+        },
+        {
+            "@id": "kb:thread-1-item-3",
+            "@type": "types:ThreadItem",
+            "types:threadPreviousItem": {
+                "@id": "kb:thread-1-item-1"
+            }
+        }
+    ]
+}

@@ -1,3 +1,4 @@
+# imports: https://ontology.unifiedcyberontology.org/co
 # imports: https://ontology.unifiedcyberontology.org/uco/action
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/identity
@@ -24,6 +25,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-master"@en ;
 	owl:imports
+		<https://ontology.unifiedcyberontology.org/co> ,
 		<https://ontology.unifiedcyberontology.org/uco/action> ,
 		<https://ontology.unifiedcyberontology.org/uco/core> ,
 		<https://ontology.unifiedcyberontology.org/uco/identity> ,
@@ -38,7 +40,7 @@
 		<https://ontology.unifiedcyberontology.org/uco/victim> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
-	owl:versionInfo "0.8.0" ;
+	owl:versionInfo "0.9.0" ;
 	.
 
 core:id
