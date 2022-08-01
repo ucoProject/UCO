@@ -32,56 +32,6 @@
 		;
 	.
 
-observable:AntennaFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "AntennaFacet"@en ;
-	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
-	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
-	sh:property
-		[
-			sh:datatype xsd:decimal ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:azimuth ;
-		] ,
-		[
-			sh:datatype xsd:decimal ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:elevation ;
-		] ,
-		[
-			sh:datatype xsd:decimal ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:height ;
-		] ,
-		[
-			sh:datatype xsd:decimal ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:horizontalBeamWidth ;
-		] ,
-		[
-			sh:datatype xsd:decimal ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:signalStrength ;
-		] ,
-		[
-			sh:datatype xsd:decimal ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:skew ;
-		]
-		;
-	sh:targetClass observable:AntennaFacet ;
-	.
-
 observable:API
 	a
 		owl:Class ,
@@ -351,6 +301,56 @@ observable:AndroidDeviceFacet
 		]
 		;
 	sh:targetClass observable:AndroidDeviceFacet ;
+	.
+
+observable:AntennaFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AntennaFacet"@en ;
+	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
+	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
+	sh:property
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:antennaHeight ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:azimuth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:elevation ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:horizontalBeamWidth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:signalStrength ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:skew ;
+		]
+		;
+	sh:targetClass observable:AntennaFacet ;
 	.
 
 observable:Appliance
@@ -8857,6 +8857,13 @@ observable:androidVersion
 	rdfs:range xsd:string ;
 	.
 
+observable:antennaHeight
+	a owl:DatatypeProperty ;
+	rdfs:label "antennaHeight"@en ;
+	rdfs:comment "The height (in meters) of the antenna from the ground."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:application
 	a owl:ObjectProperty ;
 	rdfs:label "application"@en ;
@@ -10285,13 +10292,6 @@ observable:headerRaw
 	a owl:ObjectProperty ;
 	rdfs:label "headerRaw"@en ;
 	rdfs:range observable:ObservableObject ;
-	.
-
-observable:height
-	a owl:DatatypeProperty ;
-	rdfs:label "height"@en ;
-	rdfs:comment "The height (in meters) of the antenna from the ground."@en ;
-	rdfs:range xsd:decimal ;
 	.
 
 observable:hexadecimalValue
@@ -12146,6 +12146,13 @@ observable:sizeOfUninitializedData
 	rdfs:label "sizeOfUninitializedData"@en ;
 	rdfs:comment "Specifies the size of the uninitialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section."@en ;
 	rdfs:range xsd:unsignedInt ;
+	.
+
+observable:skew
+	a owl:DatatypeProperty ;
+	rdfs:label "skew"@en ;
+	rdfs:comment "The angle in degrees of the radial rotation around its main beam direction."@en ;
+	rdfs:range xsd:decimal ;
 	.
 
 observable:sourceApplication
