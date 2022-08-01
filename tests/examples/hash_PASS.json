@@ -1,0 +1,22 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:hash-1",
+            "@type": "types:Hash",
+            "types:hashMethod": {
+                "@type": "vocabulary:HashNameVocab",
+                "@value": "SHA1"
+            },
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+        }
+    ]
+}

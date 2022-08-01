@@ -1,0 +1,60 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <https://ontology.unifiedcyberontology.org/uco/role/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/role>
+	a owl:Ontology ;
+	rdfs:label "uco-role"@en ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	.
+
+role:BenevolentRole
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf role:Role ;
+	rdfs:label "BenevolentRole"@en ;
+	rdfs:comment "A benevolent role is a role with positive and/or beneficial intent."@en ;
+	sh:targetClass role:BenevolentRole ;
+	.
+
+role:MaliciousRole
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf role:Role ;
+	rdfs:label "MaliciousRole"@en ;
+	rdfs:comment "A malicious role is a role with malevolent intent."@en ;
+	sh:targetClass role:MaliciousRole ;
+	.
+
+role:NeutralRole
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf role:Role ;
+	rdfs:label "NeutralRole"@en ;
+	rdfs:comment "A neutral role is a role with impartial intent."@en ;
+	sh:targetClass role:NeutralRole ;
+	.
+
+role:Role
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Role"@en ;
+	rdfs:comment "A role is a usual or customary function based on contextual perspective."@en ;
+	sh:targetClass role:Role ;
+	.
+

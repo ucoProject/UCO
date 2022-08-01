@@ -13,8 +13,8 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is 0.7.0
+The current release of UCO is 0.9.0.
 
-UCO Version 0.7.0 is primarily focused on conversion of UCO ontologies to leverage the Shapes Constraint Language (SHACL) rather than domain assertions and owl property restrictions to define class shapes. In addition, it added a continuous integration (CI) method for testing and verifying the ontology and it corrects several minor issues and bugs.
+UCO 0.9.0 primarily focused on workflow technology transitions, and was necessitated by a Java dependency upgrade.  The workflow used to normalize Turtle files in UCO and in downstream repositories now minimally requires Java 11, which impacts several public repositories---especially within the [CASE](https://caseontology.org/) community---that present Turtle files as part of their review process.  The workflow to interface with the UCO and CASE ontologies has transitioned to Github Issues, which has caused some files related to programming Github interfaces to become versioned with the ontology.  SHACL documentation will now use `sh:description` when documenting SHACL shapes.  OWL-level ontological commitments are being restored since the transition to SHACL, starting with clarifying that `core:UcoObject` and `core:Facet` are disjoint classes, and that `core:hasFacet` is an OWL inverse-functional property.  In SHACL validation updates, 0.9.0 refines some properties in email stub graph objects, polyglot designations with multiple MIME types, and a correction with names of accounts.
 
-Future versions of UCO will not only expand and refine the ontology itself but will also provide more complete and formalized documentation.
+More detail of improvements is documented in the [UCO 0.9.0 release notes](https://unifiedcyberontology.org/releases/0.9.0/).
