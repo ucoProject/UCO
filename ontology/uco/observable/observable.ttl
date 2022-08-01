@@ -311,7 +311,6 @@ observable:AntennaFacet
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "AntennaFacet"@en ;
 	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
-	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
 	sh:property
 		[
 			sh:datatype xsd:decimal ;
@@ -997,7 +996,6 @@ observable:CapturedTelecommunicationsInformation
 		;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "CapturedTelecommunicationsInformation"@en ;
-	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
 	sh:targetClass observable:CapturedTelecommunicationsInformation ;
 	.
 
@@ -1009,7 +1007,6 @@ observable:CapturedTelecommunicationsInformationFacet
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "CapturedTelecommunicationsInformationFacet"@en ;
 	rdfs:comment "A captured telecommunications information facet represents certain information within captured or intercepted telecommunications data."@en ;
-	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
 	sh:property
 		[
 			sh:class observable:CellSite ;
@@ -1047,7 +1044,6 @@ observable:CellSite
 		;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "CellSite"@en ;
-	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
 	sh:targetClass observable:CellSite ;
 	.
 
@@ -1059,7 +1055,6 @@ observable:CellSiteFacet
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "CellSiteFacet"@en ;
 	rdfs:comment "A cell site facet contains the metadata surrounding the cell site."@en ;
-	rdfs:seeAlso <https://case.atlassian.net/browse/ONT-469> ;
 	sh:property
 		[
 			sh:datatype xsd:string ;
