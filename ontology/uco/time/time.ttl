@@ -1,0 +1,26 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <https://ontology.unifiedcyberontology.org/uco/time/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/time>
+	a owl:Ontology ;
+	rdfs:label "uco-time"@en ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	.
+
+time:Time
+	a rdfs:Datatype ;
+	.
+
+time:TimeRange
+	a rdfs:Datatype ;
+	.
+
+time:Timestamp
+	a rdfs:Datatype ;
+	.
+

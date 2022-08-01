@@ -21,30 +21,21 @@ all: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  co_PASS_validation.ttl \
+  co_XFAIL_validation.ttl \
+  hash_PASS_validation.ttl \
+  hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
-  location_XFAIL_validation.ttl
+  location_XFAIL_validation.ttl \
+  message_thread_PASS_validation.ttl \
+  message_thread_XFAIL_validation.ttl \
+  relationship_PASS_validation.ttl \
+  relationship_XFAIL_validation.ttl \
+  thread_PASS_validation.ttl \
+  thread_XFAIL_validation.ttl
 
 .PRECIOUS: \
-  %_PASS_validation.ttl \
-  %_XFAIL_validation.ttl
-
-%_PASS_validation.ttl: \
-  %_PASS.json \
-  $(tests_srcdir)/.venv.done.log \
-  $(tests_srcdir)/uco_monolithic.ttl
-	source $(tests_srcdir)/venv/bin/activate \
-	  && pyshacl \
-	    --data-file-format json-ld \
-	    --format turtle \
-	    --inference none \
-	    --ont-file-format turtle \
-	    --ont-graph $(tests_srcdir)/uco_monolithic.ttl \
-	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
-	    --shacl-file-format turtle \
-	    --output _$@ \
-	    $< \
-	    || (cat _$@ ; exit 1)
-	mv _$@ $@
+  %_validation.ttl
 
 # NOTE - this recipe makes an allowance for a certain failure type
 # reported by pyshacl.  Pyshacl will exit status 1 in the case where
@@ -55,12 +46,13 @@ all: \
 # Note that should another issue cause an exit status of 1, pytest will
 # fail because the result validation-graph file would not have expected
 # characteristics.
-%_XFAIL_validation.ttl: \
-  %_XFAIL.json \
+%_validation.ttl: \
+  %.json \
   $(tests_srcdir)/.venv.done.log \
   $(tests_srcdir)/uco_monolithic.ttl
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pyshacl \
+	    --allow-warnings \
 	    --data-file-format json-ld \
 	    --format turtle \
 	    --inference none \
@@ -68,17 +60,34 @@ all: \
 	    --ont-graph $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl $(tests_srcdir)/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
-	    --output _$@ \
+	    --output __$@ \
 	    $< \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
 	mv _$@ $@
 
 check: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  co_PASS_validation.ttl \
+  co_XFAIL_validation.ttl \
+  hash_PASS_validation.ttl \
+  hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
-  location_XFAIL_validation.ttl
+  location_XFAIL_validation.ttl \
+  message_thread_PASS_validation.ttl \
+  message_thread_XFAIL_validation.ttl \
+  relationship_PASS_validation.ttl \
+  relationship_XFAIL_validation.ttl \
+  thread_PASS_validation.ttl \
+  thread_XFAIL_validation.ttl
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG

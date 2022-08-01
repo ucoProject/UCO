@@ -1,0 +1,612 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/tool>
+	a owl:Ontology ;
+	rdfs:label "uco-tool"@en ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	.
+
+tool:AnalyticTool
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf tool:Tool ;
+	rdfs:label "AnalyticTool"@en ;
+	rdfs:comment "An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning."@en ;
+	sh:targetClass tool:AnalyticTool ;
+	.
+
+tool:BuildConfigurationType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "BuildConfigurationType"@en ;
+	rdfs:comment "A build configuration type is a characterization of how a particular version of software can or should be built."@en ;
+	sh:property
+		[
+			sh:class tool:ConfigurationSettingType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:configurationSettings ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:configurationSettingDescription ;
+		]
+		;
+	sh:targetClass tool:BuildConfigurationType ;
+	.
+
+tool:BuildFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "BuildFacet"@en ;
+	rdfs:comment "A build facet is a grouping of characteristics unique to a particular version of a software."@en ;
+	sh:property [
+		sh:class tool:BuildInformationType ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path tool:buildInformation ;
+	] ;
+	sh:targetClass tool:BuildFacet ;
+	.
+
+tool:BuildInformationType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "BuildInformationType"@en ;
+	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
+	sh:property
+		[
+			sh:class tool:BuildConfigurationType ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:buildConfiguration ;
+		] ,
+		[
+			sh:class tool:BuildUtilityType ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:buildUtility ;
+		] ,
+		[
+			sh:class tool:CompilerType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:compilers ;
+		] ,
+		[
+			sh:class tool:LibraryType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:libraries ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:compilationDate ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:buildID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:buildLabel ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:buildOutputLog ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:buildProject ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:buildScript ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:buildVersion ;
+		]
+		;
+	sh:targetClass tool:BuildInformationType ;
+	.
+
+tool:BuildUtilityType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "BuildUtilityType"@en ;
+	rdfs:comment "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:buildUtilityName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:cpeid ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:swid ;
+		]
+		;
+	sh:targetClass tool:BuildUtilityType ;
+	.
+
+tool:CompilerType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "CompilerType"@en ;
+	rdfs:comment "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:compilerInformalDescription ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:cpeid ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:swid ;
+		]
+		;
+	sh:targetClass tool:CompilerType ;
+	.
+
+tool:ConfigurationSettingType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "ConfigurationSettingType"@en ;
+	rdfs:comment "A configuration setting type is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, or other cyber object."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:itemName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:itemValue ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:itemDescription ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:itemType ;
+		]
+		;
+	sh:targetClass tool:ConfigurationSettingType ;
+	.
+
+tool:DefensiveTool
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf tool:Tool ;
+	rdfs:label "DefensiveTool"@en ;
+	rdfs:comment "A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding."@en ;
+	sh:targetClass tool:DefensiveTool ;
+	.
+
+tool:DependencyType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "DependencyType"@en ;
+	rdfs:comment "A dependency type is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:dependencyDescription ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:dependencyType ;
+		]
+		;
+	sh:targetClass tool:DependencyType ;
+	.
+
+tool:LibraryType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "LibraryType"@en ;
+	rdfs:comment "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:libraryName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:libraryVersion ;
+		]
+		;
+	sh:targetClass tool:LibraryType ;
+	.
+
+tool:MaliciousTool
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf tool:Tool ;
+	rdfs:label "MaliciousTool"@en ;
+	rdfs:comment "A malicious tool is an artifact of hardware and/or software utilized to accomplish a malevolent task or purpose."@en ;
+	sh:targetClass tool:MaliciousTool ;
+	.
+
+tool:Tool
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Tool"@en ;
+	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
+	sh:property
+		[
+			sh:class identity:Identity ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:creator ;
+		] ,
+		[
+			sh:datatype xsd:anyURI ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:references ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:servicePack ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:toolType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:version ;
+		]
+		;
+	sh:targetClass tool:Tool ;
+	.
+
+tool:ToolConfigurationTypeFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "ToolConfigurationTypeFacet"@en ;
+	rdfs:comment "A tool configuration type facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
+	sh:property
+		[
+			sh:class tool:DependencyType ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:dependencies ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:usageContextAssumptions ;
+		]
+		;
+	sh:targetClass tool:ToolConfigurationTypeFacet ;
+	.
+
+tool:buildConfiguration
+	a owl:ObjectProperty ;
+	rdfs:label "buildConfiguration"@en ;
+	rdfs:comment "How the build utility was configured for a particular build of a particular software."@en ;
+	rdfs:range tool:BuildConfigurationType ;
+	.
+
+tool:buildID
+	a owl:DatatypeProperty ;
+	rdfs:label "buildID"@en ;
+	rdfs:comment "An externally defined unique identifier for a particular build of a software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:buildInformation
+	a owl:ObjectProperty ;
+	rdfs:label "buildInformation"@en ;
+	rdfs:comment "Describes how a particular tool was built."@en ;
+	rdfs:range tool:BuildInformationType ;
+	.
+
+tool:buildLabel
+	a owl:DatatypeProperty ;
+	rdfs:label "buildLabel"@en ;
+	rdfs:comment "Relevant label for a particular build of a particular software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:buildOutputLog
+	a owl:DatatypeProperty ;
+	rdfs:label "buildOutputLog"@en ;
+	rdfs:comment "The output log of the build process for a software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:buildProject
+	a owl:DatatypeProperty ;
+	rdfs:label "buildProject"@en ;
+	rdfs:comment "The project name of a build of a software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:buildScript
+	a owl:DatatypeProperty ;
+	rdfs:label "buildScript"@en ;
+	rdfs:comment "The actual build script for a particular build of a particular software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:buildUtility
+	a owl:ObjectProperty ;
+	rdfs:label "buildUtility"@en ;
+	rdfs:comment "Identifies the utility used to build a software."@en ;
+	rdfs:range tool:BuildUtilityType ;
+	.
+
+tool:buildUtilityName
+	a owl:DatatypeProperty ;
+	rdfs:label "buildUtilityName"@en ;
+	rdfs:comment "The informally defined name of the utility used to build a particular software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:buildVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "buildVersion"@en ;
+	rdfs:comment "The appropriate version descriptor of a particular build of a particular software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:compilationDate
+	a owl:DatatypeProperty ;
+	rdfs:label "compilationDate"@en ;
+	rdfs:comment "The compilation date for the build of a software."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+tool:compilerInformalDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "compilerInformalDescription"@en ;
+	rdfs:comment "An informal description of a compiler."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:compilers
+	a owl:ObjectProperty ;
+	rdfs:label "compilers"@en ;
+	rdfs:comment "The compilers utilized during a particular build of a particular software."@en ;
+	rdfs:range tool:CompilerType ;
+	.
+
+tool:configurationSettingDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "configurationSettingDescription"@en ;
+	rdfs:comment "Description of the configuration settings for a particular build of a particular software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:configurationSettings
+	a owl:ObjectProperty ;
+	rdfs:label "configurationSettings"@en ;
+	rdfs:comment "The configuration settings for a particular build of a particular software."@en ;
+	rdfs:range tool:ConfigurationSettingType ;
+	.
+
+tool:cpeid
+	a owl:DatatypeProperty ;
+	rdfs:label "cpeid"@en ;
+	rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:creator
+	a owl:ObjectProperty ;
+	rdfs:label "creator"@en ;
+	rdfs:comment "The creator organization for a particular tool."@en ;
+	rdfs:range identity:Identity ;
+	.
+
+tool:dependencies
+	a owl:ObjectProperty ;
+	rdfs:label "dependencies"@en ;
+	rdfs:comment "The relevant dependencies for a tool."@en ;
+	rdfs:range tool:DependencyType ;
+	.
+
+tool:dependencyDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "dependencyDescription"@en ;
+	rdfs:comment "A description of a tool dependency."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:dependencyType
+	a owl:DatatypeProperty ;
+	rdfs:label "dependencyType"@en ;
+	rdfs:comment "The type of a tool dependency."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:itemDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "itemDescription"@en ;
+	rdfs:comment "A description of a configuration item."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:itemName
+	a owl:DatatypeProperty ;
+	rdfs:label "itemName"@en ;
+	rdfs:comment "The name of a configuration item."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:itemType
+	a owl:DatatypeProperty ;
+	rdfs:label "itemType"@en ;
+	rdfs:comment "The type of a configuration item."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:itemValue
+	a owl:DatatypeProperty ;
+	rdfs:label "itemValue"@en ;
+	rdfs:comment "The value of a configuration setting instance."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:libraries
+	a owl:ObjectProperty ;
+	rdfs:label "libraries"@en ;
+	rdfs:comment "The libraries incorporated into a particular build of a software."@en ;
+	rdfs:range tool:LibraryType ;
+	.
+
+tool:libraryName
+	a owl:DatatypeProperty ;
+	rdfs:label "libraryName"@en ;
+	rdfs:comment "The name of the library."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:libraryVersion
+	a owl:DatatypeProperty ;
+	rdfs:label "libraryVersion"@en ;
+	rdfs:comment "The version of the library."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:references
+	a owl:DatatypeProperty ;
+	rdfs:label "references"@en ;
+	rdfs:comment "References to information describing a particular tool."@en ;
+	rdfs:range xsd:anyURI ;
+	.
+
+tool:servicePack
+	a owl:DatatypeProperty ;
+	rdfs:label "servicePack"@en ;
+	rdfs:comment "An appropriate service pack descriptor for a particular tool."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:swid
+	a owl:DatatypeProperty ;
+	rdfs:label "swid"@en ;
+	rdfs:comment "Specifies the SWID tag for the software."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:toolType
+	a owl:DatatypeProperty ;
+	rdfs:label "toolType"@en ;
+	rdfs:comment "The type of tool."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:usageContextAssumptions
+	a owl:DatatypeProperty ;
+	rdfs:label "usageContextAssumptions"@en ;
+	rdfs:comment "dDescriptions of the various relevant usage context assumptions for this tool ."@en ;
+	rdfs:range xsd:string ;
+	.
+
+tool:version
+	a owl:DatatypeProperty ;
+	rdfs:label "version"@en ;
+	rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
+	rdfs:range xsd:string ;
+	.
+

@@ -15,41 +15,50 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd .. ; pwd)
 
-turtle_directories := $(shell find * -type d -maxdepth 0 | sort)
-
-all_directories := $(foreach turtle_directory,$(turtle_directories),all-$(turtle_directory))
-
-check_directories := $(foreach turtle_directory,$(turtle_directories),check-$(turtle_directory))
-
-clean_directories := $(foreach turtle_directory,$(turtle_directories),clean-$(turtle_directory))
-
 all: \
-  $(all_directories)
+  all-co \
+  all-uco
 
-all-%: \
-  % \
-  $(top_srcdir)/.lib.done.log
+.PHONY: \
+  all-co \
+  all-uco \
+  check-co \
+  check-uco \
+  clean-co \
+  clean-uco
+
+all-co:
 	$(MAKE) \
-	  --directory $< \
-	  --file $(top_srcdir)/src/review.mk
+	  --directory co
+
+all-uco:
+	$(MAKE) \
+	  --directory uco
 
 check: \
-  $(check_directories)
+  check-co \
+  check-uco
 
-check-%: \
-  % \
-  $(top_srcdir)/.lib.done.log
+check-co:
 	$(MAKE) \
-	  --directory $< \
-	  --file $(top_srcdir)/src/review.mk \
+	  --directory co \
+	  check
+
+check-uco:
+	$(MAKE) \
+	  --directory uco \
 	  check
 
 clean: \
-  $(clean_directories)
+  clean-co \
+  clean-uco
 
-clean-%: \
-  %
+clean-co:
 	@$(MAKE) \
-	  --directory $< \
-	  --file $(top_srcdir)/src/review.mk \
+	  --directory co \
+	  clean
+
+clean-uco:
+	@$(MAKE) \
+	  --directory uco \
 	  clean

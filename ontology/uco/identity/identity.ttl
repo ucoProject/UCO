@@ -1,0 +1,318 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/location
+
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/identity>
+	a owl:Ontology ;
+	rdfs:label "uco-identity"@en ;
+	owl:imports
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/location>
+		;
+	.
+
+identity:AddressFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "AddressFacet"@en ;
+	rdfs:comment "An address facet is a grouping of characteristics unique to an administrative identifier for a geolocation associated with a specific identity."@en ;
+	sh:property [
+		sh:class location:Location ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path identity:address ;
+	] ;
+	sh:targetClass identity:AddressFacet ;
+	.
+
+identity:AffiliationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "AffiliationFacet"@en ;
+	rdfs:comment "An affiliation is a grouping of characteristics unique to the established affiliations of an entity."@en ;
+	sh:targetClass identity:AffiliationFacet ;
+	.
+
+identity:BirthInformationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "BirthInformationFacet"@en ;
+	rdfs:comment "Birth information is a grouping of characteristics unique to information pertaining to the birth of an entity."@en ;
+	sh:property [
+		sh:datatype xsd:dateTime ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
+		sh:path identity:birthdate ;
+	] ;
+	sh:targetClass identity:BirthInformationFacet ;
+	.
+
+identity:CountryOfResidenceFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "CountryOfResidenceFacet"@en ;
+	rdfs:comment "Country of residence is a grouping of characteristics unique to information related to the country, or countries, where an entity resides."@en ;
+	sh:targetClass identity:CountryOfResidenceFacet ;
+	.
+
+identity:EventsFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "EventsFacet"@en ;
+	rdfs:comment "Events is a grouping of characteristics unique to information related to specific relevant things that happen in the lifetime of an entity."@en ;
+	sh:targetClass identity:EventsFacet ;
+	.
+
+identity:IdentifierFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "IdentifierFacet"@en ;
+	rdfs:comment "Identifier is a grouping of characteristics unique to information that uniquely and specifically identities an entity."@en ;
+	sh:targetClass identity:IdentifierFacet ;
+	.
+
+identity:Identity
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:IdentityAbstraction ;
+	rdfs:label "Identity"@en ;
+	rdfs:comment "An identity is a grouping of identifying characteristics unique to an individual or organization."@en ;
+	sh:targetClass identity:Identity ;
+	.
+
+identity:IdentityFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "IdentityFacet"@en ;
+	rdfs:comment "An identity facet is a grouping of characteristics unique to a particular aspect of an identity."@en ;
+	sh:targetClass identity:IdentityFacet ;
+	.
+
+identity:LanguagesFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "LanguagesFacet"@en ;
+	rdfs:comment "Languages is a grouping of characteristics unique to specific syntactically and grammatically standardized forms of communication (human or computer) in which an entity has proficiency (comprehends, speaks, reads, or writes)."@en ;
+	sh:targetClass identity:LanguagesFacet ;
+	.
+
+identity:NationalityFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "NationalityFacet"@en ;
+	rdfs:comment "Nationality is a grouping of characteristics unique to the condition of an entity belonging to a particular nation."@en ;
+	sh:targetClass identity:NationalityFacet ;
+	.
+
+identity:OccupationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "OccupationFacet"@en ;
+	rdfs:comment "Occupation is a grouping of characteristics unique to the job or profession of an entity."@en ;
+	sh:targetClass identity:OccupationFacet ;
+	.
+
+identity:Organization
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:Identity ;
+	rdfs:label "Organization"@en ;
+	rdfs:comment "An organization is a grouping of identifying characteristics unique to a group of people who work together in an organized way for a shared purpose. [based on https://dictionary.cambridge.org/us/dictionary/english/organization]"@en ;
+	sh:targetClass identity:Organization ;
+	.
+
+identity:OrganizationDetailsFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "OrganizationDetailsFacet"@en ;
+	rdfs:comment "Organization details is a grouping of characteristics unique to an identity representing an administrative and functional structure."@en ;
+	sh:targetClass identity:OrganizationDetailsFacet ;
+	.
+
+identity:Person
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:Identity ;
+	rdfs:label "Person"@en ;
+	rdfs:comment "A person is a grouping of identifying characteristics unique to a human being regarded as an individual. [based on https://www.lexico.com/en/definition/person]"@en ;
+	sh:targetClass identity:Person ;
+	.
+
+identity:PersonalDetailsFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "PersonalDetailsFacet"@en ;
+	rdfs:comment "Personal details is a grouping of characteristics unique to an identity representing an individual person."@en ;
+	sh:targetClass identity:PersonalDetailsFacet ;
+	.
+
+identity:PhysicalInfoFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "PhysicalInfoFacet"@en ;
+	rdfs:comment "Physical info is a grouping of characteristics unique to the outwardly observable nature of an individual person."@en ;
+	sh:targetClass identity:PhysicalInfoFacet ;
+	.
+
+identity:QualificationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "QualificationFacet"@en ;
+	rdfs:comment "Qualification is a grouping of characteristics unique to particular skills, capabilities or their related achievements (educational, professional, etc.) of an entity."@en ;
+	sh:targetClass identity:QualificationFacet ;
+	.
+
+identity:RelatedIdentityFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "RelatedIdentityFacet"@en ;
+	rdfs:comment "<Needs fleshed out from CIQ>"@en ;
+	sh:targetClass identity:RelatedIdentityFacet ;
+	.
+
+identity:SimpleNameFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "SimpleNameFacet"@en ;
+	rdfs:comment "A simple name facet is a grouping of characteristics unique to the personal name (e.g., Dr. John Smith Jr.) held by an identity."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path identity:familyName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path identity:givenName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path identity:honorificPrefix ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path identity:honorificSuffix ;
+		]
+		;
+	sh:targetClass identity:SimpleNameFacet ;
+	.
+
+identity:VisaFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf identity:IdentityFacet ;
+	rdfs:label "VisaFacet"@en ;
+	rdfs:comment "Visa is a grouping of characteristics unique to information related to a person's ability to enter, leave, or stay for a specified period of time in a country."@en ;
+	sh:targetClass identity:VisaFacet ;
+	.
+
+identity:address
+	a owl:ObjectProperty ;
+	rdfs:label "address"@en ;
+	rdfs:comment ""@en ;
+	rdfs:range location:Location ;
+	.
+
+identity:birthdate
+	a owl:DatatypeProperty ;
+	rdfs:label "birthdate"@en ;
+	rdfs:comment ""@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+identity:familyName
+	a owl:DatatypeProperty ;
+	rdfs:label "familyName"@en ;
+	rdfs:comment ""@en ;
+	rdfs:range xsd:string ;
+	.
+
+identity:givenName
+	a owl:DatatypeProperty ;
+	rdfs:label "givenName"@en ;
+	rdfs:comment ""@en ;
+	rdfs:range xsd:string ;
+	.
+
+identity:honorificPrefix
+	a owl:DatatypeProperty ;
+	rdfs:label "honorificPrefix"@en ;
+	rdfs:comment ""@en ;
+	rdfs:range xsd:string ;
+	.
+
+identity:honorificSuffix
+	a owl:DatatypeProperty ;
+	rdfs:label "honorificSuffix"@en ;
+	rdfs:comment ""@en ;
+	rdfs:range xsd:string ;
+	.
+
