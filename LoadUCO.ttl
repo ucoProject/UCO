@@ -1,0 +1,33 @@
+
+@base <https://ontology.unifiedcyberontology.org/ontology/LoadUCO> .
+@prefix : <https://unifiedcyberontology.org/ontology/uco/uco#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco: <https://unifiedcyberontology.org/ontology/uco/uco#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/ontology/LoadUCO>
+	a owl:Ontology ;
+	rdfs:label "uco-master"@en ;
+	owl:imports
+		<https://ontology.unifiedcyberontology.org/uco/action> ,
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/identity> ,
+		<https://ontology.unifiedcyberontology.org/uco/location> ,
+		<https://ontology.unifiedcyberontology.org/uco/marking> ,
+		<https://ontology.unifiedcyberontology.org/uco/observable> ,
+		<https://ontology.unifiedcyberontology.org/uco/pattern> ,
+		<https://ontology.unifiedcyberontology.org/uco/role> ,
+		<https://ontology.unifiedcyberontology.org/uco/time> ,
+		<https://ontology.unifiedcyberontology.org/uco/tool> ,
+		<https://ontology.unifiedcyberontology.org/uco/types> ,
+		<https://ontology.unifiedcyberontology.org/uco/victim> ,
+		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		;
+	owl:versionInfo "0.9.0" ;
+	.
+
+
