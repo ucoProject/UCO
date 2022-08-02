@@ -80,12 +80,13 @@ inheritance_review.ttl: \
 uco_monolithic.ttl: \
   $(top_srcdir)/.lib.done.log \
   $(uco_turtle_files) \
-  .venv.done.log \
-  src/glom_graph.py
+  .venv.done.log 
 	source venv/bin/activate \
-	  && python3 src/glom_graph.py \
-	    __$@ \
-	    $(uco_turtle_files)
+          && rdfpipe \
+	    --input-format ttl \
+	    --output-format ttl \
+	    $(uco_turtle_files) \
+	    > __$@
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
 	  --inline-blank-nodes \
 	  --source __$@ \
