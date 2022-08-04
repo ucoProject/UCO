@@ -6012,13 +6012,13 @@ observable:TwitterProfileFacet
 	sh:targetClass observable:TwitterProfileFacet ;
 	.
 
-observable:UnallocatedRecoverabilityFacet
+observable:RecoveredObjectFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:Facet ;
-	rdfs:label "UnallocatedRecoverabilityFacet"@en ;
+	rdfs:label "RecoveredObjectFacet"@en ;
 	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
 	rdfs:seeAlso <https://unifiedcyberontology.atlassian.net/browse/ONT-119> ;
 	sh:property
@@ -6027,42 +6027,42 @@ observable:UnallocatedRecoverabilityFacet
 			sh:nodeKind sh:Literal ;
 			sh:or (
 				[
-					sh:datatype vocabulary:UnallocatedRecoverabilityStatusVocab ;
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
 				]
 				[
 					sh:datatype xsd:string ;
 				]
 			) ;
-			sh:path observable:nameRecoverabilityStatus ;
+			sh:path observable:nameRecoveredStatus ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:or (
 				[
-					sh:datatype vocabulary:UnallocatedRecoverabilityStatusVocab ;
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
 				]
 				[
 					sh:datatype xsd:string ;
 				]
 			) ;
-			sh:path observable:metadataRecoverabilityStatus ;
+			sh:path observable:metadataRecoveredStatus ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:or (
 				[
-					sh:datatype vocabulary:UnallocatedRecoverabilityStatusVocab ;
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
 				]
 				[
 					sh:datatype xsd:string ;
 				]
 			) ;
-			sh:path observable:contentRecoverabilityStatus ;
+			sh:path observable:contentRecoveredStatus ;
 		] , 
 		;
-	sh:targetClass observable:UnallocatedRecoverabilityFacet ;
+	sh:targetClass observable:RecoveredObjectFacet ;
 	.
 
 
@@ -9262,14 +9262,14 @@ observable:contentDisposition
 	rdfs:range xsd:string ;
 	.
 
-observable:contentRecoverabilityStatus
+observable:contentRecoveredStatus
 	a owl:DatatypeProperty ;
-	rdfs:label "contentRecoverabilityStatus"@en ;
+	rdfs:label "contentRecoveredStatus"@en ;
 	rdfs:comment "Specifies the recoverability status of the content of an object."@en ;
 	rdfs:range [
 		a rdfs:Datatype ;
 		owl:unionOf (
-			vocabulary:UnallocatedRecoverabilityStatusVocab
+			vocabulary:RecoveredObjectStatusVocab
 			xsd:string
 		) ;
 	] ;
@@ -10714,14 +10714,14 @@ observable:metadataChangeTime
 	rdfs:range xsd:dateTime ;
 	.
 
-observable:metadataRecoverabilityStatus
+observable:metadataRecoveredStatus
 	a owl:DatatypeProperty ;
-	rdfs:label "metadataRecoverabilityStatus"@en ;
+	rdfs:label "metadataRecoveredStatus"@en ;
 	rdfs:comment "Specifies the recoverability status of the metadata of an object."@en ;
 	rdfs:range [
 		a rdfs:Datatype ;
 		owl:unionOf (
-			vocabulary:UnallocatedRecoverabilityStatusVocab
+			vocabulary:RecoveredObjectStatusVocab
 			xsd:string
 		) ;
 	] ;
@@ -10907,14 +10907,14 @@ observable:namePrefix
 	rdfs:range xsd:string ;
 	.
 
-observable:nameRecoverabilityStatus
+observable:nameRecoveredStatus
 	a owl:DatatypeProperty ;
-	rdfs:label "nameRecoverabilityStatus"@en ;
+	rdfs:label "nameRecoveredStatus"@en ;
 	rdfs:comment "Specifies the recoverability status of the name of an object."@en ;
 	rdfs:range [
 		a rdfs:Datatype ;
 		owl:unionOf (
-			vocabulary:UnallocatedRecoverabilityStatusVocab
+			vocabulary:RecoveredObjectStatusVocab
 			xsd:string
 		) ;
 	] ;
