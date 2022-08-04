@@ -1095,8 +1095,8 @@ vocabulary:TriggerTypeVocab
 vocabulary:RecoveredObjectStatusVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Object Recoverability Status Vocabulary"@en-US ;
-	rdfs:comment "Defines the vocabulary for object recoverability status of data."@en ;
+	rdfs:label "Recovered Object Status Vocabulary"@en-US ;
+	rdfs:comment "Defines the vocabulary for Recovered Object status of data."@en ;
 	owl:oneOf (
 		"recovered"^^vocabulary:RecoveredObjectStatusVocab
 		"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
