@@ -1092,16 +1092,16 @@ vocabulary:TriggerTypeVocab
 	) ;
 	.
 
-vocabulary:UnallocatedRecoverabilityStatusVocab
+vocabulary:RecoveredObjectStatusVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Unallocated Recoverability Status Vocabulary"@en-US ;
-	rdfs:comment "Defines the vocabulary for unallocated recoverability status of data."@en ;
+	rdfs:label "Object Recoverability Status Vocabulary"@en-US ;
+	rdfs:comment "Defines the vocabulary for object recoverability status of data."@en ;
 	owl:oneOf (
-		"recovered"^^vocabulary:UnallocatedRecoverabilityStatusVocab
-		"partially recovered"^^vocabulary:UnallocatedRecoverabilityStatusVocab
-		"overwritten"^^vocabulary:UnallocatedRecoverabilityStatusVocab
-		"unknown"^^vocabulary:UnallocatedRecoverabilityStatusVocab
+		"recovered"^^vocabulary:RecoveredObjectStatusVocab
+		"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+		"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+		"unknown"^^vocabulary:RecoveredObjectStatusVocab
 	) ;
 	.
 
