@@ -356,14 +356,14 @@ tool:Tool
 	sh:targetClass tool:Tool ;
 	.
 
-tool:ToolConfigurationTypeFacet
+tool:ToolConfigurationFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:Facet ;
-	rdfs:label "ToolConfigurationTypeFacet"@en ;
-	rdfs:comment "A tool configuration type facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
+	rdfs:label "ToolConfigurationFacet"@en ;
+	rdfs:comment "A tool configuration facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
 	sh:property
 		[
 			sh:class tool:DependencyType ;
@@ -376,7 +376,7 @@ tool:ToolConfigurationTypeFacet
 			sh:path tool:usageContextAssumptions ;
 		]
 		;
-	sh:targetClass tool:ToolConfigurationTypeFacet ;
+	sh:targetClass tool:ToolConfigurationFacet ;
 	.
 
 tool:buildConfiguration
