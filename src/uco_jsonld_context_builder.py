@@ -32,13 +32,20 @@ from rdflib.namespace import Namespace, NamespaceManager
 
 _logger = logging.getLogger(os.path.basename(__file__))
 
+class ObjectPropertyInfo:
+    """Class to hold ObjectProperty info which will be used to build context"""
+    def __init__(self):
+        self.ns_prefix = None
+        self.root_class_name = None
+        self.shacl_count_lte_1 = False
+
 class DatatypePropertyInfo:
-    "Class to hold DatatypePropertyInfo which will be used to build context"
+    """Class to hold DatatypeProperty info which will be used to build context"""
     def __init__(self):
         self.ns_prefix = None
         self.root_property_name = None
         self.prefixed_datatype_name = None
-        self.shacl_count_lt_1 = False
+        self.shacl_count_lte_1 = False
     
 
 class ContextBuilder:
@@ -49,6 +56,8 @@ class ContextBuilder:
         self.iri_dict=None
         #A dict of DataTypePropertyInfo Objects
         self.datatype_properties_dict={}
+        #A dict of ObjectPropertyInfo Objects
+        self.object_properties_dict={}
         #The string that will hold the processed context
         self.context_str = ""
 
@@ -188,6 +197,49 @@ class ContextBuilder:
         for ttl_file in self.ttl_file_list:
             self.__process_DatatypePropertiesHelper(in_file=ttl_file)
 
+    def __process_ObjectPropertiesHelper(self, in_file=None):
+        """
+        Does the actual work using rdflib
+        @in_file - ttl file to get object properties from
+        """
+        graph = rdflib.Graph()
+        graph.parse(in_file, format="turtle")
+        #Make sure to do an iter that looks for rdflib.OWL.class"
+        #If we cannot find rdf range, skip
+        #If rdf range is a blank node, skip
+        for triple in graph.triples((None,rdflib.RDF.type,rdflib.OWL.ObjectProperty)):
+            op_obj = ObjectPropertyInfo()
+            print(triple)
+            #print(triple[0].split('/'))
+            s_triple=triple[0].split('/')
+            root=s_triple[-1]
+            ns_prefix=f"{s_triple[-3]}-{s_triple[-2]}"
+            print(ns_prefix, root)
+            op_obj.ns_prefix=ns_prefix
+            op_obj.root_class_name=root
+            
+            #for triple2 in graph.triples((triple[0],rdflib.RDFS.range, None)):
+            #    #Testing for Blank Nodes
+            #    if isinstance(triple2[-1],rdflib.term.BNode):
+            #        continue
+            #    rdf_rang_str = str(triple2[-1].n3(graph.namespace_manager))
+            #    print(f"\t{rdf_rang_str}")
+            #    op_obj.prefixed_datatype_name=rdf_rang_str
+            #    #if str(rdf_rang_str) not in test_list:
+            #    #    test_list.append(rdf_rang_str)
+            
+
+            if root in self.object_properties_dict.keys():
+                _logger.debug(f"None Unique Entry Found:\t {ns_prefix}:{root}")
+                self.object_properties_dict[root].append(op_obj)
+            else:
+                self.object_properties_dict[root]=[op_obj]
+        return
+    
+    def process_ObjectProperties(self):
+        for ttl_file in self.ttl_file_list:
+            self.__process_ObjectPropertiesHelper(in_file=ttl_file)
+
     def process_prefixes(self):
         """
         Finds all prefix lines in list of ttl files. Adds them to an
@@ -228,9 +280,42 @@ class ContextBuilder:
                 #print(dtp_obj.root_property_name)
                 #print(con_str)
                 dtp_str_sect+=con_str
-
         #print(dtp_str_sect)
         return(dtp_str_sect)
+
+    def add_minimal_datatype_props_to_cntxt(self) -> None:
+        dtp_str_sect=""
+        dt_list = list(self.datatype_properties_dict.keys())
+        dt_list.sort()
+        #last_dtp_obj = self.datatype_properties_dict[dt_list[-1]][-1]
+        for key in dt_list:
+            for dtp_obj in self.datatype_properties_dict[key]:
+                con_str=f"\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\":{{\n"
+                con_str+=f"\t\"@id\":\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\""
+                if (dtp_obj.prefixed_datatype_name is not None):
+                    con_str+=",\n"
+                    con_str+=f"\t\"@type\":\"{dtp_obj.prefixed_datatype_name}\"\n"
+                else:
+                    con_str+="\n"
+                con_str+="},\n"
+                
+                dtp_str_sect+=con_str
+
+        self.context_str+=dtp_str_sect
+
+    def add_minimal_object_props_to_cntxt(self) -> None:
+        op_str_sect=""
+        op_list = list(self.object_properties_dict.keys())
+        op_list.sort()
+        for key in op_list:
+            for op_obj in self.object_properties_dict[key]:
+                con_str=f"\"{op_obj.ns_prefix}:{op_obj.root_class_name}\":{{\n"
+                con_str+="\t\"@type\":\"@id\"\n"
+                con_str+="},\n"
+                
+                op_str_sect+=con_str
+        self.context_str+=op_str_sect
+        
 
 
 
@@ -249,18 +334,18 @@ def main():
         _logger.debug(f" Input ttl: {i}")
     
     cb.process_prefixes()
-    #for i in cb.get_iris():
-    #    print(i)
-    
     cb.process_DatatypeProperties()
+    cb.process_ObjectProperties()
     cb.init_context_str()
     cb.add_prefixes_to_cntxt()
+    cb.add_minimal_object_props_to_cntxt()
+    cb.add_minimal_datatype_props_to_cntxt()
     cb.close_context_str()
     print(cb.context_str)
 
-    #cb.print_minimal_datatype_properties()
 
     return
+    #cb.print_minimal_datatype_properties()
 
     dt_list = list(cb.datatype_properties_dict.keys())
     dt_list.sort()
