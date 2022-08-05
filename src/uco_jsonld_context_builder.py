@@ -11,7 +11,9 @@ Purpose statement
 3) json-ld context to support assertion of properties with potential 
    cardinalities >1 as set arrrays
 4) json-ld context to support compaction of json-ld specific key strings @id,
-   @type, @value and @graph to simple json key strings id, type, value, and graph such that the body of content can be viewed as simple json and the context can be utilized to expand it into fully codified json-ld
+   @type, @value and @graph to simple json key strings id, type, value, and 
+   graph such that the body of content can be viewed as simple json and the 
+   context can be utilized to expand it into fully codified json-ld
 
 """
 
@@ -26,23 +28,26 @@ import pathlib
 import sys
 import re
 import rdflib
+from rdflib.namespace import Namespace, NamespaceManager
 
 _logger = logging.getLogger(os.path.basename(__file__))
 
-"""
- 27 def main():                                                                                                                                                     
- 28     g = rdflib.Graph()                                                                                                                                          
- 29     for in_graph in args.in_graph:                                                                                                                              
- 30         g.parse(in_graph, format="turtle")                                                                                                                      
- 31     g.serialize(args.out_graph, format="turtle") 
-"""
+class DatatypePropertyInfo:
+    "Class to hold DatatypePropertyInfo which will be used to build context"
+    def __init__(self):
+        self.ns_prefix = None
+        self.root_property_name = None
+        self.prefixed_datatype_name = None
+        self.shacl_count_lt_1 = False
+    
 
-class context_builder:
+class ContextBuilder:
     def __init__(self):
         self.ttl_file_list=None
         self.prefix_dict=None
         self.top_srcdir=None
         self.iri_dict=None
+        #A dict of DataTypePropertyInfo Objects
         self.datatype_properties_dict={}
 
     def get_ttl_files(self, subdirs=[]) -> list:
@@ -136,20 +141,38 @@ class context_builder:
         "Make sure to do an itter that looks for rdflib.OWL.class"
         #limit = 4
         #count = 0
+        #test_list=[]
+        #If we cannot find rdf range, skip
+        #If rdf range is a blank node, skip
         for triple in graph.triples((None,rdflib.RDF.type,rdflib.OWL.DatatypeProperty)):
+            dtp_obj = DatatypePropertyInfo()
             print(triple)
-            print(triple[0].split('/'))
+            #print(triple[0].split('/'))
             s_triple=triple[0].split('/')
             root=s_triple[-1]
             ns_prefix=f"{s_triple[-3]}-{s_triple[-2]}"
             print(ns_prefix, root)
+            dtp_obj.ns_prefix=ns_prefix
+            dtp_obj.root_property_name=root
+            for triple2 in graph.triples((triple[0],rdflib.RDFS.range, None)):
+                #Testing for Blank Nodes
+                if isinstance(triple2[-1],rdflib.term.BNode):
+                    continue
+                rdf_rang_str = str(triple2[-1].n3(graph.namespace_manager))
+                dtp_obj.prefixed_datatype_name=rdf_rang_str
+                #print(f"\t{triple2}")
+                #print(f"\t{triple2[-1].n3(graph.namespace_manager)}\t{type(triple2[-1])}")
+                #if str(rdf_rang_str) not in test_list:
+                #    test_list.append(rdf_rang_str)
+            
 
             if root in self.datatype_properties_dict.keys():
-                print(f"None Unique Entry Found:\t {ns_prefix}:{root}")
-                self.datatype_properties_dict[root].append(ns_prefix)
+                _logger.debug(f"None Unique Entry Found:\t {ns_prefix}:{root}")
+                self.datatype_properties_dict[root].append(dtp_obj)
             else:
-                self.datatype_properties_dict[root]=[ns_prefix]
+                self.datatype_properties_dict[root]=[dtp_obj]
 
+        #print(f"***\n{test_list}\n***")
         return
             #count += 1
             #if count >= limit:
@@ -188,7 +211,7 @@ def main():
 
     _logger.debug("Debug Mode enabled")
     
-    cb = context_builder()
+    cb = ContextBuilder()
     for i in (cb.get_ttl_files(subdirs=['ontology'])):
         _logger.debug(f" Input ttl: {i}")
     
@@ -198,12 +221,34 @@ def main():
     
     cb.process_DatatypeProperties()
 
-"""
-If we cannot find rdf range, skip
-if rdf range is a blank node, skip
-"""
     dt_list = list(cb.datatype_properties_dict.keys())
     dt_list.sort()
+    last_dtp_obj = cb.datatype_properties_dict[dt_list[-1]][-1]
+    for key in dt_list:
+        #if len(cb.datatype_properties_dict[key]) > 1:
+        for dtp_obj in cb.datatype_properties_dict[key]:
+            con_str=f"\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\":{{\n"
+            con_str+=f"\t\"@id\":\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\""
+            if (dtp_obj.prefixed_datatype_name is not None):
+                con_str+=",\n"
+                con_str+=f"\t\"@type\":\"{dtp_obj.prefixed_datatype_name}\"\n"
+            else:
+                con_str+="\n"
+            if dtp_obj != last_dtp_obj:
+                con_str+="},\n"
+            else:
+                con_str+="}\n"
+            print(dtp_obj.root_property_name)
+            print(con_str)
+        #else:
+        #    dtp_obj = cb.datatype_properties_dict[key][0]
+        #    con_str=f"\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\":{{\n"
+        #    con_str+=f"\t\"@id\":\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\"\n"
+        #    con_str+=f"\t\"@type\":\"{dtp_obj.prefixed_datatype_name}\"\n"
+        #    con_str+="}"
+
+
+    """Come back to this for concise output""
     for key in dt_list:
         #Non-unique roots
         if len(cb.datatype_properties_dict[key]) > 1:
@@ -217,15 +262,13 @@ if rdf range is a blank node, skip
         #Unique roots
         else:
             pass   
-
+    """
+    return
     #from pprint import pprint
     #pprint(cb.datatype_properties_dict)
-    sys.exit()
     #context keyword in graph parse and graph serialize
     #black formater FLAKE8 for isort
     #check the case-uilities python
-
-
 
     graph = rdflib.Graph()
     graph.parse("../tests/uco_monolithic.ttl", format="turtle")
@@ -234,6 +277,7 @@ if rdf range is a blank node, skip
     count = 0
     for triple in graph.triples((None,rdflib.RDF.type,rdflib.OWL.DatatypeProperty)):
         print(triple[0].fragment)
+        print(triple[0].n3(graph.namespace_manager))
         print(triple)
         count += 1
         if count >= limit:
