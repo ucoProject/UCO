@@ -49,6 +49,17 @@ class ContextBuilder:
         self.iri_dict=None
         #A dict of DataTypePropertyInfo Objects
         self.datatype_properties_dict={}
+        #The string that will hold the processed context
+        self.context_str = ""
+
+    def init_context_str(self) -> None:
+        self.context_str="{\n\t\"@context\":{\n"""
+
+    def close_context_str(self) -> None:
+        self.context_str=self.context_str.strip()
+        if self.context_str[-1] == ',':
+            self.context_str=self.context_str[:-1]
+        self.context_str+="\n\t}\n}"
 
     def get_ttl_files(self, subdirs=[]) -> list:
         """
@@ -98,7 +109,7 @@ class ContextBuilder:
 
     def get_iris(self)->list:
         """
-        Returns sorted list of IRIs 
+        Returns sorted list of IRIs as prefix:value strings
         """
         k_list=list(self.iri_dict.keys())
         #print(k_list)
@@ -106,8 +117,13 @@ class ContextBuilder:
         irs_list=[]
         for k in k_list:
             #print(f"\"{k}\":{self.iri_dict[k]}")
-            irs_list.append(f"\"{k}\":{self.iri_dict[k]}")
+            irs_list.append(f"\"{k}\":\"{self.iri_dict[k]}\"")
         return irs_list
+
+    def add_prefixes_to_cntxt(self) -> None:
+        """Adds detected prefixes to the context string"""
+        for i in self.get_iris():
+            self.context_str+=f"{i},\n"
 
     def __add_to_iri_dict(self, in_prefix):
         """INTERNAL function: Adds unique key value pairs to dict
@@ -139,19 +155,16 @@ class ContextBuilder:
         graph = rdflib.Graph()
         graph.parse(in_file, format="turtle")
         "Make sure to do an itter that looks for rdflib.OWL.class"
-        #limit = 4
-        #count = 0
-        #test_list=[]
         #If we cannot find rdf range, skip
         #If rdf range is a blank node, skip
         for triple in graph.triples((None,rdflib.RDF.type,rdflib.OWL.DatatypeProperty)):
             dtp_obj = DatatypePropertyInfo()
-            print(triple)
+            #print(triple)
             #print(triple[0].split('/'))
             s_triple=triple[0].split('/')
             root=s_triple[-1]
             ns_prefix=f"{s_triple[-3]}-{s_triple[-2]}"
-            print(ns_prefix, root)
+            #print(ns_prefix, root)
             dtp_obj.ns_prefix=ns_prefix
             dtp_obj.root_property_name=root
             for triple2 in graph.triples((triple[0],rdflib.RDFS.range, None)):
@@ -160,8 +173,6 @@ class ContextBuilder:
                     continue
                 rdf_rang_str = str(triple2[-1].n3(graph.namespace_manager))
                 dtp_obj.prefixed_datatype_name=rdf_rang_str
-                #print(f"\t{triple2}")
-                #print(f"\t{triple2[-1].n3(graph.namespace_manager)}\t{type(triple2[-1])}")
                 #if str(rdf_rang_str) not in test_list:
                 #    test_list.append(rdf_rang_str)
             
@@ -171,18 +182,13 @@ class ContextBuilder:
                 self.datatype_properties_dict[root].append(dtp_obj)
             else:
                 self.datatype_properties_dict[root]=[dtp_obj]
-
-        #print(f"***\n{test_list}\n***")
         return
-            #count += 1
-            #if count >= limit:
-            #    return
     
     def process_DatatypeProperties(self):
         for ttl_file in self.ttl_file_list:
             self.__process_DatatypePropertiesHelper(in_file=ttl_file)
 
-    def get_prefixes(self):
+    def process_prefixes(self):
         """
         Finds all prefix lines in list of ttl files. Adds them to an
         an internal dict
@@ -198,6 +204,33 @@ class ContextBuilder:
                     if re.search("^\@prefix",line):
                         #_logger.debug(line.strip())
                         self.__add_to_iri_dict(in_prefix=line.strip())
+
+    def print_minimal_datatype_properties(self)->str:
+        """Prints DataType Properties in a format suitable for the contect"""
+        dtp_str_sect=""
+        dt_list = list(self.datatype_properties_dict.keys())
+        dt_list.sort()
+        last_dtp_obj = self.datatype_properties_dict[dt_list[-1]][-1]
+        for key in dt_list:
+            #if len(cb.datatype_properties_dict[key]) > 1:
+            for dtp_obj in self.datatype_properties_dict[key]:
+                con_str=f"\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\":{{\n"
+                con_str+=f"\t\"@id\":\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\""
+                if (dtp_obj.prefixed_datatype_name is not None):
+                    con_str+=",\n"
+                    con_str+=f"\t\"@type\":\"{dtp_obj.prefixed_datatype_name}\"\n"
+                else:
+                    con_str+="\n"
+                if dtp_obj != last_dtp_obj:
+                    con_str+="},\n"
+                else:
+                    con_str+="}\n"
+                #print(dtp_obj.root_property_name)
+                #print(con_str)
+                dtp_str_sect+=con_str
+
+        #print(dtp_str_sect)
+        return(dtp_str_sect)
 
 
 
@@ -215,11 +248,19 @@ def main():
     for i in (cb.get_ttl_files(subdirs=['ontology'])):
         _logger.debug(f" Input ttl: {i}")
     
-    cb.get_prefixes()
+    cb.process_prefixes()
     #for i in cb.get_iris():
     #    print(i)
     
     cb.process_DatatypeProperties()
+    cb.init_context_str()
+    cb.add_prefixes_to_cntxt()
+    cb.close_context_str()
+    print(cb.context_str)
+
+    #cb.print_minimal_datatype_properties()
+
+    return
 
     dt_list = list(cb.datatype_properties_dict.keys())
     dt_list.sort()
