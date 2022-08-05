@@ -209,12 +209,12 @@ class ContextBuilder:
         #If rdf range is a blank node, skip
         for triple in graph.triples((None,rdflib.RDF.type,rdflib.OWL.ObjectProperty)):
             op_obj = ObjectPropertyInfo()
-            print(triple)
+            #print(triple)
             #print(triple[0].split('/'))
             s_triple=triple[0].split('/')
             root=s_triple[-1]
             ns_prefix=f"{s_triple[-3]}-{s_triple[-2]}"
-            print(ns_prefix, root)
+            #print(ns_prefix, root)
             op_obj.ns_prefix=ns_prefix
             op_obj.root_class_name=root
             
@@ -284,6 +284,7 @@ class ContextBuilder:
         return(dtp_str_sect)
 
     def add_minimal_datatype_props_to_cntxt(self) -> None:
+        """Adds Datatype Properties to context string"""
         dtp_str_sect=""
         dt_list = list(self.datatype_properties_dict.keys())
         dt_list.sort()
@@ -304,6 +305,7 @@ class ContextBuilder:
         self.context_str+=dtp_str_sect
 
     def add_minimal_object_props_to_cntxt(self) -> None:
+        """Adds Object Properties to context string"""
         op_str_sect=""
         op_list = list(self.object_properties_dict.keys())
         op_list.sort()
@@ -315,6 +317,16 @@ class ContextBuilder:
                 
                 op_str_sect+=con_str
         self.context_str+=op_str_sect
+
+    def add_key_strings_to_cntxt(self) -> None:
+        """Adds id, type, and graph key strings to context string"""
+        ks_str=""
+        ks_str+="\t\"uco-core:id\":\"@id\",\n"
+        ks_str+="\t\"uco-core:type\":\"@type\",\n"
+        ks_str+="\t\"value\":\"@value\",\n"
+        ks_str+="\t\"graph\":\"@graph\",\n"
+
+        self.context_str+=ks_str
         
 
 
@@ -340,6 +352,7 @@ def main():
     cb.add_prefixes_to_cntxt()
     cb.add_minimal_object_props_to_cntxt()
     cb.add_minimal_datatype_props_to_cntxt()
+    cb.add_key_strings_to_cntxt()
     cb.close_context_str()
     print(cb.context_str)
 
