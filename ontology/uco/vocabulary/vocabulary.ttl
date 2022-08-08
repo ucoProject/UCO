@@ -17,22 +17,18 @@ vocabulary:AccountTypeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:AccountTypeVocab-members
+			(
+				"ldap"^^vocabulary:AccountTypeVocab
+				"nis"^^vocabulary:AccountTypeVocab
+				"openid"^^vocabulary:AccountTypeVocab
+				"radius"^^vocabulary:AccountTypeVocab
+				"tacacs"^^vocabulary:AccountTypeVocab
+				"unix"^^vocabulary:AccountTypeVocab
+				"windows_domain"^^vocabulary:AccountTypeVocab
+				"windows_local"^^vocabulary:AccountTypeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:AccountTypeVocab-members
-	rdf:first "ldap"^^vocabulary:AccountTypeVocab ;
-	rdf:rest (
-		"nis"^^vocabulary:AccountTypeVocab
-		"openid"^^vocabulary:AccountTypeVocab
-		"radius"^^vocabulary:AccountTypeVocab
-		"tacacs"^^vocabulary:AccountTypeVocab
-		"unix"^^vocabulary:AccountTypeVocab
-		"windows_domain"^^vocabulary:AccountTypeVocab
-		"windows_local"^^vocabulary:AccountTypeVocab
-	) ;
 	.
 
 vocabulary:ActionArgumentNameVocab
@@ -306,21 +302,17 @@ vocabulary:ActionRelationshipTypeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:ActionRelationshipTypeVocab-members
+			(
+				"Dependent_On"^^vocabulary:ActionRelationshipTypeVocab
+				"Equivalent_To"^^vocabulary:ActionRelationshipTypeVocab
+				"Followed_By"^^vocabulary:ActionRelationshipTypeVocab
+				"Initiated"^^vocabulary:ActionRelationshipTypeVocab
+				"Initiated_By"^^vocabulary:ActionRelationshipTypeVocab
+				"Preceded_By"^^vocabulary:ActionRelationshipTypeVocab
+				"Related_To"^^vocabulary:ActionRelationshipTypeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:ActionRelationshipTypeVocab-members
-	rdf:first "Dependent_On"^^vocabulary:ActionRelationshipTypeVocab ;
-	rdf:rest (
-		"Equivalent_To"^^vocabulary:ActionRelationshipTypeVocab
-		"Followed_By"^^vocabulary:ActionRelationshipTypeVocab
-		"Initiated"^^vocabulary:ActionRelationshipTypeVocab
-		"Initiated_By"^^vocabulary:ActionRelationshipTypeVocab
-		"Preceded_By"^^vocabulary:ActionRelationshipTypeVocab
-		"Related_To"^^vocabulary:ActionRelationshipTypeVocab
-	) ;
 	.
 
 vocabulary:ActionStatusTypeVocab
@@ -332,21 +324,17 @@ vocabulary:ActionStatusTypeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:ActionStatusTypeVocab-members
+			(
+				"Complete/Finish"^^vocabulary:ActionStatusTypeVocab
+				"Error"^^vocabulary:ActionStatusTypeVocab
+				"Fail"^^vocabulary:ActionStatusTypeVocab
+				"Ongoing"^^vocabulary:ActionStatusTypeVocab
+				"Pending"^^vocabulary:ActionStatusTypeVocab
+				"Success"^^vocabulary:ActionStatusTypeVocab
+				"Unknown"^^vocabulary:ActionStatusTypeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:ActionStatusTypeVocab-members
-	rdf:first "Complete/Finish"^^vocabulary:ActionStatusTypeVocab ;
-	rdf:rest (
-		"Error"^^vocabulary:ActionStatusTypeVocab
-		"Fail"^^vocabulary:ActionStatusTypeVocab
-		"Ongoing"^^vocabulary:ActionStatusTypeVocab
-		"Pending"^^vocabulary:ActionStatusTypeVocab
-		"Success"^^vocabulary:ActionStatusTypeVocab
-		"Unknown"^^vocabulary:ActionStatusTypeVocab
-	) ;
 	.
 
 vocabulary:ActionTypeVocab
@@ -529,18 +517,13 @@ vocabulary:ContactAddressScopeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:ContactAddressScopeVocab-members
+			(
+				"home"^^vocabulary:ContactAddressScopeVocab
+				"work"^^vocabulary:ContactAddressScopeVocab
+				"school"^^vocabulary:ContactAddressScopeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:ContactAddressScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactAddressScopeVocab ;
-	rdf:rest (
-		"home"^^vocabulary:ContactAddressScopeVocab
-		"work"^^vocabulary:ContactAddressScopeVocab
-		"school"^^vocabulary:ContactAddressScopeVocab
-	) ;
 	.
 
 vocabulary:ContactEmailScopeVocab
@@ -552,18 +535,14 @@ vocabulary:ContactEmailScopeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:ContactEmailScopeVocab-members
+			(
+				"home"^^vocabulary:ContactEmailScopeVocab
+				"work"^^vocabulary:ContactEmailScopeVocab
+				"school"^^vocabulary:ContactEmailScopeVocab
+				"cloud"^^vocabulary:ContactEmailScopeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:ContactEmailScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactEmailScopeVocab ;
-	rdf:rest (
-		"work"^^vocabulary:ContactEmailScopeVocab
-		"school"^^vocabulary:ContactEmailScopeVocab
-		"cloud"^^vocabulary:ContactEmailScopeVocab
-	) ;
 	.
 
 vocabulary:ContactPhoneScopeVocab
@@ -575,22 +554,18 @@ vocabulary:ContactPhoneScopeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:ContactPhoneScopeVocab-members
+			(
+				"home"^^vocabulary:ContactPhoneScopeVocab
+				"work"^^vocabulary:ContactPhoneScopeVocab
+				"school"^^vocabulary:ContactPhoneScopeVocab
+				"mobile"^^vocabulary:ContactPhoneScopeVocab
+				"main"^^vocabulary:ContactPhoneScopeVocab
+				"home fax"^^vocabulary:ContactPhoneScopeVocab
+				"work fax"^^vocabulary:ContactPhoneScopeVocab
+				"pager"^^vocabulary:ContactPhoneScopeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:ContactPhoneScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactPhoneScopeVocab ;
-	rdf:rest (
-		"work"^^vocabulary:ContactPhoneScopeVocab
-		"school"^^vocabulary:ContactPhoneScopeVocab
-		"mobile"^^vocabulary:ContactPhoneScopeVocab
-		"main"^^vocabulary:ContactPhoneScopeVocab
-		"home fax"^^vocabulary:ContactPhoneScopeVocab
-		"work fax"^^vocabulary:ContactPhoneScopeVocab
-		"pager"^^vocabulary:ContactPhoneScopeVocab
-	) ;
 	.
 
 vocabulary:ContactSIPScopeVocab
@@ -602,17 +577,13 @@ vocabulary:ContactSIPScopeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:ContactSIPScopeVocab-members
+			(
+				"home"^^vocabulary:ContactSIPScopeVocab
+				"work"^^vocabulary:ContactSIPScopeVocab
+				"school"^^vocabulary:ContactSIPScopeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:ContactSIPScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactSIPScopeVocab ;
-	rdf:rest (
-		"work"^^vocabulary:ContactSIPScopeVocab
-		"school"^^vocabulary:ContactSIPScopeVocab
-	) ;
 	.
 
 vocabulary:ContactURLScopeVocab
@@ -663,17 +634,13 @@ vocabulary:EndiannessTypeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:EndiannessTypeVocab-members
+			(
+				"Big-endian"^^vocabulary:EndiannessTypeVocab
+				"Little-endian"^^vocabulary:EndiannessTypeVocab
+				"Middle-endian"^^vocabulary:EndiannessTypeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:EndiannessTypeVocab-members
-	rdf:first "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-	rdf:rest (
-		"Little-endian"^^vocabulary:EndiannessTypeVocab
-		"Middle-endian"^^vocabulary:EndiannessTypeVocab
-	) ;
 	.
 
 vocabulary:HashNameVocab
@@ -685,22 +652,18 @@ vocabulary:HashNameVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:HashNameVocab-members
+			(
+				"MD5"^^vocabulary:HashNameVocab
+				"MD6"^^vocabulary:HashNameVocab
+				"SHA1"^^vocabulary:HashNameVocab
+				"SHA224"^^vocabulary:HashNameVocab
+				"SHA256"^^vocabulary:HashNameVocab
+				"SHA384"^^vocabulary:HashNameVocab
+				"SHA512"^^vocabulary:HashNameVocab
+				"SSDEEP"^^vocabulary:HashNameVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:HashNameVocab-members
-	rdf:first "MD5"^^vocabulary:HashNameVocab ;
-	rdf:rest (
-		"MD6"^^vocabulary:HashNameVocab
-		"SHA1"^^vocabulary:HashNameVocab
-		"SHA224"^^vocabulary:HashNameVocab
-		"SHA256"^^vocabulary:HashNameVocab
-		"SHA384"^^vocabulary:HashNameVocab
-		"SHA512"^^vocabulary:HashNameVocab
-		"SSDEEP"^^vocabulary:HashNameVocab
-	) ;
 	.
 
 vocabulary:LibraryTypeVocab
@@ -732,19 +695,15 @@ vocabulary:MemoryBlockTypeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:MemoryBlockTypeVocab-members
+			(
+				"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
+				"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
+				"Initialized"^^vocabulary:MemoryBlockTypeVocab
+				"Overlay"^^vocabulary:MemoryBlockTypeVocab
+				"Uninitialized"^^vocabulary:MemoryBlockTypeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:MemoryBlockTypeVocab-members
-	rdf:first "Bit-mapped"^^vocabulary:MemoryBlockTypeVocab ;
-	rdf:rest (
-		"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
-		"Initialized"^^vocabulary:MemoryBlockTypeVocab
-		"Overlay"^^vocabulary:MemoryBlockTypeVocab
-		"Uninitialized"^^vocabulary:MemoryBlockTypeVocab
-	) ;
 	.
 
 vocabulary:ObservableObjectRelationshipVocab
@@ -756,152 +715,148 @@ vocabulary:ObservableObjectRelationshipVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:ObservableObjectRelationshipVocab-members
+			(
+				"Allocated"^^vocabulary:ObservableObjectRelationshipVocab
+				"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Attachment_Of"^^vocabulary:ObservableObjectRelationshipVocab
+				"Bound"^^vocabulary:ObservableObjectRelationshipVocab
+				"Bound_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Characterized_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Characterizes"^^vocabulary:ObservableObjectRelationshipVocab
+				"Child_Of"^^vocabulary:ObservableObjectRelationshipVocab
+				"Closed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Closed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Compressed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Compressed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Compressed_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Compressed_Into"^^vocabulary:ObservableObjectRelationshipVocab
+				"Connected_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Connected_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Contained_Within"^^vocabulary:ObservableObjectRelationshipVocab
+				"Contains"^^vocabulary:ObservableObjectRelationshipVocab
+				"Copied"^^vocabulary:ObservableObjectRelationshipVocab
+				"Copied_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Copied_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Copied_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Created"^^vocabulary:ObservableObjectRelationshipVocab
+				"Created_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Decoded"^^vocabulary:ObservableObjectRelationshipVocab
+				"Decoded_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Decompressed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Decompressed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Decrypted"^^vocabulary:ObservableObjectRelationshipVocab
+				"Decrypted_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Deleted"^^vocabulary:ObservableObjectRelationshipVocab
+				"Deleted_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Deleted_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Downloaded"^^vocabulary:ObservableObjectRelationshipVocab
+				"Downloaded_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Downloaded_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Downloaded_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Dropped"^^vocabulary:ObservableObjectRelationshipVocab
+				"Dropped_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Encoded"^^vocabulary:ObservableObjectRelationshipVocab
+				"Encoded_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Encrypted"^^vocabulary:ObservableObjectRelationshipVocab
+				"Encrypted_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Encrypted_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Encrypted_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Extracted_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"FQDN_Of"^^vocabulary:ObservableObjectRelationshipVocab
+				"Freed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Freed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Had_Attachment"^^vocabulary:ObservableObjectRelationshipVocab
+				"Hooked"^^vocabulary:ObservableObjectRelationshipVocab
+				"Hooked_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Initialized_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Initialized_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Injected"^^vocabulary:ObservableObjectRelationshipVocab
+				"Injected_As"^^vocabulary:ObservableObjectRelationshipVocab
+				"Injected_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Injected_Into"^^vocabulary:ObservableObjectRelationshipVocab
+				"Installed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Installed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Joined"^^vocabulary:ObservableObjectRelationshipVocab
+				"Joined_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Killed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Killed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Listened_On"^^vocabulary:ObservableObjectRelationshipVocab
+				"Listened_On_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Loaded_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Loaded_Into"^^vocabulary:ObservableObjectRelationshipVocab
+				"Locked"^^vocabulary:ObservableObjectRelationshipVocab
+				"Locked_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Mapped_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Mapped_Into"^^vocabulary:ObservableObjectRelationshipVocab
+				"Merged"^^vocabulary:ObservableObjectRelationshipVocab
+				"Merged_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Modified_Properties_Of"^^vocabulary:ObservableObjectRelationshipVocab
+				"Monitored"^^vocabulary:ObservableObjectRelationshipVocab
+				"Monitored_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Moved"^^vocabulary:ObservableObjectRelationshipVocab
+				"Moved_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Moved_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Moved_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Opened"^^vocabulary:ObservableObjectRelationshipVocab
+				"Opened_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Packed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Packed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Packed_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Packed_Into"^^vocabulary:ObservableObjectRelationshipVocab
+				"Parent_Of"^^vocabulary:ObservableObjectRelationshipVocab
+				"Paused"^^vocabulary:ObservableObjectRelationshipVocab
+				"Paused_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Previously_Contained"^^vocabulary:ObservableObjectRelationshipVocab
+				"Properties_Modified_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Properties_Queried"^^vocabulary:ObservableObjectRelationshipVocab
+				"Properties_Queried_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Read_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Read_From_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Received"^^vocabulary:ObservableObjectRelationshipVocab
+				"Received_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Received_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Received_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
+				"Redirects_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Related_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Renamed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Renamed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Renamed_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Renamed_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Resolved_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Resumed"^^vocabulary:ObservableObjectRelationshipVocab
+				"Resumed_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Root_Domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
+				"Searched_For"^^vocabulary:ObservableObjectRelationshipVocab
+				"Searched_For_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Sent"^^vocabulary:ObservableObjectRelationshipVocab
+				"Sent_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Sent_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Sent_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
+				"Set_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Set_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Sub-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
+				"Supra-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
+				"Suspended"^^vocabulary:ObservableObjectRelationshipVocab
+				"Suspended_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Unhooked"^^vocabulary:ObservableObjectRelationshipVocab
+				"Unhooked_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Unlocked"^^vocabulary:ObservableObjectRelationshipVocab
+				"Unlocked_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Unpacked"^^vocabulary:ObservableObjectRelationshipVocab
+				"Unpacked_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Uploaded"^^vocabulary:ObservableObjectRelationshipVocab
+				"Uploaded_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Uploaded_From"^^vocabulary:ObservableObjectRelationshipVocab
+				"Uploaded_To"^^vocabulary:ObservableObjectRelationshipVocab
+				"Used"^^vocabulary:ObservableObjectRelationshipVocab
+				"Used_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Values_Enumerated"^^vocabulary:ObservableObjectRelationshipVocab
+				"Values_Enumerated_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Written_To_By"^^vocabulary:ObservableObjectRelationshipVocab
+				"Wrote_To"^^vocabulary:ObservableObjectRelationshipVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:ObservableObjectRelationshipVocab-members
-	rdf:first "Allocated"^^vocabulary:ObservableObjectRelationshipVocab ;
-	rdf:rest (
-		"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Attachment_Of"^^vocabulary:ObservableObjectRelationshipVocab
-		"Bound"^^vocabulary:ObservableObjectRelationshipVocab
-		"Bound_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Characterized_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Characterizes"^^vocabulary:ObservableObjectRelationshipVocab
-		"Child_Of"^^vocabulary:ObservableObjectRelationshipVocab
-		"Closed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Closed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Compressed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Compressed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Compressed_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Compressed_Into"^^vocabulary:ObservableObjectRelationshipVocab
-		"Connected_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Connected_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Contained_Within"^^vocabulary:ObservableObjectRelationshipVocab
-		"Contains"^^vocabulary:ObservableObjectRelationshipVocab
-		"Copied"^^vocabulary:ObservableObjectRelationshipVocab
-		"Copied_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Copied_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Copied_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Created"^^vocabulary:ObservableObjectRelationshipVocab
-		"Created_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Decoded"^^vocabulary:ObservableObjectRelationshipVocab
-		"Decoded_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Decompressed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Decompressed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Decrypted"^^vocabulary:ObservableObjectRelationshipVocab
-		"Decrypted_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Deleted"^^vocabulary:ObservableObjectRelationshipVocab
-		"Deleted_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Deleted_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Downloaded"^^vocabulary:ObservableObjectRelationshipVocab
-		"Downloaded_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Downloaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Downloaded_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Dropped"^^vocabulary:ObservableObjectRelationshipVocab
-		"Dropped_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Encoded"^^vocabulary:ObservableObjectRelationshipVocab
-		"Encoded_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Encrypted"^^vocabulary:ObservableObjectRelationshipVocab
-		"Encrypted_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Encrypted_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Encrypted_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Extracted_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"FQDN_Of"^^vocabulary:ObservableObjectRelationshipVocab
-		"Freed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Freed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Had_Attachment"^^vocabulary:ObservableObjectRelationshipVocab
-		"Hooked"^^vocabulary:ObservableObjectRelationshipVocab
-		"Hooked_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Initialized_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Initialized_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Injected"^^vocabulary:ObservableObjectRelationshipVocab
-		"Injected_As"^^vocabulary:ObservableObjectRelationshipVocab
-		"Injected_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Injected_Into"^^vocabulary:ObservableObjectRelationshipVocab
-		"Installed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Installed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Joined"^^vocabulary:ObservableObjectRelationshipVocab
-		"Joined_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Killed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Killed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Listened_On"^^vocabulary:ObservableObjectRelationshipVocab
-		"Listened_On_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Loaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Loaded_Into"^^vocabulary:ObservableObjectRelationshipVocab
-		"Locked"^^vocabulary:ObservableObjectRelationshipVocab
-		"Locked_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Mapped_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Mapped_Into"^^vocabulary:ObservableObjectRelationshipVocab
-		"Merged"^^vocabulary:ObservableObjectRelationshipVocab
-		"Merged_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Modified_Properties_Of"^^vocabulary:ObservableObjectRelationshipVocab
-		"Monitored"^^vocabulary:ObservableObjectRelationshipVocab
-		"Monitored_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Moved"^^vocabulary:ObservableObjectRelationshipVocab
-		"Moved_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Moved_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Moved_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Opened"^^vocabulary:ObservableObjectRelationshipVocab
-		"Opened_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Packed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Packed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Packed_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Packed_Into"^^vocabulary:ObservableObjectRelationshipVocab
-		"Parent_Of"^^vocabulary:ObservableObjectRelationshipVocab
-		"Paused"^^vocabulary:ObservableObjectRelationshipVocab
-		"Paused_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Previously_Contained"^^vocabulary:ObservableObjectRelationshipVocab
-		"Properties_Modified_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Properties_Queried"^^vocabulary:ObservableObjectRelationshipVocab
-		"Properties_Queried_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Read_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Read_From_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Received"^^vocabulary:ObservableObjectRelationshipVocab
-		"Received_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Received_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Received_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
-		"Redirects_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Related_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Renamed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Renamed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Renamed_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Renamed_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Resolved_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Resumed"^^vocabulary:ObservableObjectRelationshipVocab
-		"Resumed_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Root_Domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-		"Searched_For"^^vocabulary:ObservableObjectRelationshipVocab
-		"Searched_For_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Sent"^^vocabulary:ObservableObjectRelationshipVocab
-		"Sent_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Sent_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Sent_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
-		"Set_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Set_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Sub-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-		"Supra-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-		"Suspended"^^vocabulary:ObservableObjectRelationshipVocab
-		"Suspended_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Unhooked"^^vocabulary:ObservableObjectRelationshipVocab
-		"Unhooked_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Unlocked"^^vocabulary:ObservableObjectRelationshipVocab
-		"Unlocked_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Unpacked"^^vocabulary:ObservableObjectRelationshipVocab
-		"Unpacked_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Uploaded"^^vocabulary:ObservableObjectRelationshipVocab
-		"Uploaded_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Uploaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-		"Uploaded_To"^^vocabulary:ObservableObjectRelationshipVocab
-		"Used"^^vocabulary:ObservableObjectRelationshipVocab
-		"Used_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Values_Enumerated"^^vocabulary:ObservableObjectRelationshipVocab
-		"Values_Enumerated_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Written_To_By"^^vocabulary:ObservableObjectRelationshipVocab
-		"Wrote_To"^^vocabulary:ObservableObjectRelationshipVocab
-	) ;
 	.
 
 vocabulary:ObservableObjectStateVocab
@@ -1082,18 +1037,14 @@ vocabulary:TaskActionTypeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:TaskActionTypeVocab-members
+			(
+				"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
+				"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
+				"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
+				"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:TaskActionTypeVocab-members
-	rdf:first "TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab ;
-	rdf:rest (
-		"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
-		"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
-		"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
-	) ;
 	.
 
 vocabulary:TaskFlagVocab
@@ -1105,27 +1056,23 @@ vocabulary:TaskFlagVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:TaskFlagVocab-members
+			(
+				"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_INTERACTIVE"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_KILL_ON_IDLE_END"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_RESTART_ON_IDLE_RESUME"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_START_ONLY_IF_IDLE"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_SYSTEM_REQUIRED"^^vocabulary:TaskFlagVocab
+				"TASK_FLAG_ZERO"^^vocabulary:TaskFlagVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:TaskFlagVocab-members
-	rdf:first "TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab ;
-	rdf:rest (
-		"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_INTERACTIVE"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_KILL_ON_IDLE_END"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_RESTART_ON_IDLE_RESUME"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_START_ONLY_IF_IDLE"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_SYSTEM_REQUIRED"^^vocabulary:TaskFlagVocab
-		"TASK_FLAG_ZERO"^^vocabulary:TaskFlagVocab
-	) ;
 	.
 
 vocabulary:TaskPriorityVocab
@@ -1137,20 +1084,16 @@ vocabulary:TaskPriorityVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:TaskPriorityVocab-members
+			(
+				"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+				"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+				"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+				"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+				"NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+				"REALTIME_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:TaskPriorityVocab-members
-	rdf:first "ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab ;
-	rdf:rest (
-		"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-		"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-		"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-		"NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-		"REALTIME_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-	) ;
 	.
 
 vocabulary:TaskStatusVocab
@@ -1162,38 +1105,34 @@ vocabulary:TaskStatusVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:TaskStatusVocab-members
+			(
+				"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
+				"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
+				"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
+				"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
+				"SCHED_E_INVALID_TASK"^^vocabulary:TaskStatusVocab
+				"SCHED_E_NO_SECURITY_SERVICES"^^vocabulary:TaskStatusVocab
+				"SCHED_E_SERVICE_NOT_INSTALLED"^^vocabulary:TaskStatusVocab
+				"SCHED_E_SERVICE_NOT_RUNNING"^^vocabulary:TaskStatusVocab
+				"SCHED_E_TASK_NOT_READY"^^vocabulary:TaskStatusVocab
+				"SCHED_E_TASK_NOT_RUNNING"^^vocabulary:TaskStatusVocab
+				"SCHED_E_TRIGGER_NOT_FOUND"^^vocabulary:TaskStatusVocab
+				"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocabulary:TaskStatusVocab
+				"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocabulary:TaskStatusVocab
+				"SCHED_S_EVENT_TRIGGER"^^vocabulary:TaskStatusVocab
+				"SCHED_S_TASK_DISABLED"^^vocabulary:TaskStatusVocab
+				"SCHED_S_TASK_HAS_NOT_RUN"^^vocabulary:TaskStatusVocab
+				"SCHED_S_TASK_NOT_SCHEDULED"^^vocabulary:TaskStatusVocab
+				"SCHED_S_TASK_NO_MORE_RUNS"^^vocabulary:TaskStatusVocab
+				"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocabulary:TaskStatusVocab
+				"SCHED_S_TASK_READY"^^vocabulary:TaskStatusVocab
+				"SCHED_S_TASK_RUNNING"^^vocabulary:TaskStatusVocab
+				"SCHED_S_TASK_TERMINATED"^^vocabulary:TaskStatusVocab
+				"TASK_STATE_QUEUED"^^vocabulary:TaskStatusVocab
+				"TASK_STATE_UNKNOWN"^^vocabulary:TaskStatusVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:TaskStatusVocab-members
-	rdf:first "SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab ;
-	rdf:rest (
-		"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
-		"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
-		"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
-		"SCHED_E_INVALID_TASK"^^vocabulary:TaskStatusVocab
-		"SCHED_E_NO_SECURITY_SERVICES"^^vocabulary:TaskStatusVocab
-		"SCHED_E_SERVICE_NOT_INSTALLED"^^vocabulary:TaskStatusVocab
-		"SCHED_E_SERVICE_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-		"SCHED_E_TASK_NOT_READY"^^vocabulary:TaskStatusVocab
-		"SCHED_E_TASK_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-		"SCHED_E_TRIGGER_NOT_FOUND"^^vocabulary:TaskStatusVocab
-		"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocabulary:TaskStatusVocab
-		"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocabulary:TaskStatusVocab
-		"SCHED_S_EVENT_TRIGGER"^^vocabulary:TaskStatusVocab
-		"SCHED_S_TASK_DISABLED"^^vocabulary:TaskStatusVocab
-		"SCHED_S_TASK_HAS_NOT_RUN"^^vocabulary:TaskStatusVocab
-		"SCHED_S_TASK_NOT_SCHEDULED"^^vocabulary:TaskStatusVocab
-		"SCHED_S_TASK_NO_MORE_RUNS"^^vocabulary:TaskStatusVocab
-		"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocabulary:TaskStatusVocab
-		"SCHED_S_TASK_READY"^^vocabulary:TaskStatusVocab
-		"SCHED_S_TASK_RUNNING"^^vocabulary:TaskStatusVocab
-		"SCHED_S_TASK_TERMINATED"^^vocabulary:TaskStatusVocab
-		"TASK_STATE_QUEUED"^^vocabulary:TaskStatusVocab
-		"TASK_STATE_UNKNOWN"^^vocabulary:TaskStatusVocab
-	) ;
 	.
 
 vocabulary:ThreadRunningStatusVocab
@@ -1311,25 +1250,21 @@ vocabulary:URLTransitionTypeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:URLTransitionTypeVocab-members
+			(
+				"link"^^vocabulary:URLTransitionTypeVocab
+				"typed"^^vocabulary:URLTransitionTypeVocab
+				"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
+				"auto_subframe"^^vocabulary:URLTransitionTypeVocab
+				"manual_subframe"^^vocabulary:URLTransitionTypeVocab
+				"generated"^^vocabulary:URLTransitionTypeVocab
+				"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
+				"form_submit"^^vocabulary:URLTransitionTypeVocab
+				"reload"^^vocabulary:URLTransitionTypeVocab
+				"keyword"^^vocabulary:URLTransitionTypeVocab
+				"keyword_generated"^^vocabulary:URLTransitionTypeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:URLTransitionTypeVocab-members
-	rdf:first "link"^^vocabulary:URLTransitionTypeVocab ;
-	rdf:rest (
-		"typed"^^vocabulary:URLTransitionTypeVocab
-		"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
-		"auto_subframe"^^vocabulary:URLTransitionTypeVocab
-		"manual_subframe"^^vocabulary:URLTransitionTypeVocab
-		"generated"^^vocabulary:URLTransitionTypeVocab
-		"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
-		"form_submit"^^vocabulary:URLTransitionTypeVocab
-		"reload"^^vocabulary:URLTransitionTypeVocab
-		"keyword"^^vocabulary:URLTransitionTypeVocab
-		"keyword_generated"^^vocabulary:URLTransitionTypeVocab
-	) ;
 	.
 
 vocabulary:UnixProcessStateVocab
@@ -1363,17 +1298,13 @@ vocabulary:WhoisContactTypeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:WhoisContactTypeVocab-members
+			(
+				"ADMIN"^^vocabulary:WhoisContactTypeVocab
+				"BILLING"^^vocabulary:WhoisContactTypeVocab
+				"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:WhoisContactTypeVocab-members
-	rdf:first "ADMIN"^^vocabulary:WhoisContactTypeVocab ;
-	rdf:rest (
-		"BILLING"^^vocabulary:WhoisContactTypeVocab
-		"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
-	) ;
 	.
 
 vocabulary:WhoisDNSSECTypeVocab
@@ -1477,20 +1408,16 @@ vocabulary:WirelessNetworkSecurityModeVocab
 		owl:onDatatype xsd:string ;
 		owl:withRestrictions (
 			owl:oneOf
-			vocabulary:WirelessNetworkSecurityModeVocab-members
+			(
+				"None"^^vocabulary:WirelessNetworkSecurityModeVocab
+				"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
+				"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
+				"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
+				"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+				"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
+				"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+			)
 		) ;
 	] ;
-	.
-
-vocabulary:WirelessNetworkSecurityModeVocab-members
-	rdf:first "None"^^vocabulary:WirelessNetworkSecurityModeVocab ;
-	rdf:rest (
-		"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
-		"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
-		"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-		"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
-		"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-		"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
-	) ;
 	.
 
