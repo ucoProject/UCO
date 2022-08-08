@@ -37,7 +37,8 @@ class ObjectPropertyInfo:
     def __init__(self):
         self.ns_prefix = None
         self.root_class_name = None
-        self.shacl_count_lte_1 = False
+        self.shacl_count_lte_1 = None
+        self.shacl_property_bnode = None
 
 class DatatypePropertyInfo:
     """Class to hold DatatypeProperty info which will be used to build context"""
@@ -45,7 +46,8 @@ class DatatypePropertyInfo:
         self.ns_prefix = None
         self.root_property_name = None
         self.prefixed_datatype_name = None
-        self.shacl_count_lte_1 = False
+        self.shacl_count_lte_1 = None
+        self.shacl_property_bnode = None
     
 
 class ContextBuilder:
@@ -168,8 +170,8 @@ class ContextBuilder:
         #If rdf range is a blank node, skip
         for triple in graph.triples((None,rdflib.RDF.type,rdflib.OWL.DatatypeProperty)):
             dtp_obj = DatatypePropertyInfo()
-            #print(triple)
-            #print(triple[0].split('/'))
+            print(triple)
+            print(triple[0].split('/'))
             s_triple=triple[0].split('/')
             root=s_triple[-1]
             ns_prefix=f"{s_triple[-3]}-{s_triple[-2]}"
@@ -179,11 +181,27 @@ class ContextBuilder:
             for triple2 in graph.triples((triple[0],rdflib.RDFS.range, None)):
                 #Testing for Blank Nodes
                 if isinstance(triple2[-1],rdflib.term.BNode):
+                    print(f"\tBlank: {triple2}\n")
                     continue
+                print(f"\ttriple2: f{triple2}\n")
                 rdf_rang_str = str(triple2[-1].n3(graph.namespace_manager))
                 dtp_obj.prefixed_datatype_name=rdf_rang_str
                 #if str(rdf_rang_str) not in test_list:
                 #    test_list.append(rdf_rang_str)
+
+            for sh_triple in graph.triples((None,rdflib.term.URIRef('http://www.w3.org/ns/shacl#path'), triple[0])):
+                print(f"\t**sh_triple:{sh_triple}")
+                dtp_obj.shacl_property_bnode=sh_triple[0]
+                for sh_triple2 in graph.triples((dtp_obj.shacl_property_bnode,rdflib.term.URIRef('http://www.w3.org/ns/shacl#maxCount'), None)):
+                    print(f"\t\t***sh_triple:{sh_triple2}")
+                    print(f"\t\t***sh_triple:{sh_triple2[2]}")
+                    if int(sh_triple2[2]) <= 1:
+                        if dtp_obj.shacl_count_lte_1 is not None:
+                            print(f"\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}")
+                        dtp_obj.shacl_count_lte_1 = True
+                    else:
+                        print(f"\t\t***Large max_count: {sh_triple2[2]}")
+
             
 
             if root in self.datatype_properties_dict.keys():
@@ -217,6 +235,24 @@ class ContextBuilder:
             #print(ns_prefix, root)
             op_obj.ns_prefix=ns_prefix
             op_obj.root_class_name=root
+
+            for sh_triple in graph.triples((None,rdflib.term.URIRef('http://www.w3.org/ns/shacl#path'), triple[0])):
+                print(f"**obj_sh_triple:{sh_triple}")
+                op_obj.shacl_property_bnode=sh_triple[0]
+                for sh_triple2 in graph.triples((op_obj.shacl_property_bnode,rdflib.term.URIRef('http://www.w3.org/ns/shacl#maxCount'), None)):
+                    print(f"\t\t***sh_triple:{sh_triple2}")
+                    print(f"\t\t***sh_triple:{sh_triple2[2]}")
+                    if int(sh_triple2[2]) <= 1:
+                        if op_obj.shacl_count_lte_1 is not None:
+                            print(f"\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}")
+                            #print("\t\t**MaxCount Double Definition?")
+                        op_obj.shacl_count_lte_1 = True
+                    else:
+                        print(f"\t\t***Large max_count: {sh_triple2[2]}")
+
+                
+            #for sh_triple in graph.triples((triple[0],rdflib.sh.property, None)):
+            #    print(f"**sh_triple:{sh_triple}")
             
             #for triple2 in graph.triples((triple[0],rdflib.RDFS.range, None)):
             #    #Testing for Blank Nodes
@@ -312,7 +348,12 @@ class ContextBuilder:
         for key in op_list:
             for op_obj in self.object_properties_dict[key]:
                 con_str=f"\"{op_obj.ns_prefix}:{op_obj.root_class_name}\":{{\n"
-                con_str+="\t\"@type\":\"@id\"\n"
+                con_str+="\t\"@type\":\"@id\""
+                if op_obj.shacl_count_lte_1 is not True:
+                    con_str+=",\n\t\"@container\":\"@set\"\n"
+                else:
+                    con_str+="\n"
+
                 con_str+="},\n"
                 
                 op_str_sect+=con_str
@@ -335,16 +376,22 @@ def main():
     argument_parser = argparse.ArgumentParser()
     argument_parser.add_argument('--debug', action="store_true")
     #argument_parser.add_argument('-i', '--in_graph', help="Input graph to be simplified")
+    argument_parser.add_argument('-o', '--output', help="Output file for context")
     args = argument_parser.parse_args()
 
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
 
     _logger.debug("Debug Mode enabled")
+
+    out_f = None
+    if args.output is not None:
+        out_f = open(args.output,'w')
     
     cb = ContextBuilder()
     for i in (cb.get_ttl_files(subdirs=['ontology'])):
         _logger.debug(f" Input ttl: {i}")
     
+
     cb.process_prefixes()
     cb.process_DatatypeProperties()
     cb.process_ObjectProperties()
@@ -354,11 +401,49 @@ def main():
     cb.add_minimal_datatype_props_to_cntxt()
     cb.add_key_strings_to_cntxt()
     cb.close_context_str()
-    print(cb.context_str)
+
+    #return
+    #print(cb.context_str)
+    if out_f is not None:
+        out_f.write(cb.context_str)
+        out_f.flush()
+        out_f.close()
 
 
     return
-    #cb.print_minimal_datatype_properties()
+
+    graph = rdflib.Graph()
+    graph.parse("../tests/uco_monolithic.ttl", format="turtle")
+    "Make sure to do an itter that looks for rdflib.OWL.class"
+    limit = 10000
+    count = 0
+    #for triple in graph.triples((None,None,rdflib.OWL.Class)):
+    #for sh_triple in graph.triples(None,"rdflib.term.URIRef('http://www.w3.org/ns/shacl#property')", None):
+    #for sh_triple in graph.triples(None,rdflib.term.URIRef('http://www.w3.org/ns/shacl#property'), None):
+    print("###<SHACL Search>")
+    for sh_triple in graph.triples((None,rdflib.term.URIRef('http://www.w3.org/ns/shacl#property'), None)):
+        print(f"**sh_triple:{sh_triple}")
+    print("###</SHACL Search>")
+
+    for triple in graph.triples((None,None,None)):
+        #print(triple[0].fragment)
+        #print(triple[0].n3(graph.namespace_manager))
+        print(triple)
+        sh_prop_node = None
+        for sh_triple in graph.triples((triple[0],rdflib.term.URIRef('http://www.w3.org/ns/shacl#property'), None)):
+            print(f"\t**sh_triple:{sh_triple[2].n3(graph.namespace_manager)}")
+            sh_prop_node = sh_triple[2]
+            for triple3 in graph.triples((sh_prop_node,rdflib.term.URIRef('http://www.w3.org/ns/shacl#maxCount'),None)):
+                print(f"\t***sh_prop_triple:{triple3}")
+                print(f"\t***sh_prop_triple:{triple3[2]}")
+
+        #for t in list(triple):
+        #    print(f"{t.n3(graph.namespace_manager)}")
+        #print(triple)
+        count += 1
+        if count >= limit:
+            sys.exit()
+    return
 
     dt_list = list(cb.datatype_properties_dict.keys())
     dt_list.sort()
