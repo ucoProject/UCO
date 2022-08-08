@@ -40,6 +40,28 @@ uco-owl:Axiom-shape
 	sh:targetClass owl:Axiom ;
 	.
 
+uco-owl:DataOneOf-shape
+	a sh:NodeShape ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3.2.4, Table 12, row 4 of the OWL 2 mapping to RDF.  All datatypes using owl:oneOf must be blank nodes.  Any non-blank node will not be mapped and consumed by the mapping process.  See also DataOneOf in the OWL 2 Syntax document, especially with 'Show RDF in Examples' turned on."@en ;
+		rdfs:seeAlso
+			<https://www.w3.org/TR/owl2-mapping-to-rdf/#Parsing_of_Expressions> ,
+			<https://www.w3.org/TR/owl2-syntax/#Enumeration_of_Literals>
+			;
+		sh:message "For data ranges that are sets of literals, owl:oneOf must only be used on blank nodes." ;
+		sh:prefixes <http://www.w3.org/2000/01/rdf-schema#> ;
+		sh:select """
+			SELECT $this
+			WHERE {
+				$this a rdfs:Datatype .
+				FILTER ( isIRI($this) )
+			}
+		""" ;
+	] ;
+	sh:targetSubjectsOf owl:oneOf ;
+	.
+
 uco-owl:DatatypeProperty-shacl-constraints-shape
 	a sh:NodeShape ;
 	sh:sparql
