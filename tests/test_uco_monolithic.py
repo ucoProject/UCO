@@ -120,6 +120,10 @@ WHERE {
     .
   ?nDatatype
     a rdfs:Datatype ;
+    owl:equivalentClass ?nLexicalSpace ;
+    .
+
+  ?nLexicalSpace
     owl:oneOf ?nRdfsList ;
     .
 }
