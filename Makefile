@@ -31,6 +31,7 @@ all: \
 	test -r dependencies/collections-ontology/README.md \
 	  || git submodule update \
 	    --init \
+	    dependencies/collections-ontology
 	# error ontology
 	test -r dependencies/error/README.md \
 	  || git submodule update \
