@@ -170,8 +170,8 @@ class ContextBuilder:
         #If rdf range is a blank node, skip
         for triple in graph.triples((None,rdflib.RDF.type,rdflib.OWL.DatatypeProperty)):
             dtp_obj = DatatypePropertyInfo()
-            print(triple)
-            print(triple[0].split('/'))
+            _logger.debug(triple)
+            _logger.debug(triple[0].split('/'))
             s_triple=triple[0].split('/')
             root=s_triple[-1]
             ns_prefix=f"{s_triple[-3]}-{s_triple[-2]}"
@@ -181,26 +181,26 @@ class ContextBuilder:
             for triple2 in graph.triples((triple[0],rdflib.RDFS.range, None)):
                 #Testing for Blank Nodes
                 if isinstance(triple2[-1],rdflib.term.BNode):
-                    print(f"\tBlank: {triple2}\n")
+                    _logger.debug(f"\tBlank: {triple2}\n")
                     continue
-                print(f"\ttriple2: f{triple2}\n")
+                _logger.debug(f"\ttriple2: f{triple2}\n")
                 rdf_rang_str = str(triple2[-1].n3(graph.namespace_manager))
                 dtp_obj.prefixed_datatype_name=rdf_rang_str
                 #if str(rdf_rang_str) not in test_list:
                 #    test_list.append(rdf_rang_str)
 
             for sh_triple in graph.triples((None,rdflib.term.URIRef('http://www.w3.org/ns/shacl#path'), triple[0])):
-                print(f"\t**sh_triple:{sh_triple}")
+                _logger.debug(f"\t\t**sh_triple:{sh_triple}")
                 dtp_obj.shacl_property_bnode=sh_triple[0]
                 for sh_triple2 in graph.triples((dtp_obj.shacl_property_bnode,rdflib.term.URIRef('http://www.w3.org/ns/shacl#maxCount'), None)):
-                    print(f"\t\t***sh_triple:{sh_triple2}")
-                    print(f"\t\t***sh_triple:{sh_triple2[2]}")
+                    _logger.debug(f"\t\t***sh_triple:{sh_triple2}")
+                    _logger.debug(f"\t\t***sh_triple:{sh_triple2[2]}")
                     if int(sh_triple2[2]) <= 1:
                         if dtp_obj.shacl_count_lte_1 is not None:
-                            print(f"\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}")
+                            _logger.debug(f"\t\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}")
                         dtp_obj.shacl_count_lte_1 = True
                     else:
-                        print(f"\t\t***Large max_count: {sh_triple2[2]}")
+                        _logger.debug(f"\t\t\t***Large max_count: {sh_triple2[2]}")
 
             
 
@@ -227,7 +227,7 @@ class ContextBuilder:
         #If rdf range is a blank node, skip
         for triple in graph.triples((None,rdflib.RDF.type,rdflib.OWL.ObjectProperty)):
             op_obj = ObjectPropertyInfo()
-            #print(triple)
+            _logger.debug((triple))
             #print(triple[0].split('/'))
             s_triple=triple[0].split('/')
             root=s_triple[-1]
@@ -237,18 +237,18 @@ class ContextBuilder:
             op_obj.root_class_name=root
 
             for sh_triple in graph.triples((None,rdflib.term.URIRef('http://www.w3.org/ns/shacl#path'), triple[0])):
-                print(f"**obj_sh_triple:{sh_triple}")
+                _logger.debug(f"\t**obj_sh_triple:{sh_triple}")
                 op_obj.shacl_property_bnode=sh_triple[0]
                 for sh_triple2 in graph.triples((op_obj.shacl_property_bnode,rdflib.term.URIRef('http://www.w3.org/ns/shacl#maxCount'), None)):
-                    print(f"\t\t***sh_triple:{sh_triple2}")
-                    print(f"\t\t***sh_triple:{sh_triple2[2]}")
+                    _logger.debug(f"\t\t***sh_triple:{sh_triple2}")
+                    _logger.debug(f"\t\t***sh_triple:{sh_triple2[2]}")
                     if int(sh_triple2[2]) <= 1:
                         if op_obj.shacl_count_lte_1 is not None:
-                            print(f"\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}")
+                            _logger.debug(f"\t\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}")
                             #print("\t\t**MaxCount Double Definition?")
                         op_obj.shacl_count_lte_1 = True
                     else:
-                        print(f"\t\t***Large max_count: {sh_triple2[2]}")
+                        _logger.debug(f"\t\t\t***Large max_count: {sh_triple2[2]}")
 
                 
             #for sh_triple in graph.triples((triple[0],rdflib.sh.property, None)):
