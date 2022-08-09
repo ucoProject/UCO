@@ -2683,13 +2683,13 @@ observable:EventFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:eventID ;
+			sh:path observable:eventRecordID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:eventText ;
+			sh:path observable:eventRecordText ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2701,13 +2701,13 @@ observable:EventFacet
                         sh:datatype xsd:string ;
                         sh:maxCount "1"^^xsd:integer ;
                         sh:nodeKind sh:Literal ;
-                        sh:path observable:eventRaw ;
+                        sh:path observable:eventRecordRaw ;
                 ],
                 [
                         sh:datatype xsd:string ;
                         sh:maxCount "1"^^xsd:integer ;
                         sh:nodeKind sh:Literal ;
-                        sh:path observable:eventServiceName ;
+                        sh:path observable:eventRecordServiceName ;
                 ]
 		;
 	sh:targetClass observable:EventFacet ;
@@ -9692,24 +9692,24 @@ observable:environmentVariables
 	rdfs:range types:Dictionary ;
 	.
 
-observable:eventID
+observable:eventRecordID
 	a owl:DatatypeProperty ;
-	rdfs:label "eventID"@en ;
-	rdfs:comment "The identifier of the event."@en ;
+	rdfs:label "eventRecordID"@en ;
+	rdfs:comment "The identifier of the event record."@en ;
 	rdfs:range xsd:string ;
 	.
 
-observable:eventRaw
+observable:eventRecordRaw
 	a owl:DatatypeProperty ;
-	rdfs:label "eventRaw"@en ;
+	rdfs:label "eventRecordRaw"@en ;
 	rdfs:comment "The complete raw content of the event record."@en ;
 	rdfs:range xsd:string ;
 	.
 
-observable:eventServiceName
+observable:eventRecordServiceName
 	a owl:DatatypeProperty ;
 	rdfs:label "eventServiceName"@en ;
-	rdfs:comment "The service that generated the event. A single application can have multiple services generating event records."@en ;
+	rdfs:comment "The service that generated the event record. A single application can have multiple services generating event records."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -9720,9 +9720,9 @@ observable:eventStatus
 	rdfs:range xsd:string ;
 	.
 
-observable:eventText
+observable:eventRecordText
 	a owl:DatatypeProperty ;
-	rdfs:label "eventText"@en ;
+	rdfs:label "eventRecordText"@en ;
 	rdfs:comment "The textual representation of the event."@en ;
 	rdfs:range xsd:string ;
 	.
