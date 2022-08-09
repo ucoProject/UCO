@@ -126,7 +126,7 @@ class ContextBuilder:
 
         return self.ttl_file_list
 
-    def get_iris(self) -> list:
+    def get_iris(self) -> typing.List[str]:
         """
         Returns sorted list of IRIs as prefix:value strings
         """
@@ -158,6 +158,7 @@ class ContextBuilder:
         # Taking the ':' off the end of the key
         k = t_split[1][:-1]
         v = t_split[2]
+        v=v.strip()[1:-1]
         if k in iri_dict.keys():
             # _logger.debug(f"'{k}' already exists")
             if iri_dict[k] != v:
@@ -197,10 +198,10 @@ class ContextBuilder:
                 # if str(rdf_rang_str) not in test_list:
                 #     test_list.append(rdf_rang_str)
 
-            for sh_triple in graph.triples((None, rdflib.term.URIRef('http://www.w3.org/ns/shacl#path'), triple[0])):
+            for sh_triple in graph.triples((None, rdflib.SH.path, triple[0])):
                 _logger.debug(f"\t\t**sh_triple:{sh_triple}")
                 dtp_obj.shacl_property_bnode = sh_triple[0]
-                for sh_triple2 in graph.triples((dtp_obj.shacl_property_bnode, rdflib.term.URIRef('http://www.w3.org/ns/shacl#maxCount'), None)):
+                for sh_triple2 in graph.triples((dtp_obj.shacl_property_bnode, rdflib.SH.maxCount, None)):
                     _logger.debug(f"\t\t***sh_triple:{sh_triple2}")
                     _logger.debug(f"\t\t***sh_triple:{sh_triple2[2]}")
                     if int(sh_triple2[2]) <= 1:
@@ -242,10 +243,10 @@ class ContextBuilder:
             op_obj.ns_prefix = ns_prefix
             op_obj.root_class_name = root
 
-            for sh_triple in graph.triples((None, rdflib.term.URIRef('http://www.w3.org/ns/shacl#path'), triple[0])):
+            for sh_triple in graph.triples((None, rdflib.SH.path, triple[0])):
                 _logger.debug(f"\t**obj_sh_triple:{sh_triple}")
                 op_obj.shacl_property_bnode = sh_triple[0]
-                for sh_triple2 in graph.triples((op_obj.shacl_property_bnode, rdflib.term.URIRef('http://www.w3.org/ns/shacl#maxCount'), None)):
+                for sh_triple2 in graph.triples((op_obj.shacl_property_bnode, rdflib.SH.maxCount, None)):
                     _logger.debug(f"\t\t***sh_triple:{sh_triple2}")
                     _logger.debug(f"\t\t***sh_triple:{sh_triple2[2]}")
                     if int(sh_triple2[2]) <= 1:
@@ -353,8 +354,8 @@ class ContextBuilder:
     def add_key_strings_to_cntxt(self) -> None:
         """Adds id, type, and graph key strings to context string"""
         ks_str = ""
-        ks_str += "\t\"uco-core:id\":\"@id\",\n"
-        ks_str += "\t\"uco-core:type\":\"@type\",\n"
+        ks_str += "\t\"id\":\"@id\",\n"
+        ks_str += "\t\"type\":\"@type\",\n"
         ks_str += "\t\"value\":\"@value\",\n"
         ks_str += "\t\"graph\":\"@graph\",\n"
 
@@ -396,23 +397,23 @@ def main():
         out_f.close()
     else:
         print(cb.context_str)
-    return
+    #return
 
     # Testing
     graph = rdflib.Graph()
     graph.parse("../tests/uco_monolithic.ttl", format="turtle")
     graph.serialize("_uco_monolithic.json-ld", format="json-ld")
-    graph2 = rdflib.ConjunctiveGraph()
+    graph2 = rdflib.Graph()
     import json
     tmp_c = json.loads(cb.context_str)
-    # graph2.parse("_uco_monolithic.json-ld", format="json-ld", context_data=tmp_c)
+    graph2.parse("_uco_monolithic.json-ld", format="json-ld", context_data=tmp_c)
     # graph2.parse("../tests/uco_monolithic.ttl", format="turtle", context_data=tmp_c)
-    graph2.parse("../tests/uco_monolithic.ttl", format="turtle")
+    # graph2.parse("../tests/uco_monolithic.ttl", format="turtle")
     # graph.serialize("__uco_monolithic.json-ld", context_data=tmp_c, format="json-ld", auto_compact=False)
     # graph2.serialize("__uco_monolithic.json-ld", context_data=tmp_c, format="json-ld", auto_compact=True)
     graph2.serialize("__uco_monolithic.json-ld", context_data=tmp_c, format="json-ld", auto_compact=True)
     # graph2.serialize("__uco_monolithic.json-ld", format="json-ld", auto_compact=True)
-
+    return
     # for triple in graph.triples((None,None,rdflib.OWL.Class)):
     #    # print(triple[0].fragment)
     #     print(triple[0].n3(graph.namespace_manager))
