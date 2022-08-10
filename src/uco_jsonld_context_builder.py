@@ -335,6 +335,35 @@ class ContextBuilder:
 
         self.context_str += dtp_str_sect
 
+    def add_concise_datatype_props_to_cntxt(self) -> None:
+        """Adds Datatype Properties to context string"""
+        dtp_str_sect = ""
+        dtp_list = list(self.datatype_properties_dict.keys())
+        dtp_list.sort()
+        for key in dtp_list:
+            if len(self.datatype_properties_dict[key]) > 1:
+                for dtp_obj in self.datatype_properties_dict[key]:
+                    # print(dtp_obj.ns_prefix, key)
+                    con_str = f"\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\":{{\n"
+                    con_str += "\t\"@type\":\"@id\""
+                    if dtp_obj.shacl_count_lte_1 is not True:
+                        con_str += ",\n\t\"@container\":\"@set\"\n"
+                    else:
+                        con_str += "\n"
+                    con_str += "},\n"
+                    dtp_str_sect += con_str
+            else:
+                for dtp_obj in self.datatype_properties_dict[key]:
+                    con_str = f"\"{dtp_obj.root_property_name}\":{{\n"
+                    con_str += "\t\"@type\":\"@id\""
+                    if dtp_obj.shacl_count_lte_1 is not True:
+                        con_str += ",\n\t\"@container\":\"@set\"\n"
+                    else:
+                        con_str += "\n"
+                    con_str += "},\n"
+                    dtp_str_sect += con_str
+        self.context_str += dtp_str_sect
+
     def add_minimal_object_props_to_cntxt(self) -> None:
         """Adds Object Properties to context string"""
         op_str_sect = ""
@@ -352,6 +381,35 @@ class ContextBuilder:
                 con_str += "},\n"
 
                 op_str_sect += con_str
+        self.context_str += op_str_sect
+    
+    def add_concise_object_props_to_cntxt(self) -> None:
+        """Adds Object Properties to context string"""
+        op_str_sect = ""
+        op_list = list(self.object_properties_dict.keys())
+        op_list.sort()
+        for key in op_list:
+            if len(self.object_properties_dict[key]) > 1:
+                for op_obj in self.object_properties_dict[key]:
+                    # print(op_obj.ns_prefix, op_obj.root_class_name)
+                    con_str = f"\"{op_obj.ns_prefix}:{op_obj.root_class_name}\":{{\n"
+                    con_str += "\t\"@type\":\"@id\""
+                    if op_obj.shacl_count_lte_1 is not True:
+                        con_str += ",\n\t\"@container\":\"@set\"\n"
+                    else:
+                        con_str += "\n"
+                    con_str += "},\n"
+                    op_str_sect += con_str
+            else:
+                for op_obj in self.object_properties_dict[key]:
+                    con_str = f"\"{op_obj.root_class_name}\":{{\n"
+                    con_str += "\t\"@type\":\"@id\""
+                    if op_obj.shacl_count_lte_1 is not True:
+                        con_str += ",\n\t\"@container\":\"@set\"\n"
+                    else:
+                        con_str += "\n"
+                    con_str += "},\n"
+                    op_str_sect += con_str
         self.context_str += op_str_sect
 
     def add_key_strings_to_cntxt(self) -> None:
@@ -375,11 +433,7 @@ def main():
          Will print to stdout by default.")
     args = argument_parser.parse_args()
 
-    print(args)
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
-    if (args.concise):
-        logging.error("\tConsice context has not been implemented yet.")
-        sys.exit()
 
     _logger.debug("\t***Debug Mode enabled***")
 
@@ -396,8 +450,12 @@ def main():
     cb.process_ObjectProperties()
     cb.init_context_str()
     cb.add_prefixes_to_cntxt()
-    cb.add_minimal_object_props_to_cntxt()
-    cb.add_minimal_datatype_props_to_cntxt()
+    if args.concise:
+        cb.add_concise_object_props_to_cntxt()
+        cb.add_concise_datatype_props_to_cntxt()
+    else:
+        cb.add_minimal_object_props_to_cntxt()
+        cb.add_minimal_datatype_props_to_cntxt()
     cb.add_key_strings_to_cntxt()
     cb.close_context_str()
 
