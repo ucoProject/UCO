@@ -1,5 +1,10 @@
+#!python
 #
-# Release Statement?
+# NOTICE
+# This software was produced for the U.S. Government under contract FA8702-22-C-0001,
+# and is subject to the Rights in Data-General Clause 52.227-14, Alt. IV (DEC 2007)
+# ©2022 The MITRE Corporation. All Rights Reserved.
+# Released under PRS 18-4297.
 #
 
 """
@@ -275,7 +280,7 @@ class ContextBuilder:
         if len(ttl_file_list) < 1:
             _logger.error("No ttls files to process")
             sys.exit()
-        
+
         for ttl_file in ttl_file_list:
             with open(ttl_file, 'r') as file:
                 for line in file:
@@ -345,7 +350,7 @@ class ContextBuilder:
                     con_str += "\n"
 
                 con_str += "},\n"
-                
+
                 op_str_sect += con_str
         self.context_str += op_str_sect
 
@@ -363,13 +368,20 @@ class ContextBuilder:
 def main():
     argument_parser = argparse.ArgumentParser()
     argument_parser.add_argument('--debug', action="store_true")
-    # argument_parser.add_argument('-i', '--in_graph', help="Input graph to be simplified")
-    argument_parser.add_argument('-o', '--output', help="Output file for context")
+    argument_parser.add_argument('--concise', action="store_true",
+        help="Creates a \"concise\" context. This is more compact than the \
+        default behavior which creates a \"minimal\" context")
+    argument_parser.add_argument('-o', '--output', help="Output file for context.\
+         Will print to stdout by default.")
     args = argument_parser.parse_args()
 
+    print(args)
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
+    if (args.concise):
+        logging.error("\tConsice context has not been implemented yet.")
+        sys.exit()
 
-    _logger.debug("Debug Mode enabled")
+    _logger.debug("\t***Debug Mode enabled***")
 
     out_f = None
     if args.output is not None:
@@ -395,6 +407,7 @@ def main():
         out_f.close()
     else:
         print(cb.context_str)
+
     return
 
     # TODO: context keyword in graph parse and graph serialize
