@@ -46,6 +46,27 @@ class ObjectPropertyInfo:
         self.root_class_name = None
         self.shacl_count_lte_1 = None
         self.shacl_property_bnode = None
+    
+    def __get_json(self, hdr) -> str:
+        json_str = hdr
+        json_str += "\t\"@type\":\"@id\""
+        if self.shacl_count_lte_1 is not True:
+            json_str += ",\n\t\"@container\":\"@set\"\n"
+        else:
+            json_str += "\n"
+
+        json_str += "},\n"
+        return json_str        
+
+    def get_minimal_json(self) -> str:
+        hdr_str = f"\"{self.ns_prefix}:{self.root_class_name}\":{{\n"
+        json_str = self.__get_json(hdr=hdr_str)
+        return json_str
+
+    def get_concise_json(self) -> str:
+        hdr_str = f"\"{self.root_class_name}\":{{\n"
+        json_str = self.__get_json(hdr=hdr_str)
+        return json_str
 
 
 class DatatypePropertyInfo:
@@ -57,6 +78,30 @@ class DatatypePropertyInfo:
         self.prefixed_datatype_name = None
         self.shacl_count_lte_1 = None
         self.shacl_property_bnode = None
+
+    def __get_json(self, hdr) -> str:
+        json_str = hdr
+        json_str += \
+            f"\t\"@id\":\"{self.ns_prefix}:{self.root_property_name}\""
+        if (self.prefixed_datatype_name is not None):
+            json_str += ",\n"
+            json_str += f"\t\"@type\":\"{self.prefixed_datatype_name}\""
+        if self.shacl_count_lte_1 is not True:
+            json_str += ",\n\t\"@container\":\"@set\"\n"
+        else:
+            json_str += "\n"
+        json_str += "},\n"
+        return json_str        
+
+    def get_minimal_json(self) -> str:
+        hdr_str = f"\"{self.ns_prefix}:{self.root_property_name}\":{{\n"
+        json_str = self.__get_json(hdr=hdr_str)
+        return json_str
+
+    def get_concise_json(self) -> str:
+        hdr_str = f"\"{self.root_property_name}\":{{\n"
+        json_str = self.__get_json(hdr=hdr_str)
+        return json_str
 
 
 class ContextBuilder:
@@ -199,8 +244,6 @@ class ContextBuilder:
                 _logger.debug(f"\ttriple2: f{triple2}\n")
                 rdf_rang_str = str(triple2[-1].n3(graph.namespace_manager))
                 dtp_obj.prefixed_datatype_name = rdf_rang_str
-                # if str(rdf_rang_str) not in test_list:
-                #     test_list.append(rdf_rang_str)
 
             for sh_triple in graph.triples((None, rdflib.SH.path, triple[0])):
                 _logger.debug(f"\t\t**sh_triple:{sh_triple}")
@@ -288,32 +331,6 @@ class ContextBuilder:
                         _logger.debug(f"Prefix: {ttl_file}\t{line.strip()}")
                         self.__add_to_iri_dict(in_prefix=line.strip())
 
-    def print_minimal_datatype_properties(self) -> str:
-        """Prints DataType Properties in a format suitable for the contect"""
-        dtp_str_sect = ""
-        dt_list = list(self.datatype_properties_dict.keys())
-        dt_list.sort()
-        last_dtp_obj = self.datatype_properties_dict[dt_list[-1]][-1]
-        for key in dt_list:
-            # if len(cb.datatype_properties_dict[key]) > 1:
-            for dtp_obj in self.datatype_properties_dict[key]:
-                con_str = f"\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\":{{\n"
-                con_str += f"\t\"@id\":\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\""
-                if (dtp_obj.prefixed_datatype_name is not None):
-                    con_str += ",\n"
-                    con_str += f"\t\"@type\":\"{dtp_obj.prefixed_datatype_name}\"\n"
-                else:
-                    con_str += "\n"
-                if dtp_obj != last_dtp_obj:
-                    con_str += "},\n"
-                else:
-                    con_str += "}\n"
-                # print(dtp_obj.root_property_name)
-                # print(con_str)
-                dtp_str_sect += con_str
-        # print(dtp_str_sect)
-        return dtp_str_sect
-
     def add_minimal_datatype_props_to_cntxt(self) -> None:
         """Adds Datatype Properties to context string"""
         dtp_str_sect = ""
@@ -322,17 +339,7 @@ class ContextBuilder:
         # last_dtp_obj = self.datatype_properties_dict[dt_list[-1]][-1]
         for key in dt_list:
             for dtp_obj in self.datatype_properties_dict[key]:
-                con_str = f"\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\":{{\n"
-                con_str += f"\t\"@id\":\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\""
-                if (dtp_obj.prefixed_datatype_name is not None):
-                    con_str += ",\n"
-                    con_str += f"\t\"@type\":\"{dtp_obj.prefixed_datatype_name}\"\n"
-                else:
-                    con_str += "\n"
-                con_str += "},\n"
-
-                dtp_str_sect += con_str
-
+                dtp_str_sect += dtp_obj.get_minimal_json()
         self.context_str += dtp_str_sect
 
     def add_concise_datatype_props_to_cntxt(self) -> None:
@@ -343,25 +350,10 @@ class ContextBuilder:
         for key in dtp_list:
             if len(self.datatype_properties_dict[key]) > 1:
                 for dtp_obj in self.datatype_properties_dict[key]:
-                    # print(dtp_obj.ns_prefix, key)
-                    con_str = f"\"{dtp_obj.ns_prefix}:{dtp_obj.root_property_name}\":{{\n"
-                    con_str += "\t\"@type\":\"@id\""
-                    if dtp_obj.shacl_count_lte_1 is not True:
-                        con_str += ",\n\t\"@container\":\"@set\"\n"
-                    else:
-                        con_str += "\n"
-                    con_str += "},\n"
-                    dtp_str_sect += con_str
+                    dtp_str_sect += dtp_obj.get_minimal_json()
             else:
                 for dtp_obj in self.datatype_properties_dict[key]:
-                    con_str = f"\"{dtp_obj.root_property_name}\":{{\n"
-                    con_str += "\t\"@type\":\"@id\""
-                    if dtp_obj.shacl_count_lte_1 is not True:
-                        con_str += ",\n\t\"@container\":\"@set\"\n"
-                    else:
-                        con_str += "\n"
-                    con_str += "},\n"
-                    dtp_str_sect += con_str
+                    dtp_str_sect += dtp_obj.get_concise_json()
         self.context_str += dtp_str_sect
 
     def add_minimal_object_props_to_cntxt(self) -> None:
@@ -371,16 +363,7 @@ class ContextBuilder:
         op_list.sort()
         for key in op_list:
             for op_obj in self.object_properties_dict[key]:
-                con_str = f"\"{op_obj.ns_prefix}:{op_obj.root_class_name}\":{{\n"
-                con_str += "\t\"@type\":\"@id\""
-                if op_obj.shacl_count_lte_1 is not True:
-                    con_str += ",\n\t\"@container\":\"@set\"\n"
-                else:
-                    con_str += "\n"
-
-                con_str += "},\n"
-
-                op_str_sect += con_str
+                op_str_sect += op_obj.get_minimal_json()
         self.context_str += op_str_sect
     
     def add_concise_object_props_to_cntxt(self) -> None:
@@ -392,24 +375,10 @@ class ContextBuilder:
             if len(self.object_properties_dict[key]) > 1:
                 for op_obj in self.object_properties_dict[key]:
                     # print(op_obj.ns_prefix, op_obj.root_class_name)
-                    con_str = f"\"{op_obj.ns_prefix}:{op_obj.root_class_name}\":{{\n"
-                    con_str += "\t\"@type\":\"@id\""
-                    if op_obj.shacl_count_lte_1 is not True:
-                        con_str += ",\n\t\"@container\":\"@set\"\n"
-                    else:
-                        con_str += "\n"
-                    con_str += "},\n"
-                    op_str_sect += con_str
+                    op_str_sect += op_obj.get_minimal_json()
             else:
                 for op_obj in self.object_properties_dict[key]:
-                    con_str = f"\"{op_obj.root_class_name}\":{{\n"
-                    con_str += "\t\"@type\":\"@id\""
-                    if op_obj.shacl_count_lte_1 is not True:
-                        con_str += ",\n\t\"@container\":\"@set\"\n"
-                    else:
-                        con_str += "\n"
-                    con_str += "},\n"
-                    op_str_sect += con_str
+                    op_str_sect += op_obj.get_concise_json()
         self.context_str += op_str_sect
 
     def add_key_strings_to_cntxt(self) -> None:
