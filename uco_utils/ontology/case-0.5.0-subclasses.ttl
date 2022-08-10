@@ -1,0 +1,1568 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.caseontology.org/case/investigation/Attorney>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/Authorization>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/Examiner>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/ExaminerActionLifecylce>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/Investigation>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#ContextualCompilation> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/InvestigativeAction>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#Action> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/Investigator>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/ProvenanceRecord>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#ContextualCompilation> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/Subject>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/SubjectActionLifecycle>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
+	.
+
+<https://ontology.caseontology.org/case/investigation/VictimActionLifecycle>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
+	.
+
+<https://ontology.caseontology.org/case/vocabulary/InvestigationFormVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/action#Action>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/action#ActionArgumentFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/action#ActionEstimationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/action#ActionFrequencyFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#Action> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/action#ActionPattern>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
+		<https://unifiedcyberontology.org/ontology/uco/pattern#Pattern>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/action#ActionReferencesFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#Annotation>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Assertion> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#Assertion>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#AttributedName>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#Bundle>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#EnclosingCompilation> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#Compilation>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#ConfidenceFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#ContextualCompilation>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Compilation> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#ControlledVocabulary>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#EnclosingCompilation>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Compilation> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#Grouping>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#ContextualCompilation> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#IdentityAbstraction>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#Item>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#MarkingDefinitionAbstraction>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#ModusOperandi>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/core#Relationship>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#AddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#AffiliationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#BirthInformationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#CountryOfResidenceFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#EventsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#IdentifierFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#Identity>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#IdentityAbstraction> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#LanguagesFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#NationalityFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#OccupationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#Organization>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#OrganizationDetailsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#Person>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#Identity> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#PersonalDetailsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#PhysicalInfoFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#QualificationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#RelatedIdentityFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#SimpleNameFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/identity#VisaFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/identity#IdentityFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/location#GPSCoordinatesFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/location#LatLongCoordinatesFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/location#Location>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/location#SimpleAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/marking#LicenseMarking>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/marking#MarkingModel> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/marking#MarkingDefinition>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#MarkingDefinitionAbstraction> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/marking#ReleaseToMarking>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/marking#MarkingModel> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/marking#StatementMarking>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/marking#MarkingModel> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/marking#TermsOfUseMarking>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/marking#MarkingModel> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#API>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ARPCache>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ARPCacheEntry>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Account>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#AccountAuthenticationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#AccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Address>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Appliance>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Device> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Application>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ApplicationAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ApplicationAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ApplicationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ArchiveFile>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#File> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ArchiveFileFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#AttachmentFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Audio>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#AudioFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#AutonomousSystem>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#AutonomousSystemFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#BlockDeviceNode>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#BluetoothAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#MACAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#BluetoothAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#MACAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#BotConfiguration>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#BrowserBookmark>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#BrowserBookmarkFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#BrowserCookie>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#BrowserCookieFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Calendar>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#CalendarEntry>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#CalendarEntryFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#CalendarFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#CharacterDeviceNode>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Code>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#CompressedStreamFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ComputerSpecification>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ComputerSpecificationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Contact>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ContactFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ContactList>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ContactListFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ContentData>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ContentDataFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#CookieHistory>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Credential>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#CredentialDump>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DNSCache>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DNSRecord>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DataRangeFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DefinedEffectFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Device>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DeviceFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Account> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DigitalSignatureInfo>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DigitalSignatureInfoFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Directory>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Disk>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DiskFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DiskPartition>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DiskPartitionFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DomainName>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#DomainNameFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EXIFFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EmailAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EmailAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EmailAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EmailAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EmailMessage>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EmailMessageFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EncodedStreamFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EncryptedStreamFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Event>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EventFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#EventLog>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ExtInodeFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ExtractedStringsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#File>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#FileFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#FilePermissionsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#FileSystem>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#FileSystemFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ForumPost>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ForumPrivateMessage>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#FragmentFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#GUI>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#GenericObservableObject>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#GeoLocationEntry>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#GeoLocationEntryFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#GeoLocationLog>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#GeoLocationLogFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#GeoLocationTrack>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#GeoLocationTrackFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#HTTPConnection>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#NetworkConnection> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#HTTPConnectionFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Hostname>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ICMPConnection>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#NetworkConnection> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ICMPConnectionFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#IPAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#IPAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#IPNetmask>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#IPv4Address>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#IPAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#IPv4AddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#IPAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#IPv6Address>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#IPAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#IPv6AddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#IPAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Image>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ImageFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#InstantMessagingAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#InstantMessagingAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Junction>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Library>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#LibraryFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MACAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MACAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Memory>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MemoryFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Message>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MessageFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MessageThread>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MessageThreadFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MftRecordFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MobileAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MobileAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MobileDevice>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Device> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MobileDeviceFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Mutex>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#MutexFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NTFSFile>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#File> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NTFSFileFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NTFSFilePermissionsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NamedPipe>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkAppliance>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Appliance> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkConnection>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkConnectionFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkFlow>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkFlowFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkInterface>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkInterfaceFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkProtocol>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkRoute>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NetworkSubnet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Note>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#NoteFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Observable>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ObservableAction>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/action#Action> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable#Observable>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Item> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable#Observable>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ObservablePattern>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Observable> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ObservableRelationship>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Relationship> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable#Observable>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Observation>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#Action> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#OnlineService>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#OnlineServiceFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#OperatingSystem>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#OperatingSystemFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PDFFile>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#File> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PDFFileFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PathRelationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PaymentCard>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PhoneAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PhoneAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PhoneCall>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PhoneCallFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Pipe>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Post>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Process>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ProcessFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Profile>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ProfileFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PropertiesEnumeratedEffectFacet>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable#DefinedEffectFacet>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#PropertyReadEffectFacet>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable#DefinedEffectFacet>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#RasterPicture>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#File> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#RasterPictureFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ReparsePoint>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SIMCard>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Device> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SIMCardFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SIPAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SIPAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SMSMessage>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SMSMessageFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SQLiteBlob>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SQLiteBlobFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SecurityAppliance>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Appliance> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Semaphore>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SendControlCodeEffectFacet>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable#DefinedEffectFacet>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ShopListing>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Snapshot>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Socket>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SocketAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Address> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Software>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SoftwareFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#StateChangeEffectFacet>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable#DefinedEffectFacet>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SymbolicLink>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#FileSystemObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#SymbolicLinkFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#TCPConnection>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#NetworkConnection> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#TCPConnectionFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Thread>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Tweet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Message> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#TwitterProfileFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UNIXAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UNIXAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UNIXFile>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#File> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UNIXFilePermissionsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UNIXProcess>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Process> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UNIXProcessFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UNIXVolumeFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#URL>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#URLFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#URLHistory>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#URLHistoryFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#URLVisit>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#URLVisitFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UserAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UserAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UserSession>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#UserSessionFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#ValuesEnumeratedEffectFacet>
+	rdfs:subClassOf
+		<https://unifiedcyberontology.org/ontology/uco/core#Facet> ,
+		<https://unifiedcyberontology.org/ontology/uco/observable#DefinedEffectFacet>
+		;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Volume>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#VolumeFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WebPage>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WhoIs>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WhoIsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WhoisContactFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ContactFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WifiAddress>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#MACAddress> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WifiAddressFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#MACAddressFacet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#Wiki>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WikiArticle>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsActiveDirectoryAccount>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#DigitalAccount> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsActiveDirectoryAccountFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsComputerSpecification>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsComputerSpecificationFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsCriticalSection>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsEvent>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsFilemapping>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsHandle>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsHook>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsMailslot>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsNetworkShare>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsPEBinaryFile>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#File> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsPEBinaryFileFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsPrefetch>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsPrefetchFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsProcess>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Process> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsProcessFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsRegistryHive>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsRegistryHiveFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsRegistryKey>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsRegistryKeyFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsService>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsServiceFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsSystemRestore>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsTask>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsTaskFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsThread>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#Thread> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsThreadFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsVolumeFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WindowsWaitableTime>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WirelessNetworkConnection>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#NetworkConnection> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#WirelessNetworkConnectionFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#X509Certificate>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#X509CertificateFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#X509V3Certificate>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/observable#ObservableObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/observable#X509V3ExtensionsFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/pattern#LogicalPattern>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/pattern#Pattern> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/pattern#Pattern>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/role#BenevolentRole>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/role#MaliciousRole>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/role#NeutralRole>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/role#Role>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/tool#AnalyticTool>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/tool#Tool> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/tool#BuildFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/tool#DefensiveTool>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/tool#Tool> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/tool#MaliciousTool>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/tool#Tool> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/tool#Tool>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/tool#ToolConfigurationTypeFacet>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/victim#Victim>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#NeutralRole> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/victim#VictimTargeting>
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/victim#Victim> ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#AccountTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ActionArgumentNameVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ActionNameVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ActionRelationshipTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ActionStatusTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ActionTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#BitnessVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#CharacterEncodingVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ContactAddressScopeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ContactEmailScopeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ContactPhoneScopeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ContactSIPScopeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ContactURLScopeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#DiskTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#EndiannessTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#HashNameVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#LibraryTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#MemoryBlockTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ObservableObjectRelationshipVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ObservableObjectStateVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#PartitionTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ProcessorArchVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#RegionalRegistryTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#RegistryDatatypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#SIMFormVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#SIMTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#TaskActionTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#TaskFlagVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#TaskPriorityVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#TaskStatusVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#ThreadRunningStatusVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#TimestampPrecisionVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#TrendVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#TriggerFrequencyVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#TriggerTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#URLTransitionTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#UnixProcessStateVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#WhoisContactTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#WhoisDNSSECTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#WhoisStatusTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#WindowsDriveTypeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+
+<https://unifiedcyberontology.org/ontology/uco/vocabulary#WindowsVolumeAttributeVocab>
+	rdfs:subClassOf rdfs:Resource ;
+	.
+

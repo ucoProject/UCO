@@ -19,13 +19,21 @@ on:
     branches: [ master, develop ]
   pull_request:
     branches: [ master, develop ]
+  release:
+    types:
+      - published
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        python-version:
+          - '3.7'
+          - '3.10'
     steps:
+
+    # Environment
     - uses: actions/checkout@v2
     - uses: actions/setup-java@v3
       with:
@@ -35,7 +43,40 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+
+    # Checks
+    - name: Pre-commit checks
+      run: |
+        pip install --upgrade pip
+        pip -q install pre-commit
+        pre-commit run --all-files
+
+    # Make
     - name: Start from clean state
       run: make clean
     - name: Run tests
-      run: make check
+      run: make PYTHON3=python check
+
+    # Build the binary wheel as well as the source tar
+    - name: Build Objects
+      run: |
+        pip install -q twine wheel
+        python setup.py sdist bdist_wheel
+
+    # Ensure the objects were packaged correctly and there wasn't an issue with
+    # the compilation or packaging process.
+    - name: Check Objects
+      run: twine check dist/*
+
+    # Upload the packages on all develop and main pipleines for test consumption
+    - name: Upload HTML Docs
+      uses: actions/upload-artifact@v2
+      with:
+        name: packages
+        path: ./dist/
+
+    # If this commit is the result of a Git tag, push the wheel and tar packages
+    # to the PyPi registry
+    - name: Publish to PyPI
+      if: github.event_name == 'release' && github.event.action == 'published'
+      run: twine upload --repository-url https://upload.pypi.org/legacy/ -u __token__ -p ${{ secrets.PYPI_API_TOKEN }} --skip-existing --verbose dist/*
