@@ -1,0 +1,113 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:uco-object-4",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:uco-object-5",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:thread-2",
+            "@type": "types:Thread",
+            "types:threadOriginItem": {
+                "@id": "kb:uco-object-4"
+            },
+            "co:item": {
+                "@id": "kb:uco-object-4"
+            },
+            "rdfs:comment": [
+                "Error - types:threadOriginItem is not a types:ThreadItem.",
+                "Error - co:item is not a co:Item."
+            ]
+        },
+        {
+            "@id": "kb:thread-3",
+            "@type": "types:Thread",
+            "co:item": [
+                {
+                    "@id": "kb:thread-3-item-1"
+                },
+                {
+                    "@id": "kb:thread-3-item-2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:thread-3-item-1",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:thread-3-item-2"
+            },
+            "rdfs:comment": [
+                "Error - co:itemContent must not be a co:Item (and types:ThreadItem is a subclass of co:Item)."
+            ]
+        },
+        {
+            "@id": "kb:thread-3-item-2",
+            "@type": "types:ThreadItem",
+            "co:itemContent": [
+                {
+                    "@id": "kb:uco-object-4"
+                },
+                {
+                    "@id": "kb:uco-object-5"
+                }
+            ],
+            "rdfs:comment": [
+                "Error - 2 values of co:itemContent."
+            ]
+        },
+        {
+            "@id": "kb:thread-4",
+            "@type": "types:Thread",
+            "co:item": [
+                {
+                    "@id": "kb:thread-4-item-1"
+                },
+                {
+                    "@id": "kb:thread-4-item-2"
+                },
+                {
+                    "@id": "kb:thread-4-item-3"
+                }
+            ],
+            "rdfs:comment": "Error - list forks in opposite direction of what types:Thread supports, with item 3 directly preceeded by 1 and 2."
+        },
+        {
+            "@id": "kb:thread-4-item-1",
+            "@type": "types:ThreadItem",
+            "types:threadNextItem": {
+                "@id": "kb:thread-4-item-3"
+            }
+        },
+        {
+            "@id": "kb:thread-4-item-2",
+            "@type": "types:ThreadItem",
+            "types:threadNextItem": {
+                "@id": "kb:thread-4-item-3"
+            }
+        },
+        {
+            "@id": "kb:thread-4-item-3",
+            "@type": "types:ThreadItem",
+            "types:threadPreviousItem": [
+                {
+                    "@id": "kb:thread-4-item-1"
+                },
+                {
+                    "@id": "kb:thread-4-item-2"
+                }
+            ]
+        }
+    ]
+}
