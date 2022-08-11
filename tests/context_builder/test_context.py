@@ -28,6 +28,7 @@ def _test_graph_context_query(input_graph_file: str, input_context_file: str) ->
     graph = Graph()
     graph.parse(input_graph_file, context=context_object)
     for result in graph.query("""\
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
 SELECT ?nResult
 WHERE {
   ?nAction uco-action:result ?nResult .
