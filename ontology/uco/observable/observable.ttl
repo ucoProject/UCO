@@ -364,6 +364,11 @@ observable:ApplicationFacet
 	rdfs:comment "An application facet is a grouping of characteristics unique to a particular software program designed for ends users."@en ;
 	sh:property
 		[
+			sh:class observable:ApplicationVersion ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:installedVersion ;
+		] ,
+		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -380,11 +385,6 @@ observable:ApplicationFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:applicationIdentifier ;
-		] ,
-		[
-			sh:datatype observable:ApplicationVersion ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:installedVersion ;
 		]
 		;
 	sh:targetClass observable:ApplicationFacet ;
@@ -10277,7 +10277,7 @@ observable:installDate
 	.
 
 observable:installedVersion
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "installedVersion"@en ;
 	rdfs:comment "Specifies the history of installed application version(s)."@en ;
 	rdfs:range observable:ApplicationVersion ;
