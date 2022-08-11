@@ -12,6 +12,7 @@
 # We would appreciate acknowledgement if the software is used.
 
 import json
+import logging
 from typing import Any, Dict
 
 from rdflib import Graph, RDF, RDFS
@@ -54,7 +55,13 @@ WHERE {
 """):
         computed += 1
 
-    assert expected == computed
+    try:
+        assert expected == computed
+    except AssertionError:
+        # Provide a debug dump of the graph before forwarding assertion error.
+        for triple in sorted(graph.triples((None, None, None))):
+            logging.debug(triple)
+        raise
 
 
 def test_context_concise() -> None:
