@@ -1,4 +1,7 @@
 {
+    "@context": {
+        "kb": "http://example.org/kb/"
+    },
     "@graph": [
         {
             "@id": "kb:action-1",
