@@ -14,7 +14,7 @@
 import json
 from typing import Any, Dict
 
-from rdflib import Graph
+from rdflib import Graph, RDF, RDFS
 
 
 def _test_graph_context_query(input_graph_file: str, input_context_file: str) -> None:
@@ -27,6 +27,24 @@ def _test_graph_context_query(input_graph_file: str, input_context_file: str) ->
 
     graph = Graph()
     graph.parse(input_graph_file, context=context_object)
+
+    # The graph should at least include 8 statements of the form
+    # 'x uco-action:result y .'  Actual length includes the rdfs:comment
+    # and type declarations, but is otherwise unimportant.
+    assert 8 < len(graph), "Graph failed to parse into triples."
+
+    # The rdf:types must be supported by the context parse.
+    count_of_types = 0
+    for triple in graph.triples((None, RDF.type, None)):
+        count_of_types += 1
+    assert 0 < count_of_types, "Graph failed to parse non-UCO concept from RDF."
+
+    # The rdfs:comment must be supported by the context parse.
+    count_of_comments = 0
+    for triple in graph.triples((None, RDFS.comment, None)):
+        count_of_comments += 1
+    assert 0 < count_of_comments, "Graph failed to parse non-UCO concept from RDFS."
+
     for result in graph.query("""\
 PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
 SELECT ?nResult
