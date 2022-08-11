@@ -5290,6 +5290,59 @@ observable:RasterPictureFacet
 	sh:targetClass observable:RasterPictureFacet ;
 	.
 
+observable:RecoveredObjectFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "RecoveredObjectFacet"@en ;
+	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
+	rdfs:seeAlso <https://unifiedcyberontology.atlassian.net/browse/ONT-119> ;
+	sh:property
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:nameRecoveredStatus ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:metadataRecoveredStatus ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contentRecoveredStatus ;
+		]
+		;
+	sh:targetClass observable:RecoveredObjectFacet ;
+	.
+
 observable:RegistryDatatype
 	a rdfs:Datatype ;
 	owl:equivalentClass [
@@ -6059,60 +6112,6 @@ observable:TwitterProfileFacet
 		;
 	sh:targetClass observable:TwitterProfileFacet ;
 	.
-
-observable:RecoveredObjectFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "RecoveredObjectFacet"@en ;
-	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
-	rdfs:seeAlso <https://unifiedcyberontology.atlassian.net/browse/ONT-119> ;
-	sh:property
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:nameRecoveredStatus ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:metadataRecoveredStatus ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contentRecoveredStatus ;
-		]
-		;
-	sh:targetClass observable:RecoveredObjectFacet ;
-	.
-
 
 observable:UNIXAccount
 	a
