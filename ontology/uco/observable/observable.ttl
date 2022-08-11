@@ -6108,7 +6108,7 @@ observable:RecoveredObjectFacet
 				]
 			) ;
 			sh:path observable:contentRecoveredStatus ;
-		] , 
+		]
 		;
 	sh:targetClass observable:RecoveredObjectFacet ;
 	.
