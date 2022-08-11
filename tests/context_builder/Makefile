@@ -26,14 +26,44 @@ all:
 check: \
   check-minimal \
   check-concise
+	source $(tests_srcdir)/venv/bin/activate \
+	  && pytest \
+	    --log-level=DEBUG
 
 check-concise: \
-  $(tests_srcdir)/.venv.done.log
+  context-concise.json
 	source $(tests_srcdir)/venv/bin/activate \
 	  && python3 context_tester.py \
 	    --concise
 
 check-minimal: \
-  $(tests_srcdir)/.venv.done.log
+  context-minimal.json
 	source $(tests_srcdir)/venv/bin/activate \
 	  && python3 context_tester.py
+
+context-concise.json: \
+  $(tests_srcdir)/.venv.done.log \
+  $(top_srcdir)/src/uco_jsonld_context_builder.py
+	source $(tests_srcdir)/venv/bin/activate \
+	  && python3 $(top_srcdir)/src/uco_jsonld_context_builder.py \
+	    --output __$@
+	# Normalize generated file.
+	python3 -m json.tool \
+	  __$@ \
+	  _$@
+	rm __$@
+	mv _$@ $@
+
+context-minimal.json: \
+  $(tests_srcdir)/.venv.done.log \
+  $(top_srcdir)/src/uco_jsonld_context_builder.py
+	source $(tests_srcdir)/venv/bin/activate \
+	  && python3 $(top_srcdir)/src/uco_jsonld_context_builder.py \
+	    --concise \
+	    --output __$@
+	# Normalize generated file.
+	python3 -m json.tool \
+	  __$@ \
+	  _$@
+	rm __$@
+	mv _$@ $@
