@@ -858,6 +858,19 @@ vocabulary:ProcessorArchVocab
 	) ;
 	.
 
+vocabulary:RecoveredObjectStatusVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Recovered Object Status Vocabulary"@en-US ;
+	rdfs:comment "Defines the vocabulary for Recovered Object status of data."@en ;
+	owl:oneOf (
+		"recovered"^^vocabulary:RecoveredObjectStatusVocab
+		"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+		"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+		"unknown"^^vocabulary:RecoveredObjectStatusVocab
+	) ;
+	.
+
 vocabulary:RegionalRegistryTypeVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
@@ -1089,19 +1102,6 @@ vocabulary:TriggerTypeVocab
 		"TASK_TRIGGER_REGISTRATION"^^vocabulary:TriggerTypeVocab
 		"TASK_TRIGGER_SESSION_STATE_CHANGE"^^vocabulary:TriggerTypeVocab
 		"TASK_TRIGGER_TIME"^^vocabulary:TriggerTypeVocab
-	) ;
-	.
-
-vocabulary:RecoveredObjectStatusVocab
-	a rdfs:Datatype ;
-	rdfs:subClassOf rdfs:Resource ;
-	rdfs:label "Recovered Object Status Vocabulary"@en-US ;
-	rdfs:comment "Defines the vocabulary for Recovered Object status of data."@en ;
-	owl:oneOf (
-		"recovered"^^vocabulary:RecoveredObjectStatusVocab
-		"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-		"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-		"unknown"^^vocabulary:RecoveredObjectStatusVocab
 	) ;
 	.
 
