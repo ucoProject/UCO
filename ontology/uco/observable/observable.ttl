@@ -5290,6 +5290,17 @@ observable:RasterPictureFacet
 	sh:targetClass observable:RasterPictureFacet ;
 	.
 
+observable:RecoveredObject
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "RecoveredObject"@en ;
+	rdfs:comment "An observable object that was the result of a recovery operation."@en ;
+	sh:targetClass observable:RecoveredObject ;
+	.
+
 observable:RecoveredObjectFacet
 	a
 		owl:Class ,
@@ -5298,8 +5309,25 @@ observable:RecoveredObjectFacet
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "RecoveredObjectFacet"@en ;
 	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
-	rdfs:seeAlso <https://unifiedcyberontology.atlassian.net/browse/ONT-119> ;
 	sh:property
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:contentRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:metadataRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:nameRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5332,6 +5360,60 @@ observable:RecoveredObjectFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contentRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:nameRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:metadataRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
