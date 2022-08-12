@@ -2729,13 +2729,37 @@ observable:EventFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:computerName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:eventID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:eventText ;
+			sh:path observable:eventRecordID ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:eventRecordRaw ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:eventRecordServiceName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:eventRecordText ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -9852,10 +9876,31 @@ observable:environmentVariables
 	rdfs:range types:Dictionary ;
 	.
 
-observable:eventID
+observable:eventRecordID
 	a owl:DatatypeProperty ;
-	rdfs:label "eventID"@en ;
-	rdfs:comment "The identifier of the event."@en ;
+	rdfs:label "eventRecordID"@en ;
+	rdfs:comment "The identifier of the event record."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventRecordRaw
+	a owl:DatatypeProperty ;
+	rdfs:label "eventRecordRaw"@en ;
+	rdfs:comment "The complete raw content of the event record."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventRecordServiceName
+	a owl:DatatypeProperty ;
+	rdfs:label "eventServiceName"@en ;
+	rdfs:comment "The service that generated the event record. A single application can have multiple services generating event records."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventRecordText
+	a owl:DatatypeProperty ;
+	rdfs:label "eventRecordText"@en ;
+	rdfs:comment "The textual representation of the event."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -9863,13 +9908,6 @@ observable:eventStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "eventStatus"@en ;
 	rdfs:comment "The status of the event, for instance accepted, pending or cancelled."@en ;
-	rdfs:range xsd:string ;
-	.
-
-observable:eventText
-	a owl:DatatypeProperty ;
-	rdfs:label "eventText"@en ;
-	rdfs:comment "The textual representation of the event."@en ;
 	rdfs:range xsd:string ;
 	.
 
