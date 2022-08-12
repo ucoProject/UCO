@@ -2696,6 +2696,12 @@ observable:EventFacet
 			sh:path observable:application ;
 		] ,
 		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:device ;
+		] ,
+		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -2736,12 +2742,6 @@ observable:EventFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:account ;
-		] ,
-		[
-			sh:datatype observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:device ;
 		]
 		;
 	sh:targetClass observable:EventFacet ;
