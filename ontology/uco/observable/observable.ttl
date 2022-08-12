@@ -2729,6 +2729,18 @@ observable:EventFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:eventRecordRaw ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:eventRecordServiceName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:eventRecordText ;
 		] ,
 		[
@@ -2736,19 +2748,7 @@ observable:EventFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:eventType ;
-		],
-                [
-                        sh:datatype xsd:string ;
-                        sh:maxCount "1"^^xsd:integer ;
-                        sh:nodeKind sh:Literal ;
-                        sh:path observable:eventRecordRaw ;
-                ],
-                [
-                        sh:datatype xsd:string ;
-                        sh:maxCount "1"^^xsd:integer ;
-                        sh:nodeKind sh:Literal ;
-                        sh:path observable:eventRecordServiceName ;
-                ]
+		]
 		;
 	sh:targetClass observable:EventFacet ;
 	.
@@ -9879,17 +9879,17 @@ observable:eventRecordServiceName
 	rdfs:range xsd:string ;
 	.
 
-observable:eventStatus
-	a owl:DatatypeProperty ;
-	rdfs:label "eventStatus"@en ;
-	rdfs:comment "The status of the event, for instance accepted, pending or cancelled."@en ;
-	rdfs:range xsd:string ;
-	.
-
 observable:eventRecordText
 	a owl:DatatypeProperty ;
 	rdfs:label "eventRecordText"@en ;
 	rdfs:comment "The textual representation of the event."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "eventStatus"@en ;
+	rdfs:comment "The status of the event, for instance accepted, pending or cancelled."@en ;
 	rdfs:range xsd:string ;
 	.
 
