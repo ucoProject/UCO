@@ -2713,18 +2713,6 @@ observable:EventFacet
 			sh:nodeKind sh:Literal ;
 			sh:path observable:startTime ;
 		] ,
-                [       
-                        sh:datatype observable:ObservableObject ;
-                        sh:maxCount "1"^^xsd:integer ;
-                        sh:nodeKind sh:BlankNodeOrIRI ;
-                        sh:path observable:device ;
-                ] ,
-                [       
-                        sh:datatype observable:ObservableObject ;
-                        sh:maxCount "1"^^xsd:integer ;
-                        sh:nodeKind sh:BlankNodeOrIRI ;
-                        sh:path observable:account ;
-                ] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -2742,6 +2730,18 @@ observable:EventFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:eventType ;
+		] ,
+		[
+			sh:datatype observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:account ;
+		] ,
+		[
+			sh:datatype observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:device ;
 		]
 		;
 	sh:targetClass observable:EventFacet ;
@@ -9599,11 +9599,11 @@ observable:destinationPort
 	.
 
 observable:device
-        a owl:DatatypeProperty ;
-        rdfs:label "device"@en ;
-        rdfs:comment "The device on which the log entry was generated."@en ;
-        rdfs:range observable:ObservableObject ;
-        .
+	a owl:DatatypeProperty ;
+	rdfs:label "device"@en ;
+	rdfs:comment "The device on which the log entry was generated."@en ;
+	rdfs:range observable:ObservableObject ;
+	.
 
 observable:deviceType
 	a owl:DatatypeProperty ;
