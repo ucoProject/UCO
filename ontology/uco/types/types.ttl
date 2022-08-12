@@ -146,7 +146,16 @@ types:Hash
 			sh:or (
 				[
 					sh:datatype vocabulary:HashNameVocab ;
-					sh:in vocabulary:HashNameVocab-members ;
+					sh:in (
+						"MD5"^^vocabulary:HashNameVocab
+						"MD6"^^vocabulary:HashNameVocab
+						"SHA1"^^vocabulary:HashNameVocab
+						"SHA224"^^vocabulary:HashNameVocab
+						"SHA256"^^vocabulary:HashNameVocab
+						"SHA384"^^vocabulary:HashNameVocab
+						"SHA512"^^vocabulary:HashNameVocab
+						"SSDEEP"^^vocabulary:HashNameVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;

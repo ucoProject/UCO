@@ -1,0 +1,59 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+ 	"skos": "http://www.w3.org/2004/02/skos/core#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:concept-3",
+            "@type": "skos:Concept"
+        },
+        {
+            "@id": "kb:concept-4",
+            "@type": "skos:Concept"
+        },
+        {
+            "@id": "kb:ordered-collection-3",
+            "@type": "skos:OrderedCollection",
+            "skos:memberList": {
+                "@id": "kb:list-1",
+                "@type": "rdf:List",
+                "rdf:comment": "This will trigger a violation error.  An rdf:first's subject must be a blank node.",
+                "rdf:first": {
+                    "@id": "kb:concept-3"
+                },
+                "rdf:rest": {
+                    "@type": "rdf:List",
+                    "rdf:first": {
+                        "@id": "kb:concept-4"
+                    },
+                    "rdf:rest": {
+                        "@id": "rdf:nil"
+                    }
+                }
+            }
+        },
+        {
+            "@id": "kb:ordered-collection-4",
+            "@type": "skos:OrderedCollection",
+            "skos:memberList": {
+                "rdf:first": {
+                    "@id": "kb:concept-3"
+                },
+                "rdf:rest": {
+                    "@id": "kb:list-2",
+                    "rdf:comment": "This will trigger a violation error.  An rdf:first's subject must be a blank node.",
+                    "rdf:first": {
+                        "@id": "kb:concept-4"
+                    },
+                    "rdf:rest": {
+                        "@id": "rdf:nil"
+                    }
+                }
+            }
+        }
+    ]
+}
