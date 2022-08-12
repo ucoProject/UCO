@@ -9599,7 +9599,7 @@ observable:destinationPort
 	.
 
 observable:device
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "device"@en ;
 	rdfs:comment "The device on which the log entry was generated."@en ;
 	rdfs:range observable:ObservableObject ;
