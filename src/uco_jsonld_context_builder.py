@@ -184,7 +184,13 @@ class ContextBuilder:
         irs_list = []
         for k in k_list:
             # print(f"\"{k}\":{self.iri_dict[k]}")
-            irs_list.append(f"\"{k}\":\"{self.iri_dict[k]}\"")
+            # prepend "uco-" to specific IRIs
+            v = self.iri_dict[k]
+            #_logger.debug(v.split('/'))
+            if ('uco'in v.split('/')) and ('ontology.unifiedcyberontology.org' in v.split('/')):
+                irs_list.append(f"\"uco-{k}\":\"{v}\"")
+            else:
+                irs_list.append(f"\"{k}\":\"{v}\"")
         return irs_list
 
     def add_prefixes_to_cntxt(self) -> None:
@@ -192,7 +198,7 @@ class ContextBuilder:
         for i in self.get_iris():
             self.context_str += f"{i},\n"
 
-    def __add_to_iri_dict(self, in_prefix):
+    def __add_to_iri_dict(self, in_prefix: str):
         """INTERNAL function: Adds unique key value pairs to dict
         that will be used to generate context. Dies if inconsistent
         key value pair is found.
