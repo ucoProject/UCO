@@ -17,19 +17,27 @@ top_srcdir := $(shell cd .. ; pwd)
 
 all: \
   all-co \
+  all-owl \
   all-uco
 
 .PHONY: \
   all-co \
+  all-owl \
   all-uco \
   check-co \
+  check-owl \
   check-uco \
   clean-co \
+  clean-owl \
   clean-uco
 
 all-co:
 	$(MAKE) \
 	  --directory co
+
+all-owl:
+	$(MAKE) \
+	  --directory owl
 
 all-uco:
 	$(MAKE) \
@@ -37,11 +45,17 @@ all-uco:
 
 check: \
   check-co \
+  check-owl \
   check-uco
 
 check-co:
 	$(MAKE) \
 	  --directory co \
+	  check
+
+check-owl:
+	$(MAKE) \
+	  --directory owl \
 	  check
 
 check-uco:
@@ -51,11 +65,17 @@ check-uco:
 
 clean: \
   clean-co \
+  clean-owl \
   clean-uco
 
 clean-co:
 	@$(MAKE) \
 	  --directory co \
+	  clean
+
+clean-owl:
+	@$(MAKE) \
+	  --directory owl \
 	  clean
 
 clean-uco:
