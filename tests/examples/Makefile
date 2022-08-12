@@ -29,6 +29,12 @@ all: \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
   message_thread_XFAIL_validation.ttl \
+  owl_axiom_PASS_validation.ttl \
+  owl_axiom_XFAIL_validation.ttl \
+  owl_properties_PASS_validation.ttl \
+  owl_properties_XFAIL_validation.ttl \
+  rdf_list_PASS_validation.ttl \
+  rdf_list_XFAIL_validation.ttl \
   relationship_PASS_validation.ttl \
   relationship_XFAIL_validation.ttl \
   thread_PASS_validation.ttl \
@@ -84,6 +90,12 @@ check: \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
   message_thread_XFAIL_validation.ttl \
+  owl_axiom_PASS_validation.ttl \
+  owl_axiom_XFAIL_validation.ttl \
+  owl_properties_PASS_validation.ttl \
+  owl_properties_XFAIL_validation.ttl \
+  rdf_list_PASS_validation.ttl \
+  rdf_list_XFAIL_validation.ttl \
   relationship_PASS_validation.ttl \
   relationship_XFAIL_validation.ttl \
   thread_PASS_validation.ttl \
