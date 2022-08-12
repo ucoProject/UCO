@@ -1,0 +1,35 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "tool": "https://ontology.unifiedcyberontology.org/uco/tool/"
+    },
+    "@graph": [
+        {
+            "rdfs:comment": "Settings are numbered with a binary tracking system.  2^0 = itemObject set.  2^1 = itemValue set.  With the mutually-exclusive property shapes on ConfigurationSettingType, setting 3 would be invalid."
+        },
+        {
+            "@id": "kb:thing-1",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:setting-0",
+            "@type": "tool:ConfigurationSettingType",
+            "tool:itemName": "--setting-0"
+        },
+        {
+            "@id": "kb:setting-1",
+            "@type": "tool:ConfigurationSettingType",
+            "tool:itemName": "--setting-1",
+            "tool:itemObject": {
+                "@id": "kb:thing-1"
+            }
+        },
+        {
+            "@id": "kb:setting-2",
+            "@type": "tool:ConfigurationSettingType",
+            "tool:itemName": "--setting-2",
+            "tool:itemValue": "A value"
+        }
+    ]
+}

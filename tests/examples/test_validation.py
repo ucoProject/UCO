@@ -177,6 +177,14 @@ def test_action_result_PASS_validation():
     g = load_validation_graph("action_result_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
 
+def test_configuration_setting_PASS_validation() -> None:
+    g = load_validation_graph("configuration_setting_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
+
+def test_configuration_setting_XFAIL_validation() -> None:
+    g = load_validation_graph("configuration_setting_XFAIL_validation.ttl", False)
+    assert isinstance(g, rdflib.Graph)
+
 def test_hash_PASS() -> None:
     g = load_validation_graph("hash_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
