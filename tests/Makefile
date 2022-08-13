@@ -54,6 +54,9 @@ check: \
 	$(MAKE) \
 	  --directory examples \
 	  check
+	$(MAKE) \
+	  --directory context_builder \
+	  check
 
 clean:
 	@$(MAKE) \

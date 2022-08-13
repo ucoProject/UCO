@@ -1,10 +1,13 @@
 {
+    "@context": {
+        "kb": "http://example.org/kb/"
+    },
     "@graph": [
         {
             "@id": "kb:action-1",
-            "@type": "action:Action",
+            "@type": "uco-action:Action",
             "rdfs:comment": "This node is some action that has some ObservableObjects as results.  By the ontology, the results need to be some UcoObject or subclass of UcoObject.  They are serialized here as ObservableObjects, and are redundantly assigned types of some of their superclasses.  For completeness-tracking, let the id slug's number be a binary number tracking which superclasses are present, 2^0=core:UcoObject, 2^1=core:Item, 2^2=observable:Observable.",
-            "action:result": [
+            "uco-action:result": [
                 {
                     "@id": "kb:node-0"
                 },
@@ -33,60 +36,60 @@
         },
         {
             "@id": "kb:node-0",
-            "@type": "observable:ObservableObject"
+            "@type": "uco-observable:ObservableObject"
         },
         {
             "@id": "kb:node-1",
             "@type": [
-                "core:UcoObject",
-                "observable:ObservableObject"
+                "uco-core:UcoObject",
+                "uco-observable:ObservableObject"
             ]
         },
         {
             "@id": "kb:node-2",
             "@type": [
-                "core:Item",
-                "observable:ObservableObject"
+                "uco-core:Item",
+                "uco-observable:ObservableObject"
             ]
         },
         {
             "@id": "kb:node-3",
             "@type": [
-                "core:UcoObject",
-                "core:Item",
-                "observable:ObservableObject"
+                "uco-core:UcoObject",
+                "uco-core:Item",
+                "uco-observable:ObservableObject"
             ]
         },
         {
             "@id": "kb:node-4",
             "@type": [
-                "observable:Observable",
-                "observable:ObservableObject"
+                "uco-observable:Observable",
+                "uco-observable:ObservableObject"
             ]
         },
         {
             "@id": "kb:node-5",
             "@type": [
-                "core:UcoObject",
-                "observable:Observable",
-                "observable:ObservableObject"
+                "uco-core:UcoObject",
+                "uco-observable:Observable",
+                "uco-observable:ObservableObject"
             ]
         },
         {
             "@id": "kb:node-6",
             "@type": [
-                "core:Item",
-                "observable:Observable",
-                "observable:ObservableObject"
+                "uco-core:Item",
+                "uco-observable:Observable",
+                "uco-observable:ObservableObject"
             ]
         },
         {
             "@id": "kb:node-7",
             "@type": [
-                "core:UcoObject",
-                "core:Item",
-                "observable:Observable",
-                "observable:ObservableObject"
+                "uco-core:UcoObject",
+                "uco-core:Item",
+                "uco-observable:Observable",
+                "uco-observable:ObservableObject"
             ]
         }
     ]
