@@ -1107,7 +1107,7 @@ observable:Computer
 		;
 	rdfs:subClassOf observable:Device ;
 	rdfs:label "Computer"@en-US ;
-	rdfs:comment "A computer is a floor/desktop based computer, including standard workstations"@en-US ;
+	rdfs:comment "A computer is an electronic device for storing and processing data, typically in binary, according to instructions given to it in a variable program. [based on 'Computer.' Oxford English Dictionary, Oxford University Press, 2022.]"@en-US ;
 	sh:targetClass observable:Computer ;
 	.
 
@@ -5961,6 +5961,7 @@ observable:SmartPhone
 		sh:NodeShape
 		;
 	rdfs:subClassOf
+		observable:Computer ,
 		observable:MobilePhone ,
 		observable:SmartDevice
 		;
