@@ -212,6 +212,12 @@ tool:ConfigurationSettingType
 	rdfs:comment "A configuration setting type is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, or other cyber object."@en ;
 	sh:property
 		[
+			sh:class core:UcoObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:itemObject ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
@@ -229,6 +235,12 @@ tool:ConfigurationSettingType
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path tool:itemType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:itemValue ;
 		]
 		;
 	sh:targetClass tool:ConfigurationSettingType ;
@@ -247,19 +259,13 @@ tool:ConfigurationSettingType
 		]
 		[
 			sh:property [
-				sh:class core:UcoObject ;
-				sh:maxCount "1"^^xsd:integer ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
 				sh:path tool:itemObject ;
 			] ;
 		]
 		[
 			sh:property [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
 				sh:path tool:itemValue ;
 			] ;
 		]
