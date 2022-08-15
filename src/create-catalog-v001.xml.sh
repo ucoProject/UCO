@@ -1,5 +1,9 @@
 #!/bin/bash -x
 
+#TODO AJN:
+# This contributed file needs to be adapted into a script that provides
+# a unit test capability, without requiring network retrieval.
+
 CATLOG_PRE_XML="<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>
 <!-- Automatically built by the UCO infrastructure -->
 <catalog prefer=\"public\" xmlns=\"urn:oasis:names:tc:entity:xmlns:xml:catalog\">"

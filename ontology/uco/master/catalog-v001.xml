@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" uri="../action/action.ttl" name="https://ontology.unifiedcyberontology.org/uco/action"/>
+    <uri id="User Entered Import Resolution" uri="../core/core.ttl" name="https://ontology.unifiedcyberontology.org/uco/core"/>
+    <uri id="User Entered Import Resolution" uri="../identity/identity.ttl" name="https://ontology.unifiedcyberontology.org/uco/identity"/>
+    <uri id="User Entered Import Resolution" uri="../location/location.ttl" name="https://ontology.unifiedcyberontology.org/uco/location"/>
+    <uri id="User Entered Import Resolution" uri="../marking/marking.ttl" name="https://ontology.unifiedcyberontology.org/uco/marking"/>
+    <uri id="User Entered Import Resolution" uri="../observable/observable.ttl" name="https://ontology.unifiedcyberontology.org/uco/observable"/>
+    <uri id="User Entered Import Resolution" uri="../pattern/pattern.ttl" name="https://ontology.unifiedcyberontology.org/uco/pattern"/>
+    <uri id="User Entered Import Resolution" uri="../role/role.ttl" name="https://ontology.unifiedcyberontology.org/uco/role"/>
+    <uri id="User Entered Import Resolution" uri="../time/time.ttl" name="https://ontology.unifiedcyberontology.org/uco/time"/>
+    <uri id="User Entered Import Resolution" uri="../tool/tool.ttl" name="https://ontology.unifiedcyberontology.org/uco/tool"/>
+    <uri id="User Entered Import Resolution" uri="../types/types.ttl" name="https://ontology.unifiedcyberontology.org/uco/types"/>
+    <uri id="User Entered Import Resolution" uri="../victim/victim.ttl" name="https://ontology.unifiedcyberontology.org/uco/victim"/>
+    <uri id="User Entered Import Resolution" uri="../vocabulary/vocabulary.ttl" name="https://ontology.unifiedcyberontology.org/uco/vocabulary"/>
+</catalog>
