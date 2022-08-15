@@ -1,5 +1,7 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 
+@prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -12,6 +14,7 @@
 <https://ontology.unifiedcyberontology.org/uco/tool>
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/configuration> ;
 	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
 	.
 
@@ -24,29 +27,6 @@ tool:AnalyticTool
 	rdfs:label "AnalyticTool"@en ;
 	rdfs:comment "An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning."@en ;
 	sh:targetClass tool:AnalyticTool ;
-	.
-
-tool:BuildConfigurationType
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:label "BuildConfigurationType"@en ;
-	rdfs:comment "A build configuration type is a characterization of how a particular version of software can or should be built."@en ;
-	sh:property
-		[
-			sh:class tool:ConfigurationSettingType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path tool:configurationSettings ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:configurationSettingDescription ;
-		]
-		;
-	sh:targetClass tool:BuildConfigurationType ;
 	.
 
 tool:BuildFacet
@@ -75,7 +55,7 @@ tool:BuildInformationType
 	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
 	sh:property
 		[
-			sh:class tool:BuildConfigurationType ;
+			sh:class configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path tool:buildConfiguration ;
@@ -203,92 +183,6 @@ tool:CompilerType
 	sh:targetClass tool:CompilerType ;
 	.
 
-tool:ConfigurationSettingType
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:label "ConfigurationSettingType"@en ;
-	rdfs:comment "A configuration setting type is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, or other cyber object."@en ;
-	sh:property
-		[
-			sh:class core:UcoObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path tool:itemObject ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemName ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemDescription ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemType ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemValue ;
-		]
-		;
-	sh:targetClass tool:ConfigurationSettingType ;
-	sh:xone (
-		[
-			sh:property
-				[
-					sh:maxCount "0"^^xsd:integer ;
-					sh:path tool:itemObject ;
-				] ,
-				[
-					sh:maxCount "0"^^xsd:integer ;
-					sh:path tool:itemValue ;
-				]
-				;
-		]
-		[
-			sh:property [
-				sh:minCount "1"^^xsd:integer ;
-				sh:path tool:itemObject ;
-			] ;
-		]
-		[
-			sh:property [
-				sh:minCount "1"^^xsd:integer ;
-				sh:path tool:itemValue ;
-			] ;
-		]
-	) ;
-	.
-
-tool:ConfiguredTool
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf tool:Tool ;
-	rdfs:label "ConfiguredTool"@en ;
-	rdfs:comment "A ConfiguredTool is a Tool that is known to be configured to run in a more specified manner than some unconfigured or less-configured Tool."@en ;
-	sh:property [
-		sh:class tool:Tool ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
-		sh:path tool:isConfigurationOf ;
-	] ;
-	sh:targetClass tool:ConfiguredTool ;
-	.
-
 tool:DefensiveTool
 	a
 		owl:Class ,
@@ -298,31 +192,6 @@ tool:DefensiveTool
 	rdfs:label "DefensiveTool"@en ;
 	rdfs:comment "A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding."@en ;
 	sh:targetClass tool:DefensiveTool ;
-	.
-
-tool:DependencyType
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:label "DependencyType"@en ;
-	rdfs:comment "A dependency type is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:dependencyDescription ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:dependencyType ;
-		]
-		;
-	sh:targetClass tool:DependencyType ;
 	.
 
 tool:LibraryType
@@ -404,34 +273,12 @@ tool:Tool
 	sh:targetClass tool:Tool ;
 	.
 
-tool:ToolConfigurationTypeFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "ToolConfigurationTypeFacet"@en ;
-	rdfs:comment "A tool configuration type facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
-	sh:property
-		[
-			sh:class tool:DependencyType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path tool:dependencies ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:usageContextAssumptions ;
-		]
-		;
-	sh:targetClass tool:ToolConfigurationTypeFacet ;
-	.
 
 tool:buildConfiguration
 	a owl:ObjectProperty ;
 	rdfs:label "buildConfiguration"@en ;
 	rdfs:comment "How the build utility was configured for a particular build of a particular software."@en ;
-	rdfs:range tool:BuildConfigurationType ;
+	rdfs:range configuration:Configuration ;
 	.
 
 tool:buildID
@@ -518,20 +365,6 @@ tool:compilers
 	rdfs:range tool:CompilerType ;
 	.
 
-tool:configurationSettingDescription
-	a owl:DatatypeProperty ;
-	rdfs:label "configurationSettingDescription"@en ;
-	rdfs:comment "Description of the configuration settings for a particular build of a particular software."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:configurationSettings
-	a owl:ObjectProperty ;
-	rdfs:label "configurationSettings"@en ;
-	rdfs:comment "The configuration settings for a particular build of a particular software."@en ;
-	rdfs:range tool:ConfigurationSettingType ;
-	.
-
 tool:cpeid
 	a owl:DatatypeProperty ;
 	rdfs:label "cpeid"@en ;
@@ -544,72 +377,6 @@ tool:creator
 	rdfs:label "creator"@en ;
 	rdfs:comment "The creator organization for a particular tool."@en ;
 	rdfs:range identity:Identity ;
-	.
-
-tool:dependencies
-	a owl:ObjectProperty ;
-	rdfs:label "dependencies"@en ;
-	rdfs:comment "The relevant dependencies for a tool."@en ;
-	rdfs:range tool:DependencyType ;
-	.
-
-tool:dependencyDescription
-	a owl:DatatypeProperty ;
-	rdfs:label "dependencyDescription"@en ;
-	rdfs:comment "A description of a tool dependency."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:dependencyType
-	a owl:DatatypeProperty ;
-	rdfs:label "dependencyType"@en ;
-	rdfs:comment "The type of a tool dependency."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:isConfigurationOf
-	a
-		owl:ObjectProperty ,
-		owl:IrreflexiveProperty
-		;
-	rdfs:label "itemObject"@en ;
-	rdfs:comment "The Tool which has been configured to run in a more specified manner."@en ;
-	rdfs:range tool:Tool ;
-	.
-
-tool:itemDescription
-	a owl:DatatypeProperty ;
-	rdfs:label "itemDescription"@en ;
-	rdfs:comment "A description of a configuration item."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:itemName
-	a owl:DatatypeProperty ;
-	rdfs:label "itemName"@en ;
-	rdfs:comment "The name of a configuration item."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:itemObject
-	a owl:ObjectProperty ;
-	rdfs:label "itemObject"@en ;
-	rdfs:comment "The value of a configuration setting instance."@en ;
-	rdfs:range core:UcoObject ;
-	.
-
-tool:itemType
-	a owl:DatatypeProperty ;
-	rdfs:label "itemType"@en ;
-	rdfs:comment "The type of a configuration item."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:itemValue
-	a owl:DatatypeProperty ;
-	rdfs:label "itemValue"@en ;
-	rdfs:comment "The value of a configuration setting instance."@en ;
-	rdfs:range xsd:string ;
 	.
 
 tool:libraries
@@ -661,17 +428,9 @@ tool:toolType
 	rdfs:range xsd:string ;
 	.
 
-tool:usageContextAssumptions
-	a owl:DatatypeProperty ;
-	rdfs:label "usageContextAssumptions"@en ;
-	rdfs:comment "dDescriptions of the various relevant usage context assumptions for this tool ."@en ;
-	rdfs:range xsd:string ;
-	.
-
 tool:version
 	a owl:DatatypeProperty ;
 	rdfs:label "version"@en ;
 	rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
 	rdfs:range xsd:string ;
 	.
-
