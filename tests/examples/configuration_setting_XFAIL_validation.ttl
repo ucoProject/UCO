@@ -11,7 +11,7 @@
 	sh:result [
 		a sh:ValidationResult ;
 		sh:focusNode <http://example.org/kb/setting-3> ;
-		sh:resultMessage 'Node kb:setting-3 does not conform to exactly one shape in [ sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path tool:itemObject ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path tool:itemValue ] ] , [ sh:property [ sh:class core:UcoObject ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:BlankNodeOrIRI ; sh:path tool:itemObject ] ] , [ sh:property [ sh:datatype xsd:string ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:Literal ; sh:path tool:itemValue ] ]' ;
+		sh:resultMessage 'Node kb:setting-3 does not conform to exactly one shape in [ sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path tool:itemObject ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path tool:itemValue ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path tool:itemObject ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path tool:itemValue ] ]' ;
 		sh:resultSeverity sh:Violation ;
 		sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 		sh:sourceShape tool:ConfigurationSettingType ;
