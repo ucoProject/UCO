@@ -8,11 +8,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
-	rdf:first co:itemContent ;
-	rdf:rest rdf:nil ;
-	.
-
-[]
 	a sh:ValidationReport ;
 	sh:conforms "false"^^xsd:boolean ;
 	sh:result

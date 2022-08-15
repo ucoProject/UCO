@@ -3514,17 +3514,6 @@ observable:Hostname
 	sh:targetClass observable:Hostname ;
 	.
 
-observable:HuaweiFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "HuaweiPhoneFacet"@en-US ;
-	rdfs:comment "A Huawei phone facet is grouping of characteristics unique to a smart phone that applies the HarmonyOS mobile operating system."@en-US ;
-	sh:targetClass observable:HuaweiPhoneFacet ;
-	.
-
 observable:HuaweiPhone
 	a
 		owl:Class ,
@@ -3534,6 +3523,17 @@ observable:HuaweiPhone
 	rdfs:label "HuaweiPhone"@en-US ;
 	rdfs:comment "A Huawei phone is a smart phone that applies the HarmonyOS mobile operating system."@en-US ;
 	sh:targetClass observable:HuaweiPhone ;
+	.
+
+observable:HuaweiPhoneFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "HuaweiPhoneFacet"@en-US ;
+	rdfs:comment "A Huawei phone facet is grouping of characteristics unique to a smart phone that applies the HarmonyOS mobile operating system."@en-US ;
+	sh:targetClass observable:HuaweiPhoneFacet ;
 	.
 
 observable:ICCID
@@ -9043,17 +9043,6 @@ observable:X509V3ExtensionsFacet
 	sh:targetClass observable:X509V3ExtensionsFacet ;
 	.
 
-observable:XiaomiFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "XiaomiPhoneFacet"@en-US ;
-	rdfs:comment "A Xiaomi phone facet is grouping of characteristics unique to a smart phone that applies the MUIU mobile operating system."@en-US ;
-	sh:targetClass observable:XiaomiPhoneFacet ;
-	.
-
 observable:XiaomiPhone
 	a
 		owl:Class ,
@@ -9063,6 +9052,17 @@ observable:XiaomiPhone
 	rdfs:label "XiaomiPhone"@en-US ;
 	rdfs:comment "A Xiaomi phone is a smart phone that applies the MIUI mobile operating system."@en-US ;
 	sh:targetClass observable:XiaomiPhone ;
+	.
+
+observable:XiaomiPhoneFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "XiaomiPhoneFacet"@en-US ;
+	rdfs:comment "A Xiaomi phone facet is grouping of characteristics unique to a smart phone that applies the MUIU mobile operating system."@en-US ;
+	sh:targetClass observable:XiaomiPhoneFacet ;
 	.
 
 observable:abbreviation
