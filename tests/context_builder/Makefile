@@ -46,6 +46,7 @@ context-concise.json: \
   $(top_srcdir)/src/uco_jsonld_context_builder.py
 	source $(tests_srcdir)/venv/bin/activate \
 	  && python3 $(top_srcdir)/src/uco_jsonld_context_builder.py \
+	    --concise \
 	    --output __$@
 	# Normalize generated file.
 	python3 -m json.tool \
@@ -59,7 +60,6 @@ context-minimal.json: \
   $(top_srcdir)/src/uco_jsonld_context_builder.py
 	source $(tests_srcdir)/venv/bin/activate \
 	  && python3 $(top_srcdir)/src/uco_jsonld_context_builder.py \
-	    --concise \
 	    --output __$@
 	# Normalize generated file.
 	python3 -m json.tool \
