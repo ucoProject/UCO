@@ -6,6 +6,7 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix co: <http://purl.org/co/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
@@ -184,7 +185,16 @@ observable:AccountFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:AccountTypeVocab ;
-					sh:in vocabulary:AccountTypeVocab-members ;
+					sh:in (
+						"ldap"^^vocabulary:AccountTypeVocab
+						"nis"^^vocabulary:AccountTypeVocab
+						"openid"^^vocabulary:AccountTypeVocab
+						"radius"^^vocabulary:AccountTypeVocab
+						"tacacs"^^vocabulary:AccountTypeVocab
+						"unix"^^vocabulary:AccountTypeVocab
+						"windows_domain"^^vocabulary:AccountTypeVocab
+						"windows_local"^^vocabulary:AccountTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -432,22 +442,6 @@ observable:ArchiveFileFacet
 		]
 		;
 	sh:targetClass observable:ArchiveFileFacet ;
-	.
-
-observable:AttachmentFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "AttachmentFacet"@en ;
-	rdfs:comment "An attachment facet is a grouping of characteristics unique to the inclusion of an associated object as part of a message."@en ;
-	sh:property [
-		sh:class observable:ObservableObject ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
-		sh:path observable:url ;
-	] ;
-	sh:targetClass observable:AttachmentFacet ;
 	.
 
 observable:Audio
@@ -1196,7 +1190,11 @@ observable:ContactAddress
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactAddressScopeVocab ;
-					sh:in vocabulary:ContactAddressScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactAddressScopeVocab
+						"work"^^vocabulary:ContactAddressScopeVocab
+						"school"^^vocabulary:ContactAddressScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1313,7 +1311,12 @@ observable:ContactEmail
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactEmailScopeVocab ;
-					sh:in vocabulary:ContactEmailScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactEmailScopeVocab
+						"work"^^vocabulary:ContactEmailScopeVocab
+						"school"^^vocabulary:ContactEmailScopeVocab
+						"cloud"^^vocabulary:ContactEmailScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1574,7 +1577,16 @@ observable:ContactPhone
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactPhoneScopeVocab ;
-					sh:in vocabulary:ContactPhoneScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactPhoneScopeVocab
+						"work"^^vocabulary:ContactPhoneScopeVocab
+						"school"^^vocabulary:ContactPhoneScopeVocab
+						"mobile"^^vocabulary:ContactPhoneScopeVocab
+						"main"^^vocabulary:ContactPhoneScopeVocab
+						"home fax"^^vocabulary:ContactPhoneScopeVocab
+						"work fax"^^vocabulary:ContactPhoneScopeVocab
+						"pager"^^vocabulary:ContactPhoneScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1648,7 +1660,11 @@ observable:ContactSIP
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactSIPScopeVocab ;
-					sh:in vocabulary:ContactSIPScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactSIPScopeVocab
+						"work"^^vocabulary:ContactSIPScopeVocab
+						"school"^^vocabulary:ContactSIPScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1698,7 +1714,12 @@ observable:ContactURL
 			sh:or (
 				[
 					sh:datatype vocabulary:ContactURLScopeVocab ;
-					sh:in vocabulary:ContactURLScopeVocab-members ;
+					sh:in (
+						"home"^^vocabulary:ContactURLScopeVocab
+						"work"^^vocabulary:ContactURLScopeVocab
+						"school"^^vocabulary:ContactURLScopeVocab
+						"homepage"^^vocabulary:ContactURLScopeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -1806,7 +1827,11 @@ observable:ContentDataFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:EndiannessTypeVocab ;
-					sh:in vocabulary:EndiannessTypeVocab-members ;
+					sh:in (
+						"Big-endian"^^vocabulary:EndiannessTypeVocab
+						"Little-endian"^^vocabulary:EndiannessTypeVocab
+						"Middle-endian"^^vocabulary:EndiannessTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -2425,12 +2450,6 @@ observable:EmailMessageFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:inReplyTo ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:sender ;
 		] ,
 		[
@@ -2468,14 +2487,12 @@ observable:EmailMessageFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMimeEncoded ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMultipart ;
 		] ,
@@ -2520,6 +2537,12 @@ observable:EmailMessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contentType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:inReplyTo ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2678,7 +2701,19 @@ observable:EventFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2690,13 +2725,25 @@ observable:EventFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:eventID ;
+			sh:path observable:eventRecordID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:eventText ;
+			sh:path observable:eventRecordRaw ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:eventRecordServiceName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:eventRecordText ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2870,13 +2917,6 @@ observable:FileFacet
 	rdfs:comment "A file facet is a grouping of characteristics unique to the storage of a file (computer resource for recording data discretely in a computer storage device) on a file system (process that manages how and where data on a storage device is stored, accessed and managed). [based on https://en.wikipedia.org/Computer_file and https://www.techopedia.com/definition/5510/file-system]"@en ;
 	sh:property
 		[
-			rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:sizeInBytes ;
-		] ,
-		[
 			sh:datatype xsd:boolean ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isDirectory ;
@@ -2904,6 +2944,13 @@ observable:FileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:description "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:sizeInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -3777,7 +3824,13 @@ observable:MemoryFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:MemoryBlockTypeVocab ;
-					sh:in vocabulary:MemoryBlockTypeVocab-members ;
+					sh:in (
+						"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
+						"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
+						"Initialized"^^vocabulary:MemoryBlockTypeVocab
+						"Overlay"^^vocabulary:MemoryBlockTypeVocab
+						"Uninitialized"^^vocabulary:MemoryBlockTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -3881,15 +3934,50 @@ observable:MessageThreadFacet
 	rdfs:comment "A message thread facet is a grouping of characteristics unique to a running commentary of electronic messages pertaining to one topic or question."@en ;
 	sh:property
 		[
-			sh:class observable:ObservableObject ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:message ;
+			sh:class observable:Message ;
+			sh:description "The contents of ordered items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				co:item
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of origin items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				types:threadOriginItem
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of terminal items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				types:threadTerminalItem
+				co:itemContent
+			) ;
+		] ,
+		[
+			sh:class observable:Message ;
+			sh:description "The contents of unordered items in the Thread linked by messageThread must be Message objects."@en ;
+			sh:path (
+				observable:messageThread
+				co:element
+			) ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:participant ;
+		] ,
+		[
+			sh:class types:Thread ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:messageThread ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
@@ -4475,39 +4563,16 @@ observable:NetworkSocketAddressFamily
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "af_appletalk" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "af_bth" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "af_inet" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "af_inet6" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "af_ipx" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "af_irda" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "af_netbios" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "af_unspec" ;
-										rdf:rest rdf:nil ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"af_appletalk"
+			"af_bth"
+			"af_inet"
+			"af_inet6"
+			"af_ipx"
+			"af_irda"
+			"af_netbios"
+			"af_unspec"
+		) ;
 	] ;
 	.
 
@@ -4515,107 +4580,33 @@ observable:NetworkSocketProtocolFamily
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "pf_appletalk" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "pf_ash" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "pf_atmpvc" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "pf_atmsvc" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "pf_ax25" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "pf_bluetooth" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "pf_bridge" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "pf_decnet" ;
-										rdf:rest [
-											a rdf:List ;
-											rdf:first "pf_econet" ;
-											rdf:rest [
-												a rdf:List ;
-												rdf:first "pf_inet" ;
-												rdf:rest [
-													a rdf:List ;
-													rdf:first "pf_inet6" ;
-													rdf:rest [
-														a rdf:List ;
-														rdf:first "pf_ipx" ;
-														rdf:rest [
-															a rdf:List ;
-															rdf:first "pf_irda" ;
-															rdf:rest [
-																a rdf:List ;
-																rdf:first "pf_key" ;
-																rdf:rest [
-																	a rdf:List ;
-																	rdf:first "pf_netbeui" ;
-																	rdf:rest [
-																		a rdf:List ;
-																		rdf:first "pf_netlink" ;
-																		rdf:rest [
-																			a rdf:List ;
-																			rdf:first "pf_netrom" ;
-																			rdf:rest [
-																				a rdf:List ;
-																				rdf:first "pf_packet" ;
-																				rdf:rest [
-																					a rdf:List ;
-																					rdf:first "pf_pppox" ;
-																					rdf:rest [
-																						a rdf:List ;
-																						rdf:first "pf_rose" ;
-																						rdf:rest [
-																							a rdf:List ;
-																							rdf:first "pf_route" ;
-																							rdf:rest [
-																								a rdf:List ;
-																								rdf:first "pf_security" ;
-																								rdf:rest [
-																									a rdf:List ;
-																									rdf:first "pf_sna" ;
-																									rdf:rest [
-																										a rdf:List ;
-																										rdf:first "pf_wanpipe" ;
-																										rdf:rest [
-																											a rdf:List ;
-																											rdf:first "pf_x25" ;
-																											rdf:rest rdf:nil ;
-																										] ;
-																									] ;
-																								] ;
-																							] ;
-																						] ;
-																					] ;
-																				] ;
-																			] ;
-																		] ;
-																	] ;
-																] ;
-															] ;
-														] ;
-													] ;
-												] ;
-											] ;
-										] ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"pf_appletalk"
+			"pf_ash"
+			"pf_atmpvc"
+			"pf_atmsvc"
+			"pf_ax25"
+			"pf_bluetooth"
+			"pf_bridge"
+			"pf_decnet"
+			"pf_econet"
+			"pf_inet"
+			"pf_inet6"
+			"pf_ipx"
+			"pf_irda"
+			"pf_key"
+			"pf_netbeui"
+			"pf_netlink"
+			"pf_netrom"
+			"pf_packet"
+			"pf_pppox"
+			"pf_rose"
+			"pf_route"
+			"pf_security"
+			"pf_sna"
+			"pf_wanpipe"
+			"pf_x25"
+		) ;
 	] ;
 	.
 
@@ -4623,27 +4614,13 @@ observable:NetworkSocketType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "sock_dgram" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "sock_raw" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "sock_rdm" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "sock_seqpacket" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "sock_stream" ;
-							rdf:rest rdf:nil ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"sock_dgram"
+			"sock_raw"
+			"sock_rdm"
+			"sock_seqpacket"
+			"sock_stream"
+		) ;
 	] ;
 	.
 
@@ -5151,6 +5128,17 @@ observable:ProcessFacet
 	sh:targetClass observable:ProcessFacet ;
 	.
 
+observable:ProcessThread
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "ProcessThread"@en ;
+	rdfs:comment "A process thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
+	sh:targetClass observable:ProcessThread ;
+	.
+
 observable:Profile
 	a
 		owl:Class ,
@@ -5366,59 +5354,21 @@ observable:RegistryDatatype
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "reg_binary" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "reg_dword" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "reg_dword_big_endian" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "reg_expand_sz" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "reg_full_resource_descriptor" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "reg_invalid_type" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "reg_link" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "reg_multi_sz" ;
-										rdf:rest [
-											a rdf:List ;
-											rdf:first "reg_none" ;
-											rdf:rest [
-												a rdf:List ;
-												rdf:first "reg_qword" ;
-												rdf:rest [
-													a rdf:List ;
-													rdf:first "reg_resource_list" ;
-													rdf:rest [
-														a rdf:List ;
-														rdf:first "reg_resource_requirements_list" ;
-														rdf:rest [
-															a rdf:List ;
-															rdf:first "reg_sz" ;
-															rdf:rest rdf:nil ;
-														] ;
-													] ;
-												] ;
-											] ;
-										] ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"reg_binary"
+			"reg_dword"
+			"reg_dword_big_endian"
+			"reg_expand_sz"
+			"reg_full_resource_descriptor"
+			"reg_invalid_type"
+			"reg_link"
+			"reg_multi_sz"
+			"reg_none"
+			"reg_qword"
+			"reg_resource_list"
+			"reg_resource_requirements_list"
+			"reg_sz"
+		) ;
 	] ;
 	.
 
@@ -5925,7 +5875,12 @@ observable:TaskActionType
 			sh:or (
 				[
 					sh:datatype vocabulary:TaskActionTypeVocab ;
-					sh:in vocabulary:TaskActionTypeVocab-members ;
+					sh:in (
+						"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
+						"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
+						"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
+						"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -5935,17 +5890,6 @@ observable:TaskActionType
 		]
 		;
 	sh:targetClass observable:TaskActionType ;
-	.
-
-observable:Thread
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "Thread"@en ;
-	rdfs:comment "A thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
-	sh:targetClass observable:Thread ;
 	.
 
 observable:TriggerType
@@ -6035,7 +5979,16 @@ observable:TriggerType
 			sh:or (
 				[
 					sh:datatype vocabulary:TriggerFrequencyVocab ;
-					sh:in vocabulary:TriggerFrequencyVocab-members ;
+					sh:in (
+						"TASK_EVENT_TRIGGER_AT_LOGON"^^vocabulary:TriggerFrequencyVocab
+						"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"^^vocabulary:TriggerFrequencyVocab
+						"TASK_EVENT_TRIGGER_ON_IDLE"^^vocabulary:TriggerFrequencyVocab
+						"TASK_TIME_TRIGGER_DAILY"^^vocabulary:TriggerFrequencyVocab
+						"TASK_TIME_TRIGGER_MONTHLYDATE"^^vocabulary:TriggerFrequencyVocab
+						"TASK_TIME_TRIGGER_MONTHLYDOW"^^vocabulary:TriggerFrequencyVocab
+						"TASK_TIME_TRIGGER_ONCE"^^vocabulary:TriggerFrequencyVocab
+						"TASK_TIME_TRIGGER_WEEKLY"^^vocabulary:TriggerFrequencyVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -6048,7 +6001,15 @@ observable:TriggerType
 			sh:or (
 				[
 					sh:datatype vocabulary:TriggerTypeVocab ;
-					sh:in vocabulary:TriggerTypeVocab-members ;
+					sh:in (
+						"TASK_TRIGGER_BOOT"^^vocabulary:TriggerTypeVocab
+						"TASK_TRIGGER_EVENT"^^vocabulary:TriggerTypeVocab
+						"TASK_TRIGGER_IDLE"^^vocabulary:TriggerTypeVocab
+						"TASK_TRIGGER_LOGON"^^vocabulary:TriggerTypeVocab
+						"TASK_TRIGGER_REGISTRATION"^^vocabulary:TriggerTypeVocab
+						"TASK_TRIGGER_SESSION_STATE_CHANGE"^^vocabulary:TriggerTypeVocab
+						"TASK_TRIGGER_TIME"^^vocabulary:TriggerTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -6325,12 +6286,6 @@ observable:URLFacet
 			sh:path observable:host ;
 		] ,
 		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:userName ;
-		] ,
-		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -6372,6 +6327,12 @@ observable:URLFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:scheme ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:userName ;
 		]
 		;
 	sh:targetClass observable:URLFacet ;
@@ -6565,7 +6526,19 @@ observable:URLVisitFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:URLTransitionTypeVocab ;
-					sh:in vocabulary:URLTransitionTypeVocab-members ;
+					sh:in (
+						"link"^^vocabulary:URLTransitionTypeVocab
+						"typed"^^vocabulary:URLTransitionTypeVocab
+						"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
+						"auto_subframe"^^vocabulary:URLTransitionTypeVocab
+						"manual_subframe"^^vocabulary:URLTransitionTypeVocab
+						"generated"^^vocabulary:URLTransitionTypeVocab
+						"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
+						"form_submit"^^vocabulary:URLTransitionTypeVocab
+						"reload"^^vocabulary:URLTransitionTypeVocab
+						"keyword"^^vocabulary:URLTransitionTypeVocab
+						"keyword_generated"^^vocabulary:URLTransitionTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -6894,7 +6867,27 @@ observable:WhoIsFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:WhoisStatusTypeVocab ;
-					sh:in vocabulary:WhoisStatusTypeVocab-members ;
+					sh:in (
+						"ADD_PERIOD"^^vocabulary:WhoisStatusTypeVocab
+						"AUTO_RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
+						"CLIENT_DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+						"CLIENT_HOLD"^^vocabulary:WhoisStatusTypeVocab
+						"CLIENT_RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+						"CLIENT_TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+						"CLIENT_UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+						"DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+						"HOLD"^^vocabulary:WhoisStatusTypeVocab
+						"INACTIVE"^^vocabulary:WhoisStatusTypeVocab
+						"OK"^^vocabulary:WhoisStatusTypeVocab
+						"PENDING_DELETE_RESTORABLE"^^vocabulary:WhoisStatusTypeVocab
+						"PENDING_DELETE_SCHEDULED_FOR_RELEASE"^^vocabulary:WhoisStatusTypeVocab
+						"PENDING_RESTORE"^^vocabulary:WhoisStatusTypeVocab
+						"RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
+						"RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+						"TRANSFER_PERIOD"^^vocabulary:WhoisStatusTypeVocab
+						"TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+						"UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -6939,7 +6932,11 @@ observable:WhoisContactFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:WhoisContactTypeVocab ;
-					sh:in vocabulary:WhoisContactTypeVocab-members ;
+					sh:in (
+						"ADMIN"^^vocabulary:WhoisContactTypeVocab
+						"BILLING"^^vocabulary:WhoisContactTypeVocab
+						"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -7379,19 +7376,11 @@ observable:WindowsPEBinaryType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "dll" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "exe" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "sys" ;
-					rdf:rest rdf:nil ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"dll"
+			"exe"
+			"sys"
+		) ;
 	] ;
 	.
 
@@ -7923,27 +7912,13 @@ observable:WindowsServiceStartType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_auto_start" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_boot_start" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_demand_start" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_disabled" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "service_system_alert" ;
-							rdf:rest rdf:nil ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_auto_start"
+			"service_boot_start"
+			"service_demand_start"
+			"service_disabled"
+			"service_system_alert"
+		) ;
 	] ;
 	.
 
@@ -7951,35 +7926,15 @@ observable:WindowsServiceStatus
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_continue_pending" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_pause_pending" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_paused" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_running" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "service_start_pending" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "service_stop_pending" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "service_stopped" ;
-									rdf:rest rdf:nil ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_continue_pending"
+			"service_pause_pending"
+			"service_paused"
+			"service_running"
+			"service_start_pending"
+			"service_stop_pending"
+			"service_stopped"
+		) ;
 	] ;
 	.
 
@@ -7987,23 +7942,12 @@ observable:WindowsServiceType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_file_system_driver" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_kernel_driver" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_win32_own_process" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_win32_share_process" ;
-						rdf:rest rdf:nil ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_file_system_driver"
+			"service_kernel_driver"
+			"service_win32_own_process"
+			"service_win32_share_process"
+		) ;
 	] ;
 	.
 
@@ -8190,7 +8134,21 @@ observable:WindowsTaskFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:TaskFlagVocab ;
-					sh:in vocabulary:TaskFlagVocab-members ;
+					sh:in (
+						"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_INTERACTIVE"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_KILL_ON_IDLE_END"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_RESTART_ON_IDLE_RESUME"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_START_ONLY_IF_IDLE"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_SYSTEM_REQUIRED"^^vocabulary:TaskFlagVocab
+						"TASK_FLAG_ZERO"^^vocabulary:TaskFlagVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -8203,7 +8161,14 @@ observable:WindowsTaskFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:TaskPriorityVocab ;
-					sh:in vocabulary:TaskPriorityVocab-members ;
+					sh:in (
+						"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+						"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+						"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+						"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+						"NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+						"REALTIME_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:integer ;
@@ -8219,7 +8184,32 @@ observable:WindowsTaskFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:TaskStatusVocab ;
-					sh:in vocabulary:TaskStatusVocab-members ;
+					sh:in (
+						"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
+						"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
+						"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
+						"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
+						"SCHED_E_INVALID_TASK"^^vocabulary:TaskStatusVocab
+						"SCHED_E_NO_SECURITY_SERVICES"^^vocabulary:TaskStatusVocab
+						"SCHED_E_SERVICE_NOT_INSTALLED"^^vocabulary:TaskStatusVocab
+						"SCHED_E_SERVICE_NOT_RUNNING"^^vocabulary:TaskStatusVocab
+						"SCHED_E_TASK_NOT_READY"^^vocabulary:TaskStatusVocab
+						"SCHED_E_TASK_NOT_RUNNING"^^vocabulary:TaskStatusVocab
+						"SCHED_E_TRIGGER_NOT_FOUND"^^vocabulary:TaskStatusVocab
+						"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocabulary:TaskStatusVocab
+						"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocabulary:TaskStatusVocab
+						"SCHED_S_EVENT_TRIGGER"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_DISABLED"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_HAS_NOT_RUN"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_NOT_SCHEDULED"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_NO_MORE_RUNS"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_READY"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_RUNNING"^^vocabulary:TaskStatusVocab
+						"SCHED_S_TASK_TERMINATED"^^vocabulary:TaskStatusVocab
+						"TASK_STATE_QUEUED"^^vocabulary:TaskStatusVocab
+						"TASK_STATE_UNKNOWN"^^vocabulary:TaskStatusVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -8248,7 +8238,7 @@ observable:WindowsThread
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Thread ;
+	rdfs:subClassOf observable:ProcessThread ;
 	rdfs:label "WindowsThread"@en ;
 	rdfs:comment "A Windows thread is a single thread of execution within a Windows process."@en ;
 	sh:targetClass observable:WindowsThread ;
@@ -8367,7 +8357,15 @@ observable:WindowsVolumeFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:WindowsDriveTypeVocab ;
-					sh:in vocabulary:WindowsDriveTypeVocab-members ;
+					sh:in (
+						"DRIVE_CDROM"^^vocabulary:WindowsDriveTypeVocab
+						"DRIVE_FIXED"^^vocabulary:WindowsDriveTypeVocab
+						"DRIVE_NO_ROOT_DIR"^^vocabulary:WindowsDriveTypeVocab
+						"DRIVE_RAMDISK"^^vocabulary:WindowsDriveTypeVocab
+						"DRIVE_REMOTE"^^vocabulary:WindowsDriveTypeVocab
+						"DRIVE_REMOVABLE"^^vocabulary:WindowsDriveTypeVocab
+						"DRIVE_UNKNOWN"^^vocabulary:WindowsDriveTypeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -8446,7 +8444,15 @@ observable:WirelessNetworkConnectionFacet
 			sh:or (
 				[
 					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
-					sh:in vocabulary:WirelessNetworkSecurityModeVocab-members ;
+					sh:in (
+						"None"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
+						"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -9854,10 +9860,31 @@ observable:environmentVariables
 	rdfs:range types:Dictionary ;
 	.
 
-observable:eventID
+observable:eventRecordID
 	a owl:DatatypeProperty ;
-	rdfs:label "eventID"@en ;
-	rdfs:comment "The identifier of the event."@en ;
+	rdfs:label "eventRecordID"@en ;
+	rdfs:comment "The identifier of the event record."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventRecordRaw
+	a owl:DatatypeProperty ;
+	rdfs:label "eventRecordRaw"@en ;
+	rdfs:comment "The complete raw content of the event record."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventRecordServiceName
+	a owl:DatatypeProperty ;
+	rdfs:label "eventServiceName"@en ;
+	rdfs:comment "The service that generated the event record. A single application can have multiple services generating event records."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:eventRecordText
+	a owl:DatatypeProperty ;
+	rdfs:label "eventRecordText"@en ;
+	rdfs:comment "The textual representation of the event."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -9865,13 +9892,6 @@ observable:eventStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "eventStatus"@en ;
 	rdfs:comment "The status of the event, for instance accepted, pending or cancelled."@en ;
-	rdfs:range xsd:string ;
-	.
-
-observable:eventText
-	a owl:DatatypeProperty ;
-	rdfs:label "eventText"@en ;
-	rdfs:comment "The textual representation of the event."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -10382,10 +10402,10 @@ observable:impHash
 	.
 
 observable:inReplyTo
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "inReplyTo"@en ;
 	rdfs:comment "One of more unique identifiers for identifying the email(s) this email is a reply to."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:inetLocation
@@ -10828,12 +10848,6 @@ observable:maxRunTime
 	rdfs:range xsd:integer ;
 	.
 
-observable:message
-	a owl:ObjectProperty ;
-	rdfs:label "message"@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:messageID
 	a owl:DatatypeProperty ;
 	rdfs:label "messageID"@en ;
@@ -10846,6 +10860,12 @@ observable:messageText
 	rdfs:label "messageText"@en ;
 	rdfs:comment "The contents of the message."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:messageThread
+	a owl:ObjectProperty ;
+	rdfs:label "messageThread"@en ;
+	rdfs:range types:Thread ;
 	.
 
 observable:messageType
@@ -11737,7 +11757,13 @@ observable:regionalInternetRegistry-shape-value-not-vocabulary-member
 	sh:or (
 		[
 			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-			sh:in vocabulary:RegionalRegistryTypeVocab-members ;
+			sh:in (
+				"APNIC"^^vocabulary:RegionalRegistryTypeVocab
+				"ARIN"^^vocabulary:RegionalRegistryTypeVocab
+				"AfriNIC"^^vocabulary:RegionalRegistryTypeVocab
+				"LACNIC"^^vocabulary:RegionalRegistryTypeVocab
+				"RIPE NCC"^^vocabulary:RegionalRegistryTypeVocab
+			) ;
 		]
 		[
 			sh:datatype xsd:string ;
@@ -12584,10 +12610,10 @@ observable:userLocationString
 	.
 
 observable:userName
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "userName"@en ;
 	rdfs:comment "Username used to authenticate to this resource."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:validityNotAfter
