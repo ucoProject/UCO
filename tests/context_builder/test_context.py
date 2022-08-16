@@ -53,8 +53,10 @@ WHERE {
   ?nAction uco-action:result ?nResult .
 }
 """):
+#  ?nAction uco-action:result ?nResult .
         computed += 1
-
+    for triple in sorted(graph.triples((None, None, None))):
+        logging.debug(triple)
     try:
         assert expected == computed
     except AssertionError:
@@ -70,3 +72,14 @@ def test_context_concise() -> None:
 
 def test_context_minimal() -> None:
     _test_graph_context_query("action_result_NO_CONTEXT.json", "context-minimal.json")
+
+
+#def test_context_concise2() -> None:
+#    _test_graph_context_query("action_result_concise_NO_CONTEXT.json", "context-concise.json")
+
+
+# def test_device_context_concise() -> None:
+#   _test_graph_context_query("device_NO_CONTEXT.json", "context-concise.json")
+ 
+# def test_device_context_minimal() -> None:
+#    _test_graph_context_query("device_NO_CONTEXT.json", "context-minimal.json")

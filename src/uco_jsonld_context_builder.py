@@ -33,45 +33,46 @@ import sys
 import re
 
 import rdflib
-from rdflib.namespace import Namespace, NamespaceManager
 
 _logger = logging.getLogger(os.path.basename(__file__))
 
 
 class ObjectPropertyInfo:
     """Class to hold ObjectProperty info which will be used to build
-     context"""
+    context"""
+
     def __init__(self):
         self.ns_prefix = None
         self.root_class_name = None
         self.shacl_count_lte_1 = None
         self.shacl_property_bnode = None
-    
+
     def __get_json(self, hdr) -> str:
         json_str = hdr
-        json_str += "\t\"@type\":\"@id\""
+        json_str += '\t"@type":"@id"'
         if self.shacl_count_lte_1 is not True:
-            json_str += ",\n\t\"@container\":\"@set\"\n"
+            json_str += ',\n\t"@container":"@set"\n'
         else:
             json_str += "\n"
 
         json_str += "},\n"
-        return json_str        
+        return json_str
 
     def get_minimal_json(self) -> str:
-        hdr_str = f"\"{self.ns_prefix}:{self.root_class_name}\":{{\n"
+        hdr_str = f'"{self.ns_prefix}:{self.root_class_name}":{{\n'
         json_str = self.__get_json(hdr=hdr_str)
         return json_str
 
     def get_concise_json(self) -> str:
-        hdr_str = f"\"{self.root_class_name}\":{{\n"
+        hdr_str = f'"{self.root_class_name}":{{\n'
         json_str = self.__get_json(hdr=hdr_str)
         return json_str
 
 
 class DatatypePropertyInfo:
     """Class to hold DatatypeProperty info which will be used to build
-     context"""
+    context"""
+
     def __init__(self):
         self.ns_prefix = None
         self.root_property_name = None
@@ -81,25 +82,24 @@ class DatatypePropertyInfo:
 
     def __get_json(self, hdr) -> str:
         json_str = hdr
-        json_str += \
-            f"\t\"@id\":\"{self.ns_prefix}:{self.root_property_name}\""
-        if (self.prefixed_datatype_name is not None):
+        json_str += f'\t"@id":"{self.ns_prefix}:{self.root_property_name}"'
+        if self.prefixed_datatype_name is not None:
             json_str += ",\n"
-            json_str += f"\t\"@type\":\"{self.prefixed_datatype_name}\""
+            json_str += f'\t"@type":"{self.prefixed_datatype_name}"'
         if self.shacl_count_lte_1 is not True:
-            json_str += ",\n\t\"@container\":\"@set\"\n"
+            json_str += ',\n\t"@container":"@set"\n'
         else:
             json_str += "\n"
         json_str += "},\n"
-        return json_str        
+        return json_str
 
     def get_minimal_json(self) -> str:
-        hdr_str = f"\"{self.ns_prefix}:{self.root_property_name}\":{{\n"
+        hdr_str = f'"{self.ns_prefix}:{self.root_property_name}":{{\n'
         json_str = self.__get_json(hdr=hdr_str)
         return json_str
 
     def get_concise_json(self) -> str:
-        hdr_str = f"\"{self.root_property_name}\":{{\n"
+        hdr_str = f'"{self.root_property_name}":{{\n'
         json_str = self.__get_json(hdr=hdr_str)
         return json_str
 
@@ -118,11 +118,11 @@ class ContextBuilder:
         self.context_str = ""
 
     def init_context_str(self) -> None:
-        self.context_str = "{\n\t\"@context\":{\n"""
+        self.context_str = '{\n\t"@context":{\n' ""
 
     def close_context_str(self) -> None:
         self.context_str = self.context_str.strip()
-        if self.context_str[-1] == ',':
+        if self.context_str[-1] == ",":
             self.context_str = self.context_str[:-1]
         self.context_str += "\n\t}\n}"
 
@@ -140,8 +140,9 @@ class ContextBuilder:
         self.top_srcdir = pathlib.Path(os.path.dirname(__file__)) / ".."
         top_srcdir = self.top_srcdir
         # Sanity check.
-        assert (top_srcdir / ".git").exists(), \
-            "Hard-coded top_srcdir discovery is no longer correct."
+        assert (
+            top_srcdir / ".git"
+        ).exists(), "Hard-coded top_srcdir discovery is no longer correct."
 
         # 1. Load all ontology files into dictionary of graphs.
 
@@ -186,11 +187,13 @@ class ContextBuilder:
             # print(f"\"{k}\":{self.iri_dict[k]}")
             # prepend "uco-" to specific IRIs
             v = self.iri_dict[k]
-            #_logger.debug(v.split('/'))
-            if ('uco'in v.split('/')) and ('ontology.unifiedcyberontology.org' in v.split('/')):
-                irs_list.append(f"\"uco-{k}\":\"{v}\"")
+            # _logger.debug(v.split('/'))
+            if ("uco" in v.split("/")) and (
+                "ontology.unifiedcyberontology.org" in v.split("/")
+            ):
+                irs_list.append(f'"uco-{k}":"{v}"')
             else:
-                irs_list.append(f"\"{k}\":\"{v}\"")
+                irs_list.append(f'"{k}":"{v}"')
         return irs_list
 
     def add_prefixes_to_cntxt(self) -> None:
@@ -232,11 +235,13 @@ class ContextBuilder:
         "Make sure to do an itter that looks for rdflib.OWL.class"
         # If we cannot find rdf range, skip
         # If rdf range is a blank node, skip
-        for triple in graph.triples((None, rdflib.RDF.type, rdflib.OWL.DatatypeProperty)):
+        for triple in graph.triples(
+            (None, rdflib.RDF.type, rdflib.OWL.DatatypeProperty)
+        ):
             dtp_obj = DatatypePropertyInfo()
             _logger.debug(triple)
-            _logger.debug(triple[0].split('/'))
-            s_triple = triple[0].split('/')
+            _logger.debug(triple[0].split("/"))
+            s_triple = triple[0].split("/")
             root = s_triple[-1]
             ns_prefix = f"{s_triple[-3]}-{s_triple[-2]}"
             # print(ns_prefix, root)
@@ -254,12 +259,16 @@ class ContextBuilder:
             for sh_triple in graph.triples((None, rdflib.SH.path, triple[0])):
                 _logger.debug(f"\t\t**sh_triple:{sh_triple}")
                 dtp_obj.shacl_property_bnode = sh_triple[0]
-                for sh_triple2 in graph.triples((dtp_obj.shacl_property_bnode, rdflib.SH.maxCount, None)):
+                for sh_triple2 in graph.triples(
+                    (dtp_obj.shacl_property_bnode, rdflib.SH.maxCount, None)
+                ):
                     _logger.debug(f"\t\t***sh_triple:{sh_triple2}")
                     _logger.debug(f"\t\t***sh_triple:{sh_triple2[2]}")
                     if int(sh_triple2[2]) <= 1:
                         if dtp_obj.shacl_count_lte_1 is not None:
-                            _logger.debug(f"\t\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}")
+                            _logger.debug(
+                                f"\t\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}"
+                            )
                         dtp_obj.shacl_count_lte_1 = True
                     else:
                         _logger.debug(f"\t\t\t***Large max_count: {sh_triple2[2]}")
@@ -289,7 +298,7 @@ class ContextBuilder:
             op_obj = ObjectPropertyInfo()
             _logger.debug((triple))
             # print(triple[0].split('/'))
-            s_triple = triple[0].split('/')
+            s_triple = triple[0].split("/")
             root = s_triple[-1]
             ns_prefix = f"{s_triple[-3]}-{s_triple[-2]}"
             # print(ns_prefix, root)
@@ -299,12 +308,16 @@ class ContextBuilder:
             for sh_triple in graph.triples((None, rdflib.SH.path, triple[0])):
                 _logger.debug(f"\t**obj_sh_triple:{sh_triple}")
                 op_obj.shacl_property_bnode = sh_triple[0]
-                for sh_triple2 in graph.triples((op_obj.shacl_property_bnode, rdflib.SH.maxCount, None)):
+                for sh_triple2 in graph.triples(
+                    (op_obj.shacl_property_bnode, rdflib.SH.maxCount, None)
+                ):
                     _logger.debug(f"\t\t***sh_triple:{sh_triple2}")
                     _logger.debug(f"\t\t***sh_triple:{sh_triple2[2]}")
                     if int(sh_triple2[2]) <= 1:
                         if op_obj.shacl_count_lte_1 is not None:
-                            _logger.debug(f"\t\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}")
+                            _logger.debug(
+                                f"\t\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}"
+                            )
                         op_obj.shacl_count_lte_1 = True
                     else:
                         _logger.debug(f"\t\t\t***Large max_count: {sh_triple2[2]}")
@@ -331,7 +344,7 @@ class ContextBuilder:
             sys.exit()
 
         for ttl_file in ttl_file_list:
-            with open(ttl_file, 'r') as file:
+            with open(ttl_file, "r") as file:
                 for line in file:
                     if re.search("^@prefix", line):
                         _logger.debug(f"Prefix: {ttl_file}\t{line.strip()}")
@@ -371,7 +384,7 @@ class ContextBuilder:
             for op_obj in self.object_properties_dict[key]:
                 op_str_sect += op_obj.get_minimal_json()
         self.context_str += op_str_sect
-    
+
     def add_concise_object_props_to_cntxt(self) -> None:
         """Adds Object Properties to context string"""
         op_str_sect = ""
@@ -390,22 +403,29 @@ class ContextBuilder:
     def add_key_strings_to_cntxt(self) -> None:
         """Adds id, type, and graph key strings to context string"""
         ks_str = ""
-        ks_str += "\t\"id\":\"@id\",\n"
-        ks_str += "\t\"type\":\"@type\",\n"
-        ks_str += "\t\"value\":\"@value\",\n"
-        ks_str += "\t\"graph\":\"@graph\",\n"
+        ks_str += '\t"id":"@id",\n'
+        ks_str += '\t"type":"@type",\n'
+        ks_str += '\t"value":"@value",\n'
+        ks_str += '\t"graph":"@graph",\n'
 
         self.context_str += ks_str
 
 
 def main():
     argument_parser = argparse.ArgumentParser()
-    argument_parser.add_argument('--debug', action="store_true")
-    argument_parser.add_argument('--concise', action="store_true",
-        help="Creates a \"concise\" context. This is more compact than the \
-        default behavior which creates a \"minimal\" context")
-    argument_parser.add_argument('-o', '--output', help="Output file for context.\
-         Will print to stdout by default.")
+    argument_parser.add_argument("--debug", action="store_true")
+    argument_parser.add_argument(
+        "--concise",
+        action="store_true",
+        help='Creates a "concise" context. This is more compact than the \
+        default behavior which creates a "minimal" context',
+    )
+    argument_parser.add_argument(
+        "-o",
+        "--output",
+        help="Output file for context.\
+         Will print to stdout by default.",
+    )
     args = argument_parser.parse_args()
 
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
@@ -414,10 +434,10 @@ def main():
 
     out_f = None
     if args.output is not None:
-        out_f = open(args.output, 'w')
+        out_f = open(args.output, "w")
 
     cb = ContextBuilder()
-    for i in (cb.get_ttl_files(subdirs=['ontology'])):
+    for i in cb.get_ttl_files(subdirs=["ontology"]):
         _logger.debug(f" Input ttl: {i}")
 
     cb.process_prefixes()
@@ -442,10 +462,6 @@ def main():
         print(cb.context_str)
 
     return
-
-    # TODO: context keyword in graph parse and graph serialize
-    # TODO: black formater FLAKE8 for isort
-    # TODO: check the case-uilities python
 
 
 if __name__ == "__main__":

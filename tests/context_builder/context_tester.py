@@ -23,19 +23,23 @@ def main():
     arg_parser.add_argument("--skip-clean",  action="store_true",
         help="Keeps intermediate test files instead of \
         automatic deletion")	
+    arg_parser.add_argument("--input",  default="action_result_NO_CONTEXT.json",
+        help="input file for testing")	
     arg_parser.add_argument('--concise', action="store_true",
         help="Perform testing on \"concise\" context instead of \"minimal\"")
     args = arg_parser.parse_args()    
-    print(args)
 
     # Test graph file in JSON format
-    test_file = "action_result_NO_CONTEXT.json"
+    # test_file = "action_result_NO_CONTEXT.json"
+    test_file = args.input
     # File to which context will be written
     output_file = "_temp_cntxt.json"
     # Serialization of graph without using context
-    no_cntxt_out = "_test_out_no_cntxt.json-ld"
+    # no_cntxt_out = "_test_out_no_cntxt.json-ld"
+    no_cntxt_out = f"_out_no_cntxt_{test_file}"
     # Serialization of graph using context
-    cntxt_out = "_test_out_cntxt.json-ld"    
+    # cntxt_out = "_test_out_cntxt.json-ld"    
+    cntxt_out = f"_out_ctxt_{test_file}"
     # Execute Context builder
     if args.concise:
         cmd = "python ../../src/uco_jsonld_context_builder.py\
