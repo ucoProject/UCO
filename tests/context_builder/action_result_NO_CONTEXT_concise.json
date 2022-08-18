@@ -2,7 +2,7 @@
     "@context": {
         "kb": "http://example.org/kb/"
     },
-    "@graph": [
+    "graph": [
         {
             "id": "kb:action-1",
             "type": "Action",
