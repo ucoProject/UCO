@@ -375,7 +375,7 @@ observable:ApplicationFacet
 		[
 			sh:class observable:ApplicationVersion ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:installedVersion ;
+			sh:path observable:installedVersionHistory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
@@ -404,20 +404,9 @@ observable:ApplicationVersion
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf core:ClassBase ;
 	rdfs:label "ApplicationVersion"@en ;
-	rdfs:comment "An application version represents a specific version of an application."@en ;
-	sh:targetClass observable:ApplicationVersion ;
-	.
-
-observable:ApplicationVersionFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "ApplicationVersionFacet"@en ;
-	rdfs:comment "An application version facet is a grouping of characteristics unique to a particular software program version."@en ;
+	rdfs:comment "An application version is a grouping of characteristics unique to a particular software program version."@en ;
 	sh:property
 		[
 			sh:datatype xsd:dateTime ;
@@ -10467,9 +10456,9 @@ observable:installDate
 	rdfs:range xsd:dateTime ;
 	.
 
-observable:installedVersion
+observable:installedVersionHistory
 	a owl:ObjectProperty ;
-	rdfs:label "installedVersion"@en ;
+	rdfs:label "installedVersionHistory"@en ;
 	rdfs:comment "Specifies the history of installed application version(s)."@en ;
 	rdfs:range observable:ApplicationVersion ;
 	.
