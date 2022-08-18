@@ -67,7 +67,7 @@ WHERE {
 
 
 def test_context_concise() -> None:
-    _test_graph_context_query("action_result_NO_CONTEXT_minimal.json", "context-concise.json")
+    _test_graph_context_query("action_result_NO_CONTEXT_concise.json", "context-concise.json")
 
 
 def test_context_minimal() -> None:
