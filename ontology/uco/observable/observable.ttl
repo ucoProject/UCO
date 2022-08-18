@@ -7176,6 +7176,24 @@ observable:WindowsComputerSpecificationFacet
 			sh:path observable:windowsTempDirectory ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:lastShutdownDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:osInstallDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:osLastUpgradeDate ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -10694,6 +10712,13 @@ observable:lastRun
 	rdfs:range xsd:dateTime ;
 	.
 
+observable:lastShutdownDate
+	a owl:DatatypeProperty ;
+	rdfs:label "lastShutdownDate"@en ;
+	rdfs:comment "Specifies the date on which the device was last shutdown."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
 observable:lastTimeContacted
 	a owl:DatatypeProperty ;
 	rdfs:label "lastTimeContacted"@en ;
@@ -11256,6 +11281,20 @@ observable:organizationPosition
 	rdfs:label "organizationPosition"@en ;
 	rdfs:comment "Specifies the title or role that a person plays within an organization."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:osInstallDate
+	a owl:DatatypeProperty ;
+	rdfs:label "osInstallDate"@en ;
+	rdfs:comment "Specifies the date on which the operating system (OS) was installed."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+observable:osLastUpgradeDate
+	a owl:DatatypeProperty ;
+	rdfs:label "osLastUpgradeDate"@en ;
+	rdfs:comment "Specifies the date on which the operating system (OS) was last upgraded."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:otherHeaders
