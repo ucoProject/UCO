@@ -572,13 +572,6 @@ observable:BluetoothAddressFacet
 	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "BluetoothAddressFacet"@en ;
 	rdfs:comment "A Bluetooth address facet is a grouping of characteristics unique to a Bluetooth standard conformant identifier assigned to a Bluetooth device to enable routing and management of Bluetooth standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:BluetoothAddressFacet ;
 	.
 
@@ -2377,21 +2370,6 @@ observable:EmailAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "EmailAddressFacet"@en ;
 	rdfs:comment "An email address facet is a grouping of characteristics unique to an identifier for an electronic mailbox to which electronic mail messages (conformant to the Simple Mail Transfer Protocol (SMTP)) are sent from and delivered to."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:EmailAddressFacet ;
 	.
 
@@ -3476,21 +3454,6 @@ observable:IPAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "IPAddressFacet"@en ;
 	rdfs:comment "An IP address facet is a grouping of characteristics unique to an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:IPAddressFacet ;
 	.
 
@@ -3524,13 +3487,6 @@ observable:IPv4AddressFacet
 	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv4AddressFacet"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address facet is a grouping of characteristics unique to an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:IPv4AddressFacet ;
 	.
 
@@ -3553,13 +3509,6 @@ observable:IPv6AddressFacet
 	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv6AddressFacet"@en ;
 	rdfs:comment "An IPv6 (Internet Protocol version 6) address facet is a grouping of characteristics unique to an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:IPv6AddressFacet ;
 	.
 
@@ -3634,21 +3583,6 @@ observable:InstantMessagingAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "InstantMessagingAddressFacet"@en ;
 	rdfs:comment "An instant messaging address facet is a grouping of characteristics unique to an identifier assigned to enable routing and management of instant messaging digital communication."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:InstantMessagingAddressFacet ;
 	.
 
@@ -3710,13 +3644,6 @@ observable:MACAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "MACAddressFacet"@en ;
 	rdfs:comment "A MAC address facet is a grouping of characteristics unique to a media access control standards conformant identifier assigned to a network interface to enable routing and management of communications at the data link layer of a network segment."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:MACAddressFacet ;
 	.
 
@@ -5265,10 +5192,7 @@ observable:PropertyReadEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "PropertyReadEffectFacet"@en ;
 	rdfs:comment "A properties read effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a characteristic is read from an observable object. An example of this would be the current running state of a process."@en ;
 	sh:property
@@ -5486,21 +5410,6 @@ observable:SIPAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "SIPAddressFacet"@en ;
 	rdfs:comment "A SIP address facet is a grouping of characteristics unique to a Session Initiation Protocol (SIP) standards conformant identifier assigned to a user to enable routing and management of SIP standards conformant communication to or from that user loosely coupled from any particular devices."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:SIPAddressFacet ;
 	.
 
@@ -5606,10 +5515,7 @@ observable:SendControlCodeEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "SendControlCodeEffectFacet"@en ;
 	rdfs:comment "A send control code effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a control code, or other control-oriented communication signal, is sent to the observable object. An example of this would be an action sending a control code changing the running state of a process."@en ;
 	sh:property [
@@ -5725,10 +5631,7 @@ observable:StateChangeEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "StateChangeEffectFacet"@en ;
 	rdfs:comment "A state change effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a state of the observable object is changed."@en ;
 	sh:property
@@ -6655,10 +6558,7 @@ observable:ValuesEnumeratedEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "ValuesEnumeratedEffectFacet"@en ;
 	rdfs:comment "A values enumerated effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a value of the observable object is enumerated. An example of this would be the values of a registry key."@en ;
 	sh:property [
@@ -7025,13 +6925,6 @@ observable:WifiAddressFacet
 	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "WifiAddressFacet"@en ;
 	rdfs:comment "A Wi-Fi address facet is a grouping of characteristics unique to a media access control (MAC) standards conformant identifier assigned to a device network interface to enable routing and management of IEEE 802.11 standards-conformant communications to and from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:WifiAddressFacet ;
 	.
 
