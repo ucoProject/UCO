@@ -382,11 +382,6 @@ core:UcoObject
 			sh:path core:tag ;
 		] ,
 		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path core:type ;
-		] ,
-		[
 			sh:datatype types:Identifier ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -591,13 +586,6 @@ core:target
 	rdfs:label "target"@en ;
 	rdfs:comment "The terminating node of a specified relationship."@en ;
 	rdfs:range core:UcoObject ;
-	.
-
-core:type
-	a owl:DatatypeProperty ;
-	rdfs:label "type"@en ;
-	rdfs:comment "The explicitly-defined type of characterization of a concept."@en ;
-	rdfs:range xsd:string ;
 	.
 
 core:value
