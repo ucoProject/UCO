@@ -13,12 +13,8 @@ vocabulary:AccountTypeVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Account Type Vocabulary"@en-US ;
-	owl:oneOf vocabulary:AccountTypeVocab-members ;
-	.
-
-vocabulary:AccountTypeVocab-members
-	rdf:first "ldap"^^vocabulary:AccountTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"ldap"^^vocabulary:AccountTypeVocab
 		"nis"^^vocabulary:AccountTypeVocab
 		"openid"^^vocabulary:AccountTypeVocab
 		"radius"^^vocabulary:AccountTypeVocab
@@ -284,12 +280,8 @@ vocabulary:ActionRelationshipTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Action Relationship Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary for capturing types of relationships between actions."@en-US ;
-	owl:oneOf vocabulary:ActionRelationshipTypeVocab-members ;
-	.
-
-vocabulary:ActionRelationshipTypeVocab-members
-	rdf:first "Dependent_On"^^vocabulary:ActionRelationshipTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"Dependent_On"^^vocabulary:ActionRelationshipTypeVocab
 		"Equivalent_To"^^vocabulary:ActionRelationshipTypeVocab
 		"Followed_By"^^vocabulary:ActionRelationshipTypeVocab
 		"Initiated"^^vocabulary:ActionRelationshipTypeVocab
@@ -304,12 +296,8 @@ vocabulary:ActionStatusTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Action Status Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of action status types."@en-US ;
-	owl:oneOf vocabulary:ActionStatusTypeVocab-members ;
-	.
-
-vocabulary:ActionStatusTypeVocab-members
-	rdf:first "Complete/Finish"^^vocabulary:ActionStatusTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"Complete/Finish"^^vocabulary:ActionStatusTypeVocab
 		"Error"^^vocabulary:ActionStatusTypeVocab
 		"Fail"^^vocabulary:ActionStatusTypeVocab
 		"Ongoing"^^vocabulary:ActionStatusTypeVocab
@@ -477,12 +465,7 @@ vocabulary:ContactAddressScopeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Contact Address Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for address entries of digital contacts."@en ;
-	owl:oneOf vocabulary:ContactAddressScopeVocab-members ;
-	.
-
-vocabulary:ContactAddressScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactAddressScopeVocab ;
-	rdf:rest (
+	owl:oneOf (
 		"home"^^vocabulary:ContactAddressScopeVocab
 		"work"^^vocabulary:ContactAddressScopeVocab
 		"school"^^vocabulary:ContactAddressScopeVocab
@@ -494,12 +477,8 @@ vocabulary:ContactEmailScopeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Contact Email Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for email entries of digital contacts."@en ;
-	owl:oneOf vocabulary:ContactEmailScopeVocab-members ;
-	.
-
-vocabulary:ContactEmailScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactEmailScopeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"home"^^vocabulary:ContactEmailScopeVocab
 		"work"^^vocabulary:ContactEmailScopeVocab
 		"school"^^vocabulary:ContactEmailScopeVocab
 		"cloud"^^vocabulary:ContactEmailScopeVocab
@@ -511,12 +490,8 @@ vocabulary:ContactPhoneScopeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Contact Phone Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for phone entries of digital contacts."@en ;
-	owl:oneOf vocabulary:ContactPhoneScopeVocab-members ;
-	.
-
-vocabulary:ContactPhoneScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactPhoneScopeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"home"^^vocabulary:ContactPhoneScopeVocab
 		"work"^^vocabulary:ContactPhoneScopeVocab
 		"school"^^vocabulary:ContactPhoneScopeVocab
 		"mobile"^^vocabulary:ContactPhoneScopeVocab
@@ -532,12 +507,8 @@ vocabulary:ContactSIPScopeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Contact SIP Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for Session Initiation Protocol (SIP) entries of digital contacts."@en ;
-	owl:oneOf vocabulary:ContactSIPScopeVocab-members ;
-	.
-
-vocabulary:ContactSIPScopeVocab-members
-	rdf:first "home"^^vocabulary:ContactSIPScopeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"home"^^vocabulary:ContactSIPScopeVocab
 		"work"^^vocabulary:ContactSIPScopeVocab
 		"school"^^vocabulary:ContactSIPScopeVocab
 	) ;
@@ -575,12 +546,8 @@ vocabulary:EndiannessTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Endianness Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of byte ordering methods."@en ;
-	owl:oneOf vocabulary:EndiannessTypeVocab-members ;
-	.
-
-vocabulary:EndiannessTypeVocab-members
-	rdf:first "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"Big-endian"^^vocabulary:EndiannessTypeVocab
 		"Little-endian"^^vocabulary:EndiannessTypeVocab
 		"Middle-endian"^^vocabulary:EndiannessTypeVocab
 	) ;
@@ -591,12 +558,8 @@ vocabulary:HashNameVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Hash Name Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
-	owl:oneOf vocabulary:HashNameVocab-members ;
-	.
-
-vocabulary:HashNameVocab-members
-	rdf:first "MD5"^^vocabulary:HashNameVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"MD5"^^vocabulary:HashNameVocab
 		"MD6"^^vocabulary:HashNameVocab
 		"SHA1"^^vocabulary:HashNameVocab
 		"SHA224"^^vocabulary:HashNameVocab
@@ -626,12 +589,8 @@ vocabulary:MemoryBlockTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Memory Block Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of memory blocks."@en ;
-	owl:oneOf vocabulary:MemoryBlockTypeVocab-members ;
-	.
-
-vocabulary:MemoryBlockTypeVocab-members
-	rdf:first "Bit-mapped"^^vocabulary:MemoryBlockTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
 		"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
 		"Initialized"^^vocabulary:MemoryBlockTypeVocab
 		"Overlay"^^vocabulary:MemoryBlockTypeVocab
@@ -644,12 +603,8 @@ vocabulary:ObservableObjectRelationshipVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Cyber Item Relationship Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of inter-observable object relationships."@en ;
-	owl:oneOf vocabulary:ObservableObjectRelationshipVocab-members ;
-	.
-
-vocabulary:ObservableObjectRelationshipVocab-members
-	rdf:first "Allocated"^^vocabulary:ObservableObjectRelationshipVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"Allocated"^^vocabulary:ObservableObjectRelationshipVocab
 		"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
 		"Attachment_Of"^^vocabulary:ObservableObjectRelationshipVocab
 		"Bound"^^vocabulary:ObservableObjectRelationshipVocab
@@ -922,12 +877,8 @@ vocabulary:TaskActionTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Action Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of task action types. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
-	owl:oneOf vocabulary:TaskActionTypeVocab-members ;
-	.
-
-vocabulary:TaskActionTypeVocab-members
-	rdf:first "TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
 		"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
 		"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
 		"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
@@ -939,12 +890,8 @@ vocabulary:TaskFlagVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Flag Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the run flags for a task scheduler task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381283(v=vs.85).aspx See Also: http://msdn.microsoft.com/en-us/library/microsoft.office.excel.server.addins.computecluster.taskscheduler.taskflags(v=office.12).aspx."@en ;
-	owl:oneOf vocabulary:TaskFlagVocab-members ;
-	.
-
-vocabulary:TaskFlagVocab-members
-	rdf:first "TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
 		"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
 		"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
 		"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
@@ -965,12 +912,8 @@ vocabulary:TaskPriorityVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Priority Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the priority levels of task scheduler tasks. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383512(v=vs.85).aspx."@en ;
-	owl:oneOf vocabulary:TaskPriorityVocab-members ;
-	.
-
-vocabulary:TaskPriorityVocab-members
-	rdf:first "ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
 		"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
 		"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
 		"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
@@ -984,12 +927,8 @@ vocabulary:TaskStatusVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Status Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the possible statuses of a scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383604(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381833(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383617(v=vs.85).aspx."@en ;
-	owl:oneOf vocabulary:TaskStatusVocab-members ;
-	.
-
-vocabulary:TaskStatusVocab-members
-	rdf:first "SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
 		"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
 		"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
 		"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
@@ -1097,12 +1036,8 @@ vocabulary:URLTransitionTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "URL Transition Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of URL transitions."@en ;
-	owl:oneOf vocabulary:URLTransitionTypeVocab-members ;
-	.
-
-vocabulary:URLTransitionTypeVocab-members
-	rdf:first "link"^^vocabulary:URLTransitionTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"link"^^vocabulary:URLTransitionTypeVocab
 		"typed"^^vocabulary:URLTransitionTypeVocab
 		"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
 		"auto_subframe"^^vocabulary:URLTransitionTypeVocab
@@ -1137,12 +1072,8 @@ vocabulary:WhoisContactTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Whois Contact Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of registrar contacts listed in a whois entry."@en ;
-	owl:oneOf vocabulary:WhoisContactTypeVocab-members ;
-	.
-
-vocabulary:WhoisContactTypeVocab-members
-	rdf:first "ADMIN"^^vocabulary:WhoisContactTypeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"ADMIN"^^vocabulary:WhoisContactTypeVocab
 		"BILLING"^^vocabulary:WhoisContactTypeVocab
 		"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
 	) ;
@@ -1221,12 +1152,8 @@ vocabulary:WirelessNetworkSecurityModeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Wireless Network Security Mode Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of security modes that may be configured for wireless network connections."@en ;
-	owl:oneOf vocabulary:WirelessNetworkSecurityModeVocab-members ;
-	.
-
-vocabulary:WirelessNetworkSecurityModeVocab-members
-	rdf:first "None"^^vocabulary:WirelessNetworkSecurityModeVocab ;
-	rdf:rest (
+	owl:oneOf (
+		"None"^^vocabulary:WirelessNetworkSecurityModeVocab
 		"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
 		"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
 		"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
