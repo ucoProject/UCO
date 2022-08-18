@@ -23,14 +23,14 @@ def main() -> None:
     arg_parser.add_argument("--skip-clean",  action="store_true",
         help="Keeps intermediate test files instead of \
         automatic deletion")	
-    arg_parser.add_argument("--input",  default="action_result_NO_CONTEXT.json",
+    arg_parser.add_argument("--input",  default="action_result_NO_CONTEXT_minimal.json",
         help="input file for testing")	
     arg_parser.add_argument('--concise', action="store_true",
         help="Perform testing on \"concise\" context instead of \"minimal\"")
     args = arg_parser.parse_args()    
 
     # Test graph file in JSON format
-    # test_file = "action_result_NO_CONTEXT.json"
+    # test_file = "action_result_NO_CONTEXT_minimal.json"
     test_file = args.input
     # File to which context will be written
     output_file = "_temp_cntxt.json"
