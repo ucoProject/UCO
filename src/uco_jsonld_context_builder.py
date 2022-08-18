@@ -41,13 +41,13 @@ class ObjectPropertyInfo:
     """Class to hold ObjectProperty info which will be used to build
     context"""
 
-    def __init__(self):
-        self.ns_prefix = None
-        self.root_class_name = None
-        self.shacl_count_lte_1 = None
+    def __init__(self) -> None:
+        self.ns_prefix: typing.Optional[str] = None
+        self.root_class_name: typing.Optional[str] = None
+        self.shacl_count_lte_1: typing.Optional[bool] = None
         self.shacl_property_bnode = None
 
-    def __get_json(self, hdr) -> str:
+    def __get_json(self, hdr: str) -> str:
         json_str = hdr
         json_str += '\t"@type":"@id"'
         if self.shacl_count_lte_1 is not True:
@@ -73,14 +73,14 @@ class DatatypePropertyInfo:
     """Class to hold DatatypeProperty info which will be used to build
     context"""
 
-    def __init__(self):
-        self.ns_prefix = None
-        self.root_property_name = None
-        self.prefixed_datatype_name = None
-        self.shacl_count_lte_1 = None
+    def __init__(self) -> None:
+        self.ns_prefix: typing.Optional[str] = None
+        self.root_property_name: typing.Optional[str] = None
+        self.prefixed_datatype_name: typing.Optional[str] = None
+        self.shacl_count_lte_1: typing.Optional[bool] = None
         self.shacl_property_bnode = None
 
-    def __get_json(self, hdr) -> str:
+    def __get_json(self, hdr: str) -> str:
         json_str = hdr
         json_str += f'\t"@id":"{self.ns_prefix}:{self.root_property_name}"'
         if self.prefixed_datatype_name is not None:
@@ -105,15 +105,14 @@ class DatatypePropertyInfo:
 
 
 class ContextBuilder:
-    def __init__(self):
-        self.ttl_file_list = None
+    def __init__(self) -> None:
+        self.ttl_file_list: typing.Optional[typing.List[pathlib.Path]] = None
         self.prefix_dict = None
-        self.top_srcdir = None
-        self.iri_dict = None
-        # A dict of DataTypePropertyInfo Objects
-        self.datatype_properties_dict = {}
-        # A dict of ObjectPropertyInfo Objects
-        self.object_properties_dict = {}
+        self.top_srcdir: typing.Optional[pathlib.Path] = None
+        self.iri_dict: typing.Optional[typing.Dict[str, str]] = None
+        # TODO ERROR MITIGATION: These two dicts should be keyed by IRI (str() cast) rather than IRI fragment.
+        self.datatype_properties_dict: typing.Dict[str, typing.List[DatatypePropertyInfo]] = dict()
+        self.object_properties_dict: typing.Dict[str, typing.List[ObjectPropertyInfo]] = dict()
         # The string that will hold the processed context
         self.context_str = ""
 
@@ -126,12 +125,14 @@ class ContextBuilder:
             self.context_str = self.context_str[:-1]
         self.context_str += "\n\t}\n}"
 
-    def get_ttl_files(self, subdirs=[]) -> typing.List[pathlib.Path]:
+    def get_ttl_files(self, subdirs: typing.List[str]=[]) -> typing.List[pathlib.Path]:
         """
         Finds all turtle (.ttl) files in directory structure
         @subdirs - Optional list used to restrict search to particular
         directories.
         """
+        # TODO - It seems some of the purpose of get_ttl_files() may be mooted by using tests/uco_monolithic.ttl, a temporary build artifact.
+
         if self.ttl_file_list is not None:
             return self.ttl_file_list
 
@@ -171,7 +172,7 @@ class ContextBuilder:
                         continue
                     # _logger.debug(x)
                     file_list.append(x)
-                self.ttl_file_list = file_list
+            self.ttl_file_list = file_list
 
         return self.ttl_file_list
 
@@ -179,6 +180,7 @@ class ContextBuilder:
         """
         Returns sorted list of IRIs as prefix:value strings
         """
+        assert self.iri_dict is not None
         k_list = list(self.iri_dict.keys())
         # print(k_list)
         k_list.sort()
@@ -201,7 +203,7 @@ class ContextBuilder:
         for i in self.get_iris():
             self.context_str += f"{i},\n"
 
-    def __add_to_iri_dict(self, in_prefix: str):
+    def __add_to_iri_dict(self, in_prefix: str) -> None:
         """INTERNAL function: Adds unique key value pairs to dict
         that will be used to generate context. Dies if inconsistent
         key value pair is found.
@@ -215,7 +217,7 @@ class ContextBuilder:
         # Taking the ':' off the end of the key
         k = t_split[1][:-1]
         v = t_split[2]
-        # Taking the angle brackets of the IRIs
+        # Taking the angle brackets off the IRIs
         v = v.strip()[1:-1]
         if k in iri_dict.keys():
             # _logger.debug(f"'{k}' already exists")
@@ -225,7 +227,7 @@ class ContextBuilder:
         else:
             iri_dict[k] = v
 
-    def __process_DatatypePropertiesHelper(self, in_file=None):
+    def __process_DatatypePropertiesHelper(self, in_file: str) -> None:
         """
         Does the actual work using rdflib
         @in_file - ttl file to get object properties from
@@ -242,6 +244,8 @@ class ContextBuilder:
             _logger.debug(triple)
             _logger.debug(triple[0].split("/"))
             s_triple = triple[0].split("/")
+            # (rdflib calls this "fragment" rather than root)
+            # TODO LIKELY ERROR: This assumes fragments are unique within UCO, which is not true in UCO 0.9.0.
             root = s_triple[-1]
             ns_prefix = f"{s_triple[-3]}-{s_triple[-2]}"
             # print(ns_prefix, root)
@@ -280,11 +284,12 @@ class ContextBuilder:
                 self.datatype_properties_dict[root] = [dtp_obj]
         return
 
-    def process_DatatypeProperties(self):
+    def process_DatatypeProperties(self) -> None:
+        assert self.ttl_file_list is not None
         for ttl_file in self.ttl_file_list:
-            self.__process_DatatypePropertiesHelper(in_file=ttl_file)
+            self.__process_DatatypePropertiesHelper(in_file=str(ttl_file))
 
-    def __process_ObjectPropertiesHelper(self, in_file=None):
+    def __process_ObjectPropertiesHelper(self, in_file: str) -> None:
         """
         Does the actual work using rdflib
         @in_file - ttl file to get object properties from
@@ -329,11 +334,12 @@ class ContextBuilder:
                 self.object_properties_dict[root] = [op_obj]
         return
 
-    def process_ObjectProperties(self):
+    def process_ObjectProperties(self) -> None:
+        assert self.ttl_file_list is not None
         for ttl_file in self.ttl_file_list:
-            self.__process_ObjectPropertiesHelper(in_file=ttl_file)
+            self.__process_ObjectPropertiesHelper(in_file=str(ttl_file))
 
-    def process_prefixes(self):
+    def process_prefixes(self) -> None:
         """
         Finds all prefix lines in list of ttl files. Adds them to an
         an internal dict
@@ -411,7 +417,7 @@ class ContextBuilder:
         self.context_str += ks_str
 
 
-def main():
+def main() -> None:
     argument_parser = argparse.ArgumentParser()
     argument_parser.add_argument("--debug", action="store_true")
     argument_parser.add_argument(

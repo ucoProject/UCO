@@ -17,7 +17,7 @@ import subprocess
 import os
 
 
-def main():
+def main() -> None:
 
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument("--skip-clean",  action="store_true",
