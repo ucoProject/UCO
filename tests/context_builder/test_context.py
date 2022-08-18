@@ -13,9 +13,10 @@
 
 import json
 import logging
-from typing import Any, Dict
+from typing import Any, Dict, Set
 
 from rdflib import Graph, RDF, RDFS
+from rdflib.term import Node
 
 
 def _test_action_graph_context_query(input_graph_file: str, input_context_file: str) -> None:
@@ -71,6 +72,42 @@ def test_action_context_concise() -> None:
 
 def test_action_context_minimal() -> None:
     _test_action_graph_context_query("action_result_NO_CONTEXT_minimal.json", "context-minimal.json")
+
+
+def _test_hash_graph_context_query(input_graph_file: str, input_context_file: str) -> None:
+    """
+    Run an exact-parse-match test.
+    """
+
+    expected: Set[Tuple[Node, Node, Nonde]] = set()
+    computed: Set[Tuple[Node, Node, Nonde]] = set()
+
+    expected_graph = Graph()
+    computed_graph = Graph()
+
+    expected_graph.parse("hash_expanded.json")
+
+    context_object: Dict[str, Any]
+    with open(input_context_file, "r") as context_fh:
+        context_object = json.load(context_fh)
+
+    computed_graph.parse(input_graph_file, context=context_object)
+
+    for expected_triple in expected_graph:
+        expected.add(expected_triple)
+
+    for computed_triple in computed_graph:
+        computed.add(computed_triple)
+
+    assert expected == computed
+
+
+def test_hash_context_concise() -> None:
+    _test_hash_graph_context_query("hash_NO_CONTEXT_concise.json", "context-concise.json")
+
+
+def test_hash_context_minimal() -> None:
+    _test_hash_graph_context_query("hash_NO_CONTEXT_minimal.json", "context-minimal.json")
 
 
 #def test_context_concise2() -> None:

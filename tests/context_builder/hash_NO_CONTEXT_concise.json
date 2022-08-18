@@ -1,0 +1,13 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/"
+    },
+    "@graph": [
+        {
+            "id": "kb:hash-1",
+            "type": "Hash",
+            "hashMethod": "SHA1",
+            "hashValue": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        }
+    ]
+}
