@@ -18,7 +18,7 @@ from typing import Any, Dict
 from rdflib import Graph, RDF, RDFS
 
 
-def _test_graph_context_query(input_graph_file: str, input_context_file: str) -> None:
+def _test_action_graph_context_query(input_graph_file: str, input_context_file: str) -> None:
     expected = 8
     computed = 0
 
@@ -53,7 +53,6 @@ WHERE {
   ?nAction uco-action:result ?nResult .
 }
 """):
-#  ?nAction uco-action:result ?nResult .
         computed += 1
     for triple in sorted(graph.triples((None, None, None))):
         logging.debug(triple)
@@ -66,12 +65,12 @@ WHERE {
         raise
 
 
-def test_context_concise() -> None:
-    _test_graph_context_query("action_result_NO_CONTEXT_concise.json", "context-concise.json")
+def test_action_context_concise() -> None:
+    _test_action_graph_context_query("action_result_NO_CONTEXT_concise.json", "context-concise.json")
 
 
-def test_context_minimal() -> None:
-    _test_graph_context_query("action_result_NO_CONTEXT_minimal.json", "context-minimal.json")
+def test_action_context_minimal() -> None:
+    _test_action_graph_context_query("action_result_NO_CONTEXT_minimal.json", "context-minimal.json")
 
 
 #def test_context_concise2() -> None:
