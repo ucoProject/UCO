@@ -28,7 +28,9 @@ check: \
   check-concise
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pytest \
-	    --log-level=DEBUG
+	    --log-level=DEBUG \
+	    --verbose \
+	    --verbose
 
 check-concise: \
   context-concise.json
