@@ -49,6 +49,7 @@ check: \
   uco_monolithic.ttl
 	source venv/bin/activate \
 	  && pytest \
+	    --ignore context_builder \
 	    --ignore examples \
 	    --log-level=DEBUG
 	$(MAKE) \
