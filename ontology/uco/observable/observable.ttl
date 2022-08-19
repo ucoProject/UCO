@@ -5037,6 +5037,18 @@ observable:PDFFileFacet
 			sh:path observable:isOptimized ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:pdfCreationDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:pdfModDate ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -11584,6 +11596,13 @@ observable:path
 	rdfs:range xsd:string ;
 	.
 
+observable:pdfCreationDate
+	a owl:DatatypeProperty ;
+	rdfs:label "pdfCreationDate"@en ;
+	rdfs:comment "The PDF CreationDate property is defined in ISO 32000-1:2008 as 'The date and time the document was created, in human-readable form' (Table 317).  As a UCO property, its value is converted to xsd:dateTime."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
 observable:pdfId0
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId0"@en ;
@@ -11594,6 +11613,13 @@ observable:pdfId1
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId1"@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:pdfModDate
+	a owl:DatatypeProperty ;
+	rdfs:label "pdfModDate"@en ;
+	rdfs:comment "The PDF ModDate property is defined in ISO 32000-1:2008 as 'The date and time the document was most recently modified, in human-readable form' (Table 317).  As a UCO property, its value is converted to xsd:dateTime."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:peType
