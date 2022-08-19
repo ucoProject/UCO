@@ -155,7 +155,6 @@ observable:AccountFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:accountIdentifier ;
 		] ,
@@ -250,7 +249,6 @@ observable:AlternateDataStreamFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -405,7 +403,6 @@ observable:ApplicationAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:application ;
 	] ;
@@ -564,7 +561,6 @@ observable:AutonomousSystemFacet
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:number ;
 		] ,
@@ -624,7 +620,6 @@ observable:BluetoothAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -1365,7 +1360,6 @@ observable:ContactAffiliation
 		[
 			sh:class identity:Organization ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactOrganization ;
 		] ,
@@ -1655,7 +1649,6 @@ observable:ContactListFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contact ;
 		]
@@ -2212,7 +2205,6 @@ observable:DigitalAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -2261,14 +2253,12 @@ observable:DigitalSignatureInfoFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:signatureExists ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:signatureVerified ;
 		] ,
@@ -2447,7 +2437,6 @@ observable:DomainNameFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:value ;
 		]
@@ -2472,7 +2461,6 @@ observable:EXIFFacet
 	rdfs:comment "An EXIF (exchangeable image file format) facet is a grouping of characteristics unique to the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras conformant to JEIDA/JEITA/CIPA specifications. [based on https://en.wikipedia.org/wiki/Exif]"@en ;
 	sh:property [
 		sh:class types:ControlledDictionary ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:exifData ;
 	] ;
@@ -2501,7 +2489,6 @@ observable:EmailAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:emailAddress ;
 	] ;
@@ -2531,7 +2518,6 @@ observable:EmailAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -2798,7 +2784,6 @@ observable:EnvironmentVariable
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
@@ -2841,7 +2826,6 @@ observable:EventFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3286,7 +3270,6 @@ observable:GeoLocationEntryFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3323,7 +3306,6 @@ observable:GeoLocationLogFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3360,7 +3342,6 @@ observable:GeoLocationTrackFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3461,14 +3442,12 @@ observable:HTTPConnectionFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:requestMethod ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:requestValue ;
 		] ,
@@ -3630,7 +3609,6 @@ observable:IPAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -3677,7 +3655,6 @@ observable:IPv4AddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3706,7 +3683,6 @@ observable:IPv6AddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3788,7 +3764,6 @@ observable:InstantMessagingAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -3863,7 +3838,6 @@ observable:MACAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3907,28 +3881,24 @@ observable:MemoryFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isInjected ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMapped ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isProtected ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isVolatile ;
 		] ,
@@ -4405,7 +4375,6 @@ observable:MutexFacet
 	sh:property [
 		sh:datatype xsd:boolean ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:isNamed ;
 	] ;
@@ -4963,7 +4932,6 @@ observable:OnlineServiceFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -5152,7 +5120,6 @@ observable:PhoneAccountFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:phoneNumber ;
 	] ;
@@ -5403,7 +5370,6 @@ observable:PropertiesEnumeratedEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:properties ;
 	] ;
@@ -5640,7 +5606,6 @@ observable:SIPAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -5765,7 +5730,6 @@ observable:SendControlCodeEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:controlCode ;
 	] ;
@@ -5885,7 +5849,6 @@ observable:StateChangeEffectFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:newObject ;
 		] ,
@@ -5921,7 +5884,6 @@ observable:SymbolicLinkFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:targetFile ;
 	] ;
@@ -6270,15 +6232,14 @@ observable:TwitterProfileFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:twitterId ;
+			sh:path observable:twitterHandle ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:twitterHandle ;
+			sh:path observable:twitterId ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -6442,15 +6403,14 @@ observable:URLFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:fullValue ;
+			sh:path observable:fragment ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:fragment ;
+			sh:path observable:fullValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -6592,7 +6552,6 @@ observable:URLHistoryFacet
 		] ,
 		[
 			sh:class observable:URLHistoryEntry ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:urlHistoryEntry ;
 		]
@@ -6814,7 +6773,6 @@ observable:ValuesEnumeratedEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:values ;
 	] ;
@@ -7178,7 +7136,6 @@ observable:WifiAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -7257,7 +7214,6 @@ observable:WindowsActiveDirectoryAccountFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:objectGUID ;
 		] ,
@@ -7751,7 +7707,6 @@ observable:WindowsPESection
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -7963,7 +7918,6 @@ observable:WindowsRegistryKeyFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:key ;
 		]
@@ -7982,7 +7936,6 @@ observable:WindowsRegistryValue
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
@@ -8025,13 +7978,6 @@ observable:WindowsServiceFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:serviceName ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:displayName ;
 		] ,
@@ -8040,6 +7986,12 @@ observable:WindowsServiceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:groupName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:serviceName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
