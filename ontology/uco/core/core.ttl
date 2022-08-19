@@ -475,7 +475,10 @@ core:externalReference
 	.
 
 core:hasFacet
-	a owl:ObjectProperty ;
+	a
+		owl:ObjectProperty ,
+		owl:InverseFunctionalProperty
+		;
 	rdfs:label "hasFacet"@en ;
 	rdfs:comment "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized."@en ;
 	rdfs:range core:Facet ;
