@@ -50,8 +50,8 @@ uco-owl:DataOneOf-shape
 			<https://www.w3.org/TR/owl2-syntax/#Enumeration_of_Literals>
 			;
 		sh:message "For data ranges that are sets of literals, owl:oneOf must only be used on blank nodes." ;
-		sh:prefixes <http://www.w3.org/2000/01/rdf-schema#> ;
 		sh:select """
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 			SELECT $this
 			WHERE {
 				$this a rdfs:Datatype .
