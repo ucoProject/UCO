@@ -12,6 +12,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-configuration"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing configurations."@en-US ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
 	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
 	.
 
