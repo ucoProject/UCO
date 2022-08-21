@@ -133,7 +133,6 @@ tool:BuildUtilityType
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path tool:buildUtilityName ;
 		] ,
@@ -205,14 +204,12 @@ tool:LibraryType
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path tool:libraryName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path tool:libraryVersion ;
 		]

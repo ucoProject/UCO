@@ -155,7 +155,6 @@ observable:AccountFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:accountIdentifier ;
 		] ,
@@ -250,7 +249,6 @@ observable:AlternateDataStreamFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -312,6 +310,55 @@ observable:AndroidDeviceFacet
 	sh:targetClass observable:AndroidDeviceFacet ;
 	.
 
+observable:AntennaFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AntennaFacet"@en ;
+	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
+	sh:property
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:antennaHeight ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:azimuth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:elevation ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:horizontalBeamWidth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:signalStrength ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:skew ;
+		]
+		;
+	sh:targetClass observable:AntennaFacet ;
+	.
+
 observable:Appliance
 	a
 		owl:Class ,
@@ -356,7 +403,6 @@ observable:ApplicationAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:application ;
 	] ;
@@ -515,7 +561,6 @@ observable:AutonomousSystemFacet
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:number ;
 		] ,
@@ -575,7 +620,6 @@ observable:BluetoothAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -949,6 +993,107 @@ observable:CallFacet
 	sh:targetClass observable:CallFacet ;
 	.
 
+observable:CapturedTelecommunicationsInformation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "CapturedTelecommunicationsInformation"@en ;
+	sh:targetClass observable:CapturedTelecommunicationsInformation ;
+	.
+
+observable:CapturedTelecommunicationsInformationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CapturedTelecommunicationsInformationFacet"@en ;
+	rdfs:comment "A captured telecommunications information facet represents certain information within captured or intercepted telecommunications data."@en ;
+	sh:property
+		[
+			sh:class observable:CellSite ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:captureCellSite ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:interceptedCallState ;
+		]
+		;
+	sh:targetClass observable:CapturedTelecommunicationsInformationFacet ;
+	.
+
+observable:CellSite
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "CellSite"@en ;
+	sh:targetClass observable:CellSite ;
+	.
+
+observable:CellSiteFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CellSiteFacet"@en ;
+	rdfs:comment "A cell site facet contains the metadata surrounding the cell site."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteCountryCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteIdentifier ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteLocationAreaCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteNetworkCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteType ;
+		]
+		;
+	sh:targetClass observable:CellSiteFacet ;
+	.
+
 observable:CharacterDeviceNode
 	a
 		owl:Class ,
@@ -1215,7 +1360,6 @@ observable:ContactAffiliation
 		[
 			sh:class identity:Organization ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactOrganization ;
 		] ,
@@ -1505,7 +1649,6 @@ observable:ContactListFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contact ;
 		]
@@ -2062,7 +2205,6 @@ observable:DigitalAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -2111,14 +2253,12 @@ observable:DigitalSignatureInfoFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:signatureExists ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:signatureVerified ;
 		] ,
@@ -2297,7 +2437,6 @@ observable:DomainNameFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:value ;
 		]
@@ -2322,7 +2461,6 @@ observable:EXIFFacet
 	rdfs:comment "An EXIF (exchangeable image file format) facet is a grouping of characteristics unique to the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras conformant to JEIDA/JEITA/CIPA specifications. [based on https://en.wikipedia.org/wiki/Exif]"@en ;
 	sh:property [
 		sh:class types:ControlledDictionary ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:exifData ;
 	] ;
@@ -2351,7 +2489,6 @@ observable:EmailAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:emailAddress ;
 	] ;
@@ -2381,7 +2518,6 @@ observable:EmailAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -2648,7 +2784,6 @@ observable:EnvironmentVariable
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
@@ -2691,7 +2826,6 @@ observable:EventFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3136,7 +3270,6 @@ observable:GeoLocationEntryFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3173,7 +3306,6 @@ observable:GeoLocationLogFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3210,7 +3342,6 @@ observable:GeoLocationTrackFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3311,14 +3442,12 @@ observable:HTTPConnectionFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:requestMethod ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:requestValue ;
 		] ,
@@ -3480,7 +3609,6 @@ observable:IPAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -3527,7 +3655,6 @@ observable:IPv4AddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3556,7 +3683,6 @@ observable:IPv6AddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3638,7 +3764,6 @@ observable:InstantMessagingAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -3713,7 +3838,6 @@ observable:MACAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3757,28 +3881,24 @@ observable:MemoryFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isInjected ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMapped ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isProtected ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isVolatile ;
 		] ,
@@ -4255,7 +4375,6 @@ observable:MutexFacet
 	sh:property [
 		sh:datatype xsd:boolean ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:isNamed ;
 	] ;
@@ -4813,7 +4932,6 @@ observable:OnlineServiceFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -4919,6 +5037,18 @@ observable:PDFFileFacet
 			sh:path observable:isOptimized ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:pdfCreationDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:pdfModDate ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5002,7 +5132,6 @@ observable:PhoneAccountFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:phoneNumber ;
 	] ;
@@ -5253,7 +5382,6 @@ observable:PropertiesEnumeratedEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:properties ;
 	] ;
@@ -5490,7 +5618,6 @@ observable:SIPAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -5615,7 +5742,6 @@ observable:SendControlCodeEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:controlCode ;
 	] ;
@@ -5735,7 +5861,6 @@ observable:StateChangeEffectFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:newObject ;
 		] ,
@@ -5771,7 +5896,6 @@ observable:SymbolicLinkFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:targetFile ;
 	] ;
@@ -6120,15 +6244,14 @@ observable:TwitterProfileFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:twitterId ;
+			sh:path observable:twitterHandle ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:twitterHandle ;
+			sh:path observable:twitterId ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -6292,15 +6415,14 @@ observable:URLFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:fullValue ;
+			sh:path observable:fragment ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:fragment ;
+			sh:path observable:fullValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -6442,7 +6564,6 @@ observable:URLHistoryFacet
 		] ,
 		[
 			sh:class observable:URLHistoryEntry ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:urlHistoryEntry ;
 		]
@@ -6664,7 +6785,6 @@ observable:ValuesEnumeratedEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:values ;
 	] ;
@@ -7028,7 +7148,6 @@ observable:WifiAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -7107,7 +7226,6 @@ observable:WindowsActiveDirectoryAccountFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:objectGUID ;
 		] ,
@@ -7174,6 +7292,24 @@ observable:WindowsComputerSpecificationFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:windowsTempDirectory ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:lastShutdownDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:osInstallDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:osLastUpgradeDate ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -7583,7 +7719,6 @@ observable:WindowsPESection
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -7795,7 +7930,6 @@ observable:WindowsRegistryKeyFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:key ;
 		]
@@ -7814,7 +7948,6 @@ observable:WindowsRegistryValue
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
@@ -7857,13 +7990,6 @@ observable:WindowsServiceFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:serviceName ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:displayName ;
 		] ,
@@ -7872,6 +7998,12 @@ observable:WindowsServiceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:groupName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:serviceName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -8880,6 +9012,13 @@ observable:androidVersion
 	rdfs:range xsd:string ;
 	.
 
+observable:antennaHeight
+	a owl:DatatypeProperty ;
+	rdfs:label "antennaHeight"@en ;
+	rdfs:comment "The height (in meters) of the antenna from the ground."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:application
 	a owl:ObjectProperty ;
 	rdfs:label "application"@en ;
@@ -8951,6 +9090,13 @@ observable:availableRam
 	rdfs:label "availableRam"@en ;
 	rdfs:comment "Specifies the amount of physical memory available on the system, in bytes."@en ;
 	rdfs:range xsd:integer ;
+	.
+
+observable:azimuth
+	a owl:DatatypeProperty ;
+	rdfs:label "azimuth"@en ;
+	rdfs:comment "The median rotation in degrees around a vertical axis of the cell antenna sector accessed."@en ;
+	rdfs:range xsd:decimal ;
 	.
 
 observable:baseOfCode
@@ -9138,6 +9284,13 @@ observable:canEscalatePrivs
 	rdfs:range xsd:boolean ;
 	.
 
+observable:captureCellSite
+	a owl:ObjectProperty ;
+	rdfs:label "captureCellSite"@en ;
+	rdfs:comment "Specifies the cell site accessed."@en ;
+	rdfs:range observable:CellSite ;
+	.
+
 observable:carrier
 	a owl:ObjectProperty ;
 	rdfs:label "carrier"@en ;
@@ -9156,6 +9309,41 @@ observable:cc
 	a owl:ObjectProperty ;
 	rdfs:label "cc"@en ;
 	rdfs:range observable:ObservableObject ;
+	.
+
+observable:cellSiteCountryCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteCountryCode"@en ;
+	rdfs:comment "The country code represents the country of the cell site. For GSM, this is the Mobile Country Code (MCC)."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteIdentifier
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteIdentifier"@en ;
+	rdfs:comment "Specifies the unique number used to identify each Cell Site within a location area code."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteLocationAreaCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteLocationAreaCode"@en ;
+	rdfs:comment "The location area code is a unique number of current location area of the cell site. A location area is a set of cell site that are grouped together to optimize signalling. For GSM, this is the LAC."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteNetworkCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteNetworkCode"@en ;
+	rdfs:comment "This code identifies the mobile operator of the cell site. For GSM, this is the Mobile Network Code (MNC) and for CMDA this is the network identifier (NID)."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteType
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteType"@en ;
+	rdfs:comment "Specifies the technology used by the Cell Site (e.g., GSM, CDMA, or LTE)."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:certificateIssuer
@@ -9780,6 +9968,13 @@ observable:effectiveUser
 	rdfs:range observable:ObservableObject ;
 	.
 
+observable:elevation
+	a owl:DatatypeProperty ;
+	rdfs:label "elevation"@en ;
+	rdfs:comment "The angle in degrees of the antenna from the local horizontal plane."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:emailAddress
 	a owl:ObjectProperty ;
 	rdfs:label "emailAddress"@en ;
@@ -10288,6 +10483,13 @@ observable:homeDirectory
 	rdfs:range xsd:string ;
 	.
 
+observable:horizontalBeamWidth
+	a owl:DatatypeProperty ;
+	rdfs:label "horizontalBeamWidth"@en ;
+	rdfs:comment "The width of the antenna beam in degrees."@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:host
 	a owl:ObjectProperty ;
 	rdfs:label "host"@en ;
@@ -10424,6 +10626,13 @@ observable:installDate
 	rdfs:label "installDate"@en ;
 	rdfs:comment "Specifies the date the operating system was installed."@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+observable:interceptedCallState
+	a owl:DatatypeProperty ;
+	rdfs:label "interceptedCallState"@en ;
+	rdfs:comment "State of the call in a Call Detail Record (e.g. idle)."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:ip
@@ -10691,6 +10900,13 @@ observable:lastRun
 	a owl:DatatypeProperty ;
 	rdfs:label "lastRun"@en ;
 	rdfs:comment "Timestamp of when the prefetch application was last run."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+observable:lastShutdownDate
+	a owl:DatatypeProperty ;
+	rdfs:label "lastShutdownDate"@en ;
+	rdfs:comment "Specifies the date on which the device was last shutdown."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
@@ -11258,6 +11474,20 @@ observable:organizationPosition
 	rdfs:range xsd:string ;
 	.
 
+observable:osInstallDate
+	a owl:DatatypeProperty ;
+	rdfs:label "osInstallDate"@en ;
+	rdfs:comment "Specifies the date on which the operating system (OS) was installed."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+observable:osLastUpgradeDate
+	a owl:DatatypeProperty ;
+	rdfs:label "osLastUpgradeDate"@en ;
+	rdfs:comment "Specifies the date on which the operating system (OS) was last upgraded."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
 observable:otherHeaders
 	a owl:ObjectProperty ;
 	rdfs:label "otherHeaders"@en ;
@@ -11366,6 +11596,13 @@ observable:path
 	rdfs:range xsd:string ;
 	.
 
+observable:pdfCreationDate
+	a owl:DatatypeProperty ;
+	rdfs:label "pdfCreationDate"@en ;
+	rdfs:comment "The PDF CreationDate property is defined in ISO 32000-1:2008 as 'The date and time the document was created, in human-readable form' (Table 317).  As a UCO property, its value is converted to xsd:dateTime."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
 observable:pdfId0
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId0"@en ;
@@ -11376,6 +11613,13 @@ observable:pdfId1
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId1"@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:pdfModDate
+	a owl:DatatypeProperty ;
+	rdfs:label "pdfModDate"@en ;
+	rdfs:comment "The PDF ModDate property is defined in ISO 32000-1:2008 as 'The date and time the document was most recently modified, in human-readable form' (Table 317).  As a UCO property, its value is converted to xsd:dateTime."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:peType
@@ -11985,6 +12229,13 @@ observable:sid
 	rdfs:range xsd:string ;
 	.
 
+observable:signalStrength
+	a owl:DatatypeProperty ;
+	rdfs:label "signalStrength"@en ;
+	rdfs:comment "The strength of the antenna signal."@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:signature
 	a owl:DatatypeProperty ;
 	rdfs:label "signature"@en ;
@@ -12105,6 +12356,13 @@ observable:sizeOfUninitializedData
 	rdfs:label "sizeOfUninitializedData"@en ;
 	rdfs:comment "Specifies the size of the uninitialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section."@en ;
 	rdfs:range xsd:unsignedInt ;
+	.
+
+observable:skew
+	a owl:DatatypeProperty ;
+	rdfs:label "skew"@en ;
+	rdfs:comment "The angle in degrees of the radial rotation around its main beam direction."@en ;
+	rdfs:range xsd:decimal ;
 	.
 
 observable:sourceApplication
