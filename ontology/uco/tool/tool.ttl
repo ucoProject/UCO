@@ -14,8 +14,10 @@
 <https://ontology.unifiedcyberontology.org/uco/tool>
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/configuration> ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports
+		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
+		<https://ontology.unifiedcyberontology.org/uco/core>
+		;
 	.
 
 tool:AnalyticTool
@@ -270,7 +272,6 @@ tool:Tool
 	sh:targetClass tool:Tool ;
 	.
 
-
 tool:buildConfiguration
 	a owl:ObjectProperty ;
 	rdfs:label "buildConfiguration"@en ;
@@ -431,3 +432,4 @@ tool:version
 	rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
 	rdfs:range xsd:string ;
 	.
+
