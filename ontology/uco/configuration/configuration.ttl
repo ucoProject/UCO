@@ -55,7 +55,7 @@ configuration:ConfigurationEntry
 	rdfs:comment "A configuration entry is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, software, or other cyber object."@en ;
 	sh:property
 		[
-			sh:class core:ClassBase ;
+			sh:class core:UcoObject ;
 			sh:nodeKind sh:IRI ;
 			sh:path configuration:itemObject ;
 		] ,
@@ -156,11 +156,8 @@ configuration:itemName
 configuration:itemObject
 	a owl:ObjectProperty ;
 	rdfs:comment "The structured value of a configuration setting entry instance."@en ;
-	rdfs:range core:ClassBase ;
-	rdfs:seeAlso
-		<https://github.com/ucoProject/UCO/issues/430> ,
-		<https://github.com/ucoProject/UCO/issues/432>
-		;
+	rdfs:range core:UcoObject ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
 	.
 
 configuration:itemType
