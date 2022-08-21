@@ -92,7 +92,7 @@ configuration:Dependency
 		sh:NodeShape
 		;
 	rdfs:label "Dependency"@en ;
-	rdfs:comment "A dependency type is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
+	rdfs:comment "A dependency is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
 	sh:property
 		[
 			sh:datatype xsd:string ;
