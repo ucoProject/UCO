@@ -184,6 +184,31 @@ tool:CompilerType
 	sh:targetClass tool:CompilerType ;
 	.
 
+tool:ConfiguredTool
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf tool:Tool ;
+	rdfs:label "ConfiguredTool"@en ;
+	rdfs:comment "A ConfiguredTool is a Tool that is known to be configured to run in a more specified manner than some unconfigured or less-configured Tool."@en ;
+	sh:property
+		[
+			sh:class configuration:Configuration ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:usesConfiguration ;
+		] ,
+		[
+			sh:class tool:Tool ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:isConfigurationOf ;
+		]
+		;
+	sh:targetClass tool:ConfiguredTool ;
+	.
+
 tool:DefensiveTool
 	a
 		owl:Class ,

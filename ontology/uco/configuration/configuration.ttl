@@ -163,6 +163,16 @@ configuration:dependencyType
 	rdfs:range xsd:string ;
 	.
 
+configuration:isConfigurationOf
+	a
+		owl:ObjectProperty ,
+		owl:IrreflexiveProperty
+		;
+	rdfs:label "isConfigurationOf"@en ;
+	rdfs:comment "The object which has been configured to run in a more specified manner than another object.  This property is expected to have a more specific range when associated with a class, such as a configured Tool having this property have a range of a Tool."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
 configuration:itemDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "itemDescription"@en ;
@@ -203,5 +213,12 @@ configuration:usageContextAssumptions
 	rdfs:label "usageContextAssumptions"@en ;
 	rdfs:comment "Description of the various relevant usage context assumptions for a tool or other software ."@en ;
 	rdfs:range xsd:string ;
+	.
+
+configuration:usesConfiguration
+	a owl:ObjectProperty ;
+	rdfs:label "usesConfiguration"@en ;
+	rdfs:comment "A configuration used by an object."@en ;
+	rdfs:range configuration:Configuration ;
 	.
 

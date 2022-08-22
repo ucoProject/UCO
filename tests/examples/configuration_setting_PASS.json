@@ -10,6 +10,21 @@
             "rdfs:comment": "Settings are numbered with a binary tracking system.  2^0 = itemObject set.  2^1 = itemValue set.  With the mutually-exclusive property shapes on ConfigurationSettingType, setting 3 would be invalid."
         },
         {
+            "@id": "kb:tool-1",
+            "@type": "tool:Tool"
+        },
+        {
+            "@id": "kb:configured-object-1",
+            "@type": "tool:ConfiguredTool",
+            "configuration:isConfigurationOf": {
+                "@id": "kb:tool-1"
+            },
+            "configuration:usesConfiguration": {
+                "@id": "kb:configuration-1"
+            }
+        },
+
+        {
             "@id": "kb:thing-1",
             "@type": "core:UcoObject"
         },

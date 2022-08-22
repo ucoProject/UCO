@@ -3,6 +3,7 @@
         "configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
         "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
         "tool": "https://ontology.unifiedcyberontology.org/uco/tool/"
     },
     "@graph": [
@@ -12,6 +13,21 @@
         {
             "@id": "kb:thing-2",
             "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:software-1",
+            "@type": "observable:Software"
+        },
+        {
+            "@id": "kb:configured-object-2",
+            "@type": "tool:ConfiguredTool",
+            "rdfs:comment": "This will trigger an error, as kb:software-1 is not declared here to be a tool:Tool.  It can be, but it has not been declared here.",
+            "configuration:isConfigurationOf": {
+                "@id": "kb:software-1"
+            },
+            "configuration:usesConfiguration": {
+                "@id": "kb:configuration-2"
+            }
         },
         {
             "@id": "kb:configuration-2",
