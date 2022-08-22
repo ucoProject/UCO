@@ -18,8 +18,8 @@
 			rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3 of the OWL 2 mapping to RDF.  All references to owl:Axioms are identified as blank nodes.  Therefore, any non-blank node that is an owl:Axiom will not be mapped and consumed by the mapping process."@en ;
 			rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
 			sh:message "An owl:Axiom must be a blank node."@en ;
-			sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 			sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:Axiom .
