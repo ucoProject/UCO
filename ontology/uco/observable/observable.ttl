@@ -456,7 +456,6 @@ observable:ApplicationVersion
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:ClassBase ;
 	rdfs:label "ApplicationVersion"@en ;
 	rdfs:comment "An application version is a grouping of characteristics unique to a particular software program version."@en ;
 	sh:property
