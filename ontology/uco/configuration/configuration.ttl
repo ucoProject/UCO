@@ -28,7 +28,6 @@ configuration:Configuration
 	sh:property
 		[
 			sh:class configuration:ConfigurationEntry ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:IRI ;
 			sh:path configuration:configurationEntry ;
 		] ,
