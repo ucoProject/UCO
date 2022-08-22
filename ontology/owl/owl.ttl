@@ -9,16 +9,6 @@
 	a owl:Ontology ;
 	rdfs:comment "This ontology defines SHACL shapes to perform conformance testing of OWL 2 DL.  Some of these shapes follow rules specified from the canonical, subtractive parsing process of Section 3 of the OWL 2 mapping to RDF.  From the last line of that document's Section 3, 'At the end of this process, the graph G MUST be empty,' anything not strictly matching patterns specified in that section cause the input graph to be non-conformant with OWL 2 DL."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
-	sh:declare
-		[
-			sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
-			sh:prefix "owl" ;
-		] ,
-		[
-			sh:namespace "http://www.w3.org/ns/shacl#"^^xsd:anyURI ;
-			sh:prefix "sh" ;
-		]
-		;
 	.
 
 uco-owl:Axiom-shape
@@ -28,8 +18,8 @@ uco-owl:Axiom-shape
 		rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3 of the OWL 2 mapping to RDF.  All references to owl:Axioms are identified as blank nodes.  Therefore, any non-blank node that is an owl:Axiom will not be mapped and consumed by the mapping process."@en ;
 		rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
 		sh:message "An owl:Axiom must be a blank node."@en ;
-		sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:Axiom .
@@ -40,17 +30,37 @@ uco-owl:Axiom-shape
 	sh:targetClass owl:Axiom ;
 	.
 
+uco-owl:DataOneOf-shape
+	a sh:NodeShape ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3.2.4, Table 12, row 4 of the OWL 2 mapping to RDF.  All datatypes using owl:oneOf must be blank nodes.  Any non-blank node will not be mapped and consumed by the mapping process.  See also DataOneOf in the OWL 2 Syntax document, especially with 'Show RDF in Examples' turned on."@en ;
+		rdfs:seeAlso
+			<https://www.w3.org/TR/owl2-mapping-to-rdf/#Parsing_of_Expressions> ,
+			<https://www.w3.org/TR/owl2-syntax/#Enumeration_of_Literals>
+			;
+		sh:message "For data ranges that are sets of literals, owl:oneOf must only be used on blank nodes." ;
+		sh:select """
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+			SELECT $this
+			WHERE {
+				$this a rdfs:Datatype .
+				FILTER ( isIRI($this) )
+			}
+		""" ;
+	] ;
+	sh:targetSubjectsOf owl:oneOf ;
+	.
+
 uco-owl:DatatypeProperty-shacl-constraints-shape
 	a sh:NodeShape ;
 	sh:sparql
 		[
 			a sh:SPARQLConstraint ;
 			sh:message "An OWL Datatype Property cannot use a SHACL ClassConstraintComponent."@en ;
-			sh:prefixes
-				<http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
-				<http://www.w3.org/ns/shacl#>
-				;
 			sh:select """
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this
 				WHERE {
 					$value
@@ -63,11 +73,9 @@ uco-owl:DatatypeProperty-shacl-constraints-shape
 		[
 			a sh:SPARQLConstraint ;
 			sh:message "An OWL Datatype Property must not permit a non-Literal value via SHACL constraints."@en ;
-			sh:prefixes
-				<http://www.w3.org/1999/02/22-rdf-syntax-ns#> ,
-				<http://www.w3.org/ns/shacl#>
-				;
 			sh:select """
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this
 				WHERE {
 					$value sh:path / rdf:rest* / rdf:first? $this .
@@ -94,8 +102,8 @@ uco-owl:Disjointedness-AP-DP-shape
 		a sh:SPARQLConstraint ;
 		rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
 		sh:message "An IRI may not be a member of both an owl:AnnotationProperty and owl:DatatypeProperty."@en ;
-		sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:DatatypeProperty ;
@@ -111,8 +119,8 @@ uco-owl:Disjointedness-AP-OP-shape
 		a sh:SPARQLConstraint ;
 		rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
 		sh:message "An IRI may not be a member of both an owl:AnnotationProperty and owl:ObjectProperty."@en ;
-		sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:ObjectProperty ;
@@ -128,8 +136,8 @@ uco-owl:Disjointedness-C-DT-shape
 		a sh:SPARQLConstraint ;
 		rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
 		sh:message "An IRI may not be a member of both an owl:Class and owl:Datatype."@en ;
-		sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:Datatype ;
@@ -145,8 +153,8 @@ uco-owl:Disjointedness-DP-OP-shape
 		a sh:SPARQLConstraint ;
 		rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
 		sh:message "An IRI may not be a member of both owl:DatatypeProperty and owl:ObjectProperty."@en ;
-		sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:ObjectProperty ;
@@ -184,8 +192,9 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 		[
 			a sh:SPARQLConstraint ;
 			sh:message "An OWL Object Property cannot use a SHACL DatatypeConstraintComponent."@en ;
-			sh:prefixes <http://www.w3.org/ns/shacl#> ;
 			sh:select """
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this
 				WHERE {
 					$value
@@ -198,8 +207,8 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 		[
 			a sh:SPARQLConstraint ;
 			sh:message "An OWL Object Property must not permit a Literal value via SHACL consraints."@en ;
-			sh:prefixes <http://www.w3.org/ns/shacl#> ;
 			sh:select """
+				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this
 				WHERE {
 					$value sh:path / rdf:rest* / rdf:first? $this ;
@@ -227,8 +236,8 @@ uco-owl:ontologyIRI-shape
 		a sh:SPARQLConstraint ;
 		rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 		sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
-		sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$value owl:ontologyIRI $this .
@@ -259,8 +268,8 @@ uco-owl:versionIRI-shape
 			a sh:SPARQLConstraint ;
 			rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 			sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
-			sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 			sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
 				SELECT $this
 				WHERE {
 					$value owl:versionIRI $this .
@@ -274,8 +283,8 @@ uco-owl:versionIRI-shape
 			a sh:SPARQLConstraint ;
 			rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 			sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
-			sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 			sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
 				SELECT $this
 				WHERE {
 					$value
