@@ -881,15 +881,18 @@ vocabulary:ProcessorArchVocab
 
 vocabulary:RecoveredObjectStatusVocab
 	a rdfs:Datatype ;
-	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Recovered Object Status Vocabulary"@en-US ;
 	rdfs:comment "Defines the vocabulary for Recovered Object status of data."@en ;
-	owl:oneOf (
-		"recovered"^^vocabulary:RecoveredObjectStatusVocab
-		"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-		"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-		"unknown"^^vocabulary:RecoveredObjectStatusVocab
-	) ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"recovered"^^vocabulary:RecoveredObjectStatusVocab
+			"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+			"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+			"unknown"^^vocabulary:RecoveredObjectStatusVocab
+		) ;
+	] ;
 	.
 
 vocabulary:RegionalRegistryTypeVocab
