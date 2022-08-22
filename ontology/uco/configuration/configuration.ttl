@@ -28,12 +28,12 @@ configuration:Configuration
 	sh:property
 		[
 			sh:class configuration:ConfigurationEntry ;
-			sh:nodeKind sh:IRI ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path configuration:configurationEntry ;
 		] ,
 		[
 			sh:class configuration:Dependency ;
-			sh:nodeKind sh:IRI ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path configuration:dependencies ;
 		] ,
 		[
@@ -55,7 +55,7 @@ configuration:ConfigurationEntry
 	sh:property
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:IRI ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path configuration:itemObject ;
 		] ,
 		[
