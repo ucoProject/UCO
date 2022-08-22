@@ -5476,6 +5476,141 @@ observable:RasterPictureFacet
 	sh:targetClass observable:RasterPictureFacet ;
 	.
 
+observable:RecoveredObject
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "RecoveredObject"@en ;
+	rdfs:comment "An observable object that was the result of a recovery operation."@en ;
+	sh:targetClass observable:RecoveredObject ;
+	.
+
+observable:RecoveredObjectFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "RecoveredObjectFacet"@en ;
+	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
+	sh:property
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:contentRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:metadataRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:nameRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:nameRecoveredStatus ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:metadataRecoveredStatus ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contentRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:nameRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:metadataRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contentRecoveredStatus ;
+		]
+		;
+	sh:targetClass observable:RecoveredObjectFacet ;
+	.
+
 observable:RegistryDatatype
 	a rdfs:Datatype ;
 	owl:equivalentClass [
@@ -9622,6 +9757,19 @@ observable:contentDisposition
 	rdfs:range xsd:string ;
 	.
 
+observable:contentRecoveredStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "contentRecoveredStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the content of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:RecoveredObjectStatusVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
 observable:contentType
 	a owl:DatatypeProperty ;
 	rdfs:label "contentType"@en ;
@@ -11103,6 +11251,19 @@ observable:metadataChangeTime
 	rdfs:range xsd:dateTime ;
 	.
 
+observable:metadataRecoveredStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "metadataRecoveredStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the metadata of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:RecoveredObjectStatusVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
 observable:mftFileID
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileID"@en ;
@@ -11281,6 +11442,19 @@ observable:namePrefix
 	rdfs:label "namePrefix"@en ;
 	rdfs:comment "Name prefix specifies an honorific prefix (coming ordinally before first/given name) for the name of a person."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:nameRecoveredStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "nameRecoveredStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the name of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:RecoveredObjectStatusVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:nameServer
