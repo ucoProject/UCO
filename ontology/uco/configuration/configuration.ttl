@@ -85,6 +85,32 @@ configuration:ConfigurationEntry
 		]
 		;
 	sh:targetClass configuration:ConfigurationEntry ;
+	sh:xone (
+		[
+			sh:property
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path configuration:itemObject ;
+				] ,
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path configuration:itemValue ;
+				]
+				;
+		]
+		[
+			sh:property [
+				sh:minCount "1"^^xsd:integer ;
+				sh:path configuration:itemObject ;
+			] ;
+		]
+		[
+			sh:property [
+				sh:minCount "1"^^xsd:integer ;
+				sh:path configuration:itemValue ;
+			] ;
+		]
+	) ;
 	.
 
 configuration:Dependency
