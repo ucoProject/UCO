@@ -109,9 +109,35 @@ class UCO_Class:
     def __init__(self) -> None:
         self.ns_prefix: typing.Optional[str] = None
         self.root_class_name: typing.Optional[str] = None
-        self.prefixed_datatype_name: typing.Optional[str] = None
-        self.shacl_count_lte_1: typing.Optional[bool] = None
-        self.shacl_property_bnode = None
+        # self.prefixed_datatype_name: typing.Optional[str] = None
+        # self.shacl_count_lte_1: typing.Optional[bool] = None
+        # self.shacl_property_bnode = None
+
+    def __get_json(self, hdr: str) -> str:
+        json_str = hdr
+        json_str += f'\t"@id":"{self.ns_prefix}:{self.root_class_name}"'
+        json_str += "\n"
+        json_str += "},\n"
+        return json_str
+
+    def get_minimal_json(self) -> str:
+        hdr_str = f'"{self.ns_prefix}:{self.root_class_name}":{{\n'
+        json_str = self.__get_json(hdr=hdr_str)
+        return json_str
+
+    def get_concise_json(self) -> str:
+        hdr_str = f'"{self.root_class_name}":{{\n'
+        json_str = self.__get_json(hdr=hdr_str)
+        return json_str
+
+
+class DataType:
+    def __init__(self) -> None:
+        self.ns_prefix: typing.Optional[str] = None
+        self.root_class_name: typing.Optional[str] = None
+        # self.prefixed_datatype_name: typing.Optional[str] = None
+        # self.shacl_count_lte_1: typing.Optional[bool] = None
+        # self.shacl_property_bnode = None
 
     def __get_json(self, hdr: str) -> str:
         json_str = hdr
@@ -144,7 +170,8 @@ class ContextBuilder:
         self.object_properties_dict: typing.Dict[
             str, typing.List[ObjectPropertyInfo]
         ] = dict()
-        self.classes_dict: typing.Dict[str, typing.List[ObjectPropertyInfo]] = dict()
+        self.classes_dict: typing.Dict[str, typing.List[UCO_Class]] = dict()
+        self.datatypes_dict: typing.Dict[str, typing.List[DataType]] = dict()
         # The string that will hold the processed context
         self.context_str = ""
 
@@ -403,23 +430,6 @@ class ContextBuilder:
             c_obj.ns_prefix = ns_prefix
             c_obj.root_class_name = root
 
-            # for sh_triple in graph.triples((None, rdflib.SH.path, triple[0])):
-            #    _logger.debug(f"\t**obj_sh_triple:{sh_triple}")
-            #    op_obj.shacl_property_bnode = sh_triple[0]
-            #    for sh_triple2 in graph.triples(
-            #        (op_obj.shacl_property_bnode, rdflib.SH.maxCount, None)
-            #    ):
-            #        _logger.debug(f"\t\t***sh_triple:{sh_triple2}")
-            #        _logger.debug(f"\t\t***sh_triple:{sh_triple2[2]}")
-            #        if int(sh_triple2[2]) <= 1:
-            #            if op_obj.shacl_count_lte_1 is not None:
-            #                _logger.debug(
-            #                    f"\t\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}"
-            #                )
-            #            op_obj.shacl_count_lte_1 = True
-            #        else:
-            #            _logger.debug(f"\t\t\t***Large max_count: {sh_triple2[2]}")
-
             if root in self.classes_dict.keys():
                 _logger.debug(f"None Unique Entry Found:\t {ns_prefix}:{root}")
                 print(f"None Unique Entry Found:\t {ns_prefix}:{root}")
@@ -439,6 +449,42 @@ class ContextBuilder:
         for ttl_file in self.ttl_file_list:
             _logger.debug(f"Class Processing for {str(ttl_file)}")
             self.__process_ClassesHelper(in_file=str(ttl_file))
+
+    def __process_DataTypesHelper(self, in_file: str) -> None:
+        graph = rdflib.Graph()
+        graph.parse(in_file, format="turtle")
+        # Make sure to do an iter that looks for rdflib.OWL.class"
+        # If we cannot find rdf range, skip
+        # If rdf range is a blank node, skip
+        for triple in graph.triples((None, rdflib.RDF.type, rdflib.RDFS.Datatype)):
+            # Skip Blank Nodes
+            if isinstance(triple[0], rdflib.term.BNode):
+                _logger.debug(f"\tBlank: {triple}\n")
+                continue
+            dt_obj = DataType()
+            # print(triple)
+            _logger.debug((triple))
+            # print(triple[0].split("/"))
+            s_triple = triple[0].split("/")
+            root = s_triple[-1]
+            ns_prefix = f"{s_triple[-3]}-{s_triple[-2]}"
+            # print(ns_prefix, root)
+            # print(root)
+            dt_obj.ns_prefix = ns_prefix
+            dt_obj.root_class_name = root
+
+            if root in self.datatypes_dict.keys():
+                _logger.debug(f"None Unique Entry Found:\t {ns_prefix}:{root}")
+                self.datatypes_dict[root].append(dt_obj)
+            else:
+                self.datatypes_dict[root] = [dt_obj]
+        return
+
+    def process_DataTypes(self) -> None:
+        assert self.ttl_file_list is not None
+        for ttl_file in self.ttl_file_list:
+            _logger.debug(f"DataType Processing for {str(ttl_file)}")
+            self.__process_DataTypesHelper(in_file=str(ttl_file))
 
     def process_prefixes(self) -> None:
         """
@@ -534,6 +580,23 @@ class ContextBuilder:
                     c_sect_str += c_obj.get_concise_json()
         self.context_str += c_sect_str
 
+    def add_concise_datatypes_to_cntxt(self) -> None:
+        """Adds classes to context string"""
+        dt_sect_str = ""
+        dt_list = list(self.datatypes_dict.keys())
+        dt_list.sort()
+
+        for key in dt_list:
+            if len(self.datatypes_dict[key]) > 1:
+                # print(f"M:{self.classes_dict[key]}")
+                for dt_obj in self.datatypes_dict[key]:
+                    dt_sect_str += dt_obj.get_minimal_json()
+            else:
+                # print(f"S:{self.classes_dict[key]}")
+                for dt_obj in self.datatypes_dict[key]:
+                    dt_sect_str += dt_obj.get_concise_json()
+        self.context_str += dt_sect_str
+
 
 def main() -> None:
     argument_parser = argparse.ArgumentParser()
@@ -572,7 +635,9 @@ def main() -> None:
     if args.concise:
         # Note there is classes are not in minimal context
         cb.process_Classes()
+        cb.process_DataTypes()
         cb.add_concise_classes_to_cntxt()
+        cb.add_concise_datatypes_to_cntxt()
         cb.add_concise_object_props_to_cntxt()
         cb.add_concise_datatype_props_to_cntxt()
     else:
