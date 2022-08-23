@@ -1300,6 +1300,7 @@ observable:ContactAddress
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ContactAddress"@en ;
 	rdfs:comment "A contact address is a grouping of characteristics unique to a geolocation address of a contact entity."@en ;
 	sh:property
@@ -1354,6 +1355,7 @@ observable:ContactAffiliation
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ContactListAffiliation"@en ;
 	rdfs:comment "A contact affiliation is a grouping of characteristics unique to details of an organizational affiliation for a single contact entity."@en ;
 	sh:property
@@ -1420,6 +1422,7 @@ observable:ContactEmail
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ContactEmail"@en ;
 	rdfs:comment "A contact email is a grouping of characteristics unique to details for contacting a contact entity by email."@en ;
 	sh:property
@@ -1661,6 +1664,7 @@ observable:ContactMessaging
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ContactMessaging"@en ;
 	rdfs:comment "A contact messaging is a grouping of characteristics unique to details for contacting a contact entity by digital messaging."@en ;
 	sh:property
@@ -1685,6 +1689,7 @@ observable:ContactPhone
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ContactPhone"@en ;
 	rdfs:comment "A contact phone is a grouping of characteristics unique to details for contacting a contact entity by telephone."@en ;
 	sh:property
@@ -1744,6 +1749,7 @@ observable:ContactProfile
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ContactProfile"@en ;
 	rdfs:comment "A contact profile is a grouping of characteristics unique to details for contacting a contact entity by online service."@en ;
 	sh:property
@@ -1768,6 +1774,7 @@ observable:ContactSIP
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ContactSIP"@en ;
 	rdfs:comment "A contact SIP is a grouping of characteristics unique to details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
 	sh:property
@@ -1822,6 +1829,7 @@ observable:ContactURL
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ContactURL"@en ;
 	rdfs:comment "A contact URL is a grouping of characteristics unique to details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
 	sh:property
@@ -2778,6 +2786,7 @@ observable:EnvironmentVariable
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "EnvironmentVariable"@en ;
 	rdfs:comment "An environment variable is a grouping of characteristics unique to a dynamic-named value that can affect the way running processes will behave on a computer. [based on https://en.wikipedia.org/wiki/Environment_variable]"@en ;
 	sh:property
@@ -2970,6 +2979,7 @@ observable:ExtractedString
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ExtractedString"@en ;
 	rdfs:comment "An extracted string is a grouping of characteristics unique to a series of characters pulled from an observable object."@en ;
 	sh:property
@@ -3371,6 +3381,7 @@ observable:GlobalFlagType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "GlobalFlagType"@en ;
 	rdfs:comment 'A global flag type is a grouping of characteristics unique to the Windows systemwide global variable named NtGlobalFlag that enables various internal debugging, tracing, and validation support in the operating system. [based on "Windows Global Flags, Chapter 3: System Mechanisms of Windows Internals by Solomon, Russinovich, and Ionescu]'@en ;
 	sh:property
@@ -3518,6 +3529,7 @@ observable:IComHandlerActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "IComHandlerActionType"@en ;
 	rdfs:comment "An IComHandler action type is a grouping of characteristics unique to a Windows Task-related action that fires a Windows COM handler (smart code in the client address space that can optimize calls between a client and server). [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/comhandleraction]"@en ;
 	sh:property
@@ -3542,6 +3554,7 @@ observable:IExecActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "IExecActionType"@en ;
 	rdfs:comment "An IExec action type is a grouping of characteristics unique to an action that executes a command-line operation on a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-iexecaction?redirectedfrom=MSDN]"@en ;
 	sh:property
@@ -3694,6 +3707,7 @@ observable:IShowMessageActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "IShowMessageActionType"@en ;
 	rdfs:comment "An IShow message action type is a grouping of characteristics unique to an action that shows a message box when a task is activate. [based on https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-ishowmessageaction?redirectedfrom=MSDN]"@en ;
 	sh:property
@@ -4197,6 +4211,7 @@ observable:MimePartType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "MimePartType"@en ;
 	rdfs:comment "A mime part type is a grouping of characteristics unique to a component of a multi-part email body."@en ;
 	sh:property
@@ -6075,6 +6090,7 @@ observable:TaskActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "TaskActionType"@en ;
 	rdfs:comment "A task action type is a grouping of characteristics for a scheduled action to be completed."@en ;
 	sh:property
@@ -6154,6 +6170,7 @@ observable:TriggerType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "TriggerType"@en ;
 	rdfs:comment "A trigger type is a grouping of characterizes unique to a set of criteria that, when met, starts the execution of a task within a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/task-triggers]"@en ;
 	sh:property
@@ -6609,6 +6626,7 @@ observable:URLHistoryEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "URL History Entry"@en-US ;
 	rdfs:comment "A URL history entry is a grouping of characteristics unique to the properties of a single URL history entry for a particular browser."@en-US ;
 	sh:property
@@ -7206,6 +7224,7 @@ observable:WhoisRegistrarInfoType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "WhoisRegistrarInfoType"@en ;
 	rdfs:comment "A Whois registrar info type is a grouping of characteristics unique to registrar-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
@@ -7658,6 +7677,7 @@ observable:WindowsPEFileHeader
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "WindowsPEFileHeader"@en ;
 	rdfs:comment "A Windows PE file header is a grouping of characteristics unique to the 'header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the overall nature and structure of the file."@en ;
 	sh:property [
@@ -7674,6 +7694,7 @@ observable:WindowsPEOptionalHeader
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "WindowsPEOptionalHeader"@en ;
 	rdfs:comment "A Windows PE optional header is a grouping of characteristics unique to the 'optional header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the executable code structure of the file."@en ;
 	sh:property
@@ -7831,6 +7852,7 @@ observable:WindowsPESection
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "WindowsPESection"@en ;
 	rdfs:comment "A Windows PE section is a grouping of characteristics unique to a specific default or custom-defined region of a Windows PE (Portable Executable) file, consisting of an individual portion of the actual executable content of the file delineated according to unique purpose and memory protection requirements."@en ;
 	sh:property
@@ -8077,6 +8099,7 @@ observable:WindowsRegistryValue
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "WindowsRegistryValue"@en ;
 	rdfs:comment "A Windows registry value is a grouping of characteristics unique to a particular value within a Windows registry (a hierarchical database that stores low-level settings for the Microsoft Windows operating system and for applications that opt to use the registry. [based on https://en.wikipedia.org/wiki/Windows_Registry]"@en ;
 	sh:property

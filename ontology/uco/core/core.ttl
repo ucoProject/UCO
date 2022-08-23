@@ -173,6 +173,7 @@ core:ExternalReference
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "ExternalReference"@en ;
 	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
 	sh:property
@@ -203,6 +204,7 @@ core:Facet
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "Facet"@en ;
 	rdfs:comment "A facet is a grouping of characteristics unique to a particular aspect of an object."@en ;
 	sh:targetClass core:Facet ;
