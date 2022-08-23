@@ -5,6 +5,9 @@
         "uco-victim": "https://ontology.unifiedcyberontology.org/uco/victim/",
         "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "Hash" : {
+            "@id": "uco-types:Hash"
+	},
         "HashNameVocab" : {
             "@id": "uco-vocabulary:HashNameVocab"
 	},
