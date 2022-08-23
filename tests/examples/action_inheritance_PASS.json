@@ -37,6 +37,7 @@
             "@type": "action:ActionLifecycle",
             "core:name": "File Update",
             "action:phase": {
+              "@id": "kb:array-of-action-7443745c-4536-43ac-bd3d-2186581e2acb",
               "@type": "action:ArrayOfAction",
               "action:action": [
                 {

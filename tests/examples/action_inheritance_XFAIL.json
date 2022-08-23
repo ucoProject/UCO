@@ -31,6 +31,7 @@
             "core:name": "File Update",
             "action:actionStatus": "Pending",
             "action:phase": {
+              "@id": "kb:array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2",
               "@type": "action:ArrayOfAction",
               "action:action": [
                 "kb:action1",
