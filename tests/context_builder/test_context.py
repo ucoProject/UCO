@@ -114,6 +114,14 @@ def test_hash_context_minimal() -> None:
     _test_graph_context_independent_match("hash_NO_CONTEXT_minimal.json", "context-minimal.json", "hash_expanded.json")
 
 
+def test_thread_context_concise() -> None:
+    _test_graph_context_independent_match("thread_NO_CONTEXT_concise.json", "context-concise.json", "../examples/thread_PASS.json")
+
+
+def test_thread_context_minimal() -> None:
+    _test_graph_context_independent_match("thread_NO_CONTEXT_minimal.json", "context-minimal.json", "../examples/thread_PASS.json")
+
+
 #def test_context_concise2() -> None:
 #    _test_graph_context_query("action_result_concise_NO_CONTEXT.json", "context-concise.json")
 
