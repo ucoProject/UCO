@@ -104,6 +104,32 @@ class DatatypePropertyInfo:
         return json_str
 
 
+class UCO_Class:
+    def __init__(self) -> None:
+        self.ns_prefix: typing.Optional[str] = None
+        self.root_class_name: typing.Optional[str] = None
+        self.prefixed_datatype_name: typing.Optional[str] = None
+        self.shacl_count_lte_1: typing.Optional[bool] = None
+        self.shacl_property_bnode = None
+
+    def __get_json(self, hdr: str) -> str:
+        json_str = hdr
+        json_str += f'\t"@id":"{self.ns_prefix}:{self.root_class_name}"'
+        json_str += "\n"
+        json_str += "},\n"
+        return json_str
+
+    def get_minimal_json(self) -> str:
+        hdr_str = f'"{self.ns_prefix}:{self.root_class_name}":{{\n'
+        json_str = self.__get_json(hdr=hdr_str)
+        return json_str
+
+    def get_concise_json(self) -> str:
+        hdr_str = f'"{self.root_class_name}":{{\n'
+        json_str = self.__get_json(hdr=hdr_str)
+        return json_str
+
+
 class ContextBuilder:
     def __init__(self) -> None:
         self.ttl_file_list: typing.Optional[typing.List[pathlib.Path]] = None
@@ -111,8 +137,13 @@ class ContextBuilder:
         self.top_srcdir: typing.Optional[pathlib.Path] = None
         self.iri_dict: typing.Optional[typing.Dict[str, str]] = None
         # TODO ERROR MITIGATION: These two dicts should be keyed by IRI (str() cast) rather than IRI fragment.
-        self.datatype_properties_dict: typing.Dict[str, typing.List[DatatypePropertyInfo]] = dict()
-        self.object_properties_dict: typing.Dict[str, typing.List[ObjectPropertyInfo]] = dict()
+        self.datatype_properties_dict: typing.Dict[
+            str, typing.List[DatatypePropertyInfo]
+        ] = dict()
+        self.object_properties_dict: typing.Dict[
+            str, typing.List[ObjectPropertyInfo]
+        ] = dict()
+        self.classes_dict: typing.Dict[str, typing.List[ObjectPropertyInfo]] = dict()
         # The string that will hold the processed context
         self.context_str = ""
 
@@ -125,7 +156,9 @@ class ContextBuilder:
             self.context_str = self.context_str[:-1]
         self.context_str += "\n\t}\n}"
 
-    def get_ttl_files(self, subdirs: typing.List[str]=[]) -> typing.List[pathlib.Path]:
+    def get_ttl_files(
+        self, subdirs: typing.List[str] = []
+    ) -> typing.List[pathlib.Path]:
         """
         Finds all turtle (.ttl) files in directory structure
         @subdirs - Optional list used to restrict search to particular
@@ -237,6 +270,18 @@ class ContextBuilder:
         "Make sure to do an itter that looks for rdflib.OWL.class"
         # If we cannot find rdf range, skip
         # If rdf range is a blank node, skip
+
+        # Troubleshooting loop
+        for triple in graph.triples(
+            # (None, rdflib.RDF.type, rdflib.OWL.DatatypeProperty)
+            (None, rdflib.RDF.type, None)
+        ):
+            _logger.debug(f"Any: {triple}")
+
+        # Troubleshooting loop
+        for triple in graph.triples((None, None, rdflib.OWL.DatatypeProperty)):
+            _logger.debug(f"Any Owl DatatypeProperty: {triple}")
+
         for triple in graph.triples(
             (None, rdflib.RDF.type, rdflib.OWL.DatatypeProperty)
         ):
@@ -287,6 +332,7 @@ class ContextBuilder:
     def process_DatatypeProperties(self) -> None:
         assert self.ttl_file_list is not None
         for ttl_file in self.ttl_file_list:
+            _logger.debug(f"Datatype Processing for {str(ttl_file)}")
             self.__process_DatatypePropertiesHelper(in_file=str(ttl_file))
 
     def __process_ObjectPropertiesHelper(self, in_file: str) -> None:
@@ -296,7 +342,6 @@ class ContextBuilder:
         """
         graph = rdflib.Graph()
         graph.parse(in_file, format="turtle")
-        # Make sure to do an iter that looks for rdflib.OWL.class"
         # If we cannot find rdf range, skip
         # If rdf range is a blank node, skip
         for triple in graph.triples((None, rdflib.RDF.type, rdflib.OWL.ObjectProperty)):
@@ -334,10 +379,65 @@ class ContextBuilder:
                 self.object_properties_dict[root] = [op_obj]
         return
 
+    def __process_ClassesHelper(self, in_file: str) -> None:
+        graph = rdflib.Graph()
+        graph.parse(in_file, format="turtle")
+        # Make sure to do an iter that looks for rdflib.OWL.class"
+        # If we cannot find rdf range, skip
+        # If rdf range is a blank node, skip
+        for triple in graph.triples((None, rdflib.RDF.type, rdflib.OWL.Class)):
+            # Skip Blank Nodes
+            if isinstance(triple[0], rdflib.term.BNode):
+                _logger.debug(f"\tBlank: {triple}\n")
+                continue
+            c_obj = UCO_Class()
+            # print(triple)
+            _logger.debug((triple))
+            # print(triple[0].split("/"))
+            s_triple = triple[0].split("/")
+            root = s_triple[-1]
+            ns_prefix = f"{s_triple[-3]}-{s_triple[-2]}"
+            # print(ns_prefix, root)
+            # print(root)
+            c_obj.ns_prefix = ns_prefix
+            c_obj.root_class_name = root
+
+            # for sh_triple in graph.triples((None, rdflib.SH.path, triple[0])):
+            #    _logger.debug(f"\t**obj_sh_triple:{sh_triple}")
+            #    op_obj.shacl_property_bnode = sh_triple[0]
+            #    for sh_triple2 in graph.triples(
+            #        (op_obj.shacl_property_bnode, rdflib.SH.maxCount, None)
+            #    ):
+            #        _logger.debug(f"\t\t***sh_triple:{sh_triple2}")
+            #        _logger.debug(f"\t\t***sh_triple:{sh_triple2[2]}")
+            #        if int(sh_triple2[2]) <= 1:
+            #            if op_obj.shacl_count_lte_1 is not None:
+            #                _logger.debug(
+            #                    f"\t\t\t**MaxCount Double Definition? {triple[0].n3(graph.namespace_manager)}"
+            #                )
+            #            op_obj.shacl_count_lte_1 = True
+            #        else:
+            #            _logger.debug(f"\t\t\t***Large max_count: {sh_triple2[2]}")
+
+            if root in self.classes_dict.keys():
+                _logger.debug(f"None Unique Entry Found:\t {ns_prefix}:{root}")
+                print(f"None Unique Entry Found:\t {ns_prefix}:{root}")
+                self.classes_dict[root].append(c_obj)
+            else:
+                self.classes_dict[root] = [c_obj]
+        return
+
     def process_ObjectProperties(self) -> None:
         assert self.ttl_file_list is not None
         for ttl_file in self.ttl_file_list:
+            _logger.debug(f"ObjectProperty Processing for {str(ttl_file)}")
             self.__process_ObjectPropertiesHelper(in_file=str(ttl_file))
+
+    def process_Classes(self) -> None:
+        assert self.ttl_file_list is not None
+        for ttl_file in self.ttl_file_list:
+            _logger.debug(f"Class Processing for {str(ttl_file)}")
+            self.__process_ClassesHelper(in_file=str(ttl_file))
 
     def process_prefixes(self) -> None:
         """
@@ -416,6 +516,23 @@ class ContextBuilder:
 
         self.context_str += ks_str
 
+    def add_concise_classes_to_cntxt(self) -> None:
+        """Adds classes to context string"""
+        c_sect_str = ""
+        c_list = list(self.classes_dict.keys())
+        c_list.sort()
+
+        for key in c_list:
+            if len(self.classes_dict[key]) > 1:
+                # print(f"M:{self.classes_dict[key]}")
+                for c_obj in self.classes_dict[key]:
+                    c_sect_str += c_obj.get_minimal_json()
+            else:
+                # print(f"S:{self.classes_dict[key]}")
+                for c_obj in self.classes_dict[key]:
+                    c_sect_str += c_obj.get_concise_json()
+        self.context_str += c_sect_str
+
 
 def main() -> None:
     argument_parser = argparse.ArgumentParser()
@@ -452,6 +569,9 @@ def main() -> None:
     cb.init_context_str()
     cb.add_prefixes_to_cntxt()
     if args.concise:
+        # Note there is classes are not in minimal context
+        cb.process_Classes()
+        cb.add_concise_classes_to_cntxt()
         cb.add_concise_object_props_to_cntxt()
         cb.add_concise_datatype_props_to_cntxt()
     else:
