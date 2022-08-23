@@ -1,8 +1,13 @@
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix marking: <https://ontology.unifiedcyberontology.org/uco/marking/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,6 +15,10 @@
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
+	.
+
+action:ArrayOfAction
+	a owl:Class ;
 	.
 
 core:Annotation
@@ -620,11 +629,203 @@ core:value
 	rdfs:range xsd:string ;
 	.
 
+marking:GranularMarking
+	a owl:Class ;
+	.
+
+marking:MarkingModel
+	a owl:Class ;
+	.
+
+observable:ContactAddress
+	a owl:Class ;
+	.
+
+observable:ContactAffiliation
+	a owl:Class ;
+	.
+
+observable:ContactEmail
+	a owl:Class ;
+	.
+
+observable:ContactMessaging
+	a owl:Class ;
+	.
+
+observable:ContactPhone
+	a owl:Class ;
+	.
+
+observable:ContactProfile
+	a owl:Class ;
+	.
+
+observable:ContactSIP
+	a owl:Class ;
+	.
+
+observable:ContactURL
+	a owl:Class ;
+	.
+
+observable:EnvironmentVariable
+	a owl:Class ;
+	.
+
+observable:ExtractedString
+	a owl:Class ;
+	.
+
+observable:GlobalFlagType
+	a owl:Class ;
+	.
+
+observable:IComHandlerActionType
+	a owl:Class ;
+	.
+
+observable:IExecActionType
+	a owl:Class ;
+	.
+
+observable:IShowMessageActionType
+	a owl:Class ;
+	.
+
+observable:MimePartType
+	a owl:Class ;
+	.
+
+observable:TaskActionType
+	a owl:Class ;
+	.
+
+observable:TriggerType
+	a owl:Class ;
+	.
+
+observable:URLHistoryEntry
+	a owl:Class ;
+	.
+
+observable:WhoisRegistrarInfoType
+	a owl:Class ;
+	.
+
+observable:WindowsPEFileHeader
+	a owl:Class ;
+	.
+
+observable:WindowsPEOptionalHeader
+	a owl:Class ;
+	.
+
+observable:WindowsPESection
+	a owl:Class ;
+	.
+
+observable:WindowsRegistryValue
+	a owl:Class ;
+	.
+
+pattern:PatternExpression
+	a owl:Class ;
+	.
+
+tool:BuildConfigurationType
+	a owl:Class ;
+	.
+
+tool:BuildInformationType
+	a owl:Class ;
+	.
+
+tool:BuildUtilityType
+	a owl:Class ;
+	.
+
+tool:CompilerType
+	a owl:Class ;
+	.
+
+tool:ConfigurationSettingType
+	a owl:Class ;
+	.
+
+tool:DependencyType
+	a owl:Class ;
+	.
+
+tool:LibraryType
+	a owl:Class ;
+	.
+
+types:ControlledDictionary
+	a owl:Class ;
+	.
+
+types:ControlledDictionaryEntry
+	a owl:Class ;
+	.
+
+types:Dictionary
+	a owl:Class ;
+	.
+
+types:DictionaryEntry
+	a owl:Class ;
+	.
+
+types:Hash
+	a owl:Class ;
+	.
+
 []
 	a owl:AllDisjointClasses ;
 	owl:members (
+		action:ArrayOfAction
+		core:ExternalReference
 		core:Facet
 		core:UcoObject
+		marking:GranularMarking
+		marking:MarkingModel
+		observable:ContactAddress
+		observable:ContactAffiliation
+		observable:ContactEmail
+		observable:ContactMessaging
+		observable:ContactPhone
+		observable:ContactProfile
+		observable:ContactSIP
+		observable:ContactURL
+		observable:EnvironmentVariable
+		observable:ExtractedString
+		observable:GlobalFlagType
+		observable:IComHandlerActionType
+		observable:IExecActionType
+		observable:IShowMessageActionType
+		observable:MimePartType
+		observable:TaskActionType
+		observable:TriggerType
+		observable:URLHistoryEntry
+		observable:WhoisRegistrarInfoType
+		observable:WindowsPEFileHeader
+		observable:WindowsPEOptionalHeader
+		observable:WindowsPESection
+		observable:WindowsRegistryValue
+		pattern:PatternExpression
+		tool:BuildConfigurationType
+		tool:BuildInformationType
+		tool:BuildUtilityType
+		tool:CompilerType
+		tool:ConfigurationSettingType
+		tool:DependencyType
+		tool:LibraryType
+		types:ControlledDictionary
+		types:ControlledDictionaryEntry
+		types:Dictionary
+		types:DictionaryEntry
+		types:Hash
 	) ;
 	.
 
