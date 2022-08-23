@@ -1,5 +1,24 @@
 {
     "@context": {
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-co": "https://ontology.unifiedcyberontology.org/co/",
+        "uco-victim": "https://ontology.unifiedcyberontology.org/uco/victim/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "HashNameVocab" : {
+            "@id": "uco-vocabulary:HashNameVocab"
+	},
+        "hashValue": {
+            "@id": "uco-types:hashValue",
+            "@type": "xsd:hexBinary"
+        },
+        "hashMethod": {
+            "@id": "uco-types:hashMethod"
+        },
+        "value": "@value",
+        "graph": "@graph",
+        "type": "@type",
+        "id": "@id",
         "kb": "http://example.org/kb/"
     },
     "graph": [
