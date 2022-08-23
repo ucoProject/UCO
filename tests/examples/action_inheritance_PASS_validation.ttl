@@ -8,46 +8,21 @@
 
 []
 	a sh:ValidationReport ;
-	sh:conforms "false"^^xsd:boolean ;
-	sh:result
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath action:phase ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class action:ArrayOfAction ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:IRI ;
-				sh:path action:phase ;
-			] ;
-			sh:value [
-				a action:ArrayOfAction ;
-				action:action
-					<http://example.org/kb/action1> ,
-					<http://example.org/kb/action2> ,
-					<http://example.org/kb/action3>
-					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action1> ;
-			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-				sh:path action:actionStatus ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "CUSTOM Started" ;
-		]
-		;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/action1> ;
+		sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+		sh:resultPath action:actionStatus ;
+		sh:resultSeverity sh:Info ;
+		sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+		sh:sourceShape [
+			sh:datatype vocabulary:ActionStatusTypeVocab ;
+			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:path action:actionStatus ;
+			sh:severity sh:Info ;
+		] ;
+		sh:value "CUSTOM Started" ;
+	] ;
 	.
 

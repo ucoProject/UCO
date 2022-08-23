@@ -42,29 +42,6 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath action:phase ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class action:ArrayOfAction ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:IRI ;
-				sh:path action:phase ;
-			] ;
-			sh:value [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
 			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
 			sh:resultSeverity sh:Info ;
@@ -124,14 +101,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value does not have class action:Action" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
@@ -146,14 +116,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value does not have class action:Action" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
@@ -168,14 +131,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value does not have class action:Action" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
@@ -190,14 +146,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
@@ -212,14 +161,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
@@ -234,14 +176,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
