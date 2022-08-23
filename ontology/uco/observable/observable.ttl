@@ -416,7 +416,7 @@ observable:ApplicationFacet
 		;
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "ApplicationFacet"@en ;
-	rdfs:comment "An application facet is a grouping of characteristics unique to a particular software program designed for ends users."@en ;
+	rdfs:comment "An application facet is a grouping of characteristics unique to a particular software program designed for end users."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
