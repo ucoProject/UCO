@@ -119,13 +119,13 @@ observable:AccountFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accountIssuer ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
@@ -237,7 +237,7 @@ observable:AlternateDataStreamFacet
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hashes ;
 		] ,
 		[
@@ -403,7 +403,7 @@ observable:ApplicationAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:application ;
 	] ;
 	sh:targetClass observable:ApplicationAccountFacet ;
@@ -421,7 +421,7 @@ observable:ApplicationFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:operatingSystem ;
 		] ,
 		[
@@ -660,7 +660,7 @@ observable:BrowserBookmarkFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -725,13 +725,13 @@ observable:BrowserCookieFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cookieDomain ;
 		] ,
 		[
@@ -808,24 +808,24 @@ observable:CalendarEntryFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
 			sh:class identity:Identity ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:attendant ;
 		] ,
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -910,13 +910,13 @@ observable:CalendarFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		]
 		;
@@ -946,23 +946,23 @@ observable:CallFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:participant ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
@@ -1016,7 +1016,7 @@ observable:CapturedTelecommunicationsInformationFacet
 			sh:class observable:CellSite ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:captureCellSite ;
 		] ,
 		[
@@ -1163,7 +1163,7 @@ observable:ComputerSpecificationFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:networkInterface ;
 		] ,
 		[
@@ -1306,7 +1306,7 @@ observable:ContactAddress
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
@@ -1360,43 +1360,43 @@ observable:ContactAffiliation
 		[
 			sh:class identity:Organization ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactOrganization ;
 		] ,
 		[
 			sh:class observable:ContactAddress ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:organizationLocation ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactProfile ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
@@ -1426,7 +1426,7 @@ observable:ContactEmail
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:emailAddress ;
 		] ,
 		[
@@ -1482,55 +1482,55 @@ observable:ContactFacet
 		[
 			sh:class observable:ContactAddress ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:class observable:ContactAffiliation ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAffiliation ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactProfile ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:class observable:ContactSIP ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactSIP ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
@@ -1644,12 +1644,12 @@ observable:ContactListFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contact ;
 		]
 		;
@@ -1667,13 +1667,13 @@ observable:ContactMessaging
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessagingPlatform ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:messagingAddress ;
 		]
 		;
@@ -1691,7 +1691,7 @@ observable:ContactPhone
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
@@ -1750,13 +1750,13 @@ observable:ContactProfile
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfilePlatform ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profile ;
 		]
 		;
@@ -1774,7 +1774,7 @@ observable:ContactSIP
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sipAddress ;
 		] ,
 		[
@@ -1828,7 +1828,7 @@ observable:ContactURL
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
@@ -1895,12 +1895,12 @@ observable:ContentDataFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dataPayloadReferenceURL ;
 		] ,
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hash ;
 		] ,
 		[
@@ -2104,7 +2104,7 @@ observable:DeviceFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
@@ -2241,13 +2241,13 @@ observable:DigitalSignatureInfoFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:certificateSubject ;
 		] ,
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:certificateIssuer ;
 		] ,
 		[
@@ -2305,7 +2305,7 @@ observable:DiskFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:partition ;
 		] ,
 		[
@@ -2461,7 +2461,7 @@ observable:EXIFFacet
 	rdfs:comment "An EXIF (exchangeable image file format) facet is a grouping of characteristics unique to the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras conformant to JEIDA/JEITA/CIPA specifications. [based on https://en.wikipedia.org/wiki/Exif]"@en ;
 	sh:property [
 		sh:class types:ControlledDictionary ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:exifData ;
 	] ;
 	sh:targetClass observable:EXIFFacet ;
@@ -2489,7 +2489,7 @@ observable:EmailAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:emailAddress ;
 	] ;
 	sh:targetClass observable:EmailAccountFacet ;
@@ -2553,69 +2553,69 @@ observable:EmailMessageFacet
 	sh:property
 		[
 			sh:class observable:MimePartType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyMultipart ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyRaw ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:headerRaw ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sender ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:xOriginatingIP ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bcc ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cc ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:references ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:otherHeaders ;
 		] ,
 		[
@@ -2820,13 +2820,13 @@ observable:EventFacet
 		[
 			sh:class observable:ObservableAction ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cyberAction ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -3022,7 +3022,7 @@ observable:ExtractedStringsFacet
 	rdfs:comment "An extracted strings facet is a grouping of characteristics unique to one or more sequences of characters pulled from an observable object."@en ;
 	sh:property [
 		sh:class observable:ExtractedString ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:strings ;
 	] ;
 	sh:targetClass observable:ExtractedStringsFacet ;
@@ -3121,7 +3121,7 @@ observable:FilePermissionsFacet
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:owner ;
 	] ;
 	sh:targetClass observable:FilePermissionsFacet ;
@@ -3264,13 +3264,13 @@ observable:GeoLocationEntryFacet
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -3306,7 +3306,7 @@ observable:GeoLocationLogFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -3342,12 +3342,12 @@ observable:GeoLocationTrackFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geoLocationEntry ;
 		] ,
 		[
@@ -3424,13 +3424,13 @@ observable:HTTPConnectionFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:httpMessageBodyData ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:httpRequestHeader ;
 		] ,
 		[
@@ -3547,7 +3547,7 @@ observable:IExecActionType
 	sh:property
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:execProgramHashes ;
 		] ,
 		[
@@ -3983,18 +3983,18 @@ observable:MessageFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
@@ -4088,13 +4088,13 @@ observable:MessageThreadFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:participant ;
 		] ,
 		[
 			sh:class types:Thread ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:messageThread ;
 		] ,
 		[
@@ -4203,7 +4203,7 @@ observable:MimePartType
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyRaw ;
 		] ,
 		[
@@ -4403,7 +4403,7 @@ observable:NTFSFileFacet
 	sh:property
 		[
 			sh:class observable:AlternateDataStream ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:alternateDataStreams ;
 		] ,
 		[
@@ -4477,18 +4477,18 @@ observable:NetworkConnectionFacet
 	sh:property
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:src ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dst ;
 		] ,
 		[
 			sh:class types:ControlledDictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:protocols ;
 		] ,
 		[
@@ -4548,19 +4548,19 @@ observable:NetworkFlowFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dstPayload ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:srcPayload ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipfix ;
 		] ,
 		[
@@ -4614,22 +4614,22 @@ observable:NetworkInterfaceFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:macAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dhcpServer ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ip ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipGateway ;
 		] ,
 		[
@@ -4775,7 +4775,7 @@ observable:NoteFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -4920,13 +4920,13 @@ observable:OnlineServiceFacet
 		[
 			sh:class location:Location ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:inetLocation ;
 		] ,
 		[
@@ -4962,13 +4962,13 @@ observable:OperatingSystemFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:environmentVariables ;
 		] ,
 		[
@@ -5027,7 +5027,7 @@ observable:PDFFileFacet
 		[
 			sh:class types:ControlledDictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:documentInformationDictionary ;
 		] ,
 		[
@@ -5183,25 +5183,25 @@ observable:ProcessFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:binary ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:creatorUser ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:parent ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:environmentVariables ;
 		] ,
 		[
@@ -5289,55 +5289,55 @@ observable:ProfileFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileIdentity ;
 		] ,
 		[
 			sh:class observable:ContactAddress ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileAccount ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileService ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileWebsite ;
 		] ,
 		[
@@ -5439,7 +5439,7 @@ observable:RasterPictureFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:camera ;
 		] ,
 		[
@@ -5667,7 +5667,7 @@ observable:SIMCardFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:carrier ;
 		] ,
 		[
@@ -5950,7 +5950,7 @@ observable:SoftwareFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
@@ -5996,13 +5996,13 @@ observable:StateChangeEffectFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:newObject ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:oldObject ;
 		]
 		;
@@ -6031,7 +6031,7 @@ observable:SymbolicLinkFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:targetFile ;
 	] ;
 	sh:targetClass observable:SymbolicLinkFacet ;
@@ -6081,25 +6081,25 @@ observable:TaskActionType
 		[
 			sh:class observable:IComHandlerActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iComHandlerAction ;
 		] ,
 		[
 			sh:class observable:IExecActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iExecAction ;
 		] ,
 		[
 			sh:class observable:IShowMessageActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iShowMessageAction ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iEmailAction ;
 		] ,
 		[
@@ -6301,37 +6301,37 @@ observable:TwitterProfileFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBackgroundLocation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBannerLocation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileImageLocation ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBackgroundHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBannerHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileImageHash ;
 		] ,
 		[
@@ -6538,7 +6538,7 @@ observable:URLFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:host ;
 		] ,
 		[
@@ -6615,13 +6615,13 @@ observable:URLHistoryEntry
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:referrerUrl ;
 		] ,
 		[
@@ -6694,12 +6694,12 @@ observable:URLHistoryFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:browserInformation ;
 		] ,
 		[
 			sh:class observable:URLHistoryEntry ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:urlHistoryEntry ;
 		]
 		;
@@ -6729,19 +6729,19 @@ observable:URLVisitFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:browserInformation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:fromURLVisit ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
@@ -6875,7 +6875,7 @@ observable:UserSessionFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:effectiveUser ;
 		] ,
 		[
@@ -6998,36 +6998,36 @@ observable:WhoIsFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:domainName ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registrantContactInfo ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:serverName ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:nameServer ;
 		] ,
 		[
 			sh:class observable:WhoisRegistrarInfoType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registrarInfo ;
 		] ,
 		[
@@ -7212,31 +7212,31 @@ observable:WhoisRegistrarInfoType
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:emailAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:referralURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:whoisServer ;
 		] ,
 		[
@@ -7396,36 +7396,36 @@ observable:WindowsComputerSpecificationFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registeredOrganization ;
 		] ,
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registeredOwner ;
 		] ,
 		[
 			sh:class observable:GlobalFlagType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:globalFlagList ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsSystemDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsTempDirectory ;
 		] ,
 		[
@@ -7573,17 +7573,17 @@ observable:WindowsPEBinaryFileFacet
 		[
 			sh:class observable:WindowsPEOptionalHeader ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:optionalHeader ;
 		] ,
 		[
 			sh:class observable:WindowsPESection ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sections ;
 		] ,
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:fileHeaderHashes ;
 		] ,
 		[
@@ -7836,7 +7836,7 @@ observable:WindowsPESection
 	sh:property
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hashes ;
 		] ,
 		[
@@ -7884,17 +7884,17 @@ observable:WindowsPrefetchFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:volume ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accessedDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accessedFile ;
 		] ,
 		[
@@ -7954,7 +7954,7 @@ observable:WindowsProcessFacet
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:startupInfo ;
 		] ,
 		[
@@ -8042,12 +8042,12 @@ observable:WindowsRegistryKeyFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:creator ;
 		] ,
 		[
 			sh:class observable:WindowsRegistryValue ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registryValues ;
 		] ,
 		[
@@ -8250,35 +8250,35 @@ observable:WindowsTaskFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:account ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:workItemData ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:workingDirectory ;
 		] ,
 		[
 			sh:class observable:TaskActionType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:actionList ;
 		] ,
 		[
 			sh:class observable:TriggerType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:triggerList ;
 		] ,
 		[
@@ -8752,25 +8752,25 @@ observable:X509CertificateFacet
 		[
 			sh:class observable:X509V3ExtensionsFacet ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:x509v3extensions ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:issuerHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:subjectHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:thumbprintHash ;
 		] ,
 		[

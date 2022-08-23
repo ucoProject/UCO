@@ -23,7 +23,7 @@ core:Annotation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:Annotation ;
@@ -113,7 +113,7 @@ core:ContextualCompilation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:ContextualCompilation ;
@@ -162,7 +162,7 @@ core:EnclosingCompilation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:EnclosingCompilation ;
@@ -281,13 +281,13 @@ core:Relationship
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:target ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:source ;
 		] ,
 		[
@@ -329,23 +329,23 @@ core:UcoObject
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:externalReference ;
 		] ,
 		[
 			sh:class core:Facet ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:createdBy ;
 		] ,
 		[
 			sh:class core:MarkingDefinitionAbstraction ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:objectMarking ;
 		] ,
 		[

@@ -25,7 +25,7 @@ marking:GranularMarking
 	sh:property
 		[
 			sh:class marking:MarkingDefinition ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path marking:marking ;
 		] ,
 		[
@@ -74,7 +74,7 @@ marking:MarkingDefinition
 	sh:property
 		[
 			sh:class marking:MarkingModel ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path marking:definition ;
 		] ,
 		[

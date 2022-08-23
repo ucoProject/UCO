@@ -36,7 +36,7 @@ tool:BuildConfigurationType
 	sh:property
 		[
 			sh:class tool:ConfigurationSettingType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:configurationSettings ;
 		] ,
 		[
@@ -60,7 +60,7 @@ tool:BuildFacet
 	sh:property [
 		sh:class tool:BuildInformationType ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path tool:buildInformation ;
 	] ;
 	sh:targetClass tool:BuildFacet ;
@@ -77,23 +77,23 @@ tool:BuildInformationType
 		[
 			sh:class tool:BuildConfigurationType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:buildConfiguration ;
 		] ,
 		[
 			sh:class tool:BuildUtilityType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:buildUtility ;
 		] ,
 		[
 			sh:class tool:CompilerType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:compilers ;
 		] ,
 		[
 			sh:class tool:LibraryType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:libraries ;
 		] ,
 		[
@@ -320,7 +320,7 @@ tool:Tool
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:creator ;
 		] ,
 		[
@@ -361,7 +361,7 @@ tool:ToolConfigurationTypeFacet
 	sh:property
 		[
 			sh:class tool:DependencyType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:dependencies ;
 		] ,
 		[
