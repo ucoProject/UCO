@@ -1,0 +1,152 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/"
+    },
+    "@graph": [
+        {
+            "@id": "urn:example:mime:dcterms:application/gzip",
+            "@type": "dcterms:FileFormat",
+            "rdfs:comment": "This is a custom media type individual, designed for just this unit test.  A larger taxonomy of individuals should be used outside of testing contexts.",
+            "skos:notation": "application/gzip"
+        },
+        {
+            "@id": "urn:example:mime:uco:application/gzip",
+            "@type": "types:IANAMediaType",
+            "rdfs:comment": "This is a custom media type individual, designed for just this unit test.  A larger taxonomy of individuals should be used outside of testing contexts.",
+            "skos:exactMatch": {
+                "@id": "urn:example:mime:dcterms:application/gzip"
+            },
+            "skos:notation": "application/gzip"
+        },
+        {
+            "@id": "urn:example:mime:uco:application/tar",
+            "@type": "types:NonIANAMediaType",
+            "rdfs:comment": "This is a custom media type individual, designed for just this unit test.  A larger taxonomy of individuals should be used outside of testing contexts.",
+            "skos:notation": "application/tar"
+        },
+        {
+            "@id": "urn:example:mime:uco:application/tar+gzip",
+            "@type": "types:NonIANAMediaType",
+            "rdfs:comment": "This is a custom media type individual, designed for just this unit test.  A larger taxonomy of individuals should be used outside of testing contexts.",
+            "skos:broader": [
+                {
+                    "@id": "urn:example:mime:uco:application/gzip"
+                },
+                {
+                    "@id": "urn:example:mime:uco:application/tar"
+                }
+            ],
+            "skos:notation": "application/tar+gzip"
+        },
+        {
+            "@id": "urn:example:mime:uco:image/example.image.type.without.notation",
+            "@type": "types:NonIANAMediaType",
+            "rdfs:comment": "This is a custom media type individual, designed for just this unit test.  A larger taxonomy of individuals should be used outside of testing contexts."
+        },
+        {
+            "@id": "kb:file-1",
+            "@type": "observable:File",
+            "core:hasFacet": [
+                {
+                    "@type": "observable:ContentDataFacet",
+                    "observable:mimeType": {
+                        "@id": "urn:example:mime:dcterms:application/gzip"
+                    }
+                },
+                {
+                    "@type": "observable:FileFacet",
+                    "observable:fileName": "1.gz"
+                }
+            ],
+            "rdfs:comment": "This file node should trigger an sh:Info-severity result."
+        },
+        {
+            "@id": "kb:file-2",
+            "@type": "observable:File",
+            "core:hasFacet": [
+                {
+                    "@type": "observable:ContentDataFacet",
+                    "observable:mimeType": {
+                        "@id": "urn:example:mime:uco:application/gzip"
+                    }
+                },
+                {
+                    "@type": "observable:FileFacet",
+                    "observable:fileName": "2.gz"
+                }
+            ]
+        },
+        {
+            "@id": "kb:file-3",
+            "@type": "observable:File",
+            "core:hasFacet": [
+                {
+                    "@type": "observable:ContentDataFacet",
+                    "observable:mimeType": {
+                        "@id": "urn:example:mime:uco:application/tar"
+                    }
+                },
+                {
+                    "@type": "observable:FileFacet",
+                    "observable:fileName": "3.tar"
+                }
+            ]
+        },
+        {
+            "@id": "kb:file-4",
+            "@type": "observable:File",
+            "core:hasFacet": [
+                {
+                    "@type": "observable:ContentDataFacet",
+                    "observable:mimeType": {
+                        "@id": "urn:example:mime:uco:application/tar+gzip"
+                    }
+                },
+                {
+                    "@type": "observable:FileFacet",
+                    "observable:fileName": "4.tar.gz"
+                }
+            ]
+        },
+        {
+            "@id": "kb:file-5",
+            "@type": "observable:File",
+            "core:hasFacet": [
+                {
+                    "@type": "observable:ContentDataFacet",
+                    "observable:mimeType": {
+                        "@id": "urn:example:mime:uco:image/example.image.type.without.notation"
+                    }
+                },
+                {
+                    "@type": "observable:FileFacet",
+                    "observable:fileName": "5.dat"
+                }
+            ],
+            "rdfs:comment": "This file node should trigger an sh:Warning-severity result."
+        },
+        {
+            "@id": "kb:file-6",
+            "@type": "observable:File",
+            "core:hasFacet": [
+                {
+                    "@type": "observable:ContentDataFacet",
+                    "observable:mimeType": {
+                        "@id": "urn:example:mime:uco:image/example.image.type.without.notation"
+                    }
+                },
+                {
+                    "@type": "observable:FileFacet",
+                    "observable:fileName": "6.dat"
+                }
+            ],
+            "rdfs:comment": "This file node should trigger an sh:Warning-severity result."
+        }
+    ]
+}

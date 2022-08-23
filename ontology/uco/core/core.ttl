@@ -1,8 +1,11 @@
+# imports: http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf
+
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,6 +13,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
+	owl:imports <http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf> ;
 	.
 
 core:Annotation
@@ -315,6 +319,13 @@ core:Relationship
 		]
 		;
 	sh:targetClass core:Relationship ;
+	.
+
+core:TaxonomicConcept
+	a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	rdfs:label "TaxonomicConcept"@en ;
+	rdfs:comment "Taxonomic Concept is a mix-in class that enables UCO as an OWL ontology to use SKOS taxonomic individuals. [based on https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html#Hybrids]"@en ;
 	.
 
 core:UcoObject

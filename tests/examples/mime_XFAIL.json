@@ -1,0 +1,28 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/"
+    },
+    "@graph": [
+        {
+            "@id": "kb:file-7",
+            "@type": "observable:File",
+            "core:hasFacet": [
+                {
+                    "@type": "observable:ContentDataFacet",
+                    "observable:mimeType": "application/gzip"
+                },
+                {
+                    "@type": "observable:FileFacet",
+                    "observable:fileName": "7.gz"
+                }
+            ],
+            "rdfs:comment": "This file node errantly uses a literal instead of object reference."
+        }
+    ]
+}
