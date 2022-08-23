@@ -6,7 +6,10 @@
         {
             "id": "kb:hash-1",
             "type": "uco-types:Hash",
-            "uco-types:hashMethod": "SHA1",
+            "uco-types:hashMethod": {
+                "type": "vocabulary:HashNameVocab",
+                "value": "SHA1"
+            },
             "uco-types:hashValue": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
         }
     ]
