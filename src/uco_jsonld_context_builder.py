@@ -410,14 +410,19 @@ class ContextBuilder:
     def __process_ClassesHelper(self, in_file: str) -> None:
         graph = rdflib.Graph()
         graph.parse(in_file, format="turtle")
-        # Make sure to do an iter that looks for rdflib.OWL.class"
-        # If we cannot find rdf range, skip
-        # If rdf range is a blank node, skip
+        # Populate with an iter that looks for rdflib.OWL.class, and then for participation in subclassing.
+        all_class_iris: typing.Set[rdflib.URIRef] = set()
         for triple in graph.triples((None, rdflib.RDF.type, rdflib.OWL.Class)):
             # Skip Blank Nodes
-            if isinstance(triple[0], rdflib.term.BNode):
-                _logger.debug(f"\tBlank: {triple}\n")
-                continue
+            if isinstance(triple[0], rdflib.URIRef):
+                all_class_iris.add(triple[0])
+        for triple in graph.triples((None, rdflib.RDFS.subClassOf, None)):
+            # Skip Blank Nodes
+            if isinstance(triple[0], rdflib.URIRef):
+                all_class_iris.add(triple[0])
+            if isinstance(triple[2], rdflib.URIRef):
+                all_class_iris.add(triple[2])
+        for class_iri in all_class_iris:
             c_obj = UCO_Class()
             # print(triple)
             _logger.debug((triple))
