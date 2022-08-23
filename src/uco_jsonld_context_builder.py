@@ -49,6 +49,7 @@ class ObjectPropertyInfo:
 
     def __get_json(self, hdr: str) -> str:
         json_str = hdr
+        json_str += f'\t"@id":"{self.ns_prefix}:{self.root_class_name}",\n'
         json_str += '\t"@type":"@id"'
         if self.shacl_count_lte_1 is not True:
             json_str += ',\n\t"@container":"@set"\n'
