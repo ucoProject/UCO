@@ -322,8 +322,9 @@ core:UcoObject
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "UcoObject"@en ;
-	rdfs:comment "A UCO object is a representation of a fundamental concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is the base class acting as a consistent, unifying and interoperable foundation for all explicit and inter-relatable content objects."@en ;
+	rdfs:comment "A UCO object is a representation of a fundamental concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is a base class acting as a consistent, unifying and interoperable foundation for all explicit and inter-relatable content objects."@en ;
 	owl:disjointWith core:Facet ;
 	sh:property
 		[
@@ -394,6 +395,17 @@ core:UcoObject
 		]
 		;
 	sh:targetClass core:UcoObject ;
+	.
+
+core:UcoThing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf owl:Thing ;
+	rdfs:label "UcoThing"@en ;
+	rdfs:comment "UcoThing is the top-level class within UCO."@en ;
+	sh:targetClass core:UcoThing ;
 	.
 
 core:confidence
