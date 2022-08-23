@@ -74,9 +74,13 @@ def test_action_context_minimal() -> None:
     _test_action_graph_context_query("action_result_NO_CONTEXT_minimal.json", "context-minimal.json")
 
 
-def _test_hash_graph_context_query(input_graph_file: str, input_context_file: str) -> None:
+def _test_graph_context_independent_match(input_dependent_graph_file: str, input_context_file: str, input_independent_graph_file: str) -> None:
     """
-    Run an exact-parse-match test.
+    Run an exact-parse-match test, confirming that the triples found in a file that does not depend on a context dictionary matches a JSON-LD file that does depend on a context dictionary.
+
+    :param input_dependent_graph_file: File that depends on externally-supplied context dictionary to function.
+    :param input_context_file: Context dictionary file.
+    :param input_independent_graph_file: File that does not depend on externally-supplied context dictionary to function.
     """
 
     expected: Set[Tuple[Node, Node, Nonde]] = set()
@@ -85,13 +89,13 @@ def _test_hash_graph_context_query(input_graph_file: str, input_context_file: st
     expected_graph = Graph()
     computed_graph = Graph()
 
-    expected_graph.parse("hash_expanded.json")
+    expected_graph.parse(input_independent_graph_file)
 
     context_object: Dict[str, Any]
     with open(input_context_file, "r") as context_fh:
         context_object = json.load(context_fh)
 
-    computed_graph.parse(input_graph_file, context=context_object)
+    computed_graph.parse(input_dependent_graph_file, context=context_object)
 
     for expected_triple in expected_graph:
         expected.add(expected_triple)
@@ -103,11 +107,11 @@ def _test_hash_graph_context_query(input_graph_file: str, input_context_file: st
 
 
 def test_hash_context_concise() -> None:
-    _test_hash_graph_context_query("hash_NO_CONTEXT_concise.json", "context-concise.json")
+    _test_graph_context_independent_match("hash_NO_CONTEXT_concise.json", "context-concise.json", "hash_expanded.json")
 
 
 def test_hash_context_minimal() -> None:
-    _test_hash_graph_context_query("hash_NO_CONTEXT_minimal.json", "context-minimal.json")
+    _test_graph_context_independent_match("hash_NO_CONTEXT_minimal.json", "context-minimal.json", "hash_expanded.json")
 
 
 #def test_context_concise2() -> None:
