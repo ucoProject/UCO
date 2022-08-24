@@ -17,7 +17,7 @@ from typing import Generator, List, Optional, Set, Tuple, Union
 
 import pytest
 import rdflib.plugins.sparql.processor
-from rdflib import BNode, Graph, Literal, Namespace, RDF, URIRef
+from rdflib import BNode, Graph, Literal, Namespace, RDF, RDFS, URIRef
 from rdflib.term import Node
 
 IdentifiedNode = Union[BNode, URIRef]
@@ -172,7 +172,23 @@ def test_only_one_uco_class_is_owl_thing_direct_subclass(graph: Graph) -> None:
     """
     expected: Set[URIRef] = {NS_UCO_CORE.UcoThing}
     computed: Set[URIRef] = set()
-    for result in graph.query("""\
+
+    # Create temporary graph where subClassOf statements for non-UCO classes are removed.
+    # This narrows the subclass hierarchy review to UCO-namespaced concepts only.
+    tmp_graph = Graph()
+    drop_graph = Graph()
+    tmp_graph += graph
+    for triple in graph.triples((None, RDFS.subClassOf, None)):
+        assert isinstance(triple[1], URIRef)
+        if not isinstance(triple[0], URIRef):
+            continue
+        if not isinstance(triple[2], URIRef):
+            continue
+        if not str(triple[2]).startswith("https://ontology.unifiedcyberontology.org/uco/"):
+            drop_graph.add(triple)
+    tmp_graph -= drop_graph
+
+    for result in tmp_graph.query("""\
 SELECT ?nClass
 WHERE {
     {
