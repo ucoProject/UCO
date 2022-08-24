@@ -424,10 +424,9 @@ class ContextBuilder:
                 all_class_iris.add(triple[2])
         for class_iri in all_class_iris:
             c_obj = UCO_Class()
-            # print(triple)
-            _logger.debug((triple))
-            # print(triple[0].split("/"))
-            s_triple = triple[0].split("/")
+            _logger.debug((class_iri))
+            # print(class_iri.split("/"))
+            s_triple = class_iri.split("/")
             root = s_triple[-1]
             ns_prefix = f"{s_triple[-3]}-{s_triple[-2]}"
             # print(ns_prefix, root)
@@ -437,7 +436,7 @@ class ContextBuilder:
 
             if root in self.classes_dict.keys():
                 _logger.debug(f"None Unique Entry Found:\t {ns_prefix}:{root}")
-                print(f"None Unique Entry Found:\t {ns_prefix}:{root}")
+                # print(f"None Unique Entry Found:\t {ns_prefix}:{root}")
                 self.classes_dict[root].append(c_obj)
             else:
                 self.classes_dict[root] = [c_obj]
