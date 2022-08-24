@@ -4147,12 +4147,20 @@ observable:MutexFacet
 	rdfs:label "MutexFacet"@en ;
 	rdfs:comment "A mutex facet is a grouping of characteristics unique to a mechanism that enforces limits on access to a resource when there are many threads of execution. A mutex is designed to enforce a mutual exclusion concurrency control policy, and with a variety of possible methods there exists multiple unique implementations for different applications. [based on https://en.wikipedia.org/wiki/Lock_(computer_science)]"@en ;
 	sh:property [
-		sh:datatype xsd:boolean ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:isNamed ;
-	] ;
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isNamed ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:mutexName ;
+		] 
+		;
+
 	sh:targetClass observable:MutexFacet ;
 	.
 
@@ -10804,6 +10812,13 @@ observable:msProductName
 	a owl:DatatypeProperty ;
 	rdfs:label "msProductName"@en ;
 	rdfs:comment "The Microsoft ProductName of the current installation of Windows. This is typically found in HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion!ProductName."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:mutexName
+	a owl:DatatypeProperty ;
+	rdfs:label "mutexName"@en ;
+	rdfs:comment "Specifies the name identifier for a specific instance of a mechanism that enforces limits on access to a resource when there are many threads of execution ."@en ;
 	rdfs:range xsd:string ;
 	.
 
