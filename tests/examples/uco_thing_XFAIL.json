@@ -1,0 +1,26 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@type": "core:UcoThing",
+            "rdfs:comment": "Triggers Violation-severity violation of node being a blank node."
+        },
+        {
+            "@id": "kb:uco-thing-x",
+            "@type": "core:UcoThing",
+            "rdfs:comment": "Triggers Info-severity violation of IRI not ending with UUID."
+        },
+        {
+            "@id": "kb:uco-thing-eb10f281-566c-a946-b360-c228d74a493b",
+            "@type": "core:UcoThing",
+            "rdfs:comment": "Triggers Info-severity violation of IRI not ending with UUID - more subtly, the version field is incorrect.",
+            "rdfs:seeAlso": {
+                "@id": "https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3"
+            }
+        }
+    ]
+}

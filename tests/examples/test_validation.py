@@ -449,3 +449,9 @@ def test_thread_XFAIL_validation():
         str(NS_UCO_TYPES.threadOriginItem),
       }
     )
+
+def uco_thing_XFAIL_validation() -> None:
+    confirm_validation_results(
+      "uco_thing_XFAIL_validation.ttl",
+      False,
+    )
