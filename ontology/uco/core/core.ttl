@@ -415,6 +415,46 @@ core:UcoThing
 	rdfs:subClassOf owl:Thing ;
 	rdfs:label "UcoThing"@en ;
 	rdfs:comment "UcoThing is the top-level class within UCO."@en ;
+	rdfs:seeAlso core:UcoThing-identifier-shape ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "UcoThings are required to not be blank nodes."@en ;
+		sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+	] ;
+	sh:targetClass core:UcoThing ;
+	.
+
+core:UcoThing-identifier-regex-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape is given an independent IRI for applications that have sufficient controls in place to deactivate this advisory of node identification practice."@en ;
+	rdfs:seeAlso sh:deactivated ;
+	sh:severity sh:Info ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+		sh:message "UcoThings are suggested to end with a UUID."@en ;
+		sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+	] ;
 	sh:targetClass core:UcoThing ;
 	.
 
