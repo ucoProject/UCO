@@ -1,0 +1,31 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:cross-property-ad",
+            "@type": [
+                "owl:AnnotationProperty",
+                "owl:DatatypeProperty"
+            ]
+        },
+        {
+            "@id": "kb:cross-property-ao",
+            "@type": [
+                "owl:AnnotationProperty",
+                "owl:ObjectProperty"
+            ]
+        },
+        {
+            "@id": "kb:cross-property-do",
+            "@type": [
+                "owl:DatatypeProperty",
+                "owl:ObjectProperty"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/axiom-1> ;
+		sh:resultMessage "An owl:Axiom must be a blank node." ;
+		sh:resultSeverity sh:Violation ;
+		sh:sourceConstraint [
+			a sh:SPARQLConstraint ;
+			rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3 of the OWL 2 mapping to RDF.  All references to owl:Axioms are identified as blank nodes.  Therefore, any non-blank node that is an owl:Axiom will not be mapped and consumed by the mapping process."@en ;
+			rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
+			sh:message "An owl:Axiom must be a blank node."@en ;
+			sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this
+			WHERE {
+				$this a owl:Axiom .
+				FILTER isIRI($this)
+			}
+		""" ;
+		] ;
+		sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+		sh:sourceShape uco-owl:Axiom-shape ;
+		sh:value <http://example.org/kb/axiom-1> ;
+	] ;
+	.
+
