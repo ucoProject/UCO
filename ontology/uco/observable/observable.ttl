@@ -6791,17 +6791,6 @@ observable:ValuesEnumeratedEffectFacet
 	sh:targetClass observable:ValuesEnumeratedEffectFacet ;
 	.
 
-observable:VideoCamera
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:Device ;
-	rdfs:label "VideoCamera"@en-US ;
-	rdfs:comment "A video camera is a camera that captures video and audio in digital memory."@en-US ;
-	sh:targetClass observable:VideoCamera ;
-	.
-
 observable:Volume
 	a
 		owl:Class ,
