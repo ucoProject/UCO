@@ -23,6 +23,8 @@ all: \
   action_result_PASS_validation.ttl \
   co_PASS_validation.ttl \
   co_XFAIL_validation.ttl \
+  configuration_setting_PASS_validation.ttl \
+  configuration_setting_XFAIL_validation.ttl \
   has_facet_inverse_functional_PASS_validation.ttl \
   has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
@@ -86,6 +88,8 @@ check: \
   action_result_PASS_validation.ttl \
   co_PASS_validation.ttl \
   co_XFAIL_validation.ttl \
+  configuration_setting_PASS_validation.ttl \
+  configuration_setting_XFAIL_validation.ttl \
   has_facet_inverse_functional_PASS_validation.ttl \
   has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
