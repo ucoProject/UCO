@@ -25,6 +25,8 @@ all: \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
   configuration_setting_XFAIL_validation.ttl \
+  has_facet_inverse_functional_PASS_validation.ttl \
+  has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
   hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
@@ -88,6 +90,8 @@ check: \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
   configuration_setting_XFAIL_validation.ttl \
+  has_facet_inverse_functional_PASS_validation.ttl \
+  has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
   hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
