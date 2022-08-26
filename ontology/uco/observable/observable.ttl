@@ -4343,11 +4343,6 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:network ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:MSISDN ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
