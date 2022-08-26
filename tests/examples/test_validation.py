@@ -177,6 +177,21 @@ def test_action_result_PASS_validation():
     g = load_validation_graph("action_result_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
 
+def test_has_facet_inverse_functional_PASS() -> None:
+    confirm_validation_results(
+      "has_facet_inverse_functional_PASS_validation.ttl",
+      True
+    )
+
+def test_has_facet_inverse_functional_XFAIL() -> None:
+    confirm_validation_results(
+      "has_facet_inverse_functional_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/facet-1", str(NS_SH.Violation))
+      }
+    )
+
 def test_hash_PASS() -> None:
     g = load_validation_graph("hash_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
