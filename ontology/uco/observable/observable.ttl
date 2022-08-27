@@ -2855,13 +2855,13 @@ observable:EventFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:application ;
+			sh:path observable:account ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:account ;
+			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
