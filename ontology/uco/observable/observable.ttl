@@ -422,6 +422,11 @@ observable:ApplicationFacet
 	rdfs:comment "An application facet is a grouping of characteristics unique to a particular software program designed for end users."@en ;
 	sh:property
 		[
+			sh:class observable:ApplicationVersion ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:installedVersionHistory ;
+		] ,
+		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -447,6 +452,36 @@ observable:ApplicationFacet
 		]
 		;
 	sh:targetClass observable:ApplicationFacet ;
+	.
+
+observable:ApplicationVersion
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "ApplicationVersion"@en ;
+	rdfs:comment "An application version is a grouping of characteristics unique to a particular software program version."@en ;
+	sh:property
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:installDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:uninstallDate ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:version ;
+		]
+		;
+	sh:targetClass observable:ApplicationVersion ;
 	.
 
 observable:ArchiveFile
@@ -10821,8 +10856,15 @@ observable:inhibitAnyPolicy
 observable:installDate
 	a owl:DatatypeProperty ;
 	rdfs:label "installDate"@en ;
-	rdfs:comment "Specifies the date the operating system was installed."@en ;
+	rdfs:comment "Specifies the date the operating system or application was installed."@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+observable:installedVersionHistory
+	a owl:ObjectProperty ;
+	rdfs:label "installedVersionHistory"@en ;
+	rdfs:comment "Specifies the history of installed application version(s)."@en ;
+	rdfs:range observable:ApplicationVersion ;
 	.
 
 observable:interceptedCallState
@@ -13011,6 +13053,13 @@ observable:twitterId
 	rdfs:label "Twitter ID"@en-US ;
 	rdfs:comment "Specifies the twitter id associated with the profile."@en-US ;
 	rdfs:range xsd:string ;
+	.
+
+observable:uninstallDate
+	a owl:DatatypeProperty ;
+	rdfs:label "uninstallDate"@en ;
+	rdfs:comment "Specifies the date the operating system or application was uninstalled."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:updatedDate
