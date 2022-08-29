@@ -1,0 +1,26 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/"
+    },
+    "@graph": [
+        {
+            "@id": "kb:facet-1",
+            "@type": "core:Facet"
+        },
+        {
+            "@id": "kb:object-1",
+            "@type": "core:UcoObject",
+            "core:hasFacet": {
+                "@id": "kb:facet-1"
+            }
+        },
+        {
+            "@id": "kb:object-2",
+            "@type": "core:UcoObject",
+            "core:hasFacet": {
+                "@id": "kb:facet-1"
+            }
+        }
+    ]
+}

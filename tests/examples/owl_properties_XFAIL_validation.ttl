@@ -18,8 +18,8 @@
 				a sh:SPARQLConstraint ;
 				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
 				sh:message "An IRI may not be a member of both an owl:AnnotationProperty and owl:DatatypeProperty."@en ;
-				sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 				sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:DatatypeProperty ;
@@ -39,8 +39,8 @@
 				a sh:SPARQLConstraint ;
 				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
 				sh:message "An IRI may not be a member of both an owl:AnnotationProperty and owl:ObjectProperty."@en ;
-				sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 				sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:ObjectProperty ;
@@ -60,8 +60,8 @@
 				a sh:SPARQLConstraint ;
 				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
 				sh:message "An IRI may not be a member of both owl:DatatypeProperty and owl:ObjectProperty."@en ;
-				sh:prefixes <http://www.w3.org/2002/07/owl#> ;
 				sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
 				$this a owl:ObjectProperty ;

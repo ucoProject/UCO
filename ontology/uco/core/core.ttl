@@ -469,10 +469,36 @@ core:externalReference
 	.
 
 core:hasFacet
-	a owl:ObjectProperty ;
+	a
+		owl:ObjectProperty ,
+		owl:InverseFunctionalProperty
+		;
 	rdfs:label "hasFacet"@en ;
 	rdfs:comment "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized."@en ;
 	rdfs:range core:Facet ;
+	.
+
+core:hasFacet-shape
+	a sh:PropertyShape ;
+	sh:path core:hasFacet ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "hasFacet must not be used to link two objects to one Facet."@en ;
+		sh:select """
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this ?value
+			WHERE {
+				?value core:hasFacet $this .
+				?nOtherValue core:hasFacet $this .
+				FILTER ( ?value != ?nOtherValue )
+				FILTER NOT EXISTS {
+					?value owl:sameAs|^owl:sameAs ?nOtherValue .
+				}
+			}
+			""" ;
+	] ;
+	sh:targetObjectsOf core:hasFacet ;
 	.
 
 core:isDirectional

@@ -24,7 +24,7 @@ all: \
   .gitmodules
 	# CASE-Utility-SHACL-Inheritance-Reviewer
 	test -r dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/README.md \
-	  || (git submodule init dependencies/CASE-Utility-SHACL-Inheritance-Reviewer && git submodule update dependencies/CASE-Utility-SHACL-Inheritance-Reviewer)
+	  || git submodule update --init dependencies/CASE-Utility-SHACL-Inheritance-Reviewer
 	@test -r dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/README.md \
 	  || (echo "ERROR:Makefile:CASE-Utility-SHACL-Inheritance-Reviewer submodule README.md file not found, even though that submodule is initialized." >&2 ; exit 2)
 	# collections-ontology

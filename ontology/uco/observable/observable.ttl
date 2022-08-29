@@ -1,4 +1,5 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/action
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/identity
 # imports: https://ontology.unifiedcyberontology.org/uco/location
@@ -7,6 +8,7 @@
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
+@prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
@@ -24,6 +26,7 @@
 	rdfs:label "uco-observable"@en ;
 	owl:imports
 		<https://ontology.unifiedcyberontology.org/uco/action> ,
+		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
 		<https://ontology.unifiedcyberontology.org/uco/core> ,
 		<https://ontology.unifiedcyberontology.org/uco/identity> ,
 		<https://ontology.unifiedcyberontology.org/uco/location> ,
@@ -155,7 +158,6 @@ observable:AccountFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:accountIdentifier ;
 		] ,
@@ -250,7 +252,6 @@ observable:AlternateDataStreamFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -312,6 +313,55 @@ observable:AndroidDeviceFacet
 	sh:targetClass observable:AndroidDeviceFacet ;
 	.
 
+observable:AntennaFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AntennaFacet"@en ;
+	rdfs:comment "An antenna alignment facet contains the metadata surrounding the cell tower's antenna position."@en ;
+	sh:property
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:antennaHeight ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:azimuth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:elevation ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:horizontalBeamWidth ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:signalStrength ;
+		] ,
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:skew ;
+		]
+		;
+	sh:targetClass observable:AntennaFacet ;
+	.
+
 observable:Appliance
 	a
 		owl:Class ,
@@ -356,7 +406,6 @@ observable:ApplicationAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:application ;
 	] ;
@@ -370,8 +419,13 @@ observable:ApplicationFacet
 		;
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "ApplicationFacet"@en ;
-	rdfs:comment "An application facet is a grouping of characteristics unique to a particular software program designed for ends users."@en ;
+	rdfs:comment "An application facet is a grouping of characteristics unique to a particular software program designed for end users."@en ;
 	sh:property
+		[
+			sh:class observable:ApplicationVersion ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:installedVersionHistory ;
+		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -398,6 +452,36 @@ observable:ApplicationFacet
 		]
 		;
 	sh:targetClass observable:ApplicationFacet ;
+	.
+
+observable:ApplicationVersion
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "ApplicationVersion"@en ;
+	rdfs:comment "An application version is a grouping of characteristics unique to a particular software program version."@en ;
+	sh:property
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:installDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:uninstallDate ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:version ;
+		]
+		;
+	sh:targetClass observable:ApplicationVersion ;
 	.
 
 observable:ArchiveFile
@@ -515,7 +599,6 @@ observable:AutonomousSystemFacet
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:number ;
 		] ,
@@ -575,7 +658,6 @@ observable:BluetoothAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -949,6 +1031,107 @@ observable:CallFacet
 	sh:targetClass observable:CallFacet ;
 	.
 
+observable:CapturedTelecommunicationsInformation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "CapturedTelecommunicationsInformation"@en ;
+	sh:targetClass observable:CapturedTelecommunicationsInformation ;
+	.
+
+observable:CapturedTelecommunicationsInformationFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CapturedTelecommunicationsInformationFacet"@en ;
+	rdfs:comment "A captured telecommunications information facet represents certain information within captured or intercepted telecommunications data."@en ;
+	sh:property
+		[
+			sh:class observable:CellSite ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:captureCellSite ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:interceptedCallState ;
+		]
+		;
+	sh:targetClass observable:CapturedTelecommunicationsInformationFacet ;
+	.
+
+observable:CellSite
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "CellSite"@en ;
+	sh:targetClass observable:CellSite ;
+	.
+
+observable:CellSiteFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "CellSiteFacet"@en ;
+	rdfs:comment "A cell site facet contains the metadata surrounding the cell site."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteCountryCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteIdentifier ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteLocationAreaCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteNetworkCode ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cellSiteType ;
+		]
+		;
+	sh:targetClass observable:CellSiteFacet ;
+	.
+
 observable:CharacterDeviceNode
 	a
 		owl:Class ,
@@ -1139,6 +1322,31 @@ observable:ComputerSpecificationFacet
 	sh:targetClass observable:ComputerSpecificationFacet ;
 	.
 
+observable:ConfiguredSoftware
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	rdfs:label "ConfiguredSoftware"@en ;
+	rdfs:comment "A ConfiguredSoftware is a Software that is known to be configured to run in a more specified manner than some unconfigured or less-configured Software."@en ;
+	sh:property
+		[
+			sh:class configuration:Configuration ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:usesConfiguration ;
+		] ,
+		[
+			sh:class observable:Software ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:isConfigurationOf ;
+		]
+		;
+	sh:targetClass observable:ConfiguredSoftware ;
+	.
+
 observable:Contact
 	a
 		owl:Class ,
@@ -1215,7 +1423,6 @@ observable:ContactAffiliation
 		[
 			sh:class identity:Organization ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contactOrganization ;
 		] ,
@@ -1505,7 +1712,6 @@ observable:ContactListFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:contact ;
 		]
@@ -2062,7 +2268,6 @@ observable:DigitalAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -2111,14 +2316,12 @@ observable:DigitalSignatureInfoFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:signatureExists ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:signatureVerified ;
 		] ,
@@ -2297,7 +2500,6 @@ observable:DomainNameFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:value ;
 		]
@@ -2322,7 +2524,6 @@ observable:EXIFFacet
 	rdfs:comment "An EXIF (exchangeable image file format) facet is a grouping of characteristics unique to the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras conformant to JEIDA/JEITA/CIPA specifications. [based on https://en.wikipedia.org/wiki/Exif]"@en ;
 	sh:property [
 		sh:class types:ControlledDictionary ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:exifData ;
 	] ;
@@ -2351,7 +2552,6 @@ observable:EmailAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:emailAddress ;
 	] ;
@@ -2381,7 +2581,6 @@ observable:EmailAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -2648,7 +2847,6 @@ observable:EnvironmentVariable
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
@@ -2691,9 +2889,20 @@ observable:EventFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:account ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:eventRecordDevice ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -2717,7 +2926,7 @@ observable:EventFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:computerName ;
+			sh:path observable:eventID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -3136,7 +3345,6 @@ observable:GeoLocationEntryFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3173,7 +3381,6 @@ observable:GeoLocationLogFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3210,7 +3417,6 @@ observable:GeoLocationTrackFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
 		] ,
@@ -3311,14 +3517,12 @@ observable:HTTPConnectionFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:requestMethod ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:requestValue ;
 		] ,
@@ -3480,7 +3684,6 @@ observable:IPAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -3527,7 +3730,6 @@ observable:IPv4AddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3556,7 +3758,6 @@ observable:IPv6AddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3638,7 +3839,6 @@ observable:InstantMessagingAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -3713,7 +3913,6 @@ observable:MACAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -3757,28 +3956,24 @@ observable:MemoryFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isInjected ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMapped ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isProtected ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isVolatile ;
 		] ,
@@ -4223,11 +4418,6 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:network ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:MSISDN ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
@@ -4252,13 +4442,20 @@ observable:MutexFacet
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "MutexFacet"@en ;
 	rdfs:comment "A mutex facet is a grouping of characteristics unique to a mechanism that enforces limits on access to a resource when there are many threads of execution. A mutex is designed to enforce a mutual exclusion concurrency control policy, and with a variety of possible methods there exists multiple unique implementations for different applications. [based on https://en.wikipedia.org/wiki/Lock_(computer_science)]"@en ;
-	sh:property [
-		sh:datatype xsd:boolean ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:isNamed ;
-	] ;
+	sh:property
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isNamed ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:mutexName ;
+		]
+		;
 	sh:targetClass observable:MutexFacet ;
 	.
 
@@ -4813,7 +5010,6 @@ observable:OnlineServiceFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -4919,6 +5115,18 @@ observable:PDFFileFacet
 			sh:path observable:isOptimized ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:pdfCreationDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:pdfModDate ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5002,7 +5210,6 @@ observable:PhoneAccountFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:phoneNumber ;
 	] ;
@@ -5253,7 +5460,6 @@ observable:PropertiesEnumeratedEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:properties ;
 	] ;
@@ -5346,6 +5552,141 @@ observable:RasterPictureFacet
 		]
 		;
 	sh:targetClass observable:RasterPictureFacet ;
+	.
+
+observable:RecoveredObject
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "RecoveredObject"@en ;
+	rdfs:comment "An observable object that was the result of a recovery operation."@en ;
+	sh:targetClass observable:RecoveredObject ;
+	.
+
+observable:RecoveredObjectFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "RecoveredObjectFacet"@en ;
+	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
+	sh:property
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:contentRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:metadataRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:nameRecoveredStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:nameRecoveredStatus ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:metadataRecoveredStatus ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contentRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:nameRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:metadataRecoveredStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
+					sh:in (
+						"recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
+						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
+						"unknown"^^vocabulary:RecoveredObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contentRecoveredStatus ;
+		]
+		;
+	sh:targetClass observable:RecoveredObjectFacet ;
 	.
 
 observable:RegistryDatatype
@@ -5490,7 +5831,6 @@ observable:SIPAddressFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:addressValue ;
 		] ,
@@ -5615,7 +5955,6 @@ observable:SendControlCodeEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:controlCode ;
 	] ;
@@ -5735,7 +6074,6 @@ observable:StateChangeEffectFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:newObject ;
 		] ,
@@ -5771,7 +6109,6 @@ observable:SymbolicLinkFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path observable:targetFile ;
 	] ;
@@ -6120,15 +6457,14 @@ observable:TwitterProfileFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:twitterId ;
+			sh:path observable:twitterHandle ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:twitterHandle ;
+			sh:path observable:twitterId ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -6292,15 +6628,14 @@ observable:URLFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:fullValue ;
+			sh:path observable:fragment ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:fragment ;
+			sh:path observable:fullValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -6442,7 +6777,6 @@ observable:URLHistoryFacet
 		] ,
 		[
 			sh:class observable:URLHistoryEntry ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:urlHistoryEntry ;
 		]
@@ -6664,7 +6998,6 @@ observable:ValuesEnumeratedEffectFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:values ;
 	] ;
@@ -7028,7 +7361,6 @@ observable:WifiAddressFacet
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
 		sh:path observable:addressValue ;
 	] ;
@@ -7107,7 +7439,6 @@ observable:WindowsActiveDirectoryAccountFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:objectGUID ;
 		] ,
@@ -7601,7 +7932,6 @@ observable:WindowsPESection
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		]
@@ -7813,7 +8143,6 @@ observable:WindowsRegistryKeyFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:key ;
 		]
@@ -7832,7 +8161,6 @@ observable:WindowsRegistryValue
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
 		] ,
@@ -7875,13 +8203,6 @@ observable:WindowsServiceFacet
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:serviceName ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:displayName ;
 		] ,
@@ -7890,6 +8211,12 @@ observable:WindowsServiceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:groupName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:serviceName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -8751,7 +9078,7 @@ observable:accessedTime
 observable:account
 	a owl:ObjectProperty ;
 	rdfs:label "account"@en ;
-	rdfs:comment "Specifies the account used to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."@en ;
+	rdfs:comment "Specifies the account referenced in an event log entry or used to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."@en ;
 	rdfs:range observable:ObservableObject ;
 	.
 
@@ -8898,6 +9225,13 @@ observable:androidVersion
 	rdfs:range xsd:string ;
 	.
 
+observable:antennaHeight
+	a owl:DatatypeProperty ;
+	rdfs:label "antennaHeight"@en ;
+	rdfs:comment "The height (in meters) of the antenna from the ground."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:application
 	a owl:ObjectProperty ;
 	rdfs:label "application"@en ;
@@ -8969,6 +9303,13 @@ observable:availableRam
 	rdfs:label "availableRam"@en ;
 	rdfs:comment "Specifies the amount of physical memory available on the system, in bytes."@en ;
 	rdfs:range xsd:integer ;
+	.
+
+observable:azimuth
+	a owl:DatatypeProperty ;
+	rdfs:label "azimuth"@en ;
+	rdfs:comment "The median rotation in degrees around a vertical axis of the cell antenna sector accessed."@en ;
+	rdfs:range xsd:decimal ;
 	.
 
 observable:baseOfCode
@@ -9156,6 +9497,13 @@ observable:canEscalatePrivs
 	rdfs:range xsd:boolean ;
 	.
 
+observable:captureCellSite
+	a owl:ObjectProperty ;
+	rdfs:label "captureCellSite"@en ;
+	rdfs:comment "Specifies the cell site accessed."@en ;
+	rdfs:range observable:CellSite ;
+	.
+
 observable:carrier
 	a owl:ObjectProperty ;
 	rdfs:label "carrier"@en ;
@@ -9174,6 +9522,41 @@ observable:cc
 	a owl:ObjectProperty ;
 	rdfs:label "cc"@en ;
 	rdfs:range observable:ObservableObject ;
+	.
+
+observable:cellSiteCountryCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteCountryCode"@en ;
+	rdfs:comment "The country code represents the country of the cell site. For GSM, this is the Mobile Country Code (MCC)."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteIdentifier
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteIdentifier"@en ;
+	rdfs:comment "Specifies the unique number used to identify each Cell Site within a location area code."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteLocationAreaCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteLocationAreaCode"@en ;
+	rdfs:comment "The location area code is a unique number of current location area of the cell site. A location area is a set of cell site that are grouped together to optimize signalling. For GSM, this is the LAC."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteNetworkCode
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteNetworkCode"@en ;
+	rdfs:comment "This code identifies the mobile operator of the cell site. For GSM, this is the Mobile Network Code (MNC) and for CMDA this is the network identifier (NID)."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:cellSiteType
+	a owl:DatatypeProperty ;
+	rdfs:label "cellSiteType"@en ;
+	rdfs:comment "Specifies the technology used by the Cell Site (e.g., GSM, CDMA, or LTE)."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:certificateIssuer
@@ -9260,13 +9643,6 @@ observable:compressionRatio
 	rdfs:label "compressionRatio"@en ;
 	rdfs:comment "The compression ratio of the compressed data."@en ;
 	rdfs:range xsd:decimal ;
-	.
-
-observable:computerName
-	a owl:DatatypeProperty ;
-	rdfs:label "computerName"@en ;
-	rdfs:comment "A name of the computer on which the log entry was created."@en ;
-	rdfs:range xsd:string ;
 	.
 
 observable:contact
@@ -9450,6 +9826,19 @@ observable:contentDisposition
 	a owl:DatatypeProperty ;
 	rdfs:label "contentDisposition"@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:contentRecoveredStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "contentRecoveredStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the content of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:RecoveredObjectStatusVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:contentType
@@ -9798,6 +10187,13 @@ observable:effectiveUser
 	rdfs:range observable:ObservableObject ;
 	.
 
+observable:elevation
+	a owl:DatatypeProperty ;
+	rdfs:label "elevation"@en ;
+	rdfs:comment "The angle in degrees of the antenna from the local horizontal plane."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
 observable:emailAddress
 	a owl:ObjectProperty ;
 	rdfs:label "emailAddress"@en ;
@@ -9874,6 +10270,13 @@ observable:environmentVariables
 	rdfs:label "environmentVariables"@en ;
 	rdfs:comment "A list of environment variables associated with the process. "@en ;
 	rdfs:range types:Dictionary ;
+	.
+
+observable:eventRecordDevice
+	a owl:ObjectProperty ;
+	rdfs:label "device"@en ;
+	rdfs:comment "The device on which the log entry was generated."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:eventRecordID
@@ -10306,6 +10709,13 @@ observable:homeDirectory
 	rdfs:range xsd:string ;
 	.
 
+observable:horizontalBeamWidth
+	a owl:DatatypeProperty ;
+	rdfs:label "horizontalBeamWidth"@en ;
+	rdfs:comment "The width of the antenna beam in degrees."@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:host
 	a owl:ObjectProperty ;
 	rdfs:label "host"@en ;
@@ -10440,8 +10850,22 @@ observable:inhibitAnyPolicy
 observable:installDate
 	a owl:DatatypeProperty ;
 	rdfs:label "installDate"@en ;
-	rdfs:comment "Specifies the date the operating system was installed."@en ;
+	rdfs:comment "Specifies the date the operating system or application was installed."@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+observable:installedVersionHistory
+	a owl:ObjectProperty ;
+	rdfs:label "installedVersionHistory"@en ;
+	rdfs:comment "Specifies the history of installed application version(s)."@en ;
+	rdfs:range observable:ApplicationVersion ;
+	.
+
+observable:interceptedCallState
+	a owl:DatatypeProperty ;
+	rdfs:label "interceptedCallState"@en ;
+	rdfs:comment "State of the call in a Call Detail Record (e.g. idle)."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:ip
@@ -10912,6 +11336,19 @@ observable:metadataChangeTime
 	rdfs:range xsd:dateTime ;
 	.
 
+observable:metadataRecoveredStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "metadataRecoveredStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the metadata of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:RecoveredObjectStatusVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
 observable:mftFileID
 	a owl:DatatypeProperty ;
 	rdfs:label "mftFileID"@en ;
@@ -11072,6 +11509,13 @@ observable:msProductName
 	rdfs:range xsd:string ;
 	.
 
+observable:mutexName
+	a owl:DatatypeProperty ;
+	rdfs:label "mutexName"@en ;
+	rdfs:comment "Specifies the name identifier for a specific instance of a mechanism that enforces limits on access to a resource when there are many threads of execution ."@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:nameConstraints
 	a owl:DatatypeProperty ;
 	rdfs:label "nameConstraints"@en ;
@@ -11090,6 +11534,19 @@ observable:namePrefix
 	rdfs:label "namePrefix"@en ;
 	rdfs:comment "Name prefix specifies an honorific prefix (coming ordinally before first/given name) for the name of a person."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:nameRecoveredStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "nameRecoveredStatus"@en ;
+	rdfs:comment "Specifies the recoverability status of the name of an object."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:RecoveredObjectStatusVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:nameServer
@@ -11405,6 +11862,13 @@ observable:path
 	rdfs:range xsd:string ;
 	.
 
+observable:pdfCreationDate
+	a owl:DatatypeProperty ;
+	rdfs:label "pdfCreationDate"@en ;
+	rdfs:comment "The PDF CreationDate property is defined in ISO 32000-1:2008 as 'The date and time the document was created, in human-readable form' (Table 317).  As a UCO property, its value is converted to xsd:dateTime."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
 observable:pdfId0
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId0"@en ;
@@ -11415,6 +11879,13 @@ observable:pdfId1
 	a owl:DatatypeProperty ;
 	rdfs:label "pdfId1"@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:pdfModDate
+	a owl:DatatypeProperty ;
+	rdfs:label "pdfModDate"@en ;
+	rdfs:comment "The PDF ModDate property is defined in ISO 32000-1:2008 as 'The date and time the document was most recently modified, in human-readable form' (Table 317).  As a UCO property, its value is converted to xsd:dateTime."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:peType
@@ -12024,6 +12495,13 @@ observable:sid
 	rdfs:range xsd:string ;
 	.
 
+observable:signalStrength
+	a owl:DatatypeProperty ;
+	rdfs:label "signalStrength"@en ;
+	rdfs:comment "The strength of the antenna signal."@en ;
+	rdfs:range xsd:string ;
+	.
+
 observable:signature
 	a owl:DatatypeProperty ;
 	rdfs:label "signature"@en ;
@@ -12144,6 +12622,13 @@ observable:sizeOfUninitializedData
 	rdfs:label "sizeOfUninitializedData"@en ;
 	rdfs:comment "Specifies the size of the uninitialized data section. If there are multiple such sections, this refers to the sum of the sizes of each section."@en ;
 	rdfs:range xsd:unsignedInt ;
+	.
+
+observable:skew
+	a owl:DatatypeProperty ;
+	rdfs:label "skew"@en ;
+	rdfs:comment "The angle in degrees of the radial rotation around its main beam direction."@en ;
+	rdfs:range xsd:decimal ;
 	.
 
 observable:sourceApplication
@@ -12562,6 +13047,13 @@ observable:twitterId
 	rdfs:label "Twitter ID"@en-US ;
 	rdfs:comment "Specifies the twitter id associated with the profile."@en-US ;
 	rdfs:range xsd:string ;
+	.
+
+observable:uninstallDate
+	a owl:DatatypeProperty ;
+	rdfs:label "uninstallDate"@en ;
+	rdfs:comment "Specifies the date the operating system or application was uninstalled."@en ;
+	rdfs:range xsd:dateTime ;
 	.
 
 observable:updatedDate
