@@ -30,7 +30,6 @@ identity:AddressFacet
 	sh:property [
 		sh:class location:Location ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path identity:address ;
 	] ;
