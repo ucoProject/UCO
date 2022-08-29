@@ -206,6 +206,17 @@ observable:AccountFacet
 	sh:targetClass observable:AccountFacet ;
 	.
 
+observable:Adaptor
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "Adaptor"@en-US ;
+	rdfs:comment "An adaptor is a device that physically converts the pin outputs but does not alter the underlying protocol (e.g. uSD to SD, CF to ATA, etc.)"@en-US ;
+	sh:targetClass observable:Adaptor ;
+	.
+
 observable:Address
 	a
 		owl:Class ,
@@ -313,6 +324,20 @@ observable:AndroidDeviceFacet
 	sh:targetClass observable:AndroidDeviceFacet ;
 	.
 
+observable:AndroidPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:AndroidDevice ,
+		observable:SmartPhone
+		;
+	rdfs:label "AndroidPhone"@en-US ;
+	rdfs:comment "An android phone is a smart phone that applies the Android mobile operating system."@en-US ;
+	sh:targetClass observable:AndroidPhone ;
+	.
+
 observable:AntennaFacet
 	a
 		owl:Class ,
@@ -360,6 +385,17 @@ observable:AntennaFacet
 		]
 		;
 	sh:targetClass observable:AntennaFacet ;
+	.
+
+observable:AppleDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "AppleDevice"@en-US ;
+	rdfs:comment "An apple device is a smart device that applies either the MacOS or iOS operating system."@en-US ;
+	sh:targetClass observable:AppleDevice ;
 	.
 
 observable:Appliance
@@ -623,6 +659,17 @@ observable:AutonomousSystemFacet
 		]
 		;
 	sh:targetClass observable:AutonomousSystemFacet ;
+	.
+
+observable:BlackberryPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:SmartPhone ;
+	rdfs:label "BlackberryPhone"@en-US ;
+	rdfs:comment "A blackberry phone is a smart phone that applies the Blackberry OS mobile operating system. (Blackberry 10 re-introduces Blackberry OS, prior to that the OS was Android.)"@en-US ;
+	sh:targetClass observable:BlackberryPhone ;
 	.
 
 observable:BlockDeviceNode
@@ -1177,6 +1224,17 @@ observable:CompressedStreamFacet
 		]
 		;
 	sh:targetClass observable:CompressedStreamFacet ;
+	.
+
+observable:Computer
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "Computer"@en-US ;
+	rdfs:comment "A computer is an electronic device for storing and processing data, typically in binary, according to instructions given to it in a variable program. [based on 'Computer.' Oxford English Dictionary, Oxford University Press, 2022.]"@en-US ;
+	sh:targetClass observable:Computer ;
 	.
 
 observable:ComputerSpecification
@@ -2281,6 +2339,17 @@ observable:DigitalAddressFacet
 	sh:targetClass observable:DigitalAddressFacet ;
 	.
 
+observable:DigitalCamera
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "DigitalCamera"@en-US ;
+	rdfs:comment "A digital camera is a camera that captures photographs in digital memory as opposed to capturing images on photographic film."@en-US ;
+	sh:targetClass observable:DigitalCamera ;
+	.
+
 observable:DigitalSignatureInfo
 	a
 		owl:Class ,
@@ -2505,6 +2574,17 @@ observable:DomainNameFacet
 		]
 		;
 	sh:targetClass observable:DomainNameFacet ;
+	.
+
+observable:Drone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:MobileDevice ;
+	rdfs:label "Drone"@en-US ;
+	rdfs:comment "A drone, unmanned aerial vehicle (UAV), is an aircraft without a human pilot, crew, or passengers that typically involve a ground-based controller and a system for communications with the UAV."@en-US ;
+	sh:targetClass observable:Drone ;
 	.
 
 observable:ESN
@@ -2782,6 +2862,17 @@ observable:EmailMessageFacet
 		]
 		;
 	sh:targetClass observable:EmailMessageFacet ;
+	.
+
+observable:EmbeddedDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "EmbeddedDevice"@en-US ;
+	rdfs:comment "An embedded device is a highly specialized microprocessor device meant for one or very few specific purposes and is usually embedded or included within another object or as part of a larger system. Examples include answer machine, door access logger, card scanner, etc."@en-US ;
+	sh:targetClass observable:EmbeddedDevice ;
 	.
 
 observable:EncodedStreamFacet
@@ -3305,6 +3396,17 @@ observable:GUI
 	sh:targetClass observable:GUI ;
 	.
 
+observable:GamingConsole
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "GamingConsole"@en-US ;
+	rdfs:comment "A gaming console (video game console or game console) is an electronic system that connects to a display, typically a TV or computer monitor, for the primary purpose of playing video games."@en-US ;
+	sh:targetClass observable:GamingConsole ;
+	.
+
 observable:GenericObservableObject
 	a
 		owl:Class ,
@@ -3704,8 +3806,22 @@ observable:IPNetmask
 		;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "IPNetmask"@en ;
-	rdfs:comment "An IP netmask is a 32-bit \"mask\" used to divide an IP address into subnets and specify the network's available hosts."@en ;
+	rdfs:comment "An IP netmask is a 32-bit 'mask' used to divide an IP address into subnets and specify the network's available hosts."@en ;
 	sh:targetClass observable:IPNetmask ;
+	.
+
+observable:IPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:AppleDevice ,
+		observable:SmartPhone
+		;
+	rdfs:label "IPhone"@en-US ;
+	rdfs:comment "An iPhone is a smart phone that applies the iOS mobile operating system."@en-US ;
+	sh:targetClass observable:IPhone ;
 	.
 
 observable:IPv4Address
@@ -3861,6 +3977,17 @@ observable:Junction
 	rdfs:label "Junction"@en ;
 	rdfs:comment "A junction is a specific NTFS (New Technology File System) reparse point to redirect a directory access to another directory which can be on the same volume or another volume. A junction is similar to a directory symbolic link but may differ on whether they are processed on the local system or on the remote file server. [based on https://jp-andre.pagesperso-orange.fr/junctions.html]"@en ;
 	sh:targetClass observable:Junction ;
+	.
+
+observable:Laptop
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Computer ;
+	rdfs:label "Laptop"@en-US ;
+	rdfs:comment "A laptop, laptop computer, or notebook computer is a small, portable personal computer with a screen and alphanumeric keyboard. These typically have a clam shell form factor with the screen mounted on the inside of the upper lid and the keyboard on the inside of the lower lid, although 2-in-1 PCs with a detachable keyboard are often marketed as laptops or as having a laptop mode. (Devices categorized by their manufacturer as a Laptop)"@en-US ;
+	sh:targetClass observable:Laptop ;
 	.
 
 observable:Library
@@ -4421,6 +4548,17 @@ observable:MobileDeviceFacet
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
+	.
+
+observable:MobilePhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:MobileDevice ;
+	rdfs:label "MobilePhone"@en-US ;
+	rdfs:comment "A mobile phone is a portable telephone that at least can make and receive calls over a radio frequency link while the user is moving within a telephone service area. This category encompasses all types of mobiles, simple and smart and satellite ones all together."@en-US ;
+	sh:targetClass observable:MobilePhone ;
 	.
 
 observable:Mutex
@@ -5494,6 +5632,17 @@ observable:PropertyReadEffectFacet
 	sh:targetClass observable:PropertyReadEffectFacet ;
 	.
 
+observable:ProtocolConverter
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "ProtocolConverter"@en-US ;
+	rdfs:comment "A protocol converter is a device that converts from one protocol to another (e.g. SD to USB, SATA to USB, etc."@en-US ;
+	sh:targetClass observable:ProtocolConverter ;
+	.
+
 observable:RasterPicture
 	a
 		owl:Class ,
@@ -5961,6 +6110,17 @@ observable:SendControlCodeEffectFacet
 	sh:targetClass observable:SendControlCodeEffectFacet ;
 	.
 
+observable:Server
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Computer ;
+	rdfs:label "Server"@en-US ;
+	rdfs:comment "A server is a server rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
+	sh:targetClass observable:Server ;
+	.
+
 observable:ShopListing
 	a
 		owl:Class ,
@@ -5970,6 +6130,32 @@ observable:ShopListing
 	rdfs:label "ShopListing"@en ;
 	rdfs:comment "A shop listing is a listing of offered products on an online marketplace/shop."@en ;
 	sh:targetClass observable:ShopListing ;
+	.
+
+observable:SmartDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "SmartDevice"@en-US ;
+	rdfs:comment "A smart device is a microprocessor IoT device that is expected to be connected directly to cloud-based networks or via smartphone"@en-US ;
+	sh:targetClass observable:SmartDevice ;
+	.
+
+observable:SmartPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:Computer ,
+		observable:MobilePhone ,
+		observable:SmartDevice
+		;
+	rdfs:label "SmartPhone"@en-US ;
+	rdfs:comment "A smartphone is a portable device that combines mobile telephone and computing functions into one unit.  Examples include iPhone, Samsung Galaxy, Huawei, Blackberry. (Inferred by model and OperatingSystemFacet)"@en-US ;
+	sh:targetClass observable:SmartPhone ;
 	.
 
 observable:Snapshot
@@ -6087,6 +6273,17 @@ observable:StateChangeEffectFacet
 	sh:targetClass observable:StateChangeEffectFacet ;
 	.
 
+observable:StorageMedium
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "StorageMedium"@en-US ;
+	rdfs:comment "A storage medium is any digital storage device that applies electromagnetic or optical surfaces, or depends solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
+	sh:targetClass observable:StorageMedium ;
+	.
+
 observable:SymbolicLink
 	a
 		owl:Class ,
@@ -6146,6 +6343,21 @@ observable:TCPConnectionFacet
 		]
 		;
 	sh:targetClass observable:TCPConnectionFacet ;
+	.
+
+observable:Tablet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:Computer ,
+		observable:MobileDevice ,
+		observable:SmartDevice
+		;
+	rdfs:label "Tablet"@en-US ;
+	rdfs:comment "A tablet is a mobile computer that is primarily operated by touching the screen. (Devices categorized by their manufacturer as a Tablet)"@en-US ;
+	sh:targetClass observable:Tablet ;
 	.
 
 observable:TaskActionType
@@ -7038,6 +7250,17 @@ observable:VolumeFacet
 		]
 		;
 	sh:targetClass observable:VolumeFacet ;
+	.
+
+observable:WearableDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:SmartDevice ;
+	rdfs:label "WearableDevice"@en-US ;
+	rdfs:comment "A wearable device is an electronic device that is designed to be worn on a person's body."@en-US ;
+	sh:targetClass observable:WearableDevice ;
 	.
 
 observable:WebPage
@@ -8805,6 +9028,17 @@ observable:WirelessNetworkConnectionFacet
 		]
 		;
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
+	.
+
+observable:WriteBlocker
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "WriteBlocker"@en-US ;
+	rdfs:comment "A write blocker is a device that allows read-only access to storage mediums in order to preserve the integrity of the data being analyzed. Examples include Tableau, Cellibrite, Talon, etc."@en-US ;
+	sh:targetClass observable:WriteBlocker ;
 	.
 
 observable:X509Certificate
