@@ -2860,25 +2860,36 @@ observable:EnvironmentVariable
 	sh:targetClass observable:EnvironmentVariable ;
 	.
 
-observable:Event
+observable:EventLog
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "Event"@en ;
-	rdfs:comment "An event is something that happens in a digital context (e.g., operating system events)."@en ;
-	sh:targetClass observable:Event ;
+	rdfs:label "EventLog"@en ;
+	rdfs:comment "An event log is a collection of event records."@en ;
+	sh:targetClass observable:EventLog ;
 	.
 
-observable:EventFacet
+observable:EventRecord
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "EventRecord"@en ;
+	rdfs:comment "An event record is something that happens in a digital context (e.g., operating system events)."@en ;
+	sh:targetClass observable:EventRecord ;
+	.
+
+observable:EventRecordFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:Facet ;
-	rdfs:label "EventFacet"@en ;
-	rdfs:comment "An event facet is a grouping of characteristics unique to something that happens in a digital context (e.g., operating system events)."@en ;
+	rdfs:label "EventRecordFacet"@en ;
+	rdfs:comment "An event record facet is a grouping of characteristics unique to something that happens in a digital context (e.g., operating system events)."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableAction ;
@@ -2959,18 +2970,7 @@ observable:EventFacet
 			sh:path observable:eventType ;
 		]
 		;
-	sh:targetClass observable:EventFacet ;
-	.
-
-observable:EventLog
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "EventLog"@en ;
-	rdfs:comment "An event log is a recorded collection of events."@en ;
-	sh:targetClass observable:EventLog ;
+	sh:targetClass observable:EventRecordFacet ;
 	.
 
 observable:ExtInodeFacet
