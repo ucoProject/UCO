@@ -2902,7 +2902,7 @@ observable:EventFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:device ;
+			sh:path observable:eventRecordDevice ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -2921,12 +2921,6 @@ observable:EventFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:startTime ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:computerName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -10024,13 +10018,6 @@ observable:destinationPort
 	rdfs:range xsd:integer ;
 	.
 
-observable:device
-	a owl:ObjectProperty ;
-	rdfs:label "device"@en ;
-	rdfs:comment "The device on which the log entry was generated."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:deviceType
 	a owl:DatatypeProperty ;
 	rdfs:label "deviceType"@en ;
@@ -10283,6 +10270,13 @@ observable:environmentVariables
 	rdfs:label "environmentVariables"@en ;
 	rdfs:comment "A list of environment variables associated with the process. "@en ;
 	rdfs:range types:Dictionary ;
+	.
+
+observable:eventRecordDevice
+	a owl:ObjectProperty ;
+	rdfs:label "device"@en ;
+	rdfs:comment "The device on which the log entry was generated."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:eventRecordID
