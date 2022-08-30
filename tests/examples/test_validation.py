@@ -74,7 +74,7 @@ def confirm_validation_results(
   filename : str,
   expected_conformance: bool,
   *,
-  expected_focus_node_severities : typing.Set[typing.Tuple[str, str]] = None,
+  expected_focus_node_severities : typing.Optional[typing.Set[typing.Tuple[str, str]]] = None,
   expected_result_paths : typing.Optional[typing.Set[str]] = None,
   expected_source_shapes: typing.Optional[typing.Set[str]] = None
 ) -> None:
