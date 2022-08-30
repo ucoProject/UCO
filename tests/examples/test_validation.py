@@ -53,7 +53,7 @@ def load_validation_graph(
     g.parse(filename, format="turtle")
     g.namespace_manager.bind("sh", NS_SH)
 
-    query = rdflib.plugins.sparql.prepareQuery("""\
+    query = rdflib.plugins.sparql.processor.prepareQuery("""\
 SELECT ?lConforms
 WHERE {
   ?nReport
@@ -89,7 +89,7 @@ def confirm_validation_results(
     computed_result_paths = set()
     computed_source_shapes = set()
 
-    query = rdflib.plugins.sparql.prepareQuery("""\
+    query = rdflib.plugins.sparql.processor.prepareQuery("""\
 SELECT DISTINCT ?nFocusNode ?nResultPath ?nSeverity ?nSourceShape
 WHERE {
   ?nReport
