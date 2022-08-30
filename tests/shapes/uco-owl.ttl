@@ -49,6 +49,15 @@ uco-owl:ontologyIRI-ontology-uniqueness-shape
 	sh:targetSubjectsOf owl:ontologyIRI ;
 	.
 
+uco-owl:ontologyIRI-versionIRI-prerequisite-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
+	sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
+	sh:minCount "1"^^xsd:integer ;
+	sh:path owl:ontologyIRI ;
+	sh:targetSubjectsOf owl:versionIRI ;
+	.
+
 uco-owl:ontologyIRI-versionIRI-uniqueness-shape
 	a sh:NodeShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
@@ -75,30 +84,20 @@ uco-owl:ontologyIRI-versionIRI-uniqueness-shape
 	sh:targetSubjectsOf owl:ontologyIRI ;
 	.
 
-uco-owl:versionIRI-shape
-	a sh:NodeShape ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that O_1 and O_2 are different ontology versions from the same ontology series.'"@en ;
-			sh:path owl:versionIRI ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-			sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:path owl:ontologyIRI ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:nodeKind sh:IRI ;
-			sh:path owl:versionIRI ;
-		]
-		;
+uco-owl:versionIRI-multiversion-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that O_1 and O_2 are different ontology versions from the same ontology series.'"@en ;
+	sh:path owl:versionIRI ;
+	sh:severity sh:Warning ;
+	sh:targetSubjectsOf owl:versionIRI ;
+	.
+
+uco-owl:versionIRI-nodeKind-shape
+	a sh:PropertyShape ;
+	sh:nodeKind sh:IRI ;
+	sh:path owl:versionIRI ;
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 

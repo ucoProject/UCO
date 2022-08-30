@@ -12,20 +12,17 @@
 
 uco-qc:owl-Ontology-shape
 	a sh:NodeShape ;
-	sh:targetClass owl:Ontology ;
-	sh:property
-		[
-			sh:nodeKind sh:IRI ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:path owl:versionIRI ;
-		]
-		;
+	sh:property [
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:IRI ;
+		sh:path owl:versionIRI ;
+	] ;
 	sh:sparql
 		[
 			a sh:SPARQLConstraint ;
 			sh:message "UCO imports of other UCO ontologies are expected to be of versionIRIs."@en ;
-			sh:select """
+			sh:select '''
 				SELECT $this ?value
 				WHERE {
 					$this owl:imports ?value .
@@ -41,12 +38,12 @@ uco-qc:owl-Ontology-shape
 							.
 					}
 				}
-			""" ;
+			''' ;
 		] ,
 		[
 			a sh:SPARQLConstraint ;
 			sh:message "UCO version IRIs are expected to have a fragment matching the versionInfo string in the master UCO ontology."@en ;
-			sh:select """
+			sh:select '''
 				SELECT $this ?value
 				WHERE {
 					$this owl:versionIRI ?value .
@@ -67,8 +64,9 @@ uco-qc:owl-Ontology-shape
 						)
 					)
 				}
-			""" ;
+			''' ;
 		]
 		;
+	sh:targetClass owl:Ontology ;
 	.
 
