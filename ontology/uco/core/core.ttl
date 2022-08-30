@@ -380,7 +380,7 @@ core:UcoObject
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:tag ;
-		] 
+		]
 		;
 	sh:targetClass core:UcoObject ;
 	.
