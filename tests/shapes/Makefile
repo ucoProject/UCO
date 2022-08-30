@@ -43,7 +43,6 @@ all: \
 
 check: \
   check-uco-closure-qc.ttl \
-  check-uco-owl.ttl \
   check-uco-qc.ttl \
   qc_monolithic.ttl
 	$(MAKE) \
@@ -81,14 +80,12 @@ qc_monolithic.ttl: \
   $(tests_srcdir)/.venv.done.log \
   $(top_srcdir)/.lib.done.log \
   uco-closure-qc.ttl \
-  uco-owl.ttl \
   uco-qc.ttl
 	rm -f __$@ _$@
 	source $(tests_srcdir)/venv/bin/activate \
 	  && rdfpipe \
 	    --output-format turtle \
 	    uco-closure-qc.ttl \
-	    uco-owl.ttl \
 	    uco-qc.ttl \
 	    > __$@
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \

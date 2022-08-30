@@ -26,9 +26,9 @@ all:
 
 # Ensure the UCO-internal shapes pass their own tests.
 .shapes.done.log: \
+  $(top_srcdir)/ontology/owl/owl.ttl \
   .venv.done.log \
   shapes/uco-closure-qc.ttl \
-  shapes/uco-owl.ttl \
   shapes/uco-qc.ttl
 	$(MAKE) \
 	  --directory shapes \
@@ -113,14 +113,6 @@ uco_monolithic.ttl: \
 	    $(uco_turtle_files) \
 	    > __$@
 	# Review UCO for OWL 2 DL versioning conformance.
-	source venv/bin/activate \
-	  && pyshacl \
-	    --data-file-format turtle \
-	    --format turtle \
-	    --inference none \
-	    --shacl shapes/uco-owl.ttl \
-	    --shacl-file-format turtle \
-	    __$@
 	source venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \

@@ -38,7 +38,7 @@ all: \
 %_validation.ttl: \
   %.ttl \
   $(tests_srcdir)/.venv.done.log \
-  $(shapes_srcdir)/qc_monolithic.ttl
+  $(top_srcdir)/ontology/owl/owl.ttl
 	rm -f __$@ _$@
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pyshacl \
@@ -46,7 +46,7 @@ all: \
 	    --data-file-format turtle \
 	    --format turtle \
 	    --inference none \
-	    --shacl $(shapes_srcdir)/uco-owl.ttl \
+	    --shacl $(top_srcdir)/ontology/owl/owl.ttl \
 	    --shacl-file-format turtle \
 	    --output __$@ \
 	    $< \
