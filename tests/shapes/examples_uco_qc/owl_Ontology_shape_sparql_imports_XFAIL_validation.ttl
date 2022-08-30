@@ -1,0 +1,74 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-qc: <urn:example:uco:qc:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <https://ontology.unifiedcyberontology.org/example-1> ;
+			sh:resultMessage "UCO imports of other UCO ontologies are expected to be of versionIRIs." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UCO imports of other UCO ontologies are expected to be of versionIRIs."@en ;
+				sh:select '''
+				SELECT $this ?value
+				WHERE {
+					$this owl:imports ?value .
+					FILTER (
+						STRSTARTS (
+							STR(?value),
+							"https://ontology.unifiedcyberontology.org/"
+						)
+					)
+					FILTER NOT EXISTS {
+						?nOtherUcoOntology
+							owl:versionIRI ?value ;
+							.
+					}
+				}
+			''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-qc:owl-Ontology-shape ;
+			sh:value <https://ontology.unifiedcyberontology.org/example-2> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <https://ontology.unifiedcyberontology.org/example-2> ;
+			sh:resultMessage "UCO imports of other UCO ontologies are expected to be of versionIRIs." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UCO imports of other UCO ontologies are expected to be of versionIRIs."@en ;
+				sh:select '''
+				SELECT $this ?value
+				WHERE {
+					$this owl:imports ?value .
+					FILTER (
+						STRSTARTS (
+							STR(?value),
+							"https://ontology.unifiedcyberontology.org/"
+						)
+					)
+					FILTER NOT EXISTS {
+						?nOtherUcoOntology
+							owl:versionIRI ?value ;
+							.
+					}
+				}
+			''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-qc:owl-Ontology-shape ;
+			sh:value <https://ontology.unifiedcyberontology.org/FOO/example-3> ;
+		]
+		;
+	.
+
