@@ -385,12 +385,6 @@ core:UcoObject
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:type ;
-		] ,
-		[
-			sh:datatype types:Identifier ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path core:id ;
 		]
 		;
 	sh:targetClass core:UcoObject ;
@@ -505,13 +499,6 @@ core:hasFacet-shape
 			""" ;
 	] ;
 	sh:targetObjectsOf core:hasFacet ;
-	.
-
-core:id
-	a owl:DatatypeProperty ;
-	rdfs:label "id"@en ;
-	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
-	rdfs:range types:Identifier ;
 	.
 
 core:isDirectional
