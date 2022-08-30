@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
 
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -11,7 +11,9 @@
 <https://ontology.unifiedcyberontology.org/uco/role>
 	a owl:Ontology ;
 	rdfs:label "uco-role"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/role> ;
+	owl:versionIRI role:0.9.1 ;
 	.
 
 role:BenevolentRole

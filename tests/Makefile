@@ -80,12 +80,43 @@ inheritance_review.ttl: \
 uco_monolithic.ttl: \
   $(top_srcdir)/.lib.done.log \
   $(uco_turtle_files) \
+  shapes/uco-closure-qc.ttl \
+  shapes/uco-owl.ttl \
+  shapes/uco-qc.ttl \
   .venv.done.log \
   src/glom_graph.py
 	source venv/bin/activate \
 	  && python3 src/glom_graph.py \
 	    __$@ \
 	    $(uco_turtle_files)
+	# Review UCO for OWL 2 DL versioning conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --allow-warnings \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/uco-owl.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	source venv/bin/activate \
+	  && pyshacl \
+	    --allow-warnings \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/uco-closure-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	source venv/bin/activate \
+	  && pyshacl \
+	    --allow-warnings \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/uco-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
 	  --inline-blank-nodes \
 	  --source __$@ \
