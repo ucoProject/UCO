@@ -66,7 +66,7 @@ WHERE {
 
   FILTER (?lConstraintDatatypeTally > 1)
 }
-""", initNs=nsdict)  # type: ignore
+""", initNs=nsdict)
     for result in graph.query(query_object):
         computed.add(result)
     assert expected == computed
