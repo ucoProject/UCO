@@ -23,6 +23,7 @@ all:
 
 # Ensure the UCO-internal shapes pass their own tests.
 .shapes.done.log: \
+  .venv.done.log \
   shapes/uco-closure-qc.ttl \
   shapes/uco-owl.ttl \
   shapes/uco-qc.ttl
