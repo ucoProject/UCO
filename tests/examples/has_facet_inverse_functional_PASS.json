@@ -1,0 +1,30 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "owl": "http://www.w3.org/2002/07/owl#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:facet-1",
+            "@type": "core:Facet"
+        },
+        {
+            "@id": "kb:object-1",
+            "@type": "core:UcoObject",
+            "core:hasFacet": {
+                "@id": "kb:facet-1"
+            },
+            "owl:sameAs": {
+                "@id": "kb:object-2"
+            }
+        },
+        {
+            "@id": "kb:object-2",
+            "@type": "core:UcoObject",
+            "core:hasFacet": {
+                "@id": "kb:facet-1"
+            }
+        }
+    ]
+}
