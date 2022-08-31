@@ -19,6 +19,10 @@ PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null ||
 
 uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl $(top_srcdir)/ontology/*/*/*.ttl)
 
+imported_ontology_files := \
+  $(top_srcdir)/dependencies/collections-ontology/collections.owl \
+  $(top_srcdir)/dependencies/error/docs/current/error.owl
+
 all:
 
 .PHONY: \
@@ -103,6 +107,7 @@ inheritance_review.ttl: \
 	mv _$@ $@
 
 uco_monolithic.ttl: \
+  $(imported_ontology_files) \
   $(top_srcdir)/.lib.done.log \
   $(uco_turtle_files) \
   .shapes.done.log
@@ -112,7 +117,12 @@ uco_monolithic.ttl: \
 	    --output-format ttl \
 	    $(uco_turtle_files) \
 	    > __$@
-	# Review UCO for OWL 2 DL versioning conformance.
+	# Review UCO closure for versioning consistency.
+	source venv/bin/activate \
+          && rdfpipe \
+	  __$@ \
+	  $(imported_ontology_files) \
+	  > ___$@
 	source venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
@@ -120,7 +130,10 @@ uco_monolithic.ttl: \
 	    --inference none \
 	    --shacl shapes/uco-closure-qc.ttl \
 	    --shacl-file-format turtle \
-	    __$@
+	    ___$@
+	# Test has passed; remove closure file.
+	rm ___$@
+	# Review UCO for practice conformance.
 	source venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
