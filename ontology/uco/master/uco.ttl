@@ -1,19 +1,19 @@
-# imports: https://ontology.unifiedcyberontology.org/co/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/owl/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/action/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/identity/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/location/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/marking/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/observable/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/pattern/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/role/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/time/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/tool/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/types/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/victim/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/co/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/owl/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/marking/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/observable/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/role/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/time/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/tool/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/victim/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.0.0
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -25,25 +25,27 @@
 	a owl:Ontology ;
 	rdfs:label "uco-master"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/co/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/owl/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/action/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/core/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/identity/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/location/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/marking/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/observable/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/pattern/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/role/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/time/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/tool/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/types/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/victim/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary/0.9.1>
+		<https://ontology.unifiedcyberontology.org/co/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/owl/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/action/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/configuration/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/core/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/identity/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/location/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/marking/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/observable/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/pattern/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/role/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/time/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/tool/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/types/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/victim/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/vocabulary/1.0.0>
 		;
+	owl:incompatibleWith <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
 	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/uco> ;
-	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
-	owl:versionInfo "0.9.1" ;
+	owl:priorVersion <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
+	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1.0.0> ;
+	owl:versionInfo "1.0.0" ;
 	.
 

@@ -14,7 +14,7 @@
 	rdfs:comment "This ontology defines SHACL shapes to supplement the OWL 2 DL definitions in the Collections Ontology."@en ;
 	owl:imports <http://purl.org/co> ;
 	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/co> ;
-	owl:versionIRI uco-co:0.9.1 ;
+	owl:versionIRI uco-co:1.0.0 ;
 	.
 
 co:ListItem
