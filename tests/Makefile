@@ -89,7 +89,7 @@ clean:
 	  --directory dependencies \
 	  clean
 	@rm -f \
-	  .venv.done.log \
+	  .*.done.log \
 	  uco_monolithic.ttl
 	@rm -rf \
 	  venv
