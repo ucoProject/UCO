@@ -19,7 +19,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/uco>
@@ -39,7 +38,7 @@
 		<https://ontology.unifiedcyberontology.org/uco/role/0.9.1> ,
 		<https://ontology.unifiedcyberontology.org/uco/time/0.9.1> ,
 		<https://ontology.unifiedcyberontology.org/uco/tool/0.9.1> ,
-		types:0.9.1 ,
+		<https://ontology.unifiedcyberontology.org/uco/types/0.9.1> ,
 		<https://ontology.unifiedcyberontology.org/uco/victim/0.9.1> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary/0.9.1>
 		;
