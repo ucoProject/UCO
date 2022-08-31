@@ -349,7 +349,7 @@ action:ArrayOfAction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoThing ;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ArrayOfAction"@en ;
 	rdfs:comment "An array of action is an ordered list of references to things that may be done or performed."@en ;
 	sh:property [
