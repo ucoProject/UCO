@@ -1,0 +1,77 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/cross-property-ad> ;
+			sh:resultMessage "An IRI may not be a member of both an owl:AnnotationProperty and owl:DatatypeProperty." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
+				sh:message "An IRI may not be a member of both an owl:AnnotationProperty and owl:DatatypeProperty."@en ;
+				sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this
+			WHERE {
+				$this a owl:DatatypeProperty ;
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:Disjointedness-AP-DP-shape ;
+			sh:value <http://example.org/kb/cross-property-ad> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/cross-property-ao> ;
+			sh:resultMessage "An IRI may not be a member of both an owl:AnnotationProperty and owl:ObjectProperty." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
+				sh:message "An IRI may not be a member of both an owl:AnnotationProperty and owl:ObjectProperty."@en ;
+				sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this
+			WHERE {
+				$this a owl:ObjectProperty ;
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:Disjointedness-AP-OP-shape ;
+			sh:value <http://example.org/kb/cross-property-ao> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/cross-property-do> ;
+			sh:resultMessage "An IRI may not be a member of both owl:DatatypeProperty and owl:ObjectProperty." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
+				sh:message "An IRI may not be a member of both owl:DatatypeProperty and owl:ObjectProperty."@en ;
+				sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this
+			WHERE {
+				$this a owl:ObjectProperty ;
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:Disjointedness-DP-OP-shape ;
+			sh:value <http://example.org/kb/cross-property-do> ;
+		]
+		;
+	.
+

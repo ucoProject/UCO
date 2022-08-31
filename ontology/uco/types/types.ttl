@@ -1,0 +1,425 @@
+# imports: https://ontology.unifiedcyberontology.org/co
+# imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/0.9.1
+
+@prefix co: <http://purl.org/co/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/types>
+	a owl:Ontology ;
+	rdfs:label "uco-types"@en ;
+	owl:imports
+		<https://ontology.unifiedcyberontology.org/co> ,
+		core:0.9.1 ,
+		vocabulary:0.9.1
+		;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/types> ;
+	owl:versionIRI types:0.9.1 ;
+	.
+
+types:ControlledDictionary
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf types:Dictionary ;
+	rdfs:label "ControlledDictionary"@en ;
+	rdfs:comment "A controlled dictionary is a list of (term/key, value) pairs where each term/key exists no more than once and is constrained to an explicitly defined set of values."@en ;
+	sh:property [
+		sh:class types:ControlledDictionaryEntry ;
+		sh:path types:entry ;
+	] ;
+	sh:targetClass types:ControlledDictionary ;
+	.
+
+types:ControlledDictionaryEntry
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf types:DictionaryEntry ;
+	rdfs:label "ControlledDictionaryEntry"@en ;
+	rdfs:comment "A controlled dictionary entry is a single (term/key, value) pair where the term/key is constrained to an explicitly defined set of values."@en ;
+	sh:targetClass types:ControlledDictionaryEntry ;
+	.
+
+types:Dictionary
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "Dictionary"@en ;
+	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
+	sh:property [
+		sh:class types:DictionaryEntry ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path types:entry ;
+	] ;
+	sh:targetClass types:Dictionary ;
+	.
+
+types:DictionaryEntry
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "DictionaryEntry"@en ;
+	rdfs:comment "A dictionary entry is a single (term/key, value) pair."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path types:key ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path types:value ;
+		]
+		;
+	sh:targetClass types:DictionaryEntry ;
+	.
+
+types:Hash
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "Hash"@en ;
+	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
+	sh:property
+		[
+			sh:datatype xsd:hexBinary ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path types:hashValue ;
+		] ,
+		[
+			sh:datatype vocabulary:HashNameVocab ;
+			sh:message "Value is outside the default vocabulary HashNameVocab." ;
+			sh:path types:hashMethod ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:HashNameVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path types:hashMethod ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary HashNameVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:HashNameVocab ;
+					sh:in (
+						"MD5"^^vocabulary:HashNameVocab
+						"MD6"^^vocabulary:HashNameVocab
+						"SHA1"^^vocabulary:HashNameVocab
+						"SHA224"^^vocabulary:HashNameVocab
+						"SHA256"^^vocabulary:HashNameVocab
+						"SHA384"^^vocabulary:HashNameVocab
+						"SHA512"^^vocabulary:HashNameVocab
+						"SSDEEP"^^vocabulary:HashNameVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path types:hashMethod ;
+		]
+		;
+	sh:targetClass types:Hash ;
+	.
+
+types:Identifier
+	a rdfs:Datatype ;
+	rdfs:comment "An identifier is a string conformant to the specified UUID-based format for UCO object identifiers."@en ;
+	.
+
+types:NativeFormatString
+	a rdfs:Datatype ;
+	rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en ;
+	.
+
+types:StructuredText
+	a rdfs:Datatype ;
+	rdfs:comment "Expresses string-based data in some information structuring format (e.g., HTML5)."@en ;
+	.
+
+types:Thread
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		co:Bag ,
+		core:UcoObject
+		;
+	rdfs:label "Thread"@en ;
+	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
+	owl:disjointWith co:List ;
+	sh:property [
+		sh:class types:ThreadItem ;
+		sh:path co:item ;
+	] ;
+	.
+
+types:ThreadItem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		co:Item ,
+		core:UcoObject
+		;
+	rdfs:label "ThreadItem"@en ;
+	rdfs:comment "A ThreadItem is a member of a thread."@en ;
+	owl:disjointWith co:ListItem ;
+	sh:property [
+		sh:class core:UcoObject ;
+		sh:path co:itemContent ;
+	] ;
+	.
+
+types:entry
+	a owl:ObjectProperty ;
+	rdfs:label "entry"@en ;
+	rdfs:comment "A dictionary entry."@en ;
+	rdfs:range types:DictionaryEntry ;
+	.
+
+types:hashMethod
+	a owl:DatatypeProperty ;
+	rdfs:label "hashMethod"@en ;
+	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:HashNameVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
+types:hashValue
+	a owl:DatatypeProperty ;
+	rdfs:label "hashValue"@en ;
+	rdfs:comment "A cryptographic hash value."@en ;
+	rdfs:range xsd:hexBinary ;
+	.
+
+types:key
+	a owl:DatatypeProperty ;
+	rdfs:label "key"@en ;
+	rdfs:comment "A key property of a single dictionary entry."@en ;
+	rdfs:range xsd:string ;
+	.
+
+types:threadNextItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf types:threadSuccessor ;
+	rdfs:label "threadNextItem"@en ;
+	rdfs:comment "The link to a next item in a thread."@en ;
+	rdfs:seeAlso co:nextItem ;
+	.
+
+types:threadNextItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadNextItem ;
+	sh:targetSubjectsOf types:threadNextItem ;
+	.
+
+types:threadOriginItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf co:item ;
+	rdfs:label "threadOriginItem"@en ;
+	rdfs:comment "A link to an item of the thread known to have no predecessor."@en ;
+	rdfs:domain types:Thread ;
+	rdfs:range [
+		a owl:Class ;
+		owl:intersectionOf (
+			types:ThreadItem
+			[
+				a owl:Restriction ;
+				owl:onProperty types:threadPreviousItem ;
+				owl:cardinality "0"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+	] ;
+	rdfs:seeAlso co:firstItem ;
+	.
+
+types:threadOriginItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadOriginItem ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadOriginItem-subjects-threadPredecessor-shape
+	a sh:PropertyShape ;
+	sh:description "An origin item in a thread must not have a predecessor."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path (
+		types:threadOriginItem
+		types:threadPredecessor
+	) ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadOriginItem-subjects-threadPreviousItem-shape
+	a sh:PropertyShape ;
+	sh:description "An origin item in a thread must not have a previous item."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path (
+		types:threadOriginItem
+		types:threadPreviousItem
+	) ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadPredecessor
+	a
+		owl:ObjectProperty ,
+		owl:TransitiveProperty
+		;
+	rdfs:label "threadPredecessor"@en ;
+	rdfs:comment "The link to the preceding item in a thread."@en ;
+	rdfs:domain types:ThreadItem ;
+	rdfs:range types:ThreadItem ;
+	rdfs:seeAlso co:precededBy ;
+	owl:inverseOf types:threadSuccessor ;
+	.
+
+types:threadPredecessor-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadPredecessor ;
+	sh:targetSubjectsOf types:threadPredecessor ;
+	.
+
+types:threadPreviousItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf types:threadPredecessor ;
+	rdfs:label "threadPreviousItem"@en ;
+	rdfs:comment "A direct link to a previous item in a thread."@en ;
+	rdfs:seeAlso co:previousItem ;
+	owl:inverseOf types:threadNextItem ;
+	.
+
+types:threadPreviousItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadPreviousItem ;
+	sh:targetSubjectsOf types:threadPreviousItem ;
+	.
+
+types:threadSuccessor
+	a
+		owl:ObjectProperty ,
+		owl:TransitiveProperty
+		;
+	rdfs:label "threadSuccessor"@en ;
+	rdfs:comment "A link to a following item in a thread."@en ;
+	rdfs:domain types:ThreadItem ;
+	rdfs:range types:ThreadItem ;
+	rdfs:seeAlso co:followedBy ;
+	.
+
+types:threadSuccessor-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadSuccessor ;
+	sh:targetSubjectsOf types:threadSuccessor ;
+	.
+
+types:threadTerminalItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf co:item ;
+	rdfs:label "threadTerminalItem"@en ;
+	rdfs:comment "A link to an item of the thread known to have no successor."@en ;
+	rdfs:domain types:Thread ;
+	rdfs:range [
+		a owl:Class ;
+		owl:intersectionOf (
+			types:ThreadItem
+			[
+				a owl:Restriction ;
+				owl:onProperty types:threadNextItem ;
+				owl:cardinality "0"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+	] ;
+	rdfs:seeAlso co:lastItem ;
+	.
+
+types:threadTerminalItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadTerminalItem ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
+	.
+
+types:threadTerminalItem-subjects-threadNextItem-shape
+	a sh:PropertyShape ;
+	sh:description "A terminal item in a thread must not have a next item."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path (
+		types:threadTerminalItem
+		types:threadNextItem
+	) ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
+	.
+
+types:threadTerminalItem-subjects-threadSuccessor-shape
+	a sh:PropertyShape ;
+	sh:description "A terminal item in a thread must not have a successor."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path (
+		types:threadTerminalItem
+		types:threadSuccessor
+	) ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
+	.
+
+types:value
+	a owl:DatatypeProperty ;
+	rdfs:label "value"@en ;
+	rdfs:comment "A specific property value."@en ;
+	rdfs:range xsd:string ;
+	.
+

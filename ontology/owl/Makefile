@@ -11,11 +11,15 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
+# This Makefile is adapted from /src/review.mk.  It is expected to be
+# short-lived, because at the time of this writing, there is a separate
+# proposal revising the CI process to no longer use Make for Turtle
+# normalization.
+# TODO https://github.com/ucoProject/UCO/issues/373
+
 SHELL := /bin/bash
 
-# This Makefile is assumed to execute in a repository directory ontology/*.
-
-top_srcdir := $(shell cd ../../.. ; pwd)
+top_srcdir := $(shell cd ../.. ; pwd)
 
 ttl_basenames := $(shell find *.ttl -type f | sort)
 
@@ -48,7 +52,8 @@ check-%.ttl: \
   %.ttl \
   .check-%.ttl
 	diff $^	\
-	  || (echo "ERROR:src/review.mk:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp .check-$< $<' while in the sub-folder ontology/$$(basename $< .ttl)/ to get a file ready to commit to Git." >&2 ; exit 1)
+	  || (echo "ERROR:ontology/owl/Makefile:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp .check-$< $<' while in the sub-folder ontology/owl/ to get a file ready to commit to Git." >&2 ; exit 1)
 
 clean:
 	@rm -f $(check_reference_basenames)
+

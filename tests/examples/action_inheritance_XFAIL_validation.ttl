@@ -18,26 +18,9 @@
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
 				sh:maxCount "0"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
 				sh:path action:actionStatus ;
 			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "0"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path action:actionStatus ;
-			] ;
-			sh:value "Pending" ;
 		] ,
 		[
 			a sh:ValidationResult ;
