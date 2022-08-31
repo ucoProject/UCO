@@ -3,7 +3,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix uco-closure-qc: <urn:example:uco:closure-qc:> .
-@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
 @prefix uco-qc: <urn:example:uco:qc:> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -24,15 +23,6 @@
 				sh:nodeKind sh:IRI ;
 				sh:path owl:versionIRI ;
 			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <https://ontology.unifiedcyberontology.org/example-2> ;
-			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that O_1 and O_2 are different ontology versions from the same ontology series.'"@en ;
-			sh:resultPath owl:versionIRI ;
-			sh:resultSeverity sh:Warning ;
-			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
-			sh:sourceShape uco-owl:versionIRI-multiversion-shape ;
 		] ,
 		[
 			a sh:ValidationResult ;
