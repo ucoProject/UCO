@@ -1,5 +1,5 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/action/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/identity/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/location/0.9.1
@@ -26,7 +26,7 @@
 	rdfs:label "uco-observable"@en ;
 	owl:imports
 		action:0.9.1 ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
+		configuration:0.9.1 ,
 		core:0.9.1 ,
 		identity:0.9.1 ,
 		location:0.9.1 ,

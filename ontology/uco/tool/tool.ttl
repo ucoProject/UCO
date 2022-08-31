@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
 
 @prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
@@ -15,7 +15,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
+		configuration:0.9.1 ,
 		core:0.9.1
 		;
 	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/tool> ;

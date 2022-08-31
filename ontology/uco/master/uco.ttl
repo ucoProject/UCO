@@ -1,7 +1,7 @@
-# imports: https://ontology.unifiedcyberontology.org/co
-# imports: https://ontology.unifiedcyberontology.org/owl
+# imports: https://ontology.unifiedcyberontology.org/co/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/owl/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/action/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/identity/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/location/0.9.1
@@ -26,10 +26,10 @@
 	a owl:Ontology ;
 	rdfs:label "uco-master"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/co> ,
-		<https://ontology.unifiedcyberontology.org/owl> ,
+		<https://ontology.unifiedcyberontology.org/co/0.9.1> ,
+		<https://ontology.unifiedcyberontology.org/owl/0.9.1> ,
 		<https://ontology.unifiedcyberontology.org/uco/action/0.9.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
+		<https://ontology.unifiedcyberontology.org/uco/configuration/0.9.1> ,
 		<https://ontology.unifiedcyberontology.org/uco/core/0.9.1> ,
 		<https://ontology.unifiedcyberontology.org/uco/identity/0.9.1> ,
 		<https://ontology.unifiedcyberontology.org/uco/location/0.9.1> ,

@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/co
+# imports: https://ontology.unifiedcyberontology.org/co/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/0.9.1
 
@@ -9,6 +9,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
 @prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -16,7 +17,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/co> ,
+		uco-co:0.9.1 ,
 		core:0.9.1 ,
 		vocabulary:0.9.1
 		;
