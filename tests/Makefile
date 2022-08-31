@@ -101,7 +101,6 @@ uco_monolithic.ttl: \
 	# Review UCO for OWL 2 DL versioning conformance.
 	source venv/bin/activate \
 	  && pyshacl \
-	    --allow-warnings \
 	    --data-file-format turtle \
 	    --format turtle \
 	    --inference none \
@@ -110,7 +109,6 @@ uco_monolithic.ttl: \
 	    __$@
 	source venv/bin/activate \
 	  && pyshacl \
-	    --allow-warnings \
 	    --data-file-format turtle \
 	    --format turtle \
 	    --inference none \
@@ -119,7 +117,6 @@ uco_monolithic.ttl: \
 	    __$@
 	source venv/bin/activate \
 	  && pyshacl \
-	    --allow-warnings \
 	    --data-file-format turtle \
 	    --format turtle \
 	    --inference none \
