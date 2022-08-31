@@ -1,0 +1,112 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/example-1>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-shape ;
+	owl:imports
+		<http://example.org/example-2> ,
+		<http://example.org/example-3>
+		;
+	.
+
+<http://example.org/example-2>
+	a owl:Ontology ;
+	rdfs:comment "This is expected to trigger a warning due to it and example-3 both being defined in the import closure of example-1."@en ;
+	owl:incompatibleWith <http://example.org/example-3> ;
+	.
+
+<http://example.org/example-3>
+	a owl:Ontology ;
+	.
+
+<http://example.org/example-4>
+	a owl:Ontology ;
+	rdfs:comment "This is expected to NOT trigger a warning due to example-5 not being declared as an Ontology, ontologyIRI value, or versionIRI value within this ontology document."@en ;
+	owl:incompatibleWith <http://example.org/example-5> ;
+	.
+
+<http://example.org/example-6>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-shape ;
+	owl:imports
+		<http://example.org/example-7> ,
+		<http://example.org/example-8>
+		;
+	.
+
+<http://example.org/example-g>
+	a owl:Ontology ;
+	rdfs:comment "This is expected to trigger a warning due to it and example-h both being in the import closure of example-6, and linked via ontologyIRI."@en ;
+	owl:incompatibleWith <http://example.org/example-h> ;
+	owl:ontologyIRI <http://example.org/example-7> ;
+	.
+
+<http://example.org/example-h>
+	a owl:Ontology ;
+	owl:ontologyIRI <http://example.org/example-8> ;
+	.
+
+<http://example.org/example-9>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-shape ;
+	owl:imports
+		<http://example.org/example-10/1> ,
+		<http://example.org/example-11/1>
+		;
+	.
+
+<http://example.org/example-10>
+	a owl:Ontology ;
+	rdfs:comment "This is expected to trigger a warning due to it and example-11 both being in the import closure of example-9, and linked via versionIRI."@en ;
+	owl:incompatibleWith <http://example.org/example-11> ;
+	owl:ontologyIRI <http://example.org/example-10> ;
+	owl:versionIRI <http://example.org/example-10/1> ;
+	.
+
+<http://example.org/example-11>
+	a owl:Ontology ;
+	owl:ontologyIRI <http://example.org/example-11> ;
+	owl:versionIRI <http://example.org/example-11/1> ;
+	.
+
+<http://example.org/example-12>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-shape ;
+	owl:imports
+		<http://example.org/example-13/oi> ,
+		<http://example.org/example-14/1>
+		;
+	.
+
+<http://example.org/example-13>
+	a owl:Ontology ;
+	rdfs:comment "This is expected to trigger a warning due to it and example-15 both being in the import closure of example-12, and linked via ontologyIRI and versionIRI."@en ;
+	owl:incompatibleWith <http://example.org/example-15> ;
+	owl:ontologyIRI <http://example.org/example-13/oi> ;
+	owl:versionIRI <http://example.org/example-13/1> ;
+	.
+
+<http://example.org/example-14>
+	a owl:Ontology ;
+	owl:imports <http://example.org/example-15/2> ;
+	owl:ontologyIRI <http://example.org/example-14> ;
+	owl:versionIRI <http://example.org/example-14/1> ;
+	.
+
+<http://example.org/example-15>
+	a owl:Ontology ;
+	owl:ontologyIRI <http://example.org/example-15/oi> ;
+	owl:versionIRI <http://example.org/example-15/2> ;
+	.
+
+<http://example.org/example-16>
+	a owl:Ontology ;
+	rdfs:comment "This is expected to trigger a warning due to it importing an ontology reference it declares itself incompatible with."@en ;
+	owl:incompatibleWith <http://example.org/example-17> ;
+	owl:imports <http://example.org/example-17> ;
+	.
+
