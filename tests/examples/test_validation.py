@@ -53,7 +53,7 @@ def load_validation_graph(
     g.parse(filename, format="turtle")
     g.namespace_manager.bind("sh", NS_SH)
 
-    query = rdflib.plugins.sparql.prepareQuery("""\
+    query = rdflib.plugins.sparql.processor.prepareQuery("""\
 SELECT ?lConforms
 WHERE {
   ?nReport
@@ -74,7 +74,7 @@ def confirm_validation_results(
   filename : str,
   expected_conformance: bool,
   *,
-  expected_focus_node_severities : typing.Optional[typing.Tuple[typing.Set[str], str]] = None,
+  expected_focus_node_severities : typing.Optional[typing.Set[typing.Tuple[str, str]]] = None,
   expected_result_paths : typing.Optional[typing.Set[str]] = None,
   expected_source_shapes: typing.Optional[typing.Set[str]] = None
 ) -> None:
@@ -89,7 +89,7 @@ def confirm_validation_results(
     computed_result_paths = set()
     computed_source_shapes = set()
 
-    query = rdflib.plugins.sparql.prepareQuery("""\
+    query = rdflib.plugins.sparql.processor.prepareQuery("""\
 SELECT DISTINCT ?nFocusNode ?nResultPath ?nSeverity ?nSourceShape
 WHERE {
   ?nReport
@@ -145,7 +145,7 @@ WHERE {
             logging.error("Please review %s and its associated .json file to identify the ground truth validation error mismatch pertaining to named source shapes noted in this function.", filename)
             raise
 
-def test_action_inheritance_PASS_validation():
+def test_action_inheritance_PASS_validation() -> None:
     """
     Confirm the PASS instance data passes validation.
     """
@@ -157,7 +157,7 @@ def test_action_inheritance_PASS_validation():
       }
     )
 
-def test_action_inheritance_XFAIL_validation():
+def test_action_inheritance_XFAIL_validation() -> None:
     """
     Confirm the XFAIL instance data fails validation based on an expected set of properties not conforming to shape constraints.
     """
@@ -170,12 +170,41 @@ def test_action_inheritance_XFAIL_validation():
       }
     )
 
-def test_action_result_PASS_validation():
+def test_action_result_PASS_validation() -> None:
     """
     Confirm the PASS instance data passes validation.
     """
     g = load_validation_graph("action_result_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
+
+def test_configuration_setting_PASS_validation() -> None:
+    g = load_validation_graph("configuration_setting_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)
+
+def test_configuration_setting_XFAIL_validation() -> None:
+    confirm_validation_results(
+      "configuration_setting_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/configuration-entry-3", str(NS_SH.Violation)),
+        ("http://example.org/kb/configured-object-2", str(NS_SH.Violation)),
+      }
+)
+
+def test_has_facet_inverse_functional_PASS() -> None:
+    confirm_validation_results(
+      "has_facet_inverse_functional_PASS_validation.ttl",
+      True
+    )
+
+def test_has_facet_inverse_functional_XFAIL() -> None:
+    confirm_validation_results(
+      "has_facet_inverse_functional_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/facet-1", str(NS_SH.Violation))
+      }
+    )
 
 def test_hash_PASS() -> None:
     g = load_validation_graph("hash_PASS_validation.ttl", True)
@@ -194,10 +223,10 @@ def test_hash_XFAIL() -> None:
       }
     )
 
-def test_co_PASS_validation():
+def test_co_PASS_validation() -> None:
     confirm_validation_results("co_PASS_validation.ttl", True)
 
-def test_co_XFAIL_validation():
+def test_co_XFAIL_validation() -> None:
     # The "index" entry's spelling is due to Namespace objects being
     # strings, therefore having the .index() function defined.
     confirm_validation_results(
@@ -225,14 +254,14 @@ def test_co_XFAIL_validation():
       }
     )
 
-def test_location_PASS_validation():
+def test_location_PASS_validation() -> None:
     """
     Confirm the PASS instance data passes validation.
     """
     g = load_validation_graph("location_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
 
-def test_location_XFAIL_validation():
+def test_location_XFAIL_validation() -> None:
     """
     Confirm the XFAIL instance data fails validation based on an expected set of properties not conforming to shape constraints.
     """
@@ -246,7 +275,7 @@ def test_location_XFAIL_validation():
     )
 
 @pytest.mark.xfail(strict=True)
-def test_location_XFAIL_validation_XPASS_wrong_concept_name():
+def test_location_XFAIL_validation_XPASS_wrong_concept_name() -> None:
     """
     Report the XFAIL instance data XPASSes one of the induced errors - the non-existent concept core:descriptionButWrongName is not reported as an error.
     Should a SHACL mechanism later be identified to detect this error, this test can be retired, adding NS_UCO_CORE.descriptionButWrongName to the expected IRI set in test_location_XFAIL_validation().
@@ -314,10 +343,10 @@ WHERE {
 
     assert expected == computed
 
-def test_message_thread_PASS_validation():
+def test_message_thread_PASS_validation() -> None:
     confirm_validation_results("message_thread_PASS_validation.ttl", True)
 
-def test_message_thread_XFAIL_validation():
+def test_message_thread_XFAIL_validation() -> None:
     confirm_validation_results("message_thread_XFAIL_validation.ttl", False)
 
 def test_owl_axiom_PASS() -> None:
@@ -436,10 +465,10 @@ def test_relationship_XFAIL_full() -> None:
       }
     )
 
-def test_thread_PASS_validation():
+def test_thread_PASS_validation() -> None:
     confirm_validation_results("thread_PASS_validation.ttl", True)
 
-def test_thread_XFAIL_validation():
+def test_thread_XFAIL_validation() -> None:
     confirm_validation_results(
       "thread_XFAIL_validation.ttl",
       False,
