@@ -74,6 +74,7 @@ clean:
 	  --directory examples_uco_owl \
 	  clean
 	@rm -f \
+	  .check-*.ttl* \
 	  qc_monolithic.ttl
 
 qc_monolithic.ttl: \
