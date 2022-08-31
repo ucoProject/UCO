@@ -1,0 +1,141 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-10> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'" ;
+			sh:resultPath owl:incompatibleWith ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
+				SELECT $this ?value
+				WHERE {
+					$this owl:incompatibleWith ?value .
+
+					{ ?value a owl:Ontology . }
+					UNION
+					{ ?nOntology owl:ontologyIRI ?value . }
+					UNION
+					{ ?nOntology owl:versionIRI ?value . }
+				}
+			""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-shape ;
+			sh:value <http://example.org/example-11> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-13> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'" ;
+			sh:resultPath owl:incompatibleWith ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
+				SELECT $this ?value
+				WHERE {
+					$this owl:incompatibleWith ?value .
+
+					{ ?value a owl:Ontology . }
+					UNION
+					{ ?nOntology owl:ontologyIRI ?value . }
+					UNION
+					{ ?nOntology owl:versionIRI ?value . }
+				}
+			""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-shape ;
+			sh:value <http://example.org/example-15> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-16> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'" ;
+			sh:resultPath owl:incompatibleWith ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
+				SELECT $this ?value
+				WHERE {
+					$this
+						owl:imports ?value ;
+						owl:incompatibleWith ?value ;
+						.
+				}
+			""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-shape ;
+			sh:value <http://example.org/example-17> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-2> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'" ;
+			sh:resultPath owl:incompatibleWith ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
+				SELECT $this ?value
+				WHERE {
+					$this owl:incompatibleWith ?value .
+
+					{ ?value a owl:Ontology . }
+					UNION
+					{ ?nOntology owl:ontologyIRI ?value . }
+					UNION
+					{ ?nOntology owl:versionIRI ?value . }
+				}
+			""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-shape ;
+			sh:value <http://example.org/example-3> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-g> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'" ;
+			sh:resultPath owl:incompatibleWith ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
+				SELECT $this ?value
+				WHERE {
+					$this owl:incompatibleWith ?value .
+
+					{ ?value a owl:Ontology . }
+					UNION
+					{ ?nOntology owl:ontologyIRI ?value . }
+					UNION
+					{ ?nOntology owl:versionIRI ?value . }
+				}
+			""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-shape ;
+			sh:value <http://example.org/example-h> ;
+		]
+		;
+	.
+
