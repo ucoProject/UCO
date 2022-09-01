@@ -11,7 +11,7 @@
 	rdfs:comment "This ontology defines SHACL shapes to perform conformance testing of OWL 2 DL.  Some of these shapes follow rules specified from the canonical, subtractive parsing process of Section 3 of the OWL 2 mapping to RDF.  From the last line of that document's Section 3, 'At the end of this process, the graph G MUST be empty,' anything not strictly matching patterns specified in that section cause the input graph to be non-conformant with OWL 2 DL."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
 	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/owl> ;
-	owl:versionIRI uco-owl:0.9.1 ;
+	owl:versionIRI uco-owl:1.0.0 ;
 	.
 
 uco-owl:Axiom-shape
@@ -226,6 +226,46 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 		]
 		;
 	sh:targetClass owl:ObjectProperty ;
+	.
+
+uco-owl:incompatibleWith-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'"@en ;
+	sh:path owl:incompatibleWith ;
+	sh:severity sh:Warning ;
+	sh:sparql
+		[
+			a sh:SPARQLConstraint ;
+			sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
+				SELECT $this ?value
+				WHERE {
+					$this
+						owl:imports ?value ;
+						owl:incompatibleWith ?value ;
+						.
+				}
+			""" ;
+		] ,
+		[
+			a sh:SPARQLConstraint ;
+			sh:select """
+				PREFIX owl: <http://www.w3.org/2002/07/owl#>
+				SELECT $this ?value
+				WHERE {
+					$this owl:incompatibleWith ?value .
+
+					{ ?value a owl:Ontology . }
+					UNION
+					{ ?nOntology owl:ontologyIRI ?value . }
+					UNION
+					{ ?nOntology owl:versionIRI ?value . }
+				}
+			""" ;
+		]
+		;
+	sh:targetSubjectsOf owl:incompatibleWith ;
 	.
 
 uco-owl:ontologyIRI-nodeKind-shape

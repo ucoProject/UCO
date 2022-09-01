@@ -1,8 +1,8 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/location/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/pattern/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/types/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.0.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
@@ -21,14 +21,16 @@
 	rdfs:label "uco-action"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing actions."@en-US ;
 	owl:imports
-		core:0.9.1 ,
-		location:0.9.1 ,
-		pattern:0.9.1 ,
-		types:0.9.1 ,
-		vocabulary:0.9.1
+		core:1.0.0 ,
+		location:1.0.0 ,
+		pattern:1.0.0 ,
+		types:1.0.0 ,
+		vocabulary:1.0.0
 		;
+	owl:incompatibleWith action:0.9.1 ;
 	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/action> ;
-	owl:versionIRI action:0.9.1 ;
+	owl:priorVersion action:0.9.1 ;
+	owl:versionIRI action:1.0.0 ;
 	.
 
 action:Action
