@@ -17,15 +17,22 @@ top_srcdir := $(shell cd .. ; pwd)
 
 PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3)
 
-uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl)
+uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl $(top_srcdir)/ontology/*/*/*.ttl)
+
+imported_ontology_files := \
+  $(top_srcdir)/dependencies/collections-ontology/collections.owl \
+  $(top_srcdir)/dependencies/error/docs/current/error.owl
 
 all:
 
+.PHONY: \
+  check-dependencies
+
 # Ensure the UCO-internal shapes pass their own tests.
 .shapes.done.log: \
+  $(top_srcdir)/ontology/owl/owl.ttl \
   .venv.done.log \
   shapes/uco-closure-qc.ttl \
-  shapes/uco-owl.ttl \
   shapes/uco-qc.ttl
 	$(MAKE) \
 	  --directory shapes \
@@ -56,6 +63,7 @@ all:
 	touch $@
 
 check: \
+  check-dependencies \
   inheritance_review.ttl \
   uco_monolithic.ttl
 	source venv/bin/activate \
@@ -67,12 +75,21 @@ check: \
 	  --directory examples \
 	  check
 
+check-dependencies: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory dependencies \
+	  check
+
 clean:
 	@$(MAKE) \
 	  --directory examples \
 	  clean
+	@$(MAKE) \
+	  --directory dependencies \
+	  clean
 	@rm -f \
-	  .venv.done.log \
+	  .*.done.log \
 	  uco_monolithic.ttl
 	@rm -rf \
 	  venv
@@ -90,23 +107,22 @@ inheritance_review.ttl: \
 	mv _$@ $@
 
 uco_monolithic.ttl: \
+  $(imported_ontology_files) \
   $(top_srcdir)/.lib.done.log \
   $(uco_turtle_files) \
-  .shapes.done.log \
-  src/glom_graph.py
+  .shapes.done.log
 	source venv/bin/activate \
-	  && python3 src/glom_graph.py \
-	    __$@ \
-	    $(uco_turtle_files)
-	# Review UCO for OWL 2 DL versioning conformance.
+          && rdfpipe \
+	    --input-format ttl \
+	    --output-format ttl \
+	    $(uco_turtle_files) \
+	    > __$@
+	# Review UCO closure for versioning consistency.
 	source venv/bin/activate \
-	  && pyshacl \
-	    --data-file-format turtle \
-	    --format turtle \
-	    --inference none \
-	    --shacl shapes/uco-owl.ttl \
-	    --shacl-file-format turtle \
-	    __$@
+          && rdfpipe \
+	  __$@ \
+	  $(imported_ontology_files) \
+	  > ___$@
 	source venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
@@ -114,13 +130,26 @@ uco_monolithic.ttl: \
 	    --inference none \
 	    --shacl shapes/uco-closure-qc.ttl \
 	    --shacl-file-format turtle \
-	    __$@
+	    ___$@
+	# Test has passed; remove closure file.
+	rm ___$@
+	# Review UCO for practice conformance.
 	source venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
 	    --format turtle \
 	    --inference none \
 	    --shacl shapes/uco-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	# Review UCO for OWL 2 DL conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --ont-file-format turtle \
+	    --shacl $(top_srcdir)/ontology/owl/owl.ttl \
 	    --shacl-file-format turtle \
 	    __$@
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \

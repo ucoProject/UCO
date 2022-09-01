@@ -1,0 +1,206 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:uco-object-f3592274-5af8-434a-90c7-14f286ce01c9",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:list-02de67a8-bfb9-4e00-a305-bae3daf6384b",
+            "@type": "co:List",
+            "co:firstItem": {
+                "@id": "kb:uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f"
+            },
+            "co:item": {
+                "@id": "kb:uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f"
+            },
+            "co:lastItem": {
+                "@id": "kb:uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f"
+            },
+            "co:size": 4,
+            "rdfs:comment": [
+                "Error - co:firstItem is not a co:ListItem.",
+                "Error - co:item is not a co:Item.",
+                "Error - co:lastItem is not a co:ListItem.",
+                "Error - co:size not designated a xsd:nonNegativeInteger."
+            ]
+        },
+        {
+            "@id": "kb:list-19fb5d67-533f-44ed-95a6-36ce229d3654",
+            "@type": "co:List",
+            "co:item": [
+                {
+                    "@id": "kb:list-item-4361eb9c-a1c2-40e7-ba83-92802554392a"
+                },
+                {
+                    "@id": "kb:list-item-56e2984b-8f10-4077-89e3-4c2598ae75bd"
+                }
+            ]
+        },
+        {
+            "@id": "kb:list-item-4361eb9c-a1c2-40e7-ba83-92802554392a",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 0
+            },
+            "co:itemContent": {
+                "@id": "kb:list-item-56e2984b-8f10-4077-89e3-4c2598ae75bd"
+            },
+            "rdfs:comment": [
+                "Error - co:index should be > 0.  (Though, detecting this awaits resolution of pySHACL PR 122.)",
+                "Error - co:itemContent must not be a co:Item (and co:ListItem is a subclass of co:Item)."
+            ],
+            "rdfs:seeAlso": {
+                "@id": "https://github.com/RDFLib/pySHACL/pull/122"
+            }
+        },
+        {
+            "@id": "kb:list-item-56e2984b-8f10-4077-89e3-4c2598ae75bd",
+            "@type": "co:ListItem",
+            "co:index": [
+                {
+                    "@type": "xsd:positiveInteger",
+                    "@value": 1
+                },
+                {
+                    "@type": "xsd:positiveInteger",
+                    "@value": 2
+                }
+            ],
+            "co:itemContent": [
+                {
+                    "@id": "kb:uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f"
+                },
+                {
+                    "@id": "kb:uco-object-f3592274-5af8-434a-90c7-14f286ce01c9"
+                }
+            ],
+            "rdfs:comment": [
+                "Error - 2 values of co:index.",
+                "Error - 2 values of co:itemContent."
+            ]
+        },
+        {
+            "@id": "kb:list-77c738c8-493e-40f4-9dd0-0d70e6f777d7",
+            "@type": "co:List",
+            "co:item": [
+                {
+                    "@id": "kb:list-item-785c86dc-28ba-4e16-800f-dbc3b042a0c6"
+                },
+                {
+                    "@id": "kb:list-item-7b46afa3-ab43-4664-9b61-c331e7dcc2ac"
+                },
+                {
+                    "@id": "kb:list-item-8972d196-17b8-4dfd-9c07-fed08bfcad3b"
+                }
+            ],
+            "rdfs:comment": "Error - list forks, with item 1 directly succeeded by 2 and 3."
+        },
+        {
+            "@id": "kb:list-item-785c86dc-28ba-4e16-800f-dbc3b042a0c6",
+            "@type": "co:ListItem",
+            "co:nextItem": [
+                {
+                    "@id": "kb:list-item-7b46afa3-ab43-4664-9b61-c331e7dcc2ac"
+                },
+                {
+                    "@id": "kb:list-item-8972d196-17b8-4dfd-9c07-fed08bfcad3b"
+                }
+            ]
+        },
+        {
+            "@id": "kb:list-item-7b46afa3-ab43-4664-9b61-c331e7dcc2ac",
+            "@type": "co:ListItem",
+            "co:previousItem": {
+                "@id": "kb:list-item-785c86dc-28ba-4e16-800f-dbc3b042a0c6"
+            }
+        },
+        {
+            "@id": "kb:list-item-8972d196-17b8-4dfd-9c07-fed08bfcad3b",
+            "@type": "co:ListItem",
+            "co:previousItem": {
+                "@id": "kb:list-item-785c86dc-28ba-4e16-800f-dbc3b042a0c6"
+            }
+        },
+        {
+            "@id": "kb:list-b2e44450-d48d-40a2-89e9-fccd52774716",
+            "@type": "co:List",
+            "co:item": [
+                {
+                    "@id": "kb:list-item-c511bcda-ebdb-43f5-962e-851b586e30fe"
+                },
+                {
+                    "@id": "kb:list-item-cd454f81-4bbc-4099-b520-5df2cc1ea15b"
+                },
+                {
+                    "@id": "kb:list-item-d21c817c-398f-4b4a-b4a0-f81c46b26955"
+                }
+            ],
+            "rdfs:comment": "Error - list forks, with item 3 directly preceeded by 1 and 2."
+        },
+        {
+            "@id": "kb:list-item-c511bcda-ebdb-43f5-962e-851b586e30fe",
+            "@type": "co:ListItem",
+            "co:nextItem": {
+                "@id": "kb:list-item-d21c817c-398f-4b4a-b4a0-f81c46b26955"
+            }
+        },
+        {
+            "@id": "kb:list-item-cd454f81-4bbc-4099-b520-5df2cc1ea15b",
+            "@type": "co:ListItem",
+            "co:nextItem": {
+                "@id": "kb:list-item-d21c817c-398f-4b4a-b4a0-f81c46b26955"
+            }
+        },
+        {
+            "@id": "kb:list-item-d21c817c-398f-4b4a-b4a0-f81c46b26955",
+            "@type": "co:ListItem",
+            "co:previousItem": [
+                {
+                    "@id": "kb:list-item-c511bcda-ebdb-43f5-962e-851b586e30fe"
+                },
+                {
+                    "@id": "kb:list-item-cd454f81-4bbc-4099-b520-5df2cc1ea15b"
+                }
+            ]
+        },
+        {
+            "@id": "kb:list-d6039e14-1426-4f92-9d9f-db9d94f87da7",
+            "@type": "co:List",
+            "co:firstItem": {
+                "@id": "kb:list-item-e2c21981-aebb-4b20-b758-93eaa3c0939e"
+            },
+            "co:item": [
+                {
+                    "@id": "kb:list-item-dd4031ac-ad84-4d9d-a582-3a7b613aef89"
+                },
+                {
+                    "@id": "kb:list-item-e2c21981-aebb-4b20-b758-93eaa3c0939e"
+                }
+            ],
+            "rdfs:comment": "Error - list designates an item with a previous item as the list's first item."
+        },
+        {
+            "@id": "kb:list-item-dd4031ac-ad84-4d9d-a582-3a7b613aef89",
+            "@type": "co:ListItem"
+        },
+        {
+            "@id": "kb:list-item-e2c21981-aebb-4b20-b758-93eaa3c0939e",
+            "@type": "co:ListItem",
+            "co:previousItem": {
+                "@id": "kb:list-item-dd4031ac-ad84-4d9d-a582-3a7b613aef89"
+            }
+        }
+    ]
+}

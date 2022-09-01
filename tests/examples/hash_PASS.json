@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "kb:hash-1",
+            "@id": "kb:hash-b7eca8de-142d-4aa9-b546-0796a268afa4",
             "@type": "types:Hash",
             "types:hashMethod": {
                 "@type": "vocabulary:HashNameVocab",

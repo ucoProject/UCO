@@ -9,7 +9,7 @@
     },
     "@graph": [
         {
-            "@id": "kb:relationship-1-1-2",
+            "@id": "kb:relationship-1-1-2-2e668923-bfb7-4f54-afb6-66074ab5b9b0",
             "@type": "core:Relationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -17,14 +17,14 @@
                 "@value": "CUSTOM_Influenced"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-1-1-3",
+            "@id": "kb:relationship-1-1-3-35598cb0-1770-49af-a417-51e91774df89",
             "@type": "core:Relationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -32,14 +32,14 @@
                 "@value": "CUSTOM_Influenced"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-1-2-2",
+            "@id": "kb:relationship-1-2-2-3ee0cc25-5923-40df-ba8f-0cce5f18f724",
             "@type": "core:Relationship",
             "rdfs:comment": "Note - this might be moved back to the PASS set after re-design of semi-open vocabularies.",
             "core:isDirectional": true,
@@ -48,14 +48,14 @@
                 "@value": "Initiated"
             },
             "core:source": {
-                "@id": "kb:action1"
+                "@id": "kb:action-00ae4a34-6114-4e9a-867f-4d81393dfd58"
             },
             "core:target": {
-                "@id": "kb:action2"
+                "@id": "kb:action-1a5d1fe5-4fd0-4a80-912a-125b2130c099"
             }
         },
         {
-            "@id": "kb:relationship-1-2-3",
+            "@id": "kb:relationship-1-2-3-46da302e-cff3-4634-bcf8-6f52649e2496",
             "@type": "core:Relationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -63,14 +63,14 @@
                 "@value": "Initiated"
             },
             "core:source": {
-                "@id": "kb:action1"
+                "@id": "kb:action-00ae4a34-6114-4e9a-867f-4d81393dfd58"
             },
             "core:target": {
-                "@id": "kb:action2"
+                "@id": "kb:action-1a5d1fe5-4fd0-4a80-912a-125b2130c099"
             }
         },
         {
-            "@id": "kb:relationship-1-3-2",
+            "@id": "kb:relationship-1-3-2-746aeee5-c857-4afb-8dba-85d5d60be279",
             "@type": "core:Relationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -78,14 +78,14 @@
                 "@value": "Contained_Within"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-1-3-3",
+            "@id": "kb:relationship-1-3-3-779c2646-dd1d-4fac-9e22-5a14bd78c6ea",
             "@type": "core:Relationship",
             "rdfs:comment": "Note - this might be moved back to the PASS set after re-design of semi-open vocabularies.",
             "core:isDirectional": true,
@@ -94,14 +94,14 @@
                 "@value": "Contained_Within"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-2-1-2",
+            "@id": "kb:relationship-2-1-2-800dd373-2916-4104-a2bb-2715cbc80804",
             "@type": "observable:ObservableRelationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -109,14 +109,14 @@
                 "@value": "CUSTOM_Influenced"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-2-1-3",
+            "@id": "kb:relationship-2-1-3-803a8e5c-f09a-403d-9c8d-91b08a3c0bbd",
             "@type": "observable:ObservableRelationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -124,14 +124,14 @@
                 "@value": "CUSTOM_Influenced"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-2-2-2",
+            "@id": "kb:relationship-2-2-2-851c5f1a-1f1e-4315-b7b8-6d7f4a602e98",
             "@type": "observable:ObservableRelationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -139,14 +139,14 @@
                 "@value": "Initiated"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-2-2-3",
+            "@id": "kb:relationship-2-2-3-90046c36-98f7-4f69-8566-2541eaad1dce",
             "@type": "observable:ObservableRelationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -154,14 +154,14 @@
                 "@value": "Initiated"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-2-3-2",
+            "@id": "kb:relationship-2-3-2-c1e3518a-b808-49ee-9d68-73aaa6ec2ea7",
             "@type": "observable:ObservableRelationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": {
@@ -169,14 +169,14 @@
                 "@value": "Contained_Within"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:relationship-2-3-3",
+            "@id": "kb:relationship-2-3-3-cee42e22-3f76-465f-b737-62f2786eadfc",
             "@type": "observable:ObservableRelationship",
             "rdfs:comment": "Note - this will be moved back to the PASS set after re-design of semi-open vocabularies.",
             "core:isDirectional": true,
@@ -185,26 +185,26 @@
                 "@value": "Contained_Within"
             },
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c"
             }
         },
         {
-            "@id": "kb:action1",
+            "@id": "kb:action-00ae4a34-6114-4e9a-867f-4d81393dfd58",
             "@type": "action:Action"
         },
         {
-            "@id": "kb:action2",
+            "@id": "kb:action-1a5d1fe5-4fd0-4a80-912a-125b2130c099",
             "@type": "action:Action"
         },
         {
-            "@id": "kb:file1",
+            "@id": "kb:file-25c16531-7121-45b0-b520-54d721183361",
             "@type": "observable:File"
         },
         {
-            "@id": "kb:zipfile1",
+            "@id": "kb:zipfile-edfbfe0f-3551-4009-91f6-5ebc1aa7766c",
             "@type": "observable:ArchiveFile"
         }
     ]

@@ -21,12 +21,29 @@ all: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  co_PASS_validation.ttl \
+  co_XFAIL_validation.ttl \
+  configuration_setting_PASS_validation.ttl \
+  configuration_setting_XFAIL_validation.ttl \
+  has_facet_inverse_functional_PASS_validation.ttl \
+  has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
   hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl \
+  message_thread_PASS_validation.ttl \
+  message_thread_XFAIL_validation.ttl \
+  owl_axiom_PASS_validation.ttl \
+  owl_axiom_XFAIL_validation.ttl \
+  owl_properties_PASS_validation.ttl \
+  owl_properties_XFAIL_validation.ttl \
+  rdf_list_PASS_validation.ttl \
+  rdf_list_XFAIL_validation.ttl \
   relationship_PASS_validation.ttl \
-  relationship_XFAIL_validation.ttl
+  relationship_XFAIL_validation.ttl \
+  thread_PASS_validation.ttl \
+  thread_XFAIL_validation.ttl \
+  uco_thing_XFAIL_validation.ttl
 
 .PRECIOUS: \
   %_validation.ttl
@@ -70,12 +87,29 @@ check: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  co_PASS_validation.ttl \
+  co_XFAIL_validation.ttl \
+  configuration_setting_PASS_validation.ttl \
+  configuration_setting_XFAIL_validation.ttl \
+  has_facet_inverse_functional_PASS_validation.ttl \
+  has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
   hash_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl \
+  message_thread_PASS_validation.ttl \
+  message_thread_XFAIL_validation.ttl \
+  owl_axiom_PASS_validation.ttl \
+  owl_axiom_XFAIL_validation.ttl \
+  owl_properties_PASS_validation.ttl \
+  owl_properties_XFAIL_validation.ttl \
+  rdf_list_PASS_validation.ttl \
+  rdf_list_XFAIL_validation.ttl \
   relationship_PASS_validation.ttl \
-  relationship_XFAIL_validation.ttl
+  relationship_XFAIL_validation.ttl \
+  thread_PASS_validation.ttl \
+  thread_XFAIL_validation.ttl \
+  uco_thing_XFAIL_validation.ttl
 	source $(tests_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG

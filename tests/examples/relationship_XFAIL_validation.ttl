@@ -12,7 +12,7 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-1-2> ;
+			sh:focusNode <http://example.org/kb/relationship-1-1-2-2e668923-bfb7-4f54-afb6-66074ab5b9b0> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -27,7 +27,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-1-3> ;
+			sh:focusNode <http://example.org/kb/relationship-1-1-3-35598cb0-1770-49af-a417-51e91774df89> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -42,7 +42,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-2-2> ;
+			sh:focusNode <http://example.org/kb/relationship-1-2-2-3ee0cc25-5923-40df-ba8f-0cce5f18f724> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -57,7 +57,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-2-3> ;
+			sh:focusNode <http://example.org/kb/relationship-1-2-3-46da302e-cff3-4634-bcf8-6f52649e2496> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -72,7 +72,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-3-2> ;
+			sh:focusNode <http://example.org/kb/relationship-1-3-2-746aeee5-c857-4afb-8dba-85d5d60be279> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -87,7 +87,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-1-3-3> ;
+			sh:focusNode <http://example.org/kb/relationship-1-3-3-779c2646-dd1d-4fac-9e22-5a14bd78c6ea> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -102,7 +102,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-1-2> ;
+			sh:focusNode <http://example.org/kb/relationship-2-1-2-800dd373-2916-4104-a2bb-2715cbc80804> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -117,7 +117,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-1-3> ;
+			sh:focusNode <http://example.org/kb/relationship-2-1-3-803a8e5c-f09a-403d-9c8d-91b08a3c0bbd> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -132,7 +132,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-2-2> ;
+			sh:focusNode <http://example.org/kb/relationship-2-2-2-851c5f1a-1f1e-4315-b7b8-6d7f4a602e98> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -147,7 +147,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-2-3> ;
+			sh:focusNode <http://example.org/kb/relationship-2-2-3-90046c36-98f7-4f69-8566-2541eaad1dce> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -162,7 +162,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-3-2> ;
+			sh:focusNode <http://example.org/kb/relationship-2-3-2-c1e3518a-b808-49ee-9d68-73aaa6ec2ea7> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -177,7 +177,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-2-3-3> ;
+			sh:focusNode <http://example.org/kb/relationship-2-3-3-cee42e22-3f76-465f-b737-62f2786eadfc> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;

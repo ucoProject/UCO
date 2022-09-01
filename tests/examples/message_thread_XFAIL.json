@@ -1,0 +1,198 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:message-04169db8-68a0-4448-8ffc-583a85ade550",
+            "@type": "observable:ObservableObject",
+            "rdfs:comment": "The non-Message class will trigger errors pertaining to co:element, co:itemContent and types:threadOriginItem."
+        },
+        {
+            "@id": "kb:message-095cb794-e4cd-4c45-8f7a-aff2e8dfb2d7",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-0b8eb566-2bca-49ce-b668-db138df6e62f",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-0f7064f5-8dbb-440e-8741-17045805e916",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-1dc2a575-549c-4e6f-95e2-7f478135a65a",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-5620d71b-5f8f-4e88-b6d6-99123abbaf7d",
+            "@type": "observable:ObservableObject",
+            "rdfs:comment": "The non-Message class will trigger errors pertaining to co:element, co:itemContent and types:threadTerminalItem."
+        },
+        {
+            "@id": "kb:message-67b42e78-332d-497e-9665-efa2cb968e38",
+            "@type": "observable:Message"
+        },
+        {
+            "@id": "kb:message-thread-716ad469-5767-4306-abaa-3918ba1cea6e",
+            "@type": "observable:MessageThread",
+            "core:hasFacet": {
+                "@id": "kb:message-thread-facet-5be8604b-49ad-4432-a560-d529f998807b",
+                "@type": "observable:MessageThreadFacet",
+                "observable:messageThread": {
+                    "@id": "kb:thread-f708d033-c49a-4e2c-bc41-c84a1a7bdb62"
+                }
+            }
+        },
+        {
+            "@id": "kb:thread-f708d033-c49a-4e2c-bc41-c84a1a7bdb62",
+            "@type": "types:Thread",
+            "co:size": {
+                "@type": "xsd:nonNegativeInteger",
+                "@value": "6"
+            },
+            "co:element": [
+                {
+                    "@id": "kb:message-04169db8-68a0-4448-8ffc-583a85ade550"
+                },
+                {
+                    "@id": "kb:message-095cb794-e4cd-4c45-8f7a-aff2e8dfb2d7"
+                },
+                {
+                    "@id": "kb:message-0b8eb566-2bca-49ce-b668-db138df6e62f"
+                },
+                {
+                    "@id": "kb:message-0f7064f5-8dbb-440e-8741-17045805e916"
+                },
+                {
+                    "@id": "kb:message-1dc2a575-549c-4e6f-95e2-7f478135a65a"
+                },
+                {
+                    "@id": "kb:message-5620d71b-5f8f-4e88-b6d6-99123abbaf7d"
+                }
+            ],
+            "co:item": [
+                {
+                    "@id": "kb:message-thread-item-7fdca660-1c4e-46a8-ba37-0445a2115cc5"
+                },
+                {
+                    "@id": "kb:message-thread-item-9f1a731e-2de6-4952-913d-afa729dc145a"
+                },
+                {
+                    "@id": "kb:message-thread-item-c47bd92e-b26b-49c3-b580-00c8a6b271c5"
+                },
+                {
+                    "@id": "kb:message-thread-item-d747c262-4684-4e03-a08c-80e1093c43eb"
+                },
+                {
+                    "@id": "kb:message-thread-item-e0766f69-a415-4be6-91f7-4ef0d1fc3c27"
+                },
+                {
+                    "@id": "kb:message-thread-item-e83bb0ca-c342-42bb-973d-347a145dfd75"
+                }
+            ],
+            "types:threadOriginItem": [
+                {
+                    "@id": "kb:message-thread-item-7fdca660-1c4e-46a8-ba37-0445a2115cc5"
+                },
+                {
+                    "@id": "kb:message-thread-item-e0766f69-a415-4be6-91f7-4ef0d1fc3c27"
+                }
+            ],
+            "types:threadTerminalItem": [
+                {
+                    "@id": "kb:message-thread-item-c47bd92e-b26b-49c3-b580-00c8a6b271c5"
+                },
+                {
+                    "@id": "kb:message-thread-item-d747c262-4684-4e03-a08c-80e1093c43eb"
+                },
+                {
+                    "@id": "kb:message-thread-item-e83bb0ca-c342-42bb-973d-347a145dfd75"
+                }
+            ]
+        },
+        {
+            "@id": "kb:message-thread-item-7fdca660-1c4e-46a8-ba37-0445a2115cc5",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-04169db8-68a0-4448-8ffc-583a85ade550"
+            },
+            "types:threadNextItem": [
+                {
+                    "@id": "kb:message-thread-item-9f1a731e-2de6-4952-913d-afa729dc145a"
+                },
+                {
+                    "@id": "kb:message-thread-item-e83bb0ca-c342-42bb-973d-347a145dfd75"
+                }
+            ]
+        },
+        {
+            "@id": "kb:message-thread-item-9f1a731e-2de6-4952-913d-afa729dc145a",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-095cb794-e4cd-4c45-8f7a-aff2e8dfb2d7"
+            },
+            "types:threadNextItem": [
+                {
+                    "@id": "kb:message-thread-item-c47bd92e-b26b-49c3-b580-00c8a6b271c5"
+                },
+                {
+                    "@id": "kb:message-thread-item-d747c262-4684-4e03-a08c-80e1093c43eb"
+                }
+            ],
+            "types:threadPreviousItem": {
+                "@id": "kb:message-thread-item-7fdca660-1c4e-46a8-ba37-0445a2115cc5"
+            }
+        },
+        {
+            "@id": "kb:message-thread-item-c47bd92e-b26b-49c3-b580-00c8a6b271c5",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-0b8eb566-2bca-49ce-b668-db138df6e62f"
+            },
+            "types:threadPreviousItem": {
+                "@id": "kb:message-thread-item-9f1a731e-2de6-4952-913d-afa729dc145a"
+            }
+        },
+        {
+            "@id": "kb:message-thread-item-d747c262-4684-4e03-a08c-80e1093c43eb",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-0f7064f5-8dbb-440e-8741-17045805e916"
+            },
+            "types:threadPreviousItem": {
+                "@id": "kb:message-thread-item-9f1a731e-2de6-4952-913d-afa729dc145a"
+            }
+        },
+        {
+            "@id": "kb:message-thread-item-e0766f69-a415-4be6-91f7-4ef0d1fc3c27",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-1dc2a575-549c-4e6f-95e2-7f478135a65a"
+            },
+            "types:threadNextItem": {
+                "@id": "kb:message-thread-item-e83bb0ca-c342-42bb-973d-347a145dfd75"
+            }
+        },
+        {
+            "@id": "kb:message-thread-item-e83bb0ca-c342-42bb-973d-347a145dfd75",
+            "@type": "types:ThreadItem",
+            "co:itemContent": {
+                "@id": "kb:message-5620d71b-5f8f-4e88-b6d6-99123abbaf7d"
+            },
+            "types:threadPreviousItem": [
+                {
+                    "@id": "kb:message-thread-item-7fdca660-1c4e-46a8-ba37-0445a2115cc5"
+                },
+                {
+                    "@id": "kb:message-thread-item-e0766f69-a415-4be6-91f7-4ef0d1fc3c27"
+                }
+            ]
+        }
+    ]
+}

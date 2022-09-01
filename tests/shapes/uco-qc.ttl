@@ -70,3 +70,25 @@ uco-qc:owl-Ontology-shape
 	sh:targetClass owl:Ontology ;
 	.
 
+uco-qc:owl-priorVersion-shape
+	a sh:NodeShape ;
+	sh:message "UCO ontologies that designate a prior version should declare themselves compatible with, or incompatible with, the prior version."@en ;
+	sh:severity sh:Warning ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:select """
+			SELECT $this ?value
+			WHERE {
+				$this owl:priorVersion ?value .
+				FILTER NOT EXISTS {
+					$this owl:backwardCompatibleWith ?value .
+				}
+				FILTER NOT EXISTS {
+					$this owl:incompatibleWith ?value .
+				}
+			}
+		""" ;
+	] ;
+	sh:targetSubjectsOf owl:priorVersion ;
+	.
+

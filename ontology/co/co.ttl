@@ -1,0 +1,159 @@
+# imports: http://purl.org/co
+
+@prefix co: <http://purl.org/co/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/co>
+	a owl:Ontology ;
+	rdfs:label "uco-co"@en ;
+	rdfs:comment "This ontology defines SHACL shapes to supplement the OWL 2 DL definitions in the Collections Ontology."@en ;
+	owl:imports <http://purl.org/co> ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/co> ;
+	owl:versionIRI uco-co:1.0.0 ;
+	.
+
+co:ListItem
+	rdfs:subClassOf co:Item ;
+	.
+
+uco-co:List-shape
+	a sh:NodeShape ;
+	sh:property [
+		sh:class co:ListItem ;
+		sh:path co:item ;
+	] ;
+	sh:targetClass co:List ;
+	.
+
+uco-co:ListItem-shape
+	a sh:NodeShape ;
+	sh:property [
+		rdfs:comment "Adapted from restriction on co:ListItem."@en ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:path co:index ;
+	] ;
+	sh:targetClass co:ListItem ;
+	.
+
+uco-co:firstItem-subjects-previousItem-shape
+	a sh:PropertyShape ;
+	sh:description "The first item in a list must not have a previous item."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		co:firstItem
+		co:previousItem
+	) ;
+	sh:targetSubjectsOf co:firstItem ;
+	.
+
+uco-co:firstItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:ListItem ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:firstItem ;
+	sh:targetSubjectsOf co:firstItem ;
+	.
+
+uco-co:followedBy-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:description "This shape encodes in SHACL that co:followedBy has range co:Item (induced via the propertyChainAxiom on co:item and superproperty relationship with co:nextItem)."@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:followedBy ;
+	sh:targetSubjectsOf co:followedBy ;
+	.
+
+uco-co:index-subjects-shape
+	a sh:PropertyShape ;
+	sh:datatype xsd:positiveInteger ;
+	sh:nodeKind sh:Literal ;
+	sh:path co:index ;
+	sh:targetSubjectsOf co:index ;
+	.
+
+uco-co:item-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:item ;
+	sh:targetSubjectsOf co:item ;
+	.
+
+uco-co:itemContent-subjects-shape
+	a sh:NodeShape ;
+	sh:not [
+		a sh:PropertyShape ;
+		sh:class co:Item ;
+		sh:description "This shape encodes in SHACL that the range of co:itemContent is the complement of co:Item."@en ;
+		sh:path co:itemContent ;
+	] ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:description "This shape encodes in SHACL that co:itemContent is an OWL FunctionalProperty (giving the sh:maxCount constraint)."@en ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path co:itemContent ;
+	] ;
+	sh:targetSubjectsOf co:itemContent ;
+	.
+
+uco-co:lastItem-subjects-shape
+	sh:class co:ListItem ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:lastItem ;
+	sh:targetSubjectsOf co:lastItem ;
+	.
+
+uco-co:nextItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:description "This shape encodes in SHACL that co:nextItem is a FunctionalProperty (giving the sh:maxCount constraint), and has range co:Item (induced via the propertyChainAxiom on co:item)."@en ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:nextItem ;
+	sh:targetSubjectsOf co:nextItem ;
+	.
+
+uco-co:precededBy-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:description "This shape encodes in SHACL that co:precededBy has range co:Item (induced via the propertyChainAxiom on co:item and superproperty relationship with co:previousItem)."@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:precededBy ;
+	sh:targetSubjectsOf co:precededBy ;
+	.
+
+uco-co:previousItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:description "This shape encodes in SHACL that co:previousItem is a FunctionalProperty (giving the sh:maxCount constraint), and has range co:Item (induced via the propertyChainAxiom on co:item)."@en ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:previousItem ;
+	sh:targetSubjectsOf co:previousItem ;
+	.
+
+uco-co:size-subjects-shape
+	a sh:PropertyShape ;
+	sh:datatype xsd:nonNegativeInteger ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:Literal ;
+	sh:path co:size ;
+	sh:targetSubjectsOf co:size ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "This triple is repeated from the Collections Ontology."@en ;
+	owl:AnnotatedProperty rdfs:subClassOf ;
+	owl:AnnotatedSource co:ListItem ;
+	owl:AnnotatedTarget co:Item ;
+	.
+

@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "kb:hash-2",
+            "@id": "kb:hash-04dcd1dc-6920-4977-a898-e242870249a4",
             "@type": "types:Hash",
             "rdfs:comment": "Should trigger sh:Info from the literal not having its datatype be the HashNameVocab vocabulary.",
             "types:hashMethod": "CUSTOM_hash",
@@ -17,7 +17,7 @@
             }
         },
         {
-            "@id": "kb:hash-3",
+            "@id": "kb:hash-af4b0c85-b042-4e2d-a213-210b3d7f115c",
             "@type": "types:Hash",
             "rdfs:comment": "Should trigger sh:Violation from the literal declaring itself a member of the vocabulary, but not being a member.  ('SHA1' is in the vocabulary; 'SHA-1' isn't.)",
             "types:hashMethod": {
@@ -30,7 +30,7 @@
             }
         },
         {
-            "@id": "kb:hash-4",
+            "@id": "kb:hash-e97431ea-6fb8-46d9-9c23-94be4b7cc977",
             "@type": "types:Hash",
             "rdfs:comment": "This should trigger sh:Info from the term not having its datatype be the vocabulary.  Currently, no inspection is done on the lexical value.",
             "types:hashMethod": "SHA1",
@@ -40,7 +40,7 @@
             }
         },
         {
-            "@id": "kb:hash-5",
+            "@id": "kb:hash-f46c714f-559a-4325-bf8a-4ef60c92c771",
             "@type": "types:Hash",
             "rdfs:comment": "This should trigger sh:Violation from the term not being a string.",
             "types:hashMethod": 1,

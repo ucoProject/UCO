@@ -1,0 +1,68 @@
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/facet-b94b9cce-f11a-49f2-b5d4-9efff5e8ab2d> ;
+			sh:resultMessage "hasFacet must not be used to link two objects to one Facet." ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "hasFacet must not be used to link two objects to one Facet."@en ;
+				sh:select """
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this ?value
+			WHERE {
+				?value core:hasFacet $this .
+				?nOtherValue core:hasFacet $this .
+				FILTER ( ?value != ?nOtherValue )
+				FILTER NOT EXISTS {
+					?value owl:sameAs|^owl:sameAs ?nOtherValue .
+				}
+			}
+			""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:hasFacet-shape ;
+			sh:value <http://example.org/kb/object-dc5d338e-1067-4b83-b748-0ff189377a33> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/facet-b94b9cce-f11a-49f2-b5d4-9efff5e8ab2d> ;
+			sh:resultMessage "hasFacet must not be used to link two objects to one Facet." ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "hasFacet must not be used to link two objects to one Facet."@en ;
+				sh:select """
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this ?value
+			WHERE {
+				?value core:hasFacet $this .
+				?nOtherValue core:hasFacet $this .
+				FILTER ( ?value != ?nOtherValue )
+				FILTER NOT EXISTS {
+					?value owl:sameAs|^owl:sameAs ?nOtherValue .
+				}
+			}
+			""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:hasFacet-shape ;
+			sh:value <http://example.org/kb/object-f7dad740-5f28-40d2-af46-70d0cedcb03b> ;
+		]
+		;
+	.
+

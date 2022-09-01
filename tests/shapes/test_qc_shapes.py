@@ -23,6 +23,32 @@ from rdflib import Graph, Literal, SH, URIRef
     ["filename", "expected_validation_result", "expected_focus_values"],
     [
         (
+            "examples_uco_owl/owl_incompatibleWith_shape_PASS_validation.ttl",
+            True,
+            {
+                (
+                    URIRef("http://example.org/example-2"),
+                    URIRef("http://example.org/example-3"),
+                ),
+                (
+                    URIRef("http://example.org/example-g"),
+                    URIRef("http://example.org/example-h"),
+                ),
+                (
+                    URIRef("http://example.org/example-10"),
+                    URIRef("http://example.org/example-11"),
+                ),
+                (
+                    URIRef("http://example.org/example-13"),
+                    URIRef("http://example.org/example-15"),
+                ),
+                (
+                    URIRef("http://example.org/example-16"),
+                    URIRef("http://example.org/example-17"),
+                ),
+            },
+        ),
+        (
             "examples_uco_owl/owl_versionIRI_multiversion_shape_PASS_validation.ttl",
             True,
             {

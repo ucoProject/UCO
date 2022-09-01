@@ -1,0 +1,56 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-1> ;
+			sh:resultMessage "The subject of a triple with rdf:first as predicate must be a blank node." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3 of the OWL 2 mapping to RDF.  Table 5 removes any triple matching the pattern 'x a rdf:List`.  All other references throughout Section 3 to rdf:first are identified as blank nodes.  Therefore, any non-blank node that is an rdf:List will not be mapped and consumed by the mapping process, making the graph non-conformant with OWL 2 DL."@en ;
+				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
+				sh:message "The subject of a triple with rdf:first as predicate must be a blank node."@en ;
+				sh:select """
+			SELECT $this
+			WHERE {
+				FILTER isIRI($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:List-shape ;
+			sh:value <http://example.org/kb/list-1> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-2> ;
+			sh:resultMessage "The subject of a triple with rdf:first as predicate must be a blank node." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3 of the OWL 2 mapping to RDF.  Table 5 removes any triple matching the pattern 'x a rdf:List`.  All other references throughout Section 3 to rdf:first are identified as blank nodes.  Therefore, any non-blank node that is an rdf:List will not be mapped and consumed by the mapping process, making the graph non-conformant with OWL 2 DL."@en ;
+				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
+				sh:message "The subject of a triple with rdf:first as predicate must be a blank node."@en ;
+				sh:select """
+			SELECT $this
+			WHERE {
+				FILTER isIRI($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape uco-owl:List-shape ;
+			sh:value <http://example.org/kb/list-2> ;
+		]
+		;
+	.
+

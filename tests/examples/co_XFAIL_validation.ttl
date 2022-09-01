@@ -1,0 +1,135 @@
+@prefix co: <http://purl.org/co/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-02de67a8-bfb9-4e00-a305-bae3daf6384b> ;
+			sh:resultMessage "Value does not have class co:Item" ;
+			sh:resultPath co:item ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape uco-co:item-subjects-shape ;
+			sh:value <http://example.org/kb/uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-02de67a8-bfb9-4e00-a305-bae3daf6384b> ;
+			sh:resultMessage "Value does not have class co:ListItem" ;
+			sh:resultPath co:firstItem ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape uco-co:firstItem-subjects-shape ;
+			sh:value <http://example.org/kb/uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-02de67a8-bfb9-4e00-a305-bae3daf6384b> ;
+			sh:resultMessage "Value does not have class co:ListItem" ;
+			sh:resultPath co:item ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class co:ListItem ;
+				sh:path co:item ;
+			] ;
+			sh:value <http://example.org/kb/uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-02de67a8-bfb9-4e00-a305-bae3daf6384b> ;
+			sh:resultMessage "Value does not have class co:ListItem" ;
+			sh:resultPath co:lastItem ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape uco-co:lastItem-subjects-shape ;
+			sh:value <http://example.org/kb/uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-02de67a8-bfb9-4e00-a305-bae3daf6384b> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:nonNegativeInteger" ;
+			sh:resultPath co:size ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape uco-co:size-subjects-shape ;
+			sh:value "4"^^xsd:integer ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-d6039e14-1426-4f92-9d9f-db9d94f87da7> ;
+			sh:resultMessage "More than 0 values on kb:list-d6039e14-1426-4f92-9d9f-db9d94f87da7->( co:firstItem co:previousItem )" ;
+			sh:resultPath (
+				co:firstItem
+				co:previousItem
+			) ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-co:firstItem-subjects-previousItem-shape ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-item-4361eb9c-a1c2-40e7-ba83-92802554392a> ;
+			sh:resultMessage 'Node kb:list-item-4361eb9c-a1c2-40e7-ba83-92802554392a conforms to shape [ rdf:type sh:PropertyShape ; sh:class co:Item ; sh:description Literal("This shape encodes in SHACL that the range of co:itemContent is the complement of co:Item.", lang=en) ; sh:path co:itemContent ]' ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape uco-co:itemContent-subjects-shape ;
+			sh:value <http://example.org/kb/list-item-4361eb9c-a1c2-40e7-ba83-92802554392a> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-item-56e2984b-8f10-4077-89e3-4c2598ae75bd> ;
+			sh:resultMessage "More than 1 values on kb:list-item-56e2984b-8f10-4077-89e3-4c2598ae75bd->co:index" ;
+			sh:resultPath co:index ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "Adapted from restriction on co:ListItem."@en ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:path co:index ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-item-56e2984b-8f10-4077-89e3-4c2598ae75bd> ;
+			sh:resultMessage "More than 1 values on kb:list-item-56e2984b-8f10-4077-89e3-4c2598ae75bd->co:itemContent" ;
+			sh:resultPath co:itemContent ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				a sh:PropertyShape ;
+				sh:description "This shape encodes in SHACL that co:itemContent is an OWL FunctionalProperty (giving the sh:maxCount constraint)."@en ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path co:itemContent ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-item-785c86dc-28ba-4e16-800f-dbc3b042a0c6> ;
+			sh:resultMessage "More than 1 values on kb:list-item-785c86dc-28ba-4e16-800f-dbc3b042a0c6->co:nextItem" ;
+			sh:resultPath co:nextItem ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-co:nextItem-subjects-shape ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/list-item-d21c817c-398f-4b4a-b4a0-f81c46b26955> ;
+			sh:resultMessage "More than 1 values on kb:list-item-d21c817c-398f-4b4a-b4a0-f81c46b26955->co:previousItem" ;
+			sh:resultPath co:previousItem ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-co:previousItem-subjects-shape ;
+		]
+		;
+	.
+

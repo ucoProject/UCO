@@ -1,0 +1,52 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:thread-1c94da2d-0a8d-4ae9-95e1-d3977466f4dd",
+            "@type": "types:Thread",
+            "co:item": [
+                {
+                    "@id": "kb:thread-item-85b644e5-da20-43af-b899-1d55c249def8"
+                },
+                {
+                    "@id": "kb:thread-item-a8c06685-1d5e-4f60-866e-16af567cf218"
+                },
+                {
+                    "@id": "kb:thread-item-e9c2219b-9881-47ef-bc73-fb9240c69238"
+                }
+            ]
+        },
+        {
+            "@id": "kb:thread-item-85b644e5-da20-43af-b899-1d55c249def8",
+            "@type": "types:ThreadItem",
+            "types:threadNextItem": [
+                {
+                    "@id": "kb:thread-item-a8c06685-1d5e-4f60-866e-16af567cf218"
+                },
+                {
+                    "@id": "kb:thread-item-e9c2219b-9881-47ef-bc73-fb9240c69238"
+                }
+            ]
+        },
+        {
+            "@id": "kb:thread-item-a8c06685-1d5e-4f60-866e-16af567cf218",
+            "@type": "types:ThreadItem",
+            "types:threadPreviousItem": {
+                "@id": "kb:thread-item-85b644e5-da20-43af-b899-1d55c249def8"
+            }
+        },
+        {
+            "@id": "kb:thread-item-e9c2219b-9881-47ef-bc73-fb9240c69238",
+            "@type": "types:ThreadItem",
+            "types:threadPreviousItem": {
+                "@id": "kb:thread-item-85b644e5-da20-43af-b899-1d55c249def8"
+            }
+        }
+    ]
+}

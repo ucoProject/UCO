@@ -1,0 +1,87 @@
+@prefix co: <http://purl.org/co/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/thread-1c73bebd-798e-4ea2-a1be-553db145e7b5> ;
+			sh:resultMessage "Value does not have class co:Item" ;
+			sh:resultPath co:item ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape uco-co:item-subjects-shape ;
+			sh:value <http://example.org/kb/uco-object-d99d4ad8-a6b4-4aa6-a609-4d01808845b7> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/thread-1c73bebd-798e-4ea2-a1be-553db145e7b5> ;
+			sh:resultMessage "Value does not have class types:ThreadItem" ;
+			sh:resultPath co:item ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class types:ThreadItem ;
+				sh:path co:item ;
+			] ;
+			sh:value <http://example.org/kb/uco-object-d99d4ad8-a6b4-4aa6-a609-4d01808845b7> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/thread-1c73bebd-798e-4ea2-a1be-553db145e7b5> ;
+			sh:resultMessage "Value does not have class types:ThreadItem" ;
+			sh:resultPath types:threadOriginItem ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape types:threadOriginItem-subjects-shape ;
+			sh:value <http://example.org/kb/uco-object-d99d4ad8-a6b4-4aa6-a609-4d01808845b7> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/thread-item-2bd09467-d413-4a03-af5d-f0e428f7d987> ;
+			sh:resultMessage 'Node kb:thread-item-2bd09467-d413-4a03-af5d-f0e428f7d987 conforms to shape [ rdf:type sh:PropertyShape ; sh:class co:Item ; sh:description Literal("This shape encodes in SHACL that the range of co:itemContent is the complement of co:Item.", lang=en) ; sh:path co:itemContent ]' ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape uco-co:itemContent-subjects-shape ;
+			sh:value <http://example.org/kb/thread-item-2bd09467-d413-4a03-af5d-f0e428f7d987> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/thread-item-2bd09467-d413-4a03-af5d-f0e428f7d987> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath co:itemContent ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:path co:itemContent ;
+			] ;
+			sh:value <http://example.org/kb/thread-item-461295a0-d50d-42e7-8011-656db5762ff6> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/thread-item-461295a0-d50d-42e7-8011-656db5762ff6> ;
+			sh:resultMessage "More than 1 values on kb:thread-item-461295a0-d50d-42e7-8011-656db5762ff6->co:itemContent" ;
+			sh:resultPath co:itemContent ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				a sh:PropertyShape ;
+				sh:description "This shape encodes in SHACL that co:itemContent is an OWL FunctionalProperty (giving the sh:maxCount constraint)."@en ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path co:itemContent ;
+			] ;
+		]
+		;
+	.
+

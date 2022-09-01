@@ -1,0 +1,190 @@
+{
+    "@context": {
+        "co": "http://purl.org/co/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:list-7b868fef-497b-4b75-846c-33f181a40a40",
+            "@type": "co:List",
+            "co:element": [
+                {
+                    "@id": "kb:uco-object-eff7e490-8488-40f7-a3ed-469cf9628c7d"
+                },
+                {
+                    "@id": "kb:uco-object-f6df0854-bc98-4bf8-b658-cba328fc3a09"
+                },
+                {
+                    "@id": "kb:uco-object-fcfc829a-276f-4f0f-82b7-085ba1f668dc"
+                }
+            ],
+            "co:firstItem": {
+                "@id": "kb:list-item-8f7b31e5-fc14-43d4-99da-a031cf42b1d4"
+            },
+            "co:lastItem": {
+                "@id": "kb:list-item-a1873f2e-4954-4d22-990f-b682dcaa5621"
+            },
+            "co:item": [
+                {
+                    "@id": "kb:list-item-8f7b31e5-fc14-43d4-99da-a031cf42b1d4"
+                },
+                {
+                    "@id": "kb:list-item-9300142c-a295-416d-ae27-17c4579421d2"
+                },
+                {
+                    "@id": "kb:list-item-a15d33aa-cabb-42aa-97d7-d2ebeb68d3d1"
+                },
+                {
+                    "@id": "kb:list-item-a1873f2e-4954-4d22-990f-b682dcaa5621"
+                }
+            ],
+            "co:size": {
+                "@type": "xsd:nonNegativeInteger",
+                "@value": "4"
+            }
+        },
+        {
+            "@id": "kb:list-item-8f7b31e5-fc14-43d4-99da-a031cf42b1d4",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 0
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-eff7e490-8488-40f7-a3ed-469cf9628c7d"
+            },
+            "co:nextItem": {
+                "@id": "kb:list-item-9300142c-a295-416d-ae27-17c4579421d2"
+            }
+        },
+        {
+            "@id": "kb:list-item-9300142c-a295-416d-ae27-17c4579421d2",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-f6df0854-bc98-4bf8-b658-cba328fc3a09"
+            },
+            "co:nextItem": {
+                "@id": "kb:list-item-a15d33aa-cabb-42aa-97d7-d2ebeb68d3d1"
+            }
+        },
+        {
+            "@id": "kb:list-item-a15d33aa-cabb-42aa-97d7-d2ebeb68d3d1",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-fcfc829a-276f-4f0f-82b7-085ba1f668dc"
+            },
+            "co:nextItem": {
+                "@id": "kb:list-item-a1873f2e-4954-4d22-990f-b682dcaa5621"
+            }
+        },
+        {
+            "@id": "kb:list-item-a1873f2e-4954-4d22-990f-b682dcaa5621",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-eff7e490-8488-40f7-a3ed-469cf9628c7d"
+            }
+        },
+        {
+            "@id": "kb:list-aa741791-2e15-41a9-960d-3e9b4a52f56e",
+            "@type": "co:List",
+            "rdfs:comment": "This is list is as kb:list-7b868fef-497b-4b75-846c-33f181a40a40, except item 3 is missing from the list.  Partial order is maintained with co:followedBy.",
+            "co:element": [
+                {
+                    "@id": "kb:uco-object-eff7e490-8488-40f7-a3ed-469cf9628c7d"
+                },
+                {
+                    "@id": "kb:uco-object-f6df0854-bc98-4bf8-b658-cba328fc3a09"
+                },
+                {
+                    "@id": "kb:uco-object-fcfc829a-276f-4f0f-82b7-085ba1f668dc"
+                }
+            ],
+            "co:firstItem": {
+                "@id": "kb:list-item-b09ba9cd-9bbd-433b-aaa0-1d89035ae14b"
+            },
+            "co:lastItem": {
+                "@id": "kb:list-item-cf86b655-d848-4d7c-8b50-cd1bb8c099a2"
+            },
+            "co:item": [
+                {
+                    "@id": "kb:list-item-b09ba9cd-9bbd-433b-aaa0-1d89035ae14b"
+                },
+                {
+                    "@id": "kb:list-item-bc9be59f-8f56-48bc-b816-8702775fd05d"
+                },
+                {
+                    "@id": "kb:list-item-cf86b655-d848-4d7c-8b50-cd1bb8c099a2"
+                }
+            ],
+            "co:size": {
+                "@type": "xsd:nonNegativeInteger",
+                "@value": "4"
+            }
+        },
+        {
+            "@id": "kb:list-item-b09ba9cd-9bbd-433b-aaa0-1d89035ae14b",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 0
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-eff7e490-8488-40f7-a3ed-469cf9628c7d"
+            },
+            "co:nextItem": {
+                "@id": "kb:list-item-bc9be59f-8f56-48bc-b816-8702775fd05d"
+            }
+        },
+        {
+            "@id": "kb:list-item-bc9be59f-8f56-48bc-b816-8702775fd05d",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-f6df0854-bc98-4bf8-b658-cba328fc3a09"
+            },
+            "co:followedBy": {
+                "@id": "kb:list-item-cf86b655-d848-4d7c-8b50-cd1bb8c099a2"
+            }
+        },
+        {
+            "@id": "kb:list-item-cf86b655-d848-4d7c-8b50-cd1bb8c099a2",
+            "@type": "co:ListItem",
+            "co:index": {
+                "@type": "xsd:positiveInteger",
+                "@value": 1
+            },
+            "co:itemContent": {
+                "@id": "kb:uco-object-eff7e490-8488-40f7-a3ed-469cf9628c7d"
+            }
+        },
+        {
+            "@id": "kb:uco-object-eff7e490-8488-40f7-a3ed-469cf9628c7d",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:uco-object-f6df0854-bc98-4bf8-b658-cba328fc3a09",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:uco-object-fcfc829a-276f-4f0f-82b7-085ba1f668dc",
+            "@type": "core:UcoObject"
+        }
+    ]
+}

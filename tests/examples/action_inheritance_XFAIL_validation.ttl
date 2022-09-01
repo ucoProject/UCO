@@ -12,36 +12,64 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
-			sh:resultMessage "More than 0 values on kb:action-lifecycle1->action:actionStatus" ;
+			sh:focusNode <http://example.org/kb/action-35fada9e-c807-4fa0-87b8-582473115eeb> ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:resultPath action:actionStatus ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype vocabulary:ActionStatusTypeVocab ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
+			] ;
+			sh:value "Pending" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-dcb9c6a2-f7b9-454a-b185-44d63244ac1c> ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:resultPath action:actionStatus ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype vocabulary:ActionStatusTypeVocab ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
+			] ;
+			sh:value "Pending" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-e1bb7bac-5655-48e3-8c62-843ffb7cc17f> ;
+			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:resultPath action:actionStatus ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype vocabulary:ActionStatusTypeVocab ;
+				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+				sh:path action:actionStatus ;
+				sh:severity sh:Info ;
+			] ;
+			sh:value "Pending" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14> ;
+			sh:resultMessage "More than 0 values on kb:action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14->action:actionStatus" ;
 			sh:resultPath action:actionStatus ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
 				sh:maxCount "0"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
 				sh:path action:actionStatus ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
-			sh:resultMessage "Value is not Literal with datatype vocabulary:ActionStatusTypeVocab" ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:maxCount "0"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path action:actionStatus ;
-			] ;
-			sh:value "Pending" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-lifecycle1> ;
+			sh:focusNode <http://example.org/kb/action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14> ;
 			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:resultPath action:actionStatus ;
 			sh:resultSeverity sh:Info ;
@@ -56,59 +84,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action1> ;
-			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-				sh:path action:actionStatus ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Pending" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action2> ;
-			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-				sh:path action:actionStatus ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Pending" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action3> ;
-			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-				sh:path action:actionStatus ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Pending" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value does not have class action:Action" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
@@ -116,21 +92,14 @@
 			sh:sourceShape [
 				sh:class action:Action ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:nodeKind sh:IRI ;
 				sh:path action:action ;
 			] ;
-			sh:value "kb:action1" ;
+			sh:value "kb:action-35fada9e-c807-4fa0-87b8-582473115eeb" ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value does not have class action:Action" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
@@ -138,21 +107,14 @@
 			sh:sourceShape [
 				sh:class action:Action ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:nodeKind sh:IRI ;
 				sh:path action:action ;
 			] ;
-			sh:value "kb:action2" ;
+			sh:value "kb:action-dcb9c6a2-f7b9-454a-b185-44d63244ac1c" ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value does not have class action:Action" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
@@ -160,76 +122,55 @@
 			sh:sourceShape [
 				sh:class action:Action ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:nodeKind sh:IRI ;
 				sh:path action:action ;
 			] ;
-			sh:value "kb:action3" ;
+			sh:value "kb:action-e1bb7bac-5655-48e3-8c62-843ffb7cc17f" ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
 				sh:class action:Action ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:nodeKind sh:IRI ;
 				sh:path action:action ;
 			] ;
-			sh:value "kb:action1" ;
+			sh:value "kb:action-35fada9e-c807-4fa0-87b8-582473115eeb" ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
 				sh:class action:Action ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:nodeKind sh:IRI ;
 				sh:path action:action ;
 			] ;
-			sh:value "kb:action2" ;
+			sh:value "kb:action-dcb9c6a2-f7b9-454a-b185-44d63244ac1c" ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a action:ArrayOfAction ;
-				action:action
-					"kb:action1" ,
-					"kb:action2" ,
-					"kb:action3"
-					;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
 				sh:class action:Action ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:nodeKind sh:IRI ;
 				sh:path action:action ;
 			] ;
-			sh:value "kb:action3" ;
+			sh:value "kb:action-e1bb7bac-5655-48e3-8c62-843ffb7cc17f" ;
 		]
 		;
 	.

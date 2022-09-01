@@ -1,0 +1,66 @@
+{
+    "@context": {
+        "configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "tool": "https://ontology.unifiedcyberontology.org/uco/tool/"
+    },
+    "@graph": [
+        {
+            "rdfs:comment": "Settings are numbered with a binary tracking system.  2^0 = itemObject set.  2^1 = itemValue set.  With the mutually-exclusive property shapes on ConfigurationSettingType, setting 3 would be invalid."
+        },
+        {
+            "@id": "kb:tool-f12e10c5-daca-4bd1-8b49-ae728f309053",
+            "@type": "tool:Tool"
+        },
+        {
+            "@id": "kb:configured-object-711b4e95-996e-461a-83a0-e0d6342bf028",
+            "@type": "tool:ConfiguredTool",
+            "configuration:isConfigurationOf": {
+                "@id": "kb:tool-f12e10c5-daca-4bd1-8b49-ae728f309053"
+            },
+            "configuration:usesConfiguration": {
+                "@id": "kb:configuration-26760258-ffc7-4241-96f9-0056781eccff"
+            }
+        },
+
+        {
+            "@id": "kb:thing-b752452a-9f7a-4421-a9f3-9611a8cd216c",
+            "@type": "core:UcoObject"
+        },
+        {
+            "@id": "kb:configuration-26760258-ffc7-4241-96f9-0056781eccff",
+            "@type": "configuration:Configuration",
+            "configuration:configurationEntry": [
+                {
+                    "@id": "kb:configuration-entry-317fc0bd-bc17-40af-85e0-5818ff4b823a"
+                },
+                {
+                    "@id": "kb:configuration-entry-38ca44a6-c72c-4ad7-b196-a65506eb467f"
+                },
+                {
+                    "@id": "kb:configuration-entry-52a03c2a-ebc5-4695-b0b7-e04d5fc34e8c"
+                }
+            ]
+        },
+        {
+            "@id": "kb:configuration-entry-317fc0bd-bc17-40af-85e0-5818ff4b823a",
+            "@type": "configuration:ConfigurationEntry",
+            "configuration:itemName": "--setting-0"
+        },
+        {
+            "@id": "kb:configuration-entry-38ca44a6-c72c-4ad7-b196-a65506eb467f",
+            "@type": "configuration:ConfigurationEntry",
+            "configuration:itemName": "--setting-1",
+            "configuration:itemObject": {
+                "@id": "kb:thing-b752452a-9f7a-4421-a9f3-9611a8cd216c"
+            }
+        },
+        {
+            "@id": "kb:configuration-entry-52a03c2a-ebc5-4695-b0b7-e04d5fc34e8c",
+            "@type": "configuration:ConfigurationEntry",
+            "configuration:itemName": "--setting-2",
+            "configuration:itemValue": "A value"
+        }
+    ]
+}

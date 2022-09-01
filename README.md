@@ -13,8 +13,8 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is 0.9.1.
+The current release of UCO is 1.0.0.
 
-UCO 0.9.1 implements a starting point in UCO for ontology version designation and backwards-compatibility tracking. OWL versioning features are implemented and tested on top of UCO 0.9.0, as part of demonstrating version incrementing for UCO 1.0.0 and exercising the documentation deployment process. No other changes are implemented since UCO 0.9.0.
+UCO 1.0.0 incorporates required refinements and updates to provide a stable version for adopters to use. Following [SemVer](https://semver.org/spec/v2.0.0.html), additive improvements will continue to be accepted, but backwards-incompatible changes will be scheduled only for the 2.0.0 release, which will come after at least 6 months to possibly 12 months.
 
-More detail of improvements is documented in the [UCO 0.9.1 release notes](https://unifiedcyberontology.org/releases/0.9.1/).
+More detail of improvements is documented in the [UCO 1.0.0 release notes](https://unifiedcyberontology.org/releases/1.0.0/).
