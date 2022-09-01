@@ -8,7 +8,7 @@
     },
     "@graph": [
         {
-            "@id": "kb:location1",
+            "@id": "kb:location-264c3f5f-680c-4c44-917f-624b9928088e",
             "@type": "location:Location",
             "core:description": "First of two locations in example.",
             "core:hasFacet": [
@@ -29,7 +29,7 @@
             ]
         },
         {
-            "@id": "kb:location2",
+            "@id": "kb:location-e01d13b0-23b5-45ff-8ac5-b21562f66973",
             "@type": "location:Location",
             "core:descriptionButWrongName": "Second of two locations in example.",
             "core:hasFacet": [
