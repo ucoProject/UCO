@@ -12,7 +12,7 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/location1> ;
+			sh:focusNode <http://example.org/kb/location-264c3f5f-680c-4c44-917f-624b9928088e> ;
 			sh:resultMessage "Value does not have class core:Facet" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -26,7 +26,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/location2> ;
+			sh:focusNode <http://example.org/kb/location-e01d13b0-23b5-45ff-8ac5-b21562f66973> ;
 			sh:resultMessage "Value does not have class core:Facet" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;

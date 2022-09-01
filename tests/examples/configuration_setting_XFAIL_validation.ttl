@@ -12,16 +12,16 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/configuration-entry-3> ;
-			sh:resultMessage 'Node kb:configuration-entry-3 does not conform to exactly one shape in [ sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemObject ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemValue ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemObject ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemValue ] ]' ;
+			sh:focusNode <http://example.org/kb/configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c> ;
+			sh:resultMessage 'Node kb:configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c does not conform to exactly one shape in [ sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemObject ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemValue ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemObject ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemValue ] ]' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 			sh:sourceShape configuration:ConfigurationEntry ;
-			sh:value <http://example.org/kb/configuration-entry-3> ;
+			sh:value <http://example.org/kb/configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/configured-object-2> ;
+			sh:focusNode <http://example.org/kb/configured-object-7156bff0-b805-4190-83ee-230fae31e33a> ;
 			sh:resultMessage "Value does not have class tool:Tool" ;
 			sh:resultPath configuration:isConfigurationOf ;
 			sh:resultSeverity sh:Violation ;
@@ -32,7 +32,7 @@
 				sh:nodeKind sh:BlankNodeOrIRI ;
 				sh:path configuration:isConfigurationOf ;
 			] ;
-			sh:value <http://example.org/kb/software-1> ;
+			sh:value <http://example.org/kb/software-9466a9f9-edf3-4ecd-bc48-a81a6c64ff81> ;
 		]
 		;
 	.
