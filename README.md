@@ -13,8 +13,8 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is 0.9.0.
+The current release of UCO is 0.9.1.
 
-UCO 0.9.0 primarily focused on workflow technology transitions, and was necessitated by a Java dependency upgrade.  The workflow used to normalize Turtle files in UCO and in downstream repositories now minimally requires Java 11, which impacts several public repositories---especially within the [CASE](https://caseontology.org/) community---that present Turtle files as part of their review process.  The workflow to interface with the UCO and CASE ontologies has transitioned to Github Issues, which has caused some files related to programming Github interfaces to become versioned with the ontology.  SHACL documentation will now use `sh:description` when documenting SHACL shapes.  OWL-level ontological commitments are being restored since the transition to SHACL, starting with clarifying that `core:UcoObject` and `core:Facet` are disjoint classes, and that `core:hasFacet` is an OWL inverse-functional property.  In SHACL validation updates, 0.9.0 refines some properties in email stub graph objects, polyglot designations with multiple MIME types, and a correction with names of accounts.
+UCO 0.9.1 implements a starting point in UCO for ontology version designation and backwards-compatibility tracking. OWL versioning features are implemented and tested on top of UCO 0.9.0, as part of demonstrating version incrementing for UCO 1.0.0 and exercising the documentation deployment process. No other changes are implemented since UCO 0.9.0.
 
-More detail of improvements is documented in the [UCO 0.9.0 release notes](https://unifiedcyberontology.org/releases/0.9.0/).
+More detail of improvements is documented in the [UCO 0.9.1 release notes](https://unifiedcyberontology.org/releases/0.9.1/).

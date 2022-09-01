@@ -21,6 +21,17 @@ uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl)
 
 all:
 
+# Ensure the UCO-internal shapes pass their own tests.
+.shapes.done.log: \
+  .venv.done.log \
+  shapes/uco-closure-qc.ttl \
+  shapes/uco-owl.ttl \
+  shapes/uco-qc.ttl
+	$(MAKE) \
+	  --directory shapes \
+	  check
+	touch $@
+
 # The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
 .venv.done.log: \
   $(top_srcdir)/.git_submodule_init.done.log \
@@ -50,6 +61,7 @@ check: \
 	source venv/bin/activate \
 	  && pytest \
 	    --ignore examples \
+	    --ignore shapes \
 	    --log-level=DEBUG
 	$(MAKE) \
 	  --directory examples \
@@ -80,12 +92,37 @@ inheritance_review.ttl: \
 uco_monolithic.ttl: \
   $(top_srcdir)/.lib.done.log \
   $(uco_turtle_files) \
-  .venv.done.log \
+  .shapes.done.log \
   src/glom_graph.py
 	source venv/bin/activate \
 	  && python3 src/glom_graph.py \
 	    __$@ \
 	    $(uco_turtle_files)
+	# Review UCO for OWL 2 DL versioning conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/uco-owl.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/uco-closure-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/uco-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
 	  --inline-blank-nodes \
 	  --source __$@ \
