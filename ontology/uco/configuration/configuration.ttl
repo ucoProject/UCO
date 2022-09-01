@@ -52,6 +52,7 @@ configuration:ConfigurationEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ConfigurationEntry"@en ;
 	rdfs:comment "A configuration entry is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, software, or other cyber object."@en ;
 	sh:property
@@ -118,6 +119,7 @@ configuration:Dependency
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dependency"@en ;
 	rdfs:comment "A dependency is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
 	sh:property

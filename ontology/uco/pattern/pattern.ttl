@@ -51,6 +51,7 @@ pattern:PatternExpression
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "PatternExpression"@en ;
 	rdfs:comment "A pattern expression is a grouping of characteristics unique to an explicit logical expression defining a pattern (e.g., regular expression, SQL Select expression, etc.)."@en ;
 	sh:targetClass pattern:PatternExpression ;

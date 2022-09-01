@@ -44,49 +44,49 @@ action:Action
 	sh:property
 		[
 			sh:class action:Action ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:subaction ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:environment ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:performer ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:error ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:instrument ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:object ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:participant ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:result ;
 		] ,
 		[
 			sh:class location:Location ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:location ;
 		] ,
 		[
@@ -298,13 +298,13 @@ action:ActionLifecycle
 			sh:class action:ArrayOfAction ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:phase ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:error ;
 		] ,
 		[
@@ -352,12 +352,13 @@ action:ArrayOfAction
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ArrayOfAction"@en ;
 	rdfs:comment "An array of action is an ordered list of references to things that may be done or performed."@en ;
 	sh:property [
 		sh:class action:Action ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path action:action ;
 	] ;
 	sh:targetClass action:ArrayOfAction ;

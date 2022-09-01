@@ -9,91 +9,91 @@
     },
     "@graph": [
         {
-            "@id": "kb:relationship-1-1-1",
+            "@id": "kb:relationship-1-1-1-7273698b-34ef-4d04-8cbf-99bdcad7a336",
             "@type": "core:Relationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": "CUSTOM_Influenced",
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-6aea6ec2-2524-437f-8a1f-762d2dfe6dd0"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-f1ebf584-6abd-472d-bb0e-03d13f50830d"
             }
         },
         {
-            "@id": "kb:relationship-1-2-1",
+            "@id": "kb:relationship-1-2-1-87a18d97-1bd2-4b02-9438-96ddbcba9372",
             "@type": "core:Relationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": "Initiated",
             "core:source": {
-                "@id": "kb:action1"
+                "@id": "kb:action-5525f37b-41ea-4710-ba33-c0a80faa72c3"
             },
             "core:target": {
-                "@id": "kb:action2"
+                "@id": "kb:action-6a4d31e8-353f-4fd0-8056-fed390553542"
             }
         },
         {
-            "@id": "kb:relationship-1-3-1",
+            "@id": "kb:relationship-1-3-1-9b94518f-4415-4869-ae49-af66e99d0250",
             "@type": "core:Relationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": "Contained_Within",
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-6aea6ec2-2524-437f-8a1f-762d2dfe6dd0"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-f1ebf584-6abd-472d-bb0e-03d13f50830d"
             }
         },
         {
-            "@id": "kb:relationship-2-1-1",
+            "@id": "kb:relationship-2-1-1-a6ba4ba1-00b2-436e-b64a-4475355560cd",
             "@type": "observable:ObservableRelationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": "CUSTOM_Influenced",
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-6aea6ec2-2524-437f-8a1f-762d2dfe6dd0"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-f1ebf584-6abd-472d-bb0e-03d13f50830d"
             }
         },
         {
-            "@id": "kb:relationship-2-2-1",
+            "@id": "kb:relationship-2-2-1-a8e6100b-4e1c-4ec8-a6a4-a4db8ecb8233",
             "@type": "observable:ObservableRelationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": "Initiated",
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-6aea6ec2-2524-437f-8a1f-762d2dfe6dd0"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-f1ebf584-6abd-472d-bb0e-03d13f50830d"
             }
         },
         {
-            "@id": "kb:relationship-2-3-1",
+            "@id": "kb:relationship-2-3-1-b8d01d00-5a32-4c8f-8a30-11a69b8c5420",
             "@type": "observable:ObservableRelationship",
             "core:isDirectional": true,
             "core:kindOfRelationship": "Contained_Within",
             "core:source": {
-                "@id": "kb:file1"
+                "@id": "kb:file-6aea6ec2-2524-437f-8a1f-762d2dfe6dd0"
             },
             "core:target": {
-                "@id": "kb:zipfile1"
+                "@id": "kb:zipfile-f1ebf584-6abd-472d-bb0e-03d13f50830d"
             }
         },
         {
-            "@id": "kb:action1",
+            "@id": "kb:action-5525f37b-41ea-4710-ba33-c0a80faa72c3",
             "@type": "action:Action"
         },
         {
-            "@id": "kb:action2",
+            "@id": "kb:action-6a4d31e8-353f-4fd0-8056-fed390553542",
             "@type": "action:Action"
         },
         {
-            "@id": "kb:file1",
+            "@id": "kb:file-6aea6ec2-2524-437f-8a1f-762d2dfe6dd0",
             "@type": "observable:File"
         },
         {
-            "@id": "kb:zipfile1",
+            "@id": "kb:zipfile-f1ebf584-6abd-472d-bb0e-03d13f50830d",
             "@type": "observable:ArchiveFile"
         }
     ]

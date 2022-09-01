@@ -13,10 +13,7 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:MessageThreadFacet ;
-				observable:messageThread <http://example.org/kb/thread-2> ;
-			] ;
+			sh:focusNode <http://example.org/kb/message-thread-facet-5be8604b-49ad-4432-a560-d529f998807b> ;
 			sh:resultMessage "Value does not have class observable:Message" ;
 			sh:resultPath (
 				observable:messageThread
@@ -32,14 +29,11 @@
 					co:element
 				) ;
 			] ;
-			sh:value <http://example.org/kb/message-1> ;
+			sh:value <http://example.org/kb/message-04169db8-68a0-4448-8ffc-583a85ade550> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:MessageThreadFacet ;
-				observable:messageThread <http://example.org/kb/thread-2> ;
-			] ;
+			sh:focusNode <http://example.org/kb/message-thread-facet-5be8604b-49ad-4432-a560-d529f998807b> ;
 			sh:resultMessage "Value does not have class observable:Message" ;
 			sh:resultPath (
 				observable:messageThread
@@ -55,14 +49,11 @@
 					co:element
 				) ;
 			] ;
-			sh:value <http://example.org/kb/message-6> ;
+			sh:value <http://example.org/kb/message-5620d71b-5f8f-4e88-b6d6-99123abbaf7d> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:MessageThreadFacet ;
-				observable:messageThread <http://example.org/kb/thread-2> ;
-			] ;
+			sh:focusNode <http://example.org/kb/message-thread-facet-5be8604b-49ad-4432-a560-d529f998807b> ;
 			sh:resultMessage "Value does not have class observable:Message" ;
 			sh:resultPath (
 				observable:messageThread
@@ -80,14 +71,11 @@
 					co:itemContent
 				) ;
 			] ;
-			sh:value <http://example.org/kb/message-1> ;
+			sh:value <http://example.org/kb/message-04169db8-68a0-4448-8ffc-583a85ade550> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:MessageThreadFacet ;
-				observable:messageThread <http://example.org/kb/thread-2> ;
-			] ;
+			sh:focusNode <http://example.org/kb/message-thread-facet-5be8604b-49ad-4432-a560-d529f998807b> ;
 			sh:resultMessage "Value does not have class observable:Message" ;
 			sh:resultPath (
 				observable:messageThread
@@ -105,14 +93,11 @@
 					co:itemContent
 				) ;
 			] ;
-			sh:value <http://example.org/kb/message-6> ;
+			sh:value <http://example.org/kb/message-5620d71b-5f8f-4e88-b6d6-99123abbaf7d> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:MessageThreadFacet ;
-				observable:messageThread <http://example.org/kb/thread-2> ;
-			] ;
+			sh:focusNode <http://example.org/kb/message-thread-facet-5be8604b-49ad-4432-a560-d529f998807b> ;
 			sh:resultMessage "Value does not have class observable:Message" ;
 			sh:resultPath (
 				observable:messageThread
@@ -130,14 +115,11 @@
 					co:itemContent
 				) ;
 			] ;
-			sh:value <http://example.org/kb/message-1> ;
+			sh:value <http://example.org/kb/message-04169db8-68a0-4448-8ffc-583a85ade550> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:MessageThreadFacet ;
-				observable:messageThread <http://example.org/kb/thread-2> ;
-			] ;
+			sh:focusNode <http://example.org/kb/message-thread-facet-5be8604b-49ad-4432-a560-d529f998807b> ;
 			sh:resultMessage "Value does not have class observable:Message" ;
 			sh:resultPath (
 				observable:messageThread
@@ -155,7 +137,7 @@
 					co:itemContent
 				) ;
 			] ;
-			sh:value <http://example.org/kb/message-6> ;
+			sh:value <http://example.org/kb/message-5620d71b-5f8f-4e88-b6d6-99123abbaf7d> ;
 		]
 		;
 	.

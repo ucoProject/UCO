@@ -8,56 +8,56 @@
     },
     "@graph": [
         {
-            "@id": "kb:action-1",
+            "@id": "kb:action-1-094d6f1a-eaaf-48b2-bbe8-1943aa77cff1",
             "@type": "action:Action",
             "rdfs:comment": "This node is some action that has some ObservableObjects as results.  By the ontology, the results need to be some UcoObject or subclass of UcoObject.  They are serialized here as ObservableObjects, and are redundantly assigned types of some of their superclasses.  For completeness-tracking, let the id slug's number be a binary number tracking which superclasses are present, 2^0=core:UcoObject, 2^1=core:Item, 2^2=observable:Observable.",
             "action:result": [
                 {
-                    "@id": "kb:node-0"
+                    "@id": "kb:node-0-0cc5b4d4-e85f-4131-86ff-206a7ca9e8fc"
                 },
                 {
-                    "@id": "kb:node-1"
+                    "@id": "kb:node-1-21bea5ad-9fd3-4221-a839-4f0864c79fc3"
                 },
                 {
-                    "@id": "kb:node-2"
+                    "@id": "kb:node-2-5e759182-ae22-4f73-9c55-215974f2a61b"
                 },
                 {
-                    "@id": "kb:node-3"
+                    "@id": "kb:node-3-6c5d68fc-c869-4567-af65-8bfba49bd26d"
                 },
                 {
-                    "@id": "kb:node-4"
+                    "@id": "kb:node-4-90352b81-74f1-43aa-8cf1-a194442077a9"
                 },
                 {
-                    "@id": "kb:node-5"
+                    "@id": "kb:node-5-ee7608ee-e372-4574-bc22-23ef74e5f882"
                 },
                 {
-                    "@id": "kb:node-6"
+                    "@id": "kb:node-6-f456dbf2-a2f4-4060-ad79-6a954c5d0140"
                 },
                 {
-                    "@id": "kb:node-7"
+                    "@id": "kb:node-7-fd15ec16-9eff-49f4-ba70-b315d90d72a8"
                 }
             ]
         },
         {
-            "@id": "kb:node-0",
+            "@id": "kb:node-0-0cc5b4d4-e85f-4131-86ff-206a7ca9e8fc",
             "@type": "observable:ObservableObject"
         },
         {
-            "@id": "kb:node-1",
+            "@id": "kb:node-1-21bea5ad-9fd3-4221-a839-4f0864c79fc3",
             "@type": [
                 "core:UcoObject",
                 "observable:ObservableObject"
             ]
         },
         {
-            "@id": "kb:node-2",
+            "@id": "kb:node-2-5e759182-ae22-4f73-9c55-215974f2a61b",
             "@type": [
                 "core:Item",
                 "observable:ObservableObject"
             ]
         },
         {
-            "@id": "kb:node-3",
+            "@id": "kb:node-3-6c5d68fc-c869-4567-af65-8bfba49bd26d",
             "@type": [
                 "core:UcoObject",
                 "core:Item",
@@ -65,14 +65,14 @@
             ]
         },
         {
-            "@id": "kb:node-4",
+            "@id": "kb:node-4-90352b81-74f1-43aa-8cf1-a194442077a9",
             "@type": [
                 "observable:Observable",
                 "observable:ObservableObject"
             ]
         },
         {
-            "@id": "kb:node-5",
+            "@id": "kb:node-5-ee7608ee-e372-4574-bc22-23ef74e5f882",
             "@type": [
                 "core:UcoObject",
                 "observable:Observable",
@@ -80,7 +80,7 @@
             ]
         },
         {
-            "@id": "kb:node-6",
+            "@id": "kb:node-6-f456dbf2-a2f4-4060-ad79-6a954c5d0140",
             "@type": [
                 "core:Item",
                 "observable:Observable",
@@ -88,7 +88,7 @@
             ]
         },
         {
-            "@id": "kb:node-7",
+            "@id": "kb:node-7-fd15ec16-9eff-49f4-ba70-b315d90d72a8",
             "@type": [
                 "core:UcoObject",
                 "core:Item",

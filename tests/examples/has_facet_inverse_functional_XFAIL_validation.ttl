@@ -11,7 +11,7 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/facet-1> ;
+			sh:focusNode <http://example.org/kb/facet-b94b9cce-f11a-49f2-b5d4-9efff5e8ab2d> ;
 			sh:resultMessage "hasFacet must not be used to link two objects to one Facet." ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -34,11 +34,11 @@
 			] ;
 			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
 			sh:sourceShape core:hasFacet-shape ;
-			sh:value <http://example.org/kb/object-1> ;
+			sh:value <http://example.org/kb/object-dc5d338e-1067-4b83-b748-0ff189377a33> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/facet-1> ;
+			sh:focusNode <http://example.org/kb/facet-b94b9cce-f11a-49f2-b5d4-9efff5e8ab2d> ;
 			sh:resultMessage "hasFacet must not be used to link two objects to one Facet." ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -61,7 +61,7 @@
 			] ;
 			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
 			sh:sourceShape core:hasFacet-shape ;
-			sh:value <http://example.org/kb/object-2> ;
+			sh:value <http://example.org/kb/object-f7dad740-5f28-40d2-af46-70d0cedcb03b> ;
 		]
 		;
 	.

@@ -58,12 +58,13 @@ types:Dictionary
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dictionary"@en ;
 	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
 	sh:property [
 		sh:class types:DictionaryEntry ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path types:entry ;
 	] ;
 	sh:targetClass types:Dictionary ;
@@ -74,6 +75,7 @@ types:DictionaryEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "DictionaryEntry"@en ;
 	rdfs:comment "A dictionary entry is a single (term/key, value) pair."@en ;
 	sh:property
@@ -100,6 +102,7 @@ types:Hash
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
 	sh:property
@@ -178,7 +181,7 @@ types:Thread
 		;
 	rdfs:subClassOf
 		co:Bag ,
-		core:UcoObject
+		core:UcoThing
 		;
 	rdfs:label "Thread"@en ;
 	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
@@ -196,7 +199,7 @@ types:ThreadItem
 		;
 	rdfs:subClassOf
 		co:Item ,
-		core:UcoObject
+		core:UcoThing
 		;
 	rdfs:label "ThreadItem"@en ;
 	rdfs:comment "A ThreadItem is a member of a thread."@en ;
@@ -252,7 +255,7 @@ types:threadNextItem
 types:threadNextItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadNextItem ;
 	sh:targetSubjectsOf types:threadNextItem ;
 	.
@@ -280,7 +283,7 @@ types:threadOriginItem
 types:threadOriginItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadOriginItem ;
 	sh:targetSubjectsOf types:threadOriginItem ;
 	.
@@ -289,7 +292,7 @@ types:threadOriginItem-subjects-threadPredecessor-shape
 	a sh:PropertyShape ;
 	sh:description "An origin item in a thread must not have a predecessor."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadOriginItem
 		types:threadPredecessor
@@ -301,7 +304,7 @@ types:threadOriginItem-subjects-threadPreviousItem-shape
 	a sh:PropertyShape ;
 	sh:description "An origin item in a thread must not have a previous item."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadOriginItem
 		types:threadPreviousItem
@@ -325,7 +328,7 @@ types:threadPredecessor
 types:threadPredecessor-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadPredecessor ;
 	sh:targetSubjectsOf types:threadPredecessor ;
 	.
@@ -342,7 +345,7 @@ types:threadPreviousItem
 types:threadPreviousItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadPreviousItem ;
 	sh:targetSubjectsOf types:threadPreviousItem ;
 	.
@@ -362,7 +365,7 @@ types:threadSuccessor
 types:threadSuccessor-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadSuccessor ;
 	sh:targetSubjectsOf types:threadSuccessor ;
 	.
@@ -390,7 +393,7 @@ types:threadTerminalItem
 types:threadTerminalItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadTerminalItem ;
 	sh:targetSubjectsOf types:threadTerminalItem ;
 	.
@@ -399,7 +402,7 @@ types:threadTerminalItem-subjects-threadNextItem-shape
 	a sh:PropertyShape ;
 	sh:description "A terminal item in a thread must not have a next item."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadTerminalItem
 		types:threadNextItem
@@ -411,7 +414,7 @@ types:threadTerminalItem-subjects-threadSuccessor-shape
 	a sh:PropertyShape ;
 	sh:description "A terminal item in a thread must not have a successor."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadTerminalItem
 		types:threadSuccessor

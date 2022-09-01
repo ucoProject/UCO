@@ -27,7 +27,7 @@ core:Annotation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:Annotation ;
@@ -117,7 +117,7 @@ core:ContextualCompilation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:ContextualCompilation ;
@@ -166,7 +166,7 @@ core:EnclosingCompilation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:EnclosingCompilation ;
@@ -177,6 +177,7 @@ core:ExternalReference
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ExternalReference"@en ;
 	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
 	sh:property
@@ -207,8 +208,9 @@ core:Facet
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Facet"@en ;
-	rdfs:comment "A facet is a grouping of characteristics unique to a particular aspect of an object."@en ;
+	rdfs:comment "A facet is a grouping of characteristics singularly unique to a particular inherent aspect of a UCO domain object."@en ;
 	sh:targetClass core:Facet ;
 	.
 
@@ -285,13 +287,13 @@ core:Relationship
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:target ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:source ;
 		] ,
 		[
@@ -321,35 +323,46 @@ core:Relationship
 	sh:targetClass core:Relationship ;
 	.
 
+core:UcoInherentCharacterizationThing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoThing ;
+	rdfs:label "UcoInherentCharacterizationThing"@en ;
+	rdfs:comment "A UCO inherent characterization thing is a grouping of characteristics unique to a particular inherent aspect of a UCO domain object."@en ;
+	sh:targetClass core:UcoInherentCharacterizationThing ;
+	.
+
 core:UcoObject
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "UcoObject"@en ;
 	rdfs:comment "A UCO object is a representation of a fundamental concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is the base class acting as a consistent, unifying and interoperable foundation for all explicit and inter-relatable content objects."@en ;
-	owl:disjointWith core:Facet ;
 	sh:property
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:externalReference ;
 		] ,
 		[
 			sh:class core:Facet ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:createdBy ;
 		] ,
 		[
 			sh:class core:MarkingDefinitionAbstraction ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:objectMarking ;
 		] ,
 		[
@@ -387,6 +400,57 @@ core:UcoObject
 		]
 		;
 	sh:targetClass core:UcoObject ;
+	.
+
+core:UcoThing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf owl:Thing ;
+	rdfs:label "UcoThing"@en ;
+	rdfs:comment "UcoThing is the top-level class within UCO."@en ;
+	rdfs:seeAlso core:UcoThing-identifier-shape ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "UcoThings are required to not be blank nodes."@en ;
+		sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+	] ;
+	sh:targetClass core:UcoThing ;
+	.
+
+core:UcoThing-identifier-regex-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape is given an independent IRI for applications that have sufficient controls in place to deactivate this advisory of node identification practice."@en ;
+	rdfs:seeAlso sh:deactivated ;
+	sh:severity sh:Info ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+		sh:message "UcoThings are suggested to end with a UUID."@en ;
+		sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+	] ;
+	sh:targetClass core:UcoThing ;
 	.
 
 core:confidence
@@ -610,5 +674,13 @@ core:value
 	rdfs:label "value"@en ;
 	rdfs:comment "A string value."@en ;
 	rdfs:range xsd:string ;
+	.
+
+[]
+	a owl:AllDisjointClasses ;
+	owl:members (
+		core:UcoInherentCharacterizationThing
+		core:UcoObject
+	) ;
 	.
 

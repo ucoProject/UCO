@@ -34,7 +34,7 @@ identity:AddressFacet
 	sh:property [
 		sh:class location:Location ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path identity:address ;
 	] ;
 	sh:targetClass identity:AddressFacet ;

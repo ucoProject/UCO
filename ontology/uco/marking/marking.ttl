@@ -24,12 +24,13 @@ marking:GranularMarking
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "GranularMarking"@en ;
 	rdfs:comment "A granular marking is a grouping of characteristics unique to specification of marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) that apply to particular portions of a particular UCO object."@en ;
 	sh:property
 		[
 			sh:class marking:MarkingDefinition ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path marking:marking ;
 		] ,
 		[
@@ -78,7 +79,7 @@ marking:MarkingDefinition
 	sh:property
 		[
 			sh:class marking:MarkingModel ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path marking:definition ;
 		] ,
 		[
@@ -97,6 +98,7 @@ marking:MarkingModel
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "MarkingModel"@en ;
 	rdfs:comment "A marking model is a grouping of characteristics unique to the expression of a particular form of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared)."@en ;
 	sh:targetClass marking:MarkingModel ;

@@ -46,7 +46,7 @@ tool:BuildFacet
 	sh:property [
 		sh:class tool:BuildInformationType ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path tool:buildInformation ;
 	] ;
 	sh:targetClass tool:BuildFacet ;
@@ -57,29 +57,30 @@ tool:BuildInformationType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildInformationType"@en ;
 	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
 	sh:property
 		[
 			sh:class configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:buildConfiguration ;
 		] ,
 		[
 			sh:class tool:BuildUtilityType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:buildUtility ;
 		] ,
 		[
 			sh:class tool:CompilerType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:compilers ;
 		] ,
 		[
 			sh:class tool:LibraryType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:libraries ;
 		] ,
 		[
@@ -133,6 +134,7 @@ tool:BuildUtilityType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildUtilityType"@en ;
 	rdfs:comment "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."@en ;
 	sh:property
@@ -163,6 +165,7 @@ tool:CompilerType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "CompilerType"@en ;
 	rdfs:comment "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"@en ;
 	sh:property
@@ -229,6 +232,7 @@ tool:LibraryType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "LibraryType"@en ;
 	rdfs:comment "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."@en ;
 	sh:property
@@ -271,7 +275,7 @@ tool:Tool
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:creator ;
 		] ,
 		[
