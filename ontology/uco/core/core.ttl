@@ -10,6 +10,8 @@
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:versionIRI core:0.9.1 ;
 	.
 
 core:Annotation

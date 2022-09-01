@@ -1,5 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core
-# imports: https://ontology.unifiedcyberontology.org/uco/role
+# imports: https://ontology.unifiedcyberontology.org/uco/role/0.9.1
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -12,10 +11,9 @@
 <https://ontology.unifiedcyberontology.org/uco/victim>
 	a owl:Ontology ;
 	rdfs:label "uco-victim"@en ;
-	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/role>
-		;
+	owl:imports role:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/victim> ;
+	owl:versionIRI victim:0.9.1 ;
 	.
 
 victim:Victim

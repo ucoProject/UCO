@@ -1,10 +1,10 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/action
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration
-# imports: https://ontology.unifiedcyberontology.org/uco/core
-# imports: https://ontology.unifiedcyberontology.org/uco/identity
-# imports: https://ontology.unifiedcyberontology.org/uco/location
-# imports: https://ontology.unifiedcyberontology.org/uco/types
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/uco/action/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/location/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/types/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/0.9.1
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
@@ -25,14 +25,16 @@
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/identity> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/types> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		action:0.9.1 ,
+		configuration:0.9.1 ,
+		core:0.9.1 ,
+		identity:0.9.1 ,
+		location:0.9.1 ,
+		types:0.9.1 ,
+		vocabulary:0.9.1
 		;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/observable> ;
+	owl:versionIRI observable:0.9.1 ;
 	.
 
 observable:API

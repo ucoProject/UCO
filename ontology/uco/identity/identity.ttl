@@ -1,5 +1,5 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core
-# imports: https://ontology.unifiedcyberontology.org/uco/location
+# imports: https://ontology.unifiedcyberontology.org/uco/core/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/location/0.9.1
 
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
@@ -14,9 +14,11 @@
 	a owl:Ontology ;
 	rdfs:label "uco-identity"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/location>
+		core:0.9.1 ,
+		location:0.9.1
 		;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/identity> ;
+	owl:versionIRI identity:0.9.1 ;
 	.
 
 identity:AddressFacet
