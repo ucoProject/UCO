@@ -6190,12 +6190,6 @@ observable:TableFieldFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:recordFieldValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:recordRowID ;
 		] ,
 		[
@@ -6209,9 +6203,57 @@ observable:TableFieldFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:tableSchema ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype xsd:base64Binary ;
+				]
+				[
+					sh:datatype xsd:decimal ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:recordFieldValue ;
 		]
 		;
-	sh:targetClass observable:DatabaseRecordFacet ;
+	sh:targetClass observable:TableFieldFacet ;
+	sh:xone (
+		[
+			a sh:NodeShape ;
+			sh:property [
+				sh:hasValue "false"^^xsd:boolean ;
+				sh:path observable:recordFieldIsNull ;
+			] ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:property
+				[
+					sh:hasValue "true"^^xsd:boolean ;
+					sh:path observable:recordFieldIsNull ;
+				] ,
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path observable:recordFieldValue ;
+				]
+				;
+		]
+		[
+			a sh:NodeShape ;
+			sh:property [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:path observable:recordFieldIsNull ;
+			] ;
+		]
+	) ;
 	.
 
 observable:TaskActionType
