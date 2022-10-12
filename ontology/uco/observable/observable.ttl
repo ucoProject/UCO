@@ -9639,6 +9639,7 @@ observable:byteStringValue
 	a owl:DatatypeProperty ;
 	rdfs:label "byteStringValue"@en ;
 	rdfs:comment "Specifies the raw, byte-string representation of the extracted string."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:callType
@@ -10171,8 +10172,8 @@ observable:destination
 observable:destinationFlags
 	a owl:DatatypeProperty ;
 	rdfs:label "destinationFlags"@en ;
-	rdfs:comment """Specifies the destination TCP flags.
-          """@en ;
+	rdfs:comment "Specifies the destination TCP flags."@en ;
+	rdfs:range xsd:string ;
 	.
 
 observable:destinationPort
