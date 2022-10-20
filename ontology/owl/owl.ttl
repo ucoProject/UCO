@@ -302,11 +302,10 @@ uco-owl:ontologyIRI-ontology-uniqueness-shape
 	.
 
 uco-owl:ontologyIRI-versionIRI-prerequisite-shape
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 	sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
-	sh:minCount "1"^^xsd:integer ;
-	sh:path owl:ontologyIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 

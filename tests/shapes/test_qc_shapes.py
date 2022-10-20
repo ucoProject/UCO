@@ -14,7 +14,9 @@
 from typing import Optional, Set, Tuple
 
 import pytest
-from rdflib import Graph, Literal, SH, URIRef
+from rdflib import Graph, Literal, Namespace, SH, URIRef
+
+NS_UCO_OWL = Namespace("https://ontology.unifiedcyberontology.org/owl/")
 
 
 # Documentation for parametrize:
@@ -51,13 +53,6 @@ from rdflib import Graph, Literal, SH, URIRef
         (
             "examples_uco_owl/owl_versionIRI_multiversion_shape_PASS_validation.ttl",
             True,
-            {
-                (URIRef("http://example.org/example-1"), None),
-            },
-        ),
-        (
-            "examples_uco_owl/owl_ontologyIRI_versionIRI_prerequisite_shape_XFAIL_validation.ttl",
-            False,
             {
                 (URIRef("http://example.org/example-1"), None),
             },
@@ -154,3 +149,27 @@ WHERE {
         assert isinstance(result[1], URIRef) or result[1] is None
         computed_focus_values.add(result)
     assert expected_focus_values == computed_focus_values
+
+
+def test_bnode_validation_result() -> None:
+    graph = Graph()
+    graph.parse(
+        "examples_uco_owl/owl_ontologyIRI_versionIRI_prerequisite_shape_XFAIL_validation.ttl",
+        format="turtle",
+    )
+
+    expected_source_shapes: Set[URIRef] = {
+        NS_UCO_OWL["ontologyIRI-versionIRI-prerequisite-shape"]
+    }
+    computed_source_shapes: Set[URIRef] = set()
+
+    computed_validation_result: Optional[bool] = None
+    for triple in graph.triples((None, SH.conforms, None)):
+        assert isinstance(triple[2], Literal)
+        computed_validation_result = bool(triple[2])
+    assert computed_validation_result is False
+
+    for triple in graph.triples((None, SH.sourceShape, None)):
+        assert isinstance(triple[2], URIRef)
+        computed_source_shapes.add(triple[2])
+    assert expected_source_shapes == computed_source_shapes
