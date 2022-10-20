@@ -19,7 +19,6 @@
 		identity:1.0.0
 		;
 	owl:incompatibleWith tool:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/tool> ;
 	owl:priorVersion tool:0.9.1 ;
 	owl:versionIRI tool:1.0.0 ;
 	.

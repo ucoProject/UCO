@@ -28,25 +28,67 @@ NS_UCO_OWL = Namespace("https://ontology.unifiedcyberontology.org/owl/")
             "examples_uco_owl/owl_incompatibleWith_shape_PASS_validation.ttl",
             True,
             {
+                # example-1 is expected to not trigger a warning.
                 (
-                    URIRef("http://example.org/example-2"),
-                    URIRef("http://example.org/example-3"),
+                    URIRef("http://example.org/example-2-a"),
+                    URIRef("http://example.org/example-2-b"),
                 ),
                 (
-                    URIRef("http://example.org/example-g"),
-                    URIRef("http://example.org/example-h"),
+                    URIRef("http://example.org/example-3-b"),
+                    URIRef("http://example.org/example-3-b"),
                 ),
                 (
-                    URIRef("http://example.org/example-10"),
-                    URIRef("http://example.org/example-11"),
+                    URIRef("http://example.org/example-4-b/v1"),
+                    None,
                 ),
                 (
-                    URIRef("http://example.org/example-13"),
-                    URIRef("http://example.org/example-15"),
+                    URIRef("http://example.org/example-5-a"),
+                    URIRef("http://example.org/example-5-b/v1"),
                 ),
                 (
-                    URIRef("http://example.org/example-16"),
-                    URIRef("http://example.org/example-17"),
+                    URIRef("http://example.org/example-5-b/v1"),
+                    None,
+                ),
+                # example-6 is expected to not trigger a warning.
+                (
+                    URIRef("http://example.org/example-7-c"),
+                    URIRef("http://example.org/example-7-c"),
+                ),
+                (
+                    URIRef("http://example.org/example-8-c"),
+                    URIRef("http://example.org/example-8-c"),
+                ),
+                (
+                    URIRef("http://example.org/example-9-c/v1"),
+                    None,
+                ),
+                (
+                    URIRef("http://example.org/example-10-c/v1"),
+                    None,
+                ),
+                (
+                    URIRef("http://example.org/example-11-d"),
+                    URIRef("http://example.org/example-11-d"),
+                ),
+                (
+                    URIRef("http://example.org/example-12-d"),
+                    URIRef("http://example.org/example-12-d"),
+                ),
+                (
+                    URIRef("http://example.org/example-13-d"),
+                    URIRef("http://example.org/example-13-d"),
+                ),
+                (
+                    URIRef("http://example.org/example-14-d/v1"),
+                    None,
+                ),
+                (
+                    URIRef("http://example.org/example-15-d/v1"),
+                    None,
+                ),
+                (
+                    URIRef("http://example.org/example-16-d/v3"),
+                    None,
                 ),
             },
         ),
@@ -104,7 +146,7 @@ def test_validation_result(
         computed_validation_result = bool(triple[2])
     assert expected_validation_result == computed_validation_result
 
-    computed_focus_values: Set[Tuple[URIRef, URIRef]] = set()
+    computed_focus_values: Set[Tuple[URIRef, Optional[URIRef]]] = set()
     for result in graph.query(
         """\
 SELECT ?nFocusNode ?nValue

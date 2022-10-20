@@ -43,7 +43,6 @@
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary/1.0.0>
 		;
 	owl:incompatibleWith <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/uco> ;
 	owl:priorVersion <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
 	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1.0.0> ;
 	owl:versionInfo "1.0.0" ;

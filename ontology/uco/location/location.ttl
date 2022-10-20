@@ -13,7 +13,6 @@
 	rdfs:label "uco-location"@en ;
 	owl:imports core:1.0.0 ;
 	owl:incompatibleWith location:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/location> ;
 	owl:priorVersion location:0.9.1 ;
 	owl:versionIRI location:1.0.0 ;
 	.

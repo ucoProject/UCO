@@ -6,7 +6,6 @@
 <https://ontology.unifiedcyberontology.org/uco/uco>
 	a owl:Ontology ;
 	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/uco> ;
 	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1> ;
 	owl:versionInfo "1" ;
 	.
@@ -16,14 +15,12 @@
 	rdfs:comment "This node will trigger an error due to having no versionIRI."@en ;
 	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
 	owl:imports <https://ontology.unifiedcyberontology.org/example-2/1> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/example-1> ;
 	.
 
 <https://ontology.unifiedcyberontology.org/example-2>
 	a owl:Ontology ;
 	rdfs:comment "This node will trigger an error due to having two versionIRIs."@en ;
 	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/example-2> ;
 	owl:versionIRI
 		<https://ontology.unifiedcyberontology.org/example-2/1> ,
 		<https://ontology.unifiedcyberontology.org/example-2/1/1>

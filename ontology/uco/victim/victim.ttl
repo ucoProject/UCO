@@ -13,7 +13,6 @@
 	rdfs:label "uco-victim"@en ;
 	owl:imports role:1.0.0 ;
 	owl:incompatibleWith victim:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/victim> ;
 	owl:priorVersion victim:0.9.1 ;
 	owl:versionIRI victim:1.0.0 ;
 	.

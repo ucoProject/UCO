@@ -7,7 +7,6 @@
 <http://example.org/example-1>
 	a owl:Ontology ;
 	rdfs:seeAlso uco-owl:versionIRI-multiversion-shape ;
-	owl:ontologyIRI <http://example.org/example-1> ;
 	owl:versionIRI
 		<http://example.org/example-1/1> ,
 		<http://example.org/example-1/2>
