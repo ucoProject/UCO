@@ -274,29 +274,10 @@ uco-owl:ontologyIRI-nodeKind-shape
 	.
 
 uco-owl:ontologyIRI-ontology-uniqueness-shape
-	a sh:NodeShape ;
+	a sh:Shape ;
+	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 	sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
-	sh:severity sh:Warning ;
-	sh:sparql [
-		a sh:SPARQLConstraint ;
-		sh:select """
-			PREFIX owl: <http://www.w3.org/2002/07/owl#>
-			SELECT $this ?value
-			WHERE {
-				$this owl:ontologyIRI ?nOntologyIRI .
-				FILTER NOT EXISTS {
-					$this owl:versionIRI ?nVersionIRI1 .
-				}
-				?value owl:ontologyIRI ?nOntologyIRI .
-				FILTER NOT EXISTS {
-					?value owl:versionIRI ?nVersionIRI2 .
-				}
-				FILTER ( $this != ?value )
-			}
-		""" ;
-	] ;
-	sh:targetSubjectsOf owl:ontologyIRI ;
 	.
 
 uco-owl:ontologyIRI-versionIRI-prerequisite-shape

@@ -58,34 +58,6 @@ NS_UCO_OWL = Namespace("https://ontology.unifiedcyberontology.org/owl/")
             },
         ),
         (
-            "examples_uco_owl/owl_ontologyIRI_uniqueness_shape_PASS_validation.ttl",
-            True,
-            {
-                (
-                    URIRef("http://example.org/example-A"),
-                    URIRef("http://example.org/example-B"),
-                ),
-                (
-                    URIRef("http://example.org/example-B"),
-                    URIRef("http://example.org/example-A"),
-                ),
-            },
-        ),
-        (
-            "examples_uco_owl/owl_ontologyIRI_versionIRI_uniqueness_shape_PASS_validation.ttl",
-            True,
-            {
-                (
-                    URIRef("http://example.org/example-A"),
-                    URIRef("http://example.org/example-B"),
-                ),
-                (
-                    URIRef("http://example.org/example-B"),
-                    URIRef("http://example.org/example-A"),
-                ),
-            },
-        ),
-        (
             "examples_uco_qc/owl_Ontology_shape_property_owl_versionIRI_PASS_validation.ttl",
             True,
             set(),
