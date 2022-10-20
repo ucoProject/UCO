@@ -269,10 +269,8 @@ uco-owl:incompatibleWith-shape
 	.
 
 uco-owl:ontologyIRI-nodeKind-shape
-	a sh:PropertyShape ;
-	sh:nodeKind sh:IRI ;
-	sh:path owl:ontologyIRI ;
-	sh:targetSubjectsOf owl:ontologyIRI ;
+	a sh:Shape ;
+	rdfs:comment "This shape is deprecated, due to referencing a non-existent property.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
 	.
 
 uco-owl:ontologyIRI-ontology-uniqueness-shape
