@@ -13,7 +13,6 @@
 	rdfs:label "uco-pattern"@en ;
 	owl:imports core:1.0.0 ;
 	owl:incompatibleWith pattern:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/pattern> ;
 	owl:priorVersion pattern:0.9.1 ;
 	owl:versionIRI pattern:1.0.0 ;
 	.

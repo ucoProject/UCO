@@ -6,7 +6,6 @@
 <https://ontology.unifiedcyberontology.org/uco/uco>
 	a owl:Ontology ;
 	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/uco> ;
 	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1> ;
 	owl:versionInfo "1" ;
 	.
@@ -16,16 +15,14 @@
 	rdfs:comment "This node will trigger an error due to importing an ontology's IRI."@en ;
 	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
 	owl:imports <https://ontology.unifiedcyberontology.org/example-2> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/uco> ;
 	owl:versionIRI <https://ontology.unifiedcyberontology.org/example-1/1> ;
 	.
 
 <https://ontology.unifiedcyberontology.org/example-2>
 	a owl:Ontology ;
-	rdfs:comment "This node will trigger an error due to importing an ontology's ontologyIRI."@en ;
+	rdfs:comment "This node will trigger an error due to importing an ontology's ontology IRI."@en ;
 	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
 	owl:imports <https://ontology.unifiedcyberontology.org/FOO/example-3> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/example-2> ;
 	owl:versionIRI <https://ontology.unifiedcyberontology.org/example-2/1> ;
 	.
 
@@ -33,7 +30,6 @@
 	a owl:Ontology ;
 	rdfs:comment "This node should not trigger an error itself, but it does play a role in the example-2 error."@en ;
 	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/FOO/example-3> ;
 	owl:versionIRI <https://ontology.unifiedcyberontology.org/example-3/1> ;
 	.
 

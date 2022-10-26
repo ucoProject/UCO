@@ -14,7 +14,9 @@
 from typing import Optional, Set, Tuple
 
 import pytest
-from rdflib import Graph, Literal, SH, URIRef
+from rdflib import Graph, Literal, Namespace, SH, URIRef
+
+NS_UCO_OWL = Namespace("https://ontology.unifiedcyberontology.org/owl/")
 
 
 # Documentation for parametrize:
@@ -26,25 +28,67 @@ from rdflib import Graph, Literal, SH, URIRef
             "examples_uco_owl/owl_incompatibleWith_shape_PASS_validation.ttl",
             True,
             {
+                # example-1 is expected to not trigger a warning.
                 (
-                    URIRef("http://example.org/example-2"),
-                    URIRef("http://example.org/example-3"),
+                    URIRef("http://example.org/example-2-a"),
+                    URIRef("http://example.org/example-2-b"),
                 ),
                 (
-                    URIRef("http://example.org/example-g"),
-                    URIRef("http://example.org/example-h"),
+                    URIRef("http://example.org/example-3-b"),
+                    URIRef("http://example.org/example-3-b"),
                 ),
                 (
-                    URIRef("http://example.org/example-10"),
-                    URIRef("http://example.org/example-11"),
+                    URIRef("http://example.org/example-4-b/v1"),
+                    None,
                 ),
                 (
-                    URIRef("http://example.org/example-13"),
-                    URIRef("http://example.org/example-15"),
+                    URIRef("http://example.org/example-5-a"),
+                    URIRef("http://example.org/example-5-b/v1"),
                 ),
                 (
-                    URIRef("http://example.org/example-16"),
-                    URIRef("http://example.org/example-17"),
+                    URIRef("http://example.org/example-5-b/v1"),
+                    None,
+                ),
+                # example-6 is expected to not trigger a warning.
+                (
+                    URIRef("http://example.org/example-7-c"),
+                    URIRef("http://example.org/example-7-c"),
+                ),
+                (
+                    URIRef("http://example.org/example-8-c"),
+                    URIRef("http://example.org/example-8-c"),
+                ),
+                (
+                    URIRef("http://example.org/example-9-c/v1"),
+                    None,
+                ),
+                (
+                    URIRef("http://example.org/example-10-c/v1"),
+                    None,
+                ),
+                (
+                    URIRef("http://example.org/example-11-d"),
+                    URIRef("http://example.org/example-11-d"),
+                ),
+                (
+                    URIRef("http://example.org/example-12-d"),
+                    URIRef("http://example.org/example-12-d"),
+                ),
+                (
+                    URIRef("http://example.org/example-13-d"),
+                    URIRef("http://example.org/example-13-d"),
+                ),
+                (
+                    URIRef("http://example.org/example-14-d/v1"),
+                    None,
+                ),
+                (
+                    URIRef("http://example.org/example-15-d/v1"),
+                    None,
+                ),
+                (
+                    URIRef("http://example.org/example-16-d/v3"),
+                    None,
                 ),
             },
         ),
@@ -53,41 +97,6 @@ from rdflib import Graph, Literal, SH, URIRef
             True,
             {
                 (URIRef("http://example.org/example-1"), None),
-            },
-        ),
-        (
-            "examples_uco_owl/owl_ontologyIRI_versionIRI_prerequisite_shape_XFAIL_validation.ttl",
-            False,
-            {
-                (URIRef("http://example.org/example-1"), None),
-            },
-        ),
-        (
-            "examples_uco_owl/owl_ontologyIRI_uniqueness_shape_PASS_validation.ttl",
-            True,
-            {
-                (
-                    URIRef("http://example.org/example-A"),
-                    URIRef("http://example.org/example-B"),
-                ),
-                (
-                    URIRef("http://example.org/example-B"),
-                    URIRef("http://example.org/example-A"),
-                ),
-            },
-        ),
-        (
-            "examples_uco_owl/owl_ontologyIRI_versionIRI_uniqueness_shape_PASS_validation.ttl",
-            True,
-            {
-                (
-                    URIRef("http://example.org/example-A"),
-                    URIRef("http://example.org/example-B"),
-                ),
-                (
-                    URIRef("http://example.org/example-B"),
-                    URIRef("http://example.org/example-A"),
-                ),
             },
         ),
         (
@@ -137,7 +146,7 @@ def test_validation_result(
         computed_validation_result = bool(triple[2])
     assert expected_validation_result == computed_validation_result
 
-    computed_focus_values: Set[Tuple[URIRef, URIRef]] = set()
+    computed_focus_values: Set[Tuple[URIRef, Optional[URIRef]]] = set()
     for result in graph.query(
         """\
 SELECT ?nFocusNode ?nValue
@@ -154,3 +163,27 @@ WHERE {
         assert isinstance(result[1], URIRef) or result[1] is None
         computed_focus_values.add(result)
     assert expected_focus_values == computed_focus_values
+
+
+def test_bnode_validation_result() -> None:
+    graph = Graph()
+    graph.parse(
+        "examples_uco_owl/owl_ontologyIRI_versionIRI_prerequisite_shape_XFAIL_validation.ttl",
+        format="turtle",
+    )
+
+    expected_source_shapes: Set[URIRef] = {
+        NS_UCO_OWL["ontologyIRI-versionIRI-prerequisite-shape"]
+    }
+    computed_source_shapes: Set[URIRef] = set()
+
+    computed_validation_result: Optional[bool] = None
+    for triple in graph.triples((None, SH.conforms, None)):
+        assert isinstance(triple[2], Literal)
+        computed_validation_result = bool(triple[2])
+    assert computed_validation_result is False
+
+    for triple in graph.triples((None, SH.sourceShape, None)):
+        assert isinstance(triple[2], URIRef)
+        computed_source_shapes.add(triple[2])
+    assert expected_source_shapes == computed_source_shapes

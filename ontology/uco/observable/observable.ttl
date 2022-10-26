@@ -34,7 +34,6 @@
 		vocabulary:1.0.0
 		;
 	owl:incompatibleWith observable:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/observable> ;
 	owl:priorVersion observable:0.9.1 ;
 	owl:versionIRI observable:1.0.0 ;
 	.

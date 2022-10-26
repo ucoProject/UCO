@@ -10,7 +10,6 @@
 	rdfs:label "uco-owl"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to perform conformance testing of OWL 2 DL.  Some of these shapes follow rules specified from the canonical, subtractive parsing process of Section 3 of the OWL 2 mapping to RDF.  From the last line of that document's Section 3, 'At the end of this process, the graph G MUST be empty,' anything not strictly matching patterns specified in that section cause the input graph to be non-conformant with OWL 2 DL."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/owl> ;
 	owl:versionIRI uco-owl:1.0.0 ;
 	.
 
@@ -228,112 +227,66 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 	sh:targetClass owl:ObjectProperty ;
 	.
 
-uco-owl:incompatibleWith-shape
+uco-owl:incompatibleWith-direct-import-shape
 	a sh:PropertyShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
-	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'"@en ;
-	sh:path owl:incompatibleWith ;
+	sh:disjoint owl:incompatibleWith ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode directly imported an incompatibility it declared (the value node)."@en ;
+	sh:path owl:imports ;
 	sh:severity sh:Warning ;
-	sh:sparql
-		[
-			a sh:SPARQLConstraint ;
-			sh:select """
-				PREFIX owl: <http://www.w3.org/2002/07/owl#>
-				SELECT $this ?value
-				WHERE {
-					$this
-						owl:imports ?value ;
-						owl:incompatibleWith ?value ;
-						.
-				}
-			""" ;
-		] ,
-		[
-			a sh:SPARQLConstraint ;
-			sh:select """
-				PREFIX owl: <http://www.w3.org/2002/07/owl#>
-				SELECT $this ?value
-				WHERE {
-					$this owl:incompatibleWith ?value .
+	sh:targetClass owl:Ontology ;
+	.
 
-					{ ?value a owl:Ontology . }
-					UNION
-					{ ?nOntology owl:ontologyIRI ?value . }
-					UNION
-					{ ?nOntology owl:versionIRI ?value . }
-				}
-			""" ;
-		]
-		;
-	sh:targetSubjectsOf owl:incompatibleWith ;
+uco-owl:incompatibleWith-imported-ontology-iri-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode, or a versionIRI of it, is imported within the transitive closure of some O, but is incompatible with some O_1 also within the transitive closure of O."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class owl:Ontology ;
+		sh:description "This node having a class-designation of owl:Ontology implies it is an ontology 'O_2' defined in the transitive closure of an ontology 'O_1' that declared itself incompatible with 'O_2'."@en ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetObjectsOf owl:incompatibleWith ;
+	.
+
+uco-owl:incompatibleWith-imported-version-iri-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to ... the version IRI of O_2.'  The focusNode is incompatible with some O_1 within the transitive closure of some O."@en ;
+	sh:path [
+		sh:inversePath owl:versionIRI ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetObjectsOf owl:incompatibleWith ;
 	.
 
 uco-owl:ontologyIRI-nodeKind-shape
-	a sh:PropertyShape ;
-	sh:nodeKind sh:IRI ;
-	sh:path owl:ontologyIRI ;
-	sh:targetSubjectsOf owl:ontologyIRI ;
+	a sh:Shape ;
+	rdfs:comment "This shape is deprecated, due to referencing a non-existent property.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
 	.
 
 uco-owl:ontologyIRI-ontology-uniqueness-shape
-	a sh:NodeShape ;
+	a sh:Shape ;
+	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 	sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
-	sh:severity sh:Warning ;
-	sh:sparql [
-		a sh:SPARQLConstraint ;
-		sh:select """
-			PREFIX owl: <http://www.w3.org/2002/07/owl#>
-			SELECT $this ?value
-			WHERE {
-				$this owl:ontologyIRI ?nOntologyIRI .
-				FILTER NOT EXISTS {
-					$this owl:versionIRI ?nVersionIRI1 .
-				}
-				?value owl:ontologyIRI ?nOntologyIRI .
-				FILTER NOT EXISTS {
-					?value owl:versionIRI ?nVersionIRI2 .
-				}
-				FILTER ( $this != ?value )
-			}
-		""" ;
-	] ;
-	sh:targetSubjectsOf owl:ontologyIRI ;
 	.
 
 uco-owl:ontologyIRI-versionIRI-prerequisite-shape
-	a sh:PropertyShape ;
+	a sh:NodeShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 	sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
-	sh:minCount "1"^^xsd:integer ;
-	sh:path owl:ontologyIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 
 uco-owl:ontologyIRI-versionIRI-uniqueness-shape
-	a sh:NodeShape ;
+	a sh:Shape ;
+	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 	sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
-	sh:severity sh:Warning ;
-	sh:sparql [
-		a sh:SPARQLConstraint ;
-		sh:select """
-			PREFIX owl: <http://www.w3.org/2002/07/owl#>
-			SELECT $this ?value
-			WHERE {
-				$this
-					owl:ontologyIRI ?nOntologyIRI ;
-					owl:versionIRI ?nVersionIRI ;
-					.
-				?value
-					owl:ontologyIRI ?nOntologyIRI ;
-					owl:versionIRI ?nVersionIRI ;
-					.
-				FILTER ( $this != ?value )
-			}
-		""" ;
-	] ;
-	sh:targetSubjectsOf owl:ontologyIRI ;
 	.
 
 uco-owl:versionIRI-multiversion-shape
