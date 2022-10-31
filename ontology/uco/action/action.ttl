@@ -108,6 +108,12 @@ action:Action
 			sh:path action:actionCount ;
 		] ,
 		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:isAutomated ;
+		],
+		[
 			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:path action:actionStatus ;
@@ -438,6 +444,13 @@ action:estimatedImpact
 	rdfs:label "estimatedImpact"@en ;
 	rdfs:comment "An estimation of the impact if the action is performed."@en ;
 	rdfs:range xsd:string ;
+	.
+
+action:isAutomated
+	a owl:DatatypeProperty ;
+	rdfs:label "isAutomated"@en ;
+	rdfs:comment "An assertion of whether or not the action is automated."@en ;
+	rdfs:range xsd:boolean ;
 	.
 
 action:instrument
