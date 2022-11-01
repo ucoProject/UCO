@@ -90,6 +90,12 @@ action:Action
 			sh:path action:location ;
 		] ,
 		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:isAutomated ;
+		] ,
+		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -107,12 +113,6 @@ action:Action
 			sh:nodeKind sh:Literal ;
 			sh:path action:actionCount ;
 		] ,
-		[
-			sh:datatype xsd:boolean ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path action:isAutomated ;
-		],
 		[
 			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
@@ -446,18 +446,18 @@ action:estimatedImpact
 	rdfs:range xsd:string ;
 	.
 
-action:isAutomated
-	a owl:DatatypeProperty ;
-	rdfs:label "isAutomated"@en ;
-	rdfs:comment "An assertion of whether or not the action is automated."@en ;
-	rdfs:range xsd:boolean ;
-	.
-
 action:instrument
 	a owl:ObjectProperty ;
 	rdfs:label "instrument"@en ;
 	rdfs:comment "The things used to perform an action."@en ;
 	rdfs:range core:UcoObject ;
+	.
+
+action:isAutomated
+	a owl:DatatypeProperty ;
+	rdfs:label "isAutomated"@en ;
+	rdfs:comment "An assertion of whether or not the action is automated."@en ;
+	rdfs:range xsd:boolean ;
 	.
 
 action:location
