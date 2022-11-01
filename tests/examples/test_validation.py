@@ -254,6 +254,10 @@ def test_co_XFAIL_validation() -> None:
       }
     )
 
+def test_isAutomated_XFAIL_validation() -> None:
+    g = load_validation_graph("isAutomated_XFAIL_validation.ttl", False)
+    assert isinstance(g, rdflib.Graph)
+
 def test_location_PASS_validation() -> None:
     """
     Confirm the PASS instance data passes validation.

@@ -1,0 +1,18 @@
+{
+    "@context": {
+        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": {
+        "@id": "kb:person-automated-action-c51e0065-ba55-4177-bc08-e71963c22c26",
+        "@type": "action:Action",
+        "rdfs:comment": "This will fail SHACL validation because an automated action is required to not have a human performer.",
+        "action:isAutomated": true,
+        "action:performer": {
+            "@id": "kb:person-c6c7ccc6-2b6c-41e0-ad74-d895bd209ac8",
+            "@type": "identity:Person"
+        }
+    }
+}
