@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.0.0
 # imports: https://ontology.unifiedcyberontology.org/uco/location/1.0.0
 # imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.0.0
 # imports: https://ontology.unifiedcyberontology.org/uco/types/1.0.0
@@ -6,6 +6,7 @@
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
@@ -21,7 +22,7 @@
 	rdfs:label "uco-action"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing actions."@en-US ;
 	owl:imports
-		core:1.0.0 ,
+		identity:1.0.0 ,
 		location:1.0.0 ,
 		pattern:1.0.0 ,
 		types:1.0.0 ,
@@ -41,6 +42,22 @@ action:Action
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Action"@en ;
 	rdfs:comment "An action is something that may be done or performed."@en ;
+	sh:and (
+		[
+			a sh:PropertyShape ;
+			sh:class identity:Person ;
+			sh:path action:performer ;
+		]
+		[
+			a sh:NodeShape ;
+			rdfs:seeAlso <https://www.w3.org/TR/shacl/#NotConstraintComponent> ;
+			sh:not [
+				a sh:PropertyShape ;
+				sh:hasValue "true"^^xsd:boolean ;
+				sh:path action:isAutomated ;
+			] ;
+		]
+	) ;
 	sh:property
 		[
 			sh:class action:Action ;
@@ -88,6 +105,12 @@ action:Action
 			sh:class location:Location ;
 			sh:nodeKind sh:IRI ;
 			sh:path action:location ;
+		] ,
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:isAutomated ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -445,6 +468,13 @@ action:instrument
 	rdfs:label "instrument"@en ;
 	rdfs:comment "The things used to perform an action."@en ;
 	rdfs:range core:UcoObject ;
+	.
+
+action:isAutomated
+	a owl:DatatypeProperty ;
+	rdfs:label "isAutomated"@en ;
+	rdfs:comment "An assertion of whether or not the action is automated."@en ;
+	rdfs:range xsd:boolean ;
 	.
 
 action:location
