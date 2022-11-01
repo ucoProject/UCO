@@ -45,7 +45,7 @@
           sh:class analysis:ArtifactClassification ;
           sh:nodeKind sh:IRI ;
           sh:path analysis:classification ;
-        ],
+        ]
     		;
     	sh:targetClass analysis:ArtifactClassificationResultFacet ;
     	.
