@@ -2244,23 +2244,6 @@ observable:DeviceFacet
 	sh:targetClass observable:DeviceFacet ;
 	.
 
-observable:DeviceStorageFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "DeviceStorageFacet"@en ;
-	rdfs:comment "A device storage facet is a grouping of characteristics unique to a the storage capabilities of a piece of equipment or a mechanism designed to serve a special purpose or perform a special function."@en ;
-	sh:property [
-		sh:datatype xsd:integer ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:totalStorageCapacityInBytes ;
-	] ;
-	sh:targetClass observable:DeviceStorageFacet ;
-	.
-
 observable:DigitalAccount
 	a
 		owl:Class ,
@@ -4462,6 +4445,20 @@ observable:MobileDeviceFacet
 			sh:path observable:phoneActivationTime ;
 		] ,
 		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:message "Deprecation notice: the object referenced by observable:storageCapacityInBytes will be required to be an observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:storageCapacityInBytes ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:totalStorageCapacityInBytes ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -5840,6 +5837,20 @@ observable:SIMCardFacet
 			sh:path observable:carrier ;
 		] ,
 		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:message "Deprecation notice: the object referenced by observable:storageCapacityInBytes will be required to be an observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:storageCapacityInBytes ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:totalStorageCapacityInBytes ;
+		] ,
+		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -6198,6 +6209,23 @@ observable:StorageMedium
 	rdfs:label "StorageMedium"@en-US ;
 	rdfs:comment "A storage medium is any digital storage device that applies electromagnetic or optical surfaces, or depends solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
 	sh:targetClass observable:StorageMedium ;
+	.
+
+observable:StorageMediumFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "StorageMediumFacet"@en ;
+	rdfs:comment "A storage medium facet is a grouping of characteristics unique to a the storage capabilities of a piece of equipment or a mechanism designed to serve a special purpose or perform a special function."@en ;
+	sh:property [
+		sh:datatype xsd:integer ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
+		sh:path observable:totalStorageCapacityInBytes ;
+	] ;
+	sh:targetClass observable:StorageMediumFacet ;
 	.
 
 observable:SymbolicLink
