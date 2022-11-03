@@ -13420,7 +13420,7 @@ observable:wirelessNetworkSecurityMode
 	rdfs:label "wirelessNetworkSecurityMode"@en ;
 	rdfs:comment "Specifies the security mode of a wireless network (None, WEP, WPA, etc)."@en ;
 	rdfs:range [
-		a rdfs:DataType ;
+		a rdfs:Datatype ;
 		owl:unionOf (
 			vocabulary:WirelessNetworkSecurityModeVocab
 			xsd:string
