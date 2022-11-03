@@ -4447,16 +4447,8 @@ observable:MobileDeviceFacet
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:message "Deprecation notice: the object referenced by observable:storageCapacityInBytes will be required to be an observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:storageCapacityInBytes ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:totalStorageCapacityInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -4487,6 +4479,12 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:network ;
+		] ,
+		[
+			sh:maxCount "0"^^xsd:integer ;
+			sh:message "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
+			sh:path observable:totalStorageCapacityInBytes ;
+			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
@@ -5839,16 +5837,8 @@ observable:SIMCardFacet
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:message "Deprecation notice: the object referenced by observable:storageCapacityInBytes will be required to be an observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:storageCapacityInBytes ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:totalStorageCapacityInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -5885,6 +5875,12 @@ observable:SIMCardFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:SIMType ;
+		] ,
+		[
+			sh:maxCount "0"^^xsd:integer ;
+			sh:message "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
+			sh:path observable:totalStorageCapacityInBytes ;
+			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:SIMCardFacet ;
@@ -12938,6 +12934,13 @@ observable:statusesCount
 	rdfs:range xsd:nonNegativeInteger ;
 	.
 
+observable:storageCapacityInBytes
+	a owl:DatatypeProperty ;
+	rdfs:label "storageCapacityInBytes"@en ;
+	rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
+	rdfs:range xsd:integer ;
+	.
+
 observable:stringValue
 	a owl:DatatypeProperty ;
 	rdfs:label "stringValue"@en ;
@@ -13132,7 +13135,7 @@ observable:totalSpace
 observable:totalStorageCapacityInBytes
 	a owl:DatatypeProperty ;
 	rdfs:label "totalStorageCapacityInBytes"@en ;
-	rdfs:comment "The number of bytes that can be stored on a storage device."@en ;
+	rdfs:comment "The maximum number of bytes that can be stored on a storage device."@en ;
 	rdfs:range xsd:integer ;
 	.
 
