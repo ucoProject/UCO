@@ -1,6 +1,7 @@
 # imports: https://ontology.unifiedcyberontology.org/co/1.0.0
 # imports: https://ontology.unifiedcyberontology.org/owl/1.0.0
 # imports: https://ontology.unifiedcyberontology.org/uco/action/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/analysis/1.0.0
 # imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.0.0
 # imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
 # imports: https://ontology.unifiedcyberontology.org/uco/identity/1.0.0
@@ -28,6 +29,7 @@
 		<https://ontology.unifiedcyberontology.org/co/1.0.0> ,
 		<https://ontology.unifiedcyberontology.org/owl/1.0.0> ,
 		<https://ontology.unifiedcyberontology.org/uco/action/1.0.0> ,
+		<https://ontology.unifiedcyberontology.org/uco/analysis/1.0.0> ,
 		<https://ontology.unifiedcyberontology.org/uco/configuration/1.0.0> ,
 		<https://ontology.unifiedcyberontology.org/uco/core/1.0.0> ,
 		<https://ontology.unifiedcyberontology.org/uco/identity/1.0.0> ,
