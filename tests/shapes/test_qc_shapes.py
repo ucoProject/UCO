@@ -91,6 +91,11 @@ from rdflib import Graph, Literal, SH, URIRef
             },
         ),
         (
+            "examples_uco_owl/owl_shacl_paths_PASS_validation.ttl",
+            True,
+            set(),
+        ),
+        (
             "examples_uco_qc/owl_Ontology_shape_property_owl_versionIRI_PASS_validation.ttl",
             True,
             set(),
