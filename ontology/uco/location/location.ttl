@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
 
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
@@ -11,7 +11,11 @@
 <https://ontology.unifiedcyberontology.org/uco/location>
 	a owl:Ontology ;
 	rdfs:label "uco-location"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith location:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/location> ;
+	owl:priorVersion location:0.9.1 ;
+	owl:versionIRI location:1.0.0 ;
 	.
 
 location:GPSCoordinatesFacet

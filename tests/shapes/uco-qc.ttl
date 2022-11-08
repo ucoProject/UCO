@@ -1,0 +1,94 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-qc: <urn:example:uco:qc:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:uco:qc>
+	a owl:Ontology ;
+	rdfs:comment "This ontology contains shapes meant to be used against the transitive closure of UCO, excluding imported, externally-developed ontologies."@en ;
+	.
+
+uco-qc:owl-Ontology-shape
+	a sh:NodeShape ;
+	sh:property [
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:nodeKind sh:IRI ;
+		sh:path owl:versionIRI ;
+	] ;
+	sh:sparql
+		[
+			a sh:SPARQLConstraint ;
+			sh:message "UCO imports of other UCO ontologies are expected to be of versionIRIs."@en ;
+			sh:select '''
+				SELECT $this ?value
+				WHERE {
+					$this owl:imports ?value .
+					FILTER (
+						STRSTARTS (
+							STR(?value),
+							"https://ontology.unifiedcyberontology.org/"
+						)
+					)
+					FILTER NOT EXISTS {
+						?nOtherUcoOntology
+							owl:versionIRI ?value ;
+							.
+					}
+				}
+			''' ;
+		] ,
+		[
+			a sh:SPARQLConstraint ;
+			sh:message "UCO version IRIs are expected to have a fragment matching the versionInfo string in the master UCO ontology."@en ;
+			sh:select '''
+				SELECT $this ?value
+				WHERE {
+					$this owl:versionIRI ?value .
+					<https://ontology.unifiedcyberontology.org/uco/uco> owl:versionInfo ?lUcoVersionInfo .
+					FILTER (
+						STRSTARTS (
+							STR($this),
+							"https://ontology.unifiedcyberontology.org/"
+						)
+					)
+					FILTER (
+						STR(?value)
+						!= 
+						CONCAT(
+							STR($this),
+							"/",
+							?lUcoVersionInfo
+						)
+					)
+				}
+			''' ;
+		]
+		;
+	sh:targetClass owl:Ontology ;
+	.
+
+uco-qc:owl-priorVersion-shape
+	a sh:NodeShape ;
+	sh:message "UCO ontologies that designate a prior version should declare themselves compatible with, or incompatible with, the prior version."@en ;
+	sh:severity sh:Warning ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:select """
+			SELECT $this ?value
+			WHERE {
+				$this owl:priorVersion ?value .
+				FILTER NOT EXISTS {
+					$this owl:backwardCompatibleWith ?value .
+				}
+				FILTER NOT EXISTS {
+					$this owl:incompatibleWith ?value .
+				}
+			}
+		""" ;
+	] ;
+	sh:targetSubjectsOf owl:priorVersion ;
+	.
+

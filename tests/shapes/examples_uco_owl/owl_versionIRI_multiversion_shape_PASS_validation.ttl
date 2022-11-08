@@ -1,0 +1,21 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/example-1> ;
+		sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that O_1 and O_2 are different ontology versions from the same ontology series.'"@en ;
+		sh:resultPath owl:versionIRI ;
+		sh:resultSeverity sh:Warning ;
+		sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+		sh:sourceShape uco-owl:versionIRI-multiversion-shape ;
+	] ;
+	.
+

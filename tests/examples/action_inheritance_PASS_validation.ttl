@@ -11,7 +11,7 @@
 	sh:conforms "true"^^xsd:boolean ;
 	sh:result [
 		a sh:ValidationResult ;
-		sh:focusNode <http://example.org/kb/action1> ;
+		sh:focusNode <http://example.org/kb/action-7acb25ab-0a51-4495-9133-baa69c3be54e> ;
 		sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 		sh:resultPath action:actionStatus ;
 		sh:resultSeverity sh:Info ;

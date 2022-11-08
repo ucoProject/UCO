@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+
+# This software was developed at the National Institute of Standards
+# and Technology by employees of the Federal Government in the course
+# of their official duties. Pursuant to title 17 Section 105 of the
+# United States Code this software is not subject to copyright
+# protection and is in the public domain. NIST assumes no
+# responsibility whatsoever for its use by other parties, and makes
+# no guarantees, expressed or implied, about its quality,
+# reliability, or any other characteristic.
+#
+# We would appreciate acknowledgement if the software is used.
+
+from typing import Optional, Set, Tuple
+
+import pytest
+from rdflib import Graph, Literal, SH, URIRef
+
+
+# Documentation for parametrize:
+# https://docs.pytest.org/en/6.2.x/parametrize.html
+@pytest.mark.parametrize(
+    ["filename", "expected_validation_result", "expected_focus_values"],
+    [
+        (
+            "examples_uco_owl/owl_incompatibleWith_shape_PASS_validation.ttl",
+            True,
+            {
+                (
+                    URIRef("http://example.org/example-2"),
+                    URIRef("http://example.org/example-3"),
+                ),
+                (
+                    URIRef("http://example.org/example-g"),
+                    URIRef("http://example.org/example-h"),
+                ),
+                (
+                    URIRef("http://example.org/example-10"),
+                    URIRef("http://example.org/example-11"),
+                ),
+                (
+                    URIRef("http://example.org/example-13"),
+                    URIRef("http://example.org/example-15"),
+                ),
+                (
+                    URIRef("http://example.org/example-16"),
+                    URIRef("http://example.org/example-17"),
+                ),
+            },
+        ),
+        (
+            "examples_uco_owl/owl_versionIRI_multiversion_shape_PASS_validation.ttl",
+            True,
+            {
+                (URIRef("http://example.org/example-1"), None),
+            },
+        ),
+        (
+            "examples_uco_owl/owl_ontologyIRI_versionIRI_prerequisite_shape_XFAIL_validation.ttl",
+            False,
+            {
+                (URIRef("http://example.org/example-1"), None),
+            },
+        ),
+        (
+            "examples_uco_owl/owl_ontologyIRI_uniqueness_shape_PASS_validation.ttl",
+            True,
+            {
+                (
+                    URIRef("http://example.org/example-A"),
+                    URIRef("http://example.org/example-B"),
+                ),
+                (
+                    URIRef("http://example.org/example-B"),
+                    URIRef("http://example.org/example-A"),
+                ),
+            },
+        ),
+        (
+            "examples_uco_owl/owl_ontologyIRI_versionIRI_uniqueness_shape_PASS_validation.ttl",
+            True,
+            {
+                (
+                    URIRef("http://example.org/example-A"),
+                    URIRef("http://example.org/example-B"),
+                ),
+                (
+                    URIRef("http://example.org/example-B"),
+                    URIRef("http://example.org/example-A"),
+                ),
+            },
+        ),
+        (
+            "examples_uco_qc/owl_Ontology_shape_property_owl_versionIRI_PASS_validation.ttl",
+            True,
+            set(),
+        ),
+        (
+            "examples_uco_qc/owl_Ontology_shape_property_owl_versionIRI_XFAIL_validation.ttl",
+            False,
+            {
+                (URIRef("https://ontology.unifiedcyberontology.org/example-1"), None),
+                (URIRef("https://ontology.unifiedcyberontology.org/example-2"), None),
+                (
+                    URIRef("https://ontology.unifiedcyberontology.org/example-2"),
+                    URIRef("https://ontology.unifiedcyberontology.org/example-2/1/1"),
+                ),
+            },
+        ),
+        (
+            "examples_uco_qc/owl_Ontology_shape_sparql_imports_XFAIL_validation.ttl",
+            False,
+            {
+                (
+                    URIRef("https://ontology.unifiedcyberontology.org/example-1"),
+                    URIRef("https://ontology.unifiedcyberontology.org/example-2"),
+                ),
+                (
+                    URIRef("https://ontology.unifiedcyberontology.org/example-2"),
+                    URIRef("https://ontology.unifiedcyberontology.org/FOO/example-3"),
+                ),
+            },
+        ),
+    ],
+)
+def test_validation_result(
+    filename: str,
+    expected_validation_result: bool,
+    expected_focus_values: Set[Tuple[URIRef, Optional[URIRef]]],
+) -> None:
+    graph = Graph()
+    graph.parse(filename, format="turtle")
+
+    computed_validation_result: Optional[bool] = None
+    for triple in graph.triples((None, SH.conforms, None)):
+        assert isinstance(triple[2], Literal)
+        computed_validation_result = bool(triple[2])
+    assert expected_validation_result == computed_validation_result
+
+    computed_focus_values: Set[Tuple[URIRef, URIRef]] = set()
+    for result in graph.query(
+        """\
+SELECT ?nFocusNode ?nValue
+WHERE {
+  ?nValidationResult sh:focusNode ?nFocusNode .
+
+  OPTIONAL {
+    ?nValidationResult sh:value ?nValue .
+  }
+}
+"""
+    ):
+        assert isinstance(result[0], URIRef)
+        assert isinstance(result[1], URIRef) or result[1] is None
+        computed_focus_values.add(result)
+    assert expected_focus_values == computed_focus_values

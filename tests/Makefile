@@ -19,10 +19,25 @@ PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null ||
 
 uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl $(top_srcdir)/ontology/*/*/*.ttl)
 
+imported_ontology_files := \
+  $(top_srcdir)/dependencies/collections-ontology/collections.owl \
+  $(top_srcdir)/dependencies/error/docs/current/error.owl
+
 all:
 
 .PHONY: \
   check-dependencies
+
+# Ensure the UCO-internal shapes pass their own tests.
+.shapes.done.log: \
+  $(top_srcdir)/ontology/owl/owl.ttl \
+  .venv.done.log \
+  shapes/uco-closure-qc.ttl \
+  shapes/uco-qc.ttl
+	$(MAKE) \
+	  --directory shapes \
+	  check
+	touch $@
 
 # The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
 .venv.done.log: \
@@ -54,6 +69,7 @@ check: \
 	source venv/bin/activate \
 	  && pytest \
 	    --ignore examples \
+	    --ignore shapes \
 	    --log-level=DEBUG
 	$(MAKE) \
 	  --directory examples \
@@ -73,7 +89,7 @@ clean:
 	  --directory dependencies \
 	  clean
 	@rm -f \
-	  .venv.done.log \
+	  .*.done.log \
 	  uco_monolithic.ttl
 	@rm -rf \
 	  venv
@@ -91,19 +107,44 @@ inheritance_review.ttl: \
 	mv _$@ $@
 
 uco_monolithic.ttl: \
+  $(imported_ontology_files) \
   $(top_srcdir)/.lib.done.log \
   $(uco_turtle_files) \
-  .venv.done.log 
+  .shapes.done.log
 	source venv/bin/activate \
           && rdfpipe \
 	    --input-format ttl \
 	    --output-format ttl \
 	    $(uco_turtle_files) \
 	    > __$@
+	# Review UCO closure for versioning consistency.
+	source venv/bin/activate \
+          && rdfpipe \
+	  __$@ \
+	  $(imported_ontology_files) \
+	  > ___$@
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/uco-closure-qc.ttl \
+	    --shacl-file-format turtle \
+	    ___$@
+	# Test has passed; remove closure file.
+	rm ___$@
+	# Review UCO for practice conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/uco-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
 	# Review UCO for OWL 2 DL conformance.
 	source venv/bin/activate \
 	  && pyshacl \
-	    --allow-warnings \
 	    --data-file-format turtle \
 	    --format turtle \
 	    --inference none \

@@ -1,10 +1,10 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/action
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration
-# imports: https://ontology.unifiedcyberontology.org/uco/core
-# imports: https://ontology.unifiedcyberontology.org/uco/identity
-# imports: https://ontology.unifiedcyberontology.org/uco/location
-# imports: https://ontology.unifiedcyberontology.org/uco/types
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.0.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
@@ -25,14 +25,18 @@
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/identity> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/types> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		action:1.0.0 ,
+		configuration:1.0.0 ,
+		core:1.0.0 ,
+		identity:1.0.0 ,
+		location:1.0.0 ,
+		types:1.0.0 ,
+		vocabulary:1.0.0
 		;
+	owl:incompatibleWith observable:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/observable> ;
+	owl:priorVersion observable:0.9.1 ;
+	owl:versionIRI observable:1.0.0 ;
 	.
 
 observable:API
@@ -122,13 +126,13 @@ observable:AccountFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accountIssuer ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
@@ -206,6 +210,17 @@ observable:AccountFacet
 	sh:targetClass observable:AccountFacet ;
 	.
 
+observable:Adaptor
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "Adaptor"@en-US ;
+	rdfs:comment "An adaptor is a device that physically converts the pin outputs but does not alter the underlying protocol (e.g. uSD to SD, CF to ATA, etc.)"@en-US ;
+	sh:targetClass observable:Adaptor ;
+	.
+
 observable:Address
 	a
 		owl:Class ,
@@ -240,7 +255,7 @@ observable:AlternateDataStreamFacet
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hashes ;
 		] ,
 		[
@@ -313,6 +328,20 @@ observable:AndroidDeviceFacet
 	sh:targetClass observable:AndroidDeviceFacet ;
 	.
 
+observable:AndroidPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:AndroidDevice ,
+		observable:SmartPhone
+		;
+	rdfs:label "AndroidPhone"@en-US ;
+	rdfs:comment "An android phone is a smart phone that applies the Android mobile operating system."@en-US ;
+	sh:targetClass observable:AndroidPhone ;
+	.
+
 observable:AntennaFacet
 	a
 		owl:Class ,
@@ -362,6 +391,17 @@ observable:AntennaFacet
 	sh:targetClass observable:AntennaFacet ;
 	.
 
+observable:AppleDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "AppleDevice"@en-US ;
+	rdfs:comment "An apple device is a smart device that applies either the MacOS or iOS operating system."@en-US ;
+	sh:targetClass observable:AppleDevice ;
+	.
+
 observable:Appliance
 	a
 		owl:Class ,
@@ -406,7 +446,7 @@ observable:ApplicationAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:application ;
 	] ;
 	sh:targetClass observable:ApplicationAccountFacet ;
@@ -423,13 +463,13 @@ observable:ApplicationFacet
 	sh:property
 		[
 			sh:class observable:ApplicationVersion ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:installedVersionHistory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:operatingSystem ;
 		] ,
 		[
@@ -459,6 +499,7 @@ observable:ApplicationVersion
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ApplicationVersion"@en ;
 	rdfs:comment "An application version is a grouping of characteristics unique to a particular software program version."@en ;
 	sh:property
@@ -625,6 +666,17 @@ observable:AutonomousSystemFacet
 	sh:targetClass observable:AutonomousSystemFacet ;
 	.
 
+observable:BlackberryPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:SmartPhone ;
+	rdfs:label "BlackberryPhone"@en-US ;
+	rdfs:comment "A blackberry phone is a smart phone that applies the Blackberry OS mobile operating system. (Blackberry 10 re-introduces Blackberry OS, prior to that the OS was Android.)"@en-US ;
+	sh:targetClass observable:BlackberryPhone ;
+	.
+
 observable:BlockDeviceNode
 	a
 		owl:Class ,
@@ -655,12 +707,6 @@ observable:BluetoothAddressFacet
 	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "BluetoothAddressFacet"@en ;
 	rdfs:comment "A Bluetooth address facet is a grouping of characteristics unique to a Bluetooth standard conformant identifier assigned to a Bluetooth device to enable routing and management of Bluetooth standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:BluetoothAddressFacet ;
 	.
 
@@ -698,7 +744,7 @@ observable:BrowserBookmarkFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -763,13 +809,13 @@ observable:BrowserCookieFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cookieDomain ;
 		] ,
 		[
@@ -846,24 +892,24 @@ observable:CalendarEntryFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
 			sh:class identity:Identity ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:attendant ;
 		] ,
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -948,13 +994,13 @@ observable:CalendarFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		]
 		;
@@ -984,23 +1030,23 @@ observable:CallFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:participant ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
@@ -1054,7 +1100,7 @@ observable:CapturedTelecommunicationsInformationFacet
 			sh:class observable:CellSite ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:captureCellSite ;
 		] ,
 		[
@@ -1179,6 +1225,17 @@ observable:CompressedStreamFacet
 	sh:targetClass observable:CompressedStreamFacet ;
 	.
 
+observable:Computer
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "Computer"@en-US ;
+	rdfs:comment "A computer is an electronic device for storing and processing data, typically in binary, according to instructions given to it in a variable program. [based on 'Computer.' Oxford English Dictionary, Oxford University Press, 2022.]"@en-US ;
+	sh:targetClass observable:Computer ;
+	.
+
 observable:ComputerSpecification
 	a
 		owl:Class ,
@@ -1201,7 +1258,7 @@ observable:ComputerSpecificationFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:networkInterface ;
 		] ,
 		[
@@ -1334,13 +1391,13 @@ observable:ConfiguredSoftware
 		[
 			sh:class configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path configuration:usesConfiguration ;
 		] ,
 		[
 			sh:class observable:Software ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path configuration:isConfigurationOf ;
 		]
 		;
@@ -1363,13 +1420,14 @@ observable:ContactAddress
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactAddress"@en ;
 	rdfs:comment "A contact address is a grouping of characteristics unique to a geolocation address of a contact entity."@en ;
 	sh:property
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
@@ -1417,49 +1475,50 @@ observable:ContactAffiliation
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactListAffiliation"@en ;
 	rdfs:comment "A contact affiliation is a grouping of characteristics unique to details of an organizational affiliation for a single contact entity."@en ;
 	sh:property
 		[
 			sh:class identity:Organization ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactOrganization ;
 		] ,
 		[
 			sh:class observable:ContactAddress ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:organizationLocation ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactProfile ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
@@ -1483,13 +1542,14 @@ observable:ContactEmail
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactEmail"@en ;
 	rdfs:comment "A contact email is a grouping of characteristics unique to details for contacting a contact entity by email."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:emailAddress ;
 		] ,
 		[
@@ -1545,55 +1605,55 @@ observable:ContactFacet
 		[
 			sh:class observable:ContactAddress ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:class observable:ContactAffiliation ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAffiliation ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactProfile ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:class observable:ContactSIP ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactSIP ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
@@ -1707,12 +1767,12 @@ observable:ContactListFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contact ;
 		]
 		;
@@ -1724,19 +1784,20 @@ observable:ContactMessaging
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactMessaging"@en ;
 	rdfs:comment "A contact messaging is a grouping of characteristics unique to details for contacting a contact entity by digital messaging."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessagingPlatform ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:messagingAddress ;
 		]
 		;
@@ -1748,13 +1809,14 @@ observable:ContactPhone
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactPhone"@en ;
 	rdfs:comment "A contact phone is a grouping of characteristics unique to details for contacting a contact entity by telephone."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
@@ -1807,19 +1869,20 @@ observable:ContactProfile
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactProfile"@en ;
 	rdfs:comment "A contact profile is a grouping of characteristics unique to details for contacting a contact entity by online service."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfilePlatform ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profile ;
 		]
 		;
@@ -1831,13 +1894,14 @@ observable:ContactSIP
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactSIP"@en ;
 	rdfs:comment "A contact SIP is a grouping of characteristics unique to details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sipAddress ;
 		] ,
 		[
@@ -1885,13 +1949,14 @@ observable:ContactURL
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactURL"@en ;
 	rdfs:comment "A contact URL is a grouping of characteristics unique to details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
@@ -1958,12 +2023,12 @@ observable:ContentDataFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dataPayloadReferenceURL ;
 		] ,
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hash ;
 		] ,
 		[
@@ -2167,7 +2232,7 @@ observable:DeviceFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
@@ -2281,6 +2346,17 @@ observable:DigitalAddressFacet
 	sh:targetClass observable:DigitalAddressFacet ;
 	.
 
+observable:DigitalCamera
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "DigitalCamera"@en-US ;
+	rdfs:comment "A digital camera is a camera that captures photographs in digital memory as opposed to capturing images on photographic film."@en-US ;
+	sh:targetClass observable:DigitalCamera ;
+	.
+
 observable:DigitalSignatureInfo
 	a
 		owl:Class ,
@@ -2304,13 +2380,13 @@ observable:DigitalSignatureInfoFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:certificateSubject ;
 		] ,
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:certificateIssuer ;
 		] ,
 		[
@@ -2368,7 +2444,7 @@ observable:DiskFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:partition ;
 		] ,
 		[
@@ -2507,6 +2583,17 @@ observable:DomainNameFacet
 	sh:targetClass observable:DomainNameFacet ;
 	.
 
+observable:Drone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:MobileDevice ;
+	rdfs:label "Drone"@en-US ;
+	rdfs:comment "A drone, unmanned aerial vehicle (UAV), is an aircraft without a human pilot, crew, or passengers that typically involve a ground-based controller and a system for communications with the UAV."@en-US ;
+	sh:targetClass observable:Drone ;
+	.
+
 observable:ESN
 	a owl:DatatypeProperty ;
 	rdfs:label "ESN"@en ;
@@ -2524,7 +2611,7 @@ observable:EXIFFacet
 	rdfs:comment "An EXIF (exchangeable image file format) facet is a grouping of characteristics unique to the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras conformant to JEIDA/JEITA/CIPA specifications. [based on https://en.wikipedia.org/wiki/Exif]"@en ;
 	sh:property [
 		sh:class types:ControlledDictionary ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:exifData ;
 	] ;
 	sh:targetClass observable:EXIFFacet ;
@@ -2552,7 +2639,7 @@ observable:EmailAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:emailAddress ;
 	] ;
 	sh:targetClass observable:EmailAccountFacet ;
@@ -2577,20 +2664,6 @@ observable:EmailAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "EmailAddressFacet"@en ;
 	rdfs:comment "An email address facet is a grouping of characteristics unique to an identifier for an electronic mailbox to which electronic mail messages (conformant to the Simple Mail Transfer Protocol (SMTP)) are sent from and delivered to."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:EmailAddressFacet ;
 	.
 
@@ -2616,69 +2689,69 @@ observable:EmailMessageFacet
 	sh:property
 		[
 			sh:class observable:MimePartType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyMultipart ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyRaw ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:headerRaw ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sender ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:xOriginatingIP ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bcc ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cc ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:references ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:otherHeaders ;
 		] ,
 		[
@@ -2784,6 +2857,17 @@ observable:EmailMessageFacet
 	sh:targetClass observable:EmailMessageFacet ;
 	.
 
+observable:EmbeddedDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "EmbeddedDevice"@en-US ;
+	rdfs:comment "An embedded device is a highly specialized microprocessor device meant for one or very few specific purposes and is usually embedded or included within another object or as part of a larger system. Examples include answer machine, door access logger, card scanner, etc."@en-US ;
+	sh:targetClass observable:EmbeddedDevice ;
+	.
+
 observable:EncodedStreamFacet
 	a
 		owl:Class ,
@@ -2841,6 +2925,7 @@ observable:EnvironmentVariable
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "EnvironmentVariable"@en ;
 	rdfs:comment "An environment variable is a grouping of characteristics unique to a dynamic-named value that can affect the way running processes will behave on a computer. [based on https://en.wikipedia.org/wiki/Environment_variable]"@en ;
 	sh:property
@@ -2860,49 +2945,60 @@ observable:EnvironmentVariable
 	sh:targetClass observable:EnvironmentVariable ;
 	.
 
-observable:Event
+observable:EventLog
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "Event"@en ;
-	rdfs:comment "An event is something that happens in a digital context (e.g., operating system events)."@en ;
-	sh:targetClass observable:Event ;
+	rdfs:label "EventLog"@en ;
+	rdfs:comment "An event log is a collection of event records."@en ;
+	sh:targetClass observable:EventLog ;
 	.
 
-observable:EventFacet
+observable:EventRecord
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "EventRecord"@en ;
+	rdfs:comment "An event record is something that happens in a digital context (e.g., operating system events)."@en ;
+	sh:targetClass observable:EventRecord ;
+	.
+
+observable:EventRecordFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:Facet ;
-	rdfs:label "EventFacet"@en ;
-	rdfs:comment "An event facet is a grouping of characteristics unique to something that happens in a digital context (e.g., operating system events)."@en ;
+	rdfs:label "EventRecordFacet"@en ;
+	rdfs:comment "An event record facet is a grouping of characteristics unique to something that happens in a digital context (e.g., operating system events)."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableAction ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cyberAction ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:account ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:device ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:eventRecordDevice ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -2921,12 +3017,6 @@ observable:EventFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:startTime ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:computerName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2965,18 +3055,7 @@ observable:EventFacet
 			sh:path observable:eventType ;
 		]
 		;
-	sh:targetClass observable:EventFacet ;
-	.
-
-observable:EventLog
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "EventLog"@en ;
-	rdfs:comment "An event log is a recorded collection of events."@en ;
-	sh:targetClass observable:EventLog ;
+	sh:targetClass observable:EventRecordFacet ;
 	.
 
 observable:ExtInodeFacet
@@ -3051,6 +3130,7 @@ observable:ExtractedString
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ExtractedString"@en ;
 	rdfs:comment "An extracted string is a grouping of characteristics unique to a series of characters pulled from an observable object."@en ;
 	sh:property
@@ -3103,7 +3183,7 @@ observable:ExtractedStringsFacet
 	rdfs:comment "An extracted strings facet is a grouping of characteristics unique to one or more sequences of characters pulled from an observable object."@en ;
 	sh:property [
 		sh:class observable:ExtractedString ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:strings ;
 	] ;
 	sh:targetClass observable:ExtractedStringsFacet ;
@@ -3202,7 +3282,7 @@ observable:FilePermissionsFacet
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:owner ;
 	] ;
 	sh:targetClass observable:FilePermissionsFacet ;
@@ -3311,6 +3391,17 @@ observable:GUI
 	sh:targetClass observable:GUI ;
 	.
 
+observable:GamingConsole
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "GamingConsole"@en-US ;
+	rdfs:comment "A gaming console (video game console or game console) is an electronic system that connects to a display, typically a TV or computer monitor, for the primary purpose of playing video games."@en-US ;
+	sh:targetClass observable:GamingConsole ;
+	.
+
 observable:GenericObservableObject
 	a
 		owl:Class ,
@@ -3345,13 +3436,13 @@ observable:GeoLocationEntryFacet
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -3387,7 +3478,7 @@ observable:GeoLocationLogFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -3423,12 +3514,12 @@ observable:GeoLocationTrackFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geoLocationEntry ;
 		] ,
 		[
@@ -3452,6 +3543,7 @@ observable:GlobalFlagType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "GlobalFlagType"@en ;
 	rdfs:comment 'A global flag type is a grouping of characteristics unique to the Windows systemwide global variable named NtGlobalFlag that enables various internal debugging, tracing, and validation support in the operating system. [based on "Windows Global Flags, Chapter 3: System Mechanisms of Windows Internals by Solomon, Russinovich, and Ionescu]'@en ;
 	sh:property
@@ -3505,13 +3597,13 @@ observable:HTTPConnectionFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:httpMessageBodyData ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:httpRequestHeader ;
 		] ,
 		[
@@ -3599,6 +3691,7 @@ observable:IComHandlerActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "IComHandlerActionType"@en ;
 	rdfs:comment "An IComHandler action type is a grouping of characteristics unique to a Windows Task-related action that fires a Windows COM handler (smart code in the client address space that can optimize calls between a client and server). [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/comhandleraction]"@en ;
 	sh:property
@@ -3623,12 +3716,13 @@ observable:IExecActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "IExecActionType"@en ;
 	rdfs:comment "An IExec action type is a grouping of characteristics unique to an action that executes a command-line operation on a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-iexecaction?redirectedfrom=MSDN]"@en ;
 	sh:property
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:execProgramHashes ;
 		] ,
 		[
@@ -3686,20 +3780,6 @@ observable:IPAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "IPAddressFacet"@en ;
 	rdfs:comment "An IP address facet is a grouping of characteristics unique to an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:IPAddressFacet ;
 	.
 
@@ -3710,8 +3790,22 @@ observable:IPNetmask
 		;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "IPNetmask"@en ;
-	rdfs:comment "An IP netmask is a 32-bit \"mask\" used to divide an IP address into subnets and specify the network's available hosts."@en ;
+	rdfs:comment "An IP netmask is a 32-bit 'mask' used to divide an IP address into subnets and specify the network's available hosts."@en ;
 	sh:targetClass observable:IPNetmask ;
+	.
+
+observable:IPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:AppleDevice ,
+		observable:SmartPhone
+		;
+	rdfs:label "IPhone"@en-US ;
+	rdfs:comment "An iPhone is a smart phone that applies the iOS mobile operating system."@en-US ;
+	sh:targetClass observable:IPhone ;
 	.
 
 observable:IPv4Address
@@ -3733,12 +3827,6 @@ observable:IPv4AddressFacet
 	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv4AddressFacet"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address facet is a grouping of characteristics unique to an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:IPv4AddressFacet ;
 	.
 
@@ -3761,12 +3849,6 @@ observable:IPv6AddressFacet
 	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv6AddressFacet"@en ;
 	rdfs:comment "An IPv6 (Internet Protocol version 6) address facet is a grouping of characteristics unique to an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:IPv6AddressFacet ;
 	.
 
@@ -3775,6 +3857,7 @@ observable:IShowMessageActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "IShowMessageActionType"@en ;
 	rdfs:comment "An IShow message action type is a grouping of characteristics unique to an action that shows a message box when a task is activate. [based on https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-ishowmessageaction?redirectedfrom=MSDN]"@en ;
 	sh:property
@@ -3841,20 +3924,6 @@ observable:InstantMessagingAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "InstantMessagingAddressFacet"@en ;
 	rdfs:comment "An instant messaging address facet is a grouping of characteristics unique to an identifier assigned to enable routing and management of instant messaging digital communication."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:InstantMessagingAddressFacet ;
 	.
 
@@ -3867,6 +3936,17 @@ observable:Junction
 	rdfs:label "Junction"@en ;
 	rdfs:comment "A junction is a specific NTFS (New Technology File System) reparse point to redirect a directory access to another directory which can be on the same volume or another volume. A junction is similar to a directory symbolic link but may differ on whether they are processed on the local system or on the remote file server. [based on https://jp-andre.pagesperso-orange.fr/junctions.html]"@en ;
 	sh:targetClass observable:Junction ;
+	.
+
+observable:Laptop
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Computer ;
+	rdfs:label "Laptop"@en-US ;
+	rdfs:comment "A laptop, laptop computer, or notebook computer is a small, portable personal computer with a screen and alphanumeric keyboard. These typically have a clam shell form factor with the screen mounted on the inside of the upper lid and the keyboard on the inside of the lower lid, although 2-in-1 PCs with a detachable keyboard are often marketed as laptops or as having a laptop mode. (Devices categorized by their manufacturer as a Laptop)"@en-US ;
+	sh:targetClass observable:Laptop ;
 	.
 
 observable:Library
@@ -3916,12 +3996,6 @@ observable:MACAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "MACAddressFacet"@en ;
 	rdfs:comment "A MAC address facet is a grouping of characteristics unique to a media access control standards conformant identifier assigned to a network interface to enable routing and management of communications at the data link layer of a network segment."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:MACAddressFacet ;
 	.
 
@@ -4064,18 +4138,18 @@ observable:MessageFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
@@ -4169,13 +4243,13 @@ observable:MessageThreadFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:participant ;
 		] ,
 		[
 			sh:class types:Thread ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:messageThread ;
 		] ,
 		[
@@ -4278,13 +4352,14 @@ observable:MimePartType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "MimePartType"@en ;
 	rdfs:comment "A mime part type is a grouping of characteristics unique to a component of a multi-part email body."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyRaw ;
 		] ,
 		[
@@ -4429,6 +4504,17 @@ observable:MobileDeviceFacet
 	sh:targetClass observable:MobileDeviceFacet ;
 	.
 
+observable:MobilePhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:MobileDevice ;
+	rdfs:label "MobilePhone"@en-US ;
+	rdfs:comment "A mobile phone is a portable telephone that at least can make and receive calls over a radio frequency link while the user is moving within a telephone service area. This category encompasses all types of mobiles, simple and smart and satellite ones all together."@en-US ;
+	sh:targetClass observable:MobilePhone ;
+	.
+
 observable:Mutex
 	a
 		owl:Class ,
@@ -4487,7 +4573,7 @@ observable:NTFSFileFacet
 	sh:property
 		[
 			sh:class observable:AlternateDataStream ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:alternateDataStreams ;
 		] ,
 		[
@@ -4561,18 +4647,18 @@ observable:NetworkConnectionFacet
 	sh:property
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:src ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dst ;
 		] ,
 		[
 			sh:class types:ControlledDictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:protocols ;
 		] ,
 		[
@@ -4632,19 +4718,19 @@ observable:NetworkFlowFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dstPayload ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:srcPayload ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipfix ;
 		] ,
 		[
@@ -4698,22 +4784,22 @@ observable:NetworkInterfaceFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:macAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dhcpServer ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ip ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipGateway ;
 		] ,
 		[
@@ -4859,7 +4945,7 @@ observable:NoteFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -5004,13 +5090,13 @@ observable:OnlineServiceFacet
 		[
 			sh:class location:Location ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:inetLocation ;
 		] ,
 		[
@@ -5046,13 +5132,13 @@ observable:OperatingSystemFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:environmentVariables ;
 		] ,
 		[
@@ -5111,7 +5197,7 @@ observable:PDFFileFacet
 		[
 			sh:class types:ControlledDictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:documentInformationDictionary ;
 		] ,
 		[
@@ -5267,25 +5353,25 @@ observable:ProcessFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:binary ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:creatorUser ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:parent ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:environmentVariables ;
 		] ,
 		[
@@ -5373,55 +5459,55 @@ observable:ProfileFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileIdentity ;
 		] ,
 		[
 			sh:class observable:ContactAddress ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileAccount ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileService ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileWebsite ;
 		] ,
 		[
@@ -5477,10 +5563,7 @@ observable:PropertyReadEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "PropertyReadEffectFacet"@en ;
 	rdfs:comment "A properties read effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a characteristic is read from an observable object. An example of this would be the current running state of a process."@en ;
 	sh:property
@@ -5498,6 +5581,17 @@ observable:PropertyReadEffectFacet
 		]
 		;
 	sh:targetClass observable:PropertyReadEffectFacet ;
+	.
+
+observable:ProtocolConverter
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "ProtocolConverter"@en-US ;
+	rdfs:comment "A protocol converter is a device that converts from one protocol to another (e.g. SD to USB, SATA to USB, etc."@en-US ;
+	sh:targetClass observable:ProtocolConverter ;
 	.
 
 observable:RasterPicture
@@ -5523,7 +5617,7 @@ observable:RasterPictureFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:camera ;
 		] ,
 		[
@@ -5751,7 +5845,7 @@ observable:SIMCardFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:carrier ;
 		] ,
 		[
@@ -5833,20 +5927,6 @@ observable:SIPAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "SIPAddressFacet"@en ;
 	rdfs:comment "A SIP address facet is a grouping of characteristics unique to a Session Initiation Protocol (SIP) standards conformant identifier assigned to a user to enable routing and management of SIP standards conformant communication to or from that user loosely coupled from any particular devices."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:SIPAddressFacet ;
 	.
 
@@ -5952,10 +6032,7 @@ observable:SendControlCodeEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "SendControlCodeEffectFacet"@en ;
 	rdfs:comment "A send control code effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a control code, or other control-oriented communication signal, is sent to the observable object. An example of this would be an action sending a control code changing the running state of a process."@en ;
 	sh:property [
@@ -5967,6 +6044,17 @@ observable:SendControlCodeEffectFacet
 	sh:targetClass observable:SendControlCodeEffectFacet ;
 	.
 
+observable:Server
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Computer ;
+	rdfs:label "Server"@en-US ;
+	rdfs:comment "A server is a server rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
+	sh:targetClass observable:Server ;
+	.
+
 observable:ShopListing
 	a
 		owl:Class ,
@@ -5976,6 +6064,32 @@ observable:ShopListing
 	rdfs:label "ShopListing"@en ;
 	rdfs:comment "A shop listing is a listing of offered products on an online marketplace/shop."@en ;
 	sh:targetClass observable:ShopListing ;
+	.
+
+observable:SmartDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "SmartDevice"@en-US ;
+	rdfs:comment "A smart device is a microprocessor IoT device that is expected to be connected directly to cloud-based networks or via smartphone"@en-US ;
+	sh:targetClass observable:SmartDevice ;
+	.
+
+observable:SmartPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:Computer ,
+		observable:MobilePhone ,
+		observable:SmartDevice
+		;
+	rdfs:label "SmartPhone"@en-US ;
+	rdfs:comment "A smartphone is a portable device that combines mobile telephone and computing functions into one unit.  Examples include iPhone, Samsung Galaxy, Huawei, Blackberry. (Inferred by model and OperatingSystemFacet)"@en-US ;
+	sh:targetClass observable:SmartPhone ;
 	.
 
 observable:Snapshot
@@ -6034,7 +6148,7 @@ observable:SoftwareFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
@@ -6070,27 +6184,35 @@ observable:StateChangeEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "StateChangeEffectFacet"@en ;
 	rdfs:comment "A state change effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a state of the observable object is changed."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:newObject ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:oldObject ;
 		]
 		;
 	sh:targetClass observable:StateChangeEffectFacet ;
+	.
+
+observable:StorageMedium
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "StorageMedium"@en-US ;
+	rdfs:comment "A storage medium is any digital storage device that applies electromagnetic or optical surfaces, or depends solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
+	sh:targetClass observable:StorageMedium ;
 	.
 
 observable:SymbolicLink
@@ -6115,7 +6237,7 @@ observable:SymbolicLinkFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:targetFile ;
 	] ;
 	sh:targetClass observable:SymbolicLinkFacet ;
@@ -6256,36 +6378,52 @@ observable:TableFieldFacet
 	) ;
 	.
 
+observable:Tablet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:Computer ,
+		observable:MobileDevice ,
+		observable:SmartDevice
+		;
+	rdfs:label "Tablet"@en-US ;
+	rdfs:comment "A tablet is a mobile computer that is primarily operated by touching the screen. (Devices categorized by their manufacturer as a Tablet)"@en-US ;
+	sh:targetClass observable:Tablet ;
+	.
+
 observable:TaskActionType
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "TaskActionType"@en ;
 	rdfs:comment "A task action type is a grouping of characteristics for a scheduled action to be completed."@en ;
 	sh:property
 		[
 			sh:class observable:IComHandlerActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iComHandlerAction ;
 		] ,
 		[
 			sh:class observable:IExecActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iExecAction ;
 		] ,
 		[
 			sh:class observable:IShowMessageActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iShowMessageAction ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iEmailAction ;
 		] ,
 		[
@@ -6340,6 +6478,7 @@ observable:TriggerType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "TriggerType"@en ;
 	rdfs:comment "A trigger type is a grouping of characterizes unique to a set of criteria that, when met, starts the execution of a task within a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/task-triggers]"@en ;
 	sh:property
@@ -6487,37 +6626,37 @@ observable:TwitterProfileFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBackgroundLocation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBannerLocation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileImageLocation ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBackgroundHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBannerHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileImageHash ;
 		] ,
 		[
@@ -6724,7 +6863,7 @@ observable:URLFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:host ;
 		] ,
 		[
@@ -6795,19 +6934,20 @@ observable:URLHistoryEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "URL History Entry"@en-US ;
 	rdfs:comment "A URL history entry is a grouping of characteristics unique to the properties of a single URL history entry for a particular browser."@en-US ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:referrerUrl ;
 		] ,
 		[
@@ -6880,12 +7020,12 @@ observable:URLHistoryFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:browserInformation ;
 		] ,
 		[
 			sh:class observable:URLHistoryEntry ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:urlHistoryEntry ;
 		]
 		;
@@ -6915,19 +7055,19 @@ observable:URLVisitFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:browserInformation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:fromURLVisit ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
@@ -7061,7 +7201,7 @@ observable:UserSessionFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:effectiveUser ;
 		] ,
 		[
@@ -7097,10 +7237,7 @@ observable:ValuesEnumeratedEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "ValuesEnumeratedEffectFacet"@en ;
 	rdfs:comment "A values enumerated effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a value of the observable object is enumerated. An example of this would be the values of a registry key."@en ;
 	sh:property [
@@ -7148,6 +7285,17 @@ observable:VolumeFacet
 	sh:targetClass observable:VolumeFacet ;
 	.
 
+observable:WearableDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:SmartDevice ;
+	rdfs:label "WearableDevice"@en-US ;
+	rdfs:comment "A wearable device is an electronic device that is designed to be worn on a person's body."@en-US ;
+	sh:targetClass observable:WearableDevice ;
+	.
+
 observable:WebPage
 	a
 		owl:Class ,
@@ -7184,36 +7332,36 @@ observable:WhoIsFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:domainName ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registrantContactInfo ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:serverName ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:nameServer ;
 		] ,
 		[
 			sh:class observable:WhoisRegistrarInfoType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registrarInfo ;
 		] ,
 		[
@@ -7392,37 +7540,38 @@ observable:WhoisRegistrarInfoType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WhoisRegistrarInfoType"@en ;
 	rdfs:comment "A Whois registrar info type is a grouping of characteristics unique to registrar-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:emailAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:referralURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:whoisServer ;
 		] ,
 		[
@@ -7466,12 +7615,6 @@ observable:WifiAddressFacet
 	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "WifiAddressFacet"@en ;
 	rdfs:comment "A Wi-Fi address facet is a grouping of characteristics unique to a media access control (MAC) standards conformant identifier assigned to a device network interface to enable routing and management of IEEE 802.11 standards-conformant communications to and from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:WifiAddressFacet ;
 	.
 
@@ -7582,36 +7725,36 @@ observable:WindowsComputerSpecificationFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registeredOrganization ;
 		] ,
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registeredOwner ;
 		] ,
 		[
 			sh:class observable:GlobalFlagType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:globalFlagList ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsSystemDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsTempDirectory ;
 		] ,
 		[
@@ -7759,17 +7902,17 @@ observable:WindowsPEBinaryFileFacet
 		[
 			sh:class observable:WindowsPEOptionalHeader ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:optionalHeader ;
 		] ,
 		[
 			sh:class observable:WindowsPESection ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sections ;
 		] ,
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:fileHeaderHashes ;
 		] ,
 		[
@@ -7844,6 +7987,7 @@ observable:WindowsPEFileHeader
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WindowsPEFileHeader"@en ;
 	rdfs:comment "A Windows PE file header is a grouping of characteristics unique to the 'header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the overall nature and structure of the file."@en ;
 	sh:property [
@@ -7860,6 +8004,7 @@ observable:WindowsPEOptionalHeader
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WindowsPEOptionalHeader"@en ;
 	rdfs:comment "A Windows PE optional header is a grouping of characteristics unique to the 'optional header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the executable code structure of the file."@en ;
 	sh:property
@@ -8017,12 +8162,13 @@ observable:WindowsPESection
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WindowsPESection"@en ;
 	rdfs:comment "A Windows PE section is a grouping of characteristics unique to a specific default or custom-defined region of a Windows PE (Portable Executable) file, consisting of an individual portion of the actual executable content of the file delineated according to unique purpose and memory protection requirements."@en ;
 	sh:property
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hashes ;
 		] ,
 		[
@@ -8070,17 +8216,17 @@ observable:WindowsPrefetchFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:volume ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accessedDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accessedFile ;
 		] ,
 		[
@@ -8140,7 +8286,7 @@ observable:WindowsProcessFacet
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:startupInfo ;
 		] ,
 		[
@@ -8228,12 +8374,12 @@ observable:WindowsRegistryKeyFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:creator ;
 		] ,
 		[
 			sh:class observable:WindowsRegistryValue ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registryValues ;
 		] ,
 		[
@@ -8263,6 +8409,7 @@ observable:WindowsRegistryValue
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WindowsRegistryValue"@en ;
 	rdfs:comment "A Windows registry value is a grouping of characteristics unique to a particular value within a Windows registry (a hierarchical database that stores low-level settings for the Microsoft Windows operating system and for applications that opt to use the registry. [based on https://en.wikipedia.org/wiki/Windows_Registry]"@en ;
 	sh:property
@@ -8436,35 +8583,35 @@ observable:WindowsTaskFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:account ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:workItemData ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:workingDirectory ;
 		] ,
 		[
 			sh:class observable:TaskActionType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:actionList ;
 		] ,
 		[
 			sh:class observable:TriggerType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:triggerList ;
 		] ,
 		[
@@ -8915,6 +9062,17 @@ observable:WirelessNetworkConnectionFacet
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
 	.
 
+observable:WriteBlocker
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "WriteBlocker"@en-US ;
+	rdfs:comment "A write blocker is a device that allows read-only access to storage mediums in order to preserve the integrity of the data being analyzed. Examples include Tableau, Cellibrite, Talon, etc."@en-US ;
+	sh:targetClass observable:WriteBlocker ;
+	.
+
 observable:X509Certificate
 	a
 		owl:Class ,
@@ -8938,25 +9096,25 @@ observable:X509CertificateFacet
 		[
 			sh:class observable:X509V3ExtensionsFacet ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:x509v3extensions ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:issuerHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:subjectHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:thumbprintHash ;
 		] ,
 		[
@@ -10126,13 +10284,6 @@ observable:destinationPort
 	rdfs:range xsd:integer ;
 	.
 
-observable:device
-	a owl:ObjectProperty ;
-	rdfs:label "device"@en ;
-	rdfs:comment "The device on which the log entry was generated."@en ;
-	rdfs:range observable:ObservableObject ;
-	.
-
 observable:deviceType
 	a owl:DatatypeProperty ;
 	rdfs:label "deviceType"@en ;
@@ -10385,6 +10536,13 @@ observable:environmentVariables
 	rdfs:label "environmentVariables"@en ;
 	rdfs:comment "A list of environment variables associated with the process. "@en ;
 	rdfs:range types:Dictionary ;
+	.
+
+observable:eventRecordDevice
+	a owl:ObjectProperty ;
+	rdfs:label "device"@en ;
+	rdfs:comment "The device on which the log entry was generated."@en ;
+	rdfs:range observable:ObservableObject ;
 	.
 
 observable:eventRecordID
@@ -13408,7 +13566,7 @@ observable:wirelessNetworkSecurityMode
 	rdfs:label "wirelessNetworkSecurityMode"@en ;
 	rdfs:comment "Specifies the security mode of a wireless network (None, WEP, WPA, etc)."@en ;
 	rdfs:range [
-		a rdfs:DataType ;
+		a rdfs:Datatype ;
 		owl:unionOf (
 			vocabulary:WirelessNetworkSecurityModeVocab
 			xsd:string
