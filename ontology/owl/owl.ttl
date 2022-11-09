@@ -68,7 +68,11 @@ uco-owl:DatatypeProperty-shacl-constraints-shape
 				WHERE {
 					?value
 						sh:class ?nClass ;
-						sh:path / rdf:rest* / rdf:first? $this ;
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
 						.
 				}
 			""" ;
@@ -81,7 +85,13 @@ uco-owl:DatatypeProperty-shacl-constraints-shape
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this ?value
 				WHERE {
-					?value sh:path / rdf:rest* / rdf:first? $this .
+					?value
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
+						.
 
 					{ ?value sh:nodeKind sh:BlankNode . }
 					UNION
@@ -202,7 +212,11 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 				WHERE {
 					?value
 						sh:datatype ?nDatatype ;
-						sh:path / rdf:rest* / rdf:first? $this ;
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
 						.
 				}
 		""" ;
@@ -214,7 +228,13 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this ?value
 				WHERE {
-					?value sh:path / rdf:rest* / rdf:first? $this ;
+					?value
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
+						.
 
 					{ ?value sh:nodeKind sh:BlankNodeOrLiteral . }
 					UNION
