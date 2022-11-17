@@ -6312,12 +6312,6 @@ observable:TableFieldFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:recordRowID ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:tableName ;
 		] ,
 		[
@@ -6344,6 +6338,19 @@ observable:TableFieldFacet
 				]
 			) ;
 			sh:path observable:recordFieldValue ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:recordRowID ;
 		]
 		;
 	sh:targetClass observable:TableFieldFacet ;
@@ -12468,7 +12475,13 @@ observable:recordRowID
 	a owl:DatatypeProperty ;
 	rdfs:label "recordRowID"@en ;
 	rdfs:comment "The unique ID that identifies a database record, supplied by the originating database engine."@en ;
-	rdfs:range xsd:string ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:integer
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:recurrence
