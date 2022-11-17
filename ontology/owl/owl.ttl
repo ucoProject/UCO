@@ -282,31 +282,12 @@ uco-owl:incompatibleWith-imported-version-iri-shape
 	sh:targetObjectsOf owl:incompatibleWith ;
 	.
 
-uco-owl:ontologyIRI-nodeKind-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to referencing a non-existent property.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	.
-
-uco-owl:ontologyIRI-ontology-uniqueness-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-	sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
-	.
-
 uco-owl:ontologyIRI-versionIRI-prerequisite-shape
 	a sh:NodeShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 	sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
 	sh:nodeKind sh:IRI ;
 	sh:targetSubjectsOf owl:versionIRI ;
-	.
-
-uco-owl:ontologyIRI-versionIRI-uniqueness-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-	sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
 	.
 
 uco-owl:versionIRI-multiversion-shape
