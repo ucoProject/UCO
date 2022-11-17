@@ -16,9 +16,9 @@ name: Continuous Integration
 
 on:
   push:
-    branches: [ master, develop ]
+    branches: [ master, develop*, unstable* ]
   pull_request:
-    branches: [ master, develop ]
+    branches: [ master, develop*, unstable* ]
 
 jobs:
   build:
