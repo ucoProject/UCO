@@ -110,7 +110,8 @@ uco_monolithic.ttl: \
   $(imported_ontology_files) \
   $(top_srcdir)/.lib.done.log \
   $(uco_turtle_files) \
-  .shapes.done.log
+  .shapes.done.log \
+  thing.ttl
 	source venv/bin/activate \
           && rdfpipe \
 	    --input-format ttl \
@@ -131,7 +132,17 @@ uco_monolithic.ttl: \
 	    --shacl shapes/uco-closure-qc.ttl \
 	    --shacl-file-format turtle \
 	    ___$@
-	# Test has passed; remove closure file.
+	# Review UCO closure with SHACL-SHACL.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --metashacl \
+	    --shacl ___$@ \
+	    --shacl-file-format turtle \
+	    thing.ttl
+	# Closure tests have passed; remove closure file.
 	rm ___$@
 	# Review UCO for practice conformance.
 	source venv/bin/activate \
