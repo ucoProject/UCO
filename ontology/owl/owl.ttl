@@ -64,11 +64,15 @@ uco-owl:DatatypeProperty-shacl-constraints-shape
 			sh:select """
 				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
-				SELECT $this
+				SELECT $this ?value
 				WHERE {
-					$value
+					?value
 						sh:class ?nClass ;
-						sh:path / rdf:rest* / rdf:first? $this ;
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
 						.
 				}
 			""" ;
@@ -79,19 +83,25 @@ uco-owl:DatatypeProperty-shacl-constraints-shape
 			sh:select """
 				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
-				SELECT $this
+				SELECT $this ?value
 				WHERE {
-					$value sh:path / rdf:rest* / rdf:first? $this .
+					?value
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
+						.
 
-					{ $value sh:nodeKind sh:BlankNode . }
+					{ ?value sh:nodeKind sh:BlankNode . }
 					UNION
-					{ $value sh:nodeKind sh:BlankNodeOrIRI . }
+					{ ?value sh:nodeKind sh:BlankNodeOrIRI . }
 					UNION
-					{ $value sh:nodeKind sh:BlankNodeOrLiteral . }
+					{ ?value sh:nodeKind sh:BlankNodeOrLiteral . }
 					UNION
-					{ $value sh:nodeKind sh:IRI . }
+					{ ?value sh:nodeKind sh:IRI . }
 					UNION
-					{ $value sh:nodeKind sh:IRIOrLiteral . }
+					{ ?value sh:nodeKind sh:IRIOrLiteral . }
 				}
 			""" ;
 		]
@@ -198,11 +208,15 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 			sh:select """
 				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
-				SELECT $this
+				SELECT $this ?value
 				WHERE {
-					$value
+					?value
 						sh:datatype ?nDatatype ;
-						sh:path / rdf:rest* / rdf:first? $this ;
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
 						.
 				}
 		""" ;
@@ -212,15 +226,21 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 			sh:message "An OWL Object Property must not permit a Literal value via SHACL consraints."@en ;
 			sh:select """
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
-				SELECT $this
+				SELECT $this ?value
 				WHERE {
-					$value sh:path / rdf:rest* / rdf:first? $this ;
+					?value
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
+						.
 
-					{ $value sh:nodeKind sh:BlankNodeOrLiteral . }
+					{ ?value sh:nodeKind sh:BlankNodeOrLiteral . }
 					UNION
-					{ $value sh:nodeKind sh:IRIOrLiteral . }
+					{ ?value sh:nodeKind sh:IRIOrLiteral . }
 					UNION
-					{ $value sh:nodeKind sh:Literal . }
+					{ ?value sh:nodeKind sh:Literal . }
 				}
 		""" ;
 		]
