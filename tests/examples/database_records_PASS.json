@@ -1,0 +1,68 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:sqlite-record-102119a5-29f2-49fc-80a7-adbafd03aa46",
+            "@type": "observable:TableField",
+            "core:hasFacet": {
+                "@id": "kb:table-field-facet-25254866-21bd-441d-bf2a-3373f7d17df6",
+                "@type": "observable:TableFieldFacet",
+                "rdfs:comment": "This node is intended to not trigger any SHACL validation issues.",
+                "observable:recordRowID": 1
+            }
+        },
+        {
+            "@id": "kb:sqlite-record-63a3229a-a1bd-4c91-b45a-704fbf5e43d3",
+            "@type": "observable:TableField",
+            "core:hasFacet": {
+                "@id": "kb:table-field-facet-32c5e881-f6a7-4ac8-89ec-4ea2e53e6d56",
+                "@type": "observable:TableFieldFacet",
+                "rdfs:comment": "This node is intended to not trigger any SHACL validation issues.",
+                "observable:recordRowID": "A"
+            }
+        },
+        {
+            "@id": "kb:sqlite-record-8186208e-a27a-4025-9fb7-e697d044786d",
+            "@type": "observable:TableField",
+            "core:hasFacet": {
+                "@id": "kb:table-field-facet-fbe52d33-7448-48de-9d1c-f6ab9e2757e0",
+                "@type": "observable:TableFieldFacet",
+                "rdfs:comment": "This node is intended to not trigger any SHACL validation issues.",
+                "observable:recordFieldIsNull": false,
+                "observable:recordFieldValue": {
+                    "@type": "xsd:decimal",
+                    "@value": "87.65"
+                }
+            }
+        },
+        {
+            "@id": "kb:sqlite-record-ff678274-ab0f-4671-9a9b-da1828326fb8",
+            "@type": "observable:TableField",
+            "core:hasFacet": {
+                "@id": "kb:table-field-facet-c30848ac-6c64-43eb-a081-cddf01c37085",
+                "@type": "observable:TableFieldFacet",
+                "rdfs:comment": "This node is intended to not trigger any SHACL validation issues.",
+                "observable:recordFieldIsNull": false,
+                "observable:recordFieldValue": {
+                    "@type": "xsd:base64Binary",
+                    "@value": "2jmj7l5rSw0yVb/vlWAYkK/YBwk="
+                }
+            }
+        },
+        {
+            "@id": "kb:sqlite-record-2892f411-3bab-4998-8af1-b8a5dff92bac",
+            "@type": "observable:TableField",
+            "core:hasFacet": {
+                "@id": "kb:table-field-facet-44843015-9916-43e9-8f02-3e20874f461d",
+                "@type": "observable:TableFieldFacet",
+                "rdfs:comment": "This node is intentionally sparse, to show that no SHACL validation issues are triggered."
+            }
+        }
+    ]
+}

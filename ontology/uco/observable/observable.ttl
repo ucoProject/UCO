@@ -6276,6 +6276,115 @@ observable:TCPConnectionFacet
 	sh:targetClass observable:TCPConnectionFacet ;
 	.
 
+observable:TableField
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "TableField"@en ;
+	rdfs:comment "A database table field and its associated value contained within a relational database."@en ;
+	sh:targetClass observable:TableField ;
+	.
+
+observable:TableFieldFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "TableFieldFacet"@en ;
+	rdfs:comment "A database record facet contains properties associated with a specific table record value from a database."@en ;
+	sh:property
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:recordFieldIsNull ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:recordFieldName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:tableName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:tableSchema ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype xsd:base64Binary ;
+				]
+				[
+					sh:datatype xsd:decimal ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:recordFieldValue ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:recordRowID ;
+		]
+		;
+	sh:targetClass observable:TableFieldFacet ;
+	sh:xone (
+		[
+			a sh:NodeShape ;
+			sh:property [
+				sh:hasValue "false"^^xsd:boolean ;
+				sh:path observable:recordFieldIsNull ;
+			] ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:property
+				[
+					sh:hasValue "true"^^xsd:boolean ;
+					sh:path observable:recordFieldIsNull ;
+				] ,
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path observable:recordFieldValue ;
+				]
+				;
+		]
+		[
+			a sh:NodeShape ;
+			sh:property [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:path observable:recordFieldIsNull ;
+			] ;
+		]
+	) ;
+	.
+
 observable:Tablet
 	a
 		owl:Class ,
@@ -12333,6 +12442,48 @@ observable:receivedTime
 	rdfs:range xsd:dateTime ;
 	.
 
+observable:recordFieldIsNull
+	a owl:DatatypeProperty ;
+	rdfs:label "recordFieldIsNull"@en ;
+	rdfs:comment "Whether the specified database record field is null."@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:recordFieldName
+	a owl:DatatypeProperty ;
+	rdfs:label "recordFieldName"@en ;
+	rdfs:comment "A field name of a database record value being identified."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:recordFieldValue
+	a owl:DatatypeProperty ;
+	rdfs:label "recordFieldValue"@en ;
+	rdfs:comment "The field value of a specified database record."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:base64Binary
+			xsd:decimal
+			xsd:integer
+			xsd:string
+		) ;
+	] ;
+	.
+
+observable:recordRowID
+	a owl:DatatypeProperty ;
+	rdfs:label "recordRowID"@en ;
+	rdfs:comment "The unique ID that identifies a database record, supplied by the originating database engine."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:integer
+			xsd:string
+		) ;
+	] ;
+	.
+
 observable:recurrence
 	a owl:DatatypeProperty ;
 	rdfs:label "recurrence"@en ;
@@ -13033,6 +13184,14 @@ observable:systemTime
 observable:tableName
 	a owl:DatatypeProperty ;
 	rdfs:label "tableName"@en ;
+	rdfs:comment "The table containing a specified database record."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:tableSchema
+	a owl:DatatypeProperty ;
+	rdfs:label "tableSchema"@en ;
+	rdfs:comment "The schema that contains the identified database record."@en ;
 	rdfs:range xsd:string ;
 	.
 
