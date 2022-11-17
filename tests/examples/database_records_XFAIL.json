@@ -1,0 +1,35 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:sqlite-record-c1d91148-754f-41b9-b3e8-000a31102205",
+            "@type": "observable:TableField",
+            "core:hasFacet": {
+                "@id": "kb:table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314",
+                "@type": "observable:TableFieldFacet",
+                "rdfs:comment": "This node is intended to trigger a SHACL validation issue, and will be migrated to a XFAIL test in UCO.",
+                "observable:recordFieldIsNull": [
+                    false,
+                    true
+                ]
+            }
+        },
+        {
+            "@id": "kb:sqlite-record-f150b810-503c-426b-b8f9-0c66325ea3b0",
+            "@type": "observable:TableField",
+            "core:hasFacet": {
+                "@id": "kb:table-field-facet-37182dba-4dbd-4b97-b49e-8038b7fbfd29",
+                "@type": "observable:TableFieldFacet",
+                "rdfs:comment": "This node is intended to trigger a SHACL validation issue about a field being designated NULL and value-bearing.",
+                "observable:recordFieldIsNull": true,
+                "observable:recordFieldValue": 6789
+            }
+        }
+    ]
+}
