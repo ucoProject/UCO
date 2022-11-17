@@ -12467,7 +12467,7 @@ observable:recordFieldValue
 observable:recordRowID
 	a owl:DatatypeProperty ;
 	rdfs:label "recordRowID"@en ;
-	rdfs:comment "The unique ID that identifies a database record."@en ;
+	rdfs:comment "The unique ID that identifies a database record, supplied by the originating database engine."@en ;
 	rdfs:range xsd:string ;
 	.
 
