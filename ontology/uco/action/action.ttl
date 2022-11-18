@@ -28,7 +28,6 @@
 		vocabulary:1.0.0
 		;
 	owl:incompatibleWith action:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/action> ;
 	owl:priorVersion action:0.9.1 ;
 	owl:versionIRI action:1.0.0 ;
 	.

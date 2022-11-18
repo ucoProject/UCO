@@ -18,7 +18,6 @@
 		location:1.0.0
 		;
 	owl:incompatibleWith identity:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/identity> ;
 	owl:priorVersion identity:0.9.1 ;
 	owl:versionIRI identity:1.0.0 ;
 	.

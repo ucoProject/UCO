@@ -14,7 +14,6 @@
 	rdfs:comment "This ontology defines classes and properties for characterizing configurations."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
 	owl:imports core:1.0.0 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/configuration> ;
 	owl:versionIRI configuration:1.0.0 ;
 	.
 
