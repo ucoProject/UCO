@@ -22,7 +22,6 @@
 		vocabulary:1.0.0
 		;
 	owl:incompatibleWith types:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/types> ;
 	owl:priorVersion types:0.9.1 ;
 	owl:versionIRI types:1.0.0 ;
 	.

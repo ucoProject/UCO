@@ -14,7 +14,6 @@
 	rdfs:comment "Data markings represent restrictions, permissions, and other guidance for how data can be used and shared."@en ;
 	owl:imports core:1.0.0 ;
 	owl:incompatibleWith marking:0.9.1 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/marking> ;
 	owl:priorVersion marking:0.9.1 ;
 	owl:versionIRI marking:1.0.0 ;
 	.

@@ -191,6 +191,22 @@ def test_configuration_setting_XFAIL_validation() -> None:
       }
 )
 
+def test_database_records_PASS() -> None:
+    confirm_validation_results(
+      "database_records_PASS_validation.ttl",
+      True
+    )
+
+def test_database_records_XFAIL() -> None:
+    confirm_validation_results(
+      "database_records_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314", str(NS_SH.Violation)),
+        ("http://example.org/kb/table-field-facet-37182dba-4dbd-4b97-b49e-8038b7fbfd29", str(NS_SH.Violation)),
+      }
+    )
+
 def test_has_facet_inverse_functional_PASS() -> None:
     confirm_validation_results(
       "has_facet_inverse_functional_PASS_validation.ttl",

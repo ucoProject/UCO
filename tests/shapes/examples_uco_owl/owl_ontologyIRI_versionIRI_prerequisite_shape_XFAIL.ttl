@@ -4,7 +4,7 @@
 @prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/example-1>
+[]
 	a owl:Ontology ;
 	rdfs:comment "This will trigger an error from having a version IRI but no ontology IRI."@en ;
 	rdfs:seeAlso uco-owl:ontologyIRI-versionIRI-prerequisite-shape ;

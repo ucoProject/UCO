@@ -10,12 +10,22 @@
 	sh:conforms "false"^^xsd:boolean ;
 	sh:result [
 		a sh:ValidationResult ;
-		sh:focusNode <http://example.org/example-1> ;
+		sh:focusNode [
+			a owl:Ontology ;
+			rdfs:comment "This will trigger an error from having a version IRI but no ontology IRI."@en ;
+			rdfs:seeAlso uco-owl:ontologyIRI-versionIRI-prerequisite-shape ;
+			owl:versionIRI <http://example.org/example-1/1> ;
+		] ;
 		sh:resultMessage "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
-		sh:resultPath owl:ontologyIRI ;
 		sh:resultSeverity sh:Violation ;
-		sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+		sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 		sh:sourceShape uco-owl:ontologyIRI-versionIRI-prerequisite-shape ;
+		sh:value [
+			a owl:Ontology ;
+			rdfs:comment "This will trigger an error from having a version IRI but no ontology IRI."@en ;
+			rdfs:seeAlso uco-owl:ontologyIRI-versionIRI-prerequisite-shape ;
+			owl:versionIRI <http://example.org/example-1/1> ;
+		] ;
 	] ;
 	.
 
