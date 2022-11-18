@@ -15,7 +15,6 @@
 	rdfs:comment "This ontology defines classes and properties for characterizing analytic actions and results."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/400> ;
 	owl:imports action:1.0.0 ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/analysis> ;
 	owl:versionIRI analysis:1.0.0 ;
 	.
 
