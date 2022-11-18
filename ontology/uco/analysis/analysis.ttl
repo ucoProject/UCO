@@ -36,7 +36,7 @@ analysis:AnalyticResult
 		;
 	rdfs:subClassOf core:Assertion ;
 	rdfs:label "AnalyticResult"@en ;
-	rdfs:comment "An analytic result is a characterization of the understanding resulting from an analysis action ."@en ;
+	rdfs:comment "An analytic result is a characterization of the understanding resulting from an analysis action."@en ;
 	sh:property
 		[
 			sh:class analysis:Analysis ;
@@ -60,7 +60,7 @@ analysis:AnalyticResultFacet
 		;
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "AnalyticResultFacet"@en ;
-	rdfs:comment "An analytic result facet is a grouping of characteristics unique to the results of an analysis action.."@en ;
+	rdfs:comment "An analytic result facet is a grouping of characteristics unique to the results of an analysis action."@en ;
 	sh:targetClass analysis:AnalyticResultFacet ;
 	.
 
@@ -71,7 +71,7 @@ analysis:ArtifactClassification
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ArtifactClassification"@en ;
-	rdfs:comment "An artifact classification is an single specific assertion a particular class of a classification taxonomy applies to something."@en ;
+	rdfs:comment "An artifact classification is a single specific assertion that a particular class of a classification taxonomy applies to something."@en ;
 	sh:property
 		[
 			sh:datatype xsd:decimal ;
