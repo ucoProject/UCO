@@ -7,9 +7,9 @@
 <https://ontology.unifiedcyberontology.org/uco/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "uco-vocabularies"@en ;
-	owl:incompatibleWith vocabulary:0.9.1 ;
-	owl:priorVersion vocabulary:0.9.1 ;
-	owl:versionIRI vocabulary:1.0.0 ;
+	owl:backwardCompatibleWith vocabulary:1.0.0 ;
+	owl:priorVersion vocabulary:1.0.0 ;
+	owl:versionIRI vocabulary:1.1.0 ;
 	.
 
 vocabulary:AccountTypeVocab

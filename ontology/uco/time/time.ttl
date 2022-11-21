@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.1.0
 
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -10,10 +10,10 @@
 <https://ontology.unifiedcyberontology.org/uco/time>
 	a owl:Ontology ;
 	rdfs:label "uco-time"@en ;
-	owl:imports core:1.0.0 ;
-	owl:incompatibleWith time:0.9.1 ;
-	owl:priorVersion time:0.9.1 ;
-	owl:versionIRI time:1.0.0 ;
+	owl:backwardCompatibleWith time:1.0.0 ;
+	owl:imports core:1.1.0 ;
+	owl:priorVersion time:1.0.0 ;
+	owl:versionIRI time:1.1.0 ;
 	.
 
 time:Time

@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.1.0
 
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -11,10 +11,10 @@
 <https://ontology.unifiedcyberontology.org/uco/pattern>
 	a owl:Ontology ;
 	rdfs:label "uco-pattern"@en ;
-	owl:imports core:1.0.0 ;
-	owl:incompatibleWith pattern:0.9.1 ;
-	owl:priorVersion pattern:0.9.1 ;
-	owl:versionIRI pattern:1.0.0 ;
+	owl:backwardCompatibleWith pattern:1.0.0 ;
+	owl:imports core:1.1.0 ;
+	owl:priorVersion pattern:1.0.0 ;
+	owl:versionIRI pattern:1.1.0 ;
 	.
 
 pattern:LogicalPattern
