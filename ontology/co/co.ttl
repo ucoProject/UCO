@@ -12,9 +12,10 @@
 	a owl:Ontology ;
 	rdfs:label "uco-co"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to supplement the OWL 2 DL definitions in the Collections Ontology."@en ;
+	owl:backwardCompatibleWith uco-co:1.0.0 ;
 	owl:imports <http://purl.org/co> ;
-	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/co> ;
-	owl:versionIRI uco-co:1.0.0 ;
+	owl:priorVersion uco-co:1.0.0 ;
+	owl:versionIRI uco-co:1.1.0 ;
 	.
 
 co:ListItem
@@ -152,8 +153,8 @@ uco-co:size-subjects-shape
 []
 	a owl:Axiom ;
 	rdfs:comment "This triple is repeated from the Collections Ontology."@en ;
-	owl:AnnotatedProperty rdfs:subClassOf ;
-	owl:AnnotatedSource co:ListItem ;
-	owl:AnnotatedTarget co:Item ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSource co:ListItem ;
+	owl:annotatedTarget co:Item ;
 	.
 
