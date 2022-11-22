@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/action/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.1.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
@@ -14,8 +14,8 @@
 	rdfs:label "uco-analysis"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing analytic actions and results."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/400> ;
-	owl:imports action:1.0.0 ;
-	owl:versionIRI analysis:1.0.0 ;
+	owl:imports action:1.1.0 ;
+	owl:versionIRI analysis:1.1.0 ;
 	.
 
 analysis:Analysis
