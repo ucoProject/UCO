@@ -4479,12 +4479,6 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:network ;
-		] ,
-		[
-			sh:maxCount "0"^^xsd:integer ;
-			sh:message "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
-			sh:path observable:storageCapacityInBytes ;
-			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
@@ -5875,12 +5869,6 @@ observable:SIMCardFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:SIMType ;
-		] ,
-		[
-			sh:maxCount "0"^^xsd:integer ;
-			sh:message "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
-			sh:path observable:storageCapacityInBytes ;
-			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:SIMCardFacet ;
@@ -12935,10 +12923,7 @@ observable:statusesCount
 	.
 
 observable:storageCapacityInBytes
-	a
-		owl:DatatypeProperty ,
-		owl:DeprecatedProperty
-		;
+	a owl:DatatypeProperty ;
 	rdfs:label "storageCapacityInBytes"@en ;
 	rdfs:comment "The number of bytes that can be stored on a SIM card."@en ;
 	rdfs:range xsd:integer ;
