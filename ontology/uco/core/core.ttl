@@ -409,7 +409,7 @@ core:UcoThing
 	rdfs:subClassOf owl:Thing ;
 	rdfs:label "UcoThing"@en ;
 	rdfs:comment "UcoThing is the top-level class within UCO."@en ;
-	rdfs:seeAlso core:UcoThing-identifier-shape ;
+	rdfs:seeAlso core:UcoThing-identifier-regex-shape ;
 	sh:sparql [
 		a sh:SPARQLConstraint ;
 		sh:message "UcoThings are required to not be blank nodes."@en ;
