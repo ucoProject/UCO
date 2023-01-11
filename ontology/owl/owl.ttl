@@ -226,7 +226,8 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 			a sh:SPARQLConstraint ;
 			sh:message "An OWL Object Property must not permit a Literal value via SHACL consraints."@en ;
 			sh:select """
-				PREFIX sh: <http://www.w3.org/ns/shacl#>
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this ?value
 				WHERE {
 					?value

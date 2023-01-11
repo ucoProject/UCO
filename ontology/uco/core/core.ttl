@@ -414,7 +414,8 @@ core:UcoThing
 		a sh:SPARQLConstraint ;
 		sh:message "UcoThings are required to not be blank nodes."@en ;
 		sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
 			        $this a/rdfs:subClassOf* uco-core:UcoThing .
@@ -435,7 +436,8 @@ core:UcoThing-identifier-regex-shape
 		rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
 		sh:message "UcoThings are suggested to end with a UUID."@en ;
 		sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
 			        $this a/rdfs:subClassOf* uco-core:UcoThing .
