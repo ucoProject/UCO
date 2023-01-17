@@ -415,7 +415,7 @@ core:UcoThing
 		sh:message "UcoThings are required to not be blank nodes."@en ;
 		sh:select """
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
 			        $this a/rdfs:subClassOf* core:UcoThing .
@@ -437,7 +437,7 @@ core:UcoThing-identifier-regex-shape
 		sh:message "UcoThings are suggested to end with a UUID."@en ;
 		sh:select '''
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
 			        $this a/rdfs:subClassOf* core:UcoThing .
