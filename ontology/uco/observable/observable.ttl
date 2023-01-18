@@ -6215,6 +6215,23 @@ observable:StorageMedium
 	sh:targetClass observable:StorageMedium ;
 	.
 
+observable:StorageMediumFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "StorageMediumFacet"@en ;
+	rdfs:comment "A storage medium facet is a grouping of characteristics unique to a the storage capabilities of a piece of equipment or a mechanism designed to serve a special purpose or perform a special function."@en ;
+	sh:property [
+		sh:datatype xsd:integer ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
+		sh:path observable:totalStorageCapacityInBytes ;
+	] ;
+	sh:targetClass observable:StorageMediumFacet ;
+	.
+
 observable:SymbolicLink
 	a
 		owl:Class ,
@@ -13289,6 +13306,13 @@ observable:totalSpace
 	a owl:DatatypeProperty ;
 	rdfs:label "totalSpace"@en ;
 	rdfs:comment "Specifies the total amount of space available on the partition, in bytes."@en ;
+	rdfs:range xsd:integer ;
+	.
+
+observable:totalStorageCapacityInBytes
+	a owl:DatatypeProperty ;
+	rdfs:label "totalStorageCapacityInBytes"@en ;
+	rdfs:comment "The maximum number of bytes that can be stored on a storage device."@en ;
 	rdfs:range xsd:integer ;
 	.
 
