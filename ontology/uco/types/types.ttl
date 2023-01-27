@@ -180,7 +180,7 @@ types:Thread
 		;
 	rdfs:subClassOf
 		co:Bag ,
-		core:UcoThing
+		core:UcoInherentCharacterizationThing
 		;
 	rdfs:label "Thread"@en ;
 	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
@@ -198,7 +198,7 @@ types:ThreadItem
 		;
 	rdfs:subClassOf
 		co:Item ,
-		core:UcoThing
+		core:UcoInherentCharacterizationThing
 		;
 	rdfs:label "ThreadItem"@en ;
 	rdfs:comment "A ThreadItem is a member of a thread."@en ;
