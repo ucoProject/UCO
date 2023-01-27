@@ -10,6 +10,28 @@
 	rdfs:comment "This ontology contains shapes meant to be used against the transitive closure of UCO, excluding imported, externally-developed ontologies."@en ;
 	.
 
+uco-qc:disjointedness-co-collection-core-uco-object
+	a sh:NodeShape ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/509> ;
+		sh:message "The focus node is defined as a subclass of two classes intended to be disjoint, co:Collection and core:UcoObject.  See Issue 509 for suggested implementation alterations."@en ;
+		sh:select """
+			PREFIX co: <http://purl.org/co/>
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+			SELECT $this
+			WHERE {
+				$this
+					rdfs:subClassOf*/(owl:intersectionOf/rdf:rest*/rdf:first)?/rdfs:subClassOf* co:Collection ;
+					rdfs:subClassOf* core:UcoObject ;
+					.
+			}
+		""" ;
+	] ;
+	sh:targetClass owl:Class ;
+	.
+
 uco-qc:owl-Ontology-shape
 	a sh:NodeShape ;
 	sh:property [

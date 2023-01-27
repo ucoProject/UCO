@@ -1,0 +1,27 @@
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1> ;
+		sh:resultMessage "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+		sh:resultPath observable:creationTime ;
+		sh:resultSeverity sh:Warning ;
+		sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+		sh:sourceShape [
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+			sh:path observable:creationTime ;
+			sh:severity sh:Warning ;
+		] ;
+	] ;
+	.
+
