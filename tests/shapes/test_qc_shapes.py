@@ -25,6 +25,16 @@ NS_UCO_OWL = Namespace("https://ontology.unifiedcyberontology.org/owl/")
     ["filename", "expected_validation_result", "expected_focus_values"],
     [
         (
+            "examples_uco_qc/co_Collection_core_UcoObject_XFAIL_validation.ttl",
+            False,
+            {
+                (
+                    URIRef("http://example.org/ontology/IPAddressRoute"),
+                    URIRef("http://example.org/ontology/IPAddressRoute"),
+                )
+            }
+        ),
+        (
             "examples_uco_owl/owl_incompatibleWith_shape_PASS_validation.ttl",
             True,
             {
