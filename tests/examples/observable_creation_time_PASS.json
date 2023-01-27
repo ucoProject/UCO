@@ -1,0 +1,24 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:windows-thread-da52a01e-41cc-42d5-85be-ca14bfa10fd6",
+            "@type": "observable:WindowsThread",
+            "core:hasFacet": {
+                "@id": "kb:windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1",
+                "@type": "observable:WindowsThreadFacet",
+                "rdfs:comment": "In UCO 1.2.0, this will raise a warning.  In UCO 2.0.0, this will raise an error.",
+                "observable:creationTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2023-01-01T01:23:45Z"
+                }
+            }
+        }
+    ]
+}
