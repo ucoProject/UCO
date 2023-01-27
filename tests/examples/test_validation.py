@@ -365,16 +365,10 @@ def test_message_thread_PASS_validation() -> None:
 def test_message_thread_XFAIL_validation() -> None:
     confirm_validation_results("message_thread_XFAIL_validation.ttl", False)
 
-def test_observable_creation_time_PASS() -> None:
+def test_observable_creation_time_XFAIL() -> None:
     confirm_validation_results(
-      "observable_creation_time_PASS_validation.ttl",
-      True,
-      expected_focus_node_severities={
-        (
-          "http://example.org/kb/windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1",
-          str(NS_SH.Warning)
-        )
-      }
+      "observable_creation_time_XFAIL_validation.ttl",
+      False,
     )
 
 def test_owl_axiom_PASS() -> None:
