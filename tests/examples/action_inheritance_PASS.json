@@ -9,13 +9,13 @@
     },
     "@graph": [
         {
-            "@id": "kb:action1",
+            "@id": "kb:action-7acb25ab-0a51-4495-9133-baa69c3be54e",
             "@type": "action:Action",
             "core:name": "Open File",
             "action:actionStatus": "CUSTOM Started"
         },
         {
-            "@id": "kb:action2",
+            "@id": "kb:action-90d02552-333f-49d0-9ca6-2a7004adffef",
             "@type": "action:Action",
             "core:name": "Modify File",
             "action:actionStatus": {
@@ -24,7 +24,7 @@
             }
         },
         {
-            "@id": "kb:action3",
+            "@id": "kb:action-b4bd127d-489a-41b1-8395-95204e12c8c9",
             "@type": "action:Action",
             "core:name": "Save File",
             "action:actionStatus": {
@@ -33,20 +33,21 @@
             }
         },
         {
-            "@id": "kb:action-lifecycle1",
+            "@id": "kb:action-lifecycle-63af1a39-22b6-45d6-a591-eede74657b68",
             "@type": "action:ActionLifecycle",
             "core:name": "File Update",
             "action:phase": {
+              "@id": "kb:array-of-action-7443745c-4536-43ac-bd3d-2186581e2acb",
               "@type": "action:ArrayOfAction",
               "action:action": [
                 {
-                    "@id": "kb:action1"
+                    "@id": "kb:action-7acb25ab-0a51-4495-9133-baa69c3be54e"
                 },
                 {
-                    "@id": "kb:action2"
+                    "@id": "kb:action-90d02552-333f-49d0-9ca6-2a7004adffef"
                 },
                 {
-                    "@id": "kb:action3"
+                    "@id": "kb:action-b4bd127d-489a-41b1-8395-95204e12c8c9"
                 }
               ]
             }

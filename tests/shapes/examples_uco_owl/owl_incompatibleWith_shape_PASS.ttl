@@ -1,0 +1,299 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/example-1-a>
+	a owl:Ontology ;
+	rdfs:comment
+		"1-a is expected to NOT trigger a warning due to 1-b not being declared as an Ontology, ontology IRI, or versionIRI value within this ontology document."@en ,
+		"example-1-* is one of the few subgraphs in this file expected to not trigger a warning."@en
+		;
+	owl:incompatibleWith <http://example.org/example-1-b> ;
+	.
+
+<http://example.org/example-2-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-direct-import-shape ;
+	owl:incompatibleWith <http://example.org/example-2-b> ;
+	owl:imports <http://example.org/example-2-b> ;
+	.
+
+<http://example.org/example-3-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+	owl:incompatibleWith <http://example.org/example-3-b> ;
+	owl:imports <http://example.org/example-3-b/v1> ;
+	.
+
+<http://example.org/example-3-b>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-3-b/v1> ;
+	.
+
+<http://example.org/example-4-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-version-iri-shape ;
+	owl:incompatibleWith <http://example.org/example-4-b/v1> ;
+	owl:imports <http://example.org/example-4-b> ;
+	.
+
+<http://example.org/example-4-b> ;
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-4-b/v1> ;
+	.
+
+<http://example.org/example-5-a>
+	a owl:Ontology ;
+	rdfs:seeAlso
+		uco-owl:incompatibleWith-direct-import-shape ,
+		uco-owl:incompatibleWith-imported-version-iri-shape
+		;
+	owl:incompatibleWith <http://example.org/example-5-b/v1> ;
+	owl:imports <http://example.org/example-5-b/v1> ;
+	.
+
+<http://example.org/example-5-b>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-5-b/v1> ;
+	.
+
+<http://example.org/example-6-a>
+	a owl:Ontology ;
+	rdfs:comment
+		"6-a is expected to NOT trigger a warning due the incompatible versionIRI not being a designated versionIRI of any ontology in the graph."@en ,
+		"example-6-* is one of the few subgraphs in this file expected to not trigger a warning."@en
+		;
+	owl:incompatibleWith <http://example.org/example-6-b/v1> ;
+	owl:imports <http://example.org/example-6-b/v2> ;
+	.
+
+<http://example.org/example-6-b>
+	a owl:Ontology ;
+	owl:priorVersion <http://example.org/example-6-b/v1> ;
+	owl:versionIRI <http://example.org/example-6-b/v2> ;
+	.
+
+<http://example.org/example-7-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+	owl:imports
+		<http://example.org/example-7-b> ,
+		<http://example.org/example-7-c>
+		;
+	.
+
+<http://example.org/example-7-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-7-c> ;
+	.
+
+<http://example.org/example-7-c>
+	a owl:Ontology ;
+	.
+
+<http://example.org/example-8-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+	owl:imports
+		<http://example.org/example-8-b> ,
+		<http://example.org/example-8-c/v1>
+		;
+	.
+
+<http://example.org/example-8-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-8-c> ;
+	.
+
+<http://example.org/example-8-c>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-8-c/v1> ;
+	.
+
+<http://example.org/example-9-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-version-iri-shape ;
+	owl:imports
+		<http://example.org/example-9-b> ,
+		<http://example.org/example-9-c>
+		;
+	.
+
+<http://example.org/example-9-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-9-c/v1> ;
+	.
+
+<http://example.org/example-9-c>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-9-c/v1> ;
+	.
+
+<http://example.org/example-10-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-version-iri-shape ;
+	owl:imports
+		<http://example.org/example-10-b> ,
+		<http://example.org/example-10-c/v1>
+		;
+	.
+
+<http://example.org/example-10-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-10-c/v1> ;
+	.
+
+<http://example.org/example-10-c>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-10-c/v1> ;
+	.
+
+<http://example.org/example-11-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+	owl:imports
+		<http://example.org/example-11-b> ,
+		<http://example.org/example-11-c>
+		;
+	.
+
+<http://example.org/example-11-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-11-d> ;
+	.
+
+<http://example.org/example-11-c>
+	a owl:Ontology ;
+	owl:imports <http://example.org/example-11-d/v1> ;
+	.
+
+<http://example.org/example-11-d>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-11-d/v1> ;
+	.
+
+<http://example.org/example-12-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+	owl:imports
+		<http://example.org/example-12-b> ,
+		<http://example.org/example-12-c/v1>
+		;
+	.
+
+<http://example.org/example-12-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-12-d> ;
+	.
+
+<http://example.org/example-12-c>
+	a owl:Ontology ;
+	owl:imports <http://example.org/example-12-d> ;
+	owl:versionIRI <http://example.org/example-12-c/v1> ;
+	.
+
+<http://example.org/example-12-d>
+	a owl:Ontology ;
+	.
+
+<http://example.org/example-13-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+	owl:imports
+		<http://example.org/example-13-b> ,
+		<http://example.org/example-13-c/v1>
+		;
+	.
+
+<http://example.org/example-13-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-13-d> ;
+	.
+
+<http://example.org/example-13-c>
+	a owl:Ontology ;
+	owl:imports <http://example.org/example-13-d/v1> ;
+	owl:versionIRI <http://example.org/example-13-c/v1> ;
+	.
+
+<http://example.org/example-13-d>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-13-d/v1> ;
+	.
+
+<http://example.org/example-14-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-version-iri-shape ;
+	owl:imports
+		<http://example.org/example-14-b> ,
+		<http://example.org/example-14-c>
+		;
+	.
+
+<http://example.org/example-14-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-14-d/v1> ;
+	.
+
+<http://example.org/example-14-c>
+	a owl:Ontology ;
+	owl:imports <http://example.org/example-14-d/v1> ;
+	.
+
+<http://example.org/example-14-d>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-14-d/v1> ;
+	.
+
+<http://example.org/example-15-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-version-iri-shape ;
+	owl:imports
+		<http://example.org/example-15-b> ,
+		<http://example.org/example-15-c/v1>
+		;
+	.
+
+<http://example.org/example-15-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-15-d/v1> ;
+	.
+
+<http://example.org/example-15-c>
+	a owl:Ontology ;
+	owl:imports <http://example.org/example-15-d> ;
+	owl:versionIRI <http://example.org/example-15-c/v1> ;
+	.
+
+<http://example.org/example-15-d>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-15-d/v1> ;
+	.
+
+<http://example.org/example-16-a>
+	a owl:Ontology ;
+	rdfs:seeAlso uco-owl:incompatibleWith-imported-version-iri-shape ;
+	owl:imports
+		<http://example.org/example-16-b> ,
+		<http://example.org/example-16-c/v1>
+		;
+	.
+
+<http://example.org/example-16-b>
+	a owl:Ontology ;
+	owl:incompatibleWith <http://example.org/example-16-d/v3> ;
+	.
+
+<http://example.org/example-16-c>
+	a owl:Ontology ;
+	owl:imports <http://example.org/example-16-d/v3> ;
+	owl:versionIRI <http://example.org/example-16-c/v1> ;
+	.
+
+<http://example.org/example-16-d>
+	a owl:Ontology ;
+	owl:versionIRI <http://example.org/example-16-d/v3> ;
+	.
+

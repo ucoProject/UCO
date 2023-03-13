@@ -1,0 +1,29 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/uco>
+	a owl:Ontology ;
+	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
+	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1> ;
+	owl:versionInfo "1" ;
+	.
+
+<https://ontology.unifiedcyberontology.org/example-1>
+	a owl:Ontology ;
+	rdfs:comment "This node will trigger an error due to having no versionIRI."@en ;
+	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
+	owl:imports <https://ontology.unifiedcyberontology.org/example-2/1> ;
+	.
+
+<https://ontology.unifiedcyberontology.org/example-2>
+	a owl:Ontology ;
+	rdfs:comment "This node will trigger an error due to having two versionIRIs."@en ;
+	rdfs:seeAlso <urn:example:uco:qc:owl-Ontology-shape> ;
+	owl:versionIRI
+		<https://ontology.unifiedcyberontology.org/example-2/1> ,
+		<https://ontology.unifiedcyberontology.org/example-2/1/1>
+		;
+	.
+

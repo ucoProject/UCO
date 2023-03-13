@@ -1,0 +1,26 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-closure-qc: <urn:example:uco:closure-qc:> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:uco:closure-qc>
+	a owl:Ontology ;
+	rdfs:comment "This ontology contains shapes meant to be used against the transitive closure of UCO, including imported, externally-developed ontologies."@en ;
+	.
+
+uco-closure-qc:versionIRI-uniqueness-shape
+	a sh:PropertyShape ;
+	rdfs:comment "This shape defines a UCO-specific requirement that any imported ontology must not have a second version imported as well.  This scenario IS permitted in OWL: 'An ontology containing only an ontology IRI MAY coexist with another ontology with the same ontology IRI and some other version IRI' (OWL 2 Syntax, Section 3.1).  UCO will strive to avoid conflicting versions as long as practical."@en ;
+	rdfs:seeAlso
+		uco-owl:ontologyIRI-versionIRI-uniqueness-shape ,
+		uco-owl:versionIRI-shape ,
+		<https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI>
+		;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:path owl:versionIRI ;
+	sh:targetSubjectsOf owl:versionIRI ;
+	.
+

@@ -17,10 +17,12 @@ from typing import Generator, List, Optional, Set, Tuple, Union
 
 import pytest
 import rdflib.plugins.sparql.processor
-from rdflib import BNode, Graph, Literal, RDF, URIRef
+from rdflib import BNode, Graph, Literal, Namespace, OWL, RDF, RDFS, SH, URIRef
 from rdflib.term import Node
 
 IdentifiedNode = Union[BNode, URIRef]
+
+NS_UCO_CORE = Namespace("https://ontology.unifiedcyberontology.org/uco/core/")
 
 
 @pytest.fixture(scope="module")
@@ -29,6 +31,72 @@ def graph() -> Generator[Graph, None, None]:
     graph.parse(os.path.join(os.path.dirname(__file__), "uco_monolithic.ttl"))
     assert len(graph) > 0, "Failed to load uco_monolithic.ttl."
     yield graph
+
+
+def test_rdf_design_vocabularies_defined(graph: Graph) -> None:
+    """
+    This test performs a typo review of RDF-, RDFS-, and OWL-namespaced concepts.
+
+    The mechanism used is rdflib's ClosedNamespace.  The imported
+    objects RDF, RDFS, and OWL are instances of this Python class.
+    """
+
+    expected: Set[URIRef] = set()  # This set is intentionally empty.
+    computed: Set[URIRef] = set()
+
+    concepts_used: Set[URIRef] = set()
+    for triple in graph.triples((None, None, None)):
+        for triple_member in triple:
+            if not isinstance(triple_member, URIRef):
+                continue
+            concepts_used.add(triple_member)
+
+    OWL_str = str(OWL)
+    RDF_str = str(RDF)
+    RDFS_str = str(RDFS)
+    SH_str = str(SH)
+
+    def _concept_in_design_vocabulary(concept: URIRef) -> Optional[bool]:
+        """
+        Return True -> Concept is defined in some design vocabulary.
+        Return False -> Concept is not defined in design vocabulary.
+        Return None -> N/A.
+        """
+        design_vocabulary: Namespace
+        if concept.startswith(OWL_str):
+            concept_fragment = concept.replace(OWL_str, "")
+            design_vocabulary = OWL
+        elif concept.startswith(RDF_str):
+            concept_fragment = concept.replace(RDF_str, "")
+            design_vocabulary = RDF
+        elif concept.startswith(RDFS_str):
+            concept_fragment = concept.replace(RDFS_str, "")
+            design_vocabulary = RDFS
+        elif concept.startswith(SH_str):
+            concept_fragment = concept.replace(SH_str, "")
+            design_vocabulary = SH
+        else:
+            return None
+
+        try:
+            _ = design_vocabulary[concept_fragment]
+        except AttributeError:
+            return False
+
+    assert (
+        _concept_in_design_vocabulary(
+            URIRef(
+                "http://www.w3.org/2002/07/owl#NonExistentConcept-f287fb8b-433b-45a2-82b8-9b53bfa35c64"
+            )
+        )
+        is False
+    ), "ClosedNamespace functionality used in this test did not detect a known-erroneous value.  This test needs revising."
+
+    for concept_used in concepts_used:
+        if _concept_in_design_vocabulary(concept_used) is False:
+            computed.add(concept_used)
+
+    assert expected == computed
 
 
 def test_max_1_sh_datatype_per_property_shape(graph: Graph) -> None:
@@ -66,7 +134,7 @@ WHERE {
 
   FILTER (?lConstraintDatatypeTally > 1)
 }
-""", initNs=nsdict)  # type: ignore
+""", initNs=nsdict)
     for result in graph.query(query_object):
         computed.add(result)
     assert expected == computed
@@ -120,6 +188,10 @@ WHERE {
     .
   ?nDatatype
     a rdfs:Datatype ;
+    owl:equivalentClass ?nLexicalSpace ;
+    .
+
+  ?nLexicalSpace
     owl:oneOf ?nRdfsList ;
     .
 }
@@ -157,4 +229,49 @@ WHERE {
             rdfs_tuple = tuple(rdfs_list)
             computed.add((test_case[0], test_case[1], shacl_tuple, rdfs_tuple))
 
+    assert expected == computed
+
+
+def test_only_one_uco_class_is_owl_thing_direct_subclass(graph: Graph) -> None:
+    """
+    UCO expects all classes defined in UCO namespaces (i.e. excluding the "import review" ontologies) are subclasses of core:UcoThing.  Within OWL, absence of an rdfs:subClassOf statement implies being a subclass of owl:Thing.  Review UCO for any accidental omission of rdfs:subClassOf.
+    """
+    expected: Set[URIRef] = {NS_UCO_CORE.UcoThing}
+    computed: Set[URIRef] = set()
+
+    # Create temporary graph where subClassOf statements for non-UCO classes are removed.
+    # This narrows the subclass hierarchy review to UCO-namespaced concepts only.
+    tmp_graph = Graph()
+    drop_graph = Graph()
+    tmp_graph += graph
+    for triple in graph.triples((None, RDFS.subClassOf, None)):
+        assert isinstance(triple[1], URIRef)
+        if not isinstance(triple[0], URIRef):
+            continue
+        if not isinstance(triple[2], URIRef):
+            continue
+        if not str(triple[2]).startswith("https://ontology.unifiedcyberontology.org/uco/"):
+            drop_graph.add(triple)
+    tmp_graph -= drop_graph
+
+    for result in tmp_graph.query("""\
+SELECT ?nClass
+WHERE {
+    {
+        ?nClass rdfs:subClassOf owl:Thing .
+    }
+    UNION
+    {
+        ?nClass a owl:Class .
+        FILTER NOT EXISTS {
+            ?nClass rdfs:subClassOf ?nOtherClass .
+        }
+    }
+    FILTER isIRI(?nClass)
+}
+"""):
+        n_class: URIRef = result[0]
+        if not str(n_class).startswith("https://ontology.unifiedcyberontology.org/uco/"):
+            continue
+        computed.add(n_class)
     assert expected == computed

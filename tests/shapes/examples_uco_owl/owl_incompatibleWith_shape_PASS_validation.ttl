@@ -1,0 +1,165 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-10-c/v1> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to ... the version IRI of O_2.'  The focusNode is incompatible with some O_1 within the transitive closure of some O."@en ;
+			sh:resultPath [
+				sh:inversePath owl:versionIRI ;
+			] ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-version-iri-shape ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-11-d> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode, or a versionIRI of it, is imported within the transitive closure of some O, but is incompatible with some O_1 also within the transitive closure of O."@en ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+			sh:value <http://example.org/example-11-d> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-12-d> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode, or a versionIRI of it, is imported within the transitive closure of some O, but is incompatible with some O_1 also within the transitive closure of O."@en ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+			sh:value <http://example.org/example-12-d> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-13-d> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode, or a versionIRI of it, is imported within the transitive closure of some O, but is incompatible with some O_1 also within the transitive closure of O."@en ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+			sh:value <http://example.org/example-13-d> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-14-d/v1> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to ... the version IRI of O_2.'  The focusNode is incompatible with some O_1 within the transitive closure of some O."@en ;
+			sh:resultPath [
+				sh:inversePath owl:versionIRI ;
+			] ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-version-iri-shape ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-15-d/v1> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to ... the version IRI of O_2.'  The focusNode is incompatible with some O_1 within the transitive closure of some O."@en ;
+			sh:resultPath [
+				sh:inversePath owl:versionIRI ;
+			] ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-version-iri-shape ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-16-d/v3> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to ... the version IRI of O_2.'  The focusNode is incompatible with some O_1 within the transitive closure of some O."@en ;
+			sh:resultPath [
+				sh:inversePath owl:versionIRI ;
+			] ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-version-iri-shape ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-2-a> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode directly imported an incompatibility it declared (the value node)."@en ;
+			sh:resultPath owl:imports ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:DisjointConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-direct-import-shape ;
+			sh:value <http://example.org/example-2-b> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-3-b> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode, or a versionIRI of it, is imported within the transitive closure of some O, but is incompatible with some O_1 also within the transitive closure of O."@en ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+			sh:value <http://example.org/example-3-b> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-4-b/v1> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to ... the version IRI of O_2.'  The focusNode is incompatible with some O_1 within the transitive closure of some O."@en ;
+			sh:resultPath [
+				sh:inversePath owl:versionIRI ;
+			] ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-version-iri-shape ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-5-a> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode directly imported an incompatibility it declared (the value node)."@en ;
+			sh:resultPath owl:imports ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:DisjointConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-direct-import-shape ;
+			sh:value <http://example.org/example-5-b/v1> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-5-b/v1> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to ... the version IRI of O_2.'  The focusNode is incompatible with some O_1 within the transitive closure of some O."@en ;
+			sh:resultPath [
+				sh:inversePath owl:versionIRI ;
+			] ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-version-iri-shape ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-7-c> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode, or a versionIRI of it, is imported within the transitive closure of some O, but is incompatible with some O_1 also within the transitive closure of O."@en ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+			sh:value <http://example.org/example-7-c> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-8-c> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O_2.'  The focusNode, or a versionIRI of it, is imported within the transitive closure of some O, but is incompatible with some O_1 also within the transitive closure of O."@en ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-ontology-iri-shape ;
+			sh:value <http://example.org/example-8-c> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/example-9-c/v1> ;
+			sh:resultMessage "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to ... the version IRI of O_2.'  The focusNode is incompatible with some O_1 within the transitive closure of some O."@en ;
+			sh:resultPath [
+				sh:inversePath owl:versionIRI ;
+			] ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape uco-owl:incompatibleWith-imported-version-iri-shape ;
+		]
+		;
+	.
+

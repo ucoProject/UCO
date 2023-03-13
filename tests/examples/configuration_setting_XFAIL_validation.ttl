@@ -1,0 +1,39 @@
+@prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c> ;
+			sh:resultMessage 'Node kb:configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c does not conform to exactly one shape in [ sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemObject ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemValue ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemObject ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemValue ] ]' ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
+			sh:sourceShape configuration:ConfigurationEntry ;
+			sh:value <http://example.org/kb/configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/configured-object-7156bff0-b805-4190-83ee-230fae31e33a> ;
+			sh:resultMessage "Value does not have class tool:Tool" ;
+			sh:resultPath configuration:isConfigurationOf ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class tool:Tool ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path configuration:isConfigurationOf ;
+			] ;
+			sh:value <http://example.org/kb/software-9466a9f9-edf3-4ecd-bc48-a81a6c64ff81> ;
+		]
+		;
+	.
+
