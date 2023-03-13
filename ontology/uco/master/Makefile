@@ -17,35 +17,23 @@ top_srcdir := $(shell cd ../../.. ; pwd)
 
 all: \
   catalog-v001.xml
-	$(MAKE) \
-	  --directory $< \
-	  --file $(top_srcdir)/src/review.mk
 
 # TODO - Move virtual environment creation up to root directory and re-order top_srcdir's descent.
 catalog-v001.xml: \
   $(top_srcdir)/src/create-catalog-v001.xml.py \
   $(top_srcdir)/tests/.venv.done.log
+	rm -f _$@
 	source $(top_srcdir)/tests/venv/bin/activate \
 	  && python3 $(top_srcdir)/src/create-catalog-v001.xml.py \
-	    __$@ \
+	    _$@ \
 	    domain_directories.tsv \
 	    "$(top_srcdir)" \
 	    uco.ttl
-	xmllint \
-	  --format \
-	  __$@ \
-	  > _$@
-	rm __$@
 	mv _$@ $@
 
-check:
-	$(MAKE) \
-	  --file $(top_srcdir)/src/review.mk \
-	  check
+check: \
+  catalog-v001.xml
 
 clean:
 	@rm -f \
 	  catalog-v001.xml
-	@$(MAKE) \
-	  --file $(top_srcdir)/src/review.mk \
-	  clean
