@@ -18,12 +18,11 @@ top_srcdir := $(shell cd ../../.. ; pwd)
 all: \
   catalog-v001.xml
 
-# TODO - Move virtual environment creation up to root directory and re-order top_srcdir's descent.
 catalog-v001.xml: \
   $(top_srcdir)/src/create-catalog-v001.xml.py \
-  $(top_srcdir)/tests/.venv.done.log
+  $(top_srcdir)/.venv.done.log
 	rm -f _$@
-	source $(top_srcdir)/tests/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && python3 $(top_srcdir)/src/create-catalog-v001.xml.py \
 	    _$@ \
 	    domain_directories.tsv \
