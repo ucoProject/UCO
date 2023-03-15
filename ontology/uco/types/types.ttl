@@ -1,6 +1,6 @@
-# imports: https://ontology.unifiedcyberontology.org/co
-# imports: https://ontology.unifiedcyberontology.org/uco/core
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/co/1.1.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.1.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.1.0
 
 @prefix co: <http://purl.org/co/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
@@ -9,17 +9,21 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
 @prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
+	owl:backwardCompatibleWith types:1.0.0 ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/co> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		uco-co:1.1.0 ,
+		core:1.1.0 ,
+		vocabulary:1.1.0
 		;
+	owl:priorVersion types:1.0.0 ;
+	owl:versionIRI types:1.1.0 ;
 	.
 
 types:ControlledDictionary
@@ -27,12 +31,11 @@ types:ControlledDictionary
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf types:Dictionary ;
 	rdfs:label "ControlledDictionary"@en ;
 	rdfs:comment "A controlled dictionary is a list of (term/key, value) pairs where each term/key exists no more than once and is constrained to an explicitly defined set of values."@en ;
 	sh:property [
 		sh:class types:ControlledDictionaryEntry ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path types:entry ;
 	] ;
 	sh:targetClass types:ControlledDictionary ;
@@ -43,24 +46,9 @@ types:ControlledDictionaryEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf types:DictionaryEntry ;
 	rdfs:label "ControlledDictionaryEntry"@en ;
 	rdfs:comment "A controlled dictionary entry is a single (term/key, value) pair where the term/key is constrained to an explicitly defined set of values."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path types:key ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path types:value ;
-		]
-		;
 	sh:targetClass types:ControlledDictionaryEntry ;
 	.
 
@@ -69,12 +57,13 @@ types:Dictionary
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dictionary"@en ;
 	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
 	sh:property [
 		sh:class types:DictionaryEntry ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path types:entry ;
 	] ;
 	sh:targetClass types:Dictionary ;
@@ -85,6 +74,7 @@ types:DictionaryEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "DictionaryEntry"@en ;
 	rdfs:comment "A dictionary entry is a single (term/key, value) pair."@en ;
 	sh:property
@@ -111,6 +101,7 @@ types:Hash
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
 	sh:property
@@ -146,7 +137,16 @@ types:Hash
 			sh:or (
 				[
 					sh:datatype vocabulary:HashNameVocab ;
-					sh:in vocabulary:HashNameVocab-members ;
+					sh:in (
+						"MD5"^^vocabulary:HashNameVocab
+						"MD6"^^vocabulary:HashNameVocab
+						"SHA1"^^vocabulary:HashNameVocab
+						"SHA224"^^vocabulary:HashNameVocab
+						"SHA256"^^vocabulary:HashNameVocab
+						"SHA384"^^vocabulary:HashNameVocab
+						"SHA512"^^vocabulary:HashNameVocab
+						"SSDEEP"^^vocabulary:HashNameVocab
+					) ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -180,7 +180,7 @@ types:Thread
 		;
 	rdfs:subClassOf
 		co:Bag ,
-		core:UcoObject
+		core:UcoThing
 		;
 	rdfs:label "Thread"@en ;
 	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
@@ -198,7 +198,7 @@ types:ThreadItem
 		;
 	rdfs:subClassOf
 		co:Item ,
-		core:UcoObject
+		core:UcoThing
 		;
 	rdfs:label "ThreadItem"@en ;
 	rdfs:comment "A ThreadItem is a member of a thread."@en ;
@@ -213,13 +213,7 @@ types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
 	rdfs:comment "A dictionary entry."@en ;
-	rdfs:range [
-		a rdfs:Datatype ;
-		owl:unionOf (
-			types:ControlledDictionaryEntry
-			types:DictionaryEntry
-		) ;
-	] ;
+	rdfs:range types:DictionaryEntry ;
 	.
 
 types:hashMethod
@@ -260,7 +254,7 @@ types:threadNextItem
 types:threadNextItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadNextItem ;
 	sh:targetSubjectsOf types:threadNextItem ;
 	.
@@ -288,7 +282,7 @@ types:threadOriginItem
 types:threadOriginItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadOriginItem ;
 	sh:targetSubjectsOf types:threadOriginItem ;
 	.
@@ -297,7 +291,7 @@ types:threadOriginItem-subjects-threadPredecessor-shape
 	a sh:PropertyShape ;
 	sh:description "An origin item in a thread must not have a predecessor."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadOriginItem
 		types:threadPredecessor
@@ -309,7 +303,7 @@ types:threadOriginItem-subjects-threadPreviousItem-shape
 	a sh:PropertyShape ;
 	sh:description "An origin item in a thread must not have a previous item."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadOriginItem
 		types:threadPreviousItem
@@ -333,7 +327,7 @@ types:threadPredecessor
 types:threadPredecessor-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadPredecessor ;
 	sh:targetSubjectsOf types:threadPredecessor ;
 	.
@@ -350,7 +344,7 @@ types:threadPreviousItem
 types:threadPreviousItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadPreviousItem ;
 	sh:targetSubjectsOf types:threadPreviousItem ;
 	.
@@ -370,7 +364,7 @@ types:threadSuccessor
 types:threadSuccessor-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadSuccessor ;
 	sh:targetSubjectsOf types:threadSuccessor ;
 	.
@@ -398,7 +392,7 @@ types:threadTerminalItem
 types:threadTerminalItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadTerminalItem ;
 	sh:targetSubjectsOf types:threadTerminalItem ;
 	.
@@ -407,7 +401,7 @@ types:threadTerminalItem-subjects-threadNextItem-shape
 	a sh:PropertyShape ;
 	sh:description "A terminal item in a thread must not have a next item."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadTerminalItem
 		types:threadNextItem
@@ -419,7 +413,7 @@ types:threadTerminalItem-subjects-threadSuccessor-shape
 	a sh:PropertyShape ;
 	sh:description "A terminal item in a thread must not have a successor."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadTerminalItem
 		types:threadSuccessor

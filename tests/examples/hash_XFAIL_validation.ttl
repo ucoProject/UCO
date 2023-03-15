@@ -12,7 +12,7 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/hash-2> ;
+			sh:focusNode <http://example.org/kb/hash-04dcd1dc-6920-4977-a898-e242870249a4> ;
 			sh:resultMessage "Value is outside the default vocabulary HashNameVocab." ;
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
@@ -27,7 +27,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/hash-3> ;
+			sh:focusNode <http://example.org/kb/hash-af4b0c85-b042-4e2d-a213-210b3d7f115c> ;
 			sh:resultMessage "Value is not member of the vocabulary HashNameVocab." ;
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Violation ;
@@ -37,7 +37,16 @@
 				sh:or (
 					[
 						sh:datatype vocabulary:HashNameVocab ;
-						sh:in vocabulary:HashNameVocab-members ;
+						sh:in (
+							"MD5"^^vocabulary:HashNameVocab
+							"MD6"^^vocabulary:HashNameVocab
+							"SHA1"^^vocabulary:HashNameVocab
+							"SHA224"^^vocabulary:HashNameVocab
+							"SHA256"^^vocabulary:HashNameVocab
+							"SHA384"^^vocabulary:HashNameVocab
+							"SHA512"^^vocabulary:HashNameVocab
+							"SSDEEP"^^vocabulary:HashNameVocab
+						) ;
 					]
 					[
 						sh:datatype xsd:string ;
@@ -49,7 +58,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/hash-4> ;
+			sh:focusNode <http://example.org/kb/hash-e97431ea-6fb8-46d9-9c23-94be4b7cc977> ;
 			sh:resultMessage "Value is outside the default vocabulary HashNameVocab." ;
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
@@ -64,7 +73,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/hash-5> ;
+			sh:focusNode <http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771> ;
 			sh:resultMessage 'Node Literal("1", datatype=xsd:integer) does not conform to one or more shapes in [ sh:datatype vocabulary:HashNameVocab ] , [ sh:datatype xsd:string ]' ;
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Violation ;
@@ -87,7 +96,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/hash-5> ;
+			sh:focusNode <http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771> ;
 			sh:resultMessage "Value is not member of the vocabulary HashNameVocab." ;
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Violation ;
@@ -97,7 +106,16 @@
 				sh:or (
 					[
 						sh:datatype vocabulary:HashNameVocab ;
-						sh:in vocabulary:HashNameVocab-members ;
+						sh:in (
+							"MD5"^^vocabulary:HashNameVocab
+							"MD6"^^vocabulary:HashNameVocab
+							"SHA1"^^vocabulary:HashNameVocab
+							"SHA224"^^vocabulary:HashNameVocab
+							"SHA256"^^vocabulary:HashNameVocab
+							"SHA384"^^vocabulary:HashNameVocab
+							"SHA512"^^vocabulary:HashNameVocab
+							"SSDEEP"^^vocabulary:HashNameVocab
+						) ;
 					]
 					[
 						sh:datatype xsd:string ;
@@ -109,7 +127,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/hash-5> ;
+			sh:focusNode <http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771> ;
 			sh:resultMessage "Value is outside the default vocabulary HashNameVocab." ;
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;

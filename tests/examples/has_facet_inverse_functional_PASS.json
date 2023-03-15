@@ -1,0 +1,30 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "owl": "http://www.w3.org/2002/07/owl#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:facet-356c486e-508b-418d-bafa-f5a899bb57eb",
+            "@type": "core:Facet"
+        },
+        {
+            "@id": "kb:object-57dd2e88-0714-4015-9f20-a4785c48ea6b",
+            "@type": "core:UcoObject",
+            "core:hasFacet": {
+                "@id": "kb:facet-356c486e-508b-418d-bafa-f5a899bb57eb"
+            },
+            "owl:sameAs": {
+                "@id": "kb:object-e7afc58a-17ca-49f3-822f-bb5a327a5cc8"
+            }
+        },
+        {
+            "@id": "kb:object-e7afc58a-17ca-49f3-822f-bb5a327a5cc8",
+            "@type": "core:UcoObject",
+            "core:hasFacet": {
+                "@id": "kb:facet-356c486e-508b-418d-bafa-f5a899bb57eb"
+            }
+        }
+    ]
+}

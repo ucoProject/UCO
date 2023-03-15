@@ -1,6 +1,5 @@
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
-@prefix ns1: <http://example.org/ontology/acme/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,49 +12,35 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/location1> ;
+			sh:focusNode <http://example.org/kb/location-264c3f5f-680c-4c44-917f-624b9928088e> ;
 			sh:resultMessage "Value does not have class core:Facet" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
 				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:nodeKind sh:IRI ;
 				sh:path core:hasFacet ;
 			] ;
-			sh:value [
-				a ns1:InternalLocationFacet ;
-				ns1:floor "3"^^xsd:integer ;
-				ns1:roomNumber "345" ;
-			] ;
+			sh:value <http://example.org/kb/internal-location-facet-8b89f634-4616-4ef6-af2c-23ca9fc673bd> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/location2> ;
+			sh:focusNode <http://example.org/kb/location-e01d13b0-23b5-45ff-8ac5-b21562f66973> ;
 			sh:resultMessage "Value does not have class core:Facet" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
 				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:nodeKind sh:IRI ;
 				sh:path core:hasFacet ;
 			] ;
-			sh:value [
-				a location:LatLongCoordinates ;
-				location:latitude "48.860346"^^xsd:decimal ;
-				location:longitude "2.331199"^^xsd:decimal ;
-			] ;
+			sh:value <http://example.org/kb/lat-long-coordinates-facet-cdb448fd-a7e2-4ec3-8c02-0135ee794835> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a location:SimpleAddressFacet ;
-				location:locality "Seattle" ;
-				location:postalCode "98052"^^xsd:integer ;
-				location:region "WA" ;
-				location:street "20341 Whitworth Institute 405 N. Whitworth" ;
-			] ;
+			sh:focusNode <http://example.org/kb/simple-address-facet-511873a2-31cb-44dc-bd59-3ec72ddb6b5f> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath location:postalCode ;
 			sh:resultSeverity sh:Violation ;

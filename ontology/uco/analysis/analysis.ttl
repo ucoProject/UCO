@@ -1,0 +1,142 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.1.0
+
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/analysis>
+	a owl:Ontology ;
+	rdfs:label "uco-analysis"@en ;
+	rdfs:comment "This ontology defines classes and properties for characterizing analytic actions and results."@en-US ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/400> ;
+	owl:imports action:1.1.0 ;
+	owl:versionIRI analysis:1.1.0 ;
+	.
+
+analysis:Analysis
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf action:Action ;
+	rdfs:label "Analysis"@en ;
+	rdfs:comment "An analysis is an action of detailed examination of something in order to understand its nature, context or essential features."@en ;
+	sh:targetClass action:Analysis ;
+	.
+
+analysis:AnalyticResult
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Assertion ;
+	rdfs:label "AnalyticResult"@en ;
+	rdfs:comment "An analytic result is a characterization of the understanding resulting from an analysis action."@en ;
+	sh:property
+		[
+			sh:class analysis:Analysis ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:IRI ;
+			sh:path analysis:originatingAnalysis ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:IRI ;
+			sh:path analysis:resultContent ;
+		]
+		;
+	sh:targetClass analysis:AnalysicResult ;
+	.
+
+analysis:AnalyticResultFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "AnalyticResultFacet"@en ;
+	rdfs:comment "An analytic result facet is a grouping of characteristics unique to the results of an analysis action."@en ;
+	sh:targetClass analysis:AnalyticResultFacet ;
+	.
+
+analysis:ArtifactClassification
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:label "ArtifactClassification"@en ;
+	rdfs:comment "An artifact classification is a single specific assertion that a particular class of a classification taxonomy applies to something."@en ;
+	sh:property
+		[
+			sh:datatype xsd:decimal ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path analysis:classificationConfidence ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path analysis:class ;
+		]
+		;
+	sh:targetClass analysis:ArtifactClassification ;
+	.
+
+analysis:ArtifactClassificationResultFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf analysis:AnalyticResultFacet ;
+	rdfs:label "ArtifactClassificationResultFacet"@en ;
+	rdfs:comment "An artifact classification result facet is a grouping of characteristics unique to the results of an artifact classification analysis action."@en ;
+	sh:property [
+		sh:class analysis:ArtifactClassification ;
+		sh:nodeKind sh:IRI ;
+		sh:path analysis:classification ;
+	] ;
+	sh:targetClass analysis:ArtifactClassificationResultFacet ;
+	.
+
+analysis:class
+	a owl:DatatypeProperty ;
+	rdfs:label "class"@en ;
+	rdfs:comment "A specific classification class."@en ;
+	rdfs:range xsd:string ;
+	.
+
+analysis:classification
+	a owl:ObjectProperty ;
+	rdfs:label "classification"@en ;
+	rdfs:comment "An asserted classification of an analyzed artifact resulting from the analysis."@en ;
+	rdfs:range analysis:ArtifactClassification ;
+	.
+
+analysis:classificationConfidence
+	a owl:DatatypeProperty ;
+	rdfs:label "classificationConfidence"@en ;
+	rdfs:comment "The level of confidence that a classification assertion is correct."@en ;
+	rdfs:range xsd:decimal ;
+	.
+
+analysis:originatingAnalysis
+	a owl:ObjectProperty ;
+	rdfs:label "originatingAnalysis"@en ;
+	rdfs:comment "The analysis action that resulted in an analytic result."@en ;
+	rdfs:range analysis:Analysis ;
+	.
+
+analysis:resultContent
+	a owl:ObjectProperty ;
+	rdfs:label "resultContent"@en ;
+	rdfs:comment "Structured content expressing the results of an analysis action."@en ;
+	rdfs:range core:UcoObject ;
+	.
+

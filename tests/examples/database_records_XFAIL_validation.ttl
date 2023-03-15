@@ -1,0 +1,46 @@
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/table-field-facet-37182dba-4dbd-4b97-b49e-8038b7fbfd29> ;
+			sh:resultMessage 'Node kb:table-field-facet-37182dba-4dbd-4b97-b49e-8038b7fbfd29 does not conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:property [ sh:hasValue Literal("false" = False, datatype=xsd:boolean) ; sh:path observable:recordFieldIsNull ] ] , [ rdf:type sh:NodeShape ; sh:property [ sh:hasValue Literal("true" = True, datatype=xsd:boolean) ; sh:path observable:recordFieldIsNull ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path observable:recordFieldValue ] ] , [ rdf:type sh:NodeShape ; sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path observable:recordFieldIsNull ] ]' ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
+			sh:sourceShape observable:TableFieldFacet ;
+			sh:value <http://example.org/kb/table-field-facet-37182dba-4dbd-4b97-b49e-8038b7fbfd29> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314> ;
+			sh:resultMessage "More than 1 values on kb:table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314->observable:recordFieldIsNull" ;
+			sh:resultPath observable:recordFieldIsNull ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:boolean ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:recordFieldIsNull ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314> ;
+			sh:resultMessage 'Node kb:table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314 does not conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:property [ sh:hasValue Literal("false" = False, datatype=xsd:boolean) ; sh:path observable:recordFieldIsNull ] ] , [ rdf:type sh:NodeShape ; sh:property [ sh:hasValue Literal("true" = True, datatype=xsd:boolean) ; sh:path observable:recordFieldIsNull ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path observable:recordFieldValue ] ] , [ rdf:type sh:NodeShape ; sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path observable:recordFieldIsNull ] ]' ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
+			sh:sourceShape observable:TableFieldFacet ;
+			sh:value <http://example.org/kb/table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314> ;
+		]
+		;
+	.
+
