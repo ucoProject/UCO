@@ -16,7 +16,8 @@ SHELL := /bin/bash
 PYTHON3 ?= $(shell which python3)
 
 all: \
-  .lib.done.log
+  .lib.done.log \
+  .venv.done.log
 	$(MAKE) \
 	  --directory ontology
 

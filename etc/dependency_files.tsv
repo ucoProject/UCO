@@ -1,0 +1,2 @@
+http://purl.org/co/	${top_srcdir}/dependencies/collections-ontology/collections.owl
+http://purl.org/spar/error	${top_srcdir}/dependencies/error/docs/current/error.ttl
