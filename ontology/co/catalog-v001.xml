@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+    <uri id="User Entered Import Resolution" uri="../../dependencies/collections-ontology/collections.owl" name="http://purl.org/co"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/error/docs/current/error.ttl" name="http://purl.org/spar/error"/>
+    <uri id="User Entered Import Resolution" uri="co.ttl" name="https://ontology.unifiedcyberontology.org/co"/>
+</catalog>

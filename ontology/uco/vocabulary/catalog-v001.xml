@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+    <uri id="User Entered Import Resolution" uri="vocabulary.ttl" name="https://ontology.unifiedcyberontology.org/uco/vocabulary"/>
+</catalog>
