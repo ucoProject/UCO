@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.1.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.2.0
 
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix marking: <https://ontology.unifiedcyberontology.org/uco/marking/> .
@@ -12,10 +12,10 @@
 	a owl:Ontology ;
 	rdfs:label "uco-marking"@en ;
 	rdfs:comment "Data markings represent restrictions, permissions, and other guidance for how data can be used and shared."@en ;
-	owl:backwardCompatibleWith marking:1.0.0 ;
-	owl:imports core:1.1.0 ;
-	owl:priorVersion marking:1.0.0 ;
-	owl:versionIRI marking:1.1.0 ;
+	owl:backwardCompatibleWith marking:1.1.0 ;
+	owl:imports core:1.2.0 ;
+	owl:priorVersion marking:1.1.0 ;
+	owl:versionIRI marking:1.2.0 ;
 	.
 
 marking:GranularMarking
