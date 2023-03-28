@@ -13,8 +13,11 @@
 
 SHELL := /bin/bash
 
+PYTHON3 ?= $(shell which python3)
+
 all: \
-  .lib.done.log
+  .lib.done.log \
+  .venv.done.log
 	$(MAKE) \
 	  --directory ontology
 
@@ -44,9 +47,31 @@ all: \
 	  --directory lib
 	touch $@
 
+# The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
+.venv.done.log: \
+  dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py \
+  dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg \
+  requirements.txt
+	rm -rf venv
+	$(PYTHON3) -m venv \
+	  venv
+	source venv/bin/activate \
+	  && pip install \
+	    --upgrade \
+	    pip \
+	    setuptools \
+	    wheel
+	source venv/bin/activate \
+	  && pip install \
+	    dependencies/CASE-Utility-SHACL-Inheritance-Reviewer
+	source venv/bin/activate \
+	  && pip install \
+	    --requirement requirements.txt
+	touch $@
+
 check: \
-  .git_submodule_init.done.log \
-  .lib.done.log
+  .lib.done.log \
+  .venv.done.log
 	$(MAKE) \
 	  --directory ontology \
 	  check
@@ -59,7 +84,10 @@ clean: \
   clean-ontology
 	@rm -f \
 	  .git_submodule_init.done.log \
-	  .lib.done.log
+	  .lib.done.log \
+	  .venv.done.log
+	@rm -rf \
+	  venv
 
 clean-ontology:
 	@$(MAKE) \
@@ -70,3 +98,15 @@ clean-tests:
 	@$(MAKE) \
 	  --directory tests \
 	  clean
+
+# Maintain timestamp order.
+dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py: \
+  .git_submodule_init.done.log
+	touch -c $@
+	test -r $@
+
+# Maintain timestamp order.
+dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg: \
+  .git_submodule_init.done.log
+	touch -c $@
+	test -r $@

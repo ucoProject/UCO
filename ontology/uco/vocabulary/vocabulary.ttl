@@ -614,6 +614,10 @@ vocabulary:HashNameVocab
 			"SHA1"^^vocabulary:HashNameVocab
 			"SHA224"^^vocabulary:HashNameVocab
 			"SHA256"^^vocabulary:HashNameVocab
+			"SHA3-224"^^vocabulary:HashNameVocab
+			"SHA3-256"^^vocabulary:HashNameVocab
+			"SHA3-384"^^vocabulary:HashNameVocab
+			"SHA3-512"^^vocabulary:HashNameVocab
 			"SHA384"^^vocabulary:HashNameVocab
 			"SHA512"^^vocabulary:HashNameVocab
 			"SSDEEP"^^vocabulary:HashNameVocab
@@ -781,6 +785,7 @@ vocabulary:ObservableObjectRelationshipVocab
 			"Sent_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
 			"Set_From"^^vocabulary:ObservableObjectRelationshipVocab
 			"Set_To"^^vocabulary:ObservableObjectRelationshipVocab
+			"Signed_By"^^vocabulary:ObservableObjectRelationshipVocab
 			"Sub-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
 			"Supra-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
 			"Suspended"^^vocabulary:ObservableObjectRelationshipVocab

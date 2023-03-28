@@ -15,8 +15,6 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd ../.. ; pwd)
 
-tests_srcdir := $(top_srcdir)/tests
-
 all:
 
 check: \
@@ -29,10 +27,10 @@ clean:
 
 uco-owl-co.done.log: \
   $(top_srcdir)/dependencies/collections-ontology/collections.owl \
-  $(tests_srcdir)/.venv.done.log \
+  $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/ontology/owl/owl.ttl
 	# Review for OWL 2 DL conformance.
-	source $(tests_srcdir)/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format xml \
 	    --format turtle \
@@ -45,10 +43,10 @@ uco-owl-co.done.log: \
 
 uco-owl-error.done.log: \
   $(top_srcdir)/dependencies/error/docs/current/error.ttl \
-  $(tests_srcdir)/.venv.done.log \
+  $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/ontology/owl/owl.ttl
 	# Review for OWL 2 DL conformance.
-	source $(tests_srcdir)/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
 	    --format turtle \
