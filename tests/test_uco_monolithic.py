@@ -220,16 +220,18 @@ WHERE {
 
         shacl_list = rdf_list_to_member_list(graph, n_shacl_list)
         rdfs_list = rdf_list_to_member_list(graph, n_rdfs_list)
-        if rdfs_list == shacl_list:
-            logging.debug("Match")
-        else:
-            logging.debug(n_shacl_list)
-            logging.debug(n_rdfs_list)
+        if rdfs_list != shacl_list:
             shacl_tuple = tuple(shacl_list)
             rdfs_tuple = tuple(rdfs_list)
             computed.add((test_case[0], test_case[1], shacl_tuple, rdfs_tuple))
 
-    assert expected == computed
+    try:
+        assert expected == computed
+    except AssertionError:
+        logging.error("Semi-open vocabulary lists are out of sync.  See:")
+        for computed_result in computed:
+            logging.error("* %s", str(computed_result[0]))
+        raise
 
 
 def test_only_one_uco_class_is_owl_thing_direct_subclass(graph: Graph) -> None:
