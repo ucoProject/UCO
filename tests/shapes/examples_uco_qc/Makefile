@@ -15,9 +15,7 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd ../../.. ; pwd)
 
-tests_srcdir := $(top_srcdir)/tests
-
-shapes_srcdir := $(tests_srcdir)/shapes
+shapes_srcdir := $(top_srcdir)/tests/shapes
 
 sample_ttls := $(wildcard *_PASS.ttl *_XFAIL.ttl)
 
@@ -37,10 +35,10 @@ all: \
 # characteristics.
 %_validation.ttl: \
   %.ttl \
-  $(tests_srcdir)/.venv.done.log \
+  $(top_srcdir)/.venv.done.log \
   $(shapes_srcdir)/qc_monolithic.ttl
 	rm -f __$@ _$@
-	source $(tests_srcdir)/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --allow-warnings \
 	    --data-file-format turtle \

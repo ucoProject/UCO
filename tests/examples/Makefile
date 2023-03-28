@@ -62,9 +62,9 @@ all: \
 # characteristics.
 %_validation.ttl: \
   %.json \
-  $(tests_srcdir)/.venv.done.log \
+  $(top_srcdir)/.venv.done.log \
   $(tests_srcdir)/uco_monolithic.ttl
-	source $(tests_srcdir)/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --allow-warnings \
 	    --data-file-format json-ld \
@@ -116,7 +116,7 @@ check: \
   thread_PASS_validation.ttl \
   thread_XFAIL_validation.ttl \
   uco_thing_XFAIL_validation.ttl
-	source $(tests_srcdir)/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG
 
