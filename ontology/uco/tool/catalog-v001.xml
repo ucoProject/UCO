@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+    <uri id="User Entered Import Resolution" uri="../configuration/configuration.ttl" name="https://ontology.unifiedcyberontology.org/uco/configuration/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../core/core.ttl" name="https://ontology.unifiedcyberontology.org/uco/core/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../identity/identity.ttl" name="https://ontology.unifiedcyberontology.org/uco/identity/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../location/location.ttl" name="https://ontology.unifiedcyberontology.org/uco/location/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="tool.ttl" name="https://ontology.unifiedcyberontology.org/uco/tool"/>
+</catalog>

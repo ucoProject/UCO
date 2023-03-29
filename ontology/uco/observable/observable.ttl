@@ -1,10 +1,10 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/action/1.1.0
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.1.0
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.1.0
-# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.1.0
-# imports: https://ontology.unifiedcyberontology.org/uco/location/1.1.0
-# imports: https://ontology.unifiedcyberontology.org/uco/types/1.1.0
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.1.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.2.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
@@ -24,18 +24,18 @@
 <https://ontology.unifiedcyberontology.org/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
-	owl:backwardCompatibleWith observable:1.0.0 ;
+	owl:backwardCompatibleWith observable:1.1.0 ;
 	owl:imports
-		action:1.1.0 ,
-		configuration:1.1.0 ,
-		core:1.1.0 ,
-		identity:1.1.0 ,
-		location:1.1.0 ,
-		types:1.1.0 ,
-		vocabulary:1.1.0
+		action:1.2.0 ,
+		configuration:1.2.0 ,
+		core:1.2.0 ,
+		identity:1.2.0 ,
+		location:1.2.0 ,
+		types:1.2.0 ,
+		vocabulary:1.2.0
 		;
-	owl:priorVersion observable:1.0.0 ;
-	owl:versionIRI observable:1.1.0 ;
+	owl:priorVersion observable:1.1.0 ;
+	owl:versionIRI observable:1.2.0 ;
 	.
 
 observable:API
@@ -4480,12 +4480,6 @@ observable:MobileDeviceFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:IMEI ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:bluetoothDeviceName ;
 		] ,
 		[
@@ -4499,6 +4493,11 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:network ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:IMEI ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
@@ -6213,6 +6212,23 @@ observable:StorageMedium
 	rdfs:label "StorageMedium"@en-US ;
 	rdfs:comment "A storage medium is any digital storage device that applies electromagnetic or optical surfaces, or depends solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
 	sh:targetClass observable:StorageMedium ;
+	.
+
+observable:StorageMediumFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "StorageMediumFacet"@en ;
+	rdfs:comment "A storage medium facet is a grouping of characteristics unique to a the storage capabilities of a piece of equipment or a mechanism designed to serve a special purpose or perform a special function."@en ;
+	sh:property [
+		sh:datatype xsd:integer ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
+		sh:path observable:totalStorageCapacityInBytes ;
+	] ;
+	sh:targetClass observable:StorageMediumFacet ;
 	.
 
 observable:SymbolicLink
@@ -8866,6 +8882,12 @@ observable:WindowsThreadFacet
 			sh:path observable:creationTime ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:observableCreatedTime ;
+		] ,
+		[
 			sh:datatype xsd:hexBinary ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:parameterAddress ;
@@ -10191,9 +10213,24 @@ observable:creationFlags
 	.
 
 observable:creationTime
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "creationTime"@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+observable:creationTime-deprecation-shape
+	a sh:NodeShape ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+		sh:path observable:creationTime ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf observable:creationTime ;
 	.
 
 observable:creator
@@ -13289,6 +13326,13 @@ observable:totalSpace
 	a owl:DatatypeProperty ;
 	rdfs:label "totalSpace"@en ;
 	rdfs:comment "Specifies the total amount of space available on the partition, in bytes."@en ;
+	rdfs:range xsd:integer ;
+	.
+
+observable:totalStorageCapacityInBytes
+	a owl:DatatypeProperty ;
+	rdfs:label "totalStorageCapacityInBytes"@en ;
+	rdfs:comment "The maximum number of bytes that can be stored on a storage device."@en ;
 	rdfs:range xsd:integer ;
 	.
 

@@ -15,8 +15,6 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd .. ; pwd)
 
-PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3)
-
 uco_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl $(top_srcdir)/ontology/*/*/*.ttl)
 
 imported_ontology_files := \
@@ -31,7 +29,7 @@ all:
 # Ensure the UCO-internal shapes pass their own tests.
 .shapes.done.log: \
   $(top_srcdir)/ontology/owl/owl.ttl \
-  .venv.done.log \
+  $(top_srcdir)/.venv.done.log \
   shapes/uco-closure-qc.ttl \
   shapes/uco-qc.ttl
 	$(MAKE) \
@@ -39,34 +37,11 @@ all:
 	  check
 	touch $@
 
-# The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
-.venv.done.log: \
-  $(top_srcdir)/.git_submodule_init.done.log \
-  $(top_srcdir)/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py \
-  $(top_srcdir)/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg \
-  requirements.txt
-	rm -rf venv
-	$(PYTHON3) -m venv \
-	  venv
-	source venv/bin/activate \
-	  && pip install \
-	    --upgrade \
-	    pip \
-	    setuptools \
-	    wheel
-	source venv/bin/activate \
-	  && pip install \
-	    $(top_srcdir)/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer
-	source venv/bin/activate \
-	  && pip install \
-	    --requirement requirements.txt
-	touch $@
-
 check: \
   check-dependencies \
   inheritance_review.ttl \
   uco_monolithic.ttl
-	source venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --ignore examples \
 	    --ignore shapes \
@@ -76,7 +51,7 @@ check: \
 	  check
 
 check-dependencies: \
-  .venv.done.log
+  $(top_srcdir)/.venv.done.log
 	$(MAKE) \
 	  --directory dependencies \
 	  check
@@ -91,14 +66,12 @@ clean:
 	@rm -f \
 	  .*.done.log \
 	  uco_monolithic.ttl
-	@rm -rf \
-	  venv
 
 inheritance_review.ttl: \
   $(uco_turtle_files) \
-  .venv.done.log
+  $(top_srcdir)/.venv.done.log
 	rm -f _$@
-	source venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && case_shacl_inheritance_reviewer \
 	    --strict \
 	    _$@ \
@@ -112,19 +85,19 @@ uco_monolithic.ttl: \
   $(uco_turtle_files) \
   .shapes.done.log \
   thing.ttl
-	source venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
           && rdfpipe \
 	    --input-format ttl \
 	    --output-format ttl \
 	    $(uco_turtle_files) \
 	    > __$@
 	# Review UCO closure for versioning consistency.
-	source venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
           && rdfpipe \
 	  __$@ \
 	  $(imported_ontology_files) \
 	  > ___$@
-	source venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
 	    --format turtle \
@@ -133,7 +106,7 @@ uco_monolithic.ttl: \
 	    --shacl-file-format turtle \
 	    ___$@
 	# Review UCO closure with SHACL-SHACL.
-	source venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
 	    --format turtle \
@@ -145,7 +118,7 @@ uco_monolithic.ttl: \
 	# Closure tests have passed; remove closure file.
 	rm ___$@
 	# Review UCO for practice conformance.
-	source venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
 	    --format turtle \
@@ -154,7 +127,7 @@ uco_monolithic.ttl: \
 	    --shacl-file-format turtle \
 	    __$@
 	# Review UCO for OWL 2 DL conformance.
-	source venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
 	    --format turtle \

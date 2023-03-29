@@ -15,8 +15,6 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd ../.. ; pwd)
 
-tests_srcdir := $(top_srcdir)/tests
-
 all: \
   qc_monolithic.ttl
 	$(MAKE) \
@@ -51,7 +49,7 @@ check: \
 	$(MAKE) \
 	  --directory examples_uco_qc \
 	  check
-	source $(tests_srcdir)/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG \
 	    --verbose \
@@ -77,12 +75,12 @@ clean:
 	  qc_monolithic.ttl
 
 qc_monolithic.ttl: \
-  $(tests_srcdir)/.venv.done.log \
+  $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/.lib.done.log \
   uco-closure-qc.ttl \
   uco-qc.ttl
 	rm -f __$@ _$@
-	source $(tests_srcdir)/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && rdfpipe \
 	    --output-format turtle \
 	    uco-closure-qc.ttl \

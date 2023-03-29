@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/role/1.1.0
+# imports: https://ontology.unifiedcyberontology.org/uco/role/1.2.0
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -11,10 +11,10 @@
 <https://ontology.unifiedcyberontology.org/uco/victim>
 	a owl:Ontology ;
 	rdfs:label "uco-victim"@en ;
-	owl:backwardCompatibleWith victim:1.0.0 ;
-	owl:imports role:1.1.0 ;
-	owl:priorVersion victim:1.0.0 ;
-	owl:versionIRI victim:1.1.0 ;
+	owl:backwardCompatibleWith victim:1.1.0 ;
+	owl:imports role:1.2.0 ;
+	owl:priorVersion victim:1.1.0 ;
+	owl:versionIRI victim:1.2.0 ;
 	.
 
 victim:Victim

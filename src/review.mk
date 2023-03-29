@@ -26,7 +26,8 @@ check_reference_basenames := $(foreach ttl_basename,$(ttl_basenames),.check-$(tt
 check_targets := $(foreach ttl_basename,$(ttl_basenames),check-$(ttl_basename))
 
 all: \
-  $(check_reference_basenames)
+  $(check_reference_basenames) \
+  catalog-v001.xml
 
 .check-%.ttl: \
   %.ttl \
@@ -39,8 +40,24 @@ all: \
 	  --target-format turtle
 	mv $@_ $@
 
+catalog-v001.xml: \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/etc/domain_directories.tsv \
+  $(top_srcdir)/etc/dependency_files.tsv \
+  $(top_srcdir)/src/create-catalog-v001.xml.py
+	rm -f _$@
+	source $(top_srcdir)/venv/bin/activate \
+	  && python3 $(top_srcdir)/src/create-catalog-v001.xml.py \
+	    _$@ \
+	    $(top_srcdir)/etc/domain_directories.tsv \
+	    $(top_srcdir)/etc/dependency_files.tsv \
+	    "$(top_srcdir)" \
+	    $(ttl_basenames)
+	mv _$@ $@
+
 check: \
-  $(check_targets)
+  $(check_targets) \
+  catalog-v001.xml
 
 # Reminder: diff exits non-0 on finding any differences.
 # Reminder: The $^ automatic Make variable is the name of all recipe prerequisites.
@@ -51,4 +68,6 @@ check-%.ttl: \
 	  || (echo "ERROR:src/review.mk:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp .check-$< $<' while in the sub-folder ontology/$$(basename $< .ttl)/ to get a file ready to commit to Git." >&2 ; exit 1)
 
 clean:
-	@rm -f $(check_reference_basenames)
+	@rm -f \
+	  $(check_reference_basenames) \
+	  catalog-v001.xml

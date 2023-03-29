@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+    <uri id="User Entered Import Resolution" uri="../core/core.ttl" name="https://ontology.unifiedcyberontology.org/uco/core/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="marking.ttl" name="https://ontology.unifiedcyberontology.org/uco/marking"/>
+</catalog>
