@@ -3197,6 +3197,18 @@ observable:File
 	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "File"@en ;
 	rdfs:comment "A file is a computer resource for recording data discretely on a computer storage device."@en ;
+	owl:disjointWith observable:URL ;
+	sh:targetClass observable:File ;
+	.
+
+observable:File-disjointWith-URL-shape
+	a sh:NodeShape ;
+	sh:message "observable:File and observable:URL are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class observable:URL ;
+	] ;
+	sh:severity sh:Warning ;
 	sh:targetClass observable:File ;
 	.
 
