@@ -3203,12 +3203,11 @@ observable:File
 
 observable:File-disjointWith-URL-shape
 	a sh:NodeShape ;
-	sh:message "observable:File and observable:URL are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:message "observable:File and observable:URL are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class observable:URL ;
 	] ;
-	sh:severity sh:Warning ;
 	sh:targetClass observable:File ;
 	.
 
