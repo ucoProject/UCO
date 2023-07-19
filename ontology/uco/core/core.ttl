@@ -171,6 +171,43 @@ core:EnclosingCompilation
 	sh:targetClass core:EnclosingCompilation ;
 	.
 
+core:Event 
+	a 
+		owl:Class,
+        	sh:NodeShape 
+		;
+  	rdfs:subClassOf core:UcoObject ;
+  	rdfs:label "Event"@en ;
+  	rdfs:comment "An Event is a noteworthy occurrence (something that happens or might happen)."@en ;
+	sh:property
+    	[
+      		sh:datatype xsd:string ;
+      		sh:nodeKind sh:Literal ;
+      		sh:path core:eventType ;
+    	],
+    	[
+  		sh:nodeKind sh:IRI ;
+    		sh:class core:UcoObject ;
+  		sh:path core:eventContext ;
+    	],
+    	[
+  		sh:datatype xsd:string ;
+  		sh:nodeKind sh:Literal ;
+  		sh:path core:startTime ;
+    	],
+    	[
+  		sh:datatype xsd:string ;
+  		sh:nodeKind sh:Literal ;
+  		sh:path core:endTime ;
+    	],
+    	[
+  		sh:nodeKind sh:IRI ;
+        	sh:class types:Dictionary ;
+  		sh:path core:eventAttribute ;
+    	] ;
+  	sh:targetClass core:Event 
+.
+
 core:ExternalReference
 	a
 		owl:Class ,
@@ -516,6 +553,27 @@ core:endTime
 	rdfs:label "endTime"@en ;
 	rdfs:comment "The ending time of a time range."@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+core:eventContext 
+	a owl:ObjectProperty; 
+    	rdfs:label "Event Context"@en ; 
+    	rdfs:comment "An event context describes the association of actions and objects relating to an event."@en ; 
+    	rdfs:range core:UcoObject 
+	.
+	
+core:eventAttribute 
+	a owl:ObjectProperty;
+    	rdfs:label "Event Attribute"@en ;
+    	rdfs:comment "An event attribute specifies an ad-hoc attribute/value for an event."@en ;
+    	rdfs:range types:Dictionary 
+	.
+ 
+core:eventType 
+	a owl:DatatypeProperty;
+    	rdfs:label "Event Type"@en ;
+    	rdfs:comment "An event type specifies a classification type for the event."@en ;
+    	rdfs:range xsd:string 
 	.
 
 core:externalIdentifier
