@@ -191,19 +191,19 @@ core:Event
 			sh:path core:eventAttribute ;
 		] ,
 		[
-			sh:datatype xsd:string ;
+			sh:datatype xsd:dateTime ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:startTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:eventType ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path core:startTime ;
 		]
 		;
 	sh:targetClass core:Event ;
