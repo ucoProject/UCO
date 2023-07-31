@@ -287,6 +287,27 @@ vocabulary:ActionNameVocab
 	] ;
 	.
 
+vocabulary:ActionNatureVocab
+	a rdfs:Datatype ;
+	rdfs:label "Action Nature Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of action natures."@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"Tasking-Immediate"^^vocabulary:ActionNatureVocab
+			"Tasking-Conditional"^^vocabulary:ActionNatureVocab
+			"Prescriptive"^^vocabulary:ActionNatureVocab
+			"Prescriptive-Conditional"^^vocabulary:ActionNatureVocab
+			"Potential"^^vocabulary:ActionNatureVocab
+			"Potential-Conditional"^^vocabulary:ActionNatureVocab
+			"Observed"^^vocabulary:ActionNatureVocab
+			"Derived"^^vocabulary:ActionNatureVocab
+			"Unknown"^^vocabulary:ActionNatureVocab
+		) ;
+	] ;
+	.
+
 vocabulary:ActionRelationshipTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Action Relationship Type Vocabulary"@en-US ;

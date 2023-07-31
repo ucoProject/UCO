@@ -107,6 +107,49 @@ action:Action
 			sh:path action:actionCount ;
 		] ,
 		[
+			sh:datatype vocabulary:ActionNatureVocab ;
+			sh:message "Value is outside the default vocabulary ActionNatureVocab." ;
+			sh:path action:actionNature ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:minCount "1"^^xsd:integer ;
+      sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ActionNatureVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:actionNature ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ActionNatureVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ActionNatureVocab ;
+					sh:in (
+						"Tasking-Immediate"^^vocabulary:ActionNatureVocab
+						"Tasking-Conditional"^^vocabulary:ActionNatureVocab
+						"Prescriptive"^^vocabulary:ActionNatureVocab
+						"Prescriptive-Conditional"^^vocabulary:ActionNatureVocab
+						"Potential"^^vocabulary:ActionNatureVocab
+						"Potential-Conditional"^^vocabulary:ActionNatureVocab
+						"Observed"^^vocabulary:ActionNatureVocab
+						"Derived"^^vocabulary:ActionNatureVocab
+						"Unknown"^^vocabulary:ActionNatureVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:actionNature ;
+		] ,
+		[
 			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:path action:actionStatus ;
@@ -375,6 +418,13 @@ action:actionCount
 	rdfs:label "actionCount"@en ;
 	rdfs:comment "The number of times that the action was performed."@en ;
 	rdfs:range xsd:nonNegativeInteger ;
+	.
+
+action:actionNature
+  	a owl:DatatypeProperty ;
+  	rdfs:label "Action Nature"@en-US ;
+  	rdfs:comment "Specifies the nature of an action."@en-US ;
+  	rdfs:range vocabulary:ActionNatureVocab ;
 	.
 
 action:actionStatus
