@@ -346,6 +346,44 @@ action:ActionPattern
 	sh:targetClass action:ActionPattern ;
 	.
 
+action:Alert
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf action:Action ;
+	rdfs:label "Alert"@en ;
+	rdfs:comment "An Alert is an action that involves notification to some entity that some condition or event of particular interest has occurred."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:hasValue "Alert" ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:name ;
+		] ,
+		[
+			sh:path action:alertType ;
+			sh:nodekind sh:Literal ;
+			sh:datatype xsd:string ;
+		] ,
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:IRI ;
+			sh:path action:alertContext ;
+		] ,
+		[
+			sh:path action:alertSeverity ;
+			sh:nodekind sh:Literal ;
+			sh:datatype xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:maxInclusive 100 ;
+		]  
+  		;
+	sh:targetClass action:Alert ;
+	.
+
 action:ArrayOfAction
 	a
 		owl:Class ,
@@ -388,6 +426,35 @@ action:actionStatus
 			xsd:string
 		) ;
 	] ;
+	.
+
+action:alertContext
+	a owl:ObjectProperty ;
+	rdfs:label "Alert Context"@en ;
+	rdfs:comment "Specifies contextual details of an alert."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+action:alertSeverity
+	a owl:DatatypeProperty ;
+	rdfs:label "Alert Severity"@en ;
+	rdfs:comment "Specifies the estimated severity for an alert."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:nonNegativeInteger ;
+		owl:withRestrictions (
+			[
+					xsd:maxInclusive "100"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+    ] ;
+	.
+
+action:alertType
+	a owl:DatatypeProperty ;
+	rdfs:label "Alert Type"@en ;
+	rdfs:comment "Specifies an appelation of a specific type of alert."@en ;
+	rdfs:range xsd:string ;
 	.
 
 action:argumentName
