@@ -363,6 +363,70 @@ action:ArrayOfAction
 	sh:targetClass action:ArrayOfAction ;
 	.
 
+action:CourseOfAction
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf action:Action ;
+	rdfs:label "Course of Action"@en ;
+	rdfs:comment ""@en ;
+	sh:property
+		[
+			sh:path action:coaType ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodekind sh:Literal ;
+			sh:datatype xsd:string ;
+		] ,
+		[
+			sh:path action:coaEstimatedCost ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodekind sh:Literal ;
+			sh:datatype xsd:string ;
+		] ,
+		[
+			sh:class action:GenericStructuredAction ;
+			sh:nodeKind sh:IRI ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path action:coaStructuredSpecification ;
+		]  
+		;
+	sh:targetClass action:CourseOfAction ;
+	.
+
+action:GenericStructuredAction
+	a 
+		owl:Class,
+		sh:NodeShape
+		;
+	rdfs:comment "Characterizes information for an actionable structured representation of an action."@en-US ;
+	rdfs:label "Generic Structured Action"@en-US ;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	sh:property
+		[
+			sh:nodekind sh:Literal ;
+				sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path action:structuredActionSpecificationType ;
+		] ,
+		[
+			sh:nodekind sh:Literal ;
+				sh:datatype xsd:boolean ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path action:isActionSpecificationEncoded ;
+		] ,
+		[
+			sh:nodekind sh:Literal ;
+				sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path action:actionStructuredSpecification ;
+		] ;
+	sh:targetClass action:GenericStructuredAction ;
+	.
+
 action:action
 	a owl:ObjectProperty ;
 	rdfs:label "action"@en ;
@@ -390,12 +454,40 @@ action:actionStatus
 	] ;
 	.
 
+action:actionStructuredSpecification
+	a owl:DatatypeProperty ;
+	rdfs:label "Action Structured Specification"@en ;
+	rdfs:comment "Specifies an action mechanism specification in its native format as a string."@en ;
+	rdfs:range xsd:string ;
+.
+
 action:argumentName
 	a owl:DatatypeProperty ;
 	rdfs:label "argumentName"@en ;
 	rdfs:comment "The identifying label of an argument."@en ;
 	rdfs:range xsd:string ;
 	.
+
+action:coaEstimatedCost
+	a owl:DatatypeProperty ;
+	rdfs:label "COA Estimated Cost"@en ;
+	rdfs:comment "Specifies a reference to the estimated cost for applying this Course of Action to achieve its targeted objectives."@en ;
+	rdfs:range xsd:string ;
+.
+
+action:coaStructuredSpecification
+	a owl:ObjectProperty ;
+	rdfs:label "COA Structured Speification"@en ;
+	rdfs:comment "Specifies a structured (actionable) representation of a Course of Action."@en ;
+	rdfs:range action:GenericStructuredAction ;
+.
+
+action:coaType
+	a owl:DatatypeProperty ;
+	rdfs:label "COA Type"@en ;
+	rdfs:comment "Specifies an appelation of a specific type of Course of Action."@en ;
+	rdfs:range xsd:string ;
+.
 
 action:endTime
 	a owl:DatatypeProperty ;
@@ -445,6 +537,13 @@ action:instrument
 	rdfs:comment "The things used to perform an action."@en ;
 	rdfs:range core:UcoObject ;
 	.
+
+action:isActionSpecificationEncoded
+	a owl:DatatypeProperty ;
+	rdfs:label "Is Action Specification Encoded"@en ;
+	rdfs:comment "Specifies whether the content encoded in the specification is encoded using Base64 per RFC4648. If true, the data is encoded, else the data is not encoded."@en ;
+	rdfs:range xsd:boolean ;
+.
 
 action:location
 	a owl:ObjectProperty ;
@@ -516,6 +615,13 @@ action:startTime
 	rdfs:comment "The time at which performance of the action began."@en ;
 	rdfs:range xsd:dateTime ;
 	.
+
+action:structuredActionSpecificationType
+	a owl:DatatypeProperty ;
+	rdfs:label "Structured Action Specification Type"@en ;
+	rdfs:comment "Specifies an appelation of a specific type of structured action specification."@en ;
+	rdfs:range xsd:string ;
+.
 
 action:subaction
 	a owl:ObjectProperty ;
