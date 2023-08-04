@@ -659,6 +659,20 @@ vocabulary:MemoryBlockTypeVocab
 	] ;
 	.
 
+vocabulary:ObjectStatusVocab
+	a rdfs:Datatype ;
+	rdfs:label "Object Status Vocabulary"@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"Draft"^^vocabulary:ObjectStatusVocab
+			"Final"^^vocabulary:ObjectStatusVocab
+			"Deprecated"^^vocabulary:ObjectStatusVocab
+		) ;
+	] ;
+	.
+
 vocabulary:ObservableObjectRelationshipVocab
 	a rdfs:Datatype ;
 	rdfs:label "Cyber Item Relationship Vocabulary"@en-US ;

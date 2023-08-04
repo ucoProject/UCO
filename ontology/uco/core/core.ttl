@@ -396,7 +396,44 @@ core:UcoObject
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:tag ;
-		]
+		] ,
+		[
+			sh:datatype vocabulary:ObjectStatusVocab ;
+			sh:message "Value is outside the default vocabulary ObjectStatusVocab." ;
+			sh:path core:objectStatus ;
+			sh:severity sh:Info ;
+  		] ,
+  		[
+			sh:minCount "1"^^xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ObjectStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:objectStatus ;
+  		] ,
+  		[
+			sh:message "Value is not member of the vocabulary ObjectStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ObjectStatusVocab ;
+					sh:in (
+						"Draft"^^vocabulary:ObjectStatusVocab
+						"Final"^^vocabulary:ObjectStatusVocab
+						"Deprecated"^^vocabulary:ObjectStatusVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:objectStatus ;
+  		]
 		;
 	sh:targetClass core:UcoObject ;
 	.
@@ -619,6 +656,19 @@ core:objectMarking
 	rdfs:label "objectMarking"@en ;
 	rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
 	rdfs:range core:MarkingDefinitionAbstraction ;
+	.
+
+core:objectStatus
+	a owl:DatatypeProperty ;
+  	rdfs:comment "The current state of formality and acceptance for a UCO object ."@en-US ;
+  	rdfs:label "Object Status"@en-US ;
+  	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:string
+			vocabulary:ObjectStatusVocab
+		) ;
+	] ;
 	.
 
 core:referenceURL
