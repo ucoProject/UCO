@@ -12,6 +12,20 @@
 	owl:versionIRI vocabulary:1.2.0 ;
 	.
 
+vocabulary:AccessMethodVocab
+	a rdfs:Datatype ;
+	rdfs:label "Access Method Vocabulary"@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"Manual"^^vocabulary:AccessMethodVocab
+			"API"^^vocabulary:AccessMethodVocab
+			"Structured-Query"^^vocabulary:AccessMethodVocab
+		) ;
+	] ;
+	.
+
 vocabulary:AccountTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Account Type Vocabulary"@en-US ;
@@ -448,6 +462,20 @@ vocabulary:ActionTypeVocab
 	] ;
 	.
 
+vocabulary:AvailabilityScopeVocab
+	a rdfs:Datatype ;
+	rdfs:label "Availability Scope Vocabulary"@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"Public"^^vocabulary:AvailabilityScopeVocab
+			"Commercial"^^vocabulary:AvailabilityScopeVocab
+			"Proprietary"^^vocabulary:AvailabilityScopeVocab
+		) ;
+	] ;
+	.
+
 vocabulary:BitnessVocab
 	a rdfs:Datatype ;
 	rdfs:label "Bitness Vocabulary"@en-US ;
@@ -565,6 +593,23 @@ vocabulary:ContactURLScopeVocab
 			"work"^^vocabulary:ContactURLScopeVocab
 			"school"^^vocabulary:ContactURLScopeVocab
 			"homepage"^^vocabulary:ContactURLScopeVocab
+		) ;
+	] ;
+	.
+
+vocabulary:DataSourceTypeVocab
+	a rdfs:Datatype ;
+	rdfs:label "Data Source Type Vocabulary"@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"Person"^^vocabulary:DataSourceTypeVocab
+			"Organization"^^vocabulary:DataSourceTypeVocab
+			"Document"^^vocabulary:DataSourceTypeVocab
+			"Website"^^vocabulary:DataSourceTypeVocab
+			"Database"^^vocabulary:DataSourceTypeVocab
+			"Service"^^vocabulary:DataSourceTypeVocab
 		) ;
 	] ;
 	.

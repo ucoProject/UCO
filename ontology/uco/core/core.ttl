@@ -154,6 +154,152 @@ core:ControlledVocabulary
 	sh:targetClass core:ControlledVocabulary ;
 	.
 
+core:DataSource
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Data Source"@en ;
+	rdfs:comment "A datasource is a grouping of characteristics unique to a person, organization, or resource (document, website, etc.) that may be a source for some content."@en ;
+	sh:property
+		[
+			sh:path core:name ;
+			sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+		] ,
+		[
+			sh:datatype vocabulary:DataSourceTypeVocab ;
+			sh:message "Value is outside the default vocabulary DataSourceTypeVocab." ;
+			sh:path core:dataSourceType ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:minCount "1"^^xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:DataSourceTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:dataSourceType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary DataSourceTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:DataSourceTypeVocab ;
+					sh:in (
+						"Person"^^vocabulary:DataSourceTypeVocab
+						"Organization"^^vocabulary:DataSourceTypeVocab
+						"Document"^^vocabulary:DataSourceTypeVocab
+						"Website"^^vocabulary:DataSourceTypeVocab
+						"Database"^^vocabulary:DataSourceTypeVocab
+						"Service"^^vocabulary:DataSourceTypeVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:dataSourceType ;
+		],
+		[
+			sh:path core:dataSourceLocationDescription ;
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+		] ,
+		[
+			sh:datatype vocabulary:AvailabilityScopeVocab ;
+			sh:message "Value is outside the default vocabulary AvailabilityScopeVocab." ;
+			sh:path core:availabilityScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:minCount "1"^^xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:AvailabilityScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:availabilityScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary AvailabilityScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:AvailabilityScopeVocab ;
+					sh:in (
+						"Public"^^vocabulary:AvailabilityScopeVocab
+						"Commercial"^^vocabulary:AvailabilityScopeVocab
+						"Proprietary"^^vocabulary:AvailabilityScopeVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:availabilityScope ;
+		],
+		[
+			sh:datatype vocabulary:AccessMethodVocab ;
+			sh:message "Value is outside the default vocabulary AccessMethodVocab." ;
+			sh:path core:accessMethod ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:minCount "1"^^xsd:integer ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:AccessMethodVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:accessMethod ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary AccessMethodVocab." ;
+			sh:or (
+				[
+				sh:datatype vocabulary:AccessMethodVocab ;
+				sh:in (
+					"Manual"^^vocabulary:AccessMethodVocab
+					"API"^^vocabulary:AccessMethodVocab
+					"Structured-Query"^^vocabulary:AccessMethodVocab
+				) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path core:accessMethod ;
+		],
+		[
+			sh:path core:dataSourceCost ;
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+		]
+		;
+	sh:targetClass core:DataSource ;
+	.
+
 core:EnclosingCompilation
 	a
 		owl:Class ,
@@ -454,6 +600,32 @@ core:UcoThing-identifier-regex-shape
 	sh:targetClass core:UcoThing ;
 	.
 
+core:accessMethod
+	a owl:DatatypeProperty ;
+	rdfs:comment "Available methods for accessing the data source"@en-US ;
+	rdfs:label "Access Method"@en-US ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:string
+			vocabulary:AccessMethodVocab
+		) ;
+	] ;
+	.
+
+core:availabilityScope
+	a owl:DatatypeProperty ;
+	rdfs:comment "The controlling scope to which the data source is available."@en-US ;
+	rdfs:label "Availability Scope"@en-US ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:string
+			vocabulary:AvailabilityScopeVocab
+		) ;
+	] ;
+	.
+
 core:confidence
 	a owl:DatatypeProperty ;
 	rdfs:label "confidence"@en ;
@@ -495,6 +667,33 @@ core:createdBy
 	rdfs:label "createdBy"@en ;
 	rdfs:comment "The identity that created a characterization of a concept."@en ;
 	rdfs:range core:IdentityAbstraction ;
+	.
+
+core:dataSourceCost
+	a owl:DatatypeProperty ;
+	rdfs:label "Data Source Cost"@en ;
+	rdfs:comment "A characterization of the cost for access to the data source."@en ;
+	rdfs:range xsd:string ;
+	.
+
+core:dataSourceType
+  a owl:DatatypeProperty ;
+  rdfs:comment "The informational form of the data source."@en-US ;
+  rdfs:label "Data Source Type"@en-US ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:string
+			vocabulary:DataSourceTypeVocab
+		) ;
+	] ;
+	.
+
+core:dataSourceLocationDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "Data Source Location Description"@en ;
+	rdfs:comment "Where the data source can be found."@en ;
+	rdfs:range xsd:string ;
 	.
 
 core:definingContext
