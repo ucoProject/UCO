@@ -107,6 +107,49 @@ action:Action
 			sh:path action:actionCount ;
 		] ,
 		[
+			sh:datatype vocabulary:ActionNatureVocab ;
+			sh:message "Value is outside the default vocabulary ActionNatureVocab." ;
+			sh:path action:actionNature ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:minCount "1"^^xsd:integer ;
+      		sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ActionNatureVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:actionNature ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ActionNatureVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:ActionNatureVocab ;
+					sh:in (
+						"Tasking-Immediate"^^vocabulary:ActionNatureVocab
+						"Tasking-Conditional"^^vocabulary:ActionNatureVocab
+						"Prescriptive"^^vocabulary:ActionNatureVocab
+						"Prescriptive-Conditional"^^vocabulary:ActionNatureVocab
+						"Potential"^^vocabulary:ActionNatureVocab
+						"Potential-Conditional"^^vocabulary:ActionNatureVocab
+						"Observed"^^vocabulary:ActionNatureVocab
+						"Derived"^^vocabulary:ActionNatureVocab
+						"Unknown"^^vocabulary:ActionNatureVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:actionNature ;
+		] ,
+		[
 			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
 			sh:path action:actionStatus ;
@@ -145,6 +188,11 @@ action:Action
 				]
 			) ;
 			sh:path action:actionStatus ;
+		] ,
+		[
+			sh:class selector:Selector ;
+			sh:nodeKind sh:IRI ;
+			sh:path action:prerequisiteCondition ;
 		]
 		;
 	sh:targetClass action:Action ;
@@ -377,6 +425,13 @@ action:actionCount
 	rdfs:range xsd:nonNegativeInteger ;
 	.
 
+action:actionNature
+  	a owl:DatatypeProperty ;
+  	rdfs:label "Action Nature"@en-US ;
+  	rdfs:comment "Specifies the nature of an action."@en-US ;
+  	rdfs:range vocabulary:ActionNatureVocab ;
+	.
+
 action:actionStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "actionStatus"@en ;
@@ -487,6 +542,13 @@ action:phase
 	rdfs:label "phase"@en ;
 	rdfs:comment "The ordered set of actions or sub action-lifecycles that represent the action lifecycle."@en ;
 	rdfs:range action:ArrayOfAction ;
+	.
+
+action:prerequisiteCondition
+	  a owl:ObjectProperty ;
+	  rdfs:comment "Specifies conditions required for the action to occur. Multiple entries on a single action default to an OR interpretation."@en-US ;
+	  rdfs:label "Prerequisite Condition"@en-US ;
+	  rdfs:range selector:Selector ;
 	.
 
 action:rate
