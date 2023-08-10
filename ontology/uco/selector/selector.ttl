@@ -1,0 +1,266 @@
+
+
+@prefix selector: <https://ontology.unifiedcyberontology.org/uco/selector/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/selector>
+    a owl:Ontology ;
+	rdfs:label "Selector Ontology"@en-US ;
+  rdfs:comment "This ontology provides a vocabulary and representation of a Selector Language."@en-US ;
+	owl:imports
+		core:1.3.0 ,
+		vocabulary:1.3.0
+		;
+	owl:versionIRI selector:1.3.0 ;
+	.
+
+
+selector:Selector
+    a
+        owl:Class,
+        sh:NodeShape
+    ;
+    rdfs:subClassOf core:UcoObject ;
+    rdfs:comment "A selector is a grouping of identifying characteristics unique to an explicit expression of an interrogatory mechanism to reduce a set of factual or analytical data to a particular desired scope (could be anything from a textual question to a formal data query to a pattern expression or any other form for similar purpose)."@en-US ;
+    rdfs:label "Selector"@en-US ;
+    sh:property
+        [
+            sh:datatype vocabulary:SelectorTypeVocab ;
+            sh:message "Value is outside the default vocabulary SelectorTypeVocab." ;
+            sh:path selector:selectorType ;
+            sh:severity sh:Info ;
+        ] ,
+        [
+            sh:minCount "1"^^xsd:integer ;
+            sh:maxCount "1"^^xsd:integer ;
+            sh:nodeKind sh:Literal ;
+            sh:or (
+                [
+                    sh:datatype vocabulary:SelectorTypeVocab ;
+                ]
+                [
+                    sh:datatype xsd:string ;
+                ]
+            ) ;
+            sh:path selector:selectorType ;
+        ] ,
+        [
+            sh:message "Value is not member of the vocabulary SelectorTypeVocab." ;
+            sh:or (
+                [
+                    sh:datatype vocabulary:SelectorTypeVocab ;
+                    sh:in (
+                        "Manual-Pattern"^^vocabulary:SelectorTypeVocab
+                        "SQL-Query"^^vocabulary:SelectorTypeVocab
+                        "SPARQL-Query"^^vocabulary:SelectorTypeVocab
+                        "GraphQL Query"^^vocabulary:SelectorTypeVocab
+                        "URL-Pattern"^^vocabulary:SelectorTypeVocab
+                        "STIX-Pattern"^^vocabulary:SelectorTypeVocab
+                        "API-Query"^^vocabulary:SelectorTypeVocab
+                    ) ;
+                ]
+                [
+                    sh:datatype xsd:string ;
+                ]
+            ) ;
+            sh:path selector:selectorType ;
+        ],
+        [
+            sh:path selector:selectorTarget ;
+            sh:class core:DataSource ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:maxCount "1"^^xsd:integer ;
+        ] ,
+        [
+            sh:path selector:selectorExecutionVector ;
+            sh:datatype xsd:string ;
+            sh:maxCount "1"^^xsd:integer ;
+            sh:nodeKind sh:Literal ;
+        ] 
+    ;
+    sh:targetClass selector:Selector ;
+    .
+
+
+selector:SelectorPatternFacet
+    a
+        owl:Class,
+        sh:NodeShape
+    ;
+    rdfs:subClassOf core:Facet ;
+    rdfs:label "Selector Pattern Facet"@en-US ;
+    rdfs:comment "Characterizes a facet to a Selector that can specify a particular pattern selector."@en-US ;
+    sh:targetClass selector:SelectorPatternFacet ;
+    .
+
+
+selector:GraphQLPatternFacet
+    a
+        owl:Class,
+        sh:NodeShape
+    ;
+    rdfs:subClassOf selector:SelectorPatternFacet ;
+    rdfs:label "GraphQL Pattern Facet"@en-US ;
+    rdfs:comment "Characterizes a facet to a Selector that can specify a particular GraphQL query pattern selector."@en-US ;
+    sh:property
+        [
+            sh:path selector:graphQLPattern ;
+            sh:datatype xsd:string ;
+            sh:minCount "1"^^xsd:integer ;
+            sh:maxCount "1"^^xsd:integer ;
+            sh:nodeKind sh:Literal ;
+        ] ;
+    sh:targetClass selector:GraphQLPatternFacet ;
+    .
+
+selector:ManualPatternFacet
+    a
+        owl:Class,
+        sh:NodeShape
+    ;
+    rdfs:subClassOf selector:SelectorPatternFacet ;
+    rdfs:label "Manual Pattern Facet"@en-US ;
+    rdfs:comment "Characterizes a facet to a Selector that can specify a particular human readable/interpretable manual pattern selector."@en-US ;
+    sh:property
+        [
+            sh:path selector:manualPattern ;
+            sh:datatype xsd:string ;
+            sh:minCount "1"^^xsd:integer ;
+            sh:maxCount "1"^^xsd:integer ;
+            sh:nodeKind sh:Literal ;
+        ] ;
+    sh:targetClass selector:ManualPatternFacet ;
+    .
+
+selector:SPARQLPatternFacet
+    a
+        owl:Class,
+        sh:NodeShape
+    ;
+    rdfs:subClassOf selector:SelectorPatternFacet ;
+    rdfs:label "SPARQL Pattern Facet"@en-US ;
+    rdfs:comment "Characterizes a facet to a Selector that can specify a particular SPARQL query pattern selector."@en-US ;
+    sh:property
+        [
+            sh:path selector:sparqlPattern ;
+            sh:datatype xsd:string ;
+            sh:minCount "1"^^xsd:integer ;
+            sh:maxCount "1"^^xsd:integer ;
+            sh:nodeKind sh:Literal ;
+        ] ;
+    sh:targetClass selector:SPARQLPatternFacet ;
+    .
+
+selector:STIXPatternFacet
+    a
+        owl:Class,
+        sh:NodeShape
+    ;
+    rdfs:subClassOf selector:SelectorPatternFacet ;
+    rdfs:label "STIX Pattern Facet"@en-US ;
+    rdfs:comment "Characterizes a facet to a Selector that can specify a particular STIX pattern selector."@en-US ;
+    sh:property
+        [
+            sh:path selector:stixPattern ;
+            sh:datatype xsd:string ;
+            sh:minCount "1"^^xsd:integer ;
+            sh:maxCount "1"^^xsd:integer ;
+            sh:nodeKind sh:Literal ;
+        ] ;
+    sh:targetClass selector:StixPatternFacet ;
+    .
+
+selector:URLPatternFacet
+    a
+        owl:Class,
+        sh:NodeShape
+    ;
+    rdfs:subClassOf selector:SelectorPatternFacet ;
+    rdfs:label "URL Pattern Facet"@en-US ;
+    rdfs:comment "Characterizes a facet to a Selector that can specify a particular URL pattern selector."@en-US ;
+    sh:property
+        [
+            sh:path selector:urlPattern ;
+            sh:datatype xsd:string ;
+            sh:minCount "1"^^xsd:integer ;
+            sh:maxCount "1"^^xsd:integer ;
+            sh:nodeKind sh:Literal ;
+        ] ;
+    sh:targetClass selector:URLPatternFacet ;
+    .
+
+
+selector:graphQLPattern
+    rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf selector:patternString ;
+    rdfs:comment "Specifies the GraphQL query pattern to select on."@en-US ;
+    rdfs:label "GraphQL Pattern String"@en-US ;
+    rdfs:range xsd:string ;
+    .
+
+selector:manualPattern
+    rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf selector:patternString ;
+    rdfs:comment "Specifies the human readable and interpretable manual pattern (query/assertion/attestation) to select on."@en-US ;
+    rdfs:label "Manual Pattern String"@en-US ;
+    rdfs:range xsd:string ;
+    .
+
+selector:patternString
+    rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Specifies the string serialized pattern to select on."@en-US ;
+    rdfs:label "Pattern String"@en-US ;
+    rdfs:range xsd:string ;
+    .
+
+selector:selectorExecutionVector
+    rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Specifies the execution vector for the Selector."@en-US ;
+    rdfs:label "Selector Execution Vector"@en-US ;
+    rdfs:range xsd:string ;
+    .
+
+selector:selectorTarget
+    rdf:type owl:ObjectProperty ;
+    rdfs:comment "Specifies the target Datasource for a Selector."@en-US ;
+    rdfs:label "Selector Type"@en-US ;
+    rdfs:range core:DataSource ;
+    .
+
+selector:selectorType
+    rdf:type owl:DatatypeProperty ;
+    rdfs:comment "Specifies the type of the selector."@en-US ;
+    rdfs:label "Selector Type"@en-US ;
+    rdfs:range xsd:string ;
+    .
+
+selector:sparqlPattern
+    rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf selector:patternString ;
+    rdfs:comment "Specifies the "@en-US ;
+    rdfs:label "SPARQL Pattern String"@en-US ;
+    rdfs:range xsd:string ;
+    .
+
+selector:stixPattern
+    rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf selector:patternString ;
+    rdfs:comment "Specifies the STIX pattern to select on."@en-US ;
+    rdfs:label "STIX Pattern String"@en-US ;
+    rdfs:range xsd:string ;
+    .
+
+selector:urlPattern
+    rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf selector:patternString ;
+    rdfs:comment "Specifies the url pattern to select on."@en-US ;
+    rdfs:label "URL Pattern String"@en-US ;
+    rdfs:range xsd:string ;
+    .
+

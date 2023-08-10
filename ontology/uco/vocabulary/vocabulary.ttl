@@ -944,6 +944,24 @@ vocabulary:RegistryDatatypeVocab
 	] ;
 	.
 
+vocabulary:SelectorTypeVocab
+	a rdfs:Datatype ;
+	rdfs:label "Selector Type Vocabulary"@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"Manual-Pattern"^^vocabulary:SelectorTypeVocab
+			"SQL-Query"^^vocabulary:SelectorTypeVocab
+			"SPARQL-Query"^^vocabulary:SelectorTypeVocab
+			"GraphQL Query"^^vocabulary:SelectorTypeVocab
+			"URL-Pattern"^^vocabulary:SelectorTypeVocab
+			"STIX-Pattern"^^vocabulary:SelectorTypeVocab
+			"API-Query"^^vocabulary:SelectorTypeVocab
+		) ;
+	] ;
+	.
+
 vocabulary:SIMFormVocab
 	a rdfs:Datatype ;
 	rdfs:label "SIM Form Vocabulary"@en-US ;
