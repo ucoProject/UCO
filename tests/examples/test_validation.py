@@ -207,6 +207,15 @@ def test_database_records_XFAIL() -> None:
       }
     )
 
+def test_file_url_PASS_validation() -> None:
+    confirm_validation_results(
+      "file_url_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Thing-23a38d67-3432-458b-9651-955b418c2a77", str(NS_SH.Warning)),
+      }
+    )
+
 def test_has_facet_inverse_functional_PASS() -> None:
     confirm_validation_results(
       "has_facet_inverse_functional_PASS_validation.ttl",
