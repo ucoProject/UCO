@@ -8890,12 +8890,6 @@ observable:WindowsThreadFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:creationTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -10237,9 +10231,8 @@ observable:creationTime-deprecation-shape
 	sh:property [
 		a sh:PropertyShape ;
 		sh:maxCount "0"^^xsd:integer ;
-		sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+		sh:message "observable:creationTime is deprecated, and an error to use as of UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
 		sh:path observable:creationTime ;
-		sh:severity sh:Warning ;
 	] ;
 	sh:targetSubjectsOf observable:creationTime ;
 	.

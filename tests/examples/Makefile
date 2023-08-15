@@ -36,7 +36,7 @@ all: \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
   message_thread_XFAIL_validation.ttl \
-  observable_creation_time_PASS_validation.ttl \
+  observable_creation_time_XFAIL_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
   owl_properties_PASS_validation.ttl \
@@ -106,7 +106,7 @@ check: \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
   message_thread_XFAIL_validation.ttl \
-  observable_creation_time_PASS_validation.ttl \
+  observable_creation_time_XFAIL_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
   owl_properties_PASS_validation.ttl \
