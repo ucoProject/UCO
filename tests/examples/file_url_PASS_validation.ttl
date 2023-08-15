@@ -1,0 +1,21 @@
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/Thing-23a38d67-3432-458b-9651-955b418c2a77> ;
+		sh:resultMessage "observable:File and observable:URL are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+		sh:resultSeverity sh:Warning ;
+		sh:sourceConstraintComponent sh:NotConstraintComponent ;
+		sh:sourceShape observable:File-disjointWith-URL-shape ;
+		sh:value <http://example.org/kb/Thing-23a38d67-3432-458b-9651-955b418c2a77> ;
+	] ;
+	.
+
