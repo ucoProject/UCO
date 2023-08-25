@@ -736,6 +736,11 @@ core:value
 	rdfs:range xsd:string ;
 	.
 
+types:Dictionary
+	a owl:Class ;
+	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
+	.
+
 []
 	a owl:AllDisjointClasses ;
 	owl:members (
