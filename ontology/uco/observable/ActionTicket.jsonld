@@ -121,15 +121,6 @@
             }
         },
         {
-            "@id": "observable:priority",
-            "@type": "owl:DatatypeProperty",
-            "rdfs:label": "Priority",
-            "rdfs:comment": "The level of urgency or importance, categorized as low, normal, high, or urgent.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
             "@id": "observable:status",
             "@type": "owl:DatatypeProperty",
             "rdfs:label": "Status",
