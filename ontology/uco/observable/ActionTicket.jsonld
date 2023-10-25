@@ -11,7 +11,7 @@
             "@id": "observable:ActionTicket",
             "@type": "owl:Class",
             "rdfs:subClassOf": {
-                "@id": "observable:Observable"
+                "@id": "observable:ObservableObject"
             },
             "rdfs:label": "Action Ticket",
             "rdfs:comment": "A record in a ticketing system representing a work request or issue.",
