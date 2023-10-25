@@ -4,148 +4,152 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": "observable:ActionTicket",
-    "@type": "rdfs:Class",
-    "rdfs:subClassOf": {
-        "@id": "observable:Observable"
-    },
-    "rdfs:label": "Action Ticket",
-    "rdfs:comment": "A record in a ticketing system representing a work request or issue.",
-    "observable:property": [
+    "@graph": [
         {
-            "@id": "observable:title",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Title",
-            "rdfs:comment": "A brief description of the issue or request.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:description",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Description",
-            "rdfs:comment": "A detailed explanation of the issue or request.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:type",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Type",
-            "rdfs:comment": "The nature of the ticket, e.g., Bug, Feature Request, Task.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:priority",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Priority",
-            "rdfs:comment": "The level of urgency or importance, categorized as low, normal, high, or urgent.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:status",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Status",
-            "rdfs:comment": "The current state of the ticket, e.g., Open, In Progress, Resolved.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:assignee",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Assignee",
-            "rdfs:comment": "A URL to the name record of the assigned person responsible for actioning the ticket.",
-            "rdfs:range": {
-                "@id": "xsd:anyURI"
-            }
-        },
-        {
-            "@id": "observable:reporter",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Reporter",
-            "rdfs:comment": "The individual or entity that reported the issue or made the request.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:requestor",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Requestor",
-            "rdfs:comment": "A URL to the name record of the submitter of the ticket.",
-            "rdfs:range": {
-                "@id": "xsd:anyURI"
-            }
-        },
-        {
-            "@id": "observable:ticketID",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Ticket ID",
-            "rdfs:comment": "A unique identifier for the ticket, represented as an integer.",
-            "rdfs:range": {
-                "@id": "xsd:integer"
-            }
-        },
-        {
-            "@id": "observable:created",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Created",
-            "rdfs:comment": "The date and time when the ticket was created.",
-            "rdfs:range": {
-                "@id": "xsd:dateTime"
-            }
-        },
-        {
-            "@id": "observable:updated",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Updated",
-            "rdfs:comment": "The date and time when the ticket was last updated.",
-            "rdfs:range": {
-                "@id": "xsd:dateTime"
-            }
-        },
-        {
-            "@id": "observable:createdVia",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Created via",
-            "rdfs:comment": "The medium through which the ticket was created, e.g., web, email.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:organization",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Organization",
-            "rdfs:comment": "The name of the organization of the requestor.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:interestedIn",
-            "@type": "rdfs:Property",
-            "rdfs:label": "I am interested in",
-            "rdfs:comment": "Classification assigned by the assignee from a list unique to the organization.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
-        },
-        {
-            "@id": "observable:tags",
-            "@type": "rdfs:Property",
-            "rdfs:label": "Tags",
-            "rdfs:comment": "One or more tags assigned by the assignee to further classify the ticket.",
-            "rdfs:range": {
-                "@id": "xsd:string"
-            }
+            "@id": "observable:ActionTicket",
+            "@type": "rdfs:Class",
+            "rdfs:subClassOf": {
+                "@id": "observable:Observable"
+            },
+            "rdfs:label": "Action Ticket",
+            "rdfs:comment": "A record in a ticketing system representing a work request or issue.",
+            "observable:property": [
+                {
+                    "@id": "observable:title",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Title",
+                    "rdfs:comment": "A brief description of the issue or request.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:description",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Description",
+                    "rdfs:comment": "A detailed explanation of the issue or request.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:type",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Type",
+                    "rdfs:comment": "The nature of the ticket, e.g., Bug, Feature Request, Task.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:priority",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Priority",
+                    "rdfs:comment": "The level of urgency or importance, categorized as low, normal, high, or urgent.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:status",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Status",
+                    "rdfs:comment": "The current state of the ticket, e.g., Open, In Progress, Resolved.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:assignee",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Assignee",
+                    "rdfs:comment": "A URL to the name record of the assigned person responsible for actioning the ticket.",
+                    "rdfs:range": {
+                        "@id": "xsd:anyURI"
+                    }
+                },
+                {
+                    "@id": "observable:reporter",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Reporter",
+                    "rdfs:comment": "The individual or entity that reported the issue or made the request.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:requestor",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Requestor",
+                    "rdfs:comment": "A URL to the name record of the submitter of the ticket.",
+                    "rdfs:range": {
+                        "@id": "xsd:anyURI"
+                    }
+                },
+                {
+                    "@id": "observable:ticketID",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Ticket ID",
+                    "rdfs:comment": "A unique identifier for the ticket, represented as an integer.",
+                    "rdfs:range": {
+                        "@id": "xsd:integer"
+                    }
+                },
+                {
+                    "@id": "observable:created",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Created",
+                    "rdfs:comment": "The date and time when the ticket was created.",
+                    "rdfs:range": {
+                        "@id": "xsd:dateTime"
+                    }
+                },
+                {
+                    "@id": "observable:updated",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Updated",
+                    "rdfs:comment": "The date and time when the ticket was last updated.",
+                    "rdfs:range": {
+                        "@id": "xsd:dateTime"
+                    }
+                },
+                {
+                    "@id": "observable:createdVia",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Created via",
+                    "rdfs:comment": "The medium through which the ticket was created, e.g., web, email.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:organization",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Organization",
+                    "rdfs:comment": "The name of the organization of the requestor.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:interestedIn",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "I am interested in",
+                    "rdfs:comment": "Classification assigned by the assignee from a list unique to the organization.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                },
+                {
+                    "@id": "observable:tags",
+                    "@type": "rdfs:Property",
+                    "rdfs:label": "Tags",
+                    "rdfs:comment": "One or more tags assigned by the assignee to further classify the ticket.",
+                    "rdfs:range": {
+                        "@id": "xsd:string"
+                    }
+                }
+            ]
         }
     ]
 }
