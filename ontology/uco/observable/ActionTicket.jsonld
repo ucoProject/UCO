@@ -11,9 +11,6 @@
     },
     "rdfs:label": "Action Ticket",
     "rdfs:comment": "A record in a ticketing system representing a work request or issue.",
-    "rdfs:isDefinedBy": {
-        "@id": "https://unifiedcyberontology.org/ontology/uco/observable"
-    },
     "observable:property": [
         {
             "@id": "observable:title",
