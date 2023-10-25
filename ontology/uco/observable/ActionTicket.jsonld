@@ -38,7 +38,7 @@
                 },
                 {
                     "sh:path": {
-                        "@id": "observable:status"
+                        "@id": "observable:ticketStatus"
                     }
                 },
                 {
@@ -121,7 +121,7 @@
             }
         },
         {
-            "@id": "observable:status",
+            "@id": "observable:ticketStatus",
             "@type": "owl:DatatypeProperty",
             "rdfs:label": "Status",
             "rdfs:comment": "The current state of the ticket, e.g., Open, In Progress, Resolved.",
