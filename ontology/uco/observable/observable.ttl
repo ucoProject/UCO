@@ -5038,7 +5038,10 @@ observable:ObservablePattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Observable ;
+	rdfs:subClassOf
+		core:Endurant ,
+		observable:Observable
+		;
 	rdfs:label "ObservablePattern"@en ;
 	rdfs:comment "An observable pattern is a grouping of characteristics unique to a logical pattern composed of observable object and observable action properties."@en ;
 	sh:targetClass observable:ObservablePattern ;

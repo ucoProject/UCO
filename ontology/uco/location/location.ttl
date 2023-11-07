@@ -90,7 +90,7 @@ location:Location
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "Location"@en ;
 	rdfs:comment "A location is a geospatial place, site, or position."@en ;
 	sh:targetClass location:Location ;

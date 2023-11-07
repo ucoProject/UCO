@@ -37,7 +37,7 @@ action:Action
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Perdurant ;
 	rdfs:label "Action"@en ;
 	rdfs:comment "An action is something that may be done or performed."@en ;
 	sh:property

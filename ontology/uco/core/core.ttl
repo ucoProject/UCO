@@ -171,6 +171,26 @@ core:EnclosingCompilation
 	sh:targetClass core:EnclosingCompilation ;
 	.
 
+core:Endurant
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Endurant"@en ;
+	owl:disjointWith core:Perdurant ;
+	sh:targetClass core:Endurant ;
+	.
+
+core:Endurant-disjointWith-Perdurant
+	a sh:NodeShape ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:Perdurant ;
+	] ;
+	sh:targetClass core:Endurant ;
+	.
+
 core:ExternalReference
 	a
 		owl:Class ,
@@ -234,7 +254,7 @@ core:IdentityAbstraction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "IdentityAbstraction"@en ;
 	rdfs:comment "An identity abstraction is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
 	sh:targetClass core:IdentityAbstraction ;
@@ -245,7 +265,7 @@ core:Item
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "Item"@en ;
 	rdfs:comment "An item is a distinct article or unit."@en ;
 	sh:targetClass core:Item ;
@@ -271,6 +291,17 @@ core:ModusOperandi
 	rdfs:label "ModusOperandi"@en ;
 	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	sh:targetClass core:ModusOperandi ;
+	.
+
+core:Perdurant
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Perdurant"@en ;
+	owl:disjointWith core:Endurant ;
+	sh:targetClass core:Perdurant ;
 	.
 
 core:Relationship
@@ -565,11 +596,25 @@ core:hasFacet-shape
 	sh:targetObjectsOf core:hasFacet ;
 	.
 
+core:hasParticipant
+	a owl:ObjectProperty ;
+	rdfs:label "hasParticipant"@en ;
+	rdfs:domain core:Perdurant ;
+	rdfs:range core:Endurant ;
+	.
+
 core:isDirectional
 	a owl:DatatypeProperty ;
 	rdfs:label "isDirectional"@en ;
 	rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
 	rdfs:range xsd:boolean ;
+	.
+
+core:isPerdurantProperPartOf
+	a owl:ObjectProperty ;
+	rdfs:label "isPerdurantProperPartOf"@en ;
+	rdfs:domain core:Perdurant ;
+	rdfs:range core:Perdurant ;
 	.
 
 core:kindOfRelationship
