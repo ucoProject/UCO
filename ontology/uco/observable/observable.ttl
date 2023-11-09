@@ -3,6 +3,7 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/core/1.2.0
 # imports: https://ontology.unifiedcyberontology.org/uco/identity/1.2.0
 # imports: https://ontology.unifiedcyberontology.org/uco/location/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.2.0
 # imports: https://ontology.unifiedcyberontology.org/uco/types/1.2.0
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.2.0
 
@@ -14,6 +15,7 @@
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -31,6 +33,7 @@
 		core:1.2.0 ,
 		identity:1.2.0 ,
 		location:1.2.0 ,
+		pattern:1.2.0 ,
 		types:1.2.0 ,
 		vocabulary:1.2.0
 		;
@@ -5038,7 +5041,10 @@ observable:ObservablePattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Observable ;
+	rdfs:subClassOf
+		observable:Observable ,
+		pattern:Pattern
+		;
 	rdfs:label "ObservablePattern"@en ;
 	rdfs:comment "An observable pattern is a grouping of characteristics unique to a logical pattern composed of observable object and observable action properties."@en ;
 	sh:targetClass observable:ObservablePattern ;
