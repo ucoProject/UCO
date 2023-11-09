@@ -3,7 +3,6 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/core/1.2.0
 # imports: https://ontology.unifiedcyberontology.org/uco/identity/1.2.0
 # imports: https://ontology.unifiedcyberontology.org/uco/location/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.2.0
 # imports: https://ontology.unifiedcyberontology.org/uco/types/1.2.0
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.2.0
 
@@ -33,7 +32,6 @@
 		core:1.2.0 ,
 		identity:1.2.0 ,
 		location:1.2.0 ,
-		pattern:1.2.0 ,
 		types:1.2.0 ,
 		vocabulary:1.2.0
 		;
