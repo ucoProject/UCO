@@ -607,6 +607,9 @@ core:hasFacet-shape
 core:hasParticipant
 	a owl:ObjectProperty ;
 	rdfs:label "hasParticipant"@en ;
+	rdfs:comment "Identifies a core:Endurant that participates in the core:Perdurant"@en ;
+	dct:description "Examples include the participation of Freddy Mercury in Queen's Live Aid Concert and the participation of an airplane in a flight."@en ;
+	dct:source <http://purl.org/nemo/gufo#participatedIn> ;
 	rdfs:domain core:Perdurant ;
 	rdfs:range core:Endurant ;
 	.
@@ -621,6 +624,9 @@ core:isDirectional
 core:isPerdurantProperPartOf
 	a owl:ObjectProperty ;
 	rdfs:label "isPerdurantProperPartOf"@en ;
+	rdfs:comment "Identifies a core:Perdurant of which the endurant is part."@en ;
+	dct:description "For example, Cristiano Ronaldo's penalty kick is an event proper part of the 2016 FIFA Club World Cup Final, having ocurred in the 60th minute of that match. That match is itself an event proper part of the 2016 FIFA Club World Cup. The match can be decomposed in different ways. For example, we can identify the participation of each player in the match or decomposed the match using some temporal segmentation (each minute of the match, each of which is a proper part of the match)."@en ;
+	dct:source <http://purl.org/nemo/gufo#isEventProperPartOf> ;
 	rdfs:domain core:Perdurant ;
 	rdfs:range core:Perdurant ;
 	.
