@@ -307,7 +307,7 @@ core:Perdurant
 	rdfs:comment "A UcoObject that 'occurs' or 'happens' in time, or 'unfold' over time. They may be instantaneous or long-running, and represent those 'things that happen to or are performed by' (Casati and Varzi, 2015) endurants or otherwise can count endurants as their participants. Also termed 'happening', 'occurrence', or 'occurrent' in the philosophical literature."@en ;
 	dct:description	"Examples include actions and processes, such as a business meeting, a communicative act, a soccer match, a goal kick, the clicking of a mouse button; as well as natural occurrences such as an earthquake, the fall of the meteor that caused the extinction of the dinosaurs."@en ;
 	dct:source <https://nemo-ufes.github.io/gufo/#Perdurant> ;
-	dct:source "Casati, R. & Varzi, A. (2015). Events. In E.N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Winter 2015 ed.). 19 Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2015/entries/events/"@en
+	dct:source "Casati, R. & Varzi, A. (2015). Events. In E.N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Winter 2015 ed.). 19 Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2015/entries/events/"@en ;
 	owl:disjointWith core:Endurant ;
 	sh:targetClass core:Perdurant ;
 	.
