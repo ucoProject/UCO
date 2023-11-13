@@ -1,11 +1,11 @@
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
 
 <https://ontology.unifiedcyberontology.org/uco/core>
 	a owl:Ontology ;
@@ -180,7 +180,7 @@ core:Endurant
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Endurant"@en ;
 	rdfs:comment "An UcoObject that endures in time and may change qualitatively while keeping its identity. Also termed 'continuant' in the philosophical literature."@en ;
-	dct:description	"Examples include: ordinary objects of everyday experience, such as a person, a house, and a car; reified relationships, such as a marriage, a rental contract, and a person's love for another; and existentially-dependent aspects of objects, such as a car's weight, a person's language skills, and a house's color."@en ;
+	dct:description "Examples include: ordinary objects of everyday experience, such as a person, a house, and a car; reified relationships, such as a marriage, a rental contract, and a person's love for another; and existentially-dependent aspects of objects, such as a car's weight, a person's language skills, and a house's color."@en ;
 	dct:source <https://nemo-ufes.github.io/gufo/#Endurant> ;
 	owl:disjointWith core:Perdurant ;
 	sh:targetClass core:Endurant ;
@@ -305,9 +305,11 @@ core:Perdurant
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Perdurant"@en ;
 	rdfs:comment "A UcoObject that 'occurs' or 'happens' in time, or 'unfold' over time. They may be instantaneous or long-running, and represent those 'things that happen to or are performed by' (Casati and Varzi, 2015) endurants or otherwise can count endurants as their participants. Also termed 'happening', 'occurrence', or 'occurrent' in the philosophical literature."@en ;
-	dct:description	"Examples include actions and processes, such as a business meeting, a communicative act, a soccer match, a goal kick, the clicking of a mouse button; as well as natural occurrences such as an earthquake, the fall of the meteor that caused the extinction of the dinosaurs."@en ;
-	dct:source <https://nemo-ufes.github.io/gufo/#Perdurant> ;
-	dct:source "Casati, R. & Varzi, A. (2015). Events. In E.N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Winter 2015 ed.). 19 Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2015/entries/events/"@en ;
+	dct:description "Examples include actions and processes, such as a business meeting, a communicative act, a soccer match, a goal kick, the clicking of a mouse button; as well as natural occurrences such as an earthquake, the fall of the meteor that caused the extinction of the dinosaurs."@en ;
+	dct:source
+		"Casati, R. & Varzi, A. (2015). Events. In E.N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Winter 2015 ed.). 19 Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2015/entries/events/"@en ,
+		<https://nemo-ufes.github.io/gufo/#Perdurant>
+		;
 	owl:disjointWith core:Endurant ;
 	sh:targetClass core:Perdurant ;
 	.
