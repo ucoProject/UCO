@@ -1,0 +1,80 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/"
+    },
+    "graph": [
+        {
+            "id": "kb:action-1",
+            "type": "Action",
+            "rdfs:comment": "This node is some action that has some ObservableObjects as results.  By the ontology, the results need to be some UcoObject or subclass of UcoObject.  They are serialized here as ObservableObjects, and are redundantly assigned types of some of their superclasses.  For completeness-tracking, let the id slug's number be a binary number tracking which superclasses are present, 2^0=core:UcoObject, 2^1=core:Item, 2^2=observable:Observable.",
+            "result": [
+                "kb:node-0",
+                "kb:node-1",
+                "kb:node-2",
+                "kb:node-3",
+                "kb:node-4",
+                "kb:node-5",
+                "kb:node-6",
+                "kb:node-7"
+            ]
+        },
+        {
+            "id": "kb:node-0",
+            "type": "ObservableObject"
+        },
+        {
+            "id": "kb:node-1",
+            "type": [
+                "UcoObject",
+                "ObservableObject"
+            ]
+        },
+        {
+            "id": "kb:node-2",
+            "type": [
+                "Item",
+                "ObservableObject"
+            ]
+        },
+        {
+            "id": "kb:node-3",
+            "type": [
+                "UcoObject",
+                "Item",
+                "ObservableObject"
+            ]
+        },
+        {
+            "id": "kb:node-4",
+            "type": [
+                "Observable",
+                "ObservableObject"
+            ]
+        },
+        {
+            "id": "kb:node-5",
+            "type": [
+                "UcoObject",
+                "Observable",
+                "ObservableObject"
+            ]
+        },
+        {
+            "id": "kb:node-6",
+            "type": [
+                "Item",
+                "Observable",
+                "ObservableObject"
+            ]
+        },
+        {
+            "id": "kb:node-7",
+            "type": [
+                "UcoObject",
+                "Item",
+                "Observable",
+                "ObservableObject"
+            ]
+        }
+    ]
+}
