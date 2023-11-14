@@ -209,6 +209,60 @@ observable:AccountFacet
 	sh:targetClass observable:AccountFacet ;
 	.
 
+observable:ActionTicket
+	a owl:Class ;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "Action Ticket" ;
+	rdfs:comment "A record in a ticketing system representing a work request or issue." ;
+	sh:property
+		[
+			sh:path observable:assignee ;
+		] ,
+		[
+			sh:path observable:created ;
+		] ,
+		[
+			sh:path observable:createdVia ;
+		] ,
+		[
+			sh:path observable:description ;
+		] ,
+		[
+			sh:path observable:interestedIn ;
+		] ,
+		[
+			sh:path observable:organization ;
+		] ,
+		[
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:path observable:reporter ;
+		] ,
+		[
+			sh:path observable:requestor ;
+		] ,
+		[
+			sh:path observable:tags ;
+		] ,
+		[
+			sh:path observable:ticketID ;
+		] ,
+		[
+			sh:path observable:ticketStatus ;
+		] ,
+		[
+			sh:path observable:title ;
+		] ,
+		[
+			sh:path observable:type ;
+		] ,
+		[
+			sh:path observable:updated ;
+		]
+		;
+	.
+
 observable:Adaptor
 	a
 		owl:Class ,
@@ -9586,6 +9640,13 @@ observable:aslrEnabled
 	rdfs:range xsd:boolean ;
 	.
 
+observable:assignee
+	a owl:DatatypeProperty ;
+	rdfs:label "Assignee" ;
+	rdfs:comment "A URL to the name record of the assigned person responsible for actioning the ticket." ;
+	rdfs:range xsd:anyURI ;
+	.
+
 observable:attendant
 	a owl:ObjectProperty ;
 	rdfs:label "attendant"@en ;
@@ -10211,6 +10272,20 @@ observable:cpuFamily
 	rdfs:range xsd:string ;
 	.
 
+observable:created
+	a owl:DatatypeProperty ;
+	rdfs:label "Created" ;
+	rdfs:comment "The date and time when the ticket was created." ;
+	rdfs:range xsd:dateTime ;
+	.
+
+observable:createdVia
+	a owl:DatatypeProperty ;
+	rdfs:label "Created via" ;
+	rdfs:comment "The medium through which the ticket was created, e.g., web, email." ;
+	rdfs:range xsd:string ;
+	.
+
 observable:creationDate
 	a owl:DatatypeProperty ;
 	rdfs:label "creationDate"@en ;
@@ -10313,6 +10388,13 @@ observable:depEnabled
 	a owl:DatatypeProperty ;
 	rdfs:label "depEnabled"@en ;
 	rdfs:range xsd:boolean ;
+	.
+
+observable:description
+	a owl:DatatypeProperty ;
+	rdfs:label "Description" ;
+	rdfs:comment "A detailed explanation of the issue or request." ;
+	rdfs:range xsd:string ;
 	.
 
 observable:descriptions
@@ -11192,6 +11274,13 @@ observable:interceptedCallState
 	rdfs:range xsd:string ;
 	.
 
+observable:interestedIn
+	a owl:DatatypeProperty ;
+	rdfs:label "I am interested in" ;
+	rdfs:comment "Classification assigned by the assignee from a list unique to the organization." ;
+	rdfs:range xsd:string ;
+	.
+
 observable:ip
 	a owl:ObjectProperty ;
 	rdfs:label "ip"@en ;
@@ -12043,6 +12132,13 @@ observable:options
 	rdfs:range xsd:string ;
 	.
 
+observable:organization
+	a owl:DatatypeProperty ;
+	rdfs:label "Organization" ;
+	rdfs:comment "The name of the organization of the requestor." ;
+	rdfs:range xsd:string ;
+	.
+
 observable:organizationDepartment
 	a owl:DatatypeProperty ;
 	rdfs:label "organizationDepartment"@en ;
@@ -12703,6 +12799,13 @@ observable:remindTime
 	rdfs:range xsd:dateTime ;
 	.
 
+observable:reporter
+	a owl:DatatypeProperty ;
+	rdfs:label "Reporter" ;
+	rdfs:comment "The individual or entity that reported the issue or made the request." ;
+	rdfs:range xsd:string ;
+	.
+
 observable:requestMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "requestMethod"@en ;
@@ -12723,6 +12826,13 @@ observable:requestVersion
 	rdfs:label "requestVersion"@en ;
 	rdfs:comment "Specifies the HTTP version portion of the HTTP request line, as a lowercase string."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:requestor
+	a owl:DatatypeProperty ;
+	rdfs:label "Requestor" ;
+	rdfs:comment "A URL to the name record of the submitter of the ticket." ;
+	rdfs:range xsd:anyURI ;
 	.
 
 observable:rowCondition
@@ -13246,6 +13356,13 @@ observable:tableSchema
 	rdfs:range xsd:string ;
 	.
 
+observable:tags
+	a owl:DatatypeProperty ;
+	rdfs:label "Tags" ;
+	rdfs:comment "One or more tags assigned by the assignee to further classify the ticket." ;
+	rdfs:range xsd:string ;
+	.
+
 observable:targetFile
 	a owl:ObjectProperty ;
 	rdfs:label "targetFile"@en ;
@@ -13286,6 +13403,20 @@ observable:thumbprintHash
 	rdfs:range types:Hash ;
 	.
 
+observable:ticketID
+	a owl:DatatypeProperty ;
+	rdfs:label "Ticket ID" ;
+	rdfs:comment "A unique identifier for the ticket, represented as an integer." ;
+	rdfs:range xsd:integer ;
+	.
+
+observable:ticketStatus
+	a owl:DatatypeProperty ;
+	rdfs:label "Status" ;
+	rdfs:comment "The current state of the ticket, e.g., Open, In Progress, Resolved." ;
+	rdfs:range xsd:string ;
+	.
+
 observable:timeDateStamp
 	a owl:DatatypeProperty ;
 	rdfs:label "timeDateStamp"@en ;
@@ -13311,6 +13442,13 @@ observable:timezoneStandard
 	a owl:DatatypeProperty ;
 	rdfs:label "timezoneStandard"@en ;
 	rdfs:comment "Specifies the time zone used by the system, without taking daylight savings time (DST) into account."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:title
+	a owl:DatatypeProperty ;
+	rdfs:label "Title" ;
+	rdfs:comment "A brief description of the issue or request." ;
 	rdfs:range xsd:string ;
 	.
 
@@ -13430,10 +13568,24 @@ observable:twitterId
 	rdfs:range xsd:string ;
 	.
 
+observable:type
+	a owl:DatatypeProperty ;
+	rdfs:label "Type" ;
+	rdfs:comment "The nature of the ticket, e.g., Bug, Feature Request, Task." ;
+	rdfs:range xsd:string ;
+	.
+
 observable:uninstallDate
 	a owl:DatatypeProperty ;
 	rdfs:label "uninstallDate"@en ;
 	rdfs:comment "Specifies the date the operating system or application was uninstalled."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
+observable:updated
+	a owl:DatatypeProperty ;
+	rdfs:label "Updated" ;
+	rdfs:comment "The date and time when the ticket was last updated." ;
 	rdfs:range xsd:dateTime ;
 	.
 
