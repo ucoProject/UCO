@@ -26,9 +26,9 @@ pattern:LogicalPattern
 	rdfs:label "LogicalPattern"@en ;
 	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
 	sh:property [
-		sh:datatype pattern:PatternExpression ;
+		sh:class pattern:PatternExpression ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
+		sh:nodeKind sh:IRI ;
 		sh:path pattern:patternExpression ;
 	] ;
 	sh:targetClass pattern:LogicalPattern ;
@@ -57,7 +57,7 @@ pattern:PatternExpression
 	.
 
 pattern:patternExpression
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "patternExpression"@en ;
 	rdfs:comment "An explicit logical pattern expression."@en ;
 	rdfs:range pattern:PatternExpression ;
