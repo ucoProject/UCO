@@ -295,12 +295,9 @@ uco-owl:ontologyIRI-versionIRI-prerequisite-shape
 
 uco-owl:sh-datatype-objects-shape
 	a sh:NodeShape ;
-	sh:node [
+	sh:not [
 		a sh:NodeShape ;
-		sh:not [
-			a sh:NodeShape ;
-			sh:class owl:Class ;
-		] ;
+		sh:class owl:Class ;
 	] ;
 	sh:targetObjectsOf sh:datatype ;
 	.
