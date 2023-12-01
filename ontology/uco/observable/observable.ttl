@@ -14,6 +14,7 @@
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -3203,12 +3204,11 @@ observable:File
 
 observable:File-disjointWith-URL-shape
 	a sh:NodeShape ;
-	sh:message "observable:File and observable:URL are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:message "observable:File and observable:URL are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class observable:URL ;
 	] ;
-	sh:severity sh:Warning ;
 	sh:targetClass observable:File ;
 	.
 
@@ -5039,7 +5039,10 @@ observable:ObservablePattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Observable ;
+	rdfs:subClassOf
+		observable:Observable ,
+		pattern:Pattern
+		;
 	rdfs:label "ObservablePattern"@en ;
 	rdfs:comment "An observable pattern is a grouping of characteristics unique to a logical pattern composed of observable object and observable action properties."@en ;
 	sh:targetClass observable:ObservablePattern ;
@@ -8891,12 +8894,6 @@ observable:WindowsThreadFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:creationTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -10238,9 +10235,8 @@ observable:creationTime-deprecation-shape
 	sh:property [
 		a sh:PropertyShape ;
 		sh:maxCount "0"^^xsd:integer ;
-		sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+		sh:message "observable:creationTime is deprecated, and an error to use as of UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
 		sh:path observable:creationTime ;
-		sh:severity sh:Warning ;
 	] ;
 	sh:targetSubjectsOf observable:creationTime ;
 	.
