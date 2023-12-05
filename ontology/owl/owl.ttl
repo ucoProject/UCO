@@ -182,6 +182,7 @@ uco-owl:List-shape
 	a sh:Shape ;
 	rdfs:comment "This shape's functionality has been exported"@en ;
 	rdfs:seeAlso
+		uco-owl:Sequence-shape ,
 		uco-owl:rdf-first-subjects-shape ,
 		uco-owl:rdf-rest-subjects-shape
 		;
