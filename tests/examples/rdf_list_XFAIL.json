@@ -1,5 +1,6 @@
 {
     "@context": {
+        "ex": "http://example.org/ontology/",
         "kb": "http://example.org/kb/",
         "owl": "http://www.w3.org/2002/07/owl#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -64,6 +65,18 @@
                         "@id": "rdf:nil"
                     }
                 }
+            }
+        },
+        {
+            "@id": "ex:someDatatypeProperty",
+            "@type": "owl:DatatypeProperty"
+        },
+        {
+            "@id": "ex:IncorrectlyKeyedThing",
+            "@type": "owl:Class",
+            "rdfs:comment": "This will trigger a violation error.  owl:hasKey has OWL Sequences as its range.",
+            "owl:hasKey": {
+                "@id": "ex:someDatatypeProperty"
             }
         }
     ]

@@ -278,22 +278,34 @@ uco-owl:Sequence-shape
 	) ;
 	.
 
-uco-owl:disjointUnionOf-objects-shape
+uco-owl:disjointUnionOf-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:disjointUnionOf ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:disjointUnionOf ;
+	] ;
+	sh:targetSubjectsOf owl:disjointUnionOf ;
 	.
 
-uco-owl:distinctMembers-objects-shape
+uco-owl:distinctMembers-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:distinctMembers ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:distinctMembers ;
+	] ;
+	sh:targetSubjectsOf owl:distinctMembers ;
 	.
 
-uco-owl:hasKey-objects-shape
+uco-owl:hasKey-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:hasKey ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:hasKey ;
+	] ;
+	sh:targetSubjectsOf owl:hasKey ;
 	.
 
 uco-owl:incompatibleWith-direct-import-shape
@@ -331,28 +343,44 @@ uco-owl:incompatibleWith-imported-version-iri-shape
 	sh:targetObjectsOf owl:incompatibleWith ;
 	.
 
-uco-owl:intersectionOf-objects-shape
+uco-owl:intersectionOf-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:intersectionOf ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:intersectionOf ;
+	] ;
+	sh:targetSubjectsOf owl:intersectionOf ;
 	.
 
-uco-owl:members-objects-shape
+uco-owl:members-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:members ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:members ;
+	] ;
+	sh:targetSubjectsOf owl:members ;
 	.
 
-uco-owl:onProperties-objects-shape
+uco-owl:onProperties-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:onProperties ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:onProperties ;
+	] ;
+	sh:targetSubjectsOf owl:onProperties ;
 	.
 
-uco-owl:oneOf-objects-shape
+uco-owl:oneOf-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:oneOf ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:oneOf ;
+	] ;
+	sh:targetSubjectsOf owl:oneOf ;
 	.
 
 uco-owl:ontologyIRI-versionIRI-prerequisite-shape
@@ -363,10 +391,14 @@ uco-owl:ontologyIRI-versionIRI-prerequisite-shape
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 
-uco-owl:propertyChainAxiom-objects-shape
+uco-owl:propertyChainAxiom-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:propertyChainAxiom ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:propertyChainAxiom ;
+	] ;
+	sh:targetSubjectsOf owl:propertyChainAxiom ;
 	.
 
 uco-owl:rdf-first-subjects-shape
@@ -403,10 +435,14 @@ uco-owl:rdf-rest-subjects-shape
 	sh:targetSubjectsOf rdf:rest ;
 	.
 
-uco-owl:unionOf-objects-shape
+uco-owl:unionOf-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:unionOf ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:unionOf ;
+	] ;
+	sh:targetSubjectsOf owl:unionOf ;
 	.
 
 uco-owl:versionIRI-multiversion-shape
@@ -426,9 +462,13 @@ uco-owl:versionIRI-nodeKind-shape
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 
-uco-owl:withRestrictions-objects-shape
+uco-owl:withRestrictions-subjects-shape
 	a sh:NodeShape ;
-	sh:node uco-owl:Sequence-shape ;
-	sh:targetObjectsOf owl:withRestrictions ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:node uco-owl:Sequence-shape ;
+		sh:path owl:withRestrictions ;
+	] ;
+	sh:targetSubjectsOf owl:withRestrictions ;
 	.
 

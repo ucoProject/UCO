@@ -144,6 +144,30 @@
             "@type": "owl:ObjectProperty"
         },
         {
+            "@id": "ex:Person",
+            "@type": "owl:Class",
+            "rdfs:comment": "NOTE: This example is excerpted from the OWL 2 Primer only for syntactic reference.",
+            "rdfs:isDefinedBy": {
+                "@id": "https://www.w3.org/TR/2012/REC-owl2-primer-20121211/#Keys"
+            },
+            "owl:hasKey": {
+                "rdf:first": {
+                    "@id": "ex:hasSSN"
+                },
+                "rdf:rest": {
+                    "@id": "rdf:nil"
+                }
+            }
+        },
+        {
+            "@id": "ex:hasSSN",
+            "@type": "owl:DatatypeProperty",
+            "rdfs:comment": "NOTE: This example is excerpted from the OWL 2 Primer only for syntactic reference.",
+            "rdfs:isDefinedBy": {
+                "@id": "https://www.w3.org/TR/2012/REC-owl2-primer-20121211/#Keys"
+            }
+        },
+        {
             "@id": "dash:DateOrDateTime",
             "@type": "rdf:List",
             "rdf:first": {
