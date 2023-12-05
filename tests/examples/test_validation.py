@@ -207,6 +207,15 @@ def test_database_records_XFAIL() -> None:
       }
     )
 
+def test_event_XFAIL() -> None:
+    confirm_validation_results(
+        "event_XFAIL_validation.ttl",
+        False,
+        expected_focus_node_severities = {
+          ("http://example.org/kb/Action-0-03ee1fe6-12cf-4a35-b7dd-06d4e69369b5", str(NS_SH.Violation)),
+        }
+    )
+
 def test_file_url_PASS_validation() -> None:
     confirm_validation_results(
       "file_url_PASS_validation.ttl",

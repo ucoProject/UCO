@@ -40,6 +40,7 @@ action:Action
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Action"@en ;
 	rdfs:comment "An action is something that may be done or performed."@en ;
+	owl:disjointWith core:Event ;
 	sh:property
 		[
 			sh:class action:Action ;
@@ -147,6 +148,16 @@ action:Action
 			sh:path action:actionStatus ;
 		]
 		;
+	sh:targetClass action:Action ;
+	.
+
+action:Action-disjointWith-Event-shape
+	a sh:NodeShape ;
+	sh:message "action:Action and core:Event are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:Event ;
+	] ;
 	sh:targetClass action:Action ;
 	.
 
