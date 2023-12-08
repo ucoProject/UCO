@@ -185,7 +185,7 @@ core:Endurant
 		;
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Endurant"@en ;
-	rdfs:comment "An UcoObject that endures in time and may change qualitatively while keeping its identity. Also termed 'continuant' in the philosophical literature."@en ;
+	rdfs:comment "A UcoObject that endures in time and may change qualitatively while keeping its identity. Also termed 'continuant' in the philosophical literature."@en ;
 	dct:description "Examples include: ordinary objects of everyday experience, such as a person, a house, and a car; reified relationships, such as a marriage, a rental contract, and a person's love for another; and existentially-dependent aspects of objects, such as a car's weight, a person's language skills, and a house's color."@en ;
 	dct:source <https://nemo-ufes.github.io/gufo/#Endurant> ;
 	owl:disjointWith core:Perdurant ;
