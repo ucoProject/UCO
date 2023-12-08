@@ -206,7 +206,7 @@ core:Event
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Perdurant ;
 	rdfs:label "Event"@en ;
 	rdfs:comment "An Event is a noteworthy occurrence (something that happens or might happen)."@en ;
 	owl:disjointWith action:Action ;
