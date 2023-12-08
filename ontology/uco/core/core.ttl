@@ -1,3 +1,4 @@
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,6 +15,11 @@
 	owl:backwardCompatibleWith core:1.1.0 ;
 	owl:priorVersion core:1.1.0 ;
 	owl:versionIRI core:1.2.0 ;
+	.
+
+action:Action
+	a owl:Class ;
+	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
 	.
 
 core:Annotation
@@ -193,6 +199,45 @@ core:Endurant-disjointWith-Perdurant
 		sh:class core:Perdurant ;
 	] ;
 	sh:targetClass core:Endurant ;
+	.
+
+core:Event
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Event"@en ;
+	rdfs:comment "An Event is a noteworthy occurrence (something that happens or might happen)."@en ;
+	owl:disjointWith action:Action ;
+	sh:property
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:IRI ;
+			sh:path core:eventContext ;
+		] ,
+		[
+			sh:class types:Dictionary ;
+			sh:nodeKind sh:IRI ;
+			sh:path core:eventAttribute ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:eventType ;
+		]
+		;
+	sh:targetClass core:Event ;
 	.
 
 core:ExternalReference
@@ -559,6 +604,27 @@ core:endTime
 	rdfs:range xsd:dateTime ;
 	.
 
+core:eventAttribute
+	a owl:ObjectProperty ;
+	rdfs:label "Event Attribute"@en ;
+	rdfs:comment "An event attribute specifies an ad-hoc attribute/value for an event."@en ;
+	rdfs:range types:Dictionary ;
+	.
+
+core:eventContext
+	a owl:ObjectProperty ;
+	rdfs:label "Event Context"@en ;
+	rdfs:comment "An event context describes the association of actions and objects relating to an event."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+core:eventType
+	a owl:DatatypeProperty ;
+	rdfs:label "Event Type"@en ;
+	rdfs:comment "An event type specifies a classification type for the event."@en ;
+	rdfs:range xsd:string ;
+	.
+
 core:externalIdentifier
 	a owl:DatatypeProperty ;
 	rdfs:label "externalIdentifier"@en ;
@@ -736,6 +802,11 @@ core:value
 	rdfs:label "value"@en ;
 	rdfs:comment "A string value."@en ;
 	rdfs:range xsd:string ;
+	.
+
+types:Dictionary
+	a owl:Class ;
+	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
 	.
 
 []
