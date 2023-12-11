@@ -293,6 +293,15 @@ uco-owl:ontologyIRI-versionIRI-prerequisite-shape
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 
+uco-owl:sh-datatype-objects-shape
+	a sh:NodeShape ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class owl:Class ;
+	] ;
+	sh:targetObjectsOf sh:datatype ;
+	.
+
 uco-owl:versionIRI-multiversion-shape
 	a sh:PropertyShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
