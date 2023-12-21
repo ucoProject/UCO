@@ -5056,6 +5056,20 @@ observable:ObservableRelationship
 		;
 	rdfs:label "ObservableRelationship"@en ;
 	rdfs:comment "An observable relationship is a grouping of characteristics unique to an assertion of an association between two observable objects."@en ;
+	sh:property
+		[
+			sh:class observable:Observable ;
+			sh:message "The source on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+			sh:path core:source ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:class observable:Observable ;
+			sh:message "The target on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+			sh:path core:target ;
+			sh:severity sh:Warning ;
+		]
+		;
 	sh:targetClass observable:ObservableRelationship ;
 	.
 
