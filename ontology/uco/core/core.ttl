@@ -378,6 +378,17 @@ core:UcoInherentCharacterizationThing
 	sh:targetClass core:UcoInherentCharacterizationThing ;
 	.
 
+core:UcoInherentCharacterizationThing-disjointWith-UcoObject-shape
+	a sh:NodeShape ;
+	sh:message "observable:UcoInherentCharacterizationThing and observable:UcoObject are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:UcoObject ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass core:UcoInherentCharacterizationThing ;
+	.
+
 core:UcoObject
 	a
 		owl:Class ,
