@@ -195,6 +195,16 @@ types:Thread
 	] ;
 	.
 
+types:Thread-disjointWith-co-List-shape
+	a sh:NodeShape ;
+	sh:message "types:Thread and co:List are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:List ;
+	] ;
+	sh:targetClass types:Thread ;
+	.
+
 types:ThreadItem
 	a
 		owl:Class ,
@@ -211,6 +221,16 @@ types:ThreadItem
 		sh:class core:UcoObject ;
 		sh:path co:itemContent ;
 	] ;
+	.
+
+types:ThreadItem-disjointWith-co-ListItem-shape
+	a sh:NodeShape ;
+	sh:message "types:ThreadItem and co:ListItem are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:ListItem ;
+	] ;
+	sh:targetClass types:ThreadItem ;
 	.
 
 types:entry

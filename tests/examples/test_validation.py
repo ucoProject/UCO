@@ -207,6 +207,15 @@ def test_database_records_XFAIL() -> None:
       }
     )
 
+def test_disjointedness_XFAIL() -> None:
+    confirm_validation_results(
+      "disjointedness_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce", str(NS_SH.Violation)),
+      }
+    )
+
 def test_event_XFAIL() -> None:
     confirm_validation_results(
         "event_XFAIL_validation.ttl",
