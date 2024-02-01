@@ -7,12 +7,12 @@
 
 []
 	a sh:ValidationReport ;
-	sh:conforms "true"^^xsd:boolean ;
+	sh:conforms "false"^^xsd:boolean ;
 	sh:result [
 		a sh:ValidationResult ;
 		sh:focusNode <http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce> ;
-		sh:resultMessage "observable:UcoInherentCharacterizationThing and observable:UcoObject are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
-		sh:resultSeverity sh:Warning ;
+		sh:resultMessage "observable:UcoInherentCharacterizationThing and observable:UcoObject are disjoint classes."@en ;
+		sh:resultSeverity sh:Violation ;
 		sh:sourceConstraintComponent sh:NotConstraintComponent ;
 		sh:sourceShape core:UcoInherentCharacterizationThing-disjointWith-UcoObject-shape ;
 		sh:value <http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce> ;
