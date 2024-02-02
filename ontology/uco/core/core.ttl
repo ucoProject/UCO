@@ -183,7 +183,7 @@ core:Endurant
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "Endurant"@en ;
 	rdfs:comment "A UcoObject that endures in time and may change qualitatively while keeping its identity. Also termed 'continuant' in the philosophical literature."@en ;
 	dct:description "Examples include: ordinary objects of everyday experience, such as a person, a house, and a car; reified relationships, such as a marriage, a rental contract, and a person's love for another; and existentially-dependent aspects of objects, such as a car's weight, a person's language skills, and a house's color."@en ;
@@ -303,7 +303,10 @@ core:IdentityAbstraction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Endurant ;
+	rdfs:subClassOf
+		core:Endurant ,
+		core:UcoObject
+		;
 	rdfs:label "IdentityAbstraction"@en ;
 	rdfs:comment "An identity abstraction is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
 	sh:targetClass core:IdentityAbstraction ;
@@ -314,7 +317,10 @@ core:Item
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Endurant ;
+	rdfs:subClassOf
+		core:Endurant ,
+		core:UcoObject
+		;
 	rdfs:label "Item"@en ;
 	rdfs:comment "An item is a distinct article or unit."@en ;
 	sh:targetClass core:Item ;
