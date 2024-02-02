@@ -96,4 +96,6 @@ Some requirements are narrow enough they could be considered "Self-documenting."
 > Requirement 1 also fully describes the solution, implemented in [PR X](https://github.com/ucoProject/UCO/pull/X).
 
 If there is an accompanying pull request, please do link it under the "Development" box on the right of the Issues page.
+
+If example snippets of instance data are provided, please note if you provide permission for the examples to be transcribed to one of the tested example repositories (such as CASE-Examples).  This is a significant aid in confirming examples represent the semantics that the submitter intended.  "I am fine with my examples being transcribed and credited" should be sufficient.
 -->

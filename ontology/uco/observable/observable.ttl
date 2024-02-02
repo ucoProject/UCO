@@ -1,10 +1,10 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/action/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/location/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/types/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.3.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
@@ -25,18 +25,18 @@
 <https://ontology.unifiedcyberontology.org/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
-	owl:backwardCompatibleWith observable:1.1.0 ;
+	owl:backwardCompatibleWith observable:1.2.0 ;
 	owl:imports
-		action:1.2.0 ,
-		configuration:1.2.0 ,
-		core:1.2.0 ,
-		identity:1.2.0 ,
-		location:1.2.0 ,
-		types:1.2.0 ,
-		vocabulary:1.2.0
+		action:1.3.0 ,
+		configuration:1.3.0 ,
+		core:1.3.0 ,
+		identity:1.3.0 ,
+		location:1.3.0 ,
+		types:1.3.0 ,
+		vocabulary:1.3.0
 		;
-	owl:priorVersion observable:1.1.0 ;
-	owl:versionIRI observable:1.2.0 ;
+	owl:priorVersion observable:1.2.0 ;
+	owl:versionIRI observable:1.3.0 ;
 	.
 
 observable:API

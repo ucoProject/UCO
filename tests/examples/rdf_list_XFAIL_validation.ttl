@@ -11,45 +11,90 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/list-1> ;
-			sh:resultMessage "The subject of a triple with rdf:first as predicate must be a blank node." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3 of the OWL 2 mapping to RDF.  Table 5 removes any triple matching the pattern 'x a rdf:List`.  All other references throughout Section 3 to rdf:first are identified as blank nodes.  Therefore, any non-blank node that is an rdf:List will not be mapped and consumed by the mapping process, making the graph non-conformant with OWL 2 DL."@en ;
-				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
-				sh:message "The subject of a triple with rdf:first as predicate must be a blank node."@en ;
-				sh:select """
-			SELECT $this
-			WHERE {
-				FILTER isIRI($this)
-			}
-		""" ;
+			sh:detail [
+				a sh:ValidationResult ;
+				sh:focusNode <http://example.org/kb/list-1> ;
+				sh:resultMessage 'Node kb:list-1 does not conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
+				sh:resultSeverity sh:Violation ;
+				sh:sourceConstraintComponent sh:XoneConstraintComponent ;
+				sh:sourceShape uco-owl:Sequence-shape ;
+				sh:value <http://example.org/kb/list-1> ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape uco-owl:List-shape ;
+			sh:focusNode [
+				a owl:AllDifferent ;
+				owl:distinctMembers <http://example.org/kb/list-1> ;
+			] ;
+			sh:resultMessage "Value does not conform to Shape uco-owl:Sequence-shape. See details for more information." ;
+			sh:resultPath owl:distinctMembers ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeConstraintComponent ;
+			sh:sourceShape [
+				a sh:PropertyShape ;
+				sh:node uco-owl:Sequence-shape ;
+				sh:path owl:distinctMembers ;
+			] ;
 			sh:value <http://example.org/kb/list-1> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/list-2> ;
-			sh:resultMessage "The subject of a triple with rdf:first as predicate must be a blank node." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:comment "This requirement is determined from review of the canonical parsing process in Section 3 of the OWL 2 mapping to RDF.  Table 5 removes any triple matching the pattern 'x a rdf:List`.  All other references throughout Section 3 to rdf:first are identified as blank nodes.  Therefore, any non-blank node that is an rdf:List will not be mapped and consumed by the mapping process, making the graph non-conformant with OWL 2 DL."@en ;
-				rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
-				sh:message "The subject of a triple with rdf:first as predicate must be a blank node."@en ;
-				sh:select """
-			SELECT $this
-			WHERE {
-				FILTER isIRI($this)
-			}
-		""" ;
+			sh:detail [
+				a sh:ValidationResult ;
+				sh:focusNode <http://example.org/ontology/someDatatypeProperty> ;
+				sh:resultMessage 'Node ex:someDatatypeProperty does not conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
+				sh:resultSeverity sh:Violation ;
+				sh:sourceConstraintComponent sh:XoneConstraintComponent ;
+				sh:sourceShape uco-owl:Sequence-shape ;
+				sh:value <http://example.org/ontology/someDatatypeProperty> ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape uco-owl:List-shape ;
-			sh:value <http://example.org/kb/list-2> ;
+			sh:focusNode <http://example.org/ontology/IncorrectlyKeyedThing> ;
+			sh:resultMessage "Value does not conform to Shape uco-owl:Sequence-shape. See details for more information." ;
+			sh:resultPath owl:hasKey ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeConstraintComponent ;
+			sh:sourceShape [
+				a sh:PropertyShape ;
+				sh:node uco-owl:Sequence-shape ;
+				sh:path owl:hasKey ;
+			] ;
+			sh:value <http://example.org/ontology/someDatatypeProperty> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:detail [
+				a sh:ValidationResult ;
+				sh:focusNode (
+					<http://example.org/kb/concept-7>
+					<http://example.org/kb/concept-8>
+				) ;
+				sh:resultMessage 'Node ( kb:concept-7 kb:concept-8 ) does not conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
+				sh:resultSeverity sh:Violation ;
+				sh:sourceConstraintComponent sh:XoneConstraintComponent ;
+				sh:sourceShape uco-owl:Sequence-shape ;
+				sh:value (
+					<http://example.org/kb/concept-7>
+					<http://example.org/kb/concept-8>
+				) ;
+			] ;
+			sh:focusNode [
+				a owl:AllDifferent ;
+				owl:distinctMembers (
+					<http://example.org/kb/concept-7>
+					<http://example.org/kb/concept-8>
+				) ;
+			] ;
+			sh:resultMessage "Value does not conform to Shape uco-owl:Sequence-shape. See details for more information." ;
+			sh:resultPath owl:distinctMembers ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeConstraintComponent ;
+			sh:sourceShape [
+				a sh:PropertyShape ;
+				sh:node uco-owl:Sequence-shape ;
+				sh:path owl:distinctMembers ;
+			] ;
+			sh:value (
+				<http://example.org/kb/concept-7>
+				<http://example.org/kb/concept-8>
+			) ;
 		]
 		;
 	.
