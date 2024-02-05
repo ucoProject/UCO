@@ -206,10 +206,31 @@ tool:Tool
 	.
 
 tool:buildConfiguration
-	a owl:ObjectProperty ;
+	a
+		owl:ObjectProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "buildConfiguration"@en ;
 	rdfs:comment "How the build utility was configured for a particular build of a particular software."@en ;
 	rdfs:range configuration:Configuration ;
+	rdfs:seeAlso
+		configuration:usesConfiguration ,
+		observable:BuildUtility
+		;
+	.
+
+tool:buildConfiguration-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		configuration:usesConfiguration ,
+		observable:BuildUtility
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:buildConfiguration is deprecated.  Please instead use the property (starting from uco-observable:BuildUtility) / configuration:usesConfiguration."@en ;
+		sh:path tool:buildConfiguration ;
+	] ;
+	sh:targetSubjectsOf tool:buildConfiguration ;
 	.
 
 tool:buildID
