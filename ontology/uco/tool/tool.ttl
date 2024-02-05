@@ -66,6 +66,12 @@ tool:BuildInformationType
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildInformationType"@en ;
 	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
+	rdfs:seeAlso observable:SoftwareBuildFacet ;
+	sh:message "uco-tool:BuildInformationType is deprecated.  Please migrate usage of this class to uco-observable:SoftwareBuildFacet."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class tool:BuildInformationType ;
+	] ;
 	sh:targetClass tool:BuildInformationType ;
 	.
 
@@ -78,6 +84,12 @@ tool:BuildUtilityType
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildUtilityType"@en ;
 	rdfs:comment "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."@en ;
+	rdfs:seeAlso observable:BuildUtilityFacet ;
+	sh:message "uco-tool:BuildUtilityType is deprecated.  Please migrate usage of this class to uco-observable:BuildUtilityFacet."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class tool:BuildUtilityType ;
+	] ;
 	sh:targetClass tool:BuildUtilityType ;
 	.
 
@@ -90,6 +102,12 @@ tool:CompilerType
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "CompilerType"@en ;
 	rdfs:comment "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"@en ;
+	rdfs:seeAlso observable:CompilerFacet ;
+	sh:message "uco-tool:CompilerType is deprecated.  Please migrate usage of this class to uco-observable:CompilerFacet."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class tool:CompilerType ;
+	] ;
 	sh:targetClass tool:CompilerType ;
 	.
 
@@ -138,6 +156,12 @@ tool:LibraryType
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "LibraryType"@en ;
 	rdfs:comment "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."@en ;
+	rdfs:seeAlso observable:LibraryFacet ;
+	sh:message "uco-tool:LibraryType is deprecated.  Please migrate usage of this class to uco-observable:LibraryFacet."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class tool:LibraryType ;
+	] ;
 	sh:targetClass tool:LibraryType ;
 	.
 
@@ -196,6 +220,26 @@ tool:buildID
 	rdfs:label "buildID"@en ;
 	rdfs:comment "An externally defined unique identifier for a particular build of a software."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		core:ExternalReference ,
+		core:externalIdentifier ,
+		core:externalReference
+		;
+	.
+
+tool:buildID-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		core:ExternalReference ,
+		core:externalIdentifier ,
+		core:externalReference
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:buildID is deprecated.  Please instead use the path uco-core:externalReference (linking a uco-core:ExternalReference) / uco-core:externalIdentifier."@en ;
+		sh:path tool:buildID ;
+	] ;
+	sh:targetSubjectsOf tool:buildID ;
 	.
 
 tool:buildInformation
@@ -213,6 +257,24 @@ tool:buildLabel
 	rdfs:label "buildLabel"@en ;
 	rdfs:comment "Relevant label for a particular build of a particular software."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		core:tag ,
+		observable:SoftwareBuildFacet
+		;
+	.
+
+tool:buildLabel-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		core:tag ,
+		observable:SoftwareBuildFacet
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:buildLabel is depreacted.  Please instead use the path uco-core:hasFacet (linking a uco-observable:SoftwareBuildFacet) / uco-core:tag."@en ;
+		sh:path tool:buildLabel ;
+	] ;
+	sh:targetSubjectsOf tool:buildLabel ;
 	.
 
 tool:buildOutputLog
@@ -223,6 +285,24 @@ tool:buildOutputLog
 	rdfs:label "buildOutputLog"@en ;
 	rdfs:comment "The output log of the build process for a software."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		observable:SoftwareBuildFacet ,
+		observable:buildOutputLog
+		;
+	.
+
+tool:buildOutputLog-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		observable:SoftwareBuildFacet ,
+		observable:buildOutputLog
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:buildOutputLog is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:SoftwareBuildFacet ) / uco-observable:buildOutputLog."@en ;
+		sh:path tool:buildOutputLog ;
+	] ;
+	sh:targetSubjectsOf tool:buildOutputLog ;
 	.
 
 tool:buildProject
@@ -254,6 +334,24 @@ tool:buildUtilityName
 	rdfs:label "buildUtilityName"@en ;
 	rdfs:comment "The informally defined name of the utility used to build a particular software."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		core:name ,
+		observable:BuildUtilityFacet
+		;
+	.
+
+tool:buildUtilityName-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		core:name ,
+		observable:BuildUtilityFacet
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:buildUtilityName is deprecated.  Please instead Use the path uco-core:hasFacet (linking a uco-observable:BuildUtilityFacet) / uco-core:name."@en ;
+		sh:path tool:buildUtilityName ;
+	] ;
+	sh:targetSubjectsOf tool:buildUtilityName ;
 	.
 
 tool:buildVersion
@@ -278,6 +376,24 @@ tool:compilerInformalDescription
 	rdfs:label "compilerInformalDescription"@en ;
 	rdfs:comment "An informal description of a compiler."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		core:description ,
+		observable:CompilerFacet
+		;
+	.
+
+tool:compilerInformalDescription-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		core:description ,
+		observable:CompilerFacet
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:compilerInformalDescription is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:CompilerFacet) / uco-core:description."@en ;
+		sh:path tool:compilerInformalDescription ;
+	] ;
+	sh:targetSubjectsOf tool:compilerInformalDescription ;
 	.
 
 tool:compilers
@@ -295,6 +411,26 @@ tool:cpeid
 	rdfs:label "cpeid"@en ;
 	rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		observable:DeviceFacet ,
+		observable:SoftwareFacet ,
+		observable:cpeid
+		;
+	.
+
+tool:cpeid-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		observable:DeviceFacet ,
+		observable:SoftwareFacet ,
+		observable:cpeid
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:cpeid is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:DeviceFacet or uco-observable:SoftwareFacet) / uco-observable:cpeid."@en ;
+		sh:path tool:cpeid ;
+	] ;
+	sh:targetSubjectsOf tool:cpeid ;
 	.
 
 tool:creator
@@ -305,6 +441,26 @@ tool:creator
 	rdfs:label "creator"@en ;
 	rdfs:comment "The creator organization for a particular tool."@en ;
 	rdfs:range identity:Identity ;
+	rdfs:seeAlso
+		observable:DeviceFacet ,
+		observable:SoftwareFacet ,
+		observable:manufacturer
+		;
+	.
+
+tool:creator-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		observable:DeviceFacet ,
+		observable:SoftwareFacet ,
+		observable:manufacturer
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:creator is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:DeviceFacet or uco-observable:SoftwareFacet) / uco-observable:manufacturer."@en ;
+		sh:path tool:creator ;
+	] ;
+	sh:targetSubjectsOf tool:creator ;
 	.
 
 tool:libraries
@@ -315,6 +471,24 @@ tool:libraries
 	rdfs:label "libraries"@en ;
 	rdfs:comment "The libraries incorporated into a particular build of a software."@en ;
 	rdfs:range tool:LibraryType ;
+	rdfs:seeAlso
+		observable:SoftwareBuildFacet ,
+		observable:library
+		;
+	.
+
+tool:libraries-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		observable:SoftwareBuildFacet ,
+		observable:library
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:libraries is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:SoftwareBuildFacet) / uco-observable:library."@en ;
+		sh:path tool:libraries ;
+	] ;
+	sh:targetSubjectsOf tool:libraries ;
 	.
 
 tool:libraryName
@@ -325,6 +499,24 @@ tool:libraryName
 	rdfs:label "libraryName"@en ;
 	rdfs:comment "The name of the library."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		core:name ,
+		observable:LibraryFacet
+		;
+	.
+
+tool:libraryName-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		core:name ,
+		observable:LibraryFacet
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:libraryName is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:LibraryFacet) / uco-core:name."@en ;
+		sh:path tool:libraryName ;
+	] ;
+	sh:targetSubjectsOf tool:libraryName ;
 	.
 
 tool:libraryVersion
@@ -335,6 +527,24 @@ tool:libraryVersion
 	rdfs:label "libraryVersion"@en ;
 	rdfs:comment "The version of the library."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		observable:LibraryFacet ,
+		observable:version
+		;
+	.
+
+tool:libraryVersion-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		observable:LibraryFacet ,
+		observable:version
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:libraryVersion is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:LibraryFacet) / uco-observable:version."@en ;
+		sh:path tool:libraryVersion ;
+	] ;
+	sh:targetSubjectsOf tool:libraryVersion ;
 	.
 
 tool:references
@@ -345,6 +555,18 @@ tool:references
 	rdfs:label "references"@en ;
 	rdfs:comment "References to information describing a particular tool."@en ;
 	rdfs:range xsd:anyURI ;
+	rdfs:seeAlso core:externalReference ;
+	.
+
+tool:references-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso core:externalReference ;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:references is deprecated.  Please instead use the path uco-core:externalReference."@en ;
+		sh:path tool:creator ;
+	] ;
+	sh:targetSubjectsOf tool:references ;
 	.
 
 tool:servicePack
@@ -355,6 +577,26 @@ tool:servicePack
 	rdfs:label "servicePack"@en ;
 	rdfs:comment "An appropriate service pack descriptor for a particular tool."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		observable:ServicePack ,
+		observable:SoftwareFacet ,
+		observable:Version
+		;
+	.
+
+tool:servicePack-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		observable:ServicePack ,
+		observable:SoftwareFacet ,
+		observable:Version
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:servicePack is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:SoftwareFacet) / uco-observable:version."@en ;
+		sh:path tool:servicePack ;
+	] ;
+	sh:targetSubjectsOf tool:servicePack ;
 	.
 
 tool:swid
@@ -365,6 +607,26 @@ tool:swid
 	rdfs:label "swid"@en ;
 	rdfs:comment "Specifies the SWID tag for the software."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		observable:DeviceFacet ,
+		observable:SoftwareFacet ,
+		observable:swid
+		;
+	.
+
+tool:swid-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		observable:DeviceFacet ,
+		observable:SoftwareFacet ,
+		observable:swid
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:swid is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:DeviceFacet or uco-observable:SoftwareFacet) / uco-observable:swid."@en ;
+		sh:path tool:swid ;
+	] ;
+	sh:targetSubjectsOf tool:swid ;
 	.
 
 tool:toolType
@@ -382,5 +644,25 @@ tool:version
 	rdfs:label "version"@en ;
 	rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
 	rdfs:range xsd:string ;
+	rdfs:seeAlso
+		observable:DeviceFacet ,
+		observable:SoftwareFacet ,
+		observable:swid
+		;
+	.
+
+tool:version-subjects-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		observable:DeviceFacet ,
+		observable:SoftwareFacet ,
+		observable:swid
+		;
+	sh:property [
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "uco-tool:version is deprecated.  Please instead use the path uco-core:hasFacet (linking a uco-observable:DeviceFacet or uco-observable:SoftwareFacet) / uco-observable:version."@en ;
+		sh:path tool:version ;
+	] ;
+	sh:targetSubjectsOf tool:version ;
 	.
 
