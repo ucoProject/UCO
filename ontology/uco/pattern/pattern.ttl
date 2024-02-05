@@ -22,7 +22,10 @@ pattern:LogicalPattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf pattern:Pattern ;
+	rdfs:subClassOf
+		core:Endurant ,
+		pattern:Pattern
+		;
 	rdfs:label "LogicalPattern"@en ;
 	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
 	sh:property [
