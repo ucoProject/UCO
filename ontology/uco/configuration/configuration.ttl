@@ -115,6 +115,14 @@ configuration:ConfigurationEntry
 	) ;
 	.
 
+configuration:CyberInfrastructureConfiguration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf configuration:InfrastructureConfiguration ;
+	.
+
 configuration:Dependency
 	a
 		owl:Class ,
@@ -138,6 +146,62 @@ configuration:Dependency
 		]
 		;
 	sh:targetClass configuration:Dependency ;
+	.
+
+configuration:DeploymentConfiguration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf configuration:Configuration ;
+	.
+
+configuration:EnvironmentConfiguration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf configuration:Configuration ;
+	.
+
+configuration:InfrastructureConfiguration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf configuration:Configuration ;
+	.
+
+configuration:ObservableObjectConfiguration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf configuration:Configuration ;
+	.
+
+configuration:ServiceConfiguration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf configuration:ObservableObjectConfiguration ;
+	.
+
+configuration:SoftwareConfiguration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf configuration:ObservableObjectConfiguration ;
+	.
+
+configuration:SoftwareEnvironmentConfiguration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf configuration:EnvironmentConfiguration ;
 	.
 
 configuration:configurationEntry
