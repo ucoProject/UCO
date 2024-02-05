@@ -4,6 +4,7 @@
 @prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -21,6 +22,11 @@
 		;
 	owl:priorVersion tool:1.2.0 ;
 	owl:versionIRI tool:1.3.0 ;
+	.
+
+observable:ObservableObject
+	a owl:Class ;
+	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/observable> ;
 	.
 
 tool:AnalyticTool
@@ -54,139 +60,36 @@ tool:BuildFacet
 tool:BuildInformationType
 	a
 		owl:Class ,
+		owl:DeprecatedClass ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildInformationType"@en ;
 	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
-	sh:property
-		[
-			sh:class configuration:Configuration ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:IRI ;
-			sh:path tool:buildConfiguration ;
-		] ,
-		[
-			sh:class tool:BuildUtilityType ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:IRI ;
-			sh:path tool:buildUtility ;
-		] ,
-		[
-			sh:class tool:CompilerType ;
-			sh:nodeKind sh:IRI ;
-			sh:path tool:compilers ;
-		] ,
-		[
-			sh:class tool:LibraryType ;
-			sh:nodeKind sh:IRI ;
-			sh:path tool:libraries ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:compilationDate ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:buildID ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:buildLabel ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:buildOutputLog ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:buildProject ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:buildScript ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:buildVersion ;
-		]
-		;
 	sh:targetClass tool:BuildInformationType ;
 	.
 
 tool:BuildUtilityType
 	a
 		owl:Class ,
+		owl:DeprecatedClass ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildUtilityType"@en ;
 	rdfs:comment "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:buildUtilityName ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:cpeid ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:swid ;
-		]
-		;
 	sh:targetClass tool:BuildUtilityType ;
 	.
 
 tool:CompilerType
 	a
 		owl:Class ,
+		owl:DeprecatedClass ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "CompilerType"@en ;
 	rdfs:comment "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:compilerInformalDescription ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:cpeid ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:swid ;
-		]
-		;
 	sh:targetClass tool:CompilerType ;
 	.
 
@@ -229,25 +132,12 @@ tool:DefensiveTool
 tool:LibraryType
 	a
 		owl:Class ,
+		owl:DeprecatedClass ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "LibraryType"@en ;
 	rdfs:comment "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:libraryName ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:libraryVersion ;
-		]
-		;
 	sh:targetClass tool:LibraryType ;
 	.
 
@@ -272,10 +162,9 @@ tool:Tool
 	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
 	sh:property
 		[
-			sh:class identity:Identity ;
-			sh:maxCount "1"^^xsd:integer ;
+			sh:class observable:ObservableObject ;
 			sh:nodeKind sh:IRI ;
-			sh:path tool:creator ;
+			sh:path core:hasCharacterization ;
 		] ,
 		[
 			sh:datatype xsd:anyURI ;
@@ -286,19 +175,7 @@ tool:Tool
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:servicePack ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path tool:toolType ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:version ;
 		]
 		;
 	sh:targetClass tool:Tool ;
@@ -312,7 +189,10 @@ tool:buildConfiguration
 	.
 
 tool:buildID
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "buildID"@en ;
 	rdfs:comment "An externally defined unique identifier for a particular build of a software."@en ;
 	rdfs:range xsd:string ;
@@ -326,14 +206,20 @@ tool:buildInformation
 	.
 
 tool:buildLabel
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "buildLabel"@en ;
 	rdfs:comment "Relevant label for a particular build of a particular software."@en ;
 	rdfs:range xsd:string ;
 	.
 
 tool:buildOutputLog
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "buildOutputLog"@en ;
 	rdfs:comment "The output log of the build process for a software."@en ;
 	rdfs:range xsd:string ;
@@ -361,7 +247,10 @@ tool:buildUtility
 	.
 
 tool:buildUtilityName
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "buildUtilityName"@en ;
 	rdfs:comment "The informally defined name of the utility used to build a particular software."@en ;
 	rdfs:range xsd:string ;
@@ -382,7 +271,10 @@ tool:compilationDate
 	.
 
 tool:compilerInformalDescription
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "compilerInformalDescription"@en ;
 	rdfs:comment "An informal description of a compiler."@en ;
 	rdfs:range xsd:string ;
@@ -396,56 +288,80 @@ tool:compilers
 	.
 
 tool:cpeid
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "cpeid"@en ;
 	rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
 	rdfs:range xsd:string ;
 	.
 
 tool:creator
-	a owl:ObjectProperty ;
+	a
+		owl:ObjectProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "creator"@en ;
 	rdfs:comment "The creator organization for a particular tool."@en ;
 	rdfs:range identity:Identity ;
 	.
 
 tool:libraries
-	a owl:ObjectProperty ;
+	a
+		owl:ObjectProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "libraries"@en ;
 	rdfs:comment "The libraries incorporated into a particular build of a software."@en ;
 	rdfs:range tool:LibraryType ;
 	.
 
 tool:libraryName
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "libraryName"@en ;
 	rdfs:comment "The name of the library."@en ;
 	rdfs:range xsd:string ;
 	.
 
 tool:libraryVersion
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "libraryVersion"@en ;
 	rdfs:comment "The version of the library."@en ;
 	rdfs:range xsd:string ;
 	.
 
 tool:references
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "references"@en ;
 	rdfs:comment "References to information describing a particular tool."@en ;
 	rdfs:range xsd:anyURI ;
 	.
 
 tool:servicePack
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "servicePack"@en ;
 	rdfs:comment "An appropriate service pack descriptor for a particular tool."@en ;
 	rdfs:range xsd:string ;
 	.
 
 tool:swid
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "swid"@en ;
 	rdfs:comment "Specifies the SWID tag for the software."@en ;
 	rdfs:range xsd:string ;
@@ -459,7 +375,10 @@ tool:toolType
 	.
 
 tool:version
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "version"@en ;
 	rdfs:comment "An appropriate version descriptor of a particular tool."@en ;
 	rdfs:range xsd:string ;
