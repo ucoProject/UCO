@@ -1,0 +1,209 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:datatype-property-1",
+            "@type": "owl:DatatypeProperty"
+        },
+        {
+            "@id": "kb:object-property-1",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "kb:Other-Thing",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "kb:Thing-exact-dp",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:cardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:datatype-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-max-dp",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:maxCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:datatype-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-min-dp",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:minCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:datatype-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-qexact-dp",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:qualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onDataRange": {
+                    "@id": "xsd:string"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:datatype-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-qmax-dp",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:maxQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onDataRange": {
+                    "@id": "xsd:string"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-qmin-dp",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:minQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onDataRange": {
+                    "@id": "xsd:string"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-exact-op",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:cardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-max-op",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:maxCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-min-op",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:minCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-qexact-op",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:qualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-qmax-op",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:maxQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-qmin-op",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "owl:minQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        }
+    ]
+}
