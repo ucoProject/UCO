@@ -1,0 +1,286 @@
+{
+    "@context": {
+        "dcterms": "http://purl.org/dc/terms/",
+        "kb": "http://example.org/kb/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:object-property-1",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "kb:Other-Thing",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "kb:Thing-exact-xfail-1",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@id": "kb:Restriction-1",
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Restriction-1",
+                "rdfs:comment": "This Restriction will trigger a failure from having an IRI.",
+                "owl:qualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-exact-xfail-2",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-exact-xfail-2/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from qualifiedCardinality not being typed.",
+                "owl:qualifiedCardinality": 1,
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-exact-xfail-3",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-exact-xfail-3/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from not having a class specified.",
+                "owl:qualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-exact-xfail-4",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-exact-xfail-4/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from not having a property specified.",
+                "owl:qualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-max-xfail-1",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@id": "kb:Restriction-2",
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Restriction-2",
+                "rdfs:comment": "This Restriction will trigger a failure from having an IRI.",
+                "owl:maxQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-max-xfail-2",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-max-xfail-2/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from maxQualifiedCardinality not being typed.",
+                "owl:maxQualifiedCardinality": 1,
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-max-xfail-3",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-max-xfail-3/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from not having a class specified.",
+                "owl:maxQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-max-xfail-4",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-max-xfail-4/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from not having a property specified.",
+                "owl:maxQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-min-xfail-1",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@id": "kb:Restriction-3",
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Restriction-3",
+                "rdfs:comment": "This Restriction will trigger a failure from having an IRI.",
+                "owl:minQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-min-xfail-2",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-min-xfail-2/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from minQualifiedCardinality not being typed.",
+                "owl:minQualifiedCardinality": 1,
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-min-xfail-3",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-min-xfail-3/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from not having a class specified.",
+                "owl:minQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-min-xfail-4",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-min-xfail-4/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from not having a property specified.",
+                "owl:minQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-unqualified-cardinality-with-class-xfail-1",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-unqualified-cardinality-with-class-xfail-1/Restriction",
+                "rdfs:comment": "This Restriction will trigger a failure from specifying a class on an unqualified cardinality.",
+                "owl:cardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-plural-cardinality-xfail-1",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-plural-cardinality-xfail-1/Restriction",
+                "rdfs:comment": "This Restriction will trigger two failures, from specifying both a minimum and maximum unqualified cardinality.  (These should be in separate restrictions instead.)",
+                "owl:maxCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "2"
+                },
+                "owl:minCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        },
+        {
+            "@id": "kb:Thing-plural-qualified-cardinality-xfail-1",
+            "@type": "owl:Class",
+            "rdfs:subClassOf": {
+                "@type": "owl:Restriction",
+                "dcterms:identifier": "http://example.org/kb/Thing-plural-qualified-cardinality-xfail-1/Restriction",
+                "rdfs:comment": "This Restriction will trigger two failures, from specifying both a minimum and maximum qualified cardinality.  (These should be in separate restrictions instead.)",
+                "owl:maxQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "2"
+                },
+                "owl:minQualifiedCardinality": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "1"
+                },
+                "owl:onClass": {
+                    "@id": "kb:Other-Thing"
+                },
+                "owl:onProperty": {
+                    "@id": "kb:object-property-1"
+                }
+            }
+        }
+    ]
+}

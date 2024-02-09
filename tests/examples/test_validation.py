@@ -29,6 +29,8 @@ import pytest
 import rdflib.plugins.sparql
 
 NS_CO = rdflib.Namespace("http://purl.org/co/")
+NS_DCTERMS = rdflib.DCTERMS
+NS_OWL = rdflib.OWL
 NS_SH = rdflib.SH
 NS_UCO_ACTION = rdflib.Namespace("https://ontology.unifiedcyberontology.org/uco/action/")
 NS_UCO_CO = rdflib.Namespace("https://ontology.unifiedcyberontology.org/co/")
@@ -410,6 +412,90 @@ def test_owl_axiom_XFAIL() -> None:
         ("http://example.org/kb/axiom-1", str(NS_SH.Violation)),
       }
     )
+
+def test_owl_cardinality_restrictions_PASS() -> None:
+    confirm_validation_results(
+      "owl_cardinality_restrictions_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities=set()
+    )
+
+def test_owl_cardinality_restrictions_XFAIL() -> None:
+    # This test is defined by counting the number of results.
+    expected_validation_result_tally: int = 17
+    computed_validation_result_tally: int = 0
+
+    expected_focus_identifiers: typing.Dict[str, int] = {
+      "http://example.org/kb/Thing-exact-xfail-3/Restriction": 1,
+      "http://example.org/kb/Thing-exact-xfail-4/Restriction": 1,
+      "http://example.org/kb/Thing-max-xfail-3/Restriction": 1,
+      "http://example.org/kb/Thing-max-xfail-4/Restriction": 1,
+      "http://example.org/kb/Thing-min-xfail-3/Restriction": 1,
+      "http://example.org/kb/Thing-min-xfail-4/Restriction": 1,
+      "http://example.org/kb/Thing-unqualified-cardinality-with-class-xfail-1/Restriction": 1,
+      "http://example.org/kb/Thing-plural-cardinality-xfail-1/Restriction": 2,
+      "http://example.org/kb/Thing-plural-qualified-cardinality-xfail-1/Restriction": 2,
+    }
+    computed_focus_identifiers: typing.Dict[str, int] = dict()
+    # The nature of the tests pertaining to these identifiers mean the
+    # node references do not appear directly in the ValidationReport.
+    excused_identifiers: typing.Set[str] = {
+      "http://example.org/kb/Restriction-1",
+      "http://example.org/kb/Restriction-2",
+      "http://example.org/kb/Restriction-3",
+      "http://example.org/kb/Thing-exact-xfail-2/Restriction",
+      "http://example.org/kb/Thing-max-xfail-2/Restriction",
+      "http://example.org/kb/Thing-min-xfail-2/Restriction",
+    }
+
+    g = load_validation_graph(
+      "owl_cardinality_restrictions_XFAIL_validation.ttl",
+      False
+    )
+
+    for triple0 in g.triples((None, NS_SH.result, None)):
+        computed_validation_result_tally += 1
+
+    # Confirm some of the test nodes triggered multiple results.
+    # Because OWL requires some of the triggering nodes be blank nodes,
+    # use dcterms:identifier to store a string-literal identifier.
+    for result in g.query(
+        """\
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+SELECT ?nValidationResult ?lIdentifier
+WHERE {
+  ?nValidationResult
+    a sh:ValidationResult ;
+    sh:focusNode ?nFocusNode ;
+    .
+  ?nFocusNode
+    dcterms:identifier ?lIdentifier ;
+    .
+}
+"""
+    ):
+        assert isinstance(result, rdflib.query.ResultRow)
+        assert isinstance(result[0], rdflib.term.BNode)
+        assert isinstance(result[1], rdflib.Literal)
+        n_validation_result: rdflib.term.BNode = result[0]
+        l_identifier: rdflib.Literal = result[1]
+        identifier_string: str = l_identifier.toPython()
+        if identifier_string not in computed_focus_identifiers:
+            computed_focus_identifiers[identifier_string] = 0
+        computed_focus_identifiers[identifier_string] += 1
+
+    assert expected_validation_result_tally == computed_validation_result_tally
+    assert expected_focus_identifiers == computed_focus_identifiers
+
+    # Confirm coverage regardless of triggering or not.
+    all_dcterms_identifiers: typing.Set[str] = set()
+    g.parse("owl_cardinality_restrictions_XFAIL.json", format="json-ld")
+    for l_object in g.objects(None, NS_DCTERMS.identifier):
+        assert isinstance(l_object, rdflib.Literal)
+        all_dcterms_identifiers.add(str(l_object))
+
+    assert all_dcterms_identifiers == excused_identifiers | {x for x in expected_focus_identifiers.keys()}
 
 def test_owl_properties_PASS() -> None:
     confirm_validation_results(
