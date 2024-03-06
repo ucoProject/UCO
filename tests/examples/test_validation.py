@@ -384,6 +384,12 @@ def test_observable_creation_time_XFAIL() -> None:
     confirm_validation_results(
       "observable_creation_time_XFAIL_validation.ttl",
       False,
+      expected_focus_node_severities={
+        (
+          "http://example.org/kb/windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1",
+          str(NS_SH.Violation)
+        )
+      }
     )
 
 def test_owl_axiom_PASS() -> None:
