@@ -857,6 +857,14 @@ observable:BrowserCookieFacet
 	sh:targetClass observable:BrowserCookieFacet ;
 	.
 
+observable:BuildUtility
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
 observable:Calendar
 	a
 		owl:Class ,
@@ -1197,6 +1205,14 @@ observable:Code
 	rdfs:label "Code"@en ;
 	rdfs:comment "Code is a direct representation (source, byte or binary) of a collection of computer instructions that form software which tell a computer how to work. [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:targetClass observable:Code ;
+	.
+
+observable:Compiler
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
 	.
 
 observable:CompressedStreamFacet
@@ -2206,6 +2222,14 @@ observable:DefinedEffectFacet
 	rdfs:label "DefinedEffectFacet"@en ;
 	rdfs:comment "A defined effect facet is a grouping of characteristics unique to the effect of an observable action in relation to one or more observable objects."@en ;
 	sh:targetClass observable:DefinedEffectFacet ;
+	.
+
+observable:DeploymentScript
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Script ;
 	.
 
 observable:Device
@@ -3989,6 +4013,25 @@ observable:LibraryFacet
 	sh:targetClass observable:LibraryFacet ;
 	.
 
+observable:LinuxService
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Service ;
+	rdfs:label "LinuxService"@en ;
+	rdfs:comment "A Linux service is a specific Linux service (a computer program that operates in the background of a Linux operating system, similar to the way a UNIX daemon runs on UNIX). [based on observable:WindowsService]"@en ;
+	sh:targetClass observable:LinuxService ;
+	.
+
+observable:LinuxTask
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Task ;
+	.
+
 observable:MACAddress
 	a
 		owl:Class ,
@@ -5264,6 +5307,14 @@ observable:PUK
 	rdfs:range xsd:string ;
 	.
 
+observable:Package
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
 observable:PathRelationFacet
 	a
 		owl:Class ,
@@ -6016,6 +6067,14 @@ observable:SQLiteBlobFacet
 	sh:targetClass observable:SQLiteBlobFacet ;
 	.
 
+observable:Script
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
 observable:SecurityAppliance
 	a
 		owl:Class ,
@@ -6064,6 +6123,22 @@ observable:Server
 	rdfs:label "Server"@en-US ;
 	rdfs:comment "A server is a server rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
 	sh:targetClass observable:Server ;
+	.
+
+observable:Service
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Process ;
+	.
+
+observable:ServicePack
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
 	.
 
 observable:ShopListing
@@ -6145,6 +6220,14 @@ observable:Software
 	rdfs:label "Software"@en ;
 	rdfs:comment "Software is a definitely scoped instance of a collection of data or computer instructions that tell the computer how to work. [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:targetClass observable:Software ;
+	.
+
+observable:SoftwareBuild
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
 	.
 
 observable:SoftwareFacet
@@ -6427,6 +6510,14 @@ observable:Tablet
 	rdfs:label "Tablet"@en-US ;
 	rdfs:comment "A tablet is a mobile computer that is primarily operated by touching the screen. (Devices categorized by their manufacturer as a Tablet)"@en-US ;
 	sh:targetClass observable:Tablet ;
+	.
+
+observable:Task
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Process ;
 	.
 
 observable:TaskActionType
@@ -13675,5 +13766,69 @@ observable:xOriginatingIP
 	a owl:ObjectProperty ;
 	rdfs:label "xOriginatingIP"@en ;
 	rdfs:range observable:ObservableObject ;
+	.
+
+[]
+	a sh:NodeShape ;
+	sh:class observable:Process ;
+	sh:message "In UCO 2.0.0, uco-observable:ProcessThread will be a subclass of uco-observable:Process.  In preparation for UCO 2.0.0, the additional type uco-observable:Process should be assigned to this node."@en ;
+	sh:severity sh:Warning ;
+	sh:targetClass observable:ProcessThread ;
+	.
+
+[]
+	a sh:NodeShape ;
+	sh:class observable:Service ;
+	sh:message "In UCO 2.0.0, uco-observable:WindowsService will be a subclass of uco-observable:Service.  In preparation for UCO 2.0.0, the additional type uco-observable:Service should be assigned to this node."@en ;
+	sh:severity sh:Warning ;
+	sh:targetClass observable:WindowsService ;
+	.
+
+[]
+	a sh:NodeShape ;
+	sh:class observable:Software ;
+	sh:message "In UCO 2.0.0, uco-observable:Application will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+	sh:severity sh:Warning ;
+	sh:targetClass observable:Application ;
+	.
+
+[]
+	a sh:NodeShape ;
+	sh:class observable:Software ;
+	sh:message "In UCO 2.0.0, uco-observable:Code will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+	sh:severity sh:Warning ;
+	sh:targetClass observable:Code ;
+	.
+
+[]
+	a sh:NodeShape ;
+	sh:class observable:Software ;
+	sh:message "In UCO 2.0.0, uco-observable:Library will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+	sh:severity sh:Warning ;
+	sh:targetClass observable:Library ;
+	.
+
+[]
+	a sh:NodeShape ;
+	sh:class observable:Software ;
+	sh:message "In UCO 2.0.0, uco-observable:OperatingSystem will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+	sh:severity sh:Warning ;
+	sh:targetClass observable:OperatingSystem ;
+	.
+
+[]
+	a sh:NodeShape ;
+	sh:class observable:Software ;
+	sh:message "In UCO 2.0.0, uco-observable:Process will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+	sh:severity sh:Warning ;
+	sh:targetClass observable:Process ;
+	.
+
+[]
+	a sh:NodeShape ;
+	sh:class observable:Task ;
+	sh:message "In UCO 2.0.0, uco-observable:WindowsTask will be a subclass of uco-observable:Task.  In preparation for UCO 2.0.0, the additional type uco-observable:Task should be assigned to this node."@en ;
+	sh:severity sh:Warning ;
+	sh:targetClass observable:WindowsTask ;
 	.
 

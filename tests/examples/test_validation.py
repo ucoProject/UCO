@@ -389,6 +389,10 @@ def test_observable_creation_time_PASS() -> None:
       True,
       expected_focus_node_severities={
         (
+          "http://example.org/kb/windows-thread-da52a01e-41cc-42d5-85be-ca14bfa10fd6",
+          str(NS_SH.Warning)
+        ),
+        (
           "http://example.org/kb/windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1",
           str(NS_SH.Warning)
         )
