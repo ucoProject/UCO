@@ -121,7 +121,6 @@ core:ContextualCompilation
 	rdfs:comment "A contextual compilation is a grouping of things sharing some context (e.g., a set of network connections observed on a given day, all accounts associated with a given person)."@en ;
 	sh:property [
 		sh:class core:UcoObject ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
