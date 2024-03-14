@@ -5059,6 +5059,16 @@ observable:ObservableRelationship
 		;
 	rdfs:label "ObservableRelationship"@en ;
 	rdfs:comment "An observable relationship is a grouping of characteristics unique to an assertion of an association between two observable objects."@en ;
+	sh:property
+		[
+			sh:class observable:Observable ;
+			sh:path core:source ;
+		] ,
+		[
+			sh:class observable:Observable ;
+			sh:path core:target ;
+		]
+		;
 	sh:targetClass observable:ObservableRelationship ;
 	.
 
