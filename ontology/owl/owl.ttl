@@ -437,6 +437,7 @@ uco-owl:rdf-rest-subjects-shape
 
 uco-owl:sh-datatype-objects-shape
 	a sh:NodeShape ;
+	sh:description "This shape enforces that the sh:datatype constraining predicate does not bind an OWL class for a literal-valued constraint."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class owl:Class ;
