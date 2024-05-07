@@ -60,6 +60,27 @@ types:Dictionary
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dictionary"@en ;
 	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached to types:Dictionary with rdfs:seeAlso in order to associate a warning-severity SPARQL-based shape, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:severity sh:Warning ;
+		sh:sparql [
+			a sh:SPARQLConstraint ;
+			sh:message "A key in a dictionary can appear no more than once."@en ;
+			sh:select """
+				PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+				SELECT $this ?value
+				WHERE {
+					$this
+						types:entry/types:key ?value ;
+						.
+				}
+				GROUP BY ?value
+				HAVING (COUNT(?value) > 1)
+			""" ;
+		] ;
+		sh:targetClass types:Dictionary ;
+	] ;
 	sh:property [
 		sh:class types:DictionaryEntry ;
 		sh:minCount "1"^^xsd:integer ;

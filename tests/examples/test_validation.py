@@ -207,6 +207,16 @@ def test_database_records_XFAIL() -> None:
       }
     )
 
+def test_dictionary_PASS() -> None:
+    confirm_validation_results(
+      "dictionary_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Dictionary-a8e5e8e1-b3de-4ac4-99dd-e36f96beea4d", str(NS_SH.Warning)),
+        ('http://example.org/kb/Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6', str(NS_SH.Warning)),
+      }
+    )
+
 def test_event_XFAIL() -> None:
     confirm_validation_results(
         "event_XFAIL_validation.ttl",
