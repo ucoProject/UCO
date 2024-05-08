@@ -17,6 +17,7 @@
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
 				a sh:NodeShape ;
+				rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
 				sh:class observable:Process ;
 				sh:message "In UCO 2.0.0, uco-observable:ProcessThread will be a subclass of uco-observable:Process.  In preparation for UCO 2.0.0, the additional type uco-observable:Process should be assigned to this node."@en ;
 				sh:severity sh:Warning ;
