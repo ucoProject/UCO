@@ -8,95 +8,39 @@
 []
 	a sh:ValidationReport ;
 	sh:conforms "true"^^xsd:boolean ;
-	sh:result
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/Dictionary-a8e5e8e1-b3de-4ac4-99dd-e36f96beea4d> ;
-			sh:resultMessage "A key in a dictionary can appear no more than once." ;
-			sh:resultSeverity sh:Warning ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "A key in a dictionary can appear no more than once."@en ;
-				sh:select """
-				PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
-				SELECT $this ?value
-				WHERE {
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6> ;
+		sh:resultMessage "A key in a dictionary should appear no more than once.  The value literal does.  Please consider using the types:ImproperDictionary class and types:repeatsKey property." ;
+		sh:resultSeverity sh:Warning ;
+		sh:sourceConstraint [
+			a sh:SPARQLConstraint ;
+			sh:message "A key in a dictionary should appear no more than once.  The value literal does.  Please consider using the types:ImproperDictionary class and types:repeatsKey property."@en ;
+			sh:select """
+			PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+			SELECT $this ?value
+			WHERE {
+				$this
+					types:entry/types:key ?value ;
+					.
+				FILTER NOT EXISTS {
 					$this
-						types:entry/types:key ?value ;
+						a types:ImproperDictionary ;
 						.
 				}
-				GROUP BY ?value
-				HAVING (COUNT(?value) > 1)
-			""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape [
-				a sh:NodeShape ;
-				rdfs:comment "This anonymous shape is attached to types:Dictionary with rdfs:seeAlso in order to associate a warning-severity SPARQL-based shape, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
-				sh:severity sh:Warning ;
-				sh:sparql [
-					a sh:SPARQLConstraint ;
-					sh:message "A key in a dictionary can appear no more than once."@en ;
-					sh:select """
-				PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
-				SELECT $this ?value
-				WHERE {
+				FILTER NOT EXISTS {
 					$this
-						types:entry/types:key ?value ;
+						a types:ProperDictionary ;
 						.
 				}
-				GROUP BY ?value
-				HAVING (COUNT(?value) > 1)
+			}
+			GROUP BY ?value
+			HAVING (COUNT(?value) > 1)
 			""" ;
-				] ;
-				sh:targetClass types:Dictionary ;
-			] ;
-			sh:value "x" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6> ;
-			sh:resultMessage "A key in a dictionary can appear no more than once." ;
-			sh:resultSeverity sh:Warning ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "A key in a dictionary can appear no more than once."@en ;
-				sh:select """
-				PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
-				SELECT $this ?value
-				WHERE {
-					$this
-						types:entry/types:key ?value ;
-						.
-				}
-				GROUP BY ?value
-				HAVING (COUNT(?value) > 1)
-			""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape [
-				a sh:NodeShape ;
-				rdfs:comment "This anonymous shape is attached to types:Dictionary with rdfs:seeAlso in order to associate a warning-severity SPARQL-based shape, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
-				sh:severity sh:Warning ;
-				sh:sparql [
-					a sh:SPARQLConstraint ;
-					sh:message "A key in a dictionary can appear no more than once."@en ;
-					sh:select """
-				PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
-				SELECT $this ?value
-				WHERE {
-					$this
-						types:entry/types:key ?value ;
-						.
-				}
-				GROUP BY ?value
-				HAVING (COUNT(?value) > 1)
-			""" ;
-				] ;
-				sh:targetClass types:Dictionary ;
-			] ;
-			sh:value "x" ;
-		]
-		;
+		] ;
+		sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+		sh:sourceShape types:Dictionary-keyUniqueness-shape ;
+		sh:value "x" ;
+	] ;
 	.
 
