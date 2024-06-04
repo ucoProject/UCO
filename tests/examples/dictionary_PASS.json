@@ -1,6 +1,7 @@
 {
     "@context": {
         "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "types": "https://ontology.unifiedcyberontology.org/uco/types/"
     },
     "@graph": [
@@ -31,7 +32,7 @@
         {
             "@id": "kb:Dictionary-a8e5e8e1-b3de-4ac4-99dd-e36f96beea4d",
             "@type": "types:Dictionary",
-            "rdfs": "This dictionary will trigger a warning from having two entries keyed with value 'x'.",
+            "rdfs:comment": "This dictionary will trigger a warning from having two entries keyed with value 'x'.",
             "types:entry": [
                 {
                     "@id": "kb:DictionaryEntry-55786f64-534d-4e8c-8a64-616f708ea4d3"
@@ -57,7 +58,7 @@
             "@id": "kb:Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6",
 
             "@type": "types:Dictionary",
-            "rdfs": "This dictionary will trigger a warning from having two entries keyed with value 'x'.",
+            "rdfs:comment": "This dictionary will trigger a warning from having two entries keyed with value 'x'.",
             "types:entry": [
                 {
                     "@id": "kb:DictionaryEntry-20431f00-64a3-4c0f-94a4-1eb09f8a6b6a"
