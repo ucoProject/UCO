@@ -82,21 +82,7 @@
         {
             "@id": "kb:ImproperDictionary-7fa3ea45-6426-4ad3-bb5f-7559e07adeb4",
             "@type": "types:ImproperDictionary",
-            "repeatsKey": "z",
-            "types:entry": [
-                {
-                    "@id": "kb:DictionaryEntry-cf363490-65ba-465f-8459-239c6a5d640e",
-                    "@type": "types:DictionaryEntry",
-                    "types:key": "x",
-                    "types:value": "1"
-                },
-                {
-                    "@id": "kb:DictionaryEntry-8e71524c-9921-44e8-839d-2d27281941bb",
-                    "@type": "types:DictionaryEntry",
-                    "types:key": "y",
-                    "types:value": "2"
-                }
-            ]
+            "repeatsKey": "z"
         },
         {
             "@id": "kb:ImproperDictionary-14e28425-00c1-4f11-b2ed-21390fc0749a",

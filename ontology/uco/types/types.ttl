@@ -62,7 +62,6 @@ types:Dictionary
 	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key having an expectation to exist no more than once.  types:Dictionary alone does not validate this expectation, but validation is available.  For use cases where this expectation must be validated, the subclass types:ProperDictionary should be used instead of types:Dictionary.  For instances where this expectation has been found to be violated, the subclass types:ImproperDictionary should be used instead of types:Dictionary."@en ;
 	sh:property [
 		sh:class types:DictionaryEntry ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:IRI ;
 		sh:path types:entry ;
 	] ;
