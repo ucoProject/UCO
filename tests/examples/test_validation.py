@@ -212,8 +212,22 @@ def test_dictionary_PASS() -> None:
       "dictionary_PASS_validation.ttl",
       True,
       expected_focus_node_severities={
-        ("http://example.org/kb/Dictionary-a8e5e8e1-b3de-4ac4-99dd-e36f96beea4d", str(NS_SH.Warning)),
-        ('http://example.org/kb/Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6', str(NS_SH.Warning)),
+        ("http://example.org/kb/Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6", str(NS_SH.Warning)),
+      }
+    )
+
+def test_dictionary_XFAIL() -> None:
+    confirm_validation_results(
+      "dictionary_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Dictionary-5bc55661-4808-48e6-9e02-80a153eee5d3", str(NS_SH.Violation)),
+        ("http://example.org/kb/Dictionary-e6dc9c2e-25bc-422f-8ae8-8457e29f5fde", str(NS_SH.Violation)),
+        ("http://example.org/kb/Dictionary-34ac0c49-1042-49c0-8fd6-c42a810e58da", str(NS_SH.Warning)),
+        ("http://example.org/kb/Dictionary-34ac0c49-1042-49c0-8fd6-c42a810e58da", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-8114819f-d3c8-4e29-9e31-295d771f9db2", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-b2baf8af-3d5d-4c4e-b442-49befefd147e", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-f5ae2e6a-9b10-46f3-8441-30aada36aa1b", str(NS_SH.Violation)),
       }
     )
 

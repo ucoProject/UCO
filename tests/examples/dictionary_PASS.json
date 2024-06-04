@@ -6,8 +6,26 @@
     },
     "@graph": [
         {
-            "@id": "kb:Dictionary-eaded28e-0bf8-4df1-aee8-84d22c09702c",
+            "@id": "kb:Dictionary-3bb38b3e-d47a-43c8-8a77-afc0e6655ce1",
             "@type": "types:Dictionary",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-b8a01d49-53c1-440f-a2d5-618b58801d37",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-6cac6c2c-5d4e-45f5-b784-c029c9f9fb6d",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "y",
+                    "types:value": "2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:ProperDictionary-eaded28e-0bf8-4df1-aee8-84d22c09702c",
+            "@type": "types:ProperDictionary",
             "types:entry": [
                 {
                     "@id": "kb:DictionaryEntry-314212eb-39c4-4bf3-be3a-f07c38f0eae8",
@@ -24,9 +42,9 @@
             ]
         },
         {
-            "@id": "kb:Dictionary-a8e5e8e1-b3de-4ac4-99dd-e36f96beea4d",
-            "@type": "types:Dictionary",
-            "rdfs:comment": "This dictionary will trigger a warning from having two entries keyed with value 'x'.",
+            "@id": "kb:ImproperDictionary-a8e5e8e1-b3de-4ac4-99dd-e36f96beea4d",
+            "@type": "types:ImproperDictionary",
+            "types:repeatsKey": "x",
             "types:entry": [
                 {
                     "@id": "kb:DictionaryEntry-55786f64-534d-4e8c-8a64-616f708ea4d3",
@@ -44,9 +62,8 @@
         },
         {
             "@id": "kb:Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6",
-
             "@type": "types:Dictionary",
-            "rdfs:comment": "This dictionary will trigger a warning from having two entries keyed with value 'x'.",
+            "rdfs:comment": "This dictionary, not being typed as a ProperDictionary, will not trigger a warning from having two entries keyed with value 'x'.",
             "types:entry": [
                 {
                     "@id": "kb:DictionaryEntry-20431f00-64a3-4c0f-94a4-1eb09f8a6b6a",
@@ -59,6 +76,62 @@
                     "@type": "types:DictionaryEntry",
                     "types:key": "x",
                     "types:value": "1"
+                }
+            ]
+        },
+        {
+            "@id": "kb:ImproperDictionary-7fa3ea45-6426-4ad3-bb5f-7559e07adeb4",
+            "@type": "types:ImproperDictionary",
+            "repeatsKey": "z",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-cf363490-65ba-465f-8459-239c6a5d640e",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-8e71524c-9921-44e8-839d-2d27281941bb",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "y",
+                    "types:value": "2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:ImproperDictionary-14e28425-00c1-4f11-b2ed-21390fc0749a",
+            "@type": "types:ImproperDictionary",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-09f23642-389b-4553-b5be-283a6160f534",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-7a84a0d6-d1cd-4291-afb4-c834d611898d",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:ImproperDictionary-cbc1c80d-1bad-4947-8459-c53ff61e8bfa",
+            "@type": "types:ImproperDictionary",
+            "rdfs:comment": "This improper dictionary has no repeated key or assertion of a repeated key.  This should not trigger a data error, because the information in the graph could merely be incomplete.",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-ca1910ab-fa26-402a-86bb-229f490dd89a",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-2a13e674-5e95-4a7a-9fac-c90417dcd97c",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "y",
+                    "types:value": "2"
                 }
             ]
         }
