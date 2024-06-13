@@ -1,0 +1,34 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/"
+    },
+    "graph": [
+        {
+            "id": "kb:thread-1",
+            "type": "Thread",
+            "item": [
+                "kb:thread-1-item-1",
+                "kb:thread-1-item-2",
+                "kb:thread-1-item-3"
+            ]
+        },
+        {
+            "id": "kb:thread-1-item-1",
+            "type": "ThreadItem",
+            "threadNextItem": [
+                "kb:thread-1-item-2",
+                "kb:thread-1-item-3"
+            ]
+        },
+        {
+            "id": "kb:thread-1-item-2",
+            "type": "ThreadItem",
+            "threadPreviousItem": "kb:thread-1-item-1"
+        },
+        {
+            "id": "kb:thread-1-item-3",
+            "type": "ThreadItem",
+            "threadPreviousItem": "kb:thread-1-item-1"
+        }
+    ]
+}

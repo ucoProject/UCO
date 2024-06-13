@@ -1,0 +1,16 @@
+{
+    "@graph": [
+        {
+            "@id": "http://example.org/kb/hash-1",
+            "@type": "https://ontology.unifiedcyberontology.org/uco/types/Hash",
+            "https://ontology.unifiedcyberontology.org/uco/types/hashMethod": {
+                "@type": "https://ontology.unifiedcyberontology.org/uco/vocabulary/HashNameVocab",
+                "@value": "SHA1"
+            },
+            "https://ontology.unifiedcyberontology.org/uco/types/hashValue": {
+                "@type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+        }
+    ]
+}
