@@ -24,6 +24,9 @@
 			SELECT $this
 			WHERE {
 			        $this a/rdfs:subClassOf* core:UcoThing .
+				FILTER NOT EXISTS {
+					$this a/rdfs:subClassOf* core:InformationResource .
+				}
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),
@@ -53,6 +56,9 @@
 			SELECT $this
 			WHERE {
 			        $this a/rdfs:subClassOf* core:UcoThing .
+				FILTER NOT EXISTS {
+					$this a/rdfs:subClassOf* core:InformationResource .
+				}
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),
@@ -113,6 +119,9 @@
 			SELECT $this
 			WHERE {
 			        $this a/rdfs:subClassOf* core:UcoThing .
+				FILTER NOT EXISTS {
+					$this a/rdfs:subClassOf* core:InformationResource .
+				}
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),
