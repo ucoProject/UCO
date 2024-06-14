@@ -275,6 +275,16 @@ def test_hash_XFAIL() -> None:
       }
     )
 
+def test_information_resource_PASS_validation() -> None:
+    confirm_validation_results(
+      "information_resource_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/~bob", str(NS_SH.Warning)),
+        ("http://example.org/~chris", str(NS_SH.Info)),
+      }
+    )
+
 def test_co_PASS_validation() -> None:
     confirm_validation_results("co_PASS_validation.ttl", True)
 

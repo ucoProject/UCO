@@ -284,6 +284,27 @@ core:IdentityAbstraction
 	sh:targetClass core:IdentityAbstraction ;
 	.
 
+core:InformationResource
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoThing ;
+	owl:disjointWith core:NonInformationResource ;
+	sh:targetClass core:InformationResource ;
+	.
+
+core:InformationResource-disjointWith-NonInformationResource-shape
+	a sh:NodeShape ;
+	sh:message "core:InformationResource and core:NonInformationResource are disjoint classes.  Assigning both types to a single node will be an error as of UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:NonInformationResource ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass core:InformationResource ;
+	.
+
 core:Item
 	a
 		owl:Class ,
@@ -315,6 +336,15 @@ core:ModusOperandi
 	rdfs:label "ModusOperandi"@en ;
 	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	sh:targetClass core:ModusOperandi ;
+	.
+
+core:NonInformationResource
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoThing ;
+	sh:targetClass core:NonInformationResource ;
 	.
 
 core:Relationship
@@ -485,6 +515,7 @@ core:UcoThing-identifier-regex-shape
 	a sh:NodeShape ;
 	rdfs:comment "This shape is given an independent IRI for applications that have sufficient controls in place to deactivate this advisory of node identification practice."@en ;
 	rdfs:seeAlso sh:deactivated ;
+	sh:description "This shape advises that nodes identify themselves with IRIs that are sufficiently unique that collisions between independent node assigners are unlikely.  This shape excepts nodes that are explicitly typed as Information Resources."@en ;
 	sh:severity sh:Info ;
 	sh:sparql [
 		a sh:SPARQLConstraint ;
@@ -496,6 +527,9 @@ core:UcoThing-identifier-regex-shape
 			SELECT $this
 			WHERE {
 			        $this a/rdfs:subClassOf* core:UcoThing .
+				FILTER NOT EXISTS {
+					$this a/rdfs:subClassOf* core:InformationResource .
+				}
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),

@@ -105,7 +105,10 @@ identity:Identity
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:IdentityAbstraction ;
+	rdfs:subClassOf
+		core:IdentityAbstraction ,
+		core:NonInformationResource
+		;
 	rdfs:label "Identity"@en ;
 	rdfs:comment "An identity is a grouping of identifying characteristics unique to an individual or organization."@en ;
 	sh:targetClass identity:Identity ;
