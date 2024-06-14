@@ -11,7 +11,7 @@
 	sh:result [
 		a sh:ValidationResult ;
 		sh:focusNode <http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce> ;
-		sh:resultMessage "observable:UcoInherentCharacterizationThing and observable:UcoObject are disjoint classes."@en ;
+		sh:resultMessage "core:UcoInherentCharacterizationThing and core:UcoObject are disjoint classes."@en ;
 		sh:resultSeverity sh:Violation ;
 		sh:sourceConstraintComponent sh:NotConstraintComponent ;
 		sh:sourceShape core:UcoInherentCharacterizationThing-disjointWith-UcoObject-shape ;

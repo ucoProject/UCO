@@ -177,6 +177,15 @@ def test_action_result_PASS_validation() -> None:
     g = load_validation_graph("action_result_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
 
+def test_alternate_data_stream_PASS_validation() -> None:
+    confirm_validation_results(
+      "alternate_data_stream_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13", str(NS_SH.Warning)),
+      }
+    )
+
 def test_configuration_setting_PASS_validation() -> None:
     g = load_validation_graph("configuration_setting_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
