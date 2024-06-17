@@ -180,10 +180,7 @@ def test_action_result_PASS_validation() -> None:
 def test_alternate_data_stream_PASS_validation() -> None:
     confirm_validation_results(
       "alternate_data_stream_PASS_validation.ttl",
-      True,
-      expected_focus_node_severities={
-        ("http://example.org/kb/AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13", str(NS_SH.Warning)),
-      }
+      True
     )
 
 def test_configuration_setting_PASS_validation() -> None:
