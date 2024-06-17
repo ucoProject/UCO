@@ -197,12 +197,11 @@ types:Thread
 
 types:Thread-disjointWith-co-List-shape
 	a sh:NodeShape ;
-	sh:message "types:Thread and co:List are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:message "types:Thread and co:List are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class co:List ;
 	] ;
-	sh:severity sh:Warning ;
 	sh:targetClass types:Thread ;
 	.
 
@@ -226,12 +225,11 @@ types:ThreadItem
 
 types:ThreadItem-disjointWith-co-ListItem-shape
 	a sh:NodeShape ;
-	sh:message "types:ThreadItem and co:ListItem are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:message "types:ThreadItem and co:ListItem are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class co:ListItem ;
 	] ;
-	sh:severity sh:Warning ;
 	sh:targetClass types:ThreadItem ;
 	.
 
