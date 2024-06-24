@@ -2222,7 +2222,7 @@ observable:Device
 		sh:NodeShape
 		;
 	rdfs:subClassOf
-		core:NonInformationResource ,
+		core:NeverInformationResource ,
 		observable:ObservableObject
 		;
 	rdfs:label "Device"@en ;

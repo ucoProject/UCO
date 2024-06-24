@@ -45,6 +45,30 @@
             "@id": "http://example.org/~chris",
             "@type": "observable:WebResource",
             "rdfs:comment": "This node will trigger an info-level result from not designating itself a InformationResource, and not ending with a UUID."
+        },
+        {
+            "@id": "https://mc.example.co.jp/",
+            "@type": "observable:WebPage",
+            "rdfs:comment": [
+                "This node should trigger no errors, even when incorporating the annotations on the same identifier from another JSON dict.",
+                "This JSON dict was provided by a market analyst in Japan."
+            ]
+        },
+        {
+            "@id": "https://mc.example.co.jp/",
+            "@type": ["core:NonInformationResource", "observable:WebResource"],
+            "rdfs:comment": [
+                "This node should trigger no errors, even when incorporating the annotations on the same identifier from another JSON dict.",
+                "This JSON dict was provided by a market analyst in France."
+            ]
+        },
+        {
+            "@id": "https://mc.example.co.jp/lang-fr/",
+            "@type": "observable:WebPage",
+            "rdfs:comment": [
+                "This node should trigger no errors.",
+                "This JSON dict was provided by a market analyst in France."
+            ]
         }
     ]
 }

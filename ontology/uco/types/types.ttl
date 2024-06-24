@@ -57,7 +57,10 @@ types:Dictionary
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf
+		core:NeverInformationResource ,
+		core:UcoInherentCharacterizationThing
+		;
 	rdfs:label "Dictionary"@en ;
 	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
 	sh:property [
@@ -101,7 +104,10 @@ types:Hash
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf
+		core:NeverInformationResource ,
+		core:UcoInherentCharacterizationThing
+		;
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
 	sh:property
@@ -184,6 +190,7 @@ types:Thread
 		;
 	rdfs:subClassOf
 		co:Bag ,
+		core:NeverInformationResource ,
 		core:UcoThing
 		;
 	rdfs:label "Thread"@en ;

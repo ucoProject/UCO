@@ -290,16 +290,16 @@ core:InformationResource
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:UcoThing ;
-	owl:disjointWith core:NonInformationResource ;
+	owl:disjointWith core:NeverInformationResource ;
 	sh:targetClass core:InformationResource ;
 	.
 
-core:InformationResource-disjointWith-NonInformationResource-shape
+core:InformationResource-disjointWith-NeverInformationResource-shape
 	a sh:NodeShape ;
-	sh:message "core:InformationResource and core:NonInformationResource are disjoint classes.  Assigning both types to a single node will be an error as of UCO 2.0.0."@en ;
+	sh:message "core:InformationResource and core:NeverInformationResource are disjoint classes.  Assigning both types to a single node will be an error as of UCO 2.0.0."@en ;
 	sh:not [
 		a sh:NodeShape ;
-		sh:class core:NonInformationResource ;
+		sh:class core:NeverInformationResource ;
 	] ;
 	sh:severity sh:Warning ;
 	sh:targetClass core:InformationResource ;
@@ -336,6 +336,15 @@ core:ModusOperandi
 	rdfs:label "ModusOperandi"@en ;
 	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	sh:targetClass core:ModusOperandi ;
+	.
+
+core:NeverInformationResource
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:NonInformationResource ;
+	sh:targetClass core:NeverInformationResource ;
 	.
 
 core:NonInformationResource
