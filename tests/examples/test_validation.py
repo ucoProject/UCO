@@ -177,6 +177,15 @@ def test_action_result_PASS_validation() -> None:
     g = load_validation_graph("action_result_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
 
+def test_alternate_data_stream_PASS_validation() -> None:
+    confirm_validation_results(
+      "alternate_data_stream_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13", str(NS_SH.Warning)),
+      }
+    )
+
 def test_configuration_setting_PASS_validation() -> None:
     g = load_validation_graph("configuration_setting_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
@@ -228,6 +237,15 @@ def test_dictionary_XFAIL() -> None:
         ("http://example.org/kb/ProperDictionary-8114819f-d3c8-4e29-9e31-295d771f9db2", str(NS_SH.Violation)),
         ("http://example.org/kb/ProperDictionary-b2baf8af-3d5d-4c4e-b442-49befefd147e", str(NS_SH.Violation)),
         ("http://example.org/kb/ProperDictionary-f5ae2e6a-9b10-46f3-8441-30aada36aa1b", str(NS_SH.Violation)),
+      }
+    )
+
+def test_disjointedness_PASS() -> None:
+    confirm_validation_results(
+      "disjointedness_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce", str(NS_SH.Warning)),
       }
     )
 
