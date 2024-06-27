@@ -1,0 +1,21 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13",
+            "@type": "observable:AlternateDataStream",
+            "rdfs:comment": "This node should trigger a sh:Warning from not being a observable:FileSystemObject"
+        },
+        {
+            "@id": "kb:AlternateDataStream-b2d4968b-4490-4b44-a56b-832058834454",
+            "@type": [
+                "observable:AlternateDataStream",
+                "observable:FileSystemObject"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:File-33a25932-3a1a-4828-a90f-d31818b495ce",
+            "@type": [
+                "observable:File",
+                "observable:FileFacet"
+            ],
+            "rdfs:comment": "This node will trigger a violation in UCO 2.0.0 for designating itself a File and FileFacet, which are disjoint due to File being a (eventual) subclass of UcoObject, and FileFacet being a (eventual) subclass of UcoInherentCharacterizationThing."
+        }
+    ]
+}

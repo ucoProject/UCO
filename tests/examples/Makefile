@@ -21,6 +21,7 @@ all: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  alternate_data_stream_PASS_validation.ttl \
   co_PASS_validation.ttl \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
@@ -28,6 +29,7 @@ all: \
   database_records_PASS_validation.ttl \
   database_records_XFAIL_validation.ttl \
   dictionary_PASS_validation.ttl \
+  disjointedness_PASS_validation.ttl \
   event_XFAIL_validation.ttl \
   file_url_PASS_validation.ttl \
   has_facet_inverse_functional_PASS_validation.ttl \
@@ -93,6 +95,7 @@ check: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  alternate_data_stream_PASS_validation.ttl \
   co_PASS_validation.ttl \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
@@ -100,6 +103,7 @@ check: \
   database_records_PASS_validation.ttl \
   database_records_XFAIL_validation.ttl \
   dictionary_PASS_validation.ttl \
+  disjointedness_PASS_validation.ttl \
   event_XFAIL_validation.ttl \
   file_url_PASS_validation.ttl \
   has_facet_inverse_functional_PASS_validation.ttl \

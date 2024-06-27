@@ -239,6 +239,14 @@ observable:AlternateDataStream
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "AlternateDataStream"@en ;
 	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:FileSystemObject ;
+		sh:message "In UCO 2.0.0, uco-observable:AlternateDataStream will be a subclass of uco-observable:FileSystemObject.  In preparation for UCO 2.0.0, the additional type uco-observable:FileSystemObject should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:AlternateDataStream ;
+	] ;
 	sh:targetClass observable:AlternateDataStream ;
 	.
 
