@@ -298,11 +298,20 @@ def test_information_resource_PASS_validation() -> None:
       "information_resource_PASS_validation.ttl",
       True,
       expected_focus_node_severities={
-        ("http://example.org/~bob", str(NS_SH.Warning)),
         ("http://example.org/~bob", str(NS_SH.Info)),
         ("http://example.org/~chris", str(NS_SH.Info)),
         ("https://mc.example.co.jp/", str(NS_SH.Info)),
         ("https://mc.example.co.jp/lang-fr/", str(NS_SH.Info)),
+      }
+    )
+
+def test_information_resource_XFAIL_validation() -> None:
+    confirm_validation_results(
+      "information_resource_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/~bob", str(NS_SH.Info)),
+        ("http://example.org/~bob", str(NS_SH.Violation)),
       }
     )
 
