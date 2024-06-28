@@ -36,6 +36,7 @@ all: \
   hash_PASS_validation.ttl \
   hash_XFAIL_validation.ttl \
   information_resource_PASS_validation.ttl \
+  information_resource_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
@@ -110,6 +111,7 @@ check: \
   hash_PASS_validation.ttl \
   hash_XFAIL_validation.ttl \
   information_resource_PASS_validation.ttl \
+  information_resource_XFAIL_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \

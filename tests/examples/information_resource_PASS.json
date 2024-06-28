@@ -9,13 +9,9 @@
     "@graph": [
         {
             "@id": "http://example.org/~bob",
-            "@type": [
-                "identity:Person",
-                "observable:WebPage"
-            ],
+            "@type": "observable:WebResource",
             "core:name": "Bob",
             "core:description": "Bob's company home page.",
-            "rdfs:comment": "This node will trigger a warning from conflating a node as both a person and the person's home page.",
             "rdfs:seeAlso": [
                 {
                     "@id": "kb:Person-a3d3af3d-ea1d-47f6-bc02-ac334ded6549"
@@ -25,6 +21,7 @@
                 }
             ]
         },
+
         {
             "@id": "kb:Person-a3d3af3d-ea1d-47f6-bc02-ac334ded6549",
             "@type": "identity:Person",

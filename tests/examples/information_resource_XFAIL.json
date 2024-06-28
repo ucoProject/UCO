@@ -1,0 +1,29 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@id": "http://example.org/~bob",
+            "@type": [
+                "identity:Person",
+                "observable:WebPage"
+            ],
+            "core:name": "Bob",
+            "core:description": "Bob's company home page.",
+            "rdfs:comment": "This node will trigger an error from conflating a node as both a person and the person's home page.",
+            "rdfs:seeAlso": [
+                {
+                    "@id": "kb:Person-a3d3af3d-ea1d-47f6-bc02-ac334ded6549"
+                },
+                {
+                    "@id": "kb:WebPage-1c05c378-124e-4d3c-898a-fb5a8d178cf8"
+                }
+            ]
+        }
+    ]
+}
