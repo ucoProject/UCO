@@ -2437,6 +2437,14 @@ observable:Disk
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "Disk"@en ;
 	rdfs:comment "A disk is a storage mechanism where data is recorded by various electronic, magnetic, optical, or mechanical changes to a surface layer of one or more rotating disks."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Device ;
+		sh:message "In UCO 2.0.0, uco-observable:Disk will be a subclass of uco-observable:Device.  In preparation for UCO 2.0.0, the additional type uco-observable:Device should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:Disk ;
+	] ;
 	sh:targetClass observable:Disk ;
 	.
 
