@@ -180,10 +180,7 @@ def test_action_result_PASS_validation() -> None:
 def test_alternate_data_stream_PASS_validation() -> None:
     confirm_validation_results(
       "alternate_data_stream_PASS_validation.ttl",
-      True,
-      expected_focus_node_severities={
-        ("http://example.org/kb/AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13", str(NS_SH.Warning)),
-      }
+      True
     )
 
 def test_configuration_setting_PASS_validation() -> None:
@@ -240,12 +237,12 @@ def test_dictionary_XFAIL() -> None:
       }
     )
 
-def test_disjointedness_PASS() -> None:
+def test_disjointedness_XFAIL() -> None:
     confirm_validation_results(
-      "disjointedness_PASS_validation.ttl",
-      True,
+      "disjointedness_XFAIL_validation.ttl",
+      False,
       expected_focus_node_severities={
-        ("http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce", str(NS_SH.Warning)),
+        ("http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce", str(NS_SH.Violation)),
       }
     )
 
@@ -258,13 +255,10 @@ def test_event_XFAIL() -> None:
         }
     )
 
-def test_file_url_PASS_validation() -> None:
+def test_file_url_XFAIL_validation() -> None:
     confirm_validation_results(
-      "file_url_PASS_validation.ttl",
-      True,
-      expected_focus_node_severities={
-        ("http://example.org/kb/Thing-23a38d67-3432-458b-9651-955b418c2a77", str(NS_SH.Warning)),
-      }
+      "file_url_XFAIL_validation.ttl",
+      False,
     )
 
 def test_has_facet_inverse_functional_PASS() -> None:
@@ -425,16 +419,10 @@ def test_message_thread_PASS_validation() -> None:
 def test_message_thread_XFAIL_validation() -> None:
     confirm_validation_results("message_thread_XFAIL_validation.ttl", False)
 
-def test_observable_creation_time_PASS() -> None:
+def test_observable_creation_time_XFAIL() -> None:
     confirm_validation_results(
-      "observable_creation_time_PASS_validation.ttl",
-      True,
-      expected_focus_node_severities={
-        (
-          "http://example.org/kb/windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1",
-          str(NS_SH.Warning)
-        )
-      }
+      "observable_creation_time_XFAIL_validation.ttl",
+      False,
     )
 
 def test_owl_axiom_PASS() -> None:
