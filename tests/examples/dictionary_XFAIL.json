@@ -1,0 +1,122 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "types": "https://ontology.unifiedcyberontology.org/uco/types/"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Dictionary-5bc55661-4808-48e6-9e02-80a153eee5d3",
+            "@type": [
+                "types:ImproperDictionary",
+                "types:ProperDictionary"
+            ],
+            "rdfs:comment": "This dictionary will trigger an error from being typed as both disjoint subclasses of types:Dictionary.",
+            "types:entry": {
+                "@id": "kb:DictionaryEntry-fa139d6e-2b4d-49e5-8c7d-3cfc635d56e0",
+                "@type": "types:DictionaryEntry",
+                "types:key": "x",
+                "types:value": "1"
+            }
+        },
+        {
+            "@id": "kb:Dictionary-34ac0c49-1042-49c0-8fd6-c42a810e58da",
+            "@type": "types:Dictionary",
+            "rdfs:comment": "This dictionary will trigger an error from using repeatsKey while not also typing itself as a types:ImproperDictionary.",
+            "types:repeatsKey": "x",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-322b718b-3869-48a3-a7bf-d97d5463563b",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-e51c7808-7fcb-423a-95e6-dcb431a3bade",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:ProperDictionary-b2baf8af-3d5d-4c4e-b442-49befefd147e",
+            "@type": "types:ProperDictionary",
+            "rdfs:comment": "This dictionary will trigger an error from having two entries keyed with value 'x'.",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-203a8596-1439-4065-a99f-daf4d530bed7",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-40b9d75d-6a11-4a8f-9951-e96e2c1fe683",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:ProperDictionary-8114819f-d3c8-4e29-9e31-295d771f9db2",
+            "@type": "types:ProperDictionary",
+            "rdfs:comment": "This proper dictionary will trigger an error from using repeatsKey while not being an ImproperDictionary.",
+            "types:repeatsKey": "x",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-1311a664-fce3-4174-ace1-539ac6d54a5f",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-8b149881-5adc-4020-b46f-2be1c60bab83",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "y",
+                    "types:value": "2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:ProperDictionary-f5ae2e6a-9b10-46f3-8441-30aada36aa1b",
+            "@type": "types:ProperDictionary",
+            "rdfs:comment": "This dictionary will trigger an error from having two entries keyed with value 'x'.",
+            "types:repeatsKey": "x",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-0274c19c-89b9-42b6-a87e-f671cbd2c731",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-de108ec2-8ddd-4201-8267-5a04035ba88e",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                }
+            ]
+        },
+        {
+            "@id": "kb:Dictionary-e6dc9c2e-25bc-422f-8ae8-8457e29f5fde",
+            "@type": "types:Dictionary",
+            "rdfs:comment": "This dictionary will trigger an error from using repeatsKey while not also typing itself as a types:ImproperDictionary.",
+            "types:repeatsKey": "x",
+            "types:entry": [
+                {
+                    "@id": "kb:DictionaryEntry-02edb446-1ad5-41ef-8877-fbee912189e7",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "x",
+                    "types:value": "1"
+                },
+                {
+                    "@id": "kb:DictionaryEntry-147908bb-ebba-42e8-854d-72352dc903a1",
+                    "@type": "types:DictionaryEntry",
+                    "types:key": "y",
+                    "types:value": "2"
+                }
+            ]
+        }
+    ]
+}
