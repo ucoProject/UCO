@@ -12,7 +12,7 @@
                 "observable:File",
                 "observable:FileFacet"
             ],
-            "rdfs:comment": "This node will trigger a violation in UCO 2.0.0 for designating itself a File and FileFacet, which are disjoint due to File being a (eventual) subclass of UcoObject, and FileFacet being a (eventual) subclass of UcoInherentCharacterizationThing."
+            "rdfs:comment": "This node will trigger a violation for designating itself a File and FileFacet, which are disjoint due to File being a (eventual) subclass of UcoObject, and FileFacet being a (eventual) subclass of UcoInherentCharacterizationThing."
         }
     ]
 }
