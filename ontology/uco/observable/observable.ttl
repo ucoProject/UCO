@@ -2221,7 +2221,10 @@ observable:Device
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf
+		core:NeverInformationResource ,
+		observable:ObservableObject
+		;
 	rdfs:label "Device"@en ;
 	rdfs:comment "A device is a piece of equipment or a mechanism designed to serve a special purpose or perform a special function. [based on https://www.merriam-webster.com/dictionary/device]"@en ;
 	sh:targetClass observable:Device ;
@@ -6903,7 +6906,10 @@ observable:URL
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf
+		core:NeverInformationResource ,
+		observable:ObservableObject
+		;
 	rdfs:label "URL"@en ;
 	rdfs:comment "A URL is a uniform resource locator (URL) acting as a resolvable address to a particular WWW (World Wide Web) accessible resource."@en ;
 	sh:targetClass observable:URL ;
@@ -7359,10 +7365,24 @@ observable:WebPage
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf
+		core:InformationResource ,
+		observable:WebResource
+		;
 	rdfs:label "WebPage"@en ;
 	rdfs:comment "A web page is a specific collection of information provided by a website and displayed to a user in a web browser. A website typically consists of many web pages linked together in a coherent fashion. [based on https://en.wikipedia.org/wiki/Web_page]"@en ;
 	sh:targetClass observable:WebPage ;
+	.
+
+observable:WebResource
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "WebResource"@en ;
+	rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc9110.html#name-resources> ;
+	sh:targetClass observable:WebResource ;
 	.
 
 observable:WhoIs

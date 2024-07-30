@@ -181,7 +181,10 @@ core:Event
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf
+		core:NeverInformationResource ,
+		core:UcoObject
+		;
 	rdfs:label "Event"@en ;
 	rdfs:comment "An Event is a noteworthy occurrence (something that happens or might happen)."@en ;
 	owl:disjointWith action:Action ;
@@ -284,6 +287,27 @@ core:IdentityAbstraction
 	sh:targetClass core:IdentityAbstraction ;
 	.
 
+core:InformationResource
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoThing ;
+	owl:disjointWith core:NeverInformationResource ;
+	sh:targetClass core:InformationResource ;
+	.
+
+core:InformationResource-disjointWith-NeverInformationResource-shape
+	a sh:NodeShape ;
+	sh:message "core:InformationResource and core:NeverInformationResource are disjoint classes.  Assigning both types to a single node will be an error as of UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:NeverInformationResource ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass core:InformationResource ;
+	.
+
 core:Item
 	a
 		owl:Class ,
@@ -315,6 +339,24 @@ core:ModusOperandi
 	rdfs:label "ModusOperandi"@en ;
 	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	sh:targetClass core:ModusOperandi ;
+	.
+
+core:NeverInformationResource
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:NonInformationResource ;
+	sh:targetClass core:NeverInformationResource ;
+	.
+
+core:NonInformationResource
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoThing ;
+	sh:targetClass core:NonInformationResource ;
 	.
 
 core:Relationship
@@ -371,7 +413,7 @@ core:UcoInherentCharacterizationThing
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoThing ;
+	rdfs:subClassOf core:NeverInformationResource ;
 	rdfs:label "UcoInherentCharacterizationThing"@en ;
 	rdfs:comment "A UCO inherent characterization thing is a grouping of characteristics unique to a particular inherent aspect of a UCO domain object."@en ;
 	sh:targetClass core:UcoInherentCharacterizationThing ;

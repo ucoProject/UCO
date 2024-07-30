@@ -160,7 +160,10 @@ identity:Organization
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf identity:Identity ;
+	rdfs:subClassOf
+		core:NeverInformationResource ,
+		identity:Identity
+		;
 	rdfs:label "Organization"@en ;
 	rdfs:comment "An organization is a grouping of identifying characteristics unique to a group of people who work together in an organized way for a shared purpose. [based on https://dictionary.cambridge.org/us/dictionary/english/organization]"@en ;
 	sh:targetClass identity:Organization ;
@@ -182,7 +185,10 @@ identity:Person
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf identity:Identity ;
+	rdfs:subClassOf
+		core:NeverInformationResource ,
+		identity:Identity
+		;
 	rdfs:label "Person"@en ;
 	rdfs:comment "A person is a grouping of identifying characteristics unique to a human being regarded as an individual. [based on https://www.lexico.com/en/definition/person]"@en ;
 	sh:targetClass identity:Person ;

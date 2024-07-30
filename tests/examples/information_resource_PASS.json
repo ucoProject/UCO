@@ -1,0 +1,74 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@id": "http://example.org/~bob",
+            "@type": [
+                "identity:Person",
+                "observable:WebPage"
+            ],
+            "core:name": "Bob",
+            "core:description": "Bob's company home page.",
+            "rdfs:comment": "This node will trigger a warning from conflating a node as both a person and the person's home page.",
+            "rdfs:seeAlso": [
+                {
+                    "@id": "kb:Person-a3d3af3d-ea1d-47f6-bc02-ac334ded6549"
+                },
+                {
+                    "@id": "kb:WebPage-1c05c378-124e-4d3c-898a-fb5a8d178cf8"
+                }
+            ]
+        },
+        {
+            "@id": "kb:Person-a3d3af3d-ea1d-47f6-bc02-ac334ded6549",
+            "@type": "identity:Person",
+            "core:name": "Bob",
+            "rdfs:seeAlso": {
+                "@id": "http://example.org/~bob"
+            }
+        },
+        {
+            "@id": "kb:WebPage-1c05c378-124e-4d3c-898a-fb5a8d178cf8",
+            "@type": "observable:WebPage",
+            "core:description": "Bob's company home page.",
+            "rdfs:seeAlso": {
+                "@id": "http://example.org/~bob"
+            }
+        },
+        {
+            "@id": "http://example.org/~chris",
+            "@type": "observable:WebResource",
+            "rdfs:comment": "This node will trigger an info-level result from not designating itself a InformationResource, and not ending with a UUID."
+        },
+        {
+            "@id": "https://mc.example.co.jp/",
+            "@type": "observable:WebPage",
+            "rdfs:comment": [
+                "This node should trigger no errors, even when incorporating the annotations on the same identifier from another JSON dict.",
+                "This JSON dict was provided by a market analyst in Japan."
+            ]
+        },
+        {
+            "@id": "https://mc.example.co.jp/",
+            "@type": ["core:NonInformationResource", "observable:WebResource"],
+            "rdfs:comment": [
+                "This node should trigger no errors, even when incorporating the annotations on the same identifier from another JSON dict.",
+                "This JSON dict was provided by a market analyst in France."
+            ]
+        },
+        {
+            "@id": "https://mc.example.co.jp/lang-fr/",
+            "@type": "observable:WebPage",
+            "rdfs:comment": [
+                "This node should trigger no errors.",
+                "This JSON dict was provided by a market analyst in France."
+            ]
+        }
+    ]
+}
