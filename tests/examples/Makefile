@@ -37,6 +37,7 @@ all: \
   has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
   hash_XFAIL_validation.ttl \
+  information_resource_PASS_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
@@ -112,6 +113,7 @@ check: \
   has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
   hash_XFAIL_validation.ttl \
+  information_resource_PASS_validation.ttl \
   location_PASS_validation.ttl \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
