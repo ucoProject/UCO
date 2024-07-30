@@ -40,15 +40,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/~bob> ;
-			sh:resultMessage "core:InformationResource and core:NeverInformationResource are disjoint classes.  Assigning both types to a single node will be an error as of UCO 2.0.0."@en ;
-			sh:resultSeverity sh:Warning ;
-			sh:sourceConstraintComponent sh:NotConstraintComponent ;
-			sh:sourceShape core:InformationResource-disjointWith-NeverInformationResource-shape ;
-			sh:value <http://example.org/~bob> ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/~chris> ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
