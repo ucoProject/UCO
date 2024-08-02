@@ -2265,6 +2265,12 @@ observable:DeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:serialNumber ;
+		] ,
+		[
+			sh:message "In UCO 2.0.0, cpeid in DeviceFacet will be constrained to be a CPE version 2.3 hardware name."@en ;
+			sh:path observable:cpeid ;
+			sh:pattern "^cpe:2.3:h:.+" ;
+			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:DeviceFacet ;
@@ -5156,6 +5162,15 @@ observable:OperatingSystem
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "OperatingSystem"@en ;
 	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
+	sh:property [
+		sh:message "In UCO 2.0.0, cpeid in any Facet attached to an OperatingSystem will be constrained to be a CPE version 2.3 operating system name."@en ;
+		sh:path (
+			core:hasFacet
+			observable:cpeid
+		) ;
+		sh:pattern "^cpe:2.3:o:.+" ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetClass observable:OperatingSystem ;
 	.
 
@@ -5208,6 +5223,12 @@ observable:OperatingSystemFacet
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:advertisingID ;
+		] ,
+		[
+			sh:maxCount "0"^^xsd:integer ;
+			sh:message "observable:cpeid should appear on a SoftwareFacet instead of an OperatingSystemFacet."@en ;
+			sh:path observable:cpeid ;
+			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
@@ -6213,6 +6234,12 @@ observable:SoftwareFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:version ;
+		] ,
+		[
+			sh:message "In UCO 2.0.0, cpeid in SoftwareFacet will be constrained to be a CPE version 2.3 application or operating system name."@en ;
+			sh:path observable:cpeid ;
+			sh:pattern "^cpe:2.3:[a,o]:.+" ;
+			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:SoftwareFacet ;

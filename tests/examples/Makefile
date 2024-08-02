@@ -26,6 +26,7 @@ all: \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
   configuration_setting_XFAIL_validation.ttl \
+  cpe_PASS_validation.ttl \
   database_records_PASS_validation.ttl \
   database_records_XFAIL_validation.ttl \
   dictionary_PASS_validation.ttl \
@@ -101,6 +102,7 @@ check: \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
   configuration_setting_XFAIL_validation.ttl \
+  cpe_PASS_validation.ttl \
   database_records_PASS_validation.ttl \
   database_records_XFAIL_validation.ttl \
   dictionary_PASS_validation.ttl \
