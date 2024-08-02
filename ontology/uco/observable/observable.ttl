@@ -2246,6 +2246,12 @@ observable:DeviceFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:cpeid ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:deviceType ;
 		] ,
 		[
