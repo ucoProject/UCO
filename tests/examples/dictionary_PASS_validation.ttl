@@ -1,0 +1,46 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6> ;
+		sh:resultMessage "A key in a dictionary should appear no more than once.  The value literal does.  Please consider using the types:ImproperDictionary class and types:repeatsKey property." ;
+		sh:resultSeverity sh:Warning ;
+		sh:sourceConstraint [
+			a sh:SPARQLConstraint ;
+			sh:message "A key in a dictionary should appear no more than once.  The value literal does.  Please consider using the types:ImproperDictionary class and types:repeatsKey property."@en ;
+			sh:select """
+			PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+			SELECT $this ?value
+			WHERE {
+				$this
+					types:entry/types:key ?value ;
+					.
+				FILTER NOT EXISTS {
+					$this
+						a types:ImproperDictionary ;
+						.
+				}
+				FILTER NOT EXISTS {
+					$this
+						a types:ProperDictionary ;
+						.
+				}
+			}
+			GROUP BY ?value
+			HAVING (COUNT(?value) > 1)
+			""" ;
+		] ;
+		sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+		sh:sourceShape types:Dictionary-keyUniqueness-shape ;
+		sh:value "x" ;
+	] ;
+	.
+
