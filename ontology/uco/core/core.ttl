@@ -405,7 +405,6 @@ core:UcoObject
 			sh:severity sh:Info ;
   		] ,
   		[
-			sh:minCount "1"^^xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:or (
