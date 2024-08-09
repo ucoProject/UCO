@@ -403,8 +403,8 @@ core:UcoObject
 			sh:message "Value is outside the default vocabulary ObjectStatusVocab." ;
 			sh:path core:objectStatus ;
 			sh:severity sh:Info ;
-  		] ,
-  		[
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:or (
@@ -416,8 +416,8 @@ core:UcoObject
 				]
 			) ;
 			sh:path core:objectStatus ;
-  		] ,
-  		[
+		] ,
+		[
 			sh:message "Value is not member of the vocabulary ObjectStatusVocab." ;
 			sh:or (
 				[
@@ -433,7 +433,7 @@ core:UcoObject
 				]
 			) ;
 			sh:path core:objectStatus ;
-  		]
+		]
 		;
 	sh:targetClass core:UcoObject ;
 	.
@@ -660,9 +660,9 @@ core:objectMarking
 
 core:objectStatus
 	a owl:DatatypeProperty ;
-  	rdfs:comment "The current state of formality and acceptance for a UCO object ."@en-US ;
-  	rdfs:label "Object Status"@en-US ;
-  	rdfs:range [
+	rdfs:label "Object Status"@en-US ;
+	rdfs:comment "The current state of formality and acceptance for a UCO object ."@en-US ;
+	rdfs:range [
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
