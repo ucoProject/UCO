@@ -5,7 +5,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
-@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/core>
@@ -318,6 +317,20 @@ core:ModusOperandi
 	sh:targetClass core:ModusOperandi ;
 	.
 
+core:ObjectStatusVocab
+	a rdfs:Datatype ;
+	rdfs:label "Object Status Vocabulary"@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"Draft"^^core:ObjectStatusVocab
+			"Final"^^core:ObjectStatusVocab
+			"Deprecated"^^core:ObjectStatusVocab
+		) ;
+	] ;
+	.
+
 core:Relationship
 	a
 		owl:Class ,
@@ -454,7 +467,7 @@ core:UcoObject
 			sh:path core:tag ;
 		] ,
 		[
-			sh:datatype vocabulary:ObjectStatusVocab ;
+			sh:datatype core:ObjectStatusVocab ;
 			sh:message "Value is outside the default vocabulary ObjectStatusVocab." ;
 			sh:path core:objectStatus ;
 			sh:severity sh:Info ;
@@ -464,7 +477,7 @@ core:UcoObject
 			sh:nodeKind sh:Literal ;
 			sh:or (
 				[
-					sh:datatype vocabulary:ObjectStatusVocab ;
+					sh:datatype core:ObjectStatusVocab ;
 				]
 				[
 					sh:datatype xsd:string ;
@@ -476,11 +489,11 @@ core:UcoObject
 			sh:message "Value is not member of the vocabulary ObjectStatusVocab." ;
 			sh:or (
 				[
-					sh:datatype vocabulary:ObjectStatusVocab ;
+					sh:datatype core:ObjectStatusVocab ;
 					sh:in (
-						"Draft"^^vocabulary:ObjectStatusVocab
-						"Final"^^vocabulary:ObjectStatusVocab
-						"Deprecated"^^vocabulary:ObjectStatusVocab
+						"Draft"^^core:ObjectStatusVocab
+						"Final"^^core:ObjectStatusVocab
+						"Deprecated"^^core:ObjectStatusVocab
 					) ;
 				]
 				[
@@ -742,7 +755,7 @@ core:objectStatus
 		a rdfs:Datatype ;
 		owl:unionOf (
 			xsd:string
-			vocabulary:ObjectStatusVocab
+			core:ObjectStatusVocab
 		) ;
 	] ;
 	.
