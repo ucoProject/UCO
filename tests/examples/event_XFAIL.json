@@ -1,0 +1,28 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Action-0-03ee1fe6-12cf-4a35-b7dd-06d4e69369b5",
+            "@type": [
+                "action:Action",
+                "core:Event"
+            ],
+            "rdfs:comment": "This node will trigger an XFAIL for designating itself an Action and Event, which are disjoint classes."
+        },
+        {
+            "@id": "kb:Action-1-763c1ff2-d18d-427b-aa82-30d90701a644",
+            "@type": "action:Action",
+            "rdfs:comment": "This node should pass validation."
+        },
+        {
+            "@id": "kb:Event-1-ee9450b6-3535-473d-984d-17a91408a54f",
+            "@type": "event:Event",
+            "rdfs:comment": "This node should pass validation."
+        }
+    ]
+}

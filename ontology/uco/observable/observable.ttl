@@ -1,10 +1,10 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/action/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/location/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/types/1.2.0
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.3.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
@@ -24,18 +24,18 @@
 <https://ontology.unifiedcyberontology.org/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
-	owl:backwardCompatibleWith observable:1.1.0 ;
+	owl:backwardCompatibleWith observable:1.2.0 ;
 	owl:imports
-		action:1.2.0 ,
-		configuration:1.2.0 ,
-		core:1.2.0 ,
-		identity:1.2.0 ,
-		location:1.2.0 ,
-		types:1.2.0 ,
-		vocabulary:1.2.0
+		action:1.3.0 ,
+		configuration:1.3.0 ,
+		core:1.3.0 ,
+		identity:1.3.0 ,
+		location:1.3.0 ,
+		types:1.3.0 ,
+		vocabulary:1.3.0
 		;
-	owl:priorVersion observable:1.1.0 ;
-	owl:versionIRI observable:1.2.0 ;
+	owl:priorVersion observable:1.2.0 ;
+	owl:versionIRI observable:1.3.0 ;
 	.
 
 observable:API
@@ -239,6 +239,14 @@ observable:AlternateDataStream
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "AlternateDataStream"@en ;
 	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:FileSystemObject ;
+		sh:message "In UCO 2.0.0, uco-observable:AlternateDataStream will be a subclass of uco-observable:FileSystemObject.  In preparation for UCO 2.0.0, the additional type uco-observable:FileSystemObject should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:AlternateDataStream ;
+	] ;
 	sh:targetClass observable:AlternateDataStream ;
 	.
 
@@ -3197,6 +3205,18 @@ observable:File
 	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "File"@en ;
 	rdfs:comment "A file is a computer resource for recording data discretely on a computer storage device."@en ;
+	owl:disjointWith observable:URL ;
+	sh:targetClass observable:File ;
+	.
+
+observable:File-disjointWith-URL-shape
+	a sh:NodeShape ;
+	sh:message "observable:File and observable:URL are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class observable:URL ;
+	] ;
+	sh:severity sh:Warning ;
 	sh:targetClass observable:File ;
 	.
 
@@ -5044,6 +5064,20 @@ observable:ObservableRelationship
 		;
 	rdfs:label "ObservableRelationship"@en ;
 	rdfs:comment "An observable relationship is a grouping of characteristics unique to an assertion of an association between two observable objects."@en ;
+	sh:property
+		[
+			sh:class observable:Observable ;
+			sh:message "The source on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+			sh:path core:source ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:class observable:Observable ;
+			sh:message "The target on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+			sh:path core:target ;
+			sh:severity sh:Warning ;
+		]
+		;
 	sh:targetClass observable:ObservableRelationship ;
 	.
 

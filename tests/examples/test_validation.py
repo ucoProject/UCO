@@ -177,6 +177,15 @@ def test_action_result_PASS_validation() -> None:
     g = load_validation_graph("action_result_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
 
+def test_alternate_data_stream_PASS_validation() -> None:
+    confirm_validation_results(
+      "alternate_data_stream_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13", str(NS_SH.Warning)),
+      }
+    )
+
 def test_configuration_setting_PASS_validation() -> None:
     g = load_validation_graph("configuration_setting_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
@@ -204,6 +213,57 @@ def test_database_records_XFAIL() -> None:
       expected_focus_node_severities={
         ("http://example.org/kb/table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314", str(NS_SH.Violation)),
         ("http://example.org/kb/table-field-facet-37182dba-4dbd-4b97-b49e-8038b7fbfd29", str(NS_SH.Violation)),
+      }
+    )
+
+def test_dictionary_PASS() -> None:
+    confirm_validation_results(
+      "dictionary_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6", str(NS_SH.Warning)),
+      }
+    )
+
+def test_dictionary_XFAIL() -> None:
+    confirm_validation_results(
+      "dictionary_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Dictionary-5bc55661-4808-48e6-9e02-80a153eee5d3", str(NS_SH.Violation)),
+        ("http://example.org/kb/Dictionary-e6dc9c2e-25bc-422f-8ae8-8457e29f5fde", str(NS_SH.Violation)),
+        ("http://example.org/kb/Dictionary-34ac0c49-1042-49c0-8fd6-c42a810e58da", str(NS_SH.Warning)),
+        ("http://example.org/kb/Dictionary-34ac0c49-1042-49c0-8fd6-c42a810e58da", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-8114819f-d3c8-4e29-9e31-295d771f9db2", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-b2baf8af-3d5d-4c4e-b442-49befefd147e", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-f5ae2e6a-9b10-46f3-8441-30aada36aa1b", str(NS_SH.Violation)),
+      }
+    )
+
+def test_disjointedness_PASS() -> None:
+    confirm_validation_results(
+      "disjointedness_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce", str(NS_SH.Warning)),
+      }
+    )
+
+def test_event_XFAIL() -> None:
+    confirm_validation_results(
+        "event_XFAIL_validation.ttl",
+        False,
+        expected_focus_node_severities = {
+          ("http://example.org/kb/Action-0-03ee1fe6-12cf-4a35-b7dd-06d4e69369b5", str(NS_SH.Violation)),
+        }
+    )
+
+def test_file_url_PASS_validation() -> None:
+    confirm_validation_results(
+      "file_url_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Thing-23a38d67-3432-458b-9651-955b418c2a77", str(NS_SH.Warning)),
       }
     )
 

@@ -1,10 +1,14 @@
 {
     "@context": {
+        "dash": "http://datashapes.org/dash#",
+        "ex": "http://example.org/ontology/",
         "kb": "http://example.org/kb/",
         "owl": "http://www.w3.org/2002/07/owl#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
- 	"skos": "http://www.w3.org/2004/02/skos/core#"
+        "sh": "http://www.w3.org/ns/shacl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
@@ -13,6 +17,14 @@
         },
         {
             "@id": "kb:concept-2",
+            "@type": "skos:Concept"
+        },
+        {
+            "@id": "kb:concept-3",
+            "@type": "skos:Concept"
+        },
+        {
+            "@id": "kb:concept-4",
             "@type": "skos:Concept"
         },
         {
@@ -50,6 +62,130 @@
                     }
                 }
             }
+        },
+        {
+            "@id": "kb:ordered-collection-3",
+            "@type": "skos:OrderedCollection",
+            "skos:memberList": {
+                "@id": "kb:list-1",
+                "@type": "rdf:List",
+                "rdf:first": {
+                    "@id": "kb:concept-3"
+                },
+                "rdf:rest": {
+                    "@type": "rdf:List",
+                    "rdf:first": {
+                        "@id": "kb:concept-4"
+                    },
+                    "rdf:rest": {
+                        "@id": "rdf:nil"
+                    }
+                }
+            }
+        },
+        {
+            "@id": "kb:ordered-collection-4",
+            "@type": "skos:OrderedCollection",
+            "skos:memberList": {
+                "rdf:first": {
+                    "@id": "kb:concept-3"
+                },
+                "rdf:rest": {
+                    "@id": "kb:list-2",
+                    "rdf:first": {
+                        "@id": "kb:concept-4"
+                    },
+                    "rdf:rest": {
+                        "@id": "rdf:nil"
+                    }
+                }
+            }
+        },
+        {
+            "@type": "owl:AllDifferent",
+            "owl:distinctMembers": {
+                "@type": "rdf:List",
+                "rdf:first": {
+                    "@id": "kb:ordered-collection-1"
+                },
+                "rdf:rest": {
+                    "@type": "rdf:List",
+                    "rdf:first": {
+                        "@id": "kb:ordered-collection-2"
+                    },
+                    "rdf:rest": {
+                        "@id": "rdf:nil"
+                    }
+                }
+            }
+        },
+        {
+            "@id": "ex:hasGrandparent",
+            "@type": "owl:ObjectProperty",
+            "rdfs:isDefinedBy": {
+                "@id": "https://www.w3.org/TR/2012/REC-owl2-primer-20121211/#Property_Chains"
+            },
+            "owl:propertyChainAxiom": {
+                "rdf:first": {
+                    "@id": "ex:hasParent"
+                },
+                "rdf:rest": {
+                    "rdf:first": {
+                        "@id": "ex:hasParent"
+                    },
+                    "rdf:rest": {
+                        "@id": "rdf:nil"
+                    }
+                }
+            }
+        },
+        {
+            "@id": "ex:hasParent",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ex:Person",
+            "@type": "owl:Class",
+            "rdfs:comment": "NOTE: This example is excerpted from the OWL 2 Primer only for syntactic reference.",
+            "rdfs:isDefinedBy": {
+                "@id": "https://www.w3.org/TR/2012/REC-owl2-primer-20121211/#Keys"
+            },
+            "owl:hasKey": {
+                "rdf:first": {
+                    "@id": "ex:hasSSN"
+                },
+                "rdf:rest": {
+                    "@id": "rdf:nil"
+                }
+            }
+        },
+        {
+            "@id": "ex:hasSSN",
+            "@type": "owl:DatatypeProperty",
+            "rdfs:comment": "NOTE: This example is excerpted from the OWL 2 Primer only for syntactic reference.",
+            "rdfs:isDefinedBy": {
+                "@id": "https://www.w3.org/TR/2012/REC-owl2-primer-20121211/#Keys"
+            }
+        },
+        {
+            "@id": "dash:DateOrDateTime",
+            "@type": "rdf:List",
+            "rdf:first": {
+                "sh:datatype": "xsd:date"
+            },
+            "rdf:rest": {
+                "rdf:first": {
+                    "sh:datatype": "xsd:dateTime"
+                },
+                "rdf:rest": {
+                    "@id": "rdf:nil"
+                }
+            },
+            "rdfs:comment": "An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either xsd:date or xsd:dateTime.",
+            "rdfs:isDefinedBy": {
+                "@id": "http://datashapes.org/dash"
+            },
+            "rdfs:label": "Date or date time"
         }
     ]
 }
