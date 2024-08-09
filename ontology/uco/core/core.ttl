@@ -468,38 +468,14 @@ core:UcoObject
 		] ,
 		[
 			sh:datatype core:ObjectStatusVocab ;
-			sh:message "Value is outside the default vocabulary ObjectStatusVocab." ;
-			sh:path core:objectStatus ;
-			sh:severity sh:Info ;
-		] ,
-		[
+			sh:in (
+				"Draft"^^core:ObjectStatusVocab
+				"Final"^^core:ObjectStatusVocab
+				"Deprecated"^^core:ObjectStatusVocab
+			) ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype core:ObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path core:objectStatus ;
-		] ,
-		[
 			sh:message "Value is not member of the vocabulary ObjectStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype core:ObjectStatusVocab ;
-					sh:in (
-						"Draft"^^core:ObjectStatusVocab
-						"Final"^^core:ObjectStatusVocab
-						"Deprecated"^^core:ObjectStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
+			sh:nodeKind sh:Literal ;
 			sh:path core:objectStatus ;
 		]
 		;
@@ -751,13 +727,7 @@ core:objectStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "Object Status"@en-US ;
 	rdfs:comment "The current state of formality and acceptance for a UCO object ."@en-US ;
-	rdfs:range [
-		a rdfs:Datatype ;
-		owl:unionOf (
-			xsd:string
-			core:ObjectStatusVocab
-		) ;
-	] ;
+	rdfs:range core:ObjectStatusVocab ;
 	.
 
 core:referenceURL
