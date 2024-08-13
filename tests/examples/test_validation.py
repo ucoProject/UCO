@@ -440,6 +440,10 @@ def test_object_status_XFAIL() -> None:
           "http://example.org/kb/UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351",
           str(NS_SH.Violation)
         ),
+        (
+          "http://example.org/kb/ArchiveFileFacet-5884ca1c-2f5e-4e66-bdc6-7d48606f9fbc",
+          str(NS_SH.Violation)
+        ),
       }
     )
 

@@ -730,6 +730,12 @@ core:objectStatus
 	rdfs:range core:ObjectStatusVocab ;
 	.
 
+core:objectStatus-subjects-shape
+	a sh:NodeShape ;
+	sh:class core:UcoObject ;
+	sh:targetSubjectsOf core:objectStatus ;
+	.
+
 core:referenceURL
 	a owl:DatatypeProperty ;
 	rdfs:label "referenceURL"@en ;
