@@ -474,7 +474,6 @@ core:UcoObject
 				"Deprecated"^^core:ObjectStatusVocab
 			) ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:message "Value is not member of the vocabulary ObjectStatusVocab." ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:objectStatus ;
 		]
