@@ -1,0 +1,15 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351",
+            "@type": "core:UcoObject",
+            "rdfs:comment": "This will trigger an error from using a value outside of the required vocabulary.",
+            "core:objectStatus": "Initial draft"
+        }
+    ]
+}
