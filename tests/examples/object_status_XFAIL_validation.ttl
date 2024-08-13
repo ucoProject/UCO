@@ -21,28 +21,7 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351> ;
-			sh:resultMessage "Value is not member of the vocabulary ObjectStatusVocab." ;
-			sh:resultPath core:objectStatus ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype core:ObjectStatusVocab ;
-				sh:in (
-					"Draft"^^core:ObjectStatusVocab
-					"Final"^^core:ObjectStatusVocab
-					"Deprecated"^^core:ObjectStatusVocab
-				) ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:message "Value is not member of the vocabulary ObjectStatusVocab." ;
-				sh:nodeKind sh:Literal ;
-				sh:path core:objectStatus ;
-			] ;
-			sh:value "Initial draft" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351> ;
-			sh:resultMessage "Value is not member of the vocabulary ObjectStatusVocab." ;
+			sh:resultMessage "Value Literal(\"Initial draft\") not in list ['Literal(\"Final\" = None, datatype=core:ObjectStatusVocab)', 'Literal(\"Draft\" = None, datatype=core:ObjectStatusVocab)', 'Literal(\"Deprecated\" = None, datatype=core:ObjectStatusVocab)']" ;
 			sh:resultPath core:objectStatus ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
@@ -54,7 +33,26 @@
 					"Deprecated"^^core:ObjectStatusVocab
 				) ;
 				sh:maxCount "1"^^xsd:integer ;
-				sh:message "Value is not member of the vocabulary ObjectStatusVocab." ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:objectStatus ;
+			] ;
+			sh:value "Initial draft" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351> ;
+			sh:resultMessage "Value is not Literal with datatype core:ObjectStatusVocab" ;
+			sh:resultPath core:objectStatus ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype core:ObjectStatusVocab ;
+				sh:in (
+					"Draft"^^core:ObjectStatusVocab
+					"Final"^^core:ObjectStatusVocab
+					"Deprecated"^^core:ObjectStatusVocab
+				) ;
+				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
 				sh:path core:objectStatus ;
 			] ;
