@@ -724,7 +724,7 @@ core:objectMarking
 	.
 
 core:objectStatus
-	a owl:DatatypeProperty ;
+	a owl:AnnotationProperty ;
 	rdfs:label "Object Status"@en-US ;
 	rdfs:comment "The current state of formality and acceptance for a UCO object."@en-US ;
 	rdfs:range core:ObjectStatusVocab ;
