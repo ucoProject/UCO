@@ -11,6 +11,15 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/ArchiveFileFacet-5884ca1c-2f5e-4e66-bdc6-7d48606f9fbc> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape core:objectStatus-subjects-shape ;
+			sh:value <http://example.org/kb/ArchiveFileFacet-5884ca1c-2f5e-4e66-bdc6-7d48606f9fbc> ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351> ;
 			sh:resultMessage "Value is not member of the vocabulary ObjectStatusVocab." ;
 			sh:resultPath core:objectStatus ;
