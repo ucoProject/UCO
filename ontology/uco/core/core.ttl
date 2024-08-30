@@ -317,6 +317,20 @@ core:ModusOperandi
 	sh:targetClass core:ModusOperandi ;
 	.
 
+core:ObjectStatusVocab
+	a rdfs:Datatype ;
+	rdfs:label "Object Status Vocabulary"@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
+		owl:oneOf (
+			"Draft"^^core:ObjectStatusVocab
+			"Final"^^core:ObjectStatusVocab
+			"Deprecated"^^core:ObjectStatusVocab
+		) ;
+	] ;
+	.
+
 core:Relationship
 	a
 		owl:Class ,
@@ -451,6 +465,17 @@ core:UcoObject
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:tag ;
+		] ,
+		[
+			sh:datatype core:ObjectStatusVocab ;
+			sh:in (
+				"Draft"^^core:ObjectStatusVocab
+				"Final"^^core:ObjectStatusVocab
+				"Deprecated"^^core:ObjectStatusVocab
+			) ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectStatus ;
 		]
 		;
 	sh:targetClass core:UcoObject ;
@@ -695,6 +720,19 @@ core:objectMarking
 	rdfs:label "objectMarking"@en ;
 	rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
 	rdfs:range core:MarkingDefinitionAbstraction ;
+	.
+
+core:objectStatus
+	a owl:AnnotationProperty ;
+	rdfs:label "objectStatus"@en ;
+	rdfs:comment "The current state of formality and acceptance for a UCO object."@en-US ;
+	rdfs:range core:ObjectStatusVocab ;
+	.
+
+core:objectStatus-subjects-shape
+	a sh:NodeShape ;
+	sh:class core:UcoObject ;
+	sh:targetSubjectsOf core:objectStatus ;
 	.
 
 core:referenceURL

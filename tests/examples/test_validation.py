@@ -425,6 +425,28 @@ def test_message_thread_PASS_validation() -> None:
 def test_message_thread_XFAIL_validation() -> None:
     confirm_validation_results("message_thread_XFAIL_validation.ttl", False)
 
+def test_object_status_PASS() -> None:
+    confirm_validation_results(
+      "object_status_PASS_validation.ttl",
+      True,
+    )
+
+def test_object_status_XFAIL() -> None:
+    confirm_validation_results(
+      "object_status_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        (
+          "http://example.org/kb/UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351",
+          str(NS_SH.Violation)
+        ),
+        (
+          "http://example.org/kb/ArchiveFileFacet-5884ca1c-2f5e-4e66-bdc6-7d48606f9fbc",
+          str(NS_SH.Violation)
+        ),
+      }
+    )
+
 def test_observable_creation_time_PASS() -> None:
     confirm_validation_results(
       "observable_creation_time_PASS_validation.ttl",
