@@ -44,6 +44,7 @@ all: \
   object_status_PASS_validation.ttl \
   object_status_XFAIL_validation.ttl \
   observable_creation_time_PASS_validation.ttl \
+  operating_system_PASS_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
   owl_properties_PASS_validation.ttl \
@@ -121,6 +122,7 @@ check: \
   object_status_PASS_validation.ttl \
   object_status_XFAIL_validation.ttl \
   observable_creation_time_PASS_validation.ttl \
+  operating_system_PASS_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
   owl_properties_PASS_validation.ttl \
