@@ -1,0 +1,61 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/observable/1.3.0
+
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix deployment: <https://ontology.unifiedcyberontology.org/uco/deployment/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.unifiedcyberontology.org/uco/deployment>
+	a owl:Ontology ;
+	rdfs:label "uco-deployment"@en ;
+	rdfs:comment "TODO"@en ;
+	owl:imports observable:1.3.0 ;
+	owl:versionIRI deployment:1.3.0 ;
+	.
+
+deployment:ArtifactDeployment
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf deployment:Deployment ;
+	.
+
+deployment:Deployment
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	sh:property
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:IRI ;
+			sh:path deployment:deploymentContext ;
+		] ,
+		[
+			sh:class observable:Deploy ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:IRI ;
+			sh:path deployment:deploymentAction ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:nodeKind sh:IRI ;
+			sh:path deployment:deploymentObject ;
+		]
+		;
+	.
+
+deployment:SoftwareDeployment
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf deployment:Deployment ;
+	.
+

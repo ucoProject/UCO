@@ -374,6 +374,26 @@ action:ArrayOfAction
 	sh:targetClass action:ArrayOfAction ;
 	.
 
+action:Implement
+	a owl:Class ;
+	rdfs:subClassOf action:Action ;
+	.
+
+action:Obfuscate
+	a owl:Class ;
+	rdfs:subClassOf action:Action ;
+	.
+
+action:Plan
+	a owl:Class ;
+	rdfs:subClassOf action:Action ;
+	.
+
+action:Respond
+	a owl:Class ;
+	rdfs:subClassOf action:Action ;
+	.
+
 action:action
 	a owl:ObjectProperty ;
 	rdfs:label "action"@en ;
