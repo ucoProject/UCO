@@ -1,0 +1,65 @@
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/DeviceFacet-4a1cdff8-be81-46e3-8502-0f488d353ca0> ;
+			sh:resultMessage "In UCO 2.0.0, cpeid in DeviceFacet will be constrained to be a CPE version 2.3 hardware name."@en ;
+			sh:resultPath observable:cpeid ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:PatternConstraintComponent ;
+			sh:sourceShape [
+				sh:message "In UCO 2.0.0, cpeid in DeviceFacet will be constrained to be a CPE version 2.3 hardware name."@en ;
+				sh:path observable:cpeid ;
+				sh:pattern "^cpe:2.3:h:.+" ;
+				sh:severity sh:Warning ;
+			] ;
+			sh:value "cpe:2.3:o:exampleco:exampletabletos:-:*:*:*:*:*:*:*" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/OperatingSystem-628d531f-254c-4efb-aaa0-0874306afa01> ;
+			sh:resultMessage "In UCO 2.0.0, cpeid in any Facet attached to an OperatingSystem will be constrained to be a CPE version 2.3 operating system name."@en ;
+			sh:resultPath (
+				core:hasFacet
+				observable:cpeid
+			) ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:PatternConstraintComponent ;
+			sh:sourceShape [
+				sh:message "In UCO 2.0.0, cpeid in any Facet attached to an OperatingSystem will be constrained to be a CPE version 2.3 operating system name."@en ;
+				sh:path (
+					core:hasFacet
+					observable:cpeid
+				) ;
+				sh:pattern "^cpe:2.3:o:.+" ;
+				sh:severity sh:Warning ;
+			] ;
+			sh:value "cpe:2.3:a:exampleco:exampletabletos:2024.06:*:*:*:*:*:*:*" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/OperatingSystemFacet-872c1ba2-e1b4-4bc6-8267-6dbed687d0be> ;
+			sh:resultMessage "observable:cpeid should appear on a SoftwareFacet instead of an OperatingSystemFacet."@en ;
+			sh:resultPath observable:cpeid ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:message "observable:cpeid should appear on a SoftwareFacet instead of an OperatingSystemFacet."@en ;
+				sh:path observable:cpeid ;
+				sh:severity sh:Warning ;
+			] ;
+		]
+		;
+	.
+
