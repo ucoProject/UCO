@@ -428,6 +428,14 @@ observable:Application
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "Application"@en ;
 	rdfs:comment "An application is a particular software program designed for end users."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Software ;
+		sh:message "In UCO 2.0.0, uco-observable:Application will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:Application ;
+	] ;
 	sh:targetClass observable:Application ;
 	.
 
@@ -865,6 +873,14 @@ observable:BrowserCookieFacet
 	sh:targetClass observable:BrowserCookieFacet ;
 	.
 
+observable:BuildUtility
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
 observable:Calendar
 	a
 		owl:Class ,
@@ -1204,7 +1220,23 @@ observable:Code
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "Code"@en ;
 	rdfs:comment "Code is a direct representation (source, byte or binary) of a collection of computer instructions that form software which tell a computer how to work. [based on https://en.wikipedia.org/wiki/Software]"@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Software ;
+		sh:message "In UCO 2.0.0, uco-observable:Code will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:Code ;
+	] ;
 	sh:targetClass observable:Code ;
+	.
+
+observable:Compiler
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
 	.
 
 observable:CompressedStreamFacet
@@ -2214,6 +2246,14 @@ observable:DefinedEffectFacet
 	rdfs:label "DefinedEffectFacet"@en ;
 	rdfs:comment "A defined effect facet is a grouping of characteristics unique to the effect of an observable action in relation to one or more observable objects."@en ;
 	sh:targetClass observable:DefinedEffectFacet ;
+	.
+
+observable:DeploymentScript
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Script ;
 	.
 
 observable:Device
@@ -3985,6 +4025,14 @@ observable:Library
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "Library"@en ;
 	rdfs:comment "A library is a suite of data and programming code that is used to develop software programs and applications. [based on https://www.techopedia.com/definition/3828/software-library]"@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Software ;
+		sh:message "In UCO 2.0.0, uco-observable:Library will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:Library ;
+	] ;
 	sh:targetClass observable:Library ;
 	.
 
@@ -4003,6 +4051,25 @@ observable:LibraryFacet
 		sh:path observable:libraryType ;
 	] ;
 	sh:targetClass observable:LibraryFacet ;
+	.
+
+observable:LinuxService
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Service ;
+	rdfs:label "LinuxService"@en ;
+	rdfs:comment "A Linux service is a specific Linux service (a computer program that operates in the background of a Linux operating system, similar to the way a UNIX daemon runs on UNIX). [based on observable:WindowsService]"@en ;
+	sh:targetClass observable:LinuxService ;
+	.
+
+observable:LinuxTask
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Task ;
 	.
 
 observable:MACAddress
@@ -5158,6 +5225,14 @@ observable:OperatingSystem
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "OperatingSystem"@en ;
 	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Software ;
+		sh:message "In UCO 2.0.0, uco-observable:OperatingSystem will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:OperatingSystem ;
+	] ;
 	sh:targetClass observable:OperatingSystem ;
 	.
 
@@ -5294,6 +5369,14 @@ observable:PUK
 	rdfs:range xsd:string ;
 	.
 
+observable:Package
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
 observable:PathRelationFacet
 	a
 		owl:Class ,
@@ -5379,6 +5462,14 @@ observable:Process
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "Process"@en ;
 	rdfs:comment "A process is an instance of a computer program executed on an operating system."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Software ;
+		sh:message "In UCO 2.0.0, uco-observable:Process will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:Process ;
+	] ;
 	sh:targetClass observable:Process ;
 	.
 
@@ -5474,6 +5565,14 @@ observable:ProcessThread
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "ProcessThread"@en ;
 	rdfs:comment "A process thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Process ;
+		sh:message "In UCO 2.0.0, uco-observable:ProcessThread will be a subclass of uco-observable:Process.  In preparation for UCO 2.0.0, the additional type uco-observable:Process should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:ProcessThread ;
+	] ;
 	sh:targetClass observable:ProcessThread ;
 	.
 
@@ -6046,6 +6145,14 @@ observable:SQLiteBlobFacet
 	sh:targetClass observable:SQLiteBlobFacet ;
 	.
 
+observable:Script
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
 observable:SecurityAppliance
 	a
 		owl:Class ,
@@ -6094,6 +6201,22 @@ observable:Server
 	rdfs:label "Server"@en-US ;
 	rdfs:comment "A server is a server rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
 	sh:targetClass observable:Server ;
+	.
+
+observable:Service
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Process ;
+	.
+
+observable:ServicePack
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
 	.
 
 observable:ShopListing
@@ -6175,6 +6298,14 @@ observable:Software
 	rdfs:label "Software"@en ;
 	rdfs:comment "Software is a definitely scoped instance of a collection of data or computer instructions that tell the computer how to work. [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:targetClass observable:Software ;
+	.
+
+observable:SoftwareBuild
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
 	.
 
 observable:SoftwareFacet
@@ -6457,6 +6588,14 @@ observable:Tablet
 	rdfs:label "Tablet"@en-US ;
 	rdfs:comment "A tablet is a mobile computer that is primarily operated by touching the screen. (Devices categorized by their manufacturer as a Tablet)"@en-US ;
 	sh:targetClass observable:Tablet ;
+	.
+
+observable:Task
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Process ;
 	.
 
 observable:TaskActionType
@@ -8509,6 +8648,14 @@ observable:WindowsService
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "WindowsService"@en ;
 	rdfs:comment "A Windows service is a specific Windows service (a computer program that operates in the background of a Windows operating system, similar to the way a UNIX daemon runs on UNIX). [based on https://en.wikipedia.org/wiki/Windows_service]"@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Service ;
+		sh:message "In UCO 2.0.0, uco-observable:WindowsService will be a subclass of uco-observable:Service.  In preparation for UCO 2.0.0, the additional type uco-observable:Service should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:WindowsService ;
+	] ;
 	sh:targetClass observable:WindowsService ;
 	.
 
@@ -8634,6 +8781,14 @@ observable:WindowsTask
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "WindowsTask"@en ;
 	rdfs:comment "A Windows task is a process that is scheduled to execute on a Windows operating system by the Windows Task Scheduler. [based on http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx]"@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Task ;
+		sh:message "In UCO 2.0.0, uco-observable:WindowsTask will be a subclass of uco-observable:Task.  In preparation for UCO 2.0.0, the additional type uco-observable:Task should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:WindowsTask ;
+	] ;
 	sh:targetClass observable:WindowsTask ;
 	.
 
