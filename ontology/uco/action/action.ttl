@@ -37,7 +37,10 @@ action:Action
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf
+		core:NeverInformationResource ,
+		core:UcoObject
+		;
 	rdfs:label "Action"@en ;
 	rdfs:comment "An action is something that may be done or performed."@en ;
 	owl:disjointWith core:Event ;
