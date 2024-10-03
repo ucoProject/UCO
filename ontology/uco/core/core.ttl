@@ -1,5 +1,6 @@
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -176,12 +177,35 @@ core:EnclosingCompilation
 	sh:targetClass core:EnclosingCompilation ;
 	.
 
+core:Endurant
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoThing ;
+	rdfs:label "Endurant"@en ;
+	rdfs:comment "A UcoObject that endures in time and may change qualitatively while keeping its identity. Also termed 'continuant' in the philosophical literature."@en ;
+	dct:description "Examples include: ordinary objects of everyday experience, such as a person, a house, and a car; reified relationships, such as a marriage, a rental contract, and a person's love for another; and existentially-dependent aspects of objects, such as a car's weight, a person's language skills, and a house's color."@en ;
+	dct:source <https://nemo-ufes.github.io/gufo/#Endurant> ;
+	owl:disjointWith core:Perdurant ;
+	sh:targetClass core:Endurant ;
+	.
+
+core:Endurant-disjointWith-Perdurant
+	a sh:NodeShape ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:Perdurant ;
+	] ;
+	sh:targetClass core:Endurant ;
+	.
+
 core:Event
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Perdurant ;
 	rdfs:label "Event"@en ;
 	rdfs:comment "An Event is a noteworthy occurrence (something that happens or might happen)."@en ;
 	owl:disjointWith action:Action ;
@@ -278,7 +302,10 @@ core:IdentityAbstraction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf
+		core:Endurant ,
+		core:UcoObject
+		;
 	rdfs:label "IdentityAbstraction"@en ;
 	rdfs:comment "An identity abstraction is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
 	sh:targetClass core:IdentityAbstraction ;
@@ -289,7 +316,10 @@ core:Item
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf
+		core:Endurant ,
+		core:UcoObject
+		;
 	rdfs:label "Item"@en ;
 	rdfs:comment "An item is a distinct article or unit."@en ;
 	sh:targetClass core:Item ;
@@ -315,6 +345,23 @@ core:ModusOperandi
 	rdfs:label "ModusOperandi"@en ;
 	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	sh:targetClass core:ModusOperandi ;
+	.
+
+core:Perdurant
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Perdurant"@en ;
+	rdfs:comment "A UcoObject that 'occurs' or 'happens' in time, or 'unfold' over time. They may be instantaneous or long-running, and represent those 'things that happen to or are performed by' (Casati and Varzi, 2015) endurants or otherwise can count endurants as their participants. Also termed 'happening', 'occurrence', or 'occurrent' in the philosophical literature."@en ;
+	dct:description "Examples include actions and processes, such as a business meeting, a communicative act, a soccer match, a goal kick, the clicking of a mouse button; as well as natural occurrences such as an earthquake, the fall of the meteor that caused the extinction of the dinosaurs."@en ;
+	dct:source
+		"Casati, R. & Varzi, A. (2015). Events. In E.N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Winter 2015 ed.). 19 Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2015/entries/events/"@en ,
+		<https://nemo-ufes.github.io/gufo/#Perdurant>
+		;
+	owl:disjointWith core:Endurant ;
+	sh:targetClass core:Perdurant ;
 	.
 
 core:Relationship
@@ -640,11 +687,31 @@ core:hasFacet-shape
 	sh:targetObjectsOf core:hasFacet ;
 	.
 
+core:hasParticipant
+	a owl:ObjectProperty ;
+	rdfs:label "hasParticipant"@en ;
+	rdfs:comment "Identifies a core:Endurant that participates in the core:Perdurant"@en ;
+	dct:description "Examples include the participation of Freddy Mercury in Queen's Live Aid Concert and the participation of an airplane in a flight."@en ;
+	dct:source <http://purl.org/nemo/gufo#participatedIn> ;
+	rdfs:domain core:Perdurant ;
+	rdfs:range core:Endurant ;
+	.
+
 core:isDirectional
 	a owl:DatatypeProperty ;
 	rdfs:label "isDirectional"@en ;
 	rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
 	rdfs:range xsd:boolean ;
+	.
+
+core:isPerdurantProperPartOf
+	a owl:ObjectProperty ;
+	rdfs:label "isPerdurantProperPartOf"@en ;
+	rdfs:comment "Identifies a core:Perdurant of which the endurant is part."@en ;
+	dct:description "For example, Cristiano Ronaldo's penalty kick is an event proper part of the 2016 FIFA Club World Cup Final, having ocurred in the 60th minute of that match. That match is itself an event proper part of the 2016 FIFA Club World Cup. The match can be decomposed in different ways. For example, we can identify the participation of each player in the match or decomposed the match using some temporal segmentation (each minute of the match, each of which is a proper part of the match)."@en ;
+	dct:source <http://purl.org/nemo/gufo#isEventProperPartOf> ;
+	rdfs:domain core:Perdurant ;
+	rdfs:range core:Perdurant ;
 	.
 
 core:kindOfRelationship
