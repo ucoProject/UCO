@@ -5146,17 +5146,9 @@ observable:OperatingSystem
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:Software ;
 	rdfs:label "OperatingSystem"@en ;
 	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
-	rdfs:seeAlso [
-		a sh:NodeShape ;
-		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
-		sh:class observable:Software ;
-		sh:message "In UCO 2.0.0, uco-observable:OperatingSystem will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
-		sh:severity sh:Warning ;
-		sh:targetClass observable:OperatingSystem ;
-	] ;
 	sh:targetClass observable:OperatingSystem ;
 	.
 
@@ -5169,12 +5161,6 @@ observable:OperatingSystemFacet
 	rdfs:label "OperatingSystemFacet"@en ;
 	rdfs:comment "An operating system facet is a grouping of characteristics unique to the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	sh:property
-		[
-			sh:class identity:Identity ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:IRI ;
-			sh:path observable:manufacturer ;
-		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -5201,26 +5187,18 @@ observable:OperatingSystemFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:version ;
-		] ,
-		[
-			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:advertisingID ;
 		] ,
 		[
 			sh:maxCount "0"^^xsd:integer ;
-			sh:message "In UCO 2.0.0, uco-observable:manufacturer will not be associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:message "As of UCO 2.0.0, uco-observable:manufacturer is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
 			sh:path observable:manufacturer ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "0"^^xsd:integer ;
-			sh:message "In UCO 2.0.0, uco-observable:version will not be associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:message "As of UCO 2.0.0, uco-observable:version is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
 			sh:path observable:version ;
-			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
