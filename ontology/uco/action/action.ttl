@@ -300,7 +300,7 @@ action:ActionLifecycle
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf action:Action ;
+	rdfs:subClassOf action:ActionPattern ;
 	rdfs:label "ActionLifecycle"@en ;
 	rdfs:comment "An action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action lifecycles."@en ;
 	sh:property
