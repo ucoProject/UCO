@@ -7,10 +7,7 @@
         {
             "@id": "kb:UcoObject-f86c567d-374a-4873-b9bc-a746ca2bf360",
             "@type": "core:UcoObject",
-            "core:objectStatus": {
-                "@type": "core:ObjectStatusVocab",
-                "@value": "Draft"
-            }
+            "core:objectStatus": "Draft"
         }
     ]
 }
