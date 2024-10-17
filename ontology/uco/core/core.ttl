@@ -323,9 +323,9 @@ core:ObjectStatusVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Draft"^^core:ObjectStatusVocab
-			"Final"^^core:ObjectStatusVocab
-			"Deprecated"^^core:ObjectStatusVocab
+			"Draft"
+			"Final"
+			"Deprecated"
 		) ;
 	] ;
 	.
@@ -445,6 +445,17 @@ core:UcoObject
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:in (
+				"Draft"
+				"Final"
+				"Deprecated"
+			) ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectStatus ;
+		] ,
+		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:name ;
@@ -464,17 +475,6 @@ core:UcoObject
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:tag ;
-		] ,
-		[
-			sh:datatype core:ObjectStatusVocab ;
-			sh:in (
-				"Draft"^^core:ObjectStatusVocab
-				"Final"^^core:ObjectStatusVocab
-				"Deprecated"^^core:ObjectStatusVocab
-			) ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path core:objectStatus ;
 		]
 		;
 	sh:targetClass core:UcoObject ;
