@@ -322,7 +322,6 @@ core:ObjectStatusVocab
 	rdfs:label "Object Status Vocabulary"@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Draft"^^core:ObjectStatusVocab
 			"Final"^^core:ObjectStatusVocab
