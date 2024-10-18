@@ -1,0 +1,26 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351",
+            "@type": "core:UcoObject",
+            "rdfs:comment": "This will trigger an error from using a value outside of the required vocabulary.",
+            "core:objectStatus": "Initial draft"
+        },
+        {
+            "@id": "kb:File-c9c36379-8eca-4a85-887c-b51f7721edfd",
+            "@type": "observable:File",
+            "core:hasFacet": {
+                "@id": "kb:ArchiveFileFacet-5884ca1c-2f5e-4e66-bdc6-7d48606f9fbc",
+                "@type": "observable:ArchiveFileFacet",
+                "rdfs:comment": "This will trigger an error from using objectStatus on a non-UcoObject thing.",
+                "core:objectStatus": "Draft",
+                "observable:archiveType": "Currently-unknown compressing-and-encrypting type seen multiple places, further research needed"
+            }
+        }
+    ]
+}
