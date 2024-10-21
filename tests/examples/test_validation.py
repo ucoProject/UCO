@@ -200,6 +200,17 @@ def test_configuration_setting_XFAIL_validation() -> None:
       }
 )
 
+def test_cpe_PASS_validation() -> None:
+    confirm_validation_results(
+      "cpe_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/DeviceFacet-4a1cdff8-be81-46e3-8502-0f488d353ca0", str(NS_SH.Warning)),
+        ("http://example.org/kb/OperatingSystem-628d531f-254c-4efb-aaa0-0874306afa01", str(NS_SH.Warning)),
+        ("http://example.org/kb/OperatingSystemFacet-872c1ba2-e1b4-4bc6-8267-6dbed687d0be", str(NS_SH.Warning)),
+      }
+    )
+
 def test_database_records_PASS() -> None:
     confirm_validation_results(
       "database_records_PASS_validation.ttl",
