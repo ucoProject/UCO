@@ -2427,7 +2427,7 @@ observable:Disk
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:StorageMedium ;
 	rdfs:label "Disk"@en ;
 	rdfs:comment "A disk is a storage mechanism where data is recorded by various electronic, magnetic, optical, or mechanical changes to a surface layer of one or more rotating disks."@en ;
 	rdfs:seeAlso [
