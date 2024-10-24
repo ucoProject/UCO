@@ -447,6 +447,25 @@ def test_observable_creation_time_XFAIL() -> None:
       False,
     )
 
+def test_operating_system_PASS() -> None:
+    confirm_validation_results(
+      "operating_system_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities=set()
+    )
+
+def test_operating_system_XFAIL() -> None:
+    confirm_validation_results(
+      "operating_system_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        (
+          "http://example.org/kb/OperatingSystemFacet-483cc1a7-f1f1-472f-87e0-3e076fad46ec",
+          str(NS_SH.Violation)
+        ),
+      }
+    )
+
 def test_owl_axiom_PASS() -> None:
     confirm_validation_results(
       "owl_axiom_PASS_validation.ttl",

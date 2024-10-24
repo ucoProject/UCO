@@ -1,0 +1,44 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Organization-cc6ee776-d770-409d-a84b-06aa6009b670",
+            "@type": "identity:Organization",
+            "core:name": "Example OS Company"
+        },
+        {
+            "@id": "kb:OperatingSystem-0a6c3dcd-9a53-4d1b-a635-afbcedab9760",
+            "@type": "observable:OperatingSystem",
+            "core:description": "The Example Operating System instance deployed on workstation C-304-33",
+            "core:hasFacet": [
+                {
+                    "@id": "kb:SoftwareFacet-6b474a08-99f7-4dbd-8cd1-ef81ddff6bc3",
+                    "@type": "observable:SoftwareFacet",
+                    "observable:cpeid": "cpe:2.3:o:exampleosco:exampleos:40:*:*:*:*:*:*:*",
+                    "observable:language": "en-us"
+                },
+                {
+                    "@id": "kb:OperatingSystemFacet-483cc1a7-f1f1-472f-87e0-3e076fad46ec",
+                    "@type": "observable:OperatingSystemFacet",
+                    "rdfs:comment": "This node will trigger an error for housing the manufacturer and version properties, now required to be on SoftwareFacet.",
+                    "observable:bitness": "64",
+                    "observable:installDate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2024-09-13T09:00:00-04:00"
+                    },
+                    "observable:manufacturer": {
+                        "@id": "kb:Organization-cc6ee776-d770-409d-a84b-06aa6009b670"
+                    },
+                    "observable:version": "40"
+                }
+            ]
+        }
+    ]
+}

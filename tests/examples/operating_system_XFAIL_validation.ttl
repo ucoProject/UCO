@@ -1,0 +1,40 @@
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/OperatingSystemFacet-483cc1a7-f1f1-472f-87e0-3e076fad46ec> ;
+			sh:resultMessage "As of UCO 2.0.0, uco-observable:manufacturer is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:message "As of UCO 2.0.0, uco-observable:manufacturer is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+				sh:path observable:manufacturer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/OperatingSystemFacet-483cc1a7-f1f1-472f-87e0-3e076fad46ec> ;
+			sh:resultMessage "As of UCO 2.0.0, uco-observable:version is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:resultPath observable:version ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:message "As of UCO 2.0.0, uco-observable:version is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+				sh:path observable:version ;
+			] ;
+		]
+		;
+	.
+
