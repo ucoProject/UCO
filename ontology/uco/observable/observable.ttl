@@ -239,6 +239,14 @@ observable:AlternateDataStream
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "AlternateDataStream"@en ;
 	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:FileSystemObject ;
+		sh:message "In UCO 2.0.0, uco-observable:AlternateDataStream will be a subclass of uco-observable:FileSystemObject.  In preparation for UCO 2.0.0, the additional type uco-observable:FileSystemObject should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:AlternateDataStream ;
+	] ;
 	sh:targetClass observable:AlternateDataStream ;
 	.
 
@@ -2469,6 +2477,14 @@ observable:Disk
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "Disk"@en ;
 	rdfs:comment "A disk is a storage mechanism where data is recorded by various electronic, magnetic, optical, or mechanical changes to a surface layer of one or more rotating disks."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:StorageMedium ;
+		sh:message "In UCO 2.0.0, uco-observable:Disk will be a subclass of uco-observable:StorageMedium.  In preparation for UCO 2.0.0, the additional type uco-observable:StorageMedium should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:Disk ;
+	] ;
 	sh:targetClass observable:Disk ;
 	.
 
@@ -5123,6 +5139,20 @@ observable:ObservableRelationship
 		;
 	rdfs:label "ObservableRelationship"@en ;
 	rdfs:comment "An observable relationship is a grouping of characteristics unique to an assertion of an association between two observable objects."@en ;
+	sh:property
+		[
+			sh:class observable:Observable ;
+			sh:message "The source on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+			sh:path core:source ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:class observable:Observable ;
+			sh:message "The target on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+			sh:path core:target ;
+			sh:severity sh:Warning ;
+		]
+		;
 	sh:targetClass observable:ObservableRelationship ;
 	.
 

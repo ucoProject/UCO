@@ -1,0 +1,28 @@
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13> ;
+		sh:resultMessage "In UCO 2.0.0, uco-observable:AlternateDataStream will be a subclass of uco-observable:FileSystemObject.  In preparation for UCO 2.0.0, the additional type uco-observable:FileSystemObject should be assigned to this node."@en ;
+		sh:resultSeverity sh:Warning ;
+		sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+		sh:sourceShape [
+			a sh:NodeShape ;
+			rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+			sh:class observable:FileSystemObject ;
+			sh:message "In UCO 2.0.0, uco-observable:AlternateDataStream will be a subclass of uco-observable:FileSystemObject.  In preparation for UCO 2.0.0, the additional type uco-observable:FileSystemObject should be assigned to this node."@en ;
+			sh:severity sh:Warning ;
+			sh:targetClass observable:AlternateDataStream ;
+		] ;
+		sh:value <http://example.org/kb/AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13> ;
+	] ;
+	.
+
