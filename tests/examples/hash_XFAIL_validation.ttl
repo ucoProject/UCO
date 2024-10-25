@@ -78,7 +78,7 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771> ;
-			sh:resultMessage 'Node Literal("1", datatype=xsd:integer) does not conform to one or more shapes in [ sh:datatype vocabulary:HashNameVocab ] , [ sh:datatype xsd:string ]' ;
+			sh:resultMessage 'Node Literal("1", datatype=xsd:integer) must conform to one or more shapes in [ sh:datatype vocabulary:HashNameVocab ] , [ sh:datatype xsd:string ]' ;
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:OrConstraintComponent ;
