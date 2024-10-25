@@ -864,6 +864,7 @@ observable:BuildUtility
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Software ;
+	rdfs:comment "A Build Utility is a software-based tool that automates portions or all of the process of creating executable software from source code."@en ;
 	.
 
 observable:Calendar
@@ -1214,6 +1215,7 @@ observable:Compiler
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Software ;
+	rdfs:comment "A Compiler is a software program that translates source code written in a high-level language (e.g., C++, Python, Java) into machine code that can be understood and executed by a computer processor."@en ;
 	.
 
 observable:CompressedStreamFacet
@@ -2231,6 +2233,7 @@ observable:DeploymentScript
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Script ;
+	rdfs:comment "A Deployment Script is a software script used to deploy artifacts, packages, modules, patches, or other resources into an intended execution environment."@en ;
 	.
 
 observable:Device
@@ -4020,7 +4023,7 @@ observable:LinuxService
 		;
 	rdfs:subClassOf observable:Service ;
 	rdfs:label "LinuxService"@en ;
-	rdfs:comment "A Linux service is a specific Linux service (a computer program that operates in the background of a Linux operating system, similar to the way a UNIX daemon runs on UNIX). [based on observable:WindowsService]"@en ;
+	rdfs:comment "A Linux Service (often referred to as a daemon) is a Service running within a Linux operating system, similar to the way a Windows Service runs on Windows."@en ;
 	sh:targetClass observable:LinuxService ;
 	.
 
@@ -4030,6 +4033,7 @@ observable:LinuxTask
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Task ;
+	rdfs:comment "A Linux Task is a set of software computer instructions loaded into memory with the potential to be scheduled for execution within the Linux operating system."@en ;
 	.
 
 observable:MACAddress
@@ -5326,6 +5330,7 @@ observable:Package
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Software ;
+	rdfs:comment "A Package is a body of software consisting of a collection of individual software (programs, libraries, files, etc.) packaged together to collectively serve a broader purpose."@en ;
 	.
 
 observable:PathRelationFacet
@@ -5412,7 +5417,7 @@ observable:Process
 		;
 	rdfs:subClassOf observable:Software ;
 	rdfs:label "Process"@en ;
-	rdfs:comment "A process is an instance of a computer program executed on an operating system."@en ;
+	rdfs:comment "A Process is an instance of a software program that is being executed within a scope having dedicated memory, address space, execution variables, code instructions, state, security info, file handles, etc. Process execution consists of one or more component threads sharing the process resources."@en ;
 	sh:targetClass observable:Process ;
 	.
 
@@ -5505,9 +5510,9 @@ observable:ProcessThread
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Process ;
+	rdfs:subClassOf observable:Software ;
 	rdfs:label "ProcessThread"@en ;
-	rdfs:comment "A process thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
+	rdfs:comment "A Process Thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a scheduled running instantiation of one or more tasks (including CPU flags, counters, timers, stack, etc.) as a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
 	sh:targetClass observable:ProcessThread ;
 	.
 
@@ -6086,6 +6091,7 @@ observable:Script
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Software ;
+	rdfs:comment "A Script is a software consisting of computer instructions that can be interpreted and executed in real-time (typically by an interpreter rather than directly by a computer processor) without requiring advance compilation."@en ;
 	.
 
 observable:SecurityAppliance
@@ -6144,6 +6150,7 @@ observable:Service
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Process ;
+	rdfs:comment "A Service is a process that runs in the background rather than under the control of an interactive user. Services are typically long-running and can be configured to start when the operating system starts and continue as long as the operating system is running."@en ;
 	.
 
 observable:ServicePack
@@ -6152,6 +6159,7 @@ observable:ServicePack
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Software ;
+	rdfs:comment "A Service Pack is a software consisting of a collection of software updates or fixes (patches) for a software delivered as an aggregated single package for ease of installation."@en ;
 	.
 
 observable:ShopListing
@@ -6241,6 +6249,7 @@ observable:SoftwareBuild
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:Software ;
+	rdfs:comment "A Software Build is a particular executable version of software that has been created from source code and is ready for testing or deployment."@en ;
 	.
 
 observable:SoftwareFacet
@@ -6530,7 +6539,8 @@ observable:Task
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Process ;
+	rdfs:subClassOf observable:Software ;
+	rdfs:comment "A Task is a set of software computer instructions loaded into memory with the potential to be scheduled for execution."@en ;
 	.
 
 observable:TaskActionType
@@ -8582,7 +8592,7 @@ observable:WindowsService
 		;
 	rdfs:subClassOf observable:Service ;
 	rdfs:label "WindowsService"@en ;
-	rdfs:comment "A Windows service is a specific Windows service (a computer program that operates in the background of a Windows operating system, similar to the way a UNIX daemon runs on UNIX). [based on https://en.wikipedia.org/wiki/Windows_service]"@en ;
+	rdfs:comment "A Windows Service is a Service running within a Windows operating system, similar to the way a UNIX daemon runs on UNIX. [based on https://en.wikipedia.org/wiki/Windows_service]"@en ;
 	sh:targetClass observable:WindowsService ;
 	.
 
@@ -8707,7 +8717,7 @@ observable:WindowsTask
 		;
 	rdfs:subClassOf observable:Task ;
 	rdfs:label "WindowsTask"@en ;
-	rdfs:comment "A Windows task is a process that is scheduled to execute on a Windows operating system by the Windows Task Scheduler. [based on http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx]"@en ;
+	rdfs:comment "A Windows Task is a set of software computer instructions loaded into memory with the potential to be scheduled for execution within the Windows operating system."@en ;
 	sh:targetClass observable:WindowsTask ;
 	.
 
@@ -8978,7 +8988,7 @@ observable:WindowsThread
 		;
 	rdfs:subClassOf observable:ProcessThread ;
 	rdfs:label "WindowsThread"@en ;
-	rdfs:comment "A Windows thread is a single thread of execution within a Windows process."@en ;
+	rdfs:comment "A Windows thread is a Process Thread within a Windows process."@en ;
 	sh:targetClass observable:WindowsThread ;
 	.
 
