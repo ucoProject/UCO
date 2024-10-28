@@ -163,6 +163,7 @@ configuration:dependencyDescription
 
 configuration:dependencyType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "dependencyType"@en ;
 	rdfs:comment "The type of a tool or other software dependency."@en ;
 	rdfs:range xsd:string ;
@@ -201,6 +202,7 @@ configuration:itemObject
 
 configuration:itemType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "itemType"@en ;
 	rdfs:comment "The type of a configuration setting entry item."@en ;
 	rdfs:range xsd:string ;

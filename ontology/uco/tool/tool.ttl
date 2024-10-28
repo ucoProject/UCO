@@ -453,6 +453,7 @@ tool:swid
 
 tool:toolType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "toolType"@en ;
 	rdfs:comment "The type of tool."@en ;
 	rdfs:range xsd:string ;

@@ -147,6 +147,7 @@ location:SimpleAddressFacet
 
 location:addressType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "addressType"@en ;
 	rdfs:comment "The type of the address, for instance home or work."@en ;
 	rdfs:range xsd:string ;
