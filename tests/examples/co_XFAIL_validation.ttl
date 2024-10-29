@@ -78,7 +78,7 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/list-item-4361eb9c-a1c2-40e7-ba83-92802554392a> ;
-			sh:resultMessage 'Node kb:list-item-4361eb9c-a1c2-40e7-ba83-92802554392a conforms to shape [ rdf:type sh:PropertyShape ; sh:class co:Item ; sh:description Literal("This shape encodes in SHACL that the range of co:itemContent is the complement of co:Item.", lang=en) ; sh:path co:itemContent ]' ;
+			sh:resultMessage 'Node kb:list-item-4361eb9c-a1c2-40e7-ba83-92802554392a must not conform to shape [ rdf:type sh:PropertyShape ; sh:class co:Item ; sh:description Literal("This shape encodes in SHACL that the range of co:itemContent is the complement of co:Item.", lang=en) ; sh:path co:itemContent ]' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NotConstraintComponent ;
 			sh:sourceShape uco-co:itemContent-subjects-shape ;

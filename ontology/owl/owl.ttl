@@ -230,12 +230,12 @@ uco-owl:Disjointedness-C-DT-shape
 	sh:sparql [
 		a sh:SPARQLConstraint ;
 		rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Typing_Constraints_of_OWL_2_DL> ;
-		sh:message "An IRI may not be a member of both an owl:Class and owl:Datatype."@en ;
+		sh:message "An IRI may not be a member of both an owl:Class and rdfs:Datatype."@en ;
 		sh:select """
 			PREFIX owl: <http://www.w3.org/2002/07/owl#>
 			SELECT $this
 			WHERE {
-				$this a owl:Datatype ;
+				$this a rdfs:Datatype ;
 			}
 		""" ;
 	] ;
