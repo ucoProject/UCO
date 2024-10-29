@@ -73,7 +73,7 @@
 				ns1:identifier "http://example.org/kb/Thing-exact-xfail-3/Restriction" ;
 				owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			] ;
-			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-exact-xfail-3/Restriction") ; owl:onProperty kb:object-property-1 ; owl:qualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a class specified.") ] does not conform to exactly one shape in uco-owl:DataExactCardinalityQualified-shape , uco-owl:ObjectExactCardinalityQualified-shape' ;
+			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-exact-xfail-3/Restriction") ; owl:onProperty kb:object-property-1 ; owl:qualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a class specified.") ] must conform to exactly one shape in uco-owl:DataExactCardinalityQualified-shape , uco-owl:ObjectExactCardinalityQualified-shape' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 			sh:sourceShape uco-owl:qualifiedCardinality-subjects-shape ;
@@ -94,7 +94,7 @@
 				ns1:identifier "http://example.org/kb/Thing-exact-xfail-4/Restriction" ;
 				owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			] ;
-			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-exact-xfail-4/Restriction") ; owl:onClass kb:Other-Thing ; owl:qualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a property specified.") ] does not conform to exactly one shape in uco-owl:DataExactCardinalityQualified-shape , uco-owl:ObjectExactCardinalityQualified-shape' ;
+			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-exact-xfail-4/Restriction") ; owl:onClass kb:Other-Thing ; owl:qualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a property specified.") ] must conform to exactly one shape in uco-owl:DataExactCardinalityQualified-shape , uco-owl:ObjectExactCardinalityQualified-shape' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 			sh:sourceShape uco-owl:qualifiedCardinality-subjects-shape ;
@@ -115,7 +115,7 @@
 				ns1:identifier "http://example.org/kb/Thing-max-xfail-3/Restriction" ;
 				owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			] ;
-			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-max-xfail-3/Restriction") ; owl:maxQualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; owl:onProperty kb:object-property-1 ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a class specified.") ] does not conform to exactly one shape in uco-owl:DataMaxCardinalityQualified-shape , uco-owl:ObjectMaxCardinalityQualified-shape' ;
+			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-max-xfail-3/Restriction") ; owl:maxQualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; owl:onProperty kb:object-property-1 ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a class specified.") ] must conform to exactly one shape in uco-owl:DataMaxCardinalityQualified-shape , uco-owl:ObjectMaxCardinalityQualified-shape' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 			sh:sourceShape uco-owl:maxQualifiedCardinality-subjects-shape ;
@@ -136,7 +136,7 @@
 				ns1:identifier "http://example.org/kb/Thing-max-xfail-4/Restriction" ;
 				owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			] ;
-			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-max-xfail-4/Restriction") ; owl:maxQualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; owl:onClass kb:Other-Thing ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a property specified.") ] does not conform to exactly one shape in uco-owl:DataMaxCardinalityQualified-shape , uco-owl:ObjectMaxCardinalityQualified-shape' ;
+			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-max-xfail-4/Restriction") ; owl:maxQualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; owl:onClass kb:Other-Thing ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a property specified.") ] must conform to exactly one shape in uco-owl:DataMaxCardinalityQualified-shape , uco-owl:ObjectMaxCardinalityQualified-shape' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 			sh:sourceShape uco-owl:maxQualifiedCardinality-subjects-shape ;
@@ -157,7 +157,7 @@
 				ns1:identifier "http://example.org/kb/Thing-min-xfail-3/Restriction" ;
 				owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			] ;
-			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-min-xfail-3/Restriction") ; owl:minQualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; owl:onProperty kb:object-property-1 ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a class specified.") ] does not conform to exactly one shape in uco-owl:DataMinCardinalityQualified-shape , uco-owl:ObjectMinCardinalityQualified-shape' ;
+			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-min-xfail-3/Restriction") ; owl:minQualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; owl:onProperty kb:object-property-1 ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a class specified.") ] must conform to exactly one shape in uco-owl:DataMinCardinalityQualified-shape , uco-owl:ObjectMinCardinalityQualified-shape' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 			sh:sourceShape uco-owl:minQualifiedCardinality-subjects-shape ;
@@ -178,7 +178,7 @@
 				ns1:identifier "http://example.org/kb/Thing-min-xfail-4/Restriction" ;
 				owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			] ;
-			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-min-xfail-4/Restriction") ; owl:minQualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; owl:onClass kb:Other-Thing ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a property specified.") ] does not conform to exactly one shape in uco-owl:DataMinCardinalityQualified-shape , uco-owl:ObjectMinCardinalityQualified-shape' ;
+			sh:resultMessage 'Node [ dcterms:identifier Literal("http://example.org/kb/Thing-min-xfail-4/Restriction") ; owl:minQualifiedCardinality Literal("1", datatype=xsd:nonNegativeInteger) ; owl:onClass kb:Other-Thing ; rdf:type owl:Restriction ; rdfs:comment Literal("This Restriction will trigger a failure from not having a property specified.") ] must conform to exactly one shape in uco-owl:DataMinCardinalityQualified-shape , uco-owl:ObjectMinCardinalityQualified-shape' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 			sh:sourceShape uco-owl:minQualifiedCardinality-subjects-shape ;
