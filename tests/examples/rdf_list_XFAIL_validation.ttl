@@ -14,7 +14,7 @@
 			sh:detail [
 				a sh:ValidationResult ;
 				sh:focusNode <http://example.org/kb/list-1> ;
-				sh:resultMessage 'Node kb:list-1 does not conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
+				sh:resultMessage 'Node kb:list-1 must conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
 				sh:resultSeverity sh:Violation ;
 				sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 				sh:sourceShape uco-owl:Sequence-shape ;
@@ -40,7 +40,7 @@
 			sh:detail [
 				a sh:ValidationResult ;
 				sh:focusNode <http://example.org/ontology/someDatatypeProperty> ;
-				sh:resultMessage 'Node ex:someDatatypeProperty does not conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
+				sh:resultMessage 'Node ex:someDatatypeProperty must conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
 				sh:resultSeverity sh:Violation ;
 				sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 				sh:sourceShape uco-owl:Sequence-shape ;
@@ -66,7 +66,7 @@
 					<http://example.org/kb/concept-7>
 					<http://example.org/kb/concept-8>
 				) ;
-				sh:resultMessage 'Node ( kb:concept-7 kb:concept-8 ) does not conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
+				sh:resultMessage 'Node ( kb:concept-7 kb:concept-8 ) must conform to exactly one shape in [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] , [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:path [ sh:oneOrMorePath rdf:rest ] ; sh:xone ( [ rdf:type sh:NodeShape ; sh:hasValue rdf:nil ] [ rdf:type sh:NodeShape ; sh:nodeKind sh:BlankNode ; sh:property [ rdf:type sh:PropertyShape ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path rdf:first ] ] ) ] ]' ;
 				sh:resultSeverity sh:Violation ;
 				sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 				sh:sourceShape uco-owl:Sequence-shape ;

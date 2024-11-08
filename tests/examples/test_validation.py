@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 
+# Portions of this file contributed by NIST are governed by the
+# following statement:
+#
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
-# of their official duties. Pursuant to title 17 Section 105 of the
-# United States Code this software is not subject to copyright
-# protection and is in the public domain. NIST assumes no
-# responsibility whatsoever for its use by other parties, and makes
-# no guarantees, expressed or implied, about its quality,
-# reliability, or any other characteristic.
+# of their official duties. Pursuant to Title 17 Section 105 of the
+# United States Code, this software is not subject to copyright
+# protection within the United States. NIST assumes no responsibility
+# whatsoever for its use by other parties, and makes no guarantees,
+# expressed or implied, about its quality, reliability, or any other
+# characteristic.
 #
 # We would appreciate acknowledgement if the software is used.
 
@@ -445,6 +448,22 @@ def test_observable_creation_time_XFAIL() -> None:
     confirm_validation_results(
       "observable_creation_time_XFAIL_validation.ttl",
       False,
+    )
+
+def test_operating_system_PASS() -> None:
+    confirm_validation_results(
+      "operating_system_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        (
+          "http://example.org/kb/OperatingSystem-427dd103-2553-4ccc-ad57-1df4e88b174d",
+          str(NS_SH.Warning)
+        ),
+        (
+          "http://example.org/kb/OperatingSystemFacet-35047ef2-ffd6-45e8-8b3c-2e8e4bfe7c2b",
+          str(NS_SH.Warning)
+        ),
+      }
     )
 
 def test_owl_axiom_PASS() -> None:
