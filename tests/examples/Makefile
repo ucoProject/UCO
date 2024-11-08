@@ -33,9 +33,9 @@ all: \
   database_records_XFAIL_validation.ttl \
   dictionary_PASS_validation.ttl \
   dictionary_XFAIL_validation.ttl \
-  disjointedness_PASS_validation.ttl \
+  disjointedness_XFAIL_validation.ttl \
   event_XFAIL_validation.ttl \
-  file_url_PASS_validation.ttl \
+  file_url_XFAIL_validation.ttl \
   has_facet_inverse_functional_PASS_validation.ttl \
   has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
@@ -46,7 +46,7 @@ all: \
   message_thread_XFAIL_validation.ttl \
   object_status_PASS_validation.ttl \
   object_status_XFAIL_validation.ttl \
-  observable_creation_time_PASS_validation.ttl \
+  observable_creation_time_XFAIL_validation.ttl \
   operating_system_PASS_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
@@ -111,9 +111,9 @@ check: \
   database_records_XFAIL_validation.ttl \
   dictionary_PASS_validation.ttl \
   dictionary_XFAIL_validation.ttl \
-  disjointedness_PASS_validation.ttl \
+  disjointedness_XFAIL_validation.ttl \
   event_XFAIL_validation.ttl \
-  file_url_PASS_validation.ttl \
+  file_url_XFAIL_validation.ttl \
   has_facet_inverse_functional_PASS_validation.ttl \
   has_facet_inverse_functional_XFAIL_validation.ttl \
   hash_PASS_validation.ttl \
@@ -124,7 +124,7 @@ check: \
   message_thread_XFAIL_validation.ttl \
   object_status_PASS_validation.ttl \
   object_status_XFAIL_validation.ttl \
-  observable_creation_time_PASS_validation.ttl \
+  observable_creation_time_XFAIL_validation.ttl \
   operating_system_PASS_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \

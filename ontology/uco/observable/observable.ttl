@@ -14,6 +14,7 @@
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -236,17 +237,9 @@ observable:AlternateDataStream
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:FileSystemObject ;
 	rdfs:label "AlternateDataStream"@en ;
 	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
-	rdfs:seeAlso [
-		a sh:NodeShape ;
-		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
-		sh:class observable:FileSystemObject ;
-		sh:message "In UCO 2.0.0, uco-observable:AlternateDataStream will be a subclass of uco-observable:FileSystemObject.  In preparation for UCO 2.0.0, the additional type uco-observable:FileSystemObject should be assigned to this node."@en ;
-		sh:severity sh:Warning ;
-		sh:targetClass observable:AlternateDataStream ;
-	] ;
 	sh:targetClass observable:AlternateDataStream ;
 	.
 
@@ -2434,17 +2427,9 @@ observable:Disk
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:StorageMedium ;
 	rdfs:label "Disk"@en ;
 	rdfs:comment "A disk is a storage mechanism where data is recorded by various electronic, magnetic, optical, or mechanical changes to a surface layer of one or more rotating disks."@en ;
-	rdfs:seeAlso [
-		a sh:NodeShape ;
-		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
-		sh:class observable:StorageMedium ;
-		sh:message "In UCO 2.0.0, uco-observable:Disk will be a subclass of uco-observable:StorageMedium.  In preparation for UCO 2.0.0, the additional type uco-observable:StorageMedium should be assigned to this node."@en ;
-		sh:severity sh:Warning ;
-		sh:targetClass observable:Disk ;
-	] ;
 	sh:targetClass observable:Disk ;
 	.
 
@@ -3219,12 +3204,11 @@ observable:File
 
 observable:File-disjointWith-URL-shape
 	a sh:NodeShape ;
-	sh:message "observable:File and observable:URL are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:message "observable:File and observable:URL are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class observable:URL ;
 	] ;
-	sh:severity sh:Warning ;
 	sh:targetClass observable:File ;
 	.
 
@@ -5055,7 +5039,10 @@ observable:ObservablePattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Observable ;
+	rdfs:subClassOf
+		observable:Observable ,
+		pattern:Pattern
+		;
 	rdfs:label "ObservablePattern"@en ;
 	rdfs:comment "An observable pattern is a grouping of characteristics unique to a logical pattern composed of observable object and observable action properties."@en ;
 	sh:targetClass observable:ObservablePattern ;
@@ -5075,15 +5062,11 @@ observable:ObservableRelationship
 	sh:property
 		[
 			sh:class observable:Observable ;
-			sh:message "The source on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
 			sh:path core:source ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:class observable:Observable ;
-			sh:message "The target on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
 			sh:path core:target ;
-			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:ObservableRelationship ;
@@ -8941,12 +8924,6 @@ observable:WindowsThreadFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:creationTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -10288,9 +10265,8 @@ observable:creationTime-deprecation-shape
 	sh:property [
 		a sh:PropertyShape ;
 		sh:maxCount "0"^^xsd:integer ;
-		sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+		sh:message "observable:creationTime is deprecated, and an error to use as of UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
 		sh:path observable:creationTime ;
-		sh:severity sh:Warning ;
 	] ;
 	sh:targetSubjectsOf observable:creationTime ;
 	.
