@@ -7936,7 +7936,7 @@ observable:WindowsComputerSpecification
 		;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "WindowsComputerSpecification"@en ;
-	rdfs:comment "A Windows computer specification is the hardware ans software of a programmable electronic device that can store, retrieve, and process data running a Microsoft Windows operating system. [based on merriam-webster.com/dictionary/computer]"@en ;
+	rdfs:comment "A Windows computer specification is the hardware and software of a programmable electronic device that can store, retrieve, and process data running a Microsoft Windows operating system. [based on merriam-webster.com/dictionary/computer]"@en ;
 	sh:targetClass observable:WindowsComputerSpecification ;
 	.
 
