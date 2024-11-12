@@ -5240,6 +5240,18 @@ observable:OperatingSystemFacet
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:advertisingID ;
+		] ,
+		[
+			sh:maxCount "0"^^xsd:integer ;
+			sh:message "In UCO 2.0.0, uco-observable:manufacturer will not be associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:path observable:manufacturer ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:maxCount "0"^^xsd:integer ;
+			sh:message "In UCO 2.0.0, uco-observable:version will not be associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:path observable:version ;
+			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
