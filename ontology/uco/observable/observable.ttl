@@ -5201,12 +5201,6 @@ observable:OperatingSystemFacet
 	rdfs:comment "An operating system facet is a grouping of characteristics unique to the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
 	sh:property
 		[
-			sh:class identity:Identity ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:IRI ;
-			sh:path observable:manufacturer ;
-		] ,
-		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:IRI ;
@@ -5232,26 +5226,18 @@ observable:OperatingSystemFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:version ;
-		] ,
-		[
-			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:advertisingID ;
 		] ,
 		[
 			sh:maxCount "0"^^xsd:integer ;
-			sh:message "In UCO 2.0.0, uco-observable:manufacturer will not be associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:message "As of UCO 2.0.0, uco-observable:manufacturer is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
 			sh:path observable:manufacturer ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "0"^^xsd:integer ;
-			sh:message "In UCO 2.0.0, uco-observable:version will not be associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:message "As of UCO 2.0.0, uco-observable:version is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
 			sh:path observable:version ;
-			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
