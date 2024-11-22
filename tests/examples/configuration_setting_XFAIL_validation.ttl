@@ -13,7 +13,7 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c> ;
-			sh:resultMessage 'Node kb:configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c does not conform to exactly one shape in [ sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemObject ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemValue ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemObject ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemValue ] ]' ;
+			sh:resultMessage 'Node kb:configuration-entry-5f0fc3ea-e763-4b6d-997a-be0d1ceffc8c must conform to exactly one shape in [ sh:property [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemObject ], [ sh:maxCount Literal("0", datatype=xsd:integer) ; sh:path configuration:itemValue ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemObject ] ] , [ sh:property [ sh:minCount Literal("1", datatype=xsd:integer) ; sh:path configuration:itemValue ] ]' ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:XoneConstraintComponent ;
 			sh:sourceShape configuration:ConfigurationEntry ;
