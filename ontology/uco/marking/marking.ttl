@@ -204,6 +204,7 @@ marking:definition
 
 marking:definitionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "definitionType"@en ;
 	rdfs:comment "Specifies the Marking Model for a Marking Definition."@en ;
 	rdfs:range xsd:string ;
