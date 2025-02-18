@@ -171,69 +171,102 @@ def rdf_list_to_member_list(graph: Graph, n_list: IdentifiedNode) -> List[Node]:
 
 def test_semi_open_vocabulary_owl_shacl_alignment(graph: Graph) -> None:
     """
-    This test enforces that when a DatatypeProperty following the "Semi-open vocabulary" design of UCO 0.8.0 is used, that its SHACL shape's enumerant list matches the rdfs:Datatype's enumerant list.
+    This test enforces that when a DatatypeProperty following the "Semi-open vocabulary" design of UCO 1.4.0 is used, that its SHACL shape's enumerant list matches the rdfs:Datatype's (OWL Sequence's) enumerant list.
     """
-    # A member of these sets is a class's IRI, its semi-open vocabulary's IRI, the list in the SHACL shape, and the list in the Datatype.
-    # (The type of the lists is a Tuple because a Set in Python cannot contain a List.)
+    # A member of these sets is:
+    # * a class's IRI,
+    # * a property's IRI, and
+    # * the semi-open vocabulary's IRI.
     # The expected set intentionally has length 0.
-    expected: Set[Tuple[URIRef, URIRef, Tuple[Node, ...], Tuple[Node, ...]]] = set()
-    computed: Set[Tuple[URIRef, URIRef, Tuple[Node, ...], Tuple[Node, ...]]] = set()
+    expected: Set[Tuple[URIRef, URIRef, URIRef]] = set()
+    computed: Set[Tuple[URIRef, URIRef, URIRef]] = set()
 
-    query = """
-SELECT ?nClass ?nDatatype ?nShaclList ?nRdfsList
+    # First, assemble all pairs of properties and vocabulary-value
+    # tuples.  This is needed because some properties are overloaded
+    # (e.g., observable:status) to use multiple vocabularies.
+    # (The type of the list is a Tuple because a Set in Python cannot
+    # contain a List.)
+    property_value_tuples: Set[Tuple[URIRef, tuple[str, ...]]] = set()
+    query = """\
+SELECT ?nProperty ?nOwlSequence
 WHERE {
-  ?nClass
-    sh:property / sh:or / rdf:rest* / rdf:first ?nMemberCheckShape ;
-    .
-  ?nMemberCheckShape
-    sh:datatype ?nDatatype ;
-    sh:in ?nShaclList ;
+  ?nProperty
+    rdfs:range / owl:unionOf / rdf:rest* / rdf:first ?nDatatype ;
     .
   ?nDatatype
     a rdfs:Datatype ;
     owl:equivalentClass ?nLexicalSpace ;
     .
-
   ?nLexicalSpace
-    owl:oneOf ?nRdfsList ;
+    owl:oneOf ?nOwlSequence ;
     .
 }
 """
     result_tally = 0
-    test_cases: Set[Tuple[URIRef, URIRef, IdentifiedNode, IdentifiedNode]] = set()
+    for result in graph.query(query):
+        result_tally += 1
+        assert isinstance(result[0], URIRef)
+        assert isinstance(result[1], BNode)
+        n_property = result[0]
+        n_owl_sequence = result[1]
+        value_list = rdf_list_to_member_list(graph, n_owl_sequence)
+        property_value_tuples.add((n_property, tuple(value_list)))
+    assert result_tally > 0, "Pattern for semi-open vocabularies is no longer aligned with test."
+
+    query = """
+SELECT ?nClass ?nProperty ?nDatatype ?nShaclList
+WHERE {
+  ?nClass
+    sh:property ?nMemberCheckShape ;
+    .
+  ?nMemberCheckShape
+    sh:in ?nShaclList ;
+    sh:path ?nProperty ;
+    .
+  ?nProperty
+    rdfs:range / owl:unionOf / rdf:rest* / rdf:first ?nDatatype ;
+    .
+  ?nDatatype
+    a rdfs:Datatype ;
+    owl:equivalentClass ?nLexicalSpace ;
+    .
+}
+"""
+    result_tally = 0
+    test_cases: Set[Tuple[URIRef, URIRef, URIRef, IdentifiedNode]] = set()
     for (result_no, result) in enumerate(graph.query(query)):
         result_tally = result_no + 1
         assert isinstance(result[0], URIRef)
         assert isinstance(result[1], URIRef)
-        if isinstance(result[2], URIRef) and isinstance(result[3], URIRef):
-            assert result[2] == result[3]
-        else:
-            assert isinstance(result[2], (BNode, URIRef))
-            assert isinstance(result[3], (BNode, URIRef))
+        assert isinstance(result[2], URIRef)
+        assert isinstance(result[3], (BNode, URIRef))
         test_cases.add(result)
     assert result_tally > 0, "Pattern for semi-open vocabularies is no longer aligned with test."
 
     for test_case in test_cases:
-        n_shacl_list = test_case[2]
-        n_rdfs_list = test_case[3]
-
-        if n_shacl_list is n_rdfs_list:
-            # No point in doing any comparison work.
-            continue
-
+        n_property = test_case[1]
+        n_shacl_list = test_case[3]
         shacl_list = rdf_list_to_member_list(graph, n_shacl_list)
-        rdfs_list = rdf_list_to_member_list(graph, n_rdfs_list)
-        if rdfs_list != shacl_list:
-            shacl_tuple = tuple(shacl_list)
-            rdfs_tuple = tuple(rdfs_list)
-            computed.add((test_case[0], test_case[1], shacl_tuple, rdfs_tuple))
+        shacl_tuple = tuple(shacl_list)
+
+        # property_value_tuples is not mutated on finding a match, due
+        # to some vocabularies being used by multiple properties.
+        if (n_property, shacl_tuple) not in property_value_tuples:
+            computed.add((test_case[0], test_case[1], test_case[2]))
 
     try:
         assert expected == computed
     except AssertionError:
         logging.error("Semi-open vocabulary lists are out of sync.  See:")
-        for computed_result in computed:
-            logging.error("* %s", str(computed_result[0]))
+        for (n_class, n_property, n_vocabulary) in computed:
+            logging.error(
+                "* %s and %s, used in %s",
+                (
+                    str(n_property),
+                    str(n_vocabulary),
+                    str(n_class),
+                )
+            )
         raise
 
 
