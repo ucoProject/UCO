@@ -12,6 +12,29 @@
             "rdfs:comment": "This should trigger sh:Violation from the hash value not being hexBinary.",
             "types:hashMethod": "SHA1",
             "types:hashValue": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+            "@id": "kb:hash-b7eca8de-142d-4aa9-b546-0796a268afa4",
+            "@type": "types:Hash",
+            "rdfs:comment": "This should trigger an sh:Info from the hashMethod value not having its (literal-)value in the HashNameVocab vocabulary, and also a sh:Violation from not being an xsd:string.",
+            "types:hashMethod": {
+                "@type": "vocabulary:HashNameVocab",
+                "@value": "SHA1"
+            },
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+        },
+        {
+            "@id": "kb:hash-f46c714f-559a-4325-bf8a-4ef60c92c771",
+            "@type": "types:Hash",
+            "rdfs:comment": "This should trigger a sh:Violation from the hashMethod value not being a string, and an sh:Info from not being in the HashNameVocab vocabulary.",
+            "types:hashMethod": 1,
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
         }
     ]
 }

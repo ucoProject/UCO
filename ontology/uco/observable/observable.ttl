@@ -167,9 +167,9 @@ observable:AccountFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:accountType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:accountType ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -185,11 +185,6 @@ observable:AccountFacet
 			sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
 			sh:path observable:accountType ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:accountType ;
 		]
 		;
 	sh:targetClass observable:AccountFacet ;
@@ -636,11 +631,6 @@ observable:AutonomousSystemFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:regionalInternetRegistry should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:regionalInternetRegistry ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:regionalInternetRegistry ;
@@ -1415,9 +1405,9 @@ observable:ContactAddress
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactAddressScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:contactAddressScope ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -1428,11 +1418,6 @@ observable:ContactAddress
 			sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
 			sh:path observable:contactAddressScope ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:contactAddressScope ;
 		]
 		;
 	sh:targetClass observable:ContactAddress ;
@@ -1522,9 +1507,9 @@ observable:ContactEmail
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactEmailScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:contactEmailScope ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -1536,11 +1521,6 @@ observable:ContactEmail
 			sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
 			sh:path observable:contactEmailScope ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:contactEmailScope ;
 		]
 		;
 	sh:targetClass observable:ContactEmail ;
@@ -1774,9 +1754,9 @@ observable:ContactPhone
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactPhoneScope in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:contactPhoneScope ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -1792,11 +1772,6 @@ observable:ContactPhone
 			sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
 			sh:path observable:contactPhoneScope ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:contactPhoneScope ;
 		]
 		;
 	sh:targetClass observable:ContactPhone ;
@@ -1844,9 +1819,9 @@ observable:ContactSIP
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactSIPScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:contactSIPScope ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -1857,11 +1832,6 @@ observable:ContactSIP
 			sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
 			sh:path observable:contactSIPScope ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:contactSIPScope ;
 		]
 		;
 	sh:targetClass observable:ContactSIP ;
@@ -1884,9 +1854,9 @@ observable:ContactURL
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactURLScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:contactURLScope ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -1898,11 +1868,6 @@ observable:ContactURL
 			sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
 			sh:path observable:contactURLScope ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:contactURLScope ;
 		]
 		;
 	sh:targetClass observable:ContactURL ;
@@ -1961,6 +1926,12 @@ observable:ContentDataFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:byteOrder ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:dataPayload ;
 		] ,
 		[
@@ -1977,12 +1948,6 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:byteOrder should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:byteOrder ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeType ;
 		] ,
@@ -1995,11 +1960,6 @@ observable:ContentDataFacet
 			sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
 			sh:path observable:byteOrder ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:byteOrder ;
 		]
 		;
 	sh:targetClass observable:ContentDataFacet ;
@@ -3987,9 +3947,9 @@ observable:MemoryFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:blockType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:blockType ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -4002,11 +3962,6 @@ observable:MemoryFacet
 			sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
 			sh:path observable:blockType ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:blockType ;
 		]
 		;
 	sh:targetClass observable:MemoryFacet ;
@@ -5583,21 +5538,21 @@ observable:RecoveredObjectFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contentRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:contentRecoveredStatus ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:metadataRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:metadataRecoveredStatus ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:nameRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:nameRecoveredStatus ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -5631,21 +5586,6 @@ observable:RecoveredObjectFacet
 			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
 			sh:path observable:contentRecoveredStatus ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:contentRecoveredStatus ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:metadataRecoveredStatus ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:nameRecoveredStatus ;
 		]
 		;
 	sh:targetClass observable:RecoveredObjectFacet ;
@@ -6321,9 +6261,9 @@ observable:TaskActionType
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:actionType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:actionType ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -6335,11 +6275,6 @@ observable:TaskActionType
 			sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
 			sh:path observable:actionType ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:actionType ;
 		]
 		;
 	sh:targetClass observable:TaskActionType ;
@@ -6382,6 +6317,12 @@ observable:TriggerType
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:triggerFrequency ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:triggerMaxRunTime ;
 		] ,
 		[
@@ -6392,15 +6333,9 @@ observable:TriggerType
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:triggerFrequency should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:triggerFrequency ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:triggerType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:triggerType ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -6430,16 +6365,6 @@ observable:TriggerType
 			sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
 			sh:path observable:triggerType ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:triggerFrequency ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:triggerType ;
 		]
 		;
 	sh:targetClass observable:TriggerType ;
@@ -6926,9 +6851,9 @@ observable:URLVisitFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:urlTransitionType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:urlTransitionType ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -6947,11 +6872,6 @@ observable:URLVisitFacet
 			sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
 			sh:path observable:urlTransitionType ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:urlTransitionType ;
 		]
 		;
 	sh:targetClass observable:URLVisitFacet ;
@@ -7225,6 +7145,12 @@ observable:WhoIsFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:regionalInternetRegistry ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:remarks ;
 		] ,
 		[
@@ -7235,15 +7161,9 @@ observable:WhoIsFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:regionalInternetRegistry should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:regionalInternetRegistry ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:status should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:status ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -7281,16 +7201,6 @@ observable:WhoIsFacet
 			sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
 			sh:path observable:status ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:regionalInternetRegistry ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:status ;
 		]
 		;
 	sh:targetClass observable:WhoIsFacet ;
@@ -7307,9 +7217,9 @@ observable:WhoisContactFacet
 	sh:property
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:whoisContactType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:whoisContactType ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -7320,11 +7230,6 @@ observable:WhoisContactFacet
 			sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
 			sh:path observable:whoisContactType ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:whoisContactType ;
 		]
 		;
 	sh:targetClass observable:WhoisContactFacet ;
@@ -8467,6 +8372,12 @@ observable:WindowsTaskFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:taskComment ;
 		] ,
 		[
@@ -8477,15 +8388,8 @@ observable:WindowsTaskFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:flags should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:flags ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:status should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:status ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -8540,15 +8444,6 @@ observable:WindowsTaskFacet
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:priority ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:status ;
-		] ,
-		[
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:priority should be xsd:string or xsd:integer.  Not using xsd:string or xsd:integer will be an error in UCO 2.0.0." ;
 			sh:or (
 				[
 					sh:datatype xsd:integer ;
@@ -8558,7 +8453,6 @@ observable:WindowsTaskFacet
 				]
 			) ;
 			sh:path observable:priority ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
@@ -8579,10 +8473,6 @@ observable:WindowsTaskFacet
 			) ;
 			sh:path observable:priority ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:nodeKind sh:Literal ;
-			sh:path observable:flags ;
 		]
 		;
 	sh:targetClass observable:WindowsTaskFacet ;
@@ -8684,9 +8574,9 @@ observable:WindowsVolumeFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:driveType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:driveType ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:datatype vocabulary:WindowsVolumeAttributeVocab ;
@@ -8707,11 +8597,6 @@ observable:WindowsVolumeFacet
 			sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
 			sh:path observable:driveType ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:driveType ;
 		]
 		;
 	sh:targetClass observable:WindowsVolumeFacet ;
@@ -8768,9 +8653,9 @@ observable:WirelessNetworkConnectionFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:wirelessNetworkSecurityMode should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:wirelessNetworkSecurityMode ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:in (
@@ -8785,11 +8670,6 @@ observable:WirelessNetworkConnectionFacet
 			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
 			sh:path observable:wirelessNetworkSecurityMode ;
 			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
