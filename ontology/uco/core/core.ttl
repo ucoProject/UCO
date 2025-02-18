@@ -613,6 +613,7 @@ core:eventContext
 
 core:eventType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "Event Type"@en ;
 	rdfs:comment "An event type specifies a classification type for the event."@en ;
 	rdfs:range xsd:string ;
@@ -663,6 +664,12 @@ core:hasFacet-shape
 			""" ;
 	] ;
 	sh:targetObjectsOf core:hasFacet ;
+	.
+
+core:informalType
+	a owl:DatatypeProperty ;
+	rdfs:label "informalType"@en ;
+	rdfs:comment "Informal Type serves as a parent property for string-valued properties meant to describe a type without implementing a class design.  This property hierarchy supports a balancing point between semantic specificity and operational agility.  The known benefits of describing types rather than implementing them include swift extensibility of some existing, or possibly non-existing, subclass hierarchy in UCO without requiring training in ontological development, taxonomic specification, or OWL, SHACL, or RDF maintenance logistics.  The known detractions of using string-literals for type descriptions include that used vocabularies may require careful maintenance among data-sharing parties; that vocabularies require independent logistics (external to UCO) for providing definitions (i.e., dictionary-style semantics) to string-literals chosen; and that string-literals cannot by themselves encode hierarchical structure or entailments, such as the informal device type string 'ExamplePhone 8 P4321' entailing 'ExamplePhone 8', 'ExamplePhone', or 'ExamplePhone models discontinued in 2020'.  Usage of Informal Type to house strings should be weighed against usage of classes when classes are available, and should periodically be reviewed for potential additions to UCO's class hierarchy or downstream extensions thereof."@en ;
 	.
 
 core:isDirectional
