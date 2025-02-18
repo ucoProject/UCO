@@ -1,18 +1,50 @@
 {
     "@context": {
         "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "types": "https://ontology.unifiedcyberontology.org/uco/types/",
         "vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
+            "@id": "kb:hash-04dcd1dc-6920-4977-a898-e242870249a4",
+            "@type": "types:Hash",
+            "rdfs:comment": "Should trigger sh:Info from the hashMethod literal not having its value be in the HashNameVocab vocabulary.",
+            "types:hashMethod": "CUSTOM_hash",
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "a39a3ee5e6b4b0d3255bfef95601890afd80709d"
+            }
+        },
+        {
+            "@id": "kb:hash-af4b0c85-b042-4e2d-a213-210b3d7f115c",
+            "@type": "types:Hash",
+            "rdfs:comment": "Should trigger sh:Info from the hashMethod literal not being a member of the vocabulary.  ('SHA1' is in the vocabulary; 'SHA-1' isn't.)",
+            "types:hashMethod": "SHA-1",
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+        },
+        {
             "@id": "kb:hash-b7eca8de-142d-4aa9-b546-0796a268afa4",
             "@type": "types:Hash",
+            "rdfs:comment": "Should trigger an sh:Info from the hashMethod value not having its (literal-)value in the HashNameVocab vocabulary, and also a sh:Warning from not being an xsd:string.",
             "types:hashMethod": {
                 "@type": "vocabulary:HashNameVocab",
                 "@value": "SHA1"
             },
+            "types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+        },
+        {
+            "@id": "kb:hash-f46c714f-559a-4325-bf8a-4ef60c92c771",
+            "@type": "types:Hash",
+            "rdfs:comment": "This should trigger an sh:Warning from the hashMethod value not being a string, and an sh:Info from not being in the HashNameVocab vocabulary.  (The warning from not being a string is a relaxation from an error, enacted between UCO 1.3.0 and 1.4.0.  It will again be an error in UCO 2.0.0.)",
+            "types:hashMethod": 1,
             "types:hashValue": {
                 "@type": "xsd:hexBinary",
                 "@value": "da39a3ee5e6b4b0d3255bfef95601890afd80709"

@@ -108,43 +108,28 @@ action:Action
 			sh:path action:actionCount ;
 		] ,
 		[
-			sh:datatype vocabulary:ActionStatusTypeVocab ;
-			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for action:actionStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path action:actionStatus ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"Complete/Finish"
+				"Error"
+				"Fail"
+				"Ongoing"
+				"Pending"
+				"Success"
+				"Unknown"
+			) ;
+			sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
 			sh:path action:actionStatus ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ActionStatusTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path action:actionStatus ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ActionStatusTypeVocab ;
-					sh:in (
-						"Complete/Finish"^^vocabulary:ActionStatusTypeVocab
-						"Error"^^vocabulary:ActionStatusTypeVocab
-						"Fail"^^vocabulary:ActionStatusTypeVocab
-						"Ongoing"^^vocabulary:ActionStatusTypeVocab
-						"Pending"^^vocabulary:ActionStatusTypeVocab
-						"Success"^^vocabulary:ActionStatusTypeVocab
-						"Unknown"^^vocabulary:ActionStatusTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path action:actionStatus ;
 		]
 		;
@@ -256,8 +241,17 @@ action:ActionFrequencyFacet
 			sh:path action:units ;
 		] ,
 		[
-			sh:datatype vocabulary:TrendVocab ;
-			sh:message "Value is outside the default vocabulary TrendVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for action:trend should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path action:trend ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"Decreasing"
+				"Increasing"
+			) ;
+			sh:message "Value is not member of the vocabulary TrendVocab." ;
 			sh:path action:trend ;
 			sh:severity sh:Info ;
 		] ,
@@ -265,30 +259,6 @@ action:ActionFrequencyFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TrendVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path action:trend ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TrendVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TrendVocab ;
-					sh:in (
-						"Decreasing"^^vocabulary:TrendVocab
-						"Increasing"^^vocabulary:TrendVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path action:trend ;
 		]
 		;

@@ -144,8 +144,27 @@ types:Hash
 			sh:path types:hashValue ;
 		] ,
 		[
-			sh:datatype vocabulary:HashNameVocab ;
-			sh:message "Value is outside the default vocabulary HashNameVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path types:hashMethod ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"MD5"
+				"MD6"
+				"SHA1"
+				"SHA224"
+				"SHA256"
+				"SHA3-224"
+				"SHA3-256"
+				"SHA3-384"
+				"SHA3-512"
+				"SHA384"
+				"SHA512"
+				"SSDEEP"
+			) ;
+			sh:message "Value is not member of the vocabulary HashNameVocab." ;
 			sh:path types:hashMethod ;
 			sh:severity sh:Info ;
 		] ,
@@ -153,40 +172,6 @@ types:Hash
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:HashNameVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path types:hashMethod ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary HashNameVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:HashNameVocab ;
-					sh:in (
-						"MD5"^^vocabulary:HashNameVocab
-						"MD6"^^vocabulary:HashNameVocab
-						"SHA1"^^vocabulary:HashNameVocab
-						"SHA224"^^vocabulary:HashNameVocab
-						"SHA256"^^vocabulary:HashNameVocab
-						"SHA3-224"^^vocabulary:HashNameVocab
-						"SHA3-256"^^vocabulary:HashNameVocab
-						"SHA3-384"^^vocabulary:HashNameVocab
-						"SHA3-512"^^vocabulary:HashNameVocab
-						"SHA384"^^vocabulary:HashNameVocab
-						"SHA512"^^vocabulary:HashNameVocab
-						"SSDEEP"^^vocabulary:HashNameVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path types:hashMethod ;
 		]
 		;

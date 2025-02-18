@@ -166,44 +166,29 @@ observable:AccountFacet
 			sh:path observable:accountIdentifier ;
 		] ,
 		[
-			sh:datatype vocabulary:AccountTypeVocab ;
-			sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:accountType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:accountType ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"ldap"
+				"nis"
+				"openid"
+				"radius"
+				"tacacs"
+				"unix"
+				"windows_domain"
+				"windows_local"
+			) ;
+			sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
 			sh:path observable:accountType ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:AccountTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:accountType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:AccountTypeVocab ;
-					sh:in (
-						"ldap"^^vocabulary:AccountTypeVocab
-						"nis"^^vocabulary:AccountTypeVocab
-						"openid"^^vocabulary:AccountTypeVocab
-						"radius"^^vocabulary:AccountTypeVocab
-						"tacacs"^^vocabulary:AccountTypeVocab
-						"unix"^^vocabulary:AccountTypeVocab
-						"windows_domain"^^vocabulary:AccountTypeVocab
-						"windows_local"^^vocabulary:AccountTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:accountType ;
 		]
 		;
@@ -650,16 +635,14 @@ observable:AutonomousSystemFacet
 			sh:path observable:asHandle ;
 		] ,
 		[
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:regionalInternetRegistry should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:regionalInternetRegistry ;
+			sh:severity sh:Warning ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:regionalInternetRegistry ;
 		]
 		;
@@ -1431,39 +1414,24 @@ observable:ContactAddress
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactAddressScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactAddressScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactAddressScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:contactAddressScope ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"home"
+				"work"
+				"school"
+			) ;
+			sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
 			sh:path observable:contactAddressScope ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactAddressScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactAddressScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactAddressScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactAddressScopeVocab
-						"work"^^vocabulary:ContactAddressScopeVocab
-						"school"^^vocabulary:ContactAddressScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactAddressScope ;
 		]
 		;
@@ -1553,40 +1521,25 @@ observable:ContactEmail
 			sh:path observable:emailAddress ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactEmailScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactEmailScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactEmailScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:contactEmailScope ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"home"
+				"work"
+				"school"
+				"cloud"
+			) ;
+			sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
 			sh:path observable:contactEmailScope ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactEmailScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactEmailScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactEmailScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactEmailScopeVocab
-						"work"^^vocabulary:ContactEmailScopeVocab
-						"school"^^vocabulary:ContactEmailScopeVocab
-						"cloud"^^vocabulary:ContactEmailScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactEmailScope ;
 		]
 		;
@@ -1820,44 +1773,29 @@ observable:ContactPhone
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactPhoneScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactPhoneScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactPhoneScope in UCO 2.0.0." ;
+			sh:path observable:contactPhoneScope ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"home"
+				"work"
+				"school"
+				"mobile"
+				"main"
+				"home fax"
+				"work fax"
+				"pager"
+			) ;
+			sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
 			sh:path observable:contactPhoneScope ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactPhoneScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactPhoneScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactPhoneScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactPhoneScopeVocab
-						"work"^^vocabulary:ContactPhoneScopeVocab
-						"school"^^vocabulary:ContactPhoneScopeVocab
-						"mobile"^^vocabulary:ContactPhoneScopeVocab
-						"main"^^vocabulary:ContactPhoneScopeVocab
-						"home fax"^^vocabulary:ContactPhoneScopeVocab
-						"work fax"^^vocabulary:ContactPhoneScopeVocab
-						"pager"^^vocabulary:ContactPhoneScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactPhoneScope ;
 		]
 		;
@@ -1905,39 +1843,24 @@ observable:ContactSIP
 			sh:path observable:sipAddress ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactSIPScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactSIPScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactSIPScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:contactSIPScope ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"home"
+				"work"
+				"school"
+			) ;
+			sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
 			sh:path observable:contactSIPScope ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactSIPScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactSIPScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactSIPScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactSIPScopeVocab
-						"work"^^vocabulary:ContactSIPScopeVocab
-						"school"^^vocabulary:ContactSIPScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactSIPScope ;
 		]
 		;
@@ -1960,40 +1883,25 @@ observable:ContactURL
 			sh:path observable:url ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactURLScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactURLScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactURLScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:contactURLScope ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"home"
+				"work"
+				"school"
+				"homepage"
+			) ;
+			sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
 			sh:path observable:contactURLScope ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactURLScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactURLScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactURLScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactURLScopeVocab
-						"work"^^vocabulary:ContactURLScopeVocab
-						"school"^^vocabulary:ContactURLScopeVocab
-						"homepage"^^vocabulary:ContactURLScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactURLScope ;
 		]
 		;
@@ -2069,43 +1977,28 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:byteOrder should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:byteOrder ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeType ;
 		] ,
 		[
-			sh:datatype vocabulary:EndiannessTypeVocab ;
-			sh:message "Value is outside the default vocabulary EndiannessTypeVocab." ;
+			sh:in (
+				"Big-endian"
+				"Little-endian"
+				"Middle-endian"
+			) ;
+			sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
 			sh:path observable:byteOrder ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:EndiannessTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:byteOrder ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:EndiannessTypeVocab ;
-					sh:in (
-						"Big-endian"^^vocabulary:EndiannessTypeVocab
-						"Little-endian"^^vocabulary:EndiannessTypeVocab
-						"Middle-endian"^^vocabulary:EndiannessTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:byteOrder ;
 		]
 		;
@@ -4093,41 +3986,26 @@ observable:MemoryFacet
 			sh:path observable:regionSize ;
 		] ,
 		[
-			sh:datatype vocabulary:MemoryBlockTypeVocab ;
-			sh:message "Value is outside the default vocabulary MemoryBlockTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:blockType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:blockType ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"Bit-mapped"
+				"Byte-mapped"
+				"Initialized"
+				"Overlay"
+				"Uninitialized"
+			) ;
+			sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
 			sh:path observable:blockType ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:MemoryBlockTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:blockType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:MemoryBlockTypeVocab ;
-					sh:in (
-						"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
-						"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
-						"Initialized"^^vocabulary:MemoryBlockTypeVocab
-						"Overlay"^^vocabulary:MemoryBlockTypeVocab
-						"Uninitialized"^^vocabulary:MemoryBlockTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:blockType ;
 		]
 		;
@@ -5704,115 +5582,70 @@ observable:RecoveredObjectFacet
 	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
 	sh:property
 		[
-			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contentRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:contentRecoveredStatus ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:metadataRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:metadataRecoveredStatus ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:nameRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:nameRecoveredStatus ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"recovered"
+				"partially recovered"
+				"overwritten"
+				"unknown"
+			) ;
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:nameRecoveredStatus ;
 			sh:severity sh:Info ;
 		] ,
 		[
-			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:in (
+				"recovered"
+				"partially recovered"
+				"overwritten"
+				"unknown"
+			) ;
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
 			sh:path observable:metadataRecoveredStatus ;
 			sh:severity sh:Info ;
 		] ,
 		[
-			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
-			sh:path observable:nameRecoveredStatus ;
+			sh:in (
+				"recovered"
+				"partially recovered"
+				"overwritten"
+				"unknown"
+			) ;
+			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+			sh:path observable:contentRecoveredStatus ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:nameRecoveredStatus ;
+			sh:path observable:contentRecoveredStatus ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:metadataRecoveredStatus ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contentRecoveredStatus ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-					sh:in (
-						"recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-						"unknown"^^vocabulary:RecoveredObjectStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:nameRecoveredStatus ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-					sh:in (
-						"recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-						"unknown"^^vocabulary:RecoveredObjectStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:metadataRecoveredStatus ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-					sh:in (
-						"recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-						"unknown"^^vocabulary:RecoveredObjectStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contentRecoveredStatus ;
 		]
 		;
 	sh:targetClass observable:RecoveredObjectFacet ;
@@ -6487,40 +6320,25 @@ observable:TaskActionType
 			sh:path observable:actionID ;
 		] ,
 		[
-			sh:datatype vocabulary:TaskActionTypeVocab ;
-			sh:message "Value is outside the default vocabulary TaskActionTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:actionType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:actionType ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"TASK_ACTION_COM_HANDLER"
+				"TASK_ACTION_EXEC"
+				"TASK_ACTION_SEND_EMAIL"
+				"TASK_ACTION_SHOW_MESSAGE"
+			) ;
+			sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
 			sh:path observable:actionType ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskActionTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:actionType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskActionTypeVocab ;
-					sh:in (
-						"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
-						"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
-						"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
-						"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:actionType ;
 		]
 		;
@@ -6573,84 +6391,54 @@ observable:TriggerType
 			sh:path observable:triggerSessionChangeType ;
 		] ,
 		[
-			sh:datatype vocabulary:TriggerFrequencyVocab ;
-			sh:message "Value is outside the default vocabulary TriggerFrequencyVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:triggerFrequency should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:triggerFrequency ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:datatype vocabulary:TriggerTypeVocab ;
-			sh:message "Value is outside the default vocabulary TriggerTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:triggerType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:triggerType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TriggerFrequencyVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
+			sh:in (
+				"TASK_EVENT_TRIGGER_AT_LOGON"
+				"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"
+				"TASK_EVENT_TRIGGER_ON_IDLE"
+				"TASK_TIME_TRIGGER_DAILY"
+				"TASK_TIME_TRIGGER_MONTHLYDATE"
+				"TASK_TIME_TRIGGER_MONTHLYDOW"
+				"TASK_TIME_TRIGGER_ONCE"
+				"TASK_TIME_TRIGGER_WEEKLY"
 			) ;
-			sh:path observable:triggerFrequency ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TriggerTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:triggerType ;
-		] ,
-		[
 			sh:message "Value is not member of the vocabulary TriggerFrequencyVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TriggerFrequencyVocab ;
-					sh:in (
-						"TASK_EVENT_TRIGGER_AT_LOGON"^^vocabulary:TriggerFrequencyVocab
-						"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"^^vocabulary:TriggerFrequencyVocab
-						"TASK_EVENT_TRIGGER_ON_IDLE"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_DAILY"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_MONTHLYDATE"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_MONTHLYDOW"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_ONCE"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_WEEKLY"^^vocabulary:TriggerFrequencyVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
+			sh:path observable:triggerFrequency ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:in (
+				"TASK_TRIGGER_BOOT"
+				"TASK_TRIGGER_EVENT"
+				"TASK_TRIGGER_IDLE"
+				"TASK_TRIGGER_LOGON"
+				"TASK_TRIGGER_REGISTRATION"
+				"TASK_TRIGGER_SESSION_STATE_CHANGE"
+				"TASK_TRIGGER_TIME"
 			) ;
+			sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
+			sh:path observable:triggerType ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:triggerFrequency ;
 		] ,
 		[
-			sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TriggerTypeVocab ;
-					sh:in (
-						"TASK_TRIGGER_BOOT"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_EVENT"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_IDLE"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_LOGON"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_REGISTRATION"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_SESSION_STATE_CHANGE"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_TIME"^^vocabulary:TriggerTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:triggerType ;
 		]
 		;
@@ -7137,47 +6925,32 @@ observable:URLVisitFacet
 			sh:path observable:visitDuration ;
 		] ,
 		[
-			sh:datatype vocabulary:URLTransitionTypeVocab ;
-			sh:message "Value is outside the default vocabulary URLTransitionTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:urlTransitionType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:urlTransitionType ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"link"
+				"typed"
+				"auto_bookmark"
+				"auto_subframe"
+				"manual_subframe"
+				"generated"
+				"auto_toplevel"
+				"form_submit"
+				"reload"
+				"keyword"
+				"keyword_generated"
+			) ;
+			sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
 			sh:path observable:urlTransitionType ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:URLTransitionTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:urlTransitionType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:URLTransitionTypeVocab ;
-					sh:in (
-						"link"^^vocabulary:URLTransitionTypeVocab
-						"typed"^^vocabulary:URLTransitionTypeVocab
-						"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
-						"auto_subframe"^^vocabulary:URLTransitionTypeVocab
-						"manual_subframe"^^vocabulary:URLTransitionTypeVocab
-						"generated"^^vocabulary:URLTransitionTypeVocab
-						"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
-						"form_submit"^^vocabulary:URLTransitionTypeVocab
-						"reload"^^vocabulary:URLTransitionTypeVocab
-						"keyword"^^vocabulary:URLTransitionTypeVocab
-						"keyword_generated"^^vocabulary:URLTransitionTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:urlTransitionType ;
 		]
 		;
@@ -7462,6 +7235,18 @@ observable:WhoIsFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:regionalInternetRegistry should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:regionalInternetRegistry ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:status should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:status ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:registrantIDs ;
 		] ,
@@ -7472,68 +7257,39 @@ observable:WhoIsFacet
 			sh:path observable:dnssec ;
 		] ,
 		[
-			sh:datatype vocabulary:WhoisStatusTypeVocab ;
-			sh:message "Value is outside the default vocabulary WhoisStatusTypeVocab." ;
+			sh:in (
+				"ADD_PERIOD"
+				"AUTO_RENEW_PERIOD"
+				"CLIENT_DELETE_PROHIBITED"
+				"CLIENT_HOLD"
+				"CLIENT_RENEW_PROHIBITED"
+				"CLIENT_TRANSFER_PROHIBITED"
+				"CLIENT_UPDATE_PROHIBITED"
+				"DELETE_PROHIBITED"
+				"HOLD"
+				"INACTIVE"
+				"OK"
+				"PENDING_DELETE_RESTORABLE"
+				"PENDING_DELETE_SCHEDULED_FOR_RELEASE"
+				"PENDING_RESTORE"
+				"RENEW_PERIOD"
+				"RENEW_PROHIBITED"
+				"TRANSFER_PERIOD"
+				"TRANSFER_PROHIBITED"
+				"UPDATE_PROHIBITED"
+			) ;
+			sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
 			sh:path observable:status ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:regionalInternetRegistry ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WhoisStatusTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:status ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WhoisStatusTypeVocab ;
-					sh:in (
-						"ADD_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-						"AUTO_RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_HOLD"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"HOLD"^^vocabulary:WhoisStatusTypeVocab
-						"INACTIVE"^^vocabulary:WhoisStatusTypeVocab
-						"OK"^^vocabulary:WhoisStatusTypeVocab
-						"PENDING_DELETE_RESTORABLE"^^vocabulary:WhoisStatusTypeVocab
-						"PENDING_DELETE_SCHEDULED_FOR_RELEASE"^^vocabulary:WhoisStatusTypeVocab
-						"PENDING_RESTORE"^^vocabulary:WhoisStatusTypeVocab
-						"RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-						"RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"TRANSFER_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-						"TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:status ;
 		]
 		;
@@ -7550,39 +7306,24 @@ observable:WhoisContactFacet
 	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
 		[
-			sh:datatype vocabulary:WhoisContactTypeVocab ;
-			sh:message "Value is outside the default vocabulary WhoisContactTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:whoisContactType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:whoisContactType ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"ADMIN"
+				"BILLING"
+				"TECHNICAL"
+			) ;
+			sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
 			sh:path observable:whoisContactType ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WhoisContactTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:whoisContactType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WhoisContactTypeVocab ;
-					sh:in (
-						"ADMIN"^^vocabulary:WhoisContactTypeVocab
-						"BILLING"^^vocabulary:WhoisContactTypeVocab
-						"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:whoisContactType ;
 		]
 		;
@@ -8735,30 +8476,80 @@ observable:WindowsTaskFacet
 			sh:path observable:taskCreator ;
 		] ,
 		[
-			sh:datatype vocabulary:TaskFlagVocab ;
-			sh:message "Value is outside the default vocabulary TaskFlagVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:flags should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:flags ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:datatype vocabulary:TaskPriorityVocab ;
-			sh:message "Value is outside the default vocabulary TaskPriorityVocab." ;
-			sh:path observable:priority ;
-			sh:severity sh:Info ;
-		] ,
-		[
-			sh:datatype vocabulary:TaskStatusVocab ;
-			sh:message "Value is outside the default vocabulary TaskStatusVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:status should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:status ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"SCHED_E_ACCOUNT_DBASE_CORRUPT"
+				"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"
+				"SCHED_E_ACCOUNT_NAME_NOT_FOUND"
+				"SCHED_E_CANNOT_OPEN_TASK"
+				"SCHED_E_INVALID_TASK"
+				"SCHED_E_NO_SECURITY_SERVICES"
+				"SCHED_E_SERVICE_NOT_INSTALLED"
+				"SCHED_E_SERVICE_NOT_RUNNING"
+				"SCHED_E_TASK_NOT_READY"
+				"SCHED_E_TASK_NOT_RUNNING"
+				"SCHED_E_TRIGGER_NOT_FOUND"
+				"SCHED_E_UNKNOWN_OBJECT_VERSION"
+				"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"
+				"SCHED_S_EVENT_TRIGGER"
+				"SCHED_S_TASK_DISABLED"
+				"SCHED_S_TASK_HAS_NOT_RUN"
+				"SCHED_S_TASK_NOT_SCHEDULED"
+				"SCHED_S_TASK_NO_MORE_RUNS"
+				"SCHED_S_TASK_NO_VALID_TRIGGERS"
+				"SCHED_S_TASK_READY"
+				"SCHED_S_TASK_RUNNING"
+				"SCHED_S_TASK_TERMINATED"
+				"TASK_STATE_QUEUED"
+				"TASK_STATE_UNKNOWN"
+			) ;
+			sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:in (
+				"TASK_FLAG_DELETE_WHEN_DONE"
+				"TASK_FLAG_DISABLED"
+				"TASK_FLAG_DONT_START_IF_ON_BATTERIES"
+				"TASK_FLAG_HIDDEN"
+				"TASK_FLAG_INTERACTIVE"
+				"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"
+				"TASK_FLAG_KILL_ON_IDLE_END"
+				"TASK_FLAG_RESTART_ON_IDLE_RESUME"
+				"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"
+				"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"
+				"TASK_FLAG_START_ONLY_IF_IDLE"
+				"TASK_FLAG_SYSTEM_REQUIRED"
+				"TASK_FLAG_ZERO"
+			) ;
+			sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
+			sh:path observable:flags ;
 			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:priority should be xsd:string or xsd:integer.  Not using xsd:string or xsd:integer will be an error in UCO 2.0.0." ;
 			sh:or (
-				[
-					sh:datatype vocabulary:TaskPriorityVocab ;
-				]
 				[
 					sh:datatype xsd:integer ;
 				]
@@ -8767,118 +8558,30 @@ observable:WindowsTaskFacet
 				]
 			) ;
 			sh:path observable:priority ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:status ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskFlagVocab ;
-					sh:in (
-						"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_INTERACTIVE"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_KILL_ON_IDLE_END"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_RESTART_ON_IDLE_RESUME"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_START_ONLY_IF_IDLE"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_SYSTEM_REQUIRED"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_ZERO"^^vocabulary:TaskFlagVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:flags ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
 			sh:or (
 				[
-					sh:datatype vocabulary:TaskPriorityVocab ;
 					sh:in (
-						"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"REALTIME_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+						"ABOVE_NORMAL_PRIORITY_CLASS"
+						"BELOW_NORMAL_PRIORITY_CLASS"
+						"HIGH_PRIORITY_CLASS"
+						"IDLE_PRIORITY_CLASS"
+						"NORMAL_PRIORITY_CLASS"
+						"REALTIME_PRIORITY_CLASS"
 					) ;
 				]
 				[
 					sh:datatype xsd:integer ;
 				]
-				[
-					sh:datatype xsd:string ;
-				]
 			) ;
 			sh:path observable:priority ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskStatusVocab ;
-					sh:in (
-						"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
-						"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
-						"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
-						"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
-						"SCHED_E_INVALID_TASK"^^vocabulary:TaskStatusVocab
-						"SCHED_E_NO_SECURITY_SERVICES"^^vocabulary:TaskStatusVocab
-						"SCHED_E_SERVICE_NOT_INSTALLED"^^vocabulary:TaskStatusVocab
-						"SCHED_E_SERVICE_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-						"SCHED_E_TASK_NOT_READY"^^vocabulary:TaskStatusVocab
-						"SCHED_E_TASK_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-						"SCHED_E_TRIGGER_NOT_FOUND"^^vocabulary:TaskStatusVocab
-						"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocabulary:TaskStatusVocab
-						"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocabulary:TaskStatusVocab
-						"SCHED_S_EVENT_TRIGGER"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_DISABLED"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_HAS_NOT_RUN"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_NOT_SCHEDULED"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_NO_MORE_RUNS"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_READY"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_RUNNING"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_TERMINATED"^^vocabulary:TaskStatusVocab
-						"TASK_STATE_QUEUED"^^vocabulary:TaskStatusVocab
-						"TASK_STATE_UNKNOWN"^^vocabulary:TaskStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:status ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskFlagVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:flags ;
 		]
 		;
@@ -8980,10 +8683,10 @@ observable:WindowsVolumeFacet
 			sh:path observable:driveLetter ;
 		] ,
 		[
-			sh:datatype vocabulary:WindowsDriveTypeVocab ;
-			sh:message "Value is outside the default vocabulary WindowsDriveTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:driveType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:driveType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:datatype vocabulary:WindowsVolumeAttributeVocab ;
@@ -8992,37 +8695,22 @@ observable:WindowsVolumeFacet
 			sh:path observable:windowsVolumeAttributes ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WindowsDriveTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
+			sh:in (
+				"DRIVE_CDROM"
+				"DRIVE_FIXED"
+				"DRIVE_NO_ROOT_DIR"
+				"DRIVE_RAMDISK"
+				"DRIVE_REMOTE"
+				"DRIVE_REMOVABLE"
+				"DRIVE_UNKNOWN"
 			) ;
+			sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
 			sh:path observable:driveType ;
+			sh:severity sh:Info ;
 		] ,
 		[
-			sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WindowsDriveTypeVocab ;
-					sh:in (
-						"DRIVE_CDROM"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_FIXED"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_NO_ROOT_DIR"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_RAMDISK"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_REMOTE"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_REMOVABLE"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_UNKNOWN"^^vocabulary:WindowsDriveTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:driveType ;
 		]
 		;
@@ -9079,37 +8767,28 @@ observable:WirelessNetworkConnectionFacet
 			sh:path observable:ssid ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:wirelessNetworkSecurityMode should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:wirelessNetworkSecurityMode ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
-					sh:in (
-						"None"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
+			sh:in (
+				"None"
+				"WEP"
+				"WPA"
+				"WPA2-PSK"
+				"WPA2-Enterprise"
+				"WPA3-PSK"
+				"WPA3-Enterprise"
 			) ;
+			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
+			sh:path observable:wirelessNetworkSecurityMode ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
@@ -12638,31 +12317,22 @@ observable:regionalInternetRegistry
 
 observable:regionalInternetRegistry-shape-value-not-vocabulary-member
 	a sh:PropertyShape ;
-	sh:message "Value is not member of the vocabulary RegionalRegistryTypeVocab." ;
-	sh:or (
-		[
-			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-			sh:in (
-				"APNIC"^^vocabulary:RegionalRegistryTypeVocab
-				"ARIN"^^vocabulary:RegionalRegistryTypeVocab
-				"AfriNIC"^^vocabulary:RegionalRegistryTypeVocab
-				"LACNIC"^^vocabulary:RegionalRegistryTypeVocab
-				"RIPE NCC"^^vocabulary:RegionalRegistryTypeVocab
-			) ;
-		]
-		[
-			sh:datatype xsd:string ;
-		]
+	sh:in (
+		"APNIC"
+		"ARIN"
+		"AfriNIC"
+		"LACNIC"
+		"RIPE NCC"
 	) ;
+	sh:message "Value is not member of the vocabulary RegionalRegistryTypeVocab." ;
 	sh:path observable:regionalInternetRegistry ;
+	sh:severity sh:Info ;
 	.
 
 observable:regionalInternetRegistry-shape-value-outside-default-vocabulary
 	a sh:PropertyShape ;
-	sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-	sh:message "Value is outside the default vocabulary RegionalRegistryTypeVocab." ;
+	sh:deactivated "true"^^xsd:boolean ;
 	sh:path observable:regionalInternetRegistry ;
-	sh:severity sh:Info ;
 	.
 
 observable:registeredOrganization
