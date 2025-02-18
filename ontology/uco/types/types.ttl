@@ -135,7 +135,6 @@ types:Hash
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
-	rdfs:seeAlso types:hashMethod-objects-in-shape ;
 	sh:property
 		[
 			sh:datatype xsd:hexBinary ;
@@ -149,6 +148,25 @@ types:Hash
 			sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path types:hashMethod ;
 			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:in (
+				"MD5"
+				"MD6"
+				"SHA1"
+				"SHA224"
+				"SHA256"
+				"SHA3-224"
+				"SHA3-256"
+				"SHA3-384"
+				"SHA3-512"
+				"SHA384"
+				"SHA512"
+				"SSDEEP"
+			) ;
+			sh:message "Value is not member of the vocabulary HashNameVocab." ;
+			sh:path types:hashMethod ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
@@ -304,27 +322,6 @@ types:hashMethod
 			xsd:string
 		) ;
 	] ;
-	.
-
-types:hashMethod-objects-in-shape
-	a sh:NodeShape ;
-	sh:in (
-		"MD5"
-		"MD6"
-		"SHA1"
-		"SHA224"
-		"SHA256"
-		"SHA3-224"
-		"SHA3-256"
-		"SHA3-384"
-		"SHA3-512"
-		"SHA384"
-		"SHA512"
-		"SSDEEP"
-	) ;
-	sh:message "Value is not member of the vocabulary HashNameVocab." ;
-	sh:severity sh:Info ;
-	sh:targetObjectsOf types:hashMethod ;
 	.
 
 types:hashValue

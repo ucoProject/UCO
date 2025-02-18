@@ -290,11 +290,11 @@ def test_hash_PASS() -> None:
       "hash_PASS_validation.ttl",
       True,
       expected_focus_node_severities={
-        ("1", str(NS_SH.Info)),
-        ("CUSTOM_hash", str(NS_SH.Info)),
-        ("SHA-1", str(NS_SH.Info)),
-        ("SHA1", str(NS_SH.Info)),
+        ('http://example.org/kb/hash-04dcd1dc-6920-4977-a898-e242870249a4', str(NS_SH.Info)),
+        ('http://example.org/kb/hash-af4b0c85-b042-4e2d-a213-210b3d7f115c', str(NS_SH.Info)),
+        ('http://example.org/kb/hash-b7eca8de-142d-4aa9-b546-0796a268afa4', str(NS_SH.Info)),
         ("http://example.org/kb/hash-b7eca8de-142d-4aa9-b546-0796a268afa4", str(NS_SH.Warning)),
+        ('http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771', str(NS_SH.Info)),
         ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Warning)),
       }
     )
