@@ -30,7 +30,7 @@
         {
             "@id": "kb:hash-b7eca8de-142d-4aa9-b546-0796a268afa4",
             "@type": "types:Hash",
-            "rdfs:comment": "Should trigger an sh:Info from the hashMethod value not having its (literal-)value in the HashNameVocab vocabulary, and also not being an xsd:string.",
+            "rdfs:comment": "Should trigger an sh:Info from the hashMethod value not having its (literal-)value in the HashNameVocab vocabulary, and also a sh:Warning from not being an xsd:string.",
             "types:hashMethod": {
                 "@type": "vocabulary:HashNameVocab",
                 "@value": "SHA1"
@@ -43,7 +43,7 @@
         {
             "@id": "kb:hash-f46c714f-559a-4325-bf8a-4ef60c92c771",
             "@type": "types:Hash",
-            "rdfs:comment": "This should trigger an sh:Warning from the hashMethod value not being a string, and not being in the HashNameVocab vocabulary.",
+            "rdfs:comment": "This should trigger an sh:Warning from the hashMethod value not being a string, and an sh:Info from not being in the HashNameVocab vocabulary.  (The warning from not being a string is a relaxation from an error, enacted between UCO 1.3.0 and 1.4.0.  It will again be an error in UCO 2.0.0.)",
             "types:hashMethod": 1,
             "types:hashValue": {
                 "@type": "xsd:hexBinary",
