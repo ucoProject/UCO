@@ -42,6 +42,7 @@ action:Action
 	rdfs:comment "An action is something that may be done or performed."@en ;
 	owl:disjointWith core:Event ;
 	sh:property
+		action:Action-actionStatus-in-shape ,
 		[
 			sh:class action:Action ;
 			sh:nodeKind sh:IRI ;
@@ -114,26 +115,28 @@ action:Action
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"Complete/Finish"
-				"Error"
-				"Fail"
-				"Ongoing"
-				"Pending"
-				"Success"
-				"Unknown"
-			) ;
-			sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
-			sh:path action:actionStatus ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path action:actionStatus ;
 		]
 		;
 	sh:targetClass action:Action ;
+	.
+
+action:Action-actionStatus-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"Complete/Finish"
+		"Error"
+		"Fail"
+		"Ongoing"
+		"Pending"
+		"Success"
+		"Unknown"
+	) ;
+	sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
+	sh:path action:actionStatus ;
+	sh:severity sh:Info ;
 	.
 
 action:Action-disjointWith-Event-shape
@@ -219,6 +222,7 @@ action:ActionFrequencyFacet
 	rdfs:label "ActionFrequencyFacet"@en ;
 	rdfs:comment "An action frequency facet is a grouping of characteristics unique to the frequency of occurrence for an action."@en ;
 	sh:property
+		action:ActionFrequencyFacet-trend-in-shape ,
 		[
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -247,15 +251,6 @@ action:ActionFrequencyFacet
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"Decreasing"
-				"Increasing"
-			) ;
-			sh:message "Value is not member of the vocabulary TrendVocab." ;
-			sh:path action:trend ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -263,6 +258,17 @@ action:ActionFrequencyFacet
 		]
 		;
 	sh:targetClass action:ActionFrequencyFacet ;
+	.
+
+action:ActionFrequencyFacet-trend-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"Decreasing"
+		"Increasing"
+	) ;
+	sh:message "Value is not member of the vocabulary TrendVocab." ;
+	sh:path action:trend ;
+	sh:severity sh:Info ;
 	.
 
 action:ActionLifecycle

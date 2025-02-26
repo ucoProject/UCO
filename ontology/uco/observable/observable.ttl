@@ -122,6 +122,7 @@ observable:AccountFacet
 	rdfs:label "AccountFacet"@en ;
 	rdfs:comment "An account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of some capability or service."@en ;
 	sh:property
+		observable:AccountFacet-accountType-in-shape ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -171,27 +172,29 @@ observable:AccountFacet
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"ldap"
-				"nis"
-				"openid"
-				"radius"
-				"tacacs"
-				"unix"
-				"windows_domain"
-				"windows_local"
-			) ;
-			sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
-			sh:path observable:accountType ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:accountType ;
 		]
 		;
 	sh:targetClass observable:AccountFacet ;
+	.
+
+observable:AccountFacet-accountType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"ldap"
+		"nis"
+		"openid"
+		"radius"
+		"tacacs"
+		"unix"
+		"windows_domain"
+		"windows_local"
+	) ;
+	sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
+	sh:path observable:accountType ;
+	sh:severity sh:Info ;
 	.
 
 observable:Adaptor
@@ -1414,6 +1417,7 @@ observable:ContactAddress
 	rdfs:label "ContactAddress"@en ;
 	rdfs:comment "A contact address is a grouping of characteristics unique to a geolocation address of a contact entity."@en ;
 	sh:property
+		observable:ContactAddress-contactAddressScope-in-shape ,
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -1427,22 +1431,24 @@ observable:ContactAddress
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"home"
-				"work"
-				"school"
-			) ;
-			sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
-			sh:path observable:contactAddressScope ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactAddressScope ;
 		]
 		;
 	sh:targetClass observable:ContactAddress ;
+	.
+
+observable:ContactAddress-contactAddressScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
+	sh:path observable:contactAddressScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContactAffiliation
@@ -1521,6 +1527,7 @@ observable:ContactEmail
 	rdfs:label "ContactEmail"@en ;
 	rdfs:comment "A contact email is a grouping of characteristics unique to details for contacting a contact entity by email."@en ;
 	sh:property
+		observable:ContactEmail-contactEmailScope-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -1534,23 +1541,25 @@ observable:ContactEmail
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"home"
-				"work"
-				"school"
-				"cloud"
-			) ;
-			sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
-			sh:path observable:contactEmailScope ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactEmailScope ;
 		]
 		;
 	sh:targetClass observable:ContactEmail ;
+	.
+
+observable:ContactEmail-contactEmailScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+		"cloud"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
+	sh:path observable:contactEmailScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContactFacet
@@ -1773,6 +1782,7 @@ observable:ContactPhone
 	rdfs:label "ContactPhone"@en ;
 	rdfs:comment "A contact phone is a grouping of characteristics unique to details for contacting a contact entity by telephone."@en ;
 	sh:property
+		observable:ContactPhone-contactPhoneScope-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -1786,27 +1796,29 @@ observable:ContactPhone
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"home"
-				"work"
-				"school"
-				"mobile"
-				"main"
-				"home fax"
-				"work fax"
-				"pager"
-			) ;
-			sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
-			sh:path observable:contactPhoneScope ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactPhoneScope ;
 		]
 		;
 	sh:targetClass observable:ContactPhone ;
+	.
+
+observable:ContactPhone-contactPhoneScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+		"mobile"
+		"main"
+		"home fax"
+		"work fax"
+		"pager"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
+	sh:path observable:contactPhoneScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContactProfile
@@ -1843,6 +1855,7 @@ observable:ContactSIP
 	rdfs:label "ContactSIP"@en ;
 	rdfs:comment "A contact SIP is a grouping of characteristics unique to details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
 	sh:property
+		observable:ContactSIP-contactSIPScope-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -1856,22 +1869,24 @@ observable:ContactSIP
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"home"
-				"work"
-				"school"
-			) ;
-			sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
-			sh:path observable:contactSIPScope ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactSIPScope ;
 		]
 		;
 	sh:targetClass observable:ContactSIP ;
+	.
+
+observable:ContactSIP-contactSIPScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
+	sh:path observable:contactSIPScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContactURL
@@ -1883,6 +1898,7 @@ observable:ContactURL
 	rdfs:label "ContactURL"@en ;
 	rdfs:comment "A contact URL is a grouping of characteristics unique to details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
 	sh:property
+		observable:ContactURL-contactURLScope-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -1896,23 +1912,25 @@ observable:ContactURL
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"home"
-				"work"
-				"school"
-				"homepage"
-			) ;
-			sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
-			sh:path observable:contactURLScope ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactURLScope ;
 		]
 		;
 	sh:targetClass observable:ContactURL ;
+	.
+
+observable:ContactURL-contactURLScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+		"homepage"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
+	sh:path observable:contactURLScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContentData
@@ -1935,6 +1953,7 @@ observable:ContentDataFacet
 	rdfs:label "ContentDataFacet"@en ;
 	rdfs:comment "A content data facet is a grouping of characteristics unique to a block of digital data."@en ;
 	sh:property
+		observable:ContentDataFacet-byteOrder-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -1994,22 +2013,24 @@ observable:ContentDataFacet
 			sh:path observable:mimeType ;
 		] ,
 		[
-			sh:in (
-				"Big-endian"
-				"Little-endian"
-				"Middle-endian"
-			) ;
-			sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
-			sh:path observable:byteOrder ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:byteOrder ;
 		]
 		;
 	sh:targetClass observable:ContentDataFacet ;
+	.
+
+observable:ContentDataFacet-byteOrder-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"Big-endian"
+		"Little-endian"
+		"Middle-endian"
+	) ;
+	sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
+	sh:path observable:byteOrder ;
+	sh:severity sh:Info ;
 	.
 
 observable:CookieHistory
@@ -3961,6 +3982,7 @@ observable:MemoryFacet
 	rdfs:label "MemoryFacet"@en ;
 	rdfs:comment "A memory facet is a grouping of characteristics unique to a particular region of temporary information storage (e.g., RAM (random access memory), ROM (read only memory)) on a digital device."@en ;
 	sh:property
+		observable:MemoryFacet-blockType-in-shape ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -4008,24 +4030,26 @@ observable:MemoryFacet
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"Bit-mapped"
-				"Byte-mapped"
-				"Initialized"
-				"Overlay"
-				"Uninitialized"
-			) ;
-			sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
-			sh:path observable:blockType ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:blockType ;
 		]
 		;
 	sh:targetClass observable:MemoryFacet ;
+	.
+
+observable:MemoryFacet-blockType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"Bit-mapped"
+		"Byte-mapped"
+		"Initialized"
+		"Overlay"
+		"Uninitialized"
+	) ;
+	sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
+	sh:path observable:blockType ;
+	sh:severity sh:Info ;
 	.
 
 observable:Message
@@ -5620,6 +5644,9 @@ observable:RecoveredObjectFacet
 	rdfs:label "RecoveredObjectFacet"@en ;
 	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
 	sh:property
+		observable:RecoveredObjectFacet-contentRecoveredStatus-in-shape ,
+		observable:RecoveredObjectFacet-metadataRecoveredStatus-in-shape ,
+		observable:RecoveredObjectFacet-nameRecoveredStatus-in-shape ,
 		[
 			sh:datatype xsd:string ;
 			sh:message "As of UCO 1.4.0, the datatype to use for observable:contentRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
@@ -5639,39 +5666,6 @@ observable:RecoveredObjectFacet
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"recovered"
-				"partially recovered"
-				"overwritten"
-				"unknown"
-			) ;
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:path observable:nameRecoveredStatus ;
-			sh:severity sh:Info ;
-		] ,
-		[
-			sh:in (
-				"recovered"
-				"partially recovered"
-				"overwritten"
-				"unknown"
-			) ;
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:path observable:metadataRecoveredStatus ;
-			sh:severity sh:Info ;
-		] ,
-		[
-			sh:in (
-				"recovered"
-				"partially recovered"
-				"overwritten"
-				"unknown"
-			) ;
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:path observable:contentRecoveredStatus ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contentRecoveredStatus ;
@@ -5688,6 +5682,45 @@ observable:RecoveredObjectFacet
 		]
 		;
 	sh:targetClass observable:RecoveredObjectFacet ;
+	.
+
+observable:RecoveredObjectFacet-contentRecoveredStatus-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"recovered"
+		"partially recovered"
+		"overwritten"
+		"unknown"
+	) ;
+	sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+	sh:path observable:contentRecoveredStatus ;
+	sh:severity sh:Info ;
+	.
+
+observable:RecoveredObjectFacet-metadataRecoveredStatus-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"recovered"
+		"partially recovered"
+		"overwritten"
+		"unknown"
+	) ;
+	sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+	sh:path observable:metadataRecoveredStatus ;
+	sh:severity sh:Info ;
+	.
+
+observable:RecoveredObjectFacet-nameRecoveredStatus-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"recovered"
+		"partially recovered"
+		"overwritten"
+		"unknown"
+	) ;
+	sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+	sh:path observable:nameRecoveredStatus ;
+	sh:severity sh:Info ;
 	.
 
 observable:RegistryDatatype
@@ -6328,6 +6361,7 @@ observable:TaskActionType
 	rdfs:label "TaskActionType"@en ;
 	rdfs:comment "A task action type is a grouping of characteristics for a scheduled action to be completed."@en ;
 	sh:property
+		observable:TaskActionType-actionType-in-shape ,
 		[
 			sh:class observable:IComHandlerActionType ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -6365,23 +6399,25 @@ observable:TaskActionType
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"TASK_ACTION_COM_HANDLER"
-				"TASK_ACTION_EXEC"
-				"TASK_ACTION_SEND_EMAIL"
-				"TASK_ACTION_SHOW_MESSAGE"
-			) ;
-			sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
-			sh:path observable:actionType ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:actionType ;
 		]
 		;
 	sh:targetClass observable:TaskActionType ;
+	.
+
+observable:TaskActionType-actionType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"TASK_ACTION_COM_HANDLER"
+		"TASK_ACTION_EXEC"
+		"TASK_ACTION_SEND_EMAIL"
+		"TASK_ACTION_SHOW_MESSAGE"
+	) ;
+	sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
+	sh:path observable:actionType ;
+	sh:severity sh:Info ;
 	.
 
 observable:TriggerType
@@ -6393,6 +6429,8 @@ observable:TriggerType
 	rdfs:label "TriggerType"@en ;
 	rdfs:comment "A trigger type is a grouping of characterizes unique to a set of criteria that, when met, starts the execution of a task within a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/task-triggers]"@en ;
 	sh:property
+		observable:TriggerType-triggerFrequency-in-shape ,
+		observable:TriggerType-triggerType-in-shape ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -6442,35 +6480,6 @@ observable:TriggerType
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"TASK_EVENT_TRIGGER_AT_LOGON"
-				"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"
-				"TASK_EVENT_TRIGGER_ON_IDLE"
-				"TASK_TIME_TRIGGER_DAILY"
-				"TASK_TIME_TRIGGER_MONTHLYDATE"
-				"TASK_TIME_TRIGGER_MONTHLYDOW"
-				"TASK_TIME_TRIGGER_ONCE"
-				"TASK_TIME_TRIGGER_WEEKLY"
-			) ;
-			sh:message "Value is not member of the vocabulary TriggerFrequencyVocab." ;
-			sh:path observable:triggerFrequency ;
-			sh:severity sh:Info ;
-		] ,
-		[
-			sh:in (
-				"TASK_TRIGGER_BOOT"
-				"TASK_TRIGGER_EVENT"
-				"TASK_TRIGGER_IDLE"
-				"TASK_TRIGGER_LOGON"
-				"TASK_TRIGGER_REGISTRATION"
-				"TASK_TRIGGER_SESSION_STATE_CHANGE"
-				"TASK_TRIGGER_TIME"
-			) ;
-			sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
-			sh:path observable:triggerType ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:triggerFrequency ;
@@ -6482,6 +6491,39 @@ observable:TriggerType
 		]
 		;
 	sh:targetClass observable:TriggerType ;
+	.
+
+observable:TriggerType-triggerFrequency-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"TASK_EVENT_TRIGGER_AT_LOGON"
+		"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"
+		"TASK_EVENT_TRIGGER_ON_IDLE"
+		"TASK_TIME_TRIGGER_DAILY"
+		"TASK_TIME_TRIGGER_MONTHLYDATE"
+		"TASK_TIME_TRIGGER_MONTHLYDOW"
+		"TASK_TIME_TRIGGER_ONCE"
+		"TASK_TIME_TRIGGER_WEEKLY"
+	) ;
+	sh:message "Value is not member of the vocabulary TriggerFrequencyVocab." ;
+	sh:path observable:triggerFrequency ;
+	sh:severity sh:Info ;
+	.
+
+observable:TriggerType-triggerType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"TASK_TRIGGER_BOOT"
+		"TASK_TRIGGER_EVENT"
+		"TASK_TRIGGER_IDLE"
+		"TASK_TRIGGER_LOGON"
+		"TASK_TRIGGER_REGISTRATION"
+		"TASK_TRIGGER_SESSION_STATE_CHANGE"
+		"TASK_TRIGGER_TIME"
+	) ;
+	sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
+	sh:path observable:triggerType ;
+	sh:severity sh:Info ;
 	.
 
 observable:Tweet
@@ -6933,6 +6975,7 @@ observable:URLVisitFacet
 	rdfs:label "URLVisitFacet"@en ;
 	rdfs:comment "A URL visit facet is a grouping of characteristics unique to the properties of a visit of a URL within a particular browser."@en ;
 	sh:property
+		observable:URLVisitFacet-urlTransitionType-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -6970,30 +7013,32 @@ observable:URLVisitFacet
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"link"
-				"typed"
-				"auto_bookmark"
-				"auto_subframe"
-				"manual_subframe"
-				"generated"
-				"auto_toplevel"
-				"form_submit"
-				"reload"
-				"keyword"
-				"keyword_generated"
-			) ;
-			sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
-			sh:path observable:urlTransitionType ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:urlTransitionType ;
 		]
 		;
 	sh:targetClass observable:URLVisitFacet ;
+	.
+
+observable:URLVisitFacet-urlTransitionType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"link"
+		"typed"
+		"auto_bookmark"
+		"auto_subframe"
+		"manual_subframe"
+		"generated"
+		"auto_toplevel"
+		"form_submit"
+		"reload"
+		"keyword"
+		"keyword_generated"
+	) ;
+	sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
+	sh:path observable:urlTransitionType ;
+	sh:severity sh:Info ;
 	.
 
 observable:UserAccount
@@ -7193,6 +7238,7 @@ observable:WhoIsFacet
 	rdfs:label "WhoIsFacet"@en ;
 	rdfs:comment "A whois facet is a grouping of characteristics unique to a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
+		observable:WhoIsFacet-status-in-shape ,
 		observable:regionalInternetRegistry-shape-value-not-vocabulary-member ,
 		observable:regionalInternetRegistry-shape-value-outside-default-vocabulary ,
 		[
@@ -7296,32 +7342,6 @@ observable:WhoIsFacet
 			sh:path observable:dnssec ;
 		] ,
 		[
-			sh:in (
-				"ADD_PERIOD"
-				"AUTO_RENEW_PERIOD"
-				"CLIENT_DELETE_PROHIBITED"
-				"CLIENT_HOLD"
-				"CLIENT_RENEW_PROHIBITED"
-				"CLIENT_TRANSFER_PROHIBITED"
-				"CLIENT_UPDATE_PROHIBITED"
-				"DELETE_PROHIBITED"
-				"HOLD"
-				"INACTIVE"
-				"OK"
-				"PENDING_DELETE_RESTORABLE"
-				"PENDING_DELETE_SCHEDULED_FOR_RELEASE"
-				"PENDING_RESTORE"
-				"RENEW_PERIOD"
-				"RENEW_PROHIBITED"
-				"TRANSFER_PERIOD"
-				"TRANSFER_PROHIBITED"
-				"UPDATE_PROHIBITED"
-			) ;
-			sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
-			sh:path observable:status ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:regionalInternetRegistry ;
@@ -7335,6 +7355,34 @@ observable:WhoIsFacet
 	sh:targetClass observable:WhoIsFacet ;
 	.
 
+observable:WhoIsFacet-status-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"ADD_PERIOD"
+		"AUTO_RENEW_PERIOD"
+		"CLIENT_DELETE_PROHIBITED"
+		"CLIENT_HOLD"
+		"CLIENT_RENEW_PROHIBITED"
+		"CLIENT_TRANSFER_PROHIBITED"
+		"CLIENT_UPDATE_PROHIBITED"
+		"DELETE_PROHIBITED"
+		"HOLD"
+		"INACTIVE"
+		"OK"
+		"PENDING_DELETE_RESTORABLE"
+		"PENDING_DELETE_SCHEDULED_FOR_RELEASE"
+		"PENDING_RESTORE"
+		"RENEW_PERIOD"
+		"RENEW_PROHIBITED"
+		"TRANSFER_PERIOD"
+		"TRANSFER_PROHIBITED"
+		"UPDATE_PROHIBITED"
+	) ;
+	sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
+	sh:path observable:status ;
+	sh:severity sh:Info ;
+	.
+
 observable:WhoisContactFacet
 	a
 		owl:Class ,
@@ -7344,21 +7392,12 @@ observable:WhoisContactFacet
 	rdfs:label "WhoIsContactFacet"@en ;
 	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
+		observable:WhoisContactFacet-whoisContactType-in-shape ,
 		[
 			sh:datatype xsd:string ;
 			sh:message "As of UCO 1.4.0, the datatype to use for observable:whoisContactType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:whoisContactType ;
 			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:in (
-				"ADMIN"
-				"BILLING"
-				"TECHNICAL"
-			) ;
-			sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
-			sh:path observable:whoisContactType ;
-			sh:severity sh:Info ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
@@ -7367,6 +7406,18 @@ observable:WhoisContactFacet
 		]
 		;
 	sh:targetClass observable:WhoisContactFacet ;
+	.
+
+observable:WhoisContactFacet-whoisContactType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"ADMIN"
+		"BILLING"
+		"TECHNICAL"
+	) ;
+	sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
+	sh:path observable:whoisContactType ;
+	sh:severity sh:Info ;
 	.
 
 observable:WhoisRegistrarInfoType
@@ -8414,6 +8465,9 @@ observable:WindowsTaskFacet
 	rdfs:label "WindowsTaskFacet"@en ;
 	rdfs:comment "A Windows Task facet is a grouping of characteristics unique to a Windows Task (a process that is scheduled to execute on a Windows operating system by the Windows Task Scheduler). [based on http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx]"@en ;
 	sh:property
+		observable:WindowsTaskFacet-flags-in-shape ,
+		observable:WindowsTaskFacet-priority-in-shape ,
+		observable:WindowsTaskFacet-status-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -8527,56 +8581,6 @@ observable:WindowsTaskFacet
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"SCHED_E_ACCOUNT_DBASE_CORRUPT"
-				"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"
-				"SCHED_E_ACCOUNT_NAME_NOT_FOUND"
-				"SCHED_E_CANNOT_OPEN_TASK"
-				"SCHED_E_INVALID_TASK"
-				"SCHED_E_NO_SECURITY_SERVICES"
-				"SCHED_E_SERVICE_NOT_INSTALLED"
-				"SCHED_E_SERVICE_NOT_RUNNING"
-				"SCHED_E_TASK_NOT_READY"
-				"SCHED_E_TASK_NOT_RUNNING"
-				"SCHED_E_TRIGGER_NOT_FOUND"
-				"SCHED_E_UNKNOWN_OBJECT_VERSION"
-				"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"
-				"SCHED_S_EVENT_TRIGGER"
-				"SCHED_S_TASK_DISABLED"
-				"SCHED_S_TASK_HAS_NOT_RUN"
-				"SCHED_S_TASK_NOT_SCHEDULED"
-				"SCHED_S_TASK_NO_MORE_RUNS"
-				"SCHED_S_TASK_NO_VALID_TRIGGERS"
-				"SCHED_S_TASK_READY"
-				"SCHED_S_TASK_RUNNING"
-				"SCHED_S_TASK_TERMINATED"
-				"TASK_STATE_QUEUED"
-				"TASK_STATE_UNKNOWN"
-			) ;
-			sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
-			sh:path observable:status ;
-		] ,
-		[
-			sh:in (
-				"TASK_FLAG_DELETE_WHEN_DONE"
-				"TASK_FLAG_DISABLED"
-				"TASK_FLAG_DONT_START_IF_ON_BATTERIES"
-				"TASK_FLAG_HIDDEN"
-				"TASK_FLAG_INTERACTIVE"
-				"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"
-				"TASK_FLAG_KILL_ON_IDLE_END"
-				"TASK_FLAG_RESTART_ON_IDLE_RESUME"
-				"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"
-				"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"
-				"TASK_FLAG_START_ONLY_IF_IDLE"
-				"TASK_FLAG_SYSTEM_REQUIRED"
-				"TASK_FLAG_ZERO"
-			) ;
-			sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
-			sh:path observable:flags ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:priority ;
@@ -8600,31 +8604,87 @@ observable:WindowsTaskFacet
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
-			sh:or (
-				[
-					sh:in (
-						"ABOVE_NORMAL_PRIORITY_CLASS"
-						"BELOW_NORMAL_PRIORITY_CLASS"
-						"HIGH_PRIORITY_CLASS"
-						"IDLE_PRIORITY_CLASS"
-						"NORMAL_PRIORITY_CLASS"
-						"REALTIME_PRIORITY_CLASS"
-					) ;
-				]
-				[
-					sh:datatype xsd:integer ;
-				]
-			) ;
-			sh:path observable:priority ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:nodeKind sh:Literal ;
 			sh:path observable:flags ;
 		]
 		;
 	sh:targetClass observable:WindowsTaskFacet ;
+	.
+
+observable:WindowsTaskFacet-flags-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"TASK_FLAG_DELETE_WHEN_DONE"
+		"TASK_FLAG_DISABLED"
+		"TASK_FLAG_DONT_START_IF_ON_BATTERIES"
+		"TASK_FLAG_HIDDEN"
+		"TASK_FLAG_INTERACTIVE"
+		"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"
+		"TASK_FLAG_KILL_ON_IDLE_END"
+		"TASK_FLAG_RESTART_ON_IDLE_RESUME"
+		"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"
+		"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"
+		"TASK_FLAG_START_ONLY_IF_IDLE"
+		"TASK_FLAG_SYSTEM_REQUIRED"
+		"TASK_FLAG_ZERO"
+	) ;
+	sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
+	sh:path observable:flags ;
+	sh:severity sh:Info ;
+	.
+
+observable:WindowsTaskFacet-priority-in-shape
+	a sh:PropertyShape ;
+	sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
+	sh:or (
+		[
+			sh:in (
+				"ABOVE_NORMAL_PRIORITY_CLASS"
+				"BELOW_NORMAL_PRIORITY_CLASS"
+				"HIGH_PRIORITY_CLASS"
+				"IDLE_PRIORITY_CLASS"
+				"NORMAL_PRIORITY_CLASS"
+				"REALTIME_PRIORITY_CLASS"
+			) ;
+		]
+		[
+			sh:datatype xsd:integer ;
+		]
+	) ;
+	sh:path observable:priority ;
+	sh:severity sh:Info ;
+	.
+
+observable:WindowsTaskFacet-status-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"SCHED_E_ACCOUNT_DBASE_CORRUPT"
+		"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"
+		"SCHED_E_ACCOUNT_NAME_NOT_FOUND"
+		"SCHED_E_CANNOT_OPEN_TASK"
+		"SCHED_E_INVALID_TASK"
+		"SCHED_E_NO_SECURITY_SERVICES"
+		"SCHED_E_SERVICE_NOT_INSTALLED"
+		"SCHED_E_SERVICE_NOT_RUNNING"
+		"SCHED_E_TASK_NOT_READY"
+		"SCHED_E_TASK_NOT_RUNNING"
+		"SCHED_E_TRIGGER_NOT_FOUND"
+		"SCHED_E_UNKNOWN_OBJECT_VERSION"
+		"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"
+		"SCHED_S_EVENT_TRIGGER"
+		"SCHED_S_TASK_DISABLED"
+		"SCHED_S_TASK_HAS_NOT_RUN"
+		"SCHED_S_TASK_NOT_SCHEDULED"
+		"SCHED_S_TASK_NO_MORE_RUNS"
+		"SCHED_S_TASK_NO_VALID_TRIGGERS"
+		"SCHED_S_TASK_READY"
+		"SCHED_S_TASK_RUNNING"
+		"SCHED_S_TASK_TERMINATED"
+		"TASK_STATE_QUEUED"
+		"TASK_STATE_UNKNOWN"
+	) ;
+	sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
+	sh:path observable:status ;
 	.
 
 observable:WindowsThread
@@ -8721,6 +8781,7 @@ observable:WindowsVolumeFacet
 	rdfs:label "WindowsVolumeFacet"@en ;
 	rdfs:comment "A Windows volume facet is a grouping of characteristics unique to a single accessible storage area (volume) with a single Windows file system. [based on https://en.wikipedia.org/wiki/Volume_(computing)]"@en ;
 	sh:property
+		observable:WindowsVolumeFacet-driveType-in-shape ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -8740,26 +8801,28 @@ observable:WindowsVolumeFacet
 			sh:path observable:windowsVolumeAttributes ;
 		] ,
 		[
-			sh:in (
-				"DRIVE_CDROM"
-				"DRIVE_FIXED"
-				"DRIVE_NO_ROOT_DIR"
-				"DRIVE_RAMDISK"
-				"DRIVE_REMOTE"
-				"DRIVE_REMOVABLE"
-				"DRIVE_UNKNOWN"
-			) ;
-			sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
-			sh:path observable:driveType ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:driveType ;
 		]
 		;
 	sh:targetClass observable:WindowsVolumeFacet ;
+	.
+
+observable:WindowsVolumeFacet-driveType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"DRIVE_CDROM"
+		"DRIVE_FIXED"
+		"DRIVE_NO_ROOT_DIR"
+		"DRIVE_RAMDISK"
+		"DRIVE_REMOTE"
+		"DRIVE_REMOVABLE"
+		"DRIVE_UNKNOWN"
+	) ;
+	sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
+	sh:path observable:driveType ;
+	sh:severity sh:Info ;
 	.
 
 observable:WindowsWaitableTime
@@ -8793,6 +8856,7 @@ observable:WirelessNetworkConnectionFacet
 	rdfs:label "WirelessNetworkConnectionFacet"@en ;
 	rdfs:comment "A wireless network connection facet is a grouping of characteristics unique to a connection (completed or attempted) across an IEEE 802.11 standards-conformant digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
 	sh:property
+		observable:WirelessNetworkConnectionFacet-wirelessNetworkSecurityMode-in-shape ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -8818,26 +8882,28 @@ observable:WirelessNetworkConnectionFacet
 			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:in (
-				"None"
-				"WEP"
-				"WPA"
-				"WPA2-PSK"
-				"WPA2-Enterprise"
-				"WPA3-PSK"
-				"WPA3-Enterprise"
-			) ;
-			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
-			sh:path observable:wirelessNetworkSecurityMode ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
+	.
+
+observable:WirelessNetworkConnectionFacet-wirelessNetworkSecurityMode-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"None"
+		"WEP"
+		"WPA"
+		"WPA2-PSK"
+		"WPA2-Enterprise"
+		"WPA3-PSK"
+		"WPA3-Enterprise"
+	) ;
+	sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
+	sh:path observable:wirelessNetworkSecurityMode ;
+	sh:severity sh:Info ;
 	.
 
 observable:WriteBlocker
