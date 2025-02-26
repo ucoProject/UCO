@@ -15,20 +15,7 @@
 		sh:resultPath action:actionStatus ;
 		sh:resultSeverity sh:Info ;
 		sh:sourceConstraintComponent sh:InConstraintComponent ;
-		sh:sourceShape [
-			sh:in (
-				"Complete/Finish"
-				"Error"
-				"Fail"
-				"Ongoing"
-				"Pending"
-				"Success"
-				"Unknown"
-			) ;
-			sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
-			sh:path action:actionStatus ;
-			sh:severity sh:Info ;
-		] ;
+		sh:sourceShape action:Action-actionStatus-in-shape ;
 		sh:value "CUSTOM Started" ;
 	] ;
 	.
