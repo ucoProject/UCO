@@ -190,8 +190,9 @@ def test_semi_open_vocabulary_owl_shacl_alignment(graph: Graph) -> None:
     query = """\
 SELECT ?nProperty ?nOwlSequence
 WHERE {
+  # The owl:unionOf path being optional finds cases like core:objectStatus.
   ?nProperty
-    rdfs:range / owl:unionOf / rdf:rest* / rdf:first ?nDatatype ;
+    rdfs:range / (owl:unionOf / rdf:rest* / rdf:first)? ?nDatatype ;
     .
   ?nDatatype
     a rdfs:Datatype ;
@@ -219,12 +220,14 @@ WHERE {
   ?nClass
     sh:property ?nMemberCheckShape ;
     .
+  # The sh:or path finds cases like observable:WindowsTaskFacet-priority-in-shape.
   ?nMemberCheckShape
-    sh:in ?nShaclList ;
+    (sh:or / rdf:rest* / rdf:first)? / sh:in ?nShaclList ;
     sh:path ?nProperty ;
     .
+  # The owl:unionOf path being optional finds cases like core:objectStatus.
   ?nProperty
-    rdfs:range / owl:unionOf / rdf:rest* / rdf:first ?nDatatype ;
+    rdfs:range / (owl:unionOf / rdf:rest* / rdf:first)? ?nDatatype ;
     .
   ?nDatatype
     a rdfs:Datatype ;
@@ -261,11 +264,9 @@ WHERE {
         for (n_class, n_property, n_vocabulary) in computed:
             logging.error(
                 "* %s and %s, used in %s",
-                (
-                    str(n_property),
-                    str(n_vocabulary),
-                    str(n_class),
-                )
+                str(n_property),
+                str(n_vocabulary),
+                str(n_class),
             )
         raise
 
