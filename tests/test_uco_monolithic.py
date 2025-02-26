@@ -261,11 +261,9 @@ WHERE {
         for (n_class, n_property, n_vocabulary) in computed:
             logging.error(
                 "* %s and %s, used in %s",
-                (
-                    str(n_property),
-                    str(n_vocabulary),
-                    str(n_class),
-                )
+                str(n_property),
+                str(n_vocabulary),
+                str(n_class),
             )
         raise
 
