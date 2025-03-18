@@ -280,19 +280,25 @@ def test_has_facet_inverse_functional_XFAIL() -> None:
     )
 
 def test_hash_PASS() -> None:
-    g = load_validation_graph("hash_PASS_validation.ttl", True)
-    assert isinstance(g, rdflib.Graph)
+    confirm_validation_results(
+      "hash_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/hash-04dcd1dc-6920-4977-a898-e242870249a4", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-af4b0c85-b042-4e2d-a213-210b3d7f115c", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-b7eca8de-142d-4aa9-b546-0796a268afa4", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-b7eca8de-142d-4aa9-b546-0796a268afa4", str(NS_SH.Warning)),
+        ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Warning)),
+      }
+    )
 
 def test_hash_XFAIL() -> None:
     confirm_validation_results(
       "hash_XFAIL_validation.ttl",
       False,
       expected_focus_node_severities={
-        ("http://example.org/kb/hash-04dcd1dc-6920-4977-a898-e242870249a4", str(NS_SH.Info)),
-        ("http://example.org/kb/hash-af4b0c85-b042-4e2d-a213-210b3d7f115c", str(NS_SH.Violation)),
-        ("http://example.org/kb/hash-e97431ea-6fb8-46d9-9c23-94be4b7cc977", str(NS_SH.Info)),
-        ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Info)),
-        ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Violation))
+        ("http://example.org/kb/hash-66954988-aa9a-4f0d-8ad1-380700c830fc", str(NS_SH.Violation))
       }
     )
 

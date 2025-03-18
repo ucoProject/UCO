@@ -18,14 +18,14 @@ vocabulary:AccountTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"ldap"^^vocabulary:AccountTypeVocab
-			"nis"^^vocabulary:AccountTypeVocab
-			"openid"^^vocabulary:AccountTypeVocab
-			"radius"^^vocabulary:AccountTypeVocab
-			"tacacs"^^vocabulary:AccountTypeVocab
-			"unix"^^vocabulary:AccountTypeVocab
-			"windows_domain"^^vocabulary:AccountTypeVocab
-			"windows_local"^^vocabulary:AccountTypeVocab
+			"ldap"
+			"nis"
+			"openid"
+			"radius"
+			"tacacs"
+			"unix"
+			"windows_domain"
+			"windows_local"
 		) ;
 	] ;
 	.
@@ -37,57 +37,57 @@ vocabulary:ActionArgumentNameVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"APC Address"^^vocabulary:ActionArgumentNameVocab
-			"APC Mode"^^vocabulary:ActionArgumentNameVocab
-			"API"^^vocabulary:ActionArgumentNameVocab
-			"Access Mode"^^vocabulary:ActionArgumentNameVocab
-			"Application Name"^^vocabulary:ActionArgumentNameVocab
-			"Base Address"^^vocabulary:ActionArgumentNameVocab
-			"Callback Address"^^vocabulary:ActionArgumentNameVocab
-			"Code Address"^^vocabulary:ActionArgumentNameVocab
-			"Command"^^vocabulary:ActionArgumentNameVocab
-			"Control Code"^^vocabulary:ActionArgumentNameVocab
-			"Control Parameter"^^vocabulary:ActionArgumentNameVocab
-			"Creation Flags"^^vocabulary:ActionArgumentNameVocab
-			"Database Name"^^vocabulary:ActionArgumentNameVocab
-			"Delay Time (ms)"^^vocabulary:ActionArgumentNameVocab
-			"Destination Address"^^vocabulary:ActionArgumentNameVocab
-			"Error Control"^^vocabulary:ActionArgumentNameVocab
-			"File Information Class"^^vocabulary:ActionArgumentNameVocab
-			"Flags"^^vocabulary:ActionArgumentNameVocab
-			"Function Address"^^vocabulary:ActionArgumentNameVocab
-			"Function Name"^^vocabulary:ActionArgumentNameVocab
-			"Function Ordinal"^^vocabulary:ActionArgumentNameVocab
-			"Hook Type"^^vocabulary:ActionArgumentNameVocab
-			"Host Name"^^vocabulary:ActionArgumentNameVocab
-			"Hostname"^^vocabulary:ActionArgumentNameVocab
-			"Initial Owner"^^vocabulary:ActionArgumentNameVocab
-			"Mapping Offset"^^vocabulary:ActionArgumentNameVocab
-			"Number of Bytes Per Send"^^vocabulary:ActionArgumentNameVocab
-			"Options"^^vocabulary:ActionArgumentNameVocab
-			"Parameter Address"^^vocabulary:ActionArgumentNameVocab
-			"Password"^^vocabulary:ActionArgumentNameVocab
-			"Privilege Name"^^vocabulary:ActionArgumentNameVocab
-			"Protection"^^vocabulary:ActionArgumentNameVocab
-			"Proxy Bypass"^^vocabulary:ActionArgumentNameVocab
-			"Proxy Name"^^vocabulary:ActionArgumentNameVocab
-			"Reason"^^vocabulary:ActionArgumentNameVocab
-			"Request Size"^^vocabulary:ActionArgumentNameVocab
-			"Requested Version"^^vocabulary:ActionArgumentNameVocab
-			"Server"^^vocabulary:ActionArgumentNameVocab
-			"Service Name"^^vocabulary:ActionArgumentNameVocab
-			"Service State"^^vocabulary:ActionArgumentNameVocab
-			"Service Type"^^vocabulary:ActionArgumentNameVocab
-			"Share Mode"^^vocabulary:ActionArgumentNameVocab
-			"Shutdown Flag"^^vocabulary:ActionArgumentNameVocab
-			"Size (bytes)"^^vocabulary:ActionArgumentNameVocab
-			"Sleep Time (ms)"^^vocabulary:ActionArgumentNameVocab
-			"Source Address"^^vocabulary:ActionArgumentNameVocab
-			"Starting Address"^^vocabulary:ActionArgumentNameVocab
-			"System Metric Index"^^vocabulary:ActionArgumentNameVocab
-			"Target PID"^^vocabulary:ActionArgumentNameVocab
-			"Transfer Flags"^^vocabulary:ActionArgumentNameVocab
-			"Username"^^vocabulary:ActionArgumentNameVocab
+			"APC Address"
+			"APC Mode"
+			"API"
+			"Access Mode"
+			"Application Name"
+			"Base Address"
+			"Callback Address"
+			"Code Address"
+			"Command"
+			"Control Code"
+			"Control Parameter"
+			"Creation Flags"
+			"Database Name"
+			"Delay Time (ms)"
+			"Destination Address"
+			"Error Control"
+			"File Information Class"
+			"Flags"
+			"Function Address"
+			"Function Name"
+			"Function Ordinal"
+			"Hook Type"
+			"Host Name"
+			"Hostname"
+			"Initial Owner"
+			"Mapping Offset"
+			"Number of Bytes Per Send"
+			"Options"
+			"Parameter Address"
+			"Password"
+			"Privilege Name"
+			"Protection"
+			"Proxy Bypass"
+			"Proxy Name"
+			"Reason"
+			"Request Size"
+			"Requested Version"
+			"Server"
+			"Service Name"
+			"Service State"
+			"Service Type"
+			"Share Mode"
+			"Shutdown Flag"
+			"Size (bytes)"
+			"Sleep Time (ms)"
+			"Source Address"
+			"Starting Address"
+			"System Metric Index"
+			"Target PID"
+			"Transfer Flags"
+			"Username"
 		) ;
 	] ;
 	.
@@ -99,187 +99,187 @@ vocabulary:ActionNameVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Accept Socket Connection"^^vocabulary:ActionNameVocab
-			"Add Connection to Network Share"^^vocabulary:ActionNameVocab
-			"Add Network Share"^^vocabulary:ActionNameVocab
-			"Add Scheduled Task"^^vocabulary:ActionNameVocab
-			"Add System Call Hook"^^vocabulary:ActionNameVocab
-			"Add User"^^vocabulary:ActionNameVocab
-			"Add Windows Hook"^^vocabulary:ActionNameVocab
-			"Allocate Virtual Memory in Process"^^vocabulary:ActionNameVocab
-			"Bind Address to Socket"^^vocabulary:ActionNameVocab
-			"Change Service Configuration"^^vocabulary:ActionNameVocab
-			"Check for Remote Debugger"^^vocabulary:ActionNameVocab
-			"Close Port"^^vocabulary:ActionNameVocab
-			"Close Registry Key"^^vocabulary:ActionNameVocab
-			"Close Socket"^^vocabulary:ActionNameVocab
-			"Configure Service"^^vocabulary:ActionNameVocab
-			"Connect to IP"^^vocabulary:ActionNameVocab
-			"Connect to Named Pipe"^^vocabulary:ActionNameVocab
-			"Connect to Network Share"^^vocabulary:ActionNameVocab
-			"Connect to Socket"^^vocabulary:ActionNameVocab
-			"Connect to URL"^^vocabulary:ActionNameVocab
-			"Control Driver"^^vocabulary:ActionNameVocab
-			"Control Service"^^vocabulary:ActionNameVocab
-			"Copy File"^^vocabulary:ActionNameVocab
-			"Create Dialog Box"^^vocabulary:ActionNameVocab
-			"Create Directory"^^vocabulary:ActionNameVocab
-			"Create Event"^^vocabulary:ActionNameVocab
-			"Create File"^^vocabulary:ActionNameVocab
-			"Create File Alternate Data Stream"^^vocabulary:ActionNameVocab
-			"Create File Mapping"^^vocabulary:ActionNameVocab
-			"Create File Symbolic Link"^^vocabulary:ActionNameVocab
-			"Create Hidden File"^^vocabulary:ActionNameVocab
-			"Create Mailslot"^^vocabulary:ActionNameVocab
-			"Create Module"^^vocabulary:ActionNameVocab
-			"Create Mutex"^^vocabulary:ActionNameVocab
-			"Create Named Pipe"^^vocabulary:ActionNameVocab
-			"Create Process"^^vocabulary:ActionNameVocab
-			"Create Process as User"^^vocabulary:ActionNameVocab
-			"Create Registry Key"^^vocabulary:ActionNameVocab
-			"Create Registry Key Value"^^vocabulary:ActionNameVocab
-			"Create Remote Thread in Process"^^vocabulary:ActionNameVocab
-			"Create Service"^^vocabulary:ActionNameVocab
-			"Create Socket"^^vocabulary:ActionNameVocab
-			"Create Symbolic Link"^^vocabulary:ActionNameVocab
-			"Create Thread"^^vocabulary:ActionNameVocab
-			"Create Window"^^vocabulary:ActionNameVocab
-			"Delete Directory"^^vocabulary:ActionNameVocab
-			"Delete File"^^vocabulary:ActionNameVocab
-			"Delete Named Pipe"^^vocabulary:ActionNameVocab
-			"Delete Network Share"^^vocabulary:ActionNameVocab
-			"Delete Registry Key"^^vocabulary:ActionNameVocab
-			"Delete Registry Key Value"^^vocabulary:ActionNameVocab
-			"Delete Service"^^vocabulary:ActionNameVocab
-			"Delete User"^^vocabulary:ActionNameVocab
-			"Disconnect from Named Pipe"^^vocabulary:ActionNameVocab
-			"Disconnect from Network Share"^^vocabulary:ActionNameVocab
-			"Disconnect from Socket"^^vocabulary:ActionNameVocab
-			"Download File"^^vocabulary:ActionNameVocab
-			"Enumerate DLLs"^^vocabulary:ActionNameVocab
-			"Enumerate Network Shares"^^vocabulary:ActionNameVocab
-			"Enumerate Processes"^^vocabulary:ActionNameVocab
-			"Enumerate Protocols"^^vocabulary:ActionNameVocab
-			"Enumerate Registry Key Subkeys"^^vocabulary:ActionNameVocab
-			"Enumerate Registry Key Values"^^vocabulary:ActionNameVocab
-			"Enumerate Services"^^vocabulary:ActionNameVocab
-			"Enumerate System Handles"^^vocabulary:ActionNameVocab
-			"Enumerate Threads"^^vocabulary:ActionNameVocab
-			"Enumerate Threads in Process"^^vocabulary:ActionNameVocab
-			"Enumerate Users"^^vocabulary:ActionNameVocab
-			"Enumerate Windows"^^vocabulary:ActionNameVocab
-			"Find File"^^vocabulary:ActionNameVocab
-			"Find Window"^^vocabulary:ActionNameVocab
-			"Flush Process Instruction Cache"^^vocabulary:ActionNameVocab
-			"Free Library"^^vocabulary:ActionNameVocab
-			"Free Process Virtual Memory"^^vocabulary:ActionNameVocab
-			"Get Disk Free Space"^^vocabulary:ActionNameVocab
-			"Get Disk Type"^^vocabulary:ActionNameVocab
-			"Get Elapsed System Up Time"^^vocabulary:ActionNameVocab
-			"Get File Attributes"^^vocabulary:ActionNameVocab
-			"Get Function Address"^^vocabulary:ActionNameVocab
-			"Get Host By Address"^^vocabulary:ActionNameVocab
-			"Get Host By Name"^^vocabulary:ActionNameVocab
-			"Get Host Name"^^vocabulary:ActionNameVocab
-			"Get Library File Name"^^vocabulary:ActionNameVocab
-			"Get Library Handle"^^vocabulary:ActionNameVocab
-			"Get NetBIOS Name"^^vocabulary:ActionNameVocab
-			"Get Process Current Directory"^^vocabulary:ActionNameVocab
-			"Get Process Environment Variable"^^vocabulary:ActionNameVocab
-			"Get Process Startup Information"^^vocabulary:ActionNameVocab
-			"Get Processes Snapshot"^^vocabulary:ActionNameVocab
-			"Get Registry Key Attributes"^^vocabulary:ActionNameVocab
-			"Get Service Status"^^vocabulary:ActionNameVocab
-			"Get System Global Flags"^^vocabulary:ActionNameVocab
-			"Get System Host Name"^^vocabulary:ActionNameVocab
-			"Get System Local Time"^^vocabulary:ActionNameVocab
-			"Get System NetBIOS Name"^^vocabulary:ActionNameVocab
-			"Get System Network Parameters"^^vocabulary:ActionNameVocab
-			"Get System Time"^^vocabulary:ActionNameVocab
-			"Get Thread Context"^^vocabulary:ActionNameVocab
-			"Get Thread Username"^^vocabulary:ActionNameVocab
-			"Get User Attributes"^^vocabulary:ActionNameVocab
-			"Get Username"^^vocabulary:ActionNameVocab
-			"Get Windows Directory"^^vocabulary:ActionNameVocab
-			"Get Windows System Directory"^^vocabulary:ActionNameVocab
-			"Get Windows Temporary Files Directory"^^vocabulary:ActionNameVocab
-			"Hide Window"^^vocabulary:ActionNameVocab
-			"Impersonate Process"^^vocabulary:ActionNameVocab
-			"Impersonate Thread"^^vocabulary:ActionNameVocab
-			"Inject Memory Page"^^vocabulary:ActionNameVocab
-			"Kill Process"^^vocabulary:ActionNameVocab
-			"Kill Thread"^^vocabulary:ActionNameVocab
-			"Kill Window"^^vocabulary:ActionNameVocab
-			"Listen on Port"^^vocabulary:ActionNameVocab
-			"Listen on Socket"^^vocabulary:ActionNameVocab
-			"Load Driver"^^vocabulary:ActionNameVocab
-			"Load Library"^^vocabulary:ActionNameVocab
-			"Load Module"^^vocabulary:ActionNameVocab
-			"Load and Call Driver"^^vocabulary:ActionNameVocab
-			"Lock File"^^vocabulary:ActionNameVocab
-			"Logon as User"^^vocabulary:ActionNameVocab
-			"Map File"^^vocabulary:ActionNameVocab
-			"Map Library"^^vocabulary:ActionNameVocab
-			"Map View of File"^^vocabulary:ActionNameVocab
-			"Modify File"^^vocabulary:ActionNameVocab
-			"Modify Named Pipe"^^vocabulary:ActionNameVocab
-			"Modify Process"^^vocabulary:ActionNameVocab
-			"Modify Registry Key"^^vocabulary:ActionNameVocab
-			"Modify Registry Key Value"^^vocabulary:ActionNameVocab
-			"Modify Service"^^vocabulary:ActionNameVocab
-			"Monitor Registry Key"^^vocabulary:ActionNameVocab
-			"Move File"^^vocabulary:ActionNameVocab
-			"Open File"^^vocabulary:ActionNameVocab
-			"Open File Mapping"^^vocabulary:ActionNameVocab
-			"Open Mutex"^^vocabulary:ActionNameVocab
-			"Open Port"^^vocabulary:ActionNameVocab
-			"Open Process"^^vocabulary:ActionNameVocab
-			"Open Registry Key"^^vocabulary:ActionNameVocab
-			"Open Service"^^vocabulary:ActionNameVocab
-			"Open Service Control Manager"^^vocabulary:ActionNameVocab
-			"Protect Virtual Memory"^^vocabulary:ActionNameVocab
-			"Query DNS"^^vocabulary:ActionNameVocab
-			"Query Disk Attributes"^^vocabulary:ActionNameVocab
-			"Query Process Virtual Memory"^^vocabulary:ActionNameVocab
-			"Queue APC in Thread"^^vocabulary:ActionNameVocab
-			"Read File"^^vocabulary:ActionNameVocab
-			"Read From Named Pipe"^^vocabulary:ActionNameVocab
-			"Read From Process Memory"^^vocabulary:ActionNameVocab
-			"Read Registry Key Value"^^vocabulary:ActionNameVocab
-			"Receive Data on Socket"^^vocabulary:ActionNameVocab
-			"Receive Email Message"^^vocabulary:ActionNameVocab
-			"Release Mutex"^^vocabulary:ActionNameVocab
-			"Rename File"^^vocabulary:ActionNameVocab
-			"Revert Thread to Self"^^vocabulary:ActionNameVocab
-			"Send Control Code to File"^^vocabulary:ActionNameVocab
-			"Send Control Code to Pipe"^^vocabulary:ActionNameVocab
-			"Send Control Code to Service"^^vocabulary:ActionNameVocab
-			"Send DNS Query"^^vocabulary:ActionNameVocab
-			"Send Data on Socket"^^vocabulary:ActionNameVocab
-			"Send Data to Address on Socket"^^vocabulary:ActionNameVocab
-			"Send Email Message"^^vocabulary:ActionNameVocab
-			"Send ICMP Request"^^vocabulary:ActionNameVocab
-			"Send Reverse DNS Query"^^vocabulary:ActionNameVocab
-			"Set File Attributes"^^vocabulary:ActionNameVocab
-			"Set NetBIOS Name"^^vocabulary:ActionNameVocab
-			"Set Process Current Directory"^^vocabulary:ActionNameVocab
-			"Set Process Environment Variable"^^vocabulary:ActionNameVocab
-			"Set System Global Flags"^^vocabulary:ActionNameVocab
-			"Set System Host Name"^^vocabulary:ActionNameVocab
-			"Set System Time"^^vocabulary:ActionNameVocab
-			"Set Thread Context"^^vocabulary:ActionNameVocab
-			"Show Window"^^vocabulary:ActionNameVocab
-			"Shutdown System"^^vocabulary:ActionNameVocab
-			"Sleep Process"^^vocabulary:ActionNameVocab
-			"Sleep System"^^vocabulary:ActionNameVocab
-			"Start Service"^^vocabulary:ActionNameVocab
-			"Unload Driver"^^vocabulary:ActionNameVocab
-			"Unload Module"^^vocabulary:ActionNameVocab
-			"Unlock File"^^vocabulary:ActionNameVocab
-			"Unmap File"^^vocabulary:ActionNameVocab
-			"Upload File"^^vocabulary:ActionNameVocab
-			"Write to File"^^vocabulary:ActionNameVocab
-			"Write to Process Virtual Memory"^^vocabulary:ActionNameVocab
+			"Accept Socket Connection"
+			"Add Connection to Network Share"
+			"Add Network Share"
+			"Add Scheduled Task"
+			"Add System Call Hook"
+			"Add User"
+			"Add Windows Hook"
+			"Allocate Virtual Memory in Process"
+			"Bind Address to Socket"
+			"Change Service Configuration"
+			"Check for Remote Debugger"
+			"Close Port"
+			"Close Registry Key"
+			"Close Socket"
+			"Configure Service"
+			"Connect to IP"
+			"Connect to Named Pipe"
+			"Connect to Network Share"
+			"Connect to Socket"
+			"Connect to URL"
+			"Control Driver"
+			"Control Service"
+			"Copy File"
+			"Create Dialog Box"
+			"Create Directory"
+			"Create Event"
+			"Create File"
+			"Create File Alternate Data Stream"
+			"Create File Mapping"
+			"Create File Symbolic Link"
+			"Create Hidden File"
+			"Create Mailslot"
+			"Create Module"
+			"Create Mutex"
+			"Create Named Pipe"
+			"Create Process"
+			"Create Process as User"
+			"Create Registry Key"
+			"Create Registry Key Value"
+			"Create Remote Thread in Process"
+			"Create Service"
+			"Create Socket"
+			"Create Symbolic Link"
+			"Create Thread"
+			"Create Window"
+			"Delete Directory"
+			"Delete File"
+			"Delete Named Pipe"
+			"Delete Network Share"
+			"Delete Registry Key"
+			"Delete Registry Key Value"
+			"Delete Service"
+			"Delete User"
+			"Disconnect from Named Pipe"
+			"Disconnect from Network Share"
+			"Disconnect from Socket"
+			"Download File"
+			"Enumerate DLLs"
+			"Enumerate Network Shares"
+			"Enumerate Processes"
+			"Enumerate Protocols"
+			"Enumerate Registry Key Subkeys"
+			"Enumerate Registry Key Values"
+			"Enumerate Services"
+			"Enumerate System Handles"
+			"Enumerate Threads"
+			"Enumerate Threads in Process"
+			"Enumerate Users"
+			"Enumerate Windows"
+			"Find File"
+			"Find Window"
+			"Flush Process Instruction Cache"
+			"Free Library"
+			"Free Process Virtual Memory"
+			"Get Disk Free Space"
+			"Get Disk Type"
+			"Get Elapsed System Up Time"
+			"Get File Attributes"
+			"Get Function Address"
+			"Get Host By Address"
+			"Get Host By Name"
+			"Get Host Name"
+			"Get Library File Name"
+			"Get Library Handle"
+			"Get NetBIOS Name"
+			"Get Process Current Directory"
+			"Get Process Environment Variable"
+			"Get Process Startup Information"
+			"Get Processes Snapshot"
+			"Get Registry Key Attributes"
+			"Get Service Status"
+			"Get System Global Flags"
+			"Get System Host Name"
+			"Get System Local Time"
+			"Get System NetBIOS Name"
+			"Get System Network Parameters"
+			"Get System Time"
+			"Get Thread Context"
+			"Get Thread Username"
+			"Get User Attributes"
+			"Get Username"
+			"Get Windows Directory"
+			"Get Windows System Directory"
+			"Get Windows Temporary Files Directory"
+			"Hide Window"
+			"Impersonate Process"
+			"Impersonate Thread"
+			"Inject Memory Page"
+			"Kill Process"
+			"Kill Thread"
+			"Kill Window"
+			"Listen on Port"
+			"Listen on Socket"
+			"Load Driver"
+			"Load Library"
+			"Load Module"
+			"Load and Call Driver"
+			"Lock File"
+			"Logon as User"
+			"Map File"
+			"Map Library"
+			"Map View of File"
+			"Modify File"
+			"Modify Named Pipe"
+			"Modify Process"
+			"Modify Registry Key"
+			"Modify Registry Key Value"
+			"Modify Service"
+			"Monitor Registry Key"
+			"Move File"
+			"Open File"
+			"Open File Mapping"
+			"Open Mutex"
+			"Open Port"
+			"Open Process"
+			"Open Registry Key"
+			"Open Service"
+			"Open Service Control Manager"
+			"Protect Virtual Memory"
+			"Query DNS"
+			"Query Disk Attributes"
+			"Query Process Virtual Memory"
+			"Queue APC in Thread"
+			"Read File"
+			"Read From Named Pipe"
+			"Read From Process Memory"
+			"Read Registry Key Value"
+			"Receive Data on Socket"
+			"Receive Email Message"
+			"Release Mutex"
+			"Rename File"
+			"Revert Thread to Self"
+			"Send Control Code to File"
+			"Send Control Code to Pipe"
+			"Send Control Code to Service"
+			"Send DNS Query"
+			"Send Data on Socket"
+			"Send Data to Address on Socket"
+			"Send Email Message"
+			"Send ICMP Request"
+			"Send Reverse DNS Query"
+			"Set File Attributes"
+			"Set NetBIOS Name"
+			"Set Process Current Directory"
+			"Set Process Environment Variable"
+			"Set System Global Flags"
+			"Set System Host Name"
+			"Set System Time"
+			"Set Thread Context"
+			"Show Window"
+			"Shutdown System"
+			"Sleep Process"
+			"Sleep System"
+			"Start Service"
+			"Unload Driver"
+			"Unload Module"
+			"Unlock File"
+			"Unmap File"
+			"Upload File"
+			"Write to File"
+			"Write to Process Virtual Memory"
 		) ;
 	] ;
 	.
@@ -291,13 +291,13 @@ vocabulary:ActionRelationshipTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Dependent_On"^^vocabulary:ActionRelationshipTypeVocab
-			"Equivalent_To"^^vocabulary:ActionRelationshipTypeVocab
-			"Followed_By"^^vocabulary:ActionRelationshipTypeVocab
-			"Initiated"^^vocabulary:ActionRelationshipTypeVocab
-			"Initiated_By"^^vocabulary:ActionRelationshipTypeVocab
-			"Preceded_By"^^vocabulary:ActionRelationshipTypeVocab
-			"Related_To"^^vocabulary:ActionRelationshipTypeVocab
+			"Dependent_On"
+			"Equivalent_To"
+			"Followed_By"
+			"Initiated"
+			"Initiated_By"
+			"Preceded_By"
+			"Related_To"
 		) ;
 	] ;
 	.
@@ -309,13 +309,13 @@ vocabulary:ActionStatusTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Complete/Finish"^^vocabulary:ActionStatusTypeVocab
-			"Error"^^vocabulary:ActionStatusTypeVocab
-			"Fail"^^vocabulary:ActionStatusTypeVocab
-			"Ongoing"^^vocabulary:ActionStatusTypeVocab
-			"Pending"^^vocabulary:ActionStatusTypeVocab
-			"Success"^^vocabulary:ActionStatusTypeVocab
-			"Unknown"^^vocabulary:ActionStatusTypeVocab
+			"Complete/Finish"
+			"Error"
+			"Fail"
+			"Ongoing"
+			"Pending"
+			"Success"
+			"Unknown"
 		) ;
 	] ;
 	.
@@ -327,117 +327,117 @@ vocabulary:ActionTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Accept"^^vocabulary:ActionTypeVocab
-			"Access"^^vocabulary:ActionTypeVocab
-			"Add"^^vocabulary:ActionTypeVocab
-			"Alert"^^vocabulary:ActionTypeVocab
-			"Allocate"^^vocabulary:ActionTypeVocab
-			"Archive"^^vocabulary:ActionTypeVocab
-			"Assign"^^vocabulary:ActionTypeVocab
-			"Audit"^^vocabulary:ActionTypeVocab
-			"Backup"^^vocabulary:ActionTypeVocab
-			"Bind"^^vocabulary:ActionTypeVocab
-			"Block"^^vocabulary:ActionTypeVocab
-			"Call"^^vocabulary:ActionTypeVocab
-			"Change"^^vocabulary:ActionTypeVocab
-			"Check"^^vocabulary:ActionTypeVocab
-			"Clean"^^vocabulary:ActionTypeVocab
-			"Click"^^vocabulary:ActionTypeVocab
-			"Close"^^vocabulary:ActionTypeVocab
-			"Compare"^^vocabulary:ActionTypeVocab
-			"Compress"^^vocabulary:ActionTypeVocab
-			"Configure"^^vocabulary:ActionTypeVocab
-			"Connect"^^vocabulary:ActionTypeVocab
-			"Control"^^vocabulary:ActionTypeVocab
-			"Copy/Duplicate"^^vocabulary:ActionTypeVocab
-			"Create"^^vocabulary:ActionTypeVocab
-			"Decode"^^vocabulary:ActionTypeVocab
-			"Decompress"^^vocabulary:ActionTypeVocab
-			"Decrypt"^^vocabulary:ActionTypeVocab
-			"Deny"^^vocabulary:ActionTypeVocab
-			"Depress"^^vocabulary:ActionTypeVocab
-			"Detect"^^vocabulary:ActionTypeVocab
-			"Disconnect"^^vocabulary:ActionTypeVocab
-			"Download"^^vocabulary:ActionTypeVocab
-			"Draw"^^vocabulary:ActionTypeVocab
-			"Drop"^^vocabulary:ActionTypeVocab
-			"Encode"^^vocabulary:ActionTypeVocab
-			"Encrypt"^^vocabulary:ActionTypeVocab
-			"Enumerate"^^vocabulary:ActionTypeVocab
-			"Execute"^^vocabulary:ActionTypeVocab
-			"Extract"^^vocabulary:ActionTypeVocab
-			"Filter"^^vocabulary:ActionTypeVocab
-			"Find"^^vocabulary:ActionTypeVocab
-			"Flush"^^vocabulary:ActionTypeVocab
-			"Fork"^^vocabulary:ActionTypeVocab
-			"Free"^^vocabulary:ActionTypeVocab
-			"Get"^^vocabulary:ActionTypeVocab
-			"Hide"^^vocabulary:ActionTypeVocab
-			"Hook"^^vocabulary:ActionTypeVocab
-			"Impersonate"^^vocabulary:ActionTypeVocab
-			"Initialize"^^vocabulary:ActionTypeVocab
-			"Inject"^^vocabulary:ActionTypeVocab
-			"Install"^^vocabulary:ActionTypeVocab
-			"Interleave"^^vocabulary:ActionTypeVocab
-			"Join"^^vocabulary:ActionTypeVocab
-			"Kill"^^vocabulary:ActionTypeVocab
-			"Listen"^^vocabulary:ActionTypeVocab
-			"Load"^^vocabulary:ActionTypeVocab
-			"Lock"^^vocabulary:ActionTypeVocab
-			"Login/Logon"^^vocabulary:ActionTypeVocab
-			"Logout/Logoff"^^vocabulary:ActionTypeVocab
-			"Map"^^vocabulary:ActionTypeVocab
-			"Merge"^^vocabulary:ActionTypeVocab
-			"Modify"^^vocabulary:ActionTypeVocab
-			"Monitor"^^vocabulary:ActionTypeVocab
-			"Move"^^vocabulary:ActionTypeVocab
-			"Open"^^vocabulary:ActionTypeVocab
-			"Pack"^^vocabulary:ActionTypeVocab
-			"Pause"^^vocabulary:ActionTypeVocab
-			"Press"^^vocabulary:ActionTypeVocab
-			"Protect"^^vocabulary:ActionTypeVocab
-			"Quarantine"^^vocabulary:ActionTypeVocab
-			"Query"^^vocabulary:ActionTypeVocab
-			"Queue"^^vocabulary:ActionTypeVocab
-			"Raise"^^vocabulary:ActionTypeVocab
-			"Read"^^vocabulary:ActionTypeVocab
-			"Receive"^^vocabulary:ActionTypeVocab
-			"Release"^^vocabulary:ActionTypeVocab
-			"Remove/Delete"^^vocabulary:ActionTypeVocab
-			"Rename"^^vocabulary:ActionTypeVocab
-			"Replicate"^^vocabulary:ActionTypeVocab
-			"Restore"^^vocabulary:ActionTypeVocab
-			"Resume"^^vocabulary:ActionTypeVocab
-			"Revert"^^vocabulary:ActionTypeVocab
-			"Run"^^vocabulary:ActionTypeVocab
-			"Save"^^vocabulary:ActionTypeVocab
-			"Scan"^^vocabulary:ActionTypeVocab
-			"Schedule"^^vocabulary:ActionTypeVocab
-			"Search"^^vocabulary:ActionTypeVocab
-			"Send"^^vocabulary:ActionTypeVocab
-			"Set"^^vocabulary:ActionTypeVocab
-			"Shutdown"^^vocabulary:ActionTypeVocab
-			"Sleep"^^vocabulary:ActionTypeVocab
-			"Snapshot"^^vocabulary:ActionTypeVocab
-			"Start"^^vocabulary:ActionTypeVocab
-			"Stop"^^vocabulary:ActionTypeVocab
-			"Suspend"^^vocabulary:ActionTypeVocab
-			"Synchronize"^^vocabulary:ActionTypeVocab
-			"Throw"^^vocabulary:ActionTypeVocab
-			"Transmit"^^vocabulary:ActionTypeVocab
-			"Unblock"^^vocabulary:ActionTypeVocab
-			"Unhide"^^vocabulary:ActionTypeVocab
-			"Unhook"^^vocabulary:ActionTypeVocab
-			"Uninstall"^^vocabulary:ActionTypeVocab
-			"Unload"^^vocabulary:ActionTypeVocab
-			"Unlock"^^vocabulary:ActionTypeVocab
-			"Unmap"^^vocabulary:ActionTypeVocab
-			"Unpack"^^vocabulary:ActionTypeVocab
-			"Update"^^vocabulary:ActionTypeVocab
-			"Upgrade"^^vocabulary:ActionTypeVocab
-			"Upload"^^vocabulary:ActionTypeVocab
-			"Wipe/Destroy/Purge"^^vocabulary:ActionTypeVocab
-			"Write"^^vocabulary:ActionTypeVocab
+			"Accept"
+			"Access"
+			"Add"
+			"Alert"
+			"Allocate"
+			"Archive"
+			"Assign"
+			"Audit"
+			"Backup"
+			"Bind"
+			"Block"
+			"Call"
+			"Change"
+			"Check"
+			"Clean"
+			"Click"
+			"Close"
+			"Compare"
+			"Compress"
+			"Configure"
+			"Connect"
+			"Control"
+			"Copy/Duplicate"
+			"Create"
+			"Decode"
+			"Decompress"
+			"Decrypt"
+			"Deny"
+			"Depress"
+			"Detect"
+			"Disconnect"
+			"Download"
+			"Draw"
+			"Drop"
+			"Encode"
+			"Encrypt"
+			"Enumerate"
+			"Execute"
+			"Extract"
+			"Filter"
+			"Find"
+			"Flush"
+			"Fork"
+			"Free"
+			"Get"
+			"Hide"
+			"Hook"
+			"Impersonate"
+			"Initialize"
+			"Inject"
+			"Install"
+			"Interleave"
+			"Join"
+			"Kill"
+			"Listen"
+			"Load"
+			"Lock"
+			"Login/Logon"
+			"Logout/Logoff"
+			"Map"
+			"Merge"
+			"Modify"
+			"Monitor"
+			"Move"
+			"Open"
+			"Pack"
+			"Pause"
+			"Press"
+			"Protect"
+			"Quarantine"
+			"Query"
+			"Queue"
+			"Raise"
+			"Read"
+			"Receive"
+			"Release"
+			"Remove/Delete"
+			"Rename"
+			"Replicate"
+			"Restore"
+			"Resume"
+			"Revert"
+			"Run"
+			"Save"
+			"Scan"
+			"Schedule"
+			"Search"
+			"Send"
+			"Set"
+			"Shutdown"
+			"Sleep"
+			"Snapshot"
+			"Start"
+			"Stop"
+			"Suspend"
+			"Synchronize"
+			"Throw"
+			"Transmit"
+			"Unblock"
+			"Unhide"
+			"Unhook"
+			"Uninstall"
+			"Unload"
+			"Unlock"
+			"Unmap"
+			"Unpack"
+			"Update"
+			"Upgrade"
+			"Upload"
+			"Wipe/Destroy/Purge"
+			"Write"
 		) ;
 	] ;
 	.
@@ -449,8 +449,8 @@ vocabulary:BitnessVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"32"^^vocabulary:BitnessVocab
-			"64"^^vocabulary:BitnessVocab
+			"32"
+			"64"
 		) ;
 	] ;
 	.
@@ -462,19 +462,19 @@ vocabulary:CharacterEncodingVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"ASCII"^^vocabulary:CharacterEncodingVocab
-			"UTF-16"^^vocabulary:CharacterEncodingVocab
-			"UTF-32"^^vocabulary:CharacterEncodingVocab
-			"UTF-8"^^vocabulary:CharacterEncodingVocab
-			"Windows-1250"^^vocabulary:CharacterEncodingVocab
-			"Windows-1251"^^vocabulary:CharacterEncodingVocab
-			"Windows-1252"^^vocabulary:CharacterEncodingVocab
-			"Windows-1253"^^vocabulary:CharacterEncodingVocab
-			"Windows-1254"^^vocabulary:CharacterEncodingVocab
-			"Windows-1255"^^vocabulary:CharacterEncodingVocab
-			"Windows-1256"^^vocabulary:CharacterEncodingVocab
-			"Windows-1257"^^vocabulary:CharacterEncodingVocab
-			"Windows-1258"^^vocabulary:CharacterEncodingVocab
+			"ASCII"
+			"UTF-16"
+			"UTF-32"
+			"UTF-8"
+			"Windows-1250"
+			"Windows-1251"
+			"Windows-1252"
+			"Windows-1253"
+			"Windows-1254"
+			"Windows-1255"
+			"Windows-1256"
+			"Windows-1257"
+			"Windows-1258"
 		) ;
 	] ;
 	.
@@ -486,9 +486,9 @@ vocabulary:ContactAddressScopeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactAddressScopeVocab
-			"work"^^vocabulary:ContactAddressScopeVocab
-			"school"^^vocabulary:ContactAddressScopeVocab
+			"home"
+			"work"
+			"school"
 		) ;
 	] ;
 	.
@@ -500,10 +500,10 @@ vocabulary:ContactEmailScopeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactEmailScopeVocab
-			"work"^^vocabulary:ContactEmailScopeVocab
-			"school"^^vocabulary:ContactEmailScopeVocab
-			"cloud"^^vocabulary:ContactEmailScopeVocab
+			"home"
+			"work"
+			"school"
+			"cloud"
 		) ;
 	] ;
 	.
@@ -515,14 +515,14 @@ vocabulary:ContactPhoneScopeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactPhoneScopeVocab
-			"work"^^vocabulary:ContactPhoneScopeVocab
-			"school"^^vocabulary:ContactPhoneScopeVocab
-			"mobile"^^vocabulary:ContactPhoneScopeVocab
-			"main"^^vocabulary:ContactPhoneScopeVocab
-			"home fax"^^vocabulary:ContactPhoneScopeVocab
-			"work fax"^^vocabulary:ContactPhoneScopeVocab
-			"pager"^^vocabulary:ContactPhoneScopeVocab
+			"home"
+			"work"
+			"school"
+			"mobile"
+			"main"
+			"home fax"
+			"work fax"
+			"pager"
 		) ;
 	] ;
 	.
@@ -534,9 +534,9 @@ vocabulary:ContactSIPScopeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactSIPScopeVocab
-			"work"^^vocabulary:ContactSIPScopeVocab
-			"school"^^vocabulary:ContactSIPScopeVocab
+			"home"
+			"work"
+			"school"
 		) ;
 	] ;
 	.
@@ -548,10 +548,10 @@ vocabulary:ContactURLScopeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactURLScopeVocab
-			"work"^^vocabulary:ContactURLScopeVocab
-			"school"^^vocabulary:ContactURLScopeVocab
-			"homepage"^^vocabulary:ContactURLScopeVocab
+			"home"
+			"work"
+			"school"
+			"homepage"
 		) ;
 	] ;
 	.
@@ -563,11 +563,11 @@ vocabulary:DiskTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"CDRom"^^vocabulary:DiskTypeVocab
-			"Fixed"^^vocabulary:DiskTypeVocab
-			"RAMDisk"^^vocabulary:DiskTypeVocab
-			"Remote"^^vocabulary:DiskTypeVocab
-			"Removable"^^vocabulary:DiskTypeVocab
+			"CDRom"
+			"Fixed"
+			"RAMDisk"
+			"Remote"
+			"Removable"
 		) ;
 	] ;
 	.
@@ -579,9 +579,9 @@ vocabulary:EndiannessTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Big-endian"^^vocabulary:EndiannessTypeVocab
-			"Little-endian"^^vocabulary:EndiannessTypeVocab
-			"Middle-endian"^^vocabulary:EndiannessTypeVocab
+			"Big-endian"
+			"Little-endian"
+			"Middle-endian"
 		) ;
 	] ;
 	.
@@ -593,18 +593,18 @@ vocabulary:HashNameVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"MD5"^^vocabulary:HashNameVocab
-			"MD6"^^vocabulary:HashNameVocab
-			"SHA1"^^vocabulary:HashNameVocab
-			"SHA224"^^vocabulary:HashNameVocab
-			"SHA256"^^vocabulary:HashNameVocab
-			"SHA3-224"^^vocabulary:HashNameVocab
-			"SHA3-256"^^vocabulary:HashNameVocab
-			"SHA3-384"^^vocabulary:HashNameVocab
-			"SHA3-512"^^vocabulary:HashNameVocab
-			"SHA384"^^vocabulary:HashNameVocab
-			"SHA512"^^vocabulary:HashNameVocab
-			"SSDEEP"^^vocabulary:HashNameVocab
+			"MD5"
+			"MD6"
+			"SHA1"
+			"SHA224"
+			"SHA256"
+			"SHA3-224"
+			"SHA3-256"
+			"SHA3-384"
+			"SHA3-512"
+			"SHA384"
+			"SHA512"
+			"SSDEEP"
 		) ;
 	] ;
 	.
@@ -616,11 +616,11 @@ vocabulary:LibraryTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Dynamic"^^vocabulary:LibraryTypeVocab
-			"Other"^^vocabulary:LibraryTypeVocab
-			"Remote"^^vocabulary:LibraryTypeVocab
-			"Shared"^^vocabulary:LibraryTypeVocab
-			"Static"^^vocabulary:LibraryTypeVocab
+			"Dynamic"
+			"Other"
+			"Remote"
+			"Shared"
+			"Static"
 		) ;
 	] ;
 	.
@@ -632,11 +632,11 @@ vocabulary:MemoryBlockTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
-			"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
-			"Initialized"^^vocabulary:MemoryBlockTypeVocab
-			"Overlay"^^vocabulary:MemoryBlockTypeVocab
-			"Uninitialized"^^vocabulary:MemoryBlockTypeVocab
+			"Bit-mapped"
+			"Byte-mapped"
+			"Initialized"
+			"Overlay"
+			"Uninitialized"
 		) ;
 	] ;
 	.
@@ -648,145 +648,145 @@ vocabulary:ObservableObjectRelationshipVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Allocated"^^vocabulary:ObservableObjectRelationshipVocab
-			"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Attachment_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Bound"^^vocabulary:ObservableObjectRelationshipVocab
-			"Bound_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Characterized_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Characterizes"^^vocabulary:ObservableObjectRelationshipVocab
-			"Child_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Closed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Closed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Compressed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Compressed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Compressed_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Compressed_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Connected_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Connected_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Contained_Within"^^vocabulary:ObservableObjectRelationshipVocab
-			"Contains"^^vocabulary:ObservableObjectRelationshipVocab
-			"Copied"^^vocabulary:ObservableObjectRelationshipVocab
-			"Copied_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Copied_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Copied_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Created"^^vocabulary:ObservableObjectRelationshipVocab
-			"Created_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decoded"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decoded_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decompressed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decompressed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decrypted"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decrypted_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Deleted"^^vocabulary:ObservableObjectRelationshipVocab
-			"Deleted_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Deleted_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Downloaded"^^vocabulary:ObservableObjectRelationshipVocab
-			"Downloaded_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Downloaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Downloaded_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Dropped"^^vocabulary:ObservableObjectRelationshipVocab
-			"Dropped_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encoded"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encoded_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encrypted"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encrypted_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encrypted_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encrypted_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Extracted_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"FQDN_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Freed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Freed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Had_Attachment"^^vocabulary:ObservableObjectRelationshipVocab
-			"Hooked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Hooked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Initialized_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Initialized_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Injected"^^vocabulary:ObservableObjectRelationshipVocab
-			"Injected_As"^^vocabulary:ObservableObjectRelationshipVocab
-			"Injected_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Injected_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Installed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Installed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Joined"^^vocabulary:ObservableObjectRelationshipVocab
-			"Joined_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Killed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Killed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Listened_On"^^vocabulary:ObservableObjectRelationshipVocab
-			"Listened_On_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Loaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Loaded_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Locked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Locked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Mapped_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Mapped_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Merged"^^vocabulary:ObservableObjectRelationshipVocab
-			"Merged_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Modified_Properties_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Monitored"^^vocabulary:ObservableObjectRelationshipVocab
-			"Monitored_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Moved"^^vocabulary:ObservableObjectRelationshipVocab
-			"Moved_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Moved_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Moved_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Opened"^^vocabulary:ObservableObjectRelationshipVocab
-			"Opened_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Packed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Packed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Packed_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Packed_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Parent_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Paused"^^vocabulary:ObservableObjectRelationshipVocab
-			"Paused_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Previously_Contained"^^vocabulary:ObservableObjectRelationshipVocab
-			"Properties_Modified_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Properties_Queried"^^vocabulary:ObservableObjectRelationshipVocab
-			"Properties_Queried_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Read_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Read_From_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Received"^^vocabulary:ObservableObjectRelationshipVocab
-			"Received_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Received_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Received_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
-			"Redirects_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Related_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Renamed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Renamed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Renamed_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Renamed_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Resolved_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Resumed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Resumed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Root_Domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Searched_For"^^vocabulary:ObservableObjectRelationshipVocab
-			"Searched_For_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sent"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sent_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sent_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sent_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
-			"Set_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Set_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Signed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sub-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Supra-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Suspended"^^vocabulary:ObservableObjectRelationshipVocab
-			"Suspended_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unhooked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unhooked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unlocked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unlocked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unpacked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unpacked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Uploaded"^^vocabulary:ObservableObjectRelationshipVocab
-			"Uploaded_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Uploaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Uploaded_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Used"^^vocabulary:ObservableObjectRelationshipVocab
-			"Used_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Values_Enumerated"^^vocabulary:ObservableObjectRelationshipVocab
-			"Values_Enumerated_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Written_To_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Wrote_To"^^vocabulary:ObservableObjectRelationshipVocab
+			"Allocated"
+			"Allocated_By"
+			"Attachment_Of"
+			"Bound"
+			"Bound_By"
+			"Characterized_By"
+			"Characterizes"
+			"Child_Of"
+			"Closed"
+			"Closed_By"
+			"Compressed"
+			"Compressed_By"
+			"Compressed_From"
+			"Compressed_Into"
+			"Connected_From"
+			"Connected_To"
+			"Contained_Within"
+			"Contains"
+			"Copied"
+			"Copied_By"
+			"Copied_From"
+			"Copied_To"
+			"Created"
+			"Created_By"
+			"Decoded"
+			"Decoded_By"
+			"Decompressed"
+			"Decompressed_By"
+			"Decrypted"
+			"Decrypted_By"
+			"Deleted"
+			"Deleted_By"
+			"Deleted_From"
+			"Downloaded"
+			"Downloaded_By"
+			"Downloaded_From"
+			"Downloaded_To"
+			"Dropped"
+			"Dropped_By"
+			"Encoded"
+			"Encoded_By"
+			"Encrypted"
+			"Encrypted_By"
+			"Encrypted_From"
+			"Encrypted_To"
+			"Extracted_From"
+			"FQDN_Of"
+			"Freed"
+			"Freed_By"
+			"Had_Attachment"
+			"Hooked"
+			"Hooked_By"
+			"Initialized_By"
+			"Initialized_To"
+			"Injected"
+			"Injected_As"
+			"Injected_By"
+			"Injected_Into"
+			"Installed"
+			"Installed_By"
+			"Joined"
+			"Joined_By"
+			"Killed"
+			"Killed_By"
+			"Listened_On"
+			"Listened_On_By"
+			"Loaded_From"
+			"Loaded_Into"
+			"Locked"
+			"Locked_By"
+			"Mapped_By"
+			"Mapped_Into"
+			"Merged"
+			"Merged_By"
+			"Modified_Properties_Of"
+			"Monitored"
+			"Monitored_By"
+			"Moved"
+			"Moved_By"
+			"Moved_From"
+			"Moved_To"
+			"Opened"
+			"Opened_By"
+			"Packed"
+			"Packed_By"
+			"Packed_From"
+			"Packed_Into"
+			"Parent_Of"
+			"Paused"
+			"Paused_By"
+			"Previously_Contained"
+			"Properties_Modified_By"
+			"Properties_Queried"
+			"Properties_Queried_By"
+			"Read_From"
+			"Read_From_By"
+			"Received"
+			"Received_By"
+			"Received_From"
+			"Received_Via_Upload"
+			"Redirects_To"
+			"Related_To"
+			"Renamed"
+			"Renamed_By"
+			"Renamed_From"
+			"Renamed_To"
+			"Resolved_To"
+			"Resumed"
+			"Resumed_By"
+			"Root_Domain_Of"
+			"Searched_For"
+			"Searched_For_By"
+			"Sent"
+			"Sent_By"
+			"Sent_To"
+			"Sent_Via_Upload"
+			"Set_From"
+			"Set_To"
+			"Signed_By"
+			"Sub-domain_Of"
+			"Supra-domain_Of"
+			"Suspended"
+			"Suspended_By"
+			"Unhooked"
+			"Unhooked_By"
+			"Unlocked"
+			"Unlocked_By"
+			"Unpacked"
+			"Unpacked_By"
+			"Uploaded"
+			"Uploaded_By"
+			"Uploaded_From"
+			"Uploaded_To"
+			"Used"
+			"Used_By"
+			"Values_Enumerated"
+			"Values_Enumerated_By"
+			"Written_To_By"
+			"Wrote_To"
 		) ;
 	] ;
 	.
@@ -798,16 +798,16 @@ vocabulary:ObservableObjectStateVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Active"^^vocabulary:ObservableObjectStateVocab
-			"Closed"^^vocabulary:ObservableObjectStateVocab
-			"Does Not Exist"^^vocabulary:ObservableObjectStateVocab
-			"Exists"^^vocabulary:ObservableObjectStateVocab
-			"Inactive"^^vocabulary:ObservableObjectStateVocab
-			"Locked"^^vocabulary:ObservableObjectStateVocab
-			"Open"^^vocabulary:ObservableObjectStateVocab
-			"Started"^^vocabulary:ObservableObjectStateVocab
-			"Stopped"^^vocabulary:ObservableObjectStateVocab
-			"Unlocked"^^vocabulary:ObservableObjectStateVocab
+			"Active"
+			"Closed"
+			"Does Not Exist"
+			"Exists"
+			"Inactive"
+			"Locked"
+			"Open"
+			"Started"
+			"Stopped"
+			"Unlocked"
 		) ;
 	] ;
 	.
@@ -819,25 +819,25 @@ vocabulary:PartitionTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"PARTITION_ENTRY_UNUSED"^^vocabulary:PartitionTypeVocab
-			"PARTITION_EXTENDED"^^vocabulary:PartitionTypeVocab
-			"PARTITION_FAT32"^^vocabulary:PartitionTypeVocab
-			"PARTITION_FAT32_XINT13"^^vocabulary:PartitionTypeVocab
-			"PARTITION_FAT_12"^^vocabulary:PartitionTypeVocab
-			"PARTITION_FAT_16"^^vocabulary:PartitionTypeVocab
-			"PARTITION_HUGE"^^vocabulary:PartitionTypeVocab
-			"PARTITION_IFS"^^vocabulary:PartitionTypeVocab
-			"PARTITION_LDM"^^vocabulary:PartitionTypeVocab
-			"PARTITION_NTFT"^^vocabulary:PartitionTypeVocab
-			"PARTITION_OS2BOOTMGR"^^vocabulary:PartitionTypeVocab
-			"PARTITION_PREP"^^vocabulary:PartitionTypeVocab
-			"PARTITION_UNIX"^^vocabulary:PartitionTypeVocab
-			"PARTITION_XENIX_1"^^vocabulary:PartitionTypeVocab
-			"PARTITION_XENIX_2"^^vocabulary:PartitionTypeVocab
-			"PARTITION_XINT13"^^vocabulary:PartitionTypeVocab
-			"PARTITION_XINT13_EXTENDED"^^vocabulary:PartitionTypeVocab
-			"UNKNOWN"^^vocabulary:PartitionTypeVocab
-			"VALID_NTFT"^^vocabulary:PartitionTypeVocab
+			"PARTITION_ENTRY_UNUSED"
+			"PARTITION_EXTENDED"
+			"PARTITION_FAT32"
+			"PARTITION_FAT32_XINT13"
+			"PARTITION_FAT_12"
+			"PARTITION_FAT_16"
+			"PARTITION_HUGE"
+			"PARTITION_IFS"
+			"PARTITION_LDM"
+			"PARTITION_NTFT"
+			"PARTITION_OS2BOOTMGR"
+			"PARTITION_PREP"
+			"PARTITION_UNIX"
+			"PARTITION_XENIX_1"
+			"PARTITION_XENIX_2"
+			"PARTITION_XINT13"
+			"PARTITION_XINT13_EXTENDED"
+			"UNKNOWN"
+			"VALID_NTFT"
 		) ;
 	] ;
 	.
@@ -849,18 +849,18 @@ vocabulary:ProcessorArchVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"ARM"^^vocabulary:ProcessorArchVocab
-			"Alpha"^^vocabulary:ProcessorArchVocab
-			"IA-64"^^vocabulary:ProcessorArchVocab
-			"MIPS"^^vocabulary:ProcessorArchVocab
-			"Motorola 68k"^^vocabulary:ProcessorArchVocab
-			"Other"^^vocabulary:ProcessorArchVocab
-			"PowerPC"^^vocabulary:ProcessorArchVocab
-			"SPARC"^^vocabulary:ProcessorArchVocab
-			"eSi-RISC"^^vocabulary:ProcessorArchVocab
-			"x86-32"^^vocabulary:ProcessorArchVocab
-			"x86-64"^^vocabulary:ProcessorArchVocab
-			"z/Architecture"^^vocabulary:ProcessorArchVocab
+			"ARM"
+			"Alpha"
+			"IA-64"
+			"MIPS"
+			"Motorola 68k"
+			"Other"
+			"PowerPC"
+			"SPARC"
+			"eSi-RISC"
+			"x86-32"
+			"x86-64"
+			"z/Architecture"
 		) ;
 	] ;
 	.
@@ -872,10 +872,10 @@ vocabulary:RecoveredObjectStatusVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"recovered"^^vocabulary:RecoveredObjectStatusVocab
-			"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-			"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-			"unknown"^^vocabulary:RecoveredObjectStatusVocab
+			"recovered"
+			"partially recovered"
+			"overwritten"
+			"unknown"
 		) ;
 	] ;
 	.
@@ -887,11 +887,11 @@ vocabulary:RegionalRegistryTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"APNIC"^^vocabulary:RegionalRegistryTypeVocab
-			"ARIN"^^vocabulary:RegionalRegistryTypeVocab
-			"AfriNIC"^^vocabulary:RegionalRegistryTypeVocab
-			"LACNIC"^^vocabulary:RegionalRegistryTypeVocab
-			"RIPE NCC"^^vocabulary:RegionalRegistryTypeVocab
+			"APNIC"
+			"ARIN"
+			"AfriNIC"
+			"LACNIC"
+			"RIPE NCC"
 		) ;
 	] ;
 	.
@@ -902,19 +902,19 @@ vocabulary:RegistryDatatypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"reg_binary"^^vocabulary:RegistryDatatypeVocab
-			"reg_dword"^^vocabulary:RegistryDatatypeVocab
-			"reg_dword_big_endian"^^vocabulary:RegistryDatatypeVocab
-			"reg_expand_sz"^^vocabulary:RegistryDatatypeVocab
-			"reg_full_resource_descriptor"^^vocabulary:RegistryDatatypeVocab
-			"reg_invalid_type"^^vocabulary:RegistryDatatypeVocab
-			"reg_link"^^vocabulary:RegistryDatatypeVocab
-			"reg_multi_sz"^^vocabulary:RegistryDatatypeVocab
-			"reg_none"^^vocabulary:RegistryDatatypeVocab
-			"reg_qword"^^vocabulary:RegistryDatatypeVocab
-			"reg_resource_list"^^vocabulary:RegistryDatatypeVocab
-			"reg_resource_requirements_list"^^vocabulary:RegistryDatatypeVocab
-			"reg_sz"^^vocabulary:RegistryDatatypeVocab
+			"reg_binary"
+			"reg_dword"
+			"reg_dword_big_endian"
+			"reg_expand_sz"
+			"reg_full_resource_descriptor"
+			"reg_invalid_type"
+			"reg_link"
+			"reg_multi_sz"
+			"reg_none"
+			"reg_qword"
+			"reg_resource_list"
+			"reg_resource_requirements_list"
+			"reg_sz"
 		) ;
 	] ;
 	.
@@ -926,9 +926,9 @@ vocabulary:SIMFormVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Full-size SIM"^^vocabulary:SIMFormVocab
-			"Micro SIM"^^vocabulary:SIMFormVocab
-			"Nano SIM"^^vocabulary:SIMFormVocab
+			"Full-size SIM"
+			"Micro SIM"
+			"Nano SIM"
 		) ;
 	] ;
 	.
@@ -940,9 +940,9 @@ vocabulary:SIMTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"SIM"^^vocabulary:SIMTypeVocab
-			"UICC"^^vocabulary:SIMTypeVocab
-			"USIM"^^vocabulary:SIMTypeVocab
+			"SIM"
+			"UICC"
+			"USIM"
 		) ;
 	] ;
 	.
@@ -954,10 +954,10 @@ vocabulary:TaskActionTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
-			"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
-			"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
-			"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
+			"TASK_ACTION_COM_HANDLER"
+			"TASK_ACTION_EXEC"
+			"TASK_ACTION_SEND_EMAIL"
+			"TASK_ACTION_SHOW_MESSAGE"
 		) ;
 	] ;
 	.
@@ -969,19 +969,19 @@ vocabulary:TaskFlagVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_INTERACTIVE"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_KILL_ON_IDLE_END"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_RESTART_ON_IDLE_RESUME"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_START_ONLY_IF_IDLE"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_SYSTEM_REQUIRED"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_ZERO"^^vocabulary:TaskFlagVocab
+			"TASK_FLAG_DELETE_WHEN_DONE"
+			"TASK_FLAG_DISABLED"
+			"TASK_FLAG_DONT_START_IF_ON_BATTERIES"
+			"TASK_FLAG_HIDDEN"
+			"TASK_FLAG_INTERACTIVE"
+			"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"
+			"TASK_FLAG_KILL_ON_IDLE_END"
+			"TASK_FLAG_RESTART_ON_IDLE_RESUME"
+			"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"
+			"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"
+			"TASK_FLAG_START_ONLY_IF_IDLE"
+			"TASK_FLAG_SYSTEM_REQUIRED"
+			"TASK_FLAG_ZERO"
 		) ;
 	] ;
 	.
@@ -993,12 +993,12 @@ vocabulary:TaskPriorityVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"REALTIME_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+			"ABOVE_NORMAL_PRIORITY_CLASS"
+			"BELOW_NORMAL_PRIORITY_CLASS"
+			"HIGH_PRIORITY_CLASS"
+			"IDLE_PRIORITY_CLASS"
+			"NORMAL_PRIORITY_CLASS"
+			"REALTIME_PRIORITY_CLASS"
 		) ;
 	] ;
 	.
@@ -1010,30 +1010,30 @@ vocabulary:TaskStatusVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
-			"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
-			"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
-			"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
-			"SCHED_E_INVALID_TASK"^^vocabulary:TaskStatusVocab
-			"SCHED_E_NO_SECURITY_SERVICES"^^vocabulary:TaskStatusVocab
-			"SCHED_E_SERVICE_NOT_INSTALLED"^^vocabulary:TaskStatusVocab
-			"SCHED_E_SERVICE_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-			"SCHED_E_TASK_NOT_READY"^^vocabulary:TaskStatusVocab
-			"SCHED_E_TASK_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-			"SCHED_E_TRIGGER_NOT_FOUND"^^vocabulary:TaskStatusVocab
-			"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocabulary:TaskStatusVocab
-			"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocabulary:TaskStatusVocab
-			"SCHED_S_EVENT_TRIGGER"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_DISABLED"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_HAS_NOT_RUN"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_NOT_SCHEDULED"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_NO_MORE_RUNS"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_READY"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_RUNNING"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_TERMINATED"^^vocabulary:TaskStatusVocab
-			"TASK_STATE_QUEUED"^^vocabulary:TaskStatusVocab
-			"TASK_STATE_UNKNOWN"^^vocabulary:TaskStatusVocab
+			"SCHED_E_ACCOUNT_DBASE_CORRUPT"
+			"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"
+			"SCHED_E_ACCOUNT_NAME_NOT_FOUND"
+			"SCHED_E_CANNOT_OPEN_TASK"
+			"SCHED_E_INVALID_TASK"
+			"SCHED_E_NO_SECURITY_SERVICES"
+			"SCHED_E_SERVICE_NOT_INSTALLED"
+			"SCHED_E_SERVICE_NOT_RUNNING"
+			"SCHED_E_TASK_NOT_READY"
+			"SCHED_E_TASK_NOT_RUNNING"
+			"SCHED_E_TRIGGER_NOT_FOUND"
+			"SCHED_E_UNKNOWN_OBJECT_VERSION"
+			"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"
+			"SCHED_S_EVENT_TRIGGER"
+			"SCHED_S_TASK_DISABLED"
+			"SCHED_S_TASK_HAS_NOT_RUN"
+			"SCHED_S_TASK_NOT_SCHEDULED"
+			"SCHED_S_TASK_NO_MORE_RUNS"
+			"SCHED_S_TASK_NO_VALID_TRIGGERS"
+			"SCHED_S_TASK_READY"
+			"SCHED_S_TASK_RUNNING"
+			"SCHED_S_TASK_TERMINATED"
+			"TASK_STATE_QUEUED"
+			"TASK_STATE_UNKNOWN"
 		) ;
 	] ;
 	.
@@ -1045,14 +1045,14 @@ vocabulary:ThreadRunningStatusVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Initialized"^^vocabulary:ThreadRunningStatusVocab
-			"Ready"^^vocabulary:ThreadRunningStatusVocab
-			"Running"^^vocabulary:ThreadRunningStatusVocab
-			"Standby"^^vocabulary:ThreadRunningStatusVocab
-			"Terminated"^^vocabulary:ThreadRunningStatusVocab
-			"Transition"^^vocabulary:ThreadRunningStatusVocab
-			"Unknown"^^vocabulary:ThreadRunningStatusVocab
-			"Waiting"^^vocabulary:ThreadRunningStatusVocab
+			"Initialized"
+			"Ready"
+			"Running"
+			"Standby"
+			"Terminated"
+			"Transition"
+			"Unknown"
+			"Waiting"
 		) ;
 	] ;
 	.
@@ -1064,12 +1064,12 @@ vocabulary:TimestampPrecisionVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"day"^^vocabulary:TimestampPrecisionVocab
-			"hour"^^vocabulary:TimestampPrecisionVocab
-			"minute"^^vocabulary:TimestampPrecisionVocab
-			"month"^^vocabulary:TimestampPrecisionVocab
-			"second"^^vocabulary:TimestampPrecisionVocab
-			"year"^^vocabulary:TimestampPrecisionVocab
+			"day"
+			"hour"
+			"minute"
+			"month"
+			"second"
+			"year"
 		) ;
 	] ;
 	.
@@ -1081,8 +1081,8 @@ vocabulary:TrendVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Decreasing"^^vocabulary:TrendVocab
-			"Increasing"^^vocabulary:TrendVocab
+			"Decreasing"
+			"Increasing"
 		) ;
 	] ;
 	.
@@ -1094,14 +1094,14 @@ vocabulary:TriggerFrequencyVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"TASK_EVENT_TRIGGER_AT_LOGON"^^vocabulary:TriggerFrequencyVocab
-			"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"^^vocabulary:TriggerFrequencyVocab
-			"TASK_EVENT_TRIGGER_ON_IDLE"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_DAILY"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_MONTHLYDATE"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_MONTHLYDOW"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_ONCE"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_WEEKLY"^^vocabulary:TriggerFrequencyVocab
+			"TASK_EVENT_TRIGGER_AT_LOGON"
+			"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"
+			"TASK_EVENT_TRIGGER_ON_IDLE"
+			"TASK_TIME_TRIGGER_DAILY"
+			"TASK_TIME_TRIGGER_MONTHLYDATE"
+			"TASK_TIME_TRIGGER_MONTHLYDOW"
+			"TASK_TIME_TRIGGER_ONCE"
+			"TASK_TIME_TRIGGER_WEEKLY"
 		) ;
 	] ;
 	.
@@ -1113,13 +1113,13 @@ vocabulary:TriggerTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"TASK_TRIGGER_BOOT"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_EVENT"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_IDLE"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_LOGON"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_REGISTRATION"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_SESSION_STATE_CHANGE"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_TIME"^^vocabulary:TriggerTypeVocab
+			"TASK_TRIGGER_BOOT"
+			"TASK_TRIGGER_EVENT"
+			"TASK_TRIGGER_IDLE"
+			"TASK_TRIGGER_LOGON"
+			"TASK_TRIGGER_REGISTRATION"
+			"TASK_TRIGGER_SESSION_STATE_CHANGE"
+			"TASK_TRIGGER_TIME"
 		) ;
 	] ;
 	.
@@ -1131,17 +1131,17 @@ vocabulary:URLTransitionTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"link"^^vocabulary:URLTransitionTypeVocab
-			"typed"^^vocabulary:URLTransitionTypeVocab
-			"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
-			"auto_subframe"^^vocabulary:URLTransitionTypeVocab
-			"manual_subframe"^^vocabulary:URLTransitionTypeVocab
-			"generated"^^vocabulary:URLTransitionTypeVocab
-			"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
-			"form_submit"^^vocabulary:URLTransitionTypeVocab
-			"reload"^^vocabulary:URLTransitionTypeVocab
-			"keyword"^^vocabulary:URLTransitionTypeVocab
-			"keyword_generated"^^vocabulary:URLTransitionTypeVocab
+			"link"
+			"typed"
+			"auto_bookmark"
+			"auto_subframe"
+			"manual_subframe"
+			"generated"
+			"auto_toplevel"
+			"form_submit"
+			"reload"
+			"keyword"
+			"keyword_generated"
 		) ;
 	] ;
 	.
@@ -1153,13 +1153,13 @@ vocabulary:UnixProcessStateVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Dead"^^vocabulary:UnixProcessStateVocab
-			"InterruptibleSleep"^^vocabulary:UnixProcessStateVocab
-			"Paging"^^vocabulary:UnixProcessStateVocab
-			"Running"^^vocabulary:UnixProcessStateVocab
-			"Stopped"^^vocabulary:UnixProcessStateVocab
-			"UninterruptibleSleep"^^vocabulary:UnixProcessStateVocab
-			"Zombie"^^vocabulary:UnixProcessStateVocab
+			"Dead"
+			"InterruptibleSleep"
+			"Paging"
+			"Running"
+			"Stopped"
+			"UninterruptibleSleep"
+			"Zombie"
 		) ;
 	] ;
 	.
@@ -1171,9 +1171,9 @@ vocabulary:WhoisContactTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"ADMIN"^^vocabulary:WhoisContactTypeVocab
-			"BILLING"^^vocabulary:WhoisContactTypeVocab
-			"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
+			"ADMIN"
+			"BILLING"
+			"TECHNICAL"
 		) ;
 	] ;
 	.
@@ -1185,8 +1185,8 @@ vocabulary:WhoisDNSSECTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Signed"^^vocabulary:WhoisDNSSECTypeVocab
-			"Unsigned"^^vocabulary:WhoisDNSSECTypeVocab
+			"Signed"
+			"Unsigned"
 		) ;
 	] ;
 	.
@@ -1198,25 +1198,25 @@ vocabulary:WhoisStatusTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"ADD_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-			"AUTO_RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_HOLD"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"HOLD"^^vocabulary:WhoisStatusTypeVocab
-			"INACTIVE"^^vocabulary:WhoisStatusTypeVocab
-			"OK"^^vocabulary:WhoisStatusTypeVocab
-			"PENDING_DELETE_RESTORABLE"^^vocabulary:WhoisStatusTypeVocab
-			"PENDING_DELETE_SCHEDULED_FOR_RELEASE"^^vocabulary:WhoisStatusTypeVocab
-			"PENDING_RESTORE"^^vocabulary:WhoisStatusTypeVocab
-			"RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-			"RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"TRANSFER_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-			"TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+			"ADD_PERIOD"
+			"AUTO_RENEW_PERIOD"
+			"CLIENT_DELETE_PROHIBITED"
+			"CLIENT_HOLD"
+			"CLIENT_RENEW_PROHIBITED"
+			"CLIENT_TRANSFER_PROHIBITED"
+			"CLIENT_UPDATE_PROHIBITED"
+			"DELETE_PROHIBITED"
+			"HOLD"
+			"INACTIVE"
+			"OK"
+			"PENDING_DELETE_RESTORABLE"
+			"PENDING_DELETE_SCHEDULED_FOR_RELEASE"
+			"PENDING_RESTORE"
+			"RENEW_PERIOD"
+			"RENEW_PROHIBITED"
+			"TRANSFER_PERIOD"
+			"TRANSFER_PROHIBITED"
+			"UPDATE_PROHIBITED"
 		) ;
 	] ;
 	.
@@ -1228,13 +1228,13 @@ vocabulary:WindowsDriveTypeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"DRIVE_CDROM"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_FIXED"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_NO_ROOT_DIR"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_RAMDISK"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_REMOTE"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_REMOVABLE"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_UNKNOWN"^^vocabulary:WindowsDriveTypeVocab
+			"DRIVE_CDROM"
+			"DRIVE_FIXED"
+			"DRIVE_NO_ROOT_DIR"
+			"DRIVE_RAMDISK"
+			"DRIVE_REMOTE"
+			"DRIVE_REMOVABLE"
+			"DRIVE_UNKNOWN"
 		) ;
 	] ;
 	.
@@ -1246,10 +1246,10 @@ vocabulary:WindowsVolumeAttributeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"Hidden"^^vocabulary:WindowsVolumeAttributeVocab
-			"NoDefaultDriveLetter"^^vocabulary:WindowsVolumeAttributeVocab
-			"ReadOnly"^^vocabulary:WindowsVolumeAttributeVocab
-			"ShadowCopy"^^vocabulary:WindowsVolumeAttributeVocab
+			"Hidden"
+			"NoDefaultDriveLetter"
+			"ReadOnly"
+			"ShadowCopy"
 		) ;
 	] ;
 	.
@@ -1261,13 +1261,13 @@ vocabulary:WirelessNetworkSecurityModeVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"None"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+			"None"
+			"WEP"
+			"WPA"
+			"WPA2-PSK"
+			"WPA2-Enterprise"
+			"WPA3-PSK"
+			"WPA3-Enterprise"
 		) ;
 	] ;
 	.
