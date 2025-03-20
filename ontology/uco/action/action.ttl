@@ -110,11 +110,6 @@ action:Action
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for action:actionStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path action:actionStatus ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path action:actionStatus ;
@@ -242,19 +237,14 @@ action:ActionFrequencyFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path action:units ;
+			sh:path action:trend ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for action:trend should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path action:trend ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path action:trend ;
+			sh:path action:units ;
 		]
 		;
 	sh:targetClass action:ActionFrequencyFacet ;

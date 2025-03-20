@@ -146,11 +146,6 @@ types:Hash
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path types:hashMethod ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
