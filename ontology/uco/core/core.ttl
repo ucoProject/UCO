@@ -632,6 +632,13 @@ core:externalReference
 	rdfs:range core:ExternalReference ;
 	.
 
+core:hasCharacterization
+	a owl:ObjectProperty ;
+	rdfs:comment "TODO - references the Software or Device that make up the actual tool"@en ;
+	rdfs:domain core:UcoObject ;
+	rdfs:range core:UcoObject ;
+	.
+
 core:hasFacet
 	a
 		owl:ObjectProperty ,

@@ -1,7 +1,9 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/action/1.3.0
 # imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.3.0
 # imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/environment/1.3.0
 # imports: https://ontology.unifiedcyberontology.org/uco/identity/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/infrastructure/1.3.0
 # imports: https://ontology.unifiedcyberontology.org/uco/location/1.3.0
 # imports: https://ontology.unifiedcyberontology.org/uco/types/1.3.0
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.3.0
@@ -10,7 +12,9 @@
 @prefix co: <http://purl.org/co/> .
 @prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix environment: <https://ontology.unifiedcyberontology.org/uco/environment/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix infrastructure: <https://ontology.unifiedcyberontology.org/uco/infrastructure/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -30,7 +34,9 @@
 		action:1.3.0 ,
 		configuration:1.3.0 ,
 		core:1.3.0 ,
+		environment:1.3.0 ,
 		identity:1.3.0 ,
+		infrastructure:1.3.0 ,
 		location:1.3.0 ,
 		types:1.3.0 ,
 		vocabulary:1.3.0
@@ -213,6 +219,14 @@ observable:Address
 	rdfs:label "Address"@en ;
 	rdfs:comment "An address is an identifier assigned to enable routing and management of information."@en ;
 	sh:targetClass observable:Address ;
+	.
+
+observable:Alert
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
 	.
 
 observable:AlternateDataStream
@@ -401,7 +415,7 @@ observable:Application
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:Software ;
 	rdfs:label "Application"@en ;
 	rdfs:comment "An application is a particular software program designed for end users."@en ;
 	sh:targetClass observable:Application ;
@@ -642,6 +656,14 @@ observable:AutonomousSystemFacet
 	sh:targetClass observable:AutonomousSystemFacet ;
 	.
 
+observable:Beacon
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	.
+
 observable:BlackberryPhone
 	a
 		owl:Class ,
@@ -832,6 +854,22 @@ observable:BrowserCookieFacet
 		]
 		;
 	sh:targetClass observable:BrowserCookieFacet ;
+	.
+
+observable:Build
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	.
+
+observable:BuildUtility
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
 	.
 
 observable:Calendar
@@ -1170,10 +1208,18 @@ observable:Code
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:Software ;
 	rdfs:label "Code"@en ;
 	rdfs:comment "Code is a direct representation (source, byte or binary) of a collection of computer instructions that form software which tell a computer how to work. [based on https://en.wikipedia.org/wiki/Software]"@en ;
 	sh:targetClass observable:Code ;
+	.
+
+observable:Compiler
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
 	.
 
 observable:CompressedStreamFacet
@@ -1353,6 +1399,51 @@ observable:ComputerSpecificationFacet
 		]
 		;
 	sh:targetClass observable:ComputerSpecificationFacet ;
+	.
+
+observable:Configure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	sh:property [
+		sh:class configuration:Configuration ;
+		sh:nodeKind sh:IRI ;
+		sh:path observable:toConfiguration ;
+	] ;
+	.
+
+observable:ConfigureCyberInfrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ConfigureInfrastructure ;
+	.
+
+observable:ConfigureEnvironment
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Configure ;
+	.
+
+observable:ConfigureInfrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Configure ;
+	.
+
+observable:ConfigureSoftware
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Configure ;
 	.
 
 observable:ConfiguredSoftware
@@ -2083,6 +2174,66 @@ observable:DefinedEffectFacet
 	sh:targetClass observable:DefinedEffectFacet ;
 	.
 
+observable:Deploy
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	sh:property
+		[
+			sh:class environment:Environment ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:targetEnvironment ;
+		] ,
+		[
+			sh:class infrastructure:Infrastructure ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:targetInfrastructure ;
+		]
+		;
+	.
+
+observable:DeployArtifact
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Deploy ;
+	.
+
+observable:DeployCyberInfrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:DeployInfrastructure ;
+	.
+
+observable:DeployInfrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Deploy ;
+	.
+
+observable:DeploySoftware
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Deploy ;
+	.
+
+observable:DeploymentScript
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Script ;
+	.
+
 observable:Device
 	a
 		owl:Class ,
@@ -2132,6 +2283,12 @@ observable:DeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:serialNumber ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:version ;
 		]
 		;
 	sh:targetClass observable:DeviceFacet ;
@@ -2825,6 +2982,14 @@ observable:EnvironmentVariable
 	sh:targetClass observable:EnvironmentVariable ;
 	.
 
+observable:Evaluate
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	.
+
 observable:EventLog
 	a
 		owl:Class ,
@@ -2936,6 +3101,38 @@ observable:EventRecordFacet
 		]
 		;
 	sh:targetClass observable:EventRecordFacet ;
+	.
+
+observable:Execute
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	.
+
+observable:ExecuteScript
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ExecuteSoftware ;
+	.
+
+observable:ExecuteSoftware
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Execute ;
+	.
+
+observable:ExecuteSoftwareDeploymentScript
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ExecuteScript ;
 	.
 
 observable:ExtInodeFacet
@@ -3846,7 +4043,7 @@ observable:Library
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:Software ;
 	rdfs:label "Library"@en ;
 	rdfs:comment "A library is a suite of data and programming code that is used to develop software programs and applications. [based on https://www.techopedia.com/definition/3828/software-library]"@en ;
 	sh:targetClass observable:Library ;
@@ -3867,6 +4064,14 @@ observable:LibraryFacet
 		sh:path observable:libraryType ;
 	] ;
 	sh:targetClass observable:LibraryFacet ;
+	.
+
+observable:LinuxTask
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Task ;
 	.
 
 observable:MACAddress
@@ -3904,6 +4109,38 @@ observable:MSISDNType
 	rdfs:label "MSISDNType"@en ;
 	rdfs:comment "???."@en ;
 	rdfs:range xsd:string ;
+	.
+
+observable:Manage
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	.
+
+observable:ManageEnvironment
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Manage ;
+	.
+
+observable:ManageInfrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Manage ;
+	.
+
+observable:ManageSoftware
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Manage ;
 	.
 
 observable:Memory
@@ -5139,6 +5376,14 @@ observable:PUK
 	rdfs:range xsd:string ;
 	.
 
+observable:Package
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
 observable:PathRelationFacet
 	a
 		owl:Class ,
@@ -5221,7 +5466,7 @@ observable:Process
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:Software ;
 	rdfs:label "Process"@en ;
 	rdfs:comment "A process is an instance of a computer program executed on an operating system."@en ;
 	sh:targetClass observable:Process ;
@@ -5316,7 +5561,7 @@ observable:ProcessThread
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:Process ;
 	rdfs:label "ProcessThread"@en ;
 	rdfs:comment "A process thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
 	sh:targetClass observable:ProcessThread ;
@@ -5657,6 +5902,14 @@ observable:ReparsePoint
 	sh:targetClass observable:ReparsePoint ;
 	.
 
+observable:RollbackSoftwareDeployment
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Deploy ;
+	.
+
 observable:SIMCard
 	a
 		owl:Class ,
@@ -5840,6 +6093,14 @@ observable:SQLiteBlobFacet
 	sh:targetClass observable:SQLiteBlobFacet ;
 	.
 
+observable:Script
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
 observable:SecurityAppliance
 	a
 		owl:Class ,
@@ -5888,6 +6149,46 @@ observable:Server
 	rdfs:label "Server"@en-US ;
 	rdfs:comment "A server is a server rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
 	sh:targetClass observable:Server ;
+	.
+
+observable:Service
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Process ;
+	.
+
+observable:ServicePack
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
+observable:SetConfigurationEntry
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	.
+
+observable:SetCyberEnvironmentConfigurationEntry
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:SetConfigurationEntry ;
+	.
+
+observable:SetEnvironmentConfigurationEntry
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:SetConfigurationEntry ;
 	.
 
 observable:ShopListing
@@ -5971,6 +6272,74 @@ observable:Software
 	sh:targetClass observable:Software ;
 	.
 
+observable:SoftwareBuild
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	.
+
+observable:SoftwareBuildFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	sh:property
+		[
+			sh:class observable:BuildUtility ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:buildUtility ;
+		] ,
+		[
+			sh:class observable:Compiler ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:compiler ;
+		] ,
+		[
+			sh:class observable:Library ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:library ;
+		] ,
+		[
+			sh:class observable:Package ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:package ;
+		] ,
+		[
+			sh:class observable:Script ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:buildScript ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:compilationDate ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:buildOutputLog ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:buildProject ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:version ;
+		]
+		;
+	.
+
 observable:SoftwareFacet
 	a
 		owl:Class ,
@@ -6014,6 +6383,14 @@ observable:SoftwareFacet
 	sh:targetClass observable:SoftwareFacet ;
 	.
 
+observable:StartCyberInfrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ManageInfrastructure ;
+	.
+
 observable:StateChangeEffectFacet
 	a
 		owl:Class ,
@@ -6037,6 +6414,14 @@ observable:StateChangeEffectFacet
 		]
 		;
 	sh:targetClass observable:StateChangeEffectFacet ;
+	.
+
+observable:StopCyberInfrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ManageInfrastructure ;
 	.
 
 observable:StorageMedium
@@ -6251,6 +6636,14 @@ observable:Tablet
 	rdfs:label "Tablet"@en-US ;
 	rdfs:comment "A tablet is a mobile computer that is primarily operated by touching the screen. (Devices categorized by their manufacturer as a Tablet)"@en-US ;
 	sh:targetClass observable:Tablet ;
+	.
+
+observable:Task
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Process ;
 	.
 
 observable:TaskActionType
@@ -7039,6 +7432,14 @@ observable:ValuesEnumeratedEffectFacet
 		sh:path observable:values ;
 	] ;
 	sh:targetClass observable:ValuesEnumeratedEffectFacet ;
+	.
+
+observable:VerifySoftwareDeployment
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Evaluate ;
 	.
 
 observable:Volume
@@ -8191,7 +8592,7 @@ observable:WindowsService
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:Service ;
 	rdfs:label "WindowsService"@en ;
 	rdfs:comment "A Windows service is a specific Windows service (a computer program that operates in the background of a Windows operating system, similar to the way a UNIX daemon runs on UNIX). [based on https://en.wikipedia.org/wiki/Windows_service]"@en ;
 	sh:targetClass observable:WindowsService ;
@@ -8316,7 +8717,7 @@ observable:WindowsTask
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf observable:Task ;
 	rdfs:label "WindowsTask"@en ;
 	rdfs:comment "A Windows task is a process that is scheduled to execute on a Windows operating system by the Windows Task Scheduler. [based on http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx]"@en ;
 	sh:targetClass observable:WindowsTask ;
@@ -9407,6 +9808,13 @@ observable:browserUserProfile
 	a owl:DatatypeProperty ;
 	rdfs:label "Browser User Profile"@en ;
 	rdfs:comment "Specifies the web browser user profile for which the URL history entry was created."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:buildOutputLog
+	a owl:DatatypeProperty ;
+	rdfs:label "buildOutputLog"@en ;
+	rdfs:comment "The output log of the build process for a software."@en ;
 	rdfs:range xsd:string ;
 	.
 
