@@ -50,6 +50,8 @@ all: \
   operating_system_PASS_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
+  owl_cardinality_restrictions_PASS_validation.ttl \
+  owl_cardinality_restrictions_XFAIL_validation.ttl \
   owl_properties_PASS_validation.ttl \
   owl_properties_XFAIL_validation.ttl \
   rdf_list_PASS_validation.ttl \
@@ -128,6 +130,8 @@ check: \
   operating_system_PASS_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
+  owl_cardinality_restrictions_PASS_validation.ttl \
+  owl_cardinality_restrictions_XFAIL_validation.ttl \
   owl_properties_PASS_validation.ttl \
   owl_properties_XFAIL_validation.ttl \
   rdf_list_PASS_validation.ttl \
