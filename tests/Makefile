@@ -46,11 +46,15 @@ check: \
   uco_monolithic.ttl
 	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \
+	    --ignore context_builder \
 	    --ignore examples \
 	    --ignore shapes \
 	    --log-level=DEBUG
 	$(MAKE) \
 	  --directory examples \
+	  check
+	$(MAKE) \
+	  --directory context_builder \
 	  check
 
 check-dependencies: \
