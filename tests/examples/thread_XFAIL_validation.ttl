@@ -1,11 +1,11 @@
 @prefix co: <http://purl.org/co/> .
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -25,12 +25,12 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/thread-1c73bebd-798e-4ea2-a1be-553db145e7b5> ;
-			sh:resultMessage "Value does not have class types:ThreadItem" ;
+			sh:resultMessage "Value does not have class uco-types:ThreadItem" ;
 			sh:resultPath co:item ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
-				sh:class types:ThreadItem ;
+				sh:class uco-types:ThreadItem ;
 				sh:path co:item ;
 			] ;
 			sh:value <http://example.org/kb/uco-object-d99d4ad8-a6b4-4aa6-a609-4d01808845b7> ;
@@ -38,11 +38,11 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/thread-1c73bebd-798e-4ea2-a1be-553db145e7b5> ;
-			sh:resultMessage "Value does not have class types:ThreadItem" ;
-			sh:resultPath types:threadOriginItem ;
+			sh:resultMessage "Value does not have class uco-types:ThreadItem" ;
+			sh:resultPath uco-types:threadOriginItem ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape types:threadOriginItem-subjects-shape ;
+			sh:sourceShape uco-types:threadOriginItem-subjects-shape ;
 			sh:value <http://example.org/kb/uco-object-d99d4ad8-a6b4-4aa6-a609-4d01808845b7> ;
 		] ,
 		[
@@ -57,12 +57,12 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/thread-item-2bd09467-d413-4a03-af5d-f0e428f7d987> ;
-			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultMessage "Value does not have class uco-core:UcoObject" ;
 			sh:resultPath co:itemContent ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
-				sh:class core:UcoObject ;
+				sh:class uco-core:UcoObject ;
 				sh:path co:itemContent ;
 			] ;
 			sh:value <http://example.org/kb/thread-item-461295a0-d50d-42e7-8011-656db5762ff6> ;

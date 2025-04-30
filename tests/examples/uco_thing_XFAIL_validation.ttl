@@ -1,8 +1,8 @@
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -20,10 +20,10 @@
 				sh:message "UcoThings are suggested to end with a UUID."@en ;
 				sh:select '''
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
-			        $this a/rdfs:subClassOf* core:UcoThing .
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),
@@ -35,7 +35,7 @@
 		''' ;
 			] ;
 			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:sourceShape uco-core:UcoThing-identifier-regex-shape ;
 			sh:value <http://example.org/kb/uco-thing-eb10f281-566c-a946-b360-c228d74a493b> ;
 		] ,
 		[
@@ -49,10 +49,10 @@
 				sh:message "UcoThings are suggested to end with a UUID."@en ;
 				sh:select '''
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
-			        $this a/rdfs:subClassOf* core:UcoThing .
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),
@@ -64,13 +64,13 @@
 		''' ;
 			] ;
 			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:sourceShape uco-core:UcoThing-identifier-regex-shape ;
 			sh:value <http://example.org/kb/uco-thing-x> ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a core:UcoThing ;
+				a uco-core:UcoThing ;
 				rdfs:comment "Triggers Violation-severity violation of node being a blank node." ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
@@ -80,25 +80,25 @@
 				sh:message "UcoThings are required to not be blank nodes."@en ;
 				sh:select """
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
-			        $this a/rdfs:subClassOf* core:UcoThing .
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
 			        FILTER isBlank ($this)
 			}
 		""" ;
 			] ;
 			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
+			sh:sourceShape uco-core:UcoThing ;
 			sh:value [
-				a core:UcoThing ;
+				a uco-core:UcoThing ;
 				rdfs:comment "Triggers Violation-severity violation of node being a blank node." ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a core:UcoThing ;
+				a uco-core:UcoThing ;
 				rdfs:comment "Triggers Violation-severity violation of node being a blank node." ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
@@ -109,10 +109,10 @@
 				sh:message "UcoThings are suggested to end with a UUID."@en ;
 				sh:select '''
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
-			        $this a/rdfs:subClassOf* core:UcoThing .
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),
@@ -124,9 +124,9 @@
 		''' ;
 			] ;
 			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:sourceShape uco-core:UcoThing-identifier-regex-shape ;
 			sh:value [
-				a core:UcoThing ;
+				a uco-core:UcoThing ;
 				rdfs:comment "Triggers Violation-severity violation of node being a blank node." ;
 			] ;
 		]

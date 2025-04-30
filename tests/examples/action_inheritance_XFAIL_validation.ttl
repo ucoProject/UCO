@@ -1,8 +1,8 @@
-@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -12,57 +12,57 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14> ;
-			sh:resultMessage "More than 0 values on kb:action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14->action:actionStatus" ;
-			sh:resultPath action:actionStatus ;
+			sh:resultMessage "More than 0 values on kb:action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14->uco-action:actionStatus" ;
+			sh:resultPath uco-action:actionStatus ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
 			sh:sourceShape [
 				sh:maxCount "0"^^xsd:integer ;
-				sh:path action:actionStatus ;
+				sh:path uco-action:actionStatus ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
-			sh:resultMessage "Value does not have class action:Action" ;
-			sh:resultPath action:action ;
+			sh:resultMessage "Value does not have class uco-action:Action" ;
+			sh:resultPath uco-action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
-				sh:class action:Action ;
+				sh:class uco-action:Action ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:IRI ;
-				sh:path action:action ;
+				sh:path uco-action:action ;
 			] ;
 			sh:value "kb:action-35fada9e-c807-4fa0-87b8-582473115eeb" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
-			sh:resultMessage "Value does not have class action:Action" ;
-			sh:resultPath action:action ;
+			sh:resultMessage "Value does not have class uco-action:Action" ;
+			sh:resultPath uco-action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
-				sh:class action:Action ;
+				sh:class uco-action:Action ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:IRI ;
-				sh:path action:action ;
+				sh:path uco-action:action ;
 			] ;
 			sh:value "kb:action-dcb9c6a2-f7b9-454a-b185-44d63244ac1c" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
-			sh:resultMessage "Value does not have class action:Action" ;
-			sh:resultPath action:action ;
+			sh:resultMessage "Value does not have class uco-action:Action" ;
+			sh:resultPath uco-action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
-				sh:class action:Action ;
+				sh:class uco-action:Action ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:IRI ;
-				sh:path action:action ;
+				sh:path uco-action:action ;
 			] ;
 			sh:value "kb:action-e1bb7bac-5655-48e3-8c62-843ffb7cc17f" ;
 		] ,
@@ -70,14 +70,14 @@
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath action:action ;
+			sh:resultPath uco-action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
-				sh:class action:Action ;
+				sh:class uco-action:Action ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:IRI ;
-				sh:path action:action ;
+				sh:path uco-action:action ;
 			] ;
 			sh:value "kb:action-35fada9e-c807-4fa0-87b8-582473115eeb" ;
 		] ,
@@ -85,14 +85,14 @@
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath action:action ;
+			sh:resultPath uco-action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
-				sh:class action:Action ;
+				sh:class uco-action:Action ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:IRI ;
-				sh:path action:action ;
+				sh:path uco-action:action ;
 			] ;
 			sh:value "kb:action-dcb9c6a2-f7b9-454a-b185-44d63244ac1c" ;
 		] ,
@@ -100,14 +100,14 @@
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath action:action ;
+			sh:resultPath uco-action:action ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
-				sh:class action:Action ;
+				sh:class uco-action:Action ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:IRI ;
-				sh:path action:action ;
+				sh:path uco-action:action ;
 			] ;
 			sh:value "kb:action-e1bb7bac-5655-48e3-8c62-843ffb7cc17f" ;
 		]
