@@ -3,6 +3,8 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-time: <https://ontology.unifiedcyberontology.org/uco/time/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -10,10 +12,48 @@
 <https://ontology.unifiedcyberontology.org/uco/time>
 	a owl:Ontology ;
 	rdfs:label "uco-time"@en ;
+	rdfs:comment "Discussion of concepts in W3C's OWL-Time pertain to the 2016 edition of OWL-Time and the noted version of the documentation page."@en ;
+	rdfs:seeAlso
+		time:2016 ,
+		<https://www.w3.org/TR/2022/CRD-owl-time-20221115/>
+		;
 	owl:backwardCompatibleWith uco-time:1.2.0 ;
 	owl:imports uco-core:1.3.0 ;
 	owl:priorVersion uco-time:1.2.0 ;
 	owl:versionIRI uco-time:1.3.0 ;
+	.
+
+uco-time:InstantaneousPerdurant
+	a owl:Class ;
+	rdfs:subClassOf uco-core:Perdurant ;
+	rdfs:comment "An instantaneous perdurant is a perdurant of zero temporal duration.  This class corresponds with OWL-Time's time:Instant, but UCO leaves to adopters whether uco-time:InstantaneousPerdurant specializes (i.e., subclasses) time:Instant, or instead links time:Instants as separate time-dimensional objects with time:hasTime."@en ;
+	rdfs:seeAlso time:Instant ;
+	owl:disjointWith uco-time:ProperIntervalicPerdurant ;
+	.
+
+uco-time:InstantaneousPerdurant-disjointWith-ProperIntervalicPerdurant-shape
+	a sh:NodeShape ;
+	sh:message "uco-time:InstantaneousPerdurant and uco-time:ProperIntervalicPerdurant are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class uco-time:ProperIntervalicPerdurant ;
+	] ;
+	sh:targetClass uco-time:InstantaneousPerdurant ;
+	.
+
+uco-time:IntervalicPerdurant
+	a owl:Class ;
+	rdfs:subClassOf uco-core:Perdurant ;
+	rdfs:comment "An intervalic perdurant is a perdurant of temporal duration that might or might not be zero.  This class corresponds with OWL-Time's time:Interval, but UCO leaves to adopters whether uco-time:IntervalicPerdurant specializes (i.e., subclasses) time:Interval, or instead links time:Intervals as separate time-dimensional objects with time:hasTime."@en ;
+	rdfs:seeAlso time:Interval ;
+	.
+
+uco-time:ProperIntervalicPerdurant
+	a owl:Class ;
+	rdfs:subClassOf uco-time:IntervalicPerdurant ;
+	rdfs:comment "A proper-intervalic perdurant is a perdurant of non-zero temporal duration.  This class corresponds with OWL-Time's time:ProperInterval, but UCO leaves to adopters whether uco-time:ProperIntervalicPerdurant specializes (i.e., subclasses) time:ProperInterval, or instead links time:ProperIntervals as separate object time-dimensional objects with time:hasTime."@en ;
+	rdfs:seeAlso time:ProperInterval ;
+	owl:disjointWith uco-time:InstantaneousPerdurant ;
 	.
 
 uco-time:Time
