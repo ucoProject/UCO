@@ -58,6 +58,8 @@ all: \
   relationship_XFAIL_validation.ttl \
   thread_PASS_validation.ttl \
   thread_XFAIL_validation.ttl \
+  time_PASS_validation.ttl \
+  time_XFAIL_validation.ttl \
   uco_thing_XFAIL_validation.ttl
 
 .PRECIOUS: \
@@ -136,6 +138,8 @@ check: \
   relationship_XFAIL_validation.ttl \
   thread_PASS_validation.ttl \
   thread_XFAIL_validation.ttl \
+  time_PASS_validation.ttl \
+  time_XFAIL_validation.ttl \
   uco_thing_XFAIL_validation.ttl
 	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \

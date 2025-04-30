@@ -1,0 +1,17 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-time": "https://ontology.unifiedcyberontology.org/uco/time/"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Perdurant-6a8bbefc-c1f4-4c87-b5d3-a97e3f195172",
+            "@type": [
+                "uco-time:InstantaneousPerdurant",
+                "uco-time:ProperIntervalicPerdurant"
+            ],
+            "uco-core:description": "A perdurant declared both instantaneous and proper-intervalic (0-duration and non-0-duration)."
+        }
+    ]
+}

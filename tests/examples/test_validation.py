@@ -614,6 +614,18 @@ def test_thread_XFAIL_validation() -> None:
       }
     )
 
+def test_time_PASS_validation() -> None:
+    confirm_validation_results("time_PASS_validation.ttl", True)
+
+def test_time_XFAIL_validation() -> None:
+    confirm_validation_results(
+      "time_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Perdurant-6a8bbefc-c1f4-4c87-b5d3-a97e3f195172", str(NS_SH.Violation)),
+      }
+    )
+
 def uco_thing_XFAIL_validation() -> None:
     confirm_validation_results(
       "uco_thing_XFAIL_validation.ttl",
