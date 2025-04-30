@@ -1,15 +1,15 @@
 {
     "@context": {
         "kb": "http://example.org/kb/",
-        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": "kb:Thing-23a38d67-3432-458b-9651-955b418c2a77",
             "@type": [
-                "observable:File",
-                "observable:URL"
+                "uco-observable:File",
+                "uco-observable:URL"
             ],
             "rdfs:comment": "Should trigger sh:Warning from simultaneously being a member of two disjoint classes; will trigger sh:Violation in UCO 2.0.0."
         }

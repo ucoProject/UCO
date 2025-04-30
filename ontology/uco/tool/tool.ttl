@@ -1,139 +1,139 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.3.0
 # imports: https://ontology.unifiedcyberontology.org/uco/identity/1.3.0
 
-@prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
-@prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
+@prefix uco-configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/tool>
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
-	owl:backwardCompatibleWith tool:1.2.0 ;
+	owl:backwardCompatibleWith uco-tool:1.2.0 ;
 	owl:imports
-		configuration:1.3.0 ,
-		identity:1.3.0
+		uco-configuration:1.3.0 ,
+		uco-identity:1.3.0
 		;
-	owl:priorVersion tool:1.2.0 ;
-	owl:versionIRI tool:1.3.0 ;
+	owl:priorVersion uco-tool:1.2.0 ;
+	owl:versionIRI uco-tool:1.3.0 ;
 	.
 
-tool:AnalyticTool
+uco-tool:AnalyticTool
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf tool:Tool ;
+	rdfs:subClassOf uco-tool:Tool ;
 	rdfs:label "AnalyticTool"@en ;
 	rdfs:comment "An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning."@en ;
-	sh:targetClass tool:AnalyticTool ;
+	sh:targetClass uco-tool:AnalyticTool ;
 	.
 
-tool:BuildFacet
+uco-tool:BuildFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Facet ;
+	rdfs:subClassOf uco-core:Facet ;
 	rdfs:label "BuildFacet"@en ;
 	rdfs:comment "A build facet is a grouping of characteristics unique to a particular version of a software."@en ;
 	sh:property [
-		sh:class tool:BuildInformationType ;
+		sh:class uco-tool:BuildInformationType ;
 		sh:maxCount "1"^^xsd:integer ;
 		sh:nodeKind sh:IRI ;
-		sh:path tool:buildInformation ;
+		sh:path uco-tool:buildInformation ;
 	] ;
-	sh:targetClass tool:BuildFacet ;
+	sh:targetClass uco-tool:BuildFacet ;
 	.
 
-tool:BuildInformationType
+uco-tool:BuildInformationType
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildInformationType"@en ;
 	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
 	sh:property
 		[
-			sh:class configuration:Configuration ;
+			sh:class uco-configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:IRI ;
-			sh:path tool:buildConfiguration ;
+			sh:path uco-tool:buildConfiguration ;
 		] ,
 		[
-			sh:class tool:BuildUtilityType ;
+			sh:class uco-tool:BuildUtilityType ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:IRI ;
-			sh:path tool:buildUtility ;
+			sh:path uco-tool:buildUtility ;
 		] ,
 		[
-			sh:class tool:CompilerType ;
+			sh:class uco-tool:CompilerType ;
 			sh:nodeKind sh:IRI ;
-			sh:path tool:compilers ;
+			sh:path uco-tool:compilers ;
 		] ,
 		[
-			sh:class tool:LibraryType ;
+			sh:class uco-tool:LibraryType ;
 			sh:nodeKind sh:IRI ;
-			sh:path tool:libraries ;
+			sh:path uco-tool:libraries ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:compilationDate ;
+			sh:path uco-tool:compilationDate ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:buildID ;
+			sh:path uco-tool:buildID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:buildLabel ;
+			sh:path uco-tool:buildLabel ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:buildOutputLog ;
+			sh:path uco-tool:buildOutputLog ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:buildProject ;
+			sh:path uco-tool:buildProject ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:buildScript ;
+			sh:path uco-tool:buildScript ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:buildVersion ;
+			sh:path uco-tool:buildVersion ;
 		]
 		;
-	sh:targetClass tool:BuildInformationType ;
+	sh:targetClass uco-tool:BuildInformationType ;
 	.
 
-tool:BuildUtilityType
+uco-tool:BuildUtilityType
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildUtilityType"@en ;
 	rdfs:comment "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."@en ;
 	sh:property
@@ -141,30 +141,30 @@ tool:BuildUtilityType
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:buildUtilityName ;
+			sh:path uco-tool:buildUtilityName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:cpeid ;
+			sh:path uco-tool:cpeid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:swid ;
+			sh:path uco-tool:swid ;
 		]
 		;
-	sh:targetClass tool:BuildUtilityType ;
+	sh:targetClass uco-tool:BuildUtilityType ;
 	.
 
-tool:CompilerType
+uco-tool:CompilerType
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "CompilerType"@en ;
 	rdfs:comment "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"@en ;
 	sh:property
@@ -172,66 +172,66 @@ tool:CompilerType
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:compilerInformalDescription ;
+			sh:path uco-tool:compilerInformalDescription ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:cpeid ;
+			sh:path uco-tool:cpeid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:swid ;
+			sh:path uco-tool:swid ;
 		]
 		;
-	sh:targetClass tool:CompilerType ;
+	sh:targetClass uco-tool:CompilerType ;
 	.
 
-tool:ConfiguredTool
+uco-tool:ConfiguredTool
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf tool:Tool ;
+	rdfs:subClassOf uco-tool:Tool ;
 	rdfs:label "ConfiguredTool"@en ;
 	rdfs:comment "A ConfiguredTool is a Tool that is known to be configured to run in a more specified manner than some unconfigured or less-configured Tool."@en ;
 	sh:property
 		[
-			sh:class configuration:Configuration ;
+			sh:class uco-configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path configuration:usesConfiguration ;
+			sh:path uco-configuration:usesConfiguration ;
 		] ,
 		[
-			sh:class tool:Tool ;
+			sh:class uco-tool:Tool ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path configuration:isConfigurationOf ;
+			sh:path uco-configuration:isConfigurationOf ;
 		]
 		;
-	sh:targetClass tool:ConfiguredTool ;
+	sh:targetClass uco-tool:ConfiguredTool ;
 	.
 
-tool:DefensiveTool
+uco-tool:DefensiveTool
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf tool:Tool ;
+	rdfs:subClassOf uco-tool:Tool ;
 	rdfs:label "DefensiveTool"@en ;
 	rdfs:comment "A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding."@en ;
-	sh:targetClass tool:DefensiveTool ;
+	sh:targetClass uco-tool:DefensiveTool ;
 	.
 
-tool:LibraryType
+uco-tool:LibraryType
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "LibraryType"@en ;
 	rdfs:comment "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."@en ;
 	sh:property
@@ -239,227 +239,227 @@ tool:LibraryType
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:libraryName ;
+			sh:path uco-tool:libraryName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:libraryVersion ;
+			sh:path uco-tool:libraryVersion ;
 		]
 		;
-	sh:targetClass tool:LibraryType ;
+	sh:targetClass uco-tool:LibraryType ;
 	.
 
-tool:MaliciousTool
+uco-tool:MaliciousTool
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf tool:Tool ;
+	rdfs:subClassOf uco-tool:Tool ;
 	rdfs:label "MaliciousTool"@en ;
 	rdfs:comment "A malicious tool is an artifact of hardware and/or software utilized to accomplish a malevolent task or purpose."@en ;
-	sh:targetClass tool:MaliciousTool ;
+	sh:targetClass uco-tool:MaliciousTool ;
 	.
 
-tool:Tool
+uco-tool:Tool
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf uco-core:UcoObject ;
 	rdfs:label "Tool"@en ;
 	rdfs:comment "A tool is an element of hardware and/or software utilized to carry out a particular function."@en ;
 	sh:property
 		[
-			sh:class identity:Identity ;
+			sh:class uco-identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:IRI ;
-			sh:path tool:creator ;
+			sh:path uco-tool:creator ;
 		] ,
 		[
 			sh:datatype xsd:anyURI ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:references ;
+			sh:path uco-tool:references ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:servicePack ;
+			sh:path uco-tool:servicePack ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:toolType ;
+			sh:path uco-tool:toolType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:version ;
+			sh:path uco-tool:version ;
 		]
 		;
-	sh:targetClass tool:Tool ;
+	sh:targetClass uco-tool:Tool ;
 	.
 
-tool:buildConfiguration
+uco-tool:buildConfiguration
 	a owl:ObjectProperty ;
 	rdfs:label "buildConfiguration"@en ;
 	rdfs:comment "How the build utility was configured for a particular build of a particular software."@en ;
-	rdfs:range configuration:Configuration ;
+	rdfs:range uco-configuration:Configuration ;
 	.
 
-tool:buildID
+uco-tool:buildID
 	a owl:DatatypeProperty ;
 	rdfs:label "buildID"@en ;
 	rdfs:comment "An externally defined unique identifier for a particular build of a software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:buildInformation
+uco-tool:buildInformation
 	a owl:ObjectProperty ;
 	rdfs:label "buildInformation"@en ;
 	rdfs:comment "Describes how a particular tool was built."@en ;
-	rdfs:range tool:BuildInformationType ;
+	rdfs:range uco-tool:BuildInformationType ;
 	.
 
-tool:buildLabel
+uco-tool:buildLabel
 	a owl:DatatypeProperty ;
 	rdfs:label "buildLabel"@en ;
 	rdfs:comment "Relevant label for a particular build of a particular software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:buildOutputLog
+uco-tool:buildOutputLog
 	a owl:DatatypeProperty ;
 	rdfs:label "buildOutputLog"@en ;
 	rdfs:comment "The output log of the build process for a software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:buildProject
+uco-tool:buildProject
 	a owl:DatatypeProperty ;
 	rdfs:label "buildProject"@en ;
 	rdfs:comment "The project name of a build of a software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:buildScript
+uco-tool:buildScript
 	a owl:DatatypeProperty ;
 	rdfs:label "buildScript"@en ;
 	rdfs:comment "The actual build script for a particular build of a particular software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:buildUtility
+uco-tool:buildUtility
 	a owl:ObjectProperty ;
 	rdfs:label "buildUtility"@en ;
 	rdfs:comment "Identifies the utility used to build a software."@en ;
-	rdfs:range tool:BuildUtilityType ;
+	rdfs:range uco-tool:BuildUtilityType ;
 	.
 
-tool:buildUtilityName
+uco-tool:buildUtilityName
 	a owl:DatatypeProperty ;
 	rdfs:label "buildUtilityName"@en ;
 	rdfs:comment "The informally defined name of the utility used to build a particular software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:buildVersion
+uco-tool:buildVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "buildVersion"@en ;
 	rdfs:comment "The appropriate version descriptor of a particular build of a particular software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:compilationDate
+uco-tool:compilationDate
 	a owl:DatatypeProperty ;
 	rdfs:label "compilationDate"@en ;
 	rdfs:comment "The compilation date for the build of a software."@en ;
 	rdfs:range xsd:dateTime ;
 	.
 
-tool:compilerInformalDescription
+uco-tool:compilerInformalDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "compilerInformalDescription"@en ;
 	rdfs:comment "An informal description of a compiler."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:compilers
+uco-tool:compilers
 	a owl:ObjectProperty ;
 	rdfs:label "compilers"@en ;
 	rdfs:comment "The compilers utilized during a particular build of a particular software."@en ;
-	rdfs:range tool:CompilerType ;
+	rdfs:range uco-tool:CompilerType ;
 	.
 
-tool:cpeid
+uco-tool:cpeid
 	a owl:DatatypeProperty ;
 	rdfs:label "cpeid"@en ;
 	rdfs:comment "Specifies the Common Platform Enumeration identifier for the software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:creator
+uco-tool:creator
 	a owl:ObjectProperty ;
 	rdfs:label "creator"@en ;
 	rdfs:comment "The creator organization for a particular tool."@en ;
-	rdfs:range identity:Identity ;
+	rdfs:range uco-identity:Identity ;
 	.
 
-tool:libraries
+uco-tool:libraries
 	a owl:ObjectProperty ;
 	rdfs:label "libraries"@en ;
 	rdfs:comment "The libraries incorporated into a particular build of a software."@en ;
-	rdfs:range tool:LibraryType ;
+	rdfs:range uco-tool:LibraryType ;
 	.
 
-tool:libraryName
+uco-tool:libraryName
 	a owl:DatatypeProperty ;
 	rdfs:label "libraryName"@en ;
 	rdfs:comment "The name of the library."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:libraryVersion
+uco-tool:libraryVersion
 	a owl:DatatypeProperty ;
 	rdfs:label "libraryVersion"@en ;
 	rdfs:comment "The version of the library."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:references
+uco-tool:references
 	a owl:DatatypeProperty ;
 	rdfs:label "references"@en ;
 	rdfs:comment "References to information describing a particular tool."@en ;
 	rdfs:range xsd:anyURI ;
 	.
 
-tool:servicePack
+uco-tool:servicePack
 	a owl:DatatypeProperty ;
 	rdfs:label "servicePack"@en ;
 	rdfs:comment "An appropriate service pack descriptor for a particular tool."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:swid
+uco-tool:swid
 	a owl:DatatypeProperty ;
 	rdfs:label "swid"@en ;
 	rdfs:comment "Specifies the SWID tag for the software."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:toolType
+uco-tool:toolType
 	a owl:DatatypeProperty ;
-	rdfs:subPropertyOf core:informalType ;
+	rdfs:subPropertyOf uco-core:informalType ;
 	rdfs:label "toolType"@en ;
 	rdfs:comment "The type of tool."@en ;
 	rdfs:range xsd:string ;
 	.
 
-tool:version
+uco-tool:version
 	a owl:DatatypeProperty ;
 	rdfs:label "version"@en ;
 	rdfs:comment "An appropriate version descriptor of a particular tool."@en ;

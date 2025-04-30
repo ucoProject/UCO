@@ -2,7 +2,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -12,7 +12,7 @@
 		a sh:ValidationResult ;
 		sh:focusNode <http://example.org/kb/hash-66954988-aa9a-4f0d-8ad1-380700c830fc> ;
 		sh:resultMessage "Value is not Literal with datatype xsd:hexBinary" ;
-		sh:resultPath types:hashValue ;
+		sh:resultPath uco-types:hashValue ;
 		sh:resultSeverity sh:Violation ;
 		sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 		sh:sourceShape [
@@ -20,7 +20,7 @@
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path types:hashValue ;
+			sh:path uco-types:hashValue ;
 		] ;
 		sh:value "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
 	] ;

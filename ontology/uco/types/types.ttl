@@ -3,93 +3,93 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.3.0
 
 @prefix co: <http://purl.org/co/> .
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
-@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix uco-vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
-	owl:backwardCompatibleWith types:1.2.0 ;
+	owl:backwardCompatibleWith uco-types:1.2.0 ;
 	owl:imports
 		uco-co:1.3.0 ,
-		core:1.3.0 ,
-		vocabulary:1.3.0
+		uco-core:1.3.0 ,
+		uco-vocabulary:1.3.0
 		;
-	owl:priorVersion types:1.2.0 ;
-	owl:versionIRI types:1.3.0 ;
+	owl:priorVersion uco-types:1.2.0 ;
+	owl:versionIRI uco-types:1.3.0 ;
 	.
 
-types:ControlledDictionary
+uco-types:ControlledDictionary
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf types:Dictionary ;
+	rdfs:subClassOf uco-types:Dictionary ;
 	rdfs:label "ControlledDictionary"@en ;
 	rdfs:comment "A controlled dictionary is a list of (term/key, value) pairs where each term/key exists no more than once and is constrained to an explicitly defined set of values."@en ;
 	sh:property [
-		sh:class types:ControlledDictionaryEntry ;
-		sh:path types:entry ;
+		sh:class uco-types:ControlledDictionaryEntry ;
+		sh:path uco-types:entry ;
 	] ;
-	sh:targetClass types:ControlledDictionary ;
+	sh:targetClass uco-types:ControlledDictionary ;
 	.
 
-types:ControlledDictionaryEntry
+uco-types:ControlledDictionaryEntry
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf types:DictionaryEntry ;
+	rdfs:subClassOf uco-types:DictionaryEntry ;
 	rdfs:label "ControlledDictionaryEntry"@en ;
 	rdfs:comment "A controlled dictionary entry is a single (term/key, value) pair where the term/key is constrained to an explicitly defined set of values."@en ;
-	sh:targetClass types:ControlledDictionaryEntry ;
+	sh:targetClass uco-types:ControlledDictionaryEntry ;
 	.
 
-types:Dictionary
+uco-types:Dictionary
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dictionary"@en ;
-	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key having an expectation to exist no more than once.  types:Dictionary alone does not validate this expectation, but validation is available.  For use cases where this expectation must be validated, the subclass types:ProperDictionary should be used instead of types:Dictionary.  For instances where this expectation has been found to be violated, the subclass types:ImproperDictionary should be used instead of types:Dictionary."@en ;
+	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key having an expectation to exist no more than once.  uco-types:Dictionary alone does not validate this expectation, but validation is available.  For use cases where this expectation must be validated, the subclass uco-types:ProperDictionary should be used instead of uco-types:Dictionary.  For instances where this expectation has been found to be violated, the subclass uco-types:ImproperDictionary should be used instead of uco-types:Dictionary."@en ;
 	sh:property [
-		sh:class types:DictionaryEntry ;
+		sh:class uco-types:DictionaryEntry ;
 		sh:nodeKind sh:IRI ;
-		sh:path types:entry ;
+		sh:path uco-types:entry ;
 	] ;
-	sh:targetClass types:Dictionary ;
+	sh:targetClass uco-types:Dictionary ;
 	.
 
-types:Dictionary-keyUniqueness-shape
+uco-types:Dictionary-keyUniqueness-shape
 	a sh:NodeShape ;
-	sh:description "This shape is separated from the types:Dictionary class-shape in order to associate a warning-severity SPARQL-based shape."@en ;
+	sh:description "This shape is separated from the uco-types:Dictionary class-shape in order to associate a warning-severity SPARQL-based shape."@en ;
 	sh:severity sh:Warning ;
 	sh:sparql [
 		a sh:SPARQLConstraint ;
-		sh:message "A key in a dictionary should appear no more than once.  The value literal does.  Please consider using the types:ImproperDictionary class and types:repeatsKey property."@en ;
+		sh:message "A key in a dictionary should appear no more than once.  The value literal does.  Please consider using the uco-types:ImproperDictionary class and uco-types:repeatsKey property."@en ;
 		sh:select """
-			PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+			PREFIX uco-types: <https://ontology.unifiedcyberontology.org/uco/types/>
 			SELECT $this ?value
 			WHERE {
 				$this
-					types:entry/types:key ?value ;
+					uco-types:entry/uco-types:key ?value ;
 					.
 				FILTER NOT EXISTS {
 					$this
-						a types:ImproperDictionary ;
+						a uco-types:ImproperDictionary ;
 						.
 				}
 				FILTER NOT EXISTS {
 					$this
-						a types:ProperDictionary ;
+						a uco-types:ProperDictionary ;
 						.
 				}
 			}
@@ -97,15 +97,15 @@ types:Dictionary-keyUniqueness-shape
 			HAVING (COUNT(?value) > 1)
 			""" ;
 	] ;
-	sh:targetClass types:Dictionary ;
+	sh:targetClass uco-types:Dictionary ;
 	.
 
-types:DictionaryEntry
+uco-types:DictionaryEntry
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "DictionaryEntry"@en ;
 	rdfs:comment "A dictionary entry is a single (term/key, value) pair."@en ;
 	sh:property
@@ -114,53 +114,53 @@ types:DictionaryEntry
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path types:key ;
+			sh:path uco-types:key ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path types:value ;
+			sh:path uco-types:value ;
 		]
 		;
-	sh:targetClass types:DictionaryEntry ;
+	sh:targetClass uco-types:DictionaryEntry ;
 	.
 
-types:Hash
+uco-types:Hash
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
 	sh:property
-		types:Hash-hashMethod-in-shape ,
+		uco-types:Hash-hashMethod-in-shape ,
 		[
 			sh:datatype xsd:hexBinary ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path types:hashValue ;
+			sh:path uco-types:hashValue ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path types:hashMethod ;
+			sh:message "As of UCO 1.4.0, the datatype to use for uco-types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path uco-types:hashMethod ;
 			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path types:hashMethod ;
+			sh:path uco-types:hashMethod ;
 		]
 		;
-	sh:targetClass types:Hash ;
+	sh:targetClass uco-types:Hash ;
 	.
 
-types:Hash-hashMethod-in-shape
+uco-types:Hash-hashMethod-in-shape
 	a sh:PropertyShape ;
 	sh:in (
 		"MD5"
@@ -177,213 +177,213 @@ types:Hash-hashMethod-in-shape
 		"SSDEEP"
 	) ;
 	sh:message "Value is not member of the vocabulary HashNameVocab." ;
-	sh:path types:hashMethod ;
+	sh:path uco-types:hashMethod ;
 	sh:severity sh:Info ;
 	.
 
-types:Identifier
+uco-types:Identifier
 	a rdfs:Datatype ;
 	rdfs:comment "An identifier is a string conformant to the specified UUID-based format for UCO object identifiers."@en ;
 	.
 
-types:ImproperDictionary
+uco-types:ImproperDictionary
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf types:Dictionary ;
+	rdfs:subClassOf uco-types:Dictionary ;
 	rdfs:label "ImproperDictionary"@en ;
-	owl:disjointWith types:ProperDictionary ;
+	owl:disjointWith uco-types:ProperDictionary ;
 	sh:property [
 		sh:datatype xsd:string ;
 		sh:nodeKind sh:Literal ;
-		sh:path types:repeatsKey ;
+		sh:path uco-types:repeatsKey ;
 	] ;
-	sh:targetClass types:ImproperDictionary ;
+	sh:targetClass uco-types:ImproperDictionary ;
 	.
 
-types:ImproperDictionary-disjointWith-ProperDictionary-shape
+uco-types:ImproperDictionary-disjointWith-ProperDictionary-shape
 	a sh:NodeShape ;
-	sh:message "types:ImproperDictionary and types:ProperDictionary are disjoint classes."@en ;
+	sh:message "uco-types:ImproperDictionary and uco-types:ProperDictionary are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
-		sh:class types:ProperDictionary ;
+		sh:class uco-types:ProperDictionary ;
 	] ;
-	sh:targetClass types:ImproperDictionary ;
+	sh:targetClass uco-types:ImproperDictionary ;
 	.
 
-types:NativeFormatString
+uco-types:NativeFormatString
 	a rdfs:Datatype ;
 	rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en ;
 	.
 
-types:ProperDictionary
+uco-types:ProperDictionary
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf types:Dictionary ;
+	rdfs:subClassOf uco-types:Dictionary ;
 	rdfs:label "ProperDictionary"@en ;
 	rdfs:comment "A proper dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
-	owl:disjointWith types:ImproperDictionary ;
+	owl:disjointWith uco-types:ImproperDictionary ;
 	sh:sparql [
 		a sh:SPARQLConstraint ;
 		sh:message "A key in a proper dictionary can appear no more than once."@en ;
 		sh:select """
-			PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+			PREFIX uco-types: <https://ontology.unifiedcyberontology.org/uco/types/>
 			SELECT $this ?value
 			WHERE {
 				$this
-					types:entry/types:key ?value ;
+					uco-types:entry/uco-types:key ?value ;
 					.
 			}
 			GROUP BY ?value
 			HAVING (COUNT(?value) > 1)
 		""" ;
 	] ;
-	sh:targetClass types:ProperDictionary ;
+	sh:targetClass uco-types:ProperDictionary ;
 	.
 
-types:StructuredText
+uco-types:StructuredText
 	a rdfs:Datatype ;
 	rdfs:comment "Expresses string-based data in some information structuring format (e.g., HTML5)."@en ;
 	.
 
-types:Thread
+uco-types:Thread
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf
 		co:Bag ,
-		core:UcoThing
+		uco-core:UcoThing
 		;
 	rdfs:label "Thread"@en ;
 	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
 	owl:disjointWith co:List ;
 	sh:property [
-		sh:class types:ThreadItem ;
+		sh:class uco-types:ThreadItem ;
 		sh:path co:item ;
 	] ;
 	.
 
-types:Thread-disjointWith-co-List-shape
+uco-types:Thread-disjointWith-co-List-shape
 	a sh:NodeShape ;
-	sh:message "types:Thread and co:List are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:message "uco-types:Thread and co:List are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class co:List ;
 	] ;
 	sh:severity sh:Warning ;
-	sh:targetClass types:Thread ;
+	sh:targetClass uco-types:Thread ;
 	.
 
-types:ThreadItem
+uco-types:ThreadItem
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf
 		co:Item ,
-		core:UcoThing
+		uco-core:UcoThing
 		;
 	rdfs:label "ThreadItem"@en ;
 	rdfs:comment "A ThreadItem is a member of a thread."@en ;
 	owl:disjointWith co:ListItem ;
 	sh:property [
-		sh:class core:UcoObject ;
+		sh:class uco-core:UcoObject ;
 		sh:path co:itemContent ;
 	] ;
 	.
 
-types:ThreadItem-disjointWith-co-ListItem-shape
+uco-types:ThreadItem-disjointWith-co-ListItem-shape
 	a sh:NodeShape ;
-	sh:message "types:ThreadItem and co:ListItem are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:message "uco-types:ThreadItem and co:ListItem are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class co:ListItem ;
 	] ;
 	sh:severity sh:Warning ;
-	sh:targetClass types:ThreadItem ;
+	sh:targetClass uco-types:ThreadItem ;
 	.
 
-types:entry
+uco-types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
 	rdfs:comment "A dictionary entry."@en ;
-	rdfs:range types:DictionaryEntry ;
+	rdfs:range uco-types:DictionaryEntry ;
 	.
 
-types:hashMethod
+uco-types:hashMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "hashMethod"@en ;
 	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
 	rdfs:range [
 		a rdfs:Datatype ;
 		owl:unionOf (
-			vocabulary:HashNameVocab
+			uco-vocabulary:HashNameVocab
 			xsd:string
 		) ;
 	] ;
 	.
 
-types:hashValue
+uco-types:hashValue
 	a owl:DatatypeProperty ;
 	rdfs:label "hashValue"@en ;
 	rdfs:comment "A cryptographic hash value."@en ;
 	rdfs:range xsd:hexBinary ;
 	.
 
-types:key
+uco-types:key
 	a owl:DatatypeProperty ;
 	rdfs:label "key"@en ;
 	rdfs:comment "A key property of a single dictionary entry."@en ;
 	rdfs:range xsd:string ;
 	.
 
-types:repeatsKey
+uco-types:repeatsKey
 	a owl:DatatypeProperty ;
 	rdfs:label "repeatsKey"@en ;
 	rdfs:comment "A key found to be repeated in multiple dictionary entries within one dictionary."@en ;
-	rdfs:domain types:ImproperDictionary ;
+	rdfs:domain uco-types:ImproperDictionary ;
 	rdfs:range xsd:string ;
 	.
 
-types:repeatsKey-subjects-shape
+uco-types:repeatsKey-subjects-shape
 	a sh:NodeShape ;
-	sh:class types:ImproperDictionary ;
-	sh:targetSubjectsOf types:repeatsKey ;
+	sh:class uco-types:ImproperDictionary ;
+	sh:targetSubjectsOf uco-types:repeatsKey ;
 	.
 
-types:threadNextItem
+uco-types:threadNextItem
 	a owl:ObjectProperty ;
-	rdfs:subPropertyOf types:threadSuccessor ;
+	rdfs:subPropertyOf uco-types:threadSuccessor ;
 	rdfs:label "threadNextItem"@en ;
 	rdfs:comment "The link to a next item in a thread."@en ;
 	rdfs:seeAlso co:nextItem ;
 	.
 
-types:threadNextItem-subjects-shape
+uco-types:threadNextItem-subjects-shape
 	a sh:PropertyShape ;
-	sh:class types:ThreadItem ;
+	sh:class uco-types:ThreadItem ;
 	sh:nodeKind sh:IRI ;
-	sh:path types:threadNextItem ;
-	sh:targetSubjectsOf types:threadNextItem ;
+	sh:path uco-types:threadNextItem ;
+	sh:targetSubjectsOf uco-types:threadNextItem ;
 	.
 
-types:threadOriginItem
+uco-types:threadOriginItem
 	a owl:ObjectProperty ;
 	rdfs:subPropertyOf co:item ;
 	rdfs:label "threadOriginItem"@en ;
 	rdfs:comment "A link to an item of the thread known to have no predecessor."@en ;
-	rdfs:domain types:Thread ;
+	rdfs:domain uco-types:Thread ;
 	rdfs:range [
 		a owl:Class ;
 		owl:intersectionOf (
-			types:ThreadItem
+			uco-types:ThreadItem
 			[
 				a owl:Restriction ;
-				owl:onProperty types:threadPreviousItem ;
+				owl:onProperty uco-types:threadPreviousItem ;
 				owl:cardinality "0"^^xsd:nonNegativeInteger ;
 			]
 		) ;
@@ -391,109 +391,109 @@ types:threadOriginItem
 	rdfs:seeAlso co:firstItem ;
 	.
 
-types:threadOriginItem-subjects-shape
+uco-types:threadOriginItem-subjects-shape
 	a sh:PropertyShape ;
-	sh:class types:ThreadItem ;
+	sh:class uco-types:ThreadItem ;
 	sh:nodeKind sh:IRI ;
-	sh:path types:threadOriginItem ;
-	sh:targetSubjectsOf types:threadOriginItem ;
+	sh:path uco-types:threadOriginItem ;
+	sh:targetSubjectsOf uco-types:threadOriginItem ;
 	.
 
-types:threadOriginItem-subjects-threadPredecessor-shape
+uco-types:threadOriginItem-subjects-threadPredecessor-shape
 	a sh:PropertyShape ;
 	sh:description "An origin item in a thread must not have a predecessor."@en ;
 	sh:maxCount "0"^^xsd:integer ;
 	sh:nodeKind sh:IRI ;
 	sh:path (
-		types:threadOriginItem
-		types:threadPredecessor
+		uco-types:threadOriginItem
+		uco-types:threadPredecessor
 	) ;
-	sh:targetSubjectsOf types:threadOriginItem ;
+	sh:targetSubjectsOf uco-types:threadOriginItem ;
 	.
 
-types:threadOriginItem-subjects-threadPreviousItem-shape
+uco-types:threadOriginItem-subjects-threadPreviousItem-shape
 	a sh:PropertyShape ;
 	sh:description "An origin item in a thread must not have a previous item."@en ;
 	sh:maxCount "0"^^xsd:integer ;
 	sh:nodeKind sh:IRI ;
 	sh:path (
-		types:threadOriginItem
-		types:threadPreviousItem
+		uco-types:threadOriginItem
+		uco-types:threadPreviousItem
 	) ;
-	sh:targetSubjectsOf types:threadOriginItem ;
+	sh:targetSubjectsOf uco-types:threadOriginItem ;
 	.
 
-types:threadPredecessor
+uco-types:threadPredecessor
 	a
 		owl:ObjectProperty ,
 		owl:TransitiveProperty
 		;
 	rdfs:label "threadPredecessor"@en ;
 	rdfs:comment "The link to the preceding item in a thread."@en ;
-	rdfs:domain types:ThreadItem ;
-	rdfs:range types:ThreadItem ;
+	rdfs:domain uco-types:ThreadItem ;
+	rdfs:range uco-types:ThreadItem ;
 	rdfs:seeAlso co:precededBy ;
-	owl:inverseOf types:threadSuccessor ;
+	owl:inverseOf uco-types:threadSuccessor ;
 	.
 
-types:threadPredecessor-subjects-shape
+uco-types:threadPredecessor-subjects-shape
 	a sh:PropertyShape ;
-	sh:class types:ThreadItem ;
+	sh:class uco-types:ThreadItem ;
 	sh:nodeKind sh:IRI ;
-	sh:path types:threadPredecessor ;
-	sh:targetSubjectsOf types:threadPredecessor ;
+	sh:path uco-types:threadPredecessor ;
+	sh:targetSubjectsOf uco-types:threadPredecessor ;
 	.
 
-types:threadPreviousItem
+uco-types:threadPreviousItem
 	a owl:ObjectProperty ;
-	rdfs:subPropertyOf types:threadPredecessor ;
+	rdfs:subPropertyOf uco-types:threadPredecessor ;
 	rdfs:label "threadPreviousItem"@en ;
 	rdfs:comment "A direct link to a previous item in a thread."@en ;
 	rdfs:seeAlso co:previousItem ;
-	owl:inverseOf types:threadNextItem ;
+	owl:inverseOf uco-types:threadNextItem ;
 	.
 
-types:threadPreviousItem-subjects-shape
+uco-types:threadPreviousItem-subjects-shape
 	a sh:PropertyShape ;
-	sh:class types:ThreadItem ;
+	sh:class uco-types:ThreadItem ;
 	sh:nodeKind sh:IRI ;
-	sh:path types:threadPreviousItem ;
-	sh:targetSubjectsOf types:threadPreviousItem ;
+	sh:path uco-types:threadPreviousItem ;
+	sh:targetSubjectsOf uco-types:threadPreviousItem ;
 	.
 
-types:threadSuccessor
+uco-types:threadSuccessor
 	a
 		owl:ObjectProperty ,
 		owl:TransitiveProperty
 		;
 	rdfs:label "threadSuccessor"@en ;
 	rdfs:comment "A link to a following item in a thread."@en ;
-	rdfs:domain types:ThreadItem ;
-	rdfs:range types:ThreadItem ;
+	rdfs:domain uco-types:ThreadItem ;
+	rdfs:range uco-types:ThreadItem ;
 	rdfs:seeAlso co:followedBy ;
 	.
 
-types:threadSuccessor-subjects-shape
+uco-types:threadSuccessor-subjects-shape
 	a sh:PropertyShape ;
-	sh:class types:ThreadItem ;
+	sh:class uco-types:ThreadItem ;
 	sh:nodeKind sh:IRI ;
-	sh:path types:threadSuccessor ;
-	sh:targetSubjectsOf types:threadSuccessor ;
+	sh:path uco-types:threadSuccessor ;
+	sh:targetSubjectsOf uco-types:threadSuccessor ;
 	.
 
-types:threadTerminalItem
+uco-types:threadTerminalItem
 	a owl:ObjectProperty ;
 	rdfs:subPropertyOf co:item ;
 	rdfs:label "threadTerminalItem"@en ;
 	rdfs:comment "A link to an item of the thread known to have no successor."@en ;
-	rdfs:domain types:Thread ;
+	rdfs:domain uco-types:Thread ;
 	rdfs:range [
 		a owl:Class ;
 		owl:intersectionOf (
-			types:ThreadItem
+			uco-types:ThreadItem
 			[
 				a owl:Restriction ;
-				owl:onProperty types:threadNextItem ;
+				owl:onProperty uco-types:threadNextItem ;
 				owl:cardinality "0"^^xsd:nonNegativeInteger ;
 			]
 		) ;
@@ -501,39 +501,39 @@ types:threadTerminalItem
 	rdfs:seeAlso co:lastItem ;
 	.
 
-types:threadTerminalItem-subjects-shape
+uco-types:threadTerminalItem-subjects-shape
 	a sh:PropertyShape ;
-	sh:class types:ThreadItem ;
+	sh:class uco-types:ThreadItem ;
 	sh:nodeKind sh:IRI ;
-	sh:path types:threadTerminalItem ;
-	sh:targetSubjectsOf types:threadTerminalItem ;
+	sh:path uco-types:threadTerminalItem ;
+	sh:targetSubjectsOf uco-types:threadTerminalItem ;
 	.
 
-types:threadTerminalItem-subjects-threadNextItem-shape
+uco-types:threadTerminalItem-subjects-threadNextItem-shape
 	a sh:PropertyShape ;
 	sh:description "A terminal item in a thread must not have a next item."@en ;
 	sh:maxCount "0"^^xsd:integer ;
 	sh:nodeKind sh:IRI ;
 	sh:path (
-		types:threadTerminalItem
-		types:threadNextItem
+		uco-types:threadTerminalItem
+		uco-types:threadNextItem
 	) ;
-	sh:targetSubjectsOf types:threadTerminalItem ;
+	sh:targetSubjectsOf uco-types:threadTerminalItem ;
 	.
 
-types:threadTerminalItem-subjects-threadSuccessor-shape
+uco-types:threadTerminalItem-subjects-threadSuccessor-shape
 	a sh:PropertyShape ;
 	sh:description "A terminal item in a thread must not have a successor."@en ;
 	sh:maxCount "0"^^xsd:integer ;
 	sh:nodeKind sh:IRI ;
 	sh:path (
-		types:threadTerminalItem
-		types:threadSuccessor
+		uco-types:threadTerminalItem
+		uco-types:threadSuccessor
 	) ;
-	sh:targetSubjectsOf types:threadTerminalItem ;
+	sh:targetSubjectsOf uco-types:threadTerminalItem ;
 	.
 
-types:value
+uco-types:value
 	a owl:DatatypeProperty ;
 	rdfs:label "value"@en ;
 	rdfs:comment "A specific property value."@en ;

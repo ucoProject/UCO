@@ -1,18 +1,18 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
+@prefix uco-vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "uco-vocabularies"@en ;
-	owl:backwardCompatibleWith vocabulary:1.2.0 ;
-	owl:priorVersion vocabulary:1.2.0 ;
-	owl:versionIRI vocabulary:1.3.0 ;
+	owl:backwardCompatibleWith uco-vocabulary:1.2.0 ;
+	owl:priorVersion uco-vocabulary:1.2.0 ;
+	owl:versionIRI uco-vocabulary:1.3.0 ;
 	.
 
-vocabulary:AccountTypeVocab
+uco-vocabulary:AccountTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Account Type Vocabulary"@en-US ;
 	owl:equivalentClass [
@@ -30,7 +30,7 @@ vocabulary:AccountTypeVocab
 	] ;
 	.
 
-vocabulary:ActionArgumentNameVocab
+uco-vocabulary:ActionArgumentNameVocab
 	a rdfs:Datatype ;
 	rdfs:label "Action Argument Name Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary for common arguments of cyber actions."@en ;
@@ -92,7 +92,7 @@ vocabulary:ActionArgumentNameVocab
 	] ;
 	.
 
-vocabulary:ActionNameVocab
+uco-vocabulary:ActionNameVocab
 	a rdfs:Datatype ;
 	rdfs:label "Action Name Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of common specific cyber action names."@en ;
@@ -284,7 +284,7 @@ vocabulary:ActionNameVocab
 	] ;
 	.
 
-vocabulary:ActionRelationshipTypeVocab
+uco-vocabulary:ActionRelationshipTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Action Relationship Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary for capturing types of relationships between actions."@en-US ;
@@ -302,7 +302,7 @@ vocabulary:ActionRelationshipTypeVocab
 	] ;
 	.
 
-vocabulary:ActionStatusTypeVocab
+uco-vocabulary:ActionStatusTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Action Status Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of action status types."@en-US ;
@@ -320,7 +320,7 @@ vocabulary:ActionStatusTypeVocab
 	] ;
 	.
 
-vocabulary:ActionTypeVocab
+uco-vocabulary:ActionTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Action Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of common general action types."@en ;
@@ -442,7 +442,7 @@ vocabulary:ActionTypeVocab
 	] ;
 	.
 
-vocabulary:BitnessVocab
+uco-vocabulary:BitnessVocab
 	a rdfs:Datatype ;
 	rdfs:label "Bitness Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of word sizes that define classes of operating systems."@en ;
@@ -455,7 +455,7 @@ vocabulary:BitnessVocab
 	] ;
 	.
 
-vocabulary:CharacterEncodingVocab
+uco-vocabulary:CharacterEncodingVocab
 	a rdfs:Datatype ;
 	rdfs:label "Character Encoding Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of character encodings."@en ;
@@ -479,7 +479,7 @@ vocabulary:CharacterEncodingVocab
 	] ;
 	.
 
-vocabulary:ContactAddressScopeVocab
+uco-vocabulary:ContactAddressScopeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Contact Address Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for address entries of digital contacts."@en ;
@@ -493,7 +493,7 @@ vocabulary:ContactAddressScopeVocab
 	] ;
 	.
 
-vocabulary:ContactEmailScopeVocab
+uco-vocabulary:ContactEmailScopeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Contact Email Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for email entries of digital contacts."@en ;
@@ -508,7 +508,7 @@ vocabulary:ContactEmailScopeVocab
 	] ;
 	.
 
-vocabulary:ContactPhoneScopeVocab
+uco-vocabulary:ContactPhoneScopeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Contact Phone Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for phone entries of digital contacts."@en ;
@@ -527,7 +527,7 @@ vocabulary:ContactPhoneScopeVocab
 	] ;
 	.
 
-vocabulary:ContactSIPScopeVocab
+uco-vocabulary:ContactSIPScopeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Contact SIP Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for Session Initiation Protocol (SIP) entries of digital contacts."@en ;
@@ -541,7 +541,7 @@ vocabulary:ContactSIPScopeVocab
 	] ;
 	.
 
-vocabulary:ContactURLScopeVocab
+uco-vocabulary:ContactURLScopeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Contact URL Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for URL entries of digital contacts."@en ;
@@ -556,7 +556,7 @@ vocabulary:ContactURLScopeVocab
 	] ;
 	.
 
-vocabulary:DiskTypeVocab
+uco-vocabulary:DiskTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Disk Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of disk types."@en ;
@@ -572,7 +572,7 @@ vocabulary:DiskTypeVocab
 	] ;
 	.
 
-vocabulary:EndiannessTypeVocab
+uco-vocabulary:EndiannessTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Endianness Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of byte ordering methods."@en ;
@@ -586,7 +586,7 @@ vocabulary:EndiannessTypeVocab
 	] ;
 	.
 
-vocabulary:HashNameVocab
+uco-vocabulary:HashNameVocab
 	a rdfs:Datatype ;
 	rdfs:label "Hash Name Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
@@ -609,7 +609,7 @@ vocabulary:HashNameVocab
 	] ;
 	.
 
-vocabulary:LibraryTypeVocab
+uco-vocabulary:LibraryTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Library Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of library types."@en ;
@@ -625,7 +625,7 @@ vocabulary:LibraryTypeVocab
 	] ;
 	.
 
-vocabulary:MemoryBlockTypeVocab
+uco-vocabulary:MemoryBlockTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Memory Block Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of memory blocks."@en ;
@@ -641,7 +641,7 @@ vocabulary:MemoryBlockTypeVocab
 	] ;
 	.
 
-vocabulary:ObservableObjectRelationshipVocab
+uco-vocabulary:ObservableObjectRelationshipVocab
 	a rdfs:Datatype ;
 	rdfs:label "Cyber Item Relationship Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of inter-observable object relationships."@en ;
@@ -791,7 +791,7 @@ vocabulary:ObservableObjectRelationshipVocab
 	] ;
 	.
 
-vocabulary:ObservableObjectStateVocab
+uco-vocabulary:ObservableObjectStateVocab
 	a rdfs:Datatype ;
 	rdfs:label "Cyber Item State Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of observable object states."@en ;
@@ -812,7 +812,7 @@ vocabulary:ObservableObjectStateVocab
 	] ;
 	.
 
-vocabulary:PartitionTypeVocab
+uco-vocabulary:PartitionTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Partition Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of partition types. See http://www.win.tue.nl/~aeb/partitions/partition_types-1.html for more information about the various partition types."@en ;
@@ -842,7 +842,7 @@ vocabulary:PartitionTypeVocab
 	] ;
 	.
 
-vocabulary:ProcessorArchVocab
+uco-vocabulary:ProcessorArchVocab
 	a rdfs:Datatype ;
 	rdfs:label "Processor Architecture Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of computer processor architectures."@en ;
@@ -865,7 +865,7 @@ vocabulary:ProcessorArchVocab
 	] ;
 	.
 
-vocabulary:RecoveredObjectStatusVocab
+uco-vocabulary:RecoveredObjectStatusVocab
 	a rdfs:Datatype ;
 	rdfs:label "Recovered Object Status Vocabulary"@en-US ;
 	rdfs:comment "Defines the vocabulary for Recovered Object status of data."@en ;
@@ -880,7 +880,7 @@ vocabulary:RecoveredObjectStatusVocab
 	] ;
 	.
 
-vocabulary:RegionalRegistryTypeVocab
+uco-vocabulary:RegionalRegistryTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Regional Registry Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of Regional Internet Registries (RIRs) names, represented via their respective acronyms."@en ;
@@ -896,7 +896,7 @@ vocabulary:RegionalRegistryTypeVocab
 	] ;
 	.
 
-vocabulary:RegistryDatatypeVocab
+uco-vocabulary:RegistryDatatypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Registry Datatype Vocabulary"@en-US ;
 	owl:equivalentClass [
@@ -919,7 +919,7 @@ vocabulary:RegistryDatatypeVocab
 	] ;
 	.
 
-vocabulary:SIMFormVocab
+uco-vocabulary:SIMFormVocab
 	a rdfs:Datatype ;
 	rdfs:label "SIM Form Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of common SIM card form factors."@en ;
@@ -933,7 +933,7 @@ vocabulary:SIMFormVocab
 	] ;
 	.
 
-vocabulary:SIMTypeVocab
+uco-vocabulary:SIMTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "SIM Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of common SIM card types."@en ;
@@ -947,7 +947,7 @@ vocabulary:SIMTypeVocab
 	] ;
 	.
 
-vocabulary:TaskActionTypeVocab
+uco-vocabulary:TaskActionTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Task Action Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of task action types. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
@@ -962,7 +962,7 @@ vocabulary:TaskActionTypeVocab
 	] ;
 	.
 
-vocabulary:TaskFlagVocab
+uco-vocabulary:TaskFlagVocab
 	a rdfs:Datatype ;
 	rdfs:label "Task Flag Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the run flags for a task scheduler task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381283(v=vs.85).aspx See Also: http://msdn.microsoft.com/en-us/library/microsoft.office.excel.server.addins.computecluster.taskscheduler.taskflags(v=office.12).aspx."@en ;
@@ -986,7 +986,7 @@ vocabulary:TaskFlagVocab
 	] ;
 	.
 
-vocabulary:TaskPriorityVocab
+uco-vocabulary:TaskPriorityVocab
 	a rdfs:Datatype ;
 	rdfs:label "Task Priority Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the priority levels of task scheduler tasks. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383512(v=vs.85).aspx."@en ;
@@ -1003,7 +1003,7 @@ vocabulary:TaskPriorityVocab
 	] ;
 	.
 
-vocabulary:TaskStatusVocab
+uco-vocabulary:TaskStatusVocab
 	a rdfs:Datatype ;
 	rdfs:label "Task Status Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the possible statuses of a scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383604(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381833(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383617(v=vs.85).aspx."@en ;
@@ -1038,7 +1038,7 @@ vocabulary:TaskStatusVocab
 	] ;
 	.
 
-vocabulary:ThreadRunningStatusVocab
+uco-vocabulary:ThreadRunningStatusVocab
 	a rdfs:Datatype ;
 	rdfs:label "Thread Running Status Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the various states that a thread may be in before, during, or after execution. See http://msdn.microsoft.com/en-us/library/system.diagnostics.threadstate(v=vs.110).aspx."@en ;
@@ -1057,7 +1057,7 @@ vocabulary:ThreadRunningStatusVocab
 	] ;
 	.
 
-vocabulary:TimestampPrecisionVocab
+uco-vocabulary:TimestampPrecisionVocab
 	a rdfs:Datatype ;
 	rdfs:label "Timestamp Precision Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of timestamp precision granularities."@en-US ;
@@ -1074,7 +1074,7 @@ vocabulary:TimestampPrecisionVocab
 	] ;
 	.
 
-vocabulary:TrendVocab
+uco-vocabulary:TrendVocab
 	a rdfs:Datatype ;
 	rdfs:label "Trend Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of trend values."@en-US ;
@@ -1087,7 +1087,7 @@ vocabulary:TrendVocab
 	] ;
 	.
 
-vocabulary:TriggerFrequencyVocab
+uco-vocabulary:TriggerFrequencyVocab
 	a rdfs:Datatype ;
 	rdfs:label "Trigger Frequency Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the frequency types that a trigger may use. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383620(v=vs.85).aspx and http://msdn.microsoft.com/en-us/library/windows/desktop/aa383987(v=vs.85).aspx."@en ;
@@ -1106,7 +1106,7 @@ vocabulary:TriggerFrequencyVocab
 	] ;
 	.
 
-vocabulary:TriggerTypeVocab
+uco-vocabulary:TriggerTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Trigger Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the types of triggers associated with a task."@en ;
@@ -1124,7 +1124,7 @@ vocabulary:TriggerTypeVocab
 	] ;
 	.
 
-vocabulary:URLTransitionTypeVocab
+uco-vocabulary:URLTransitionTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "URL Transition Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of URL transitions."@en ;
@@ -1146,7 +1146,7 @@ vocabulary:URLTransitionTypeVocab
 	] ;
 	.
 
-vocabulary:UnixProcessStateVocab
+uco-vocabulary:UnixProcessStateVocab
 	a rdfs:Datatype ;
 	rdfs:label "UNIX Process State Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of Unix process states"@en ;
@@ -1164,7 +1164,7 @@ vocabulary:UnixProcessStateVocab
 	] ;
 	.
 
-vocabulary:WhoisContactTypeVocab
+uco-vocabulary:WhoisContactTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Whois Contact Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of registrar contacts listed in a whois entry."@en ;
@@ -1178,7 +1178,7 @@ vocabulary:WhoisContactTypeVocab
 	] ;
 	.
 
-vocabulary:WhoisDNSSECTypeVocab
+uco-vocabulary:WhoisDNSSECTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Whois DNSSEC Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of acceptable values for the DNSSEC field in a Whois entry."@en ;
@@ -1191,7 +1191,7 @@ vocabulary:WhoisDNSSECTypeVocab
 	] ;
 	.
 
-vocabulary:WhoisStatusTypeVocab
+uco-vocabulary:WhoisStatusTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Whois Status Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of all valid statuses for a domain within a whois entry."@en ;
@@ -1221,7 +1221,7 @@ vocabulary:WhoisStatusTypeVocab
 	] ;
 	.
 
-vocabulary:WindowsDriveTypeVocab
+uco-vocabulary:WindowsDriveTypeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Windows Drive Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of possible drive types, as enumerated by the WINAPI GetDriveType function: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364939(v=vs.85).aspx."@en ;
@@ -1239,7 +1239,7 @@ vocabulary:WindowsDriveTypeVocab
 	] ;
 	.
 
-vocabulary:WindowsVolumeAttributeVocab
+uco-vocabulary:WindowsVolumeAttributeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Windows Volume Attribute Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of attributes that may be returned by the diskpart attributes command: http://technet.microsoft.com/en-us/library/cc766465(v=ws.10).aspx."@en ;
@@ -1254,7 +1254,7 @@ vocabulary:WindowsVolumeAttributeVocab
 	] ;
 	.
 
-vocabulary:WirelessNetworkSecurityModeVocab
+uco-vocabulary:WirelessNetworkSecurityModeVocab
 	a rdfs:Datatype ;
 	rdfs:label "Wireless Network Security Mode Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of security modes that may be configured for wireless network connections."@en ;

@@ -1,8 +1,8 @@
 {
     "@context": {
         "co": "http://purl.org/co/",
-        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -176,15 +176,15 @@
         },
         {
             "@id": "kb:uco-object-eff7e490-8488-40f7-a3ed-469cf9628c7d",
-            "@type": "core:UcoObject"
+            "@type": "uco-core:UcoObject"
         },
         {
             "@id": "kb:uco-object-f6df0854-bc98-4bf8-b658-cba328fc3a09",
-            "@type": "core:UcoObject"
+            "@type": "uco-core:UcoObject"
         },
         {
             "@id": "kb:uco-object-fcfc829a-276f-4f0f-82b7-085ba1f668dc",
-            "@type": "core:UcoObject"
+            "@type": "uco-core:UcoObject"
         }
     ]
 }

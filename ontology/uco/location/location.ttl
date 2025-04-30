@@ -1,28 +1,28 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
 
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
-@prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/location>
 	a owl:Ontology ;
 	rdfs:label "uco-location"@en ;
-	owl:backwardCompatibleWith location:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion location:1.2.0 ;
-	owl:versionIRI location:1.3.0 ;
+	owl:backwardCompatibleWith uco-location:1.2.0 ;
+	owl:imports uco-core:1.3.0 ;
+	owl:priorVersion uco-location:1.2.0 ;
+	owl:versionIRI uco-location:1.3.0 ;
 	.
 
-location:GPSCoordinatesFacet
+uco-location:GPSCoordinatesFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Facet ;
+	rdfs:subClassOf uco-core:Facet ;
 	rdfs:label "GPSCoordinatesFacet"@en ;
 	rdfs:comment "A GPS coordinates facet is a grouping of characteristics unique to the expression of quantified dilution of precision (DOP) for an asserted set of geolocation coordinates typically associated with satellite navigation such as the Global Positioning System (GPS)."@en ;
 	sh:property
@@ -30,36 +30,36 @@ location:GPSCoordinatesFacet
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:hdop ;
+			sh:path uco-location:hdop ;
 		] ,
 		[
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:pdop ;
+			sh:path uco-location:pdop ;
 		] ,
 		[
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:tdop ;
+			sh:path uco-location:tdop ;
 		] ,
 		[
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:vdop ;
+			sh:path uco-location:vdop ;
 		]
 		;
-	sh:targetClass location:GPSCoordinatesFacet ;
+	sh:targetClass uco-location:GPSCoordinatesFacet ;
 	.
 
-location:LatLongCoordinatesFacet
+uco-location:LatLongCoordinatesFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Facet ;
+	rdfs:subClassOf uco-core:Facet ;
 	rdfs:label "LatLongCoordinatesFacet"@en ;
 	rdfs:comment "A lat long coordinates facet is a grouping of characteristics unique to the expression of a geolocation as the intersection of specific latitude, longitude, and altitude values."@en ;
 	sh:property
@@ -67,41 +67,41 @@ location:LatLongCoordinatesFacet
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:altitude ;
+			sh:path uco-location:altitude ;
 		] ,
 		[
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:latitude ;
+			sh:path uco-location:latitude ;
 		] ,
 		[
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:longitude ;
+			sh:path uco-location:longitude ;
 		]
 		;
-	sh:targetClass location:LatLongCoordinatesFacet ;
+	sh:targetClass uco-location:LatLongCoordinatesFacet ;
 	.
 
-location:Location
+uco-location:Location
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf uco-core:UcoObject ;
 	rdfs:label "Location"@en ;
 	rdfs:comment "A location is a geospatial place, site, or position."@en ;
-	sh:targetClass location:Location ;
+	sh:targetClass uco-location:Location ;
 	.
 
-location:SimpleAddressFacet
+uco-location:SimpleAddressFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Facet ;
+	rdfs:subClassOf uco-core:Facet ;
 	rdfs:label "SimpleAddressFacet"@en ;
 	rdfs:comment "A simple address facet is a grouping of characteristics unique to a geolocation expressed as an administrative address."@en ;
 	sh:property
@@ -109,128 +109,128 @@ location:SimpleAddressFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:addressType ;
+			sh:path uco-location:addressType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:country ;
+			sh:path uco-location:country ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:locality ;
+			sh:path uco-location:locality ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:postalCode ;
+			sh:path uco-location:postalCode ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:region ;
+			sh:path uco-location:region ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path location:street ;
+			sh:path uco-location:street ;
 		]
 		;
-	sh:targetClass location:SimpleAddressFacet ;
+	sh:targetClass uco-location:SimpleAddressFacet ;
 	.
 
-location:addressType
+uco-location:addressType
 	a owl:DatatypeProperty ;
-	rdfs:subPropertyOf core:informalType ;
+	rdfs:subPropertyOf uco-core:informalType ;
 	rdfs:label "addressType"@en ;
 	rdfs:comment "The type of the address, for instance home or work."@en ;
 	rdfs:range xsd:string ;
 	.
 
-location:altitude
+uco-location:altitude
 	a owl:DatatypeProperty ;
 	rdfs:label "altitude"@en ;
 	rdfs:comment "The altitude coordinate of a geolocation."@en ;
 	rdfs:range xsd:decimal ;
 	.
 
-location:country
+uco-location:country
 	a owl:DatatypeProperty ;
 	rdfs:label "country"@en ;
 	rdfs:comment "The name of the geolocation country."@en ;
 	rdfs:range xsd:string ;
 	.
 
-location:hdop
+uco-location:hdop
 	a owl:DatatypeProperty ;
 	rdfs:label "hdop"@en ;
 	rdfs:comment "The horizontal dilution of precision of the GPS location."@en ;
 	rdfs:range xsd:decimal ;
 	.
 
-location:latitude
+uco-location:latitude
 	a owl:DatatypeProperty ;
 	rdfs:label "latitude"@en ;
 	rdfs:comment "The latitude coordinate of a geolocation."@en ;
 	rdfs:range xsd:decimal ;
 	.
 
-location:locality
+uco-location:locality
 	a owl:DatatypeProperty ;
 	rdfs:label "locality"@en ;
 	rdfs:comment "The name of the geolocation locality (e.g., city)."@en ;
 	rdfs:range xsd:string ;
 	.
 
-location:longitude
+uco-location:longitude
 	a owl:DatatypeProperty ;
 	rdfs:label "longitude"@en ;
 	rdfs:comment "The longitude coordinate of a geolocation."@en ;
 	rdfs:range xsd:decimal ;
 	.
 
-location:pdop
+uco-location:pdop
 	a owl:DatatypeProperty ;
 	rdfs:label "pdop"@en ;
 	rdfs:comment "The positional (3D) dilution of precision of the GPS location."@en ;
 	rdfs:range xsd:decimal ;
 	.
 
-location:postalCode
+uco-location:postalCode
 	a owl:DatatypeProperty ;
 	rdfs:label "postalCode"@en ;
 	rdfs:comment "The zip-code."@en ;
 	rdfs:range xsd:string ;
 	.
 
-location:region
+uco-location:region
 	a owl:DatatypeProperty ;
 	rdfs:label "region"@en ;
 	rdfs:comment "The name of the geolocation region (e.g., state)."@en ;
 	rdfs:range xsd:string ;
 	.
 
-location:street
+uco-location:street
 	a owl:DatatypeProperty ;
 	rdfs:label "street"@en ;
 	rdfs:comment "The name of the street."@en ;
 	rdfs:range xsd:string ;
 	.
 
-location:tdop
+uco-location:tdop
 	a owl:DatatypeProperty ;
 	rdfs:label "tdop"@en ;
 	rdfs:comment "The temporal dilution of precision of the GPS location."@en ;
 	rdfs:range xsd:decimal ;
 	.
 
-location:vdop
+uco-location:vdop
 	a owl:DatatypeProperty ;
 	rdfs:label "vdop"@en ;
 	rdfs:comment "The vertical dilution of precision of the GPS location."@en ;
