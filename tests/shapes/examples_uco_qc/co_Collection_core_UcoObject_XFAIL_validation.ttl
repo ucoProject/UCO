@@ -11,21 +11,21 @@
 	sh:result [
 		a sh:ValidationResult ;
 		sh:focusNode <http://example.org/ontology/IPAddressRoute> ;
-		sh:resultMessage "The focus node is defined as a subclass of two classes intended to be disjoint, co:Collection and core:UcoObject.  See Issue 509 for suggested implementation alterations." ;
+		sh:resultMessage "The focus node is defined as a subclass of two classes intended to be disjoint, co:Collection and uco-core:UcoObject.  See Issue 509 for suggested implementation alterations." ;
 		sh:resultSeverity sh:Violation ;
 		sh:sourceConstraint [
 			a sh:SPARQLConstraint ;
 			rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/509> ;
-			sh:message "The focus node is defined as a subclass of two classes intended to be disjoint, co:Collection and core:UcoObject.  See Issue 509 for suggested implementation alterations."@en ;
+			sh:message "The focus node is defined as a subclass of two classes intended to be disjoint, co:Collection and uco-core:UcoObject.  See Issue 509 for suggested implementation alterations."@en ;
 			sh:select """
 			PREFIX co: <http://purl.org/co/>
-			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 			SELECT $this
 			WHERE {
 				$this
 					rdfs:subClassOf*/(owl:intersectionOf/rdf:rest*/rdf:first)?/rdfs:subClassOf* co:Collection ;
-					rdfs:subClassOf* core:UcoObject ;
+					rdfs:subClassOf* uco-core:UcoObject ;
 					.
 			}
 		""" ;
