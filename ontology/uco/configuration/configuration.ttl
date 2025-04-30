@@ -1,11 +1,11 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
 
-@prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/configuration>
@@ -13,114 +13,114 @@
 	rdfs:label "uco-configuration"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing configurations."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
-	owl:backwardCompatibleWith configuration:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion configuration:1.2.0 ;
-	owl:versionIRI configuration:1.3.0 ;
+	owl:backwardCompatibleWith uco-configuration:1.2.0 ;
+	owl:imports uco-core:1.3.0 ;
+	owl:priorVersion uco-configuration:1.2.0 ;
+	owl:versionIRI uco-configuration:1.3.0 ;
 	.
 
-configuration:Configuration
+uco-configuration:Configuration
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf uco-core:UcoObject ;
 	rdfs:label "Configuration"@en ;
 	rdfs:comment "A configuration is a grouping of characteristics unique to a set of parameters or initial settings for the use of a tool, application, software, or other cyber object."@en ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
 	sh:property
 		[
-			sh:class configuration:ConfigurationEntry ;
+			sh:class uco-configuration:ConfigurationEntry ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path configuration:configurationEntry ;
+			sh:path uco-configuration:configurationEntry ;
 		] ,
 		[
-			sh:class configuration:Dependency ;
+			sh:class uco-configuration:Dependency ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path configuration:dependencies ;
+			sh:path uco-configuration:dependencies ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
-			sh:path configuration:usageContextAssumptions ;
+			sh:path uco-configuration:usageContextAssumptions ;
 		]
 		;
-	sh:targetClass configuration:Configuration ;
+	sh:targetClass uco-configuration:Configuration ;
 	.
 
-configuration:ConfigurationEntry
+uco-configuration:ConfigurationEntry
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "ConfigurationEntry"@en ;
 	rdfs:comment "A configuration entry is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, software, or other cyber object."@en ;
 	sh:property
 		[
-			sh:class core:UcoObject ;
+			sh:class uco-core:UcoObject ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path configuration:itemObject ;
+			sh:path uco-configuration:itemObject ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path configuration:itemDescription ;
+			sh:path uco-configuration:itemDescription ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path configuration:itemName ;
+			sh:path uco-configuration:itemName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path configuration:itemType ;
+			sh:path uco-configuration:itemType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
-			sh:path configuration:itemValue ;
+			sh:path uco-configuration:itemValue ;
 		]
 		;
-	sh:targetClass configuration:ConfigurationEntry ;
+	sh:targetClass uco-configuration:ConfigurationEntry ;
 	sh:xone (
 		[
 			sh:property
 				[
 					sh:maxCount "0"^^xsd:integer ;
-					sh:path configuration:itemObject ;
+					sh:path uco-configuration:itemObject ;
 				] ,
 				[
 					sh:maxCount "0"^^xsd:integer ;
-					sh:path configuration:itemValue ;
+					sh:path uco-configuration:itemValue ;
 				]
 				;
 		]
 		[
 			sh:property [
 				sh:minCount "1"^^xsd:integer ;
-				sh:path configuration:itemObject ;
+				sh:path uco-configuration:itemObject ;
 			] ;
 		]
 		[
 			sh:property [
 				sh:minCount "1"^^xsd:integer ;
-				sh:path configuration:itemValue ;
+				sh:path uco-configuration:itemValue ;
 			] ;
 		]
 	) ;
 	.
 
-configuration:Dependency
+uco-configuration:Dependency
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dependency"@en ;
 	rdfs:comment "A dependency is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
 	sh:property
@@ -128,104 +128,104 @@ configuration:Dependency
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path configuration:dependencyDescription ;
+			sh:path uco-configuration:dependencyDescription ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path configuration:dependencyType ;
+			sh:path uco-configuration:dependencyType ;
 		]
 		;
-	sh:targetClass configuration:Dependency ;
+	sh:targetClass uco-configuration:Dependency ;
 	.
 
-configuration:configurationEntry
+uco-configuration:configurationEntry
 	a owl:ObjectProperty ;
 	rdfs:comment "A single configuration setting entry item for a tool or other software."@en ;
-	rdfs:range configuration:ConfigurationEntry ;
+	rdfs:range uco-configuration:ConfigurationEntry ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
 	.
 
-configuration:dependencies
+uco-configuration:dependencies
 	a owl:ObjectProperty ;
 	rdfs:label "dependencies"@en ;
 	rdfs:comment "The relevant configuration dependencies for a tool, application, software, or other cyber object."@en ;
-	rdfs:range configuration:Dependency ;
+	rdfs:range uco-configuration:Dependency ;
 	.
 
-configuration:dependencyDescription
+uco-configuration:dependencyDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "dependencyDescription"@en ;
 	rdfs:comment "A description of a tool or other software dependency."@en ;
 	rdfs:range xsd:string ;
 	.
 
-configuration:dependencyType
+uco-configuration:dependencyType
 	a owl:DatatypeProperty ;
-	rdfs:subPropertyOf core:informalType ;
+	rdfs:subPropertyOf uco-core:informalType ;
 	rdfs:label "dependencyType"@en ;
 	rdfs:comment "The type of a tool or other software dependency."@en ;
 	rdfs:range xsd:string ;
 	.
 
-configuration:isConfigurationOf
+uco-configuration:isConfigurationOf
 	a
 		owl:ObjectProperty ,
 		owl:IrreflexiveProperty
 		;
 	rdfs:label "isConfigurationOf"@en ;
 	rdfs:comment "The object which has been configured to run in a more specified manner than another object.  This property is expected to have a more specific range when associated with a class, such as a configured Tool having this property have a range of a Tool."@en ;
-	rdfs:range core:UcoObject ;
+	rdfs:range uco-core:UcoObject ;
 	.
 
-configuration:itemDescription
+uco-configuration:itemDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "itemDescription"@en ;
 	rdfs:comment "A description of a configuration setting entry item."@en ;
 	rdfs:range xsd:string ;
 	.
 
-configuration:itemName
+uco-configuration:itemName
 	a owl:DatatypeProperty ;
 	rdfs:label "itemName"@en ;
 	rdfs:comment "The name of a configuration setting entry item."@en ;
 	rdfs:range xsd:string ;
 	.
 
-configuration:itemObject
+uco-configuration:itemObject
 	a owl:ObjectProperty ;
 	rdfs:comment "The structured value of a configuration setting entry instance."@en ;
-	rdfs:range core:UcoObject ;
+	rdfs:range uco-core:UcoObject ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
 	.
 
-configuration:itemType
+uco-configuration:itemType
 	a owl:DatatypeProperty ;
-	rdfs:subPropertyOf core:informalType ;
+	rdfs:subPropertyOf uco-core:informalType ;
 	rdfs:label "itemType"@en ;
 	rdfs:comment "The type of a configuration setting entry item."@en ;
 	rdfs:range xsd:string ;
 	.
 
-configuration:itemValue
+uco-configuration:itemValue
 	a owl:DatatypeProperty ;
 	rdfs:label "itemValue"@en ;
 	rdfs:comment "The value of a configuration setting entry instance."@en ;
 	rdfs:range xsd:string ;
 	.
 
-configuration:usageContextAssumptions
+uco-configuration:usageContextAssumptions
 	a owl:DatatypeProperty ;
 	rdfs:label "usageContextAssumptions"@en ;
 	rdfs:comment "Description of the various relevant usage context assumptions for a tool or other software ."@en ;
 	rdfs:range xsd:string ;
 	.
 
-configuration:usesConfiguration
+uco-configuration:usesConfiguration
 	a owl:ObjectProperty ;
 	rdfs:label "usesConfiguration"@en ;
 	rdfs:comment "A configuration used by an object."@en ;
-	rdfs:range configuration:Configuration ;
+	rdfs:range uco-configuration:Configuration ;
 	.
 

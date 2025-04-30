@@ -3,39 +3,39 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix role: <https://ontology.unifiedcyberontology.org/uco/role/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix victim: <https://ontology.unifiedcyberontology.org/uco/victim/> .
+@prefix uco-role: <https://ontology.unifiedcyberontology.org/uco/role/> .
+@prefix uco-victim: <https://ontology.unifiedcyberontology.org/uco/victim/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/victim>
 	a owl:Ontology ;
 	rdfs:label "uco-victim"@en ;
-	owl:backwardCompatibleWith victim:1.2.0 ;
-	owl:imports role:1.3.0 ;
-	owl:priorVersion victim:1.2.0 ;
-	owl:versionIRI victim:1.3.0 ;
+	owl:backwardCompatibleWith uco-victim:1.2.0 ;
+	owl:imports uco-role:1.3.0 ;
+	owl:priorVersion uco-victim:1.2.0 ;
+	owl:versionIRI uco-victim:1.3.0 ;
 	.
 
-victim:Victim
+uco-victim:Victim
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf role:NeutralRole ;
+	rdfs:subClassOf uco-role:NeutralRole ;
 	rdfs:label "Victim"@en ;
 	rdfs:comment "A victim is a role played by a person or organization that is/was the target of some malicious action."@en ;
-	sh:targetClass victim:Victim ;
+	sh:targetClass uco-victim:Victim ;
 	.
 
-victim:VictimTargeting
+uco-victim:VictimTargeting
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf victim:Victim ;
+	rdfs:subClassOf uco-victim:Victim ;
 	rdfs:label "VictimTargeting"@en ;
 	rdfs:comment "A victim targeting is a grouping of characteristics unique to people or organizations that are the target of some malicious activity."@en ;
-	sh:targetClass victim:VictimTargeting ;
+	sh:targetClass uco-victim:VictimTargeting ;
 	.
 

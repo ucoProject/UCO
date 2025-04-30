@@ -1,65 +1,65 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
 
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ontology.unifiedcyberontology.org/uco/pattern>
 	a owl:Ontology ;
 	rdfs:label "uco-pattern"@en ;
-	owl:backwardCompatibleWith pattern:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion pattern:1.2.0 ;
-	owl:versionIRI pattern:1.3.0 ;
+	owl:backwardCompatibleWith uco-pattern:1.2.0 ;
+	owl:imports uco-core:1.3.0 ;
+	owl:priorVersion uco-pattern:1.2.0 ;
+	owl:versionIRI uco-pattern:1.3.0 ;
 	.
 
-pattern:LogicalPattern
+uco-pattern:LogicalPattern
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf pattern:Pattern ;
+	rdfs:subClassOf uco-pattern:Pattern ;
 	rdfs:label "LogicalPattern"@en ;
 	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
 	sh:property [
-		sh:datatype pattern:PatternExpression ;
+		sh:datatype uco-pattern:PatternExpression ;
 		sh:maxCount "1"^^xsd:integer ;
 		sh:nodeKind sh:Literal ;
-		sh:path pattern:patternExpression ;
+		sh:path uco-pattern:patternExpression ;
 	] ;
-	sh:targetClass pattern:LogicalPattern ;
+	sh:targetClass uco-pattern:LogicalPattern ;
 	.
 
-pattern:Pattern
+uco-pattern:Pattern
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf uco-core:UcoObject ;
 	rdfs:label "Pattern"@en ;
 	rdfs:comment "A pattern is a combination of properties, acts, tendencies, etc., forming a consistent or characteristic arrangement."@en ;
-	sh:targetClass pattern:Pattern ;
+	sh:targetClass uco-pattern:Pattern ;
 	.
 
-pattern:PatternExpression
+uco-pattern:PatternExpression
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
 	rdfs:label "PatternExpression"@en ;
 	rdfs:comment "A pattern expression is a grouping of characteristics unique to an explicit logical expression defining a pattern (e.g., regular expression, SQL Select expression, etc.)."@en ;
-	sh:targetClass pattern:PatternExpression ;
+	sh:targetClass uco-pattern:PatternExpression ;
 	.
 
-pattern:patternExpression
+uco-pattern:patternExpression
 	a owl:DatatypeProperty ;
 	rdfs:label "patternExpression"@en ;
 	rdfs:comment "An explicit logical pattern expression."@en ;
-	rdfs:range pattern:PatternExpression ;
+	rdfs:range uco-pattern:PatternExpression ;
 	.
 

@@ -1,39 +1,39 @@
 {
     "@context": {
         "acme": "http://example.org/ontology/acme/core/",
-        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
-        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": "kb:action-35fada9e-c807-4fa0-87b8-582473115eeb",
-            "@type": "action:Action",
-            "core:name": "Open File",
-            "action:actionStatus": "Pending"
+            "@type": "uco-action:Action",
+            "uco-core:name": "Open File",
+            "uco-action:actionStatus": "Pending"
         },
         {
             "@id": "kb:action-dcb9c6a2-f7b9-454a-b185-44d63244ac1c",
-            "@type": "action:Action",
-            "core:name": "Modify File",
-            "action:actionStatus": "Pending"
+            "@type": "uco-action:Action",
+            "uco-core:name": "Modify File",
+            "uco-action:actionStatus": "Pending"
         },
         {
             "@id": "kb:action-e1bb7bac-5655-48e3-8c62-843ffb7cc17f",
-            "@type": "action:Action",
-            "core:name": "Save File",
-            "action:actionStatus": "Pending"
+            "@type": "uco-action:Action",
+            "uco-core:name": "Save File",
+            "uco-action:actionStatus": "Pending"
         },
         {
             "@id": "kb:action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14",
-            "@type": "action:ActionLifecycle",
-            "core:name": "File Update",
-            "action:actionStatus": "Pending",
-            "action:phase": {
+            "@type": "uco-action:ActionLifecycle",
+            "uco-core:name": "File Update",
+            "uco-action:actionStatus": "Pending",
+            "uco-action:phase": {
               "@id": "kb:array-of-action-6f91380f-703f-471e-9be6-cf7499bf44f2",
-              "@type": "action:ArrayOfAction",
-              "action:action": [
+              "@type": "uco-action:ArrayOfAction",
+              "uco-action:action": [
                 "kb:action-35fada9e-c807-4fa0-87b8-582473115eeb",
                 "kb:action-dcb9c6a2-f7b9-454a-b185-44d63244ac1c",
                 "kb:action-e1bb7bac-5655-48e3-8c62-843ffb7cc17f"
