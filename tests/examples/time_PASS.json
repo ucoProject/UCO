@@ -1,0 +1,89 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-time": "https://ontology.unifiedcyberontology.org/uco/time/"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Action-077e3e66-3dd5-4dff-bdc7-1b098eb4ebab",
+            "@type": "uco-action:Action",
+            "uco-core:description": "An Action."
+        },
+        {
+            "@id": "kb:Action-0a8f65b8-9e27-4c51-a46a-6e7a1ff2183a",
+            "@type": [
+                "uco-action:Action",
+                "uco-time:IntervalicPerdurant"
+            ],
+            "uco-core:description": "An Action also designated an intervalic perdurant."
+        },
+        {
+            "@id": "kb:Action-217883bc-a585-4310-ba78-b606d0e28d50",
+            "@type": [
+                "uco-action:Action",
+                "uco-time:ProperIntervalicPerdurant"
+            ],
+            "uco-core:description": "An Action also designated a proper-intervalic perdurant."
+        },
+        {
+            "@id": "kb:Event-2d6df404-20d2-4834-9078-68905e1d9a39",
+            "@type": "uco-core:Event",
+            "uco-core:description": "An Event."
+        },
+        {
+            "@id": "kb:Event-6ec5818e-9506-4228-90ad-bdb235db0cf4",
+            "@type": [
+                "uco-core:Event",
+                "uco-time:InstantaneousPerdurant"
+            ],
+            "uco-core:description": "An Event also designated an instantaneous perdurant."
+        },
+        {
+            "@id": "kb:Event-8e3622c8-ca99-4c1b-95da-eed4916f25df",
+            "@type": [
+                "uco-core:Event",
+                "uco-time:IntervalicPerdurant"
+            ],
+            "uco-core:description": "An Event also designated an intervalic perdurant."
+        },
+        {
+            "@id": "kb:Event-a9da6121-f344-4ae4-9746-4d0165617f34",
+            "@type": [
+                "uco-core:Event",
+                "uco-time:ProperIntervalicPerdurant"
+            ],
+            "uco-core:description": "An Event also designated a proper-intervalic perdurant."
+        },
+        {
+            "@id": "kb:Perdurant-05d691fe-77ea-4739-a4db-27b215c1e61e",
+            "@type": "uco-core:Perdurant",
+            "uco-core:description": "A perdurant."
+        },
+        {
+            "@id": "kb:Perdurant-45c0e515-a89e-4059-8de0-180a14fd330d",
+            "@type": "uco-time:InstantaneousPerdurant",
+            "uco-core:description": "An instantaneous perdurant."
+        },
+        {
+            "@id": "kb:Perdurant-63df6f31-cbc9-4a91-b9fd-860837ddc4de",
+            "@type": "uco-time:IntervalicPerdurant",
+            "uco-core:description": "An intervalic perdurant."
+        },
+        {
+            "@id": "kb:Perdurant-6a8bbefc-c1f4-4c87-b5d3-a97e3f195172",
+            "@type": "uco-time:ProperIntervalicPerdurant",
+            "uco-core:description": "A proper-intervalic perdurant."
+        },
+        {
+            "@id": "kb:Event-ef6dd72b-f517-459c-95d8-11a97a3bccf6",
+            "@type": [
+                "uco-core:Event",
+                "uco-time:InstantaneousPerdurant",
+                "uco-time:IntervalicPerdurant"
+            ],
+            "uco-core:description": "An Event initially also designated an intervalic perdurant, and later found to be instantaneous."
+        }
+    ]
+}

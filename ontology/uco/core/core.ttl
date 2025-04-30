@@ -181,7 +181,7 @@ uco-core:Event
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-core:UcoObject ;
+	rdfs:subClassOf uco-core:Perdurant ;
 	rdfs:label "Event"@en ;
 	rdfs:comment "An Event is a noteworthy occurrence (something that happens or might happen)."@en ;
 	owl:disjointWith uco-action:Action ;
@@ -328,6 +328,17 @@ uco-core:ObjectStatusVocab
 			"Deprecated"
 		) ;
 	] ;
+	.
+
+uco-core:Perdurant
+	a owl:Class ;
+	rdfs:subClassOf uco-core:UcoObject ;
+	rdfs:label "Perdurant"@en ;
+	rdfs:comment "Perdurants \"are individuals composed of temporal parts,\" or the start or end of such an individual.  \"They happen in time in the sense that they extend in time accumulating temporal parts.\"  In any instant where a non-instantaneous perdurant exists, \"it is not the case that all its temporal parts are present.\"  Also known as \"Occurrents\" in some models [e.g., BFO concept 3].  [Definition quoted and adapted from Section 2 of Guizzardi et al., \"Towards Ontological Foundations for the Conceptual Modeling of Events,\" 2013; and, the BFO-2020 definition of \"occurrent\".]  Taking for example a human: the human *is not* a perdurant; but, the human's life *is* a perdurant.  Taking for example a computer process, as in the operating system object in which a piece of software is executed: The process *is not* a perdurant, because if time is frozen such as in a virtual machine snapshot, everything about the process exists; but, the process's execution taking place *is* a perdurant, as is the instant in which the process terminates."@en ;
+	rdfs:seeAlso
+		<http://purl.obolibrary.org/obo/BFO_0000003> ,
+		<https://doi.org/10.1007/978-3-642-41924-9_27>
+		;
 	.
 
 uco-core:Relationship
