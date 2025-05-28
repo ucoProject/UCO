@@ -18,7 +18,7 @@
 
 action:Action
 	a owl:Class ;
-	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
+	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/action> ;
 	.
 
 core:Annotation
