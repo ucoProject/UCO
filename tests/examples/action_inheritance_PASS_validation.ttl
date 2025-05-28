@@ -3,7 +3,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -12,16 +11,11 @@
 	sh:result [
 		a sh:ValidationResult ;
 		sh:focusNode <http://example.org/kb/action-7acb25ab-0a51-4495-9133-baa69c3be54e> ;
-		sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+		sh:resultMessage "Value is not member of the vocabulary ActionStatusTypeVocab." ;
 		sh:resultPath action:actionStatus ;
 		sh:resultSeverity sh:Info ;
-		sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-		sh:sourceShape [
-			sh:datatype vocabulary:ActionStatusTypeVocab ;
-			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:path action:actionStatus ;
-			sh:severity sh:Info ;
-		] ;
+		sh:sourceConstraintComponent sh:InConstraintComponent ;
+		sh:sourceShape action:Action-actionStatus-in-shape ;
 		sh:value "CUSTOM Started" ;
 	] ;
 	.

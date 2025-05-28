@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 
+# Portions of this file contributed by NIST are governed by the
+# following statement:
+#
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
-# of their official duties. Pursuant to title 17 Section 105 of the
-# United States Code this software is not subject to copyright
-# protection and is in the public domain. NIST assumes no
-# responsibility whatsoever for its use by other parties, and makes
-# no guarantees, expressed or implied, about its quality,
-# reliability, or any other characteristic.
+# of their official duties. Pursuant to Title 17 Section 105 of the
+# United States Code, this software is not subject to copyright
+# protection within the United States. NIST assumes no responsibility
+# whatsoever for its use by other parties, and makes no guarantees,
+# expressed or implied, about its quality, reliability, or any other
+# characteristic.
 #
 # We would appreciate acknowledgement if the software is used.
 
@@ -177,6 +180,15 @@ def test_action_result_PASS_validation() -> None:
     g = load_validation_graph("action_result_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
 
+def test_alternate_data_stream_PASS_validation() -> None:
+    confirm_validation_results(
+      "alternate_data_stream_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/AlternateDataStream-07b3c41a-080c-4916-8375-c18148763e13", str(NS_SH.Warning)),
+      }
+    )
+
 def test_configuration_setting_PASS_validation() -> None:
     g = load_validation_graph("configuration_setting_PASS_validation.ttl", True)
     assert isinstance(g, rdflib.Graph)
@@ -204,6 +216,39 @@ def test_database_records_XFAIL() -> None:
       expected_focus_node_severities={
         ("http://example.org/kb/table-field-facet-46aafb6e-0be4-4412-a938-16c4b5ae5314", str(NS_SH.Violation)),
         ("http://example.org/kb/table-field-facet-37182dba-4dbd-4b97-b49e-8038b7fbfd29", str(NS_SH.Violation)),
+      }
+    )
+
+def test_dictionary_PASS() -> None:
+    confirm_validation_results(
+      "dictionary_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Dictionary-e9adf6c1-0287-4290-95a9-c94a128d7ff6", str(NS_SH.Warning)),
+      }
+    )
+
+def test_dictionary_XFAIL() -> None:
+    confirm_validation_results(
+      "dictionary_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        ("http://example.org/kb/Dictionary-5bc55661-4808-48e6-9e02-80a153eee5d3", str(NS_SH.Violation)),
+        ("http://example.org/kb/Dictionary-e6dc9c2e-25bc-422f-8ae8-8457e29f5fde", str(NS_SH.Violation)),
+        ("http://example.org/kb/Dictionary-34ac0c49-1042-49c0-8fd6-c42a810e58da", str(NS_SH.Warning)),
+        ("http://example.org/kb/Dictionary-34ac0c49-1042-49c0-8fd6-c42a810e58da", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-8114819f-d3c8-4e29-9e31-295d771f9db2", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-b2baf8af-3d5d-4c4e-b442-49befefd147e", str(NS_SH.Violation)),
+        ("http://example.org/kb/ProperDictionary-f5ae2e6a-9b10-46f3-8441-30aada36aa1b", str(NS_SH.Violation)),
+      }
+    )
+
+def test_disjointedness_PASS() -> None:
+    confirm_validation_results(
+      "disjointedness_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/File-33a25932-3a1a-4828-a90f-d31818b495ce", str(NS_SH.Warning)),
       }
     )
 
@@ -241,19 +286,25 @@ def test_has_facet_inverse_functional_XFAIL() -> None:
     )
 
 def test_hash_PASS() -> None:
-    g = load_validation_graph("hash_PASS_validation.ttl", True)
-    assert isinstance(g, rdflib.Graph)
+    confirm_validation_results(
+      "hash_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        ("http://example.org/kb/hash-04dcd1dc-6920-4977-a898-e242870249a4", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-af4b0c85-b042-4e2d-a213-210b3d7f115c", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-b7eca8de-142d-4aa9-b546-0796a268afa4", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-b7eca8de-142d-4aa9-b546-0796a268afa4", str(NS_SH.Warning)),
+        ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Info)),
+        ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Warning)),
+      }
+    )
 
 def test_hash_XFAIL() -> None:
     confirm_validation_results(
       "hash_XFAIL_validation.ttl",
       False,
       expected_focus_node_severities={
-        ("http://example.org/kb/hash-04dcd1dc-6920-4977-a898-e242870249a4", str(NS_SH.Info)),
-        ("http://example.org/kb/hash-af4b0c85-b042-4e2d-a213-210b3d7f115c", str(NS_SH.Violation)),
-        ("http://example.org/kb/hash-e97431ea-6fb8-46d9-9c23-94be4b7cc977", str(NS_SH.Info)),
-        ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Info)),
-        ("http://example.org/kb/hash-f46c714f-559a-4325-bf8a-4ef60c92c771", str(NS_SH.Violation))
+        ("http://example.org/kb/hash-66954988-aa9a-4f0d-8ad1-380700c830fc", str(NS_SH.Violation))
       }
     )
 
@@ -383,6 +434,28 @@ def test_message_thread_PASS_validation() -> None:
 def test_message_thread_XFAIL_validation() -> None:
     confirm_validation_results("message_thread_XFAIL_validation.ttl", False)
 
+def test_object_status_PASS() -> None:
+    confirm_validation_results(
+      "object_status_PASS_validation.ttl",
+      True,
+    )
+
+def test_object_status_XFAIL() -> None:
+    confirm_validation_results(
+      "object_status_XFAIL_validation.ttl",
+      False,
+      expected_focus_node_severities={
+        (
+          "http://example.org/kb/UcoObject-6ae2b245-a8cd-45dc-9f40-5b2738879351",
+          str(NS_SH.Violation)
+        ),
+        (
+          "http://example.org/kb/ArchiveFileFacet-5884ca1c-2f5e-4e66-bdc6-7d48606f9fbc",
+          str(NS_SH.Violation)
+        ),
+      }
+    )
+
 def test_observable_creation_time_PASS() -> None:
     confirm_validation_results(
       "observable_creation_time_PASS_validation.ttl",
@@ -392,6 +465,22 @@ def test_observable_creation_time_PASS() -> None:
           "http://example.org/kb/windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1",
           str(NS_SH.Warning)
         )
+      }
+    )
+
+def test_operating_system_PASS() -> None:
+    confirm_validation_results(
+      "operating_system_PASS_validation.ttl",
+      True,
+      expected_focus_node_severities={
+        (
+          "http://example.org/kb/OperatingSystem-427dd103-2553-4ccc-ad57-1df4e88b174d",
+          str(NS_SH.Warning)
+        ),
+        (
+          "http://example.org/kb/OperatingSystemFacet-35047ef2-ffd6-45e8-8b3c-2e8e4bfe7c2b",
+          str(NS_SH.Warning)
+        ),
       }
     )
 

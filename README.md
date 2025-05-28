@@ -13,8 +13,8 @@ Through this approach not only are domain-focused representations defined consis
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 ### Current Release
-The current release of UCO is 1.2.0.
+The current release of UCO is 1.4.0.
 
 UCO 1.2.0 incorporates required refinements and updates, building on the stable 1.0.0 release.  Following [SemVer](https://semver.org/spec/v2.0.0.html), additive improvements will continue to be accepted, but backwards-incompatible changes will be scheduled only for the 2.0.0 release, which will come after at least 6 months to possibly 12 months.
 
-More detail of improvements is documented in the [UCO 1.2.0 release notes](https://unifiedcyberontology.org/releases/1.2.0/).
+More detail of improvements is documented in the [UCO 1.4.0 release notes](https://unifiedcyberontology.org/releases/1.4.0/).

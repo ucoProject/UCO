@@ -1,6 +1,6 @@
-# imports: https://ontology.unifiedcyberontology.org/co/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/co/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.4.0
 
 @prefix co: <http://purl.org/co/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
@@ -16,14 +16,14 @@
 <https://ontology.unifiedcyberontology.org/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
-	owl:backwardCompatibleWith types:1.2.0 ;
+	owl:backwardCompatibleWith types:1.3.0 ;
 	owl:imports
-		uco-co:1.3.0 ,
-		core:1.3.0 ,
-		vocabulary:1.3.0
+		uco-co:1.4.0 ,
+		core:1.4.0 ,
+		vocabulary:1.4.0
 		;
-	owl:priorVersion types:1.2.0 ;
-	owl:versionIRI types:1.3.0 ;
+	owl:priorVersion types:1.3.0 ;
+	owl:versionIRI types:1.4.0 ;
 	.
 
 types:ControlledDictionary
@@ -59,12 +59,43 @@ types:Dictionary
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dictionary"@en ;
-	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
+	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key having an expectation to exist no more than once.  types:Dictionary alone does not validate this expectation, but validation is available.  For use cases where this expectation must be validated, the subclass types:ProperDictionary should be used instead of types:Dictionary.  For instances where this expectation has been found to be violated, the subclass types:ImproperDictionary should be used instead of types:Dictionary."@en ;
 	sh:property [
 		sh:class types:DictionaryEntry ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:IRI ;
 		sh:path types:entry ;
+	] ;
+	sh:targetClass types:Dictionary ;
+	.
+
+types:Dictionary-keyUniqueness-shape
+	a sh:NodeShape ;
+	sh:description "This shape is separated from the types:Dictionary class-shape in order to associate a warning-severity SPARQL-based shape."@en ;
+	sh:severity sh:Warning ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "A key in a dictionary should appear no more than once.  The value literal does.  Please consider using the types:ImproperDictionary class and types:repeatsKey property."@en ;
+		sh:select """
+			PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+			SELECT $this ?value
+			WHERE {
+				$this
+					types:entry/types:key ?value ;
+					.
+				FILTER NOT EXISTS {
+					$this
+						a types:ImproperDictionary ;
+						.
+				}
+				FILTER NOT EXISTS {
+					$this
+						a types:ProperDictionary ;
+						.
+				}
+			}
+			GROUP BY ?value
+			HAVING (COUNT(?value) > 1)
+			""" ;
 	] ;
 	sh:targetClass types:Dictionary ;
 	.
@@ -105,6 +136,7 @@ types:Hash
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
 	sh:property
+		types:Hash-hashMethod-in-shape ,
 		[
 			sh:datatype xsd:hexBinary ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -113,53 +145,40 @@ types:Hash
 			sh:path types:hashValue ;
 		] ,
 		[
-			sh:datatype vocabulary:HashNameVocab ;
-			sh:message "Value is outside the default vocabulary HashNameVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path types:hashMethod ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:HashNameVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path types:hashMethod ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary HashNameVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:HashNameVocab ;
-					sh:in (
-						"MD5"^^vocabulary:HashNameVocab
-						"MD6"^^vocabulary:HashNameVocab
-						"SHA1"^^vocabulary:HashNameVocab
-						"SHA224"^^vocabulary:HashNameVocab
-						"SHA256"^^vocabulary:HashNameVocab
-						"SHA3-224"^^vocabulary:HashNameVocab
-						"SHA3-256"^^vocabulary:HashNameVocab
-						"SHA3-384"^^vocabulary:HashNameVocab
-						"SHA3-512"^^vocabulary:HashNameVocab
-						"SHA384"^^vocabulary:HashNameVocab
-						"SHA512"^^vocabulary:HashNameVocab
-						"SSDEEP"^^vocabulary:HashNameVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path types:hashMethod ;
 		]
 		;
 	sh:targetClass types:Hash ;
+	.
+
+types:Hash-hashMethod-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"MD5"
+		"MD6"
+		"SHA1"
+		"SHA224"
+		"SHA256"
+		"SHA3-224"
+		"SHA3-256"
+		"SHA3-384"
+		"SHA3-512"
+		"SHA384"
+		"SHA512"
+		"SSDEEP"
+	) ;
+	sh:message "Value is not member of the vocabulary HashNameVocab." ;
+	sh:path types:hashMethod ;
+	sh:severity sh:Info ;
 	.
 
 types:Identifier
@@ -167,9 +186,62 @@ types:Identifier
 	rdfs:comment "An identifier is a string conformant to the specified UUID-based format for UCO object identifiers."@en ;
 	.
 
+types:ImproperDictionary
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf types:Dictionary ;
+	rdfs:label "ImproperDictionary"@en ;
+	owl:disjointWith types:ProperDictionary ;
+	sh:property [
+		sh:datatype xsd:string ;
+		sh:nodeKind sh:Literal ;
+		sh:path types:repeatsKey ;
+	] ;
+	sh:targetClass types:ImproperDictionary ;
+	.
+
+types:ImproperDictionary-disjointWith-ProperDictionary-shape
+	a sh:NodeShape ;
+	sh:message "types:ImproperDictionary and types:ProperDictionary are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class types:ProperDictionary ;
+	] ;
+	sh:targetClass types:ImproperDictionary ;
+	.
+
 types:NativeFormatString
 	a rdfs:Datatype ;
 	rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en ;
+	.
+
+types:ProperDictionary
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf types:Dictionary ;
+	rdfs:label "ProperDictionary"@en ;
+	rdfs:comment "A proper dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
+	owl:disjointWith types:ImproperDictionary ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "A key in a proper dictionary can appear no more than once."@en ;
+		sh:select """
+			PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+			SELECT $this ?value
+			WHERE {
+				$this
+					types:entry/types:key ?value ;
+					.
+			}
+			GROUP BY ?value
+			HAVING (COUNT(?value) > 1)
+		""" ;
+	] ;
+	sh:targetClass types:ProperDictionary ;
 	.
 
 types:StructuredText
@@ -195,6 +267,17 @@ types:Thread
 	] ;
 	.
 
+types:Thread-disjointWith-co-List-shape
+	a sh:NodeShape ;
+	sh:message "types:Thread and co:List are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:List ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass types:Thread ;
+	.
+
 types:ThreadItem
 	a
 		owl:Class ,
@@ -211,6 +294,17 @@ types:ThreadItem
 		sh:class core:UcoObject ;
 		sh:path co:itemContent ;
 	] ;
+	.
+
+types:ThreadItem-disjointWith-co-ListItem-shape
+	a sh:NodeShape ;
+	sh:message "types:ThreadItem and co:ListItem are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:ListItem ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass types:ThreadItem ;
 	.
 
 types:entry
@@ -245,6 +339,20 @@ types:key
 	rdfs:label "key"@en ;
 	rdfs:comment "A key property of a single dictionary entry."@en ;
 	rdfs:range xsd:string ;
+	.
+
+types:repeatsKey
+	a owl:DatatypeProperty ;
+	rdfs:label "repeatsKey"@en ;
+	rdfs:comment "A key found to be repeated in multiple dictionary entries within one dictionary."@en ;
+	rdfs:domain types:ImproperDictionary ;
+	rdfs:range xsd:string ;
+	.
+
+types:repeatsKey-subjects-shape
+	a sh:NodeShape ;
+	sh:class types:ImproperDictionary ;
+	sh:targetSubjectsOf types:repeatsKey ;
 	.
 
 types:threadNextItem

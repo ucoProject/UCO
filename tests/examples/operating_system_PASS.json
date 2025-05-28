@@ -1,0 +1,48 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "kb": "http://example.org/kb/",
+        "observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Organization-4ea8a5bf-60ea-43ba-9ba6-f852ce8f8b54",
+            "@type": "identity:Organization",
+            "core:name": "Example OS Company"
+        },
+        {
+            "@id": "kb:OperatingSystem-427dd103-2553-4ccc-ad57-1df4e88b174d",
+            "@type": "observable:OperatingSystem",
+            "core:description": "The Example Operating System instance deployed on workstation B-203-22",
+            "core:hasFacet": [
+                {
+                    "@id": "kb:SoftwareFacet-1bde46c5-4648-493c-b9dc-56477191d5c6",
+                    "@type": "observable:SoftwareFacet",
+                    "observable:cpeid": "cpe:2.3:o:exampleosco:exampleos:40:*:*:*:*:*:*:*",
+                    "observable:language": "en-us",
+                    "observable:manufacturer": {
+                        "@id": "kb:Organization-4ea8a5bf-60ea-43ba-9ba6-f852ce8f8b54"
+                    },
+                    "observable:version": "40"
+                },
+                {
+                    "@id": "kb:OperatingSystemFacet-35047ef2-ffd6-45e8-8b3c-2e8e4bfe7c2b",
+                    "@type": "observable:OperatingSystemFacet",
+                    "rdfs:comment": "This node will trigger a warning for housing the manufacturer and version properties, meant to be moved to SoftwareFacet.",
+                    "observable:bitness": "64",
+                    "observable:installDate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2024-09-13T09:00:00-04:00"
+                    },
+                    "observable:manufacturer": {
+                        "@id": "kb:Organization-4ea8a5bf-60ea-43ba-9ba6-f852ce8f8b54"
+                    },
+                    "observable:version": "40"
+                }
+            ]
+        }
+    ]
+}

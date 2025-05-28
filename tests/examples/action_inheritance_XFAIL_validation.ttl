@@ -3,58 +3,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
 	a sh:ValidationReport ;
 	sh:conforms "false"^^xsd:boolean ;
 	sh:result
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-35fada9e-c807-4fa0-87b8-582473115eeb> ;
-			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-				sh:path action:actionStatus ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Pending" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-dcb9c6a2-f7b9-454a-b185-44d63244ac1c> ;
-			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-				sh:path action:actionStatus ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Pending" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-e1bb7bac-5655-48e3-8c62-843ffb7cc17f> ;
-			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-				sh:path action:actionStatus ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Pending" ;
-		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14> ;
@@ -66,21 +20,6 @@
 				sh:maxCount "0"^^xsd:integer ;
 				sh:path action:actionStatus ;
 			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/action-lifecycle-098ebb7a-949e-4f05-9d7f-1c07260a8e14> ;
-			sh:resultMessage "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-			sh:resultPath action:actionStatus ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:ActionStatusTypeVocab ;
-				sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
-				sh:path action:actionStatus ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Pending" ;
 		] ,
 		[
 			a sh:ValidationResult ;

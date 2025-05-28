@@ -1,13 +1,16 @@
 #!/usr/bin/make -f
 
+# Portions of this file contributed by NIST are governed by the
+# following statement:
+#
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
-# of their official duties. Pursuant to title 17 Section 105 of the
-# United States Code this software is not subject to copyright
-# protection and is in the public domain. NIST assumes no
-# responsibility whatsoever for its use by other parties, and makes
-# no guarantees, expressed or implied, about its quality,
-# reliability, or any other characteristic.
+# of their official duties. Pursuant to Title 17 Section 105 of the
+# United States Code, this software is not subject to copyright
+# protection within the United States. NIST assumes no responsibility
+# whatsoever for its use by other parties, and makes no guarantees,
+# expressed or implied, about its quality, reliability, or any other
+# characteristic.
 #
 # We would appreciate acknowledgement if the software is used.
 
@@ -21,12 +24,16 @@ all: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  alternate_data_stream_PASS_validation.ttl \
   co_PASS_validation.ttl \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
   configuration_setting_XFAIL_validation.ttl \
   database_records_PASS_validation.ttl \
   database_records_XFAIL_validation.ttl \
+  dictionary_PASS_validation.ttl \
+  dictionary_XFAIL_validation.ttl \
+  disjointedness_PASS_validation.ttl \
   event_XFAIL_validation.ttl \
   file_url_PASS_validation.ttl \
   has_facet_inverse_functional_PASS_validation.ttl \
@@ -37,7 +44,10 @@ all: \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
   message_thread_XFAIL_validation.ttl \
+  object_status_PASS_validation.ttl \
+  object_status_XFAIL_validation.ttl \
   observable_creation_time_PASS_validation.ttl \
+  operating_system_PASS_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
   owl_properties_PASS_validation.ttl \
@@ -92,12 +102,16 @@ check: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  alternate_data_stream_PASS_validation.ttl \
   co_PASS_validation.ttl \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
   configuration_setting_XFAIL_validation.ttl \
   database_records_PASS_validation.ttl \
   database_records_XFAIL_validation.ttl \
+  dictionary_PASS_validation.ttl \
+  dictionary_XFAIL_validation.ttl \
+  disjointedness_PASS_validation.ttl \
   event_XFAIL_validation.ttl \
   file_url_PASS_validation.ttl \
   has_facet_inverse_functional_PASS_validation.ttl \
@@ -108,7 +122,10 @@ check: \
   location_XFAIL_validation.ttl \
   message_thread_PASS_validation.ttl \
   message_thread_XFAIL_validation.ttl \
+  object_status_PASS_validation.ttl \
+  object_status_XFAIL_validation.ttl \
   observable_creation_time_PASS_validation.ttl \
+  operating_system_PASS_validation.ttl \
   owl_axiom_PASS_validation.ttl \
   owl_axiom_XFAIL_validation.ttl \
   owl_properties_PASS_validation.ttl \
