@@ -1,30 +1,30 @@
 {
     "@context": {
         "acme": "http://example.org/ontology/acme/core/",
-        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
-        "location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": "kb:location-027d88c2-9c8f-424c-8793-957c4db1aad3",
-            "@type": "location:Location",
-            "core:description": "First of two locations in example.",
-            "core:hasFacet": [
+            "@type": "uco-location:Location",
+            "uco-core:description": "First of two locations in example.",
+            "uco-core:hasFacet": [
                 {
                     "@id": "kb:simple-address-facet-5f0054b7-a597-4c76-ad6c-6098d8f33281",
-                    "@type": "location:SimpleAddressFacet",
-                    "location:locality": "Seattle",
-                    "location:region": "WA",
-                    "location:postalCode": "98052",
-                    "location:street": "20341 Whitworth Institute 405 N. Whitworth"
+                    "@type": "uco-location:SimpleAddressFacet",
+                    "uco-location:locality": "Seattle",
+                    "uco-location:region": "WA",
+                    "uco-location:postalCode": "98052",
+                    "uco-location:street": "20341 Whitworth Institute 405 N. Whitworth"
                 },
                 {
                     "@id": "kb:internal-location-facet-7fd377a1-3e0a-40a8-a934-edf81cc7ecf3",
                     "@type": [
                         "acme:InternalLocationFacet",
-                        "core:Facet"
+                        "uco-core:Facet"
                     ],
                     "acme:floor": 3,
                     "acme:roomNumber": 345
@@ -33,27 +33,27 @@
         },
         {
             "@id": "kb:location-4aa228c5-239a-468f-b668-21d413dc9159",
-            "@type": "location:Location",
-            "core:description": "Second of two locations in example.",
-            "core:hasFacet": [
+            "@type": "uco-location:Location",
+            "uco-core:description": "Second of two locations in example.",
+            "uco-core:hasFacet": [
                 {
 
                     "@id": "kb:simple-address-facet-829caf86-0d19-48f4-b115-0edb10182a7a",
-                    "@type": "location:SimpleAddressFacet",
-                    "location:locality": "Paris",
-                    "location:country": "France",
-                    "location:postalCode": "F-75002",
-                    "location:street": "38 Bad Guy Headquarters st."
+                    "@type": "uco-location:SimpleAddressFacet",
+                    "uco-location:locality": "Paris",
+                    "uco-location:country": "France",
+                    "uco-location:postalCode": "F-75002",
+                    "uco-location:street": "38 Bad Guy Headquarters st."
                 },
                 {
 
                     "@id": "kb:lat-long-coordinates-facet-9558479d-eecf-4e8d-9721-9e1a835352ba",
-                    "@type": "location:LatLongCoordinatesFacet",
-                    "location:latitude": {
+                    "@type": "uco-location:LatLongCoordinatesFacet",
+                    "uco-location:latitude": {
                         "@type": "xsd:decimal",
                         "@value": "48.860346"
                     },
-                    "location:longitude": {
+                    "uco-location:longitude": {
                         "@type": "xsd:decimal",
                         "@value": "2.331199"
                     }

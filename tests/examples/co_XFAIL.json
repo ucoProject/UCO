@@ -1,19 +1,19 @@
 {
     "@context": {
         "co": "http://purl.org/co/",
-        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": "kb:uco-object-e398cbb9-a92e-4e8b-b3ba-b4149810775f",
-            "@type": "core:UcoObject"
+            "@type": "uco-core:UcoObject"
         },
         {
             "@id": "kb:uco-object-f3592274-5af8-434a-90c7-14f286ce01c9",
-            "@type": "core:UcoObject"
+            "@type": "uco-core:UcoObject"
         },
         {
             "@id": "kb:list-02de67a8-bfb9-4e00-a305-bae3daf6384b",

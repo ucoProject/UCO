@@ -1,39 +1,39 @@
 {
     "@context": {
         "acme": "http://example.org/ontology/acme/core/",
-        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
-        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
-        "vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": "kb:action-7acb25ab-0a51-4495-9133-baa69c3be54e",
-            "@type": "action:Action",
-            "core:name": "Open File",
-            "action:actionStatus": "CUSTOM Started"
+            "@type": "uco-action:Action",
+            "uco-core:name": "Open File",
+            "uco-action:actionStatus": "CUSTOM Started"
         },
         {
             "@id": "kb:action-90d02552-333f-49d0-9ca6-2a7004adffef",
-            "@type": "action:Action",
-            "core:name": "Modify File",
-            "action:actionStatus": "Pending"
+            "@type": "uco-action:Action",
+            "uco-core:name": "Modify File",
+            "uco-action:actionStatus": "Pending"
         },
         {
             "@id": "kb:action-b4bd127d-489a-41b1-8395-95204e12c8c9",
-            "@type": "action:Action",
-            "core:name": "Save File",
-            "action:actionStatus": "Pending"
+            "@type": "uco-action:Action",
+            "uco-core:name": "Save File",
+            "uco-action:actionStatus": "Pending"
         },
         {
             "@id": "kb:action-lifecycle-63af1a39-22b6-45d6-a591-eede74657b68",
-            "@type": "action:ActionLifecycle",
-            "core:name": "File Update",
-            "action:phase": {
+            "@type": "uco-action:ActionLifecycle",
+            "uco-core:name": "File Update",
+            "uco-action:phase": {
               "@id": "kb:array-of-action-7443745c-4536-43ac-bd3d-2186581e2acb",
-              "@type": "action:ArrayOfAction",
-              "action:action": [
+              "@type": "uco-action:ArrayOfAction",
+              "uco-action:action": [
                 {
                     "@id": "kb:action-7acb25ab-0a51-4495-9133-baa69c3be54e"
                 },

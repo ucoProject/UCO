@@ -1,25 +1,25 @@
 {
     "@context": {
         "co": "http://purl.org/co/",
-        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": "kb:uco-object-d99d4ad8-a6b4-4aa6-a609-4d01808845b7",
-            "@type": "core:UcoObject"
+            "@type": "uco-core:UcoObject"
         },
         {
             "@id": "kb:uco-object-f53c2b09-cf45-494a-b587-936e7b550cac",
-            "@type": "core:UcoObject"
+            "@type": "uco-core:UcoObject"
         },
         {
             "@id": "kb:thread-1c73bebd-798e-4ea2-a1be-553db145e7b5",
-            "@type": "types:Thread",
-            "types:threadOriginItem": {
+            "@type": "uco-types:Thread",
+            "uco-types:threadOriginItem": {
                 "@id": "kb:uco-object-d99d4ad8-a6b4-4aa6-a609-4d01808845b7"
             },
             "co:item": {
@@ -32,7 +32,7 @@
         },
         {
             "@id": "kb:thread-1c73bebd-798e-4ea2-a1be-553db145e7b556fdd7c-6e02-45ee-8bb1-d6b1bad2840f",
-            "@type": "types:Thread",
+            "@type": "uco-types:Thread",
             "co:item": [
                 {
                     "@id": "kb:thread-item-2bd09467-d413-4a03-af5d-f0e428f7d987"
@@ -44,7 +44,7 @@
         },
         {
             "@id": "kb:thread-item-2bd09467-d413-4a03-af5d-f0e428f7d987",
-            "@type": "types:ThreadItem",
+            "@type": "uco-types:ThreadItem",
             "co:itemContent": {
                 "@id": "kb:thread-item-461295a0-d50d-42e7-8011-656db5762ff6"
             },
@@ -54,7 +54,7 @@
         },
         {
             "@id": "kb:thread-item-461295a0-d50d-42e7-8011-656db5762ff6",
-            "@type": "types:ThreadItem",
+            "@type": "uco-types:ThreadItem",
             "co:itemContent": [
                 {
                     "@id": "kb:uco-object-d99d4ad8-a6b4-4aa6-a609-4d01808845b7"
@@ -69,7 +69,7 @@
         },
         {
             "@id": "kb:thread-857a1b51-a93d-4202-80c3-83408249474f",
-            "@type": "types:Thread",
+            "@type": "uco-types:Thread",
             "co:item": [
                 {
                     "@id": "kb:thread-item-a921e6f5-6920-4868-8634-451010d4164c"
@@ -85,22 +85,22 @@
         },
         {
             "@id": "kb:thread-item-a921e6f5-6920-4868-8634-451010d4164c",
-            "@type": "types:ThreadItem",
-            "types:threadNextItem": {
+            "@type": "uco-types:ThreadItem",
+            "uco-types:threadNextItem": {
                 "@id": "kb:thread-item-cac63c40-fce8-4e63-950f-a62a2df36f1d"
             }
         },
         {
             "@id": "kb:thread-item-b78a0387-3a63-49ab-8439-173be968b2d2",
-            "@type": "types:ThreadItem",
-            "types:threadNextItem": {
+            "@type": "uco-types:ThreadItem",
+            "uco-types:threadNextItem": {
                 "@id": "kb:thread-item-cac63c40-fce8-4e63-950f-a62a2df36f1d"
             }
         },
         {
             "@id": "kb:thread-item-cac63c40-fce8-4e63-950f-a62a2df36f1d",
-            "@type": "types:ThreadItem",
-            "types:threadPreviousItem": [
+            "@type": "uco-types:ThreadItem",
+            "uco-types:threadPreviousItem": [
                 {
                     "@id": "kb:thread-item-a921e6f5-6920-4868-8634-451010d4164c"
                 },

@@ -1,9 +1,9 @@
 {
     "@context": {
-        "configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
-        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
-        "tool": "https://ontology.unifiedcyberontology.org/uco/tool/"
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/"
     },
     "@graph": [
         {
@@ -11,27 +11,27 @@
         },
         {
             "@id": "kb:tool-f12e10c5-daca-4bd1-8b49-ae728f309053",
-            "@type": "tool:Tool"
+            "@type": "uco-tool:Tool"
         },
         {
             "@id": "kb:configured-object-711b4e95-996e-461a-83a0-e0d6342bf028",
-            "@type": "tool:ConfiguredTool",
-            "configuration:isConfigurationOf": {
+            "@type": "uco-tool:ConfiguredTool",
+            "uco-configuration:isConfigurationOf": {
                 "@id": "kb:tool-f12e10c5-daca-4bd1-8b49-ae728f309053"
             },
-            "configuration:usesConfiguration": {
+            "uco-configuration:usesConfiguration": {
                 "@id": "kb:configuration-26760258-ffc7-4241-96f9-0056781eccff"
             }
         },
 
         {
             "@id": "kb:thing-b752452a-9f7a-4421-a9f3-9611a8cd216c",
-            "@type": "core:UcoObject"
+            "@type": "uco-core:UcoObject"
         },
         {
             "@id": "kb:configuration-26760258-ffc7-4241-96f9-0056781eccff",
-            "@type": "configuration:Configuration",
-            "configuration:configurationEntry": [
+            "@type": "uco-configuration:Configuration",
+            "uco-configuration:configurationEntry": [
                 {
                     "@id": "kb:configuration-entry-317fc0bd-bc17-40af-85e0-5818ff4b823a"
                 },
@@ -45,22 +45,22 @@
         },
         {
             "@id": "kb:configuration-entry-317fc0bd-bc17-40af-85e0-5818ff4b823a",
-            "@type": "configuration:ConfigurationEntry",
-            "configuration:itemName": "--setting-0"
+            "@type": "uco-configuration:ConfigurationEntry",
+            "uco-configuration:itemName": "--setting-0"
         },
         {
             "@id": "kb:configuration-entry-38ca44a6-c72c-4ad7-b196-a65506eb467f",
-            "@type": "configuration:ConfigurationEntry",
-            "configuration:itemName": "--setting-1",
-            "configuration:itemObject": {
+            "@type": "uco-configuration:ConfigurationEntry",
+            "uco-configuration:itemName": "--setting-1",
+            "uco-configuration:itemObject": {
                 "@id": "kb:thing-b752452a-9f7a-4421-a9f3-9611a8cd216c"
             }
         },
         {
             "@id": "kb:configuration-entry-52a03c2a-ebc5-4695-b0b7-e04d5fc34e8c",
-            "@type": "configuration:ConfigurationEntry",
-            "configuration:itemName": "--setting-2",
-            "configuration:itemValue": "A value"
+            "@type": "uco-configuration:ConfigurationEntry",
+            "uco-configuration:itemName": "--setting-2",
+            "uco-configuration:itemValue": "A value"
         }
     ]
 }
