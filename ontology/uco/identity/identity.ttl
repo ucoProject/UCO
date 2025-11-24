@@ -1,5 +1,5 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/location/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.4.0
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -13,13 +13,13 @@
 <https://ontology.unifiedcyberontology.org/uco/identity>
 	a owl:Ontology ;
 	rdfs:label "uco-identity"@en ;
-	owl:backwardCompatibleWith uco-identity:1.2.0 ;
+	owl:backwardCompatibleWith uco-identity:1.3.0 ;
 	owl:imports
-		uco-core:1.3.0 ,
-		uco-location:1.3.0
+		uco-core:1.4.0 ,
+		uco-location:1.4.0
 		;
-	owl:priorVersion uco-identity:1.2.0 ;
-	owl:versionIRI uco-identity:1.3.0 ;
+	owl:priorVersion uco-identity:1.3.0 ;
+	owl:versionIRI uco-identity:1.4.0 ;
 	.
 
 uco-identity:AddressFacet

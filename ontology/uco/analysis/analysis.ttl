@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/uco/action/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.4.0
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -14,10 +14,10 @@
 	rdfs:label "uco-analysis"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing analytic actions and results."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/400> ;
-	owl:backwardCompatibleWith uco-analysis:1.2.0 ;
-	owl:imports uco-action:1.3.0 ;
-	owl:priorVersion uco-analysis:1.2.0 ;
-	owl:versionIRI uco-analysis:1.3.0 ;
+	owl:backwardCompatibleWith uco-analysis:1.3.0 ;
+	owl:imports uco-action:1.4.0 ;
+	owl:priorVersion uco-analysis:1.3.0 ;
+	owl:versionIRI uco-analysis:1.4.0 ;
 	.
 
 uco-analysis:Analysis
