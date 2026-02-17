@@ -4129,7 +4129,7 @@ observable:MessageThread
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "MessageTread"@en ;
+	rdfs:label "MessageThread"@en ;
 	rdfs:comment "A message thread is a running commentary of electronic messages pertaining to one topic or question."@en ;
 	sh:targetClass observable:MessageThread ;
 	.
