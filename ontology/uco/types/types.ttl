@@ -259,7 +259,7 @@ types:Thread
 		core:UcoThing
 		;
 	rdfs:label "Thread"@en ;
-	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
+	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implementation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
 	owl:disjointWith co:List ;
 	sh:property [
 		sh:class types:ThreadItem ;
