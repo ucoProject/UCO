@@ -9531,7 +9531,7 @@ observable:blockType
 observable:bluetoothDeviceName
 	a owl:DatatypeProperty ;
 	rdfs:label "bluetoothDeviceName"@en ;
-	rdfs:comment "Name configured withing Bluetooth settings on a device."@en ;
+	rdfs:comment "Name configured within Bluetooth settings on a device."@en ;
 	rdfs:range xsd:string ;
 	.
 
