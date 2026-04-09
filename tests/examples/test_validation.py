@@ -619,3 +619,17 @@ def uco_thing_XFAIL_validation() -> None:
       "uco_thing_XFAIL_validation.ttl",
       False,
     )
+
+def uco_type_PASS_validation() -> None:
+    confirm_validation_results(
+      "uco_type_PASS_validation.ttl",
+      expected_focus_node_severities={
+        "http://example.org/kb/Thing-1", str(NS_SH.Info)
+      }
+    )
+
+def uco_type_XFAIL_validation() -> None:
+    confirm_validation_results(
+      "uco_type_XFAIL_validation.ttl",
+      False,
+    )

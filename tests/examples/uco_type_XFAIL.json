@@ -1,0 +1,17 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:UcoType-0",
+            "@type": "core:UcoType",
+            "rdfs:comment": [
+                "Triggers violation from not instantiating owl:Class.",
+                "Triggers violation from not subclassing UcoThing."
+            ]
+        }
+    ]
+}

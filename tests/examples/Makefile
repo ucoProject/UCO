@@ -58,7 +58,9 @@ all: \
   relationship_XFAIL_validation.ttl \
   thread_PASS_validation.ttl \
   thread_XFAIL_validation.ttl \
-  uco_thing_XFAIL_validation.ttl
+  uco_thing_XFAIL_validation.ttl \
+  uco_type_PASS_validation.ttl \
+  uco_type_XFAIL_validation.ttl
 
 .PRECIOUS: \
   %_validation.ttl
@@ -136,7 +138,9 @@ check: \
   relationship_XFAIL_validation.ttl \
   thread_PASS_validation.ttl \
   thread_XFAIL_validation.ttl \
-  uco_thing_XFAIL_validation.ttl
+  uco_thing_XFAIL_validation.ttl \
+  uco_type_PASS_validation.ttl \
+  uco_type_XFAIL_validation.ttl
 	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG
