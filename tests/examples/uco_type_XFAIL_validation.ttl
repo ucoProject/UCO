@@ -45,6 +45,15 @@
 		] ,
 		[
 			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/Technique-db4c2ac7-0fa0-4f74-9058-242a40d71a63> ;
+			sh:resultMessage "core:UcoThing and core:UcoType are disjoint classes."@en ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NotConstraintComponent ;
+			sh:sourceShape core:UcoThing-disjointWith-UcoType-shape ;
+			sh:value <http://example.org/kb/Technique-db4c2ac7-0fa0-4f74-9058-242a40d71a63> ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/UcoType-0> ;
 			sh:resultMessage "Node kb:UcoType-0->[ sh:zeroOrMorePath rdfs:subClassOf ] does not contain a value in the set: ['core:UcoThing']" ;
 			sh:resultPath [
