@@ -28,56 +28,14 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode ex2:SOP-0033 ;
-			sh:resultMessage "Value is not Literal with datatype sh:Literal" ;
-			sh:resultPath uco-action:techniqueID ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				rdfs:comment "This shape will find violations after RDFS or OWL-RL inferencing, but might not find some violations without inferencing."@en ;
-				sh:datatype sh:Literal ;
-				sh:path uco-action:techniqueID ;
-			] ;
-			sh:value "SOP-0001" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode ex2:SOP-0044 ;
-			sh:resultMessage "Value is not Literal with datatype sh:Literal" ;
-			sh:resultPath uco-action:techniqueID ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				rdfs:comment "This shape will find violations after RDFS or OWL-RL inferencing, but might not find some violations without inferencing."@en ;
-				sh:datatype sh:Literal ;
-				sh:path uco-action:techniqueID ;
-			] ;
-			sh:value "SOP-0001" ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode ex2:SOP-0055 ;
-			sh:resultMessage "Value is not Literal with datatype sh:Literal" ;
+			sh:resultMessage "Value is not of Node Kind sh:Literal" ;
 			sh:resultPath uco-action:techniqueID ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
 				rdfs:comment "This shape will find violations after RDFS or OWL-RL inferencing, but might not find some violations without inferencing."@en ;
-				sh:datatype sh:Literal ;
-				sh:path uco-action:techniqueID ;
-			] ;
-			sh:value "SOP-0055" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode ex2:SOP-0055 ;
-			sh:resultMessage "Value is not Literal with datatype sh:Literal" ;
-			sh:resultPath uco-action:techniqueID ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				rdfs:comment "This shape will find violations after RDFS or OWL-RL inferencing, but might not find some violations without inferencing."@en ;
-				sh:datatype sh:Literal ;
+				sh:nodeKind sh:Literal ;
 				sh:path uco-action:techniqueID ;
 			] ;
 			sh:value ex2:P-5555 ;
