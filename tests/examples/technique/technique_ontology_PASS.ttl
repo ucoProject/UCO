@@ -69,6 +69,7 @@ ex1:YDevice
 
 ex1:techniqueID
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf uco-action:techniqueID ;
 	rdfs:domain ex1:Technique ;
 	rdfs:range xsd:string ;
 	.
@@ -134,7 +135,8 @@ ex2:ZDevice
 
 ex2:procedureID
 	a owl:DatatypeProperty ;
-	rdfs:comment "(Technical demonstration: Assignment of a Technique identifier is done with an OWL datatype Property.)"@en ;
+	rdfs:subPropertyOf uco-action:techniqueID ;
+	rdfs:comment "(Technical demonstration: Assignment of a Technique identifier is done with an OWL Datatype Property.)"@en ;
 	rdfs:domain ex2:StandardOperatingProcedure ;
 	rdfs:range xsd:string ;
 	.

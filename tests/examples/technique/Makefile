@@ -23,6 +23,8 @@ all: \
 
 check: \
   technique_ontology_XFAIL_validation.ttl \
+  technique_ontology_XFAIL_rdfs_validation.ttl \
+  technique_ontology_XFAIL_owlrl_validation.ttl \
   technique_data_PASS_validation.ttl \
   technique_data_XFAIL_validation.ttl
 
@@ -98,6 +100,64 @@ technique_data_XFAIL_validation.ttl: \
 	    --shacl generated-shapes.ttl \
 	    technique_data_XFAIL.json \
 	    ; test 1 -eq $$?
+	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
+	mv _$@ $@
+
+technique_ontology_XFAIL_owlrl_validation.ttl: \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/tests/uco_monolithic.ttl \
+  generated-shapes.ttl \
+  technique_ontology_XFAIL.ttl
+	source $(top_srcdir)/venv/bin/activate \
+	  && rdfpipe \
+	    --output-format turtle \
+	    $(top_srcdir)/tests/uco_monolithic.ttl \
+	    technique_ontology_XFAIL.ttl \
+	    > _$@
+	source $(top_srcdir)/venv/bin/activate \
+	  && pyshacl \
+	    --format turtle \
+	    --inference owlrl \
+	    --output __$@ \
+	    --shacl generated-shapes.ttl \
+	    _$@ \
+	    ; test 1 -eq $$?
+	rm _$@
+	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
+	mv _$@ $@
+
+technique_ontology_XFAIL_rdfs_validation.ttl: \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/tests/uco_monolithic.ttl \
+  generated-shapes.ttl \
+  technique_ontology_XFAIL.ttl
+	source $(top_srcdir)/venv/bin/activate \
+	  && rdfpipe \
+	    --output-format turtle \
+	    $(top_srcdir)/tests/uco_monolithic.ttl \
+	    technique_ontology_XFAIL.ttl \
+	    > _$@
+	source $(top_srcdir)/venv/bin/activate \
+	  && pyshacl \
+	    --format turtle \
+	    --inference rdfs \
+	    --output __$@ \
+	    --shacl generated-shapes.ttl \
+	    _$@ \
+	    ; test 1 -eq $$?
+	rm _$@
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
 	  --inline-blank-nodes \
 	  --source __$@ \
