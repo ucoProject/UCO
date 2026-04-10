@@ -19,6 +19,18 @@
             ]
         },
         {
+            "@id": "kb:Technique-db4c2ac7-0fa0-4f74-9058-242a40d71a63",
+            "@type": [
+                "owl:Class",
+                "action:ActionPattern",
+                "action:Technique"
+            ],
+            "rdfs:comment": "Triggers violation from instantiating both UcoThing and UcoType.",
+            "rdfs:subClassOf": {
+                "@id": "action:Action"
+            }
+        },
+        {
             "@id": "kb:UcoType-0",
             "@type": "core:UcoType",
             "rdfs:comment": [
