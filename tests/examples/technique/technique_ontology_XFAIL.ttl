@@ -46,7 +46,6 @@ ex2:SOP-0033
 		;
 	rdfs:subClassOf uco-action:Action ;
 	rdfs:comment "(Technical demonstration: Technique XFAILs due to procedureID absence."@en ;
-	ex2:procedureID "SOP-0001" ;
 	.
 
 ex2:SOP-0044
@@ -56,7 +55,6 @@ ex2:SOP-0044
 		;
 	rdfs:subClassOf ex1:Technique-T0003 ;
 	rdfs:comment "(Technical demonstration: Technique XFAILs due to procedureID absence.  Subclassing a ex1:Technique has no influence."@en ;
-	ex2:procedureID "SOP-0001" ;
 	.
 
 ex2:SOP-0055
