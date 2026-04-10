@@ -1,0 +1,33 @@
+{
+    "@context": {
+        "ex0": "http://example/ontology/",
+        "ex1": "http://example.com/framework/",
+        "ex2": "http://example.org/operations/",
+        "kb": "http://example.org/kb/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Action-8f84a98c-2ab5-454d-9c2f-443fe64b7158",
+            "@type": "ex1:Technique-T0002"
+        },
+        {
+            "@id": "kb:Action-c44d57af-a6c3-4350-b08b-0dac5f3b7aca",
+            "@type": "ex1:Technique-T0001"
+        },
+        {
+            "@id": "kb:Action-f6625d7d-978d-4562-83d7-23d9ac398073",
+            "@type": "ex2:SOP-0099"
+        },
+        {
+            "@id": "kb:Device-765e3d23-ce91-459d-b5ec-6c60d37df842",
+            "@type": "ex1:YDevice"
+        },
+        {
+            "@id": "kb:Device-e79fb51b-6c45-4e70-9e79-9f600509ca6c",
+            "@type": "ex2:ZDevice"
+        }
+    ]
+}

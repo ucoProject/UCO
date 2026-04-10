@@ -24,6 +24,7 @@ all: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
+  all-technique \
   alternate_data_stream_PASS_validation.ttl \
   co_PASS_validation.ttl \
   co_XFAIL_validation.ttl \
@@ -61,6 +62,11 @@ all: \
   uco_thing_XFAIL_validation.ttl \
   uco_type_PASS_validation.ttl \
   uco_type_XFAIL_validation.ttl
+
+.PHONY: \
+  all-technique \
+  check-technique \
+  clean-technique
 
 .PRECIOUS: \
   %_validation.ttl
@@ -100,11 +106,18 @@ all: \
 	rm __$@
 	mv _$@ $@
 
+all-technique: \
+  $(top_srcdir)/.venv.done.log \
+  $(tests_srcdir)/uco_monolithic.ttl
+	$(MAKE) \
+	  --directory technique
+
 check: \
   action_inheritance_PASS_validation.ttl \
   action_inheritance_XFAIL_validation.ttl \
   action_result_PASS_validation.ttl \
   alternate_data_stream_PASS_validation.ttl \
+  check-technique \
   co_PASS_validation.ttl \
   co_XFAIL_validation.ttl \
   configuration_setting_PASS_validation.ttl \
@@ -145,6 +158,18 @@ check: \
 	  && pytest \
 	    --log-level=DEBUG
 
-clean:
+check-technique: \
+  all-technique
+	$(MAKE) \
+	  --directory technique \
+	  check
+
+clean: \
+  clean-technique
 	@rm -f \
 	  *_validation.ttl
+
+clean-technique:
+	@$(MAKE) \
+	  --directory technique \
+	  clean

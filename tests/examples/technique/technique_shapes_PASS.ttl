@@ -1,0 +1,59 @@
+@prefix ex1: <http://example.com/framework/> .
+@prefix ex2: <http://example.org/operations/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sh-ex1: <http://example.com/shapes/> .
+@prefix sh-ex2: <http://example.org/shapes/> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sh-ex1:Technique-T0001-shape
+	a sh:NodeShape ;
+	sh:property [
+		rdfs:comment "This property shape enforces that execution of this Technique involves some Y-device as action-input."@en ;
+		sh:path uco-action:object ;
+		sh:qualifiedMinCount "1"^^xsd:integer ;
+		sh:qualifiedValueShape [
+			sh:class ex1:YDevice ;
+		] ;
+	] ;
+	sh:targetClass ex1:Technique-T0001 ;
+	.
+
+sh-ex1:Technique-shape
+	a sh:NodeShape ;
+	sh:property [
+		rdfs:comment "This property shape enforces that an instance of an Organization 1 Technique has techniqueID assigned.  (Recall that an instance of ex1:Technique is an OWL Class.)"@en ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:path ex1:techniqueID ;
+	] ;
+	sh:targetClass ex1:Technique ;
+	.
+
+sh-ex2:SOP-0099-shape
+	a sh:NodeShape ;
+	sh:property [
+		rdfs:comment "This property shape enforces that execution of this SOP involves some Z-device as action-instrument."@en ;
+		sh:path uco-action:instrument ;
+		sh:qualifiedMinCount "1"^^xsd:integer ;
+		sh:qualifiedValueShape [
+			sh:class ex2:ZDevice ;
+		] ;
+	] ;
+	sh:targetClass ex2:SOP-0099 ;
+	.
+
+sh-ex2:StandardOperatingProcedure-shape
+	a sh:NodeShape ;
+	sh:property [
+		rdfs:comment "This property shape enforces that an instance of an Organization 2 SOP has procedureID assigned.  (Recall that an instance of ex2:StandardOperatingProcedure is an OWL Class.)"@en ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:path ex2:procedureID ;
+	] ;
+	sh:targetClass ex2:StandardOperatingProcedure ;
+	.
+

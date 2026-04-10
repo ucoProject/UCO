@@ -1,10 +1,23 @@
 {
     "@context": {
+        "action": "https://ontology.unifiedcyberontology.org/uco/action/",
         "core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "kb": "http://example.org/kb/",
+        "owl": "http://www.w3.org/2002/07/owl#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
     },
     "@graph": [
+        {
+            "@id": "kb:Technique-4b05a7c7-fbb2-4731-8a84-9abe8c108a35",
+            "@type": [
+                "owl:Class",
+                "action:Technique"
+            ],
+            "rdfs:comment": [
+                "Triggers violation from not subclassing UcoThing.",
+                "Triggers violation from not subclassing Action."
+            ]
+        },
         {
             "@id": "kb:UcoType-0",
             "@type": "core:UcoType",

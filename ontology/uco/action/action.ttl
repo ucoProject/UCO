@@ -350,6 +350,24 @@ action:ArrayOfAction
 	sh:targetClass action:ArrayOfAction ;
 	.
 
+action:Technique
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoType ;
+	rdfs:label "Technique"@en ;
+	rdfs:comment "A technique is a class of actions joined by some common characteristics."@en ;
+	sh:property [
+		rdfs:comment "This shape confirms a Technique is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
+		sh:hasValue action:Action ;
+		sh:path [
+			sh:oneOrMorePath rdfs:subClassOf ;
+		] ;
+	] ;
+	sh:targetClass action:Technique ;
+	.
+
 action:action
 	a owl:ObjectProperty ;
 	rdfs:label "action"@en ;
