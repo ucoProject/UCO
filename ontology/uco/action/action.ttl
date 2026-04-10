@@ -368,7 +368,7 @@ action:Technique
 		] ,
 		[
 			rdfs:comment "This shape will find violations after RDFS or OWL-RL inferencing, but might not find some violations without inferencing."@en ;
-			sh:datatype sh:Literal ;
+			sh:nodeKind sh:Literal ;
 			sh:path action:techniqueID ;
 		]
 		;
