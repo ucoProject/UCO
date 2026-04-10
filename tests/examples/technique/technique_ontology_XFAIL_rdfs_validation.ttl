@@ -28,6 +28,34 @@
 		] ,
 		[
 			a sh:ValidationResult ;
+			sh:focusNode ex2:SOP-0033 ;
+			sh:resultMessage "Less than 1 values on ex2:SOP-0033->ex2:procedureID" ;
+			sh:resultPath ex2:procedureID ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that an instance of an Organization 2 SOP has procedureID assigned.  (Recall that an instance of ex2:StandardOperatingProcedure is an OWL Class.)"@en ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:path ex2:procedureID ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode ex2:SOP-0044 ;
+			sh:resultMessage "Less than 1 values on ex2:SOP-0044->ex2:procedureID" ;
+			sh:resultPath ex2:procedureID ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that an instance of an Organization 2 SOP has procedureID assigned.  (Recall that an instance of ex2:StandardOperatingProcedure is an OWL Class.)"@en ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:path ex2:procedureID ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode ex2:SOP-0055 ;
 			sh:resultMessage "Value is not of Node Kind sh:Literal" ;
 			sh:resultPath uco-action:techniqueID ;
