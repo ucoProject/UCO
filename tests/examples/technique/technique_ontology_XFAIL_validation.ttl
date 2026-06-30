@@ -28,30 +28,30 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode ex2:SOP-0033 ;
-			sh:resultMessage "Less than 1 values on ex2:SOP-0033->ex2:procedureID" ;
-			sh:resultPath ex2:procedureID ;
+			sh:focusNode ex2:AT-0033 ;
+			sh:resultMessage "Less than 1 values on ex2:AT-0033->ex2:techniqueID" ;
+			sh:resultPath ex2:techniqueID ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				rdfs:comment "This property shape enforces that an instance of an Organization 2 SOP has procedureID assigned.  (Recall that an instance of ex2:StandardOperatingProcedure is an OWL Class.)"@en ;
+				rdfs:comment "This property shape enforces that an instance of an Organization 2 AdaptedTechnique has Organization 2's techniqueID assigned.  (Recall that an instance of ex2:AdaptedTechnique is an OWL Class.)"@en ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:path ex2:procedureID ;
+				sh:path ex2:techniqueID ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode ex2:SOP-0044 ;
-			sh:resultMessage "Less than 1 values on ex2:SOP-0044->ex2:procedureID" ;
-			sh:resultPath ex2:procedureID ;
+			sh:focusNode ex2:AT-0044 ;
+			sh:resultMessage "Less than 1 values on ex2:AT-0044->ex2:techniqueID" ;
+			sh:resultPath ex2:techniqueID ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				rdfs:comment "This property shape enforces that an instance of an Organization 2 SOP has procedureID assigned.  (Recall that an instance of ex2:StandardOperatingProcedure is an OWL Class.)"@en ;
+				rdfs:comment "This property shape enforces that an instance of an Organization 2 AdaptedTechnique has Organization 2's techniqueID assigned.  (Recall that an instance of ex2:AdaptedTechnique is an OWL Class.)"@en ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:minCount "1"^^xsd:integer ;
-				sh:path ex2:procedureID ;
+				sh:path ex2:techniqueID ;
 			] ;
 		] ,
 		[

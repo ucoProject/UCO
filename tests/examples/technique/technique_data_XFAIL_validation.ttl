@@ -67,7 +67,7 @@
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
 			sh:sourceShape [
-				rdfs:comment "This property shape enforces that execution of this SOP involves some Z-device as action-instrument."@en ;
+				rdfs:comment "This property shape enforces that execution of this AdaptedTechnique involves some Z-device as action-instrument."@en ;
 				sh:path uco-action:instrument ;
 				sh:qualifiedMinCount "1"^^xsd:integer ;
 				sh:qualifiedValueShape [
