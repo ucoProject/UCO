@@ -18,7 +18,7 @@ ex1:Technique
 				"(Technical demonstration: Instances of the metaclass can have a datatype property assigned.)"@en ,
 				"This Restriction states, but does not enforce, that an Technique (as defined by Organization 1) has a technique ID.  SHACL validation handles enforcement."@en
 				;
-			owl:onProperty ex2:procedureID ;
+			owl:onProperty ex2:techniqueID ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -37,7 +37,7 @@ ex1:Technique-T0001
 		uco-action:Action ,
 		[
 			a owl:Restriction ;
-			rdfs:comment "This Restriction states, but does not enforce, that execution of this SOP involves some Y-Device as action-input.  SHACL validation handles enforcement."@en ;
+			rdfs:comment "This Restriction states, but does not enforce, that execution of this AdaptedTechnique involves some Y-Device as action-input.  SHACL validation handles enforcement."@en ;
 			owl:onProperty uco-action:object ;
 			owl:someValuesFrom ex1:YDevice ;
 		]
@@ -74,9 +74,9 @@ ex1:techniqueID
 	rdfs:range xsd:string ;
 	.
 
-ex2:SOP-0001
+ex2:AT-0001
 	a
-		ex2:StandardOperatingProcedure ,
+		ex2:AdaptedTechnique ,
 		owl:Class
 		;
 	rdfs:subClassOf uco-action:Action ;
@@ -84,31 +84,31 @@ ex2:SOP-0001
 		"(Technical demonstration: A Technique-subclass instance that directly specializes uco-action:Action.)"@en ,
 		"A procedure where logging is configured to store data in an instance of Example-L Logging Service."@en
 		;
-	ex2:procedureID "SOP-0001" ;
+	ex2:techniqueID "AT-0001" ;
 	.
 
-ex2:SOP-0099
+ex2:AT-0099
 	a
-		ex2:StandardOperatingProcedure ,
+		ex2:AdaptedTechnique ,
 		owl:Class
 		;
 	rdfs:subClassOf
 		ex1:Technique-T0001 ,
 		[
 			a owl:Restriction ;
-			rdfs:comment "This Restriction states, but does not enforce, that execution of this SOP involves some Z-Device as action-instrument.  SHACL validation handles enforcement."@en ;
+			rdfs:comment "This Restriction states, but does not enforce, that execution of this AdaptedTechnique involves some Z-Device as action-instrument.  SHACL validation handles enforcement."@en ;
 			owl:onProperty uco-action:instrument ;
 			owl:someValuesFrom ex2:ZDevice ;
 		]
 		;
 	rdfs:comment
-		"(Technical demonstration: Technique-subclass is instantiated, specializing an instance of a different Technique-subclass.  Note that the class ex2:SOP-0099 is not required to be assigned a ex1:techniqueID, nor to be typed as a ex1:Technique or uco-action:Technique.)"@en ,
+		"(Technical demonstration: Technique-subclass is instantiated, specializing an instance of a different Technique-subclass.  Note that the class ex2:AT-0099 is not required to be assigned a ex1:techniqueID, nor to be typed as a ex1:Technique or uco-action:Technique.)"@en ,
 		"A procedure where X is done to a Y-device using a Z-device."@en
 		;
-	ex2:procedureID "SOP-0099" ;
+	ex2:techniqueID "AT-0099" ;
 	.
 
-ex2:StandardOperatingProcedure
+ex2:AdaptedTechnique
 	a owl:Class ;
 	rdfs:subClassOf
 		uco-action:Technique ,
@@ -116,9 +116,9 @@ ex2:StandardOperatingProcedure
 			a owl:Restriction ;
 			rdfs:comment
 				"(Technical demonstration: Instances of the metaclass can have a datatype property assigned.)"@en ,
-				"This Restriction states, but does not enforce, that an SOP has a procedureID.  SHACL validation handles enforcement."@en
+				"This Restriction states, but does not enforce, that an AdaptedTechnique has an Organization 2 techniqueID.  SHACL validation handles enforcement."@en
 				;
-			owl:onProperty ex2:procedureID ;
+			owl:onProperty ex2:techniqueID ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -133,11 +133,11 @@ ex2:ZDevice
 	rdfs:subClassOf uco-observable:Device ;
 	.
 
-ex2:procedureID
+ex2:techniqueID
 	a owl:DatatypeProperty ;
 	rdfs:subPropertyOf uco-action:techniqueID ;
 	rdfs:comment "(Technical demonstration: Assignment of a Technique identifier is done with an OWL Datatype Property.)"@en ;
-	rdfs:domain ex2:StandardOperatingProcedure ;
+	rdfs:domain ex2:AdaptedTechnique ;
 	rdfs:range xsd:string ;
 	.
 

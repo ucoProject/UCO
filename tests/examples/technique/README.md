@@ -5,14 +5,14 @@ The test matrix for PASS conditions is as follows:
 * `uco-action:Technique` is:
 
    - Not specialized (see `ex0:Technique-A`)
-   - Specialized (see `ex1:Technique`, `ex2:StandardOperatingProcedure`)
+   - Specialized (see `ex1:Technique`, `ex2:AdaptedTechnique`)
 
 * Each of the above degrees of `Technique` specialization is instantiated with some `Action` subclass.
 
    - No specialization (see `ex0:Technique-A`)
-   - One level of specialization (see `ex1:Technique-T0001`, `ex2:SOP-0001`)
+   - One level of specialization (see `ex1:Technique-T0001`, `ex2:AT-0001`)
    - Two levels of specialization, using the same Technique-subclass (see `ex1:T0002`)
-   - Two levels of specialization, using different Technique-subclasses (see `ex2:SOP-0099`)
+   - Two levels of specialization, using different Technique-subclasses (see `ex2:AT-0099`)
 
 * Each of the above instantiations by some degree of `Technique` specialization is instantiated.
 

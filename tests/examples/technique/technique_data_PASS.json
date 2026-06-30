@@ -29,11 +29,11 @@
         },
         {
             "@id": "kb:Action-dd609c02-176d-40ed-9858-ead8bdc47757",
-            "@type": "ex2:SOP-0001"
+            "@type": "ex2:AT-0001"
         },
         {
             "@id": "kb:Action-f6625d7d-978d-4562-83d7-23d9ac398073",
-            "@type": "ex2:SOP-0099",
+            "@type": "ex2:AT-0099",
             "uco-action:instrument": {
                 "@id": "kb:Device-e79fb51b-6c45-4e70-9e79-9f600509ca6c"
             },

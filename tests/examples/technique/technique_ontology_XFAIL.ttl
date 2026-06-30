@@ -15,7 +15,7 @@ ex1:Technique
 		uco-action:Technique ,
 		[
 			a owl:Restriction ;
-			owl:onProperty ex2:procedureID ;
+			owl:onProperty ex2:techniqueID ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -39,63 +39,63 @@ ex1:techniqueID
 	rdfs:range xsd:string ;
 	.
 
-ex2:SOP-0033
+ex2:AT-0033
 	a
-		ex2:StandardOperatingProcedure ,
+		ex2:AdaptedTechnique ,
 		owl:Class
 		;
 	rdfs:subClassOf uco-action:Action ;
-	rdfs:comment "(Technical demonstration: Technique XFAILs due to procedureID absence."@en ;
+	rdfs:comment "(Technical demonstration: Technique XFAILs due to techniqueID absence."@en ;
 	.
 
-ex2:SOP-0044
+ex2:AT-0044
 	a
-		ex2:StandardOperatingProcedure ,
+		ex2:AdaptedTechnique ,
 		owl:Class
 		;
 	rdfs:subClassOf ex1:Technique-T0003 ;
-	rdfs:comment "(Technical demonstration: Technique XFAILs due to procedureID absence.  Subclassing a ex1:Technique has no influence."@en ;
+	rdfs:comment "(Technical demonstration: Technique XFAILs due to techniqueID absence.  Subclassing a ex1:Technique has no influence."@en ;
 	.
 
-ex2:SOP-0055
+ex2:AT-0055
 	a
-		ex2:StandardOperatingProcedure ,
+		ex2:AdaptedTechnique ,
 		owl:Class
 		;
 	rdfs:subClassOf uco-action:Action ;
 	rdfs:comment "(Technical demonstration: Technique XFAILs due to techniqueID incorrect node-kind.)"@en ;
-	ex2:procedureAltID ex2:P-5555 ;
-	ex2:procedureID "SOP-0055" ;
+	ex2:techniqueAltID ex2:P-5555 ;
+	ex2:techniqueID "AT-0055" ;
 	.
 
-ex2:StandardOperatingProcedure
+ex2:AdaptedTechnique
 	a owl:Class ;
 	rdfs:subClassOf
 		uco-action:Technique ,
 		[
 			a owl:Restriction ;
-			owl:onProperty ex2:procedureID ;
+			owl:onProperty ex2:techniqueID ;
 			owl:cardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
-	rdfs:comment "(No difference from ex2:StandardOperatingProcedure in PASS graph.)"@en ;
+	rdfs:comment "(No difference from ex2:AdaptedTechnique in PASS graph.)"@en ;
 	.
 
-ex2:procedureAltID
+ex2:techniqueAltID
 	a owl:ObjectProperty ;
 	rdfs:subPropertyOf uco-action:techniqueID ;
 	rdfs:comment "(Technical demonstration: Assignment of a Technique identifier must be done with an OWL Datatype Property.  RDFS or OWL-RL inferencing enables detecting this modeling error.)"@en ;
-	rdfs:domain ex2:StandardOperatingProcedure ;
+	rdfs:domain ex2:AdaptedTechnique ;
 	.
 
-ex2:procedureID
+ex2:techniqueID
 	a owl:DatatypeProperty ;
 	rdfs:subPropertyOf uco-action:techniqueID ;
 	rdfs:comment
-		"(No difference from ex2:procedureID in PASS graph.)"@en ,
+		"(No difference from ex2:techniqueID in PASS graph.)"@en ,
 		"(Technical demonstration: Assignment of a Technique identifier is done with an OWL datatype Property.)"@en
 		;
-	rdfs:domain ex2:StandardOperatingProcedure ;
+	rdfs:domain ex2:AdaptedTechnique ;
 	rdfs:range xsd:string ;
 	.
 
