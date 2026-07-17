@@ -1,0 +1,109 @@
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix ex1: <http://example.com/framework/> .
+@prefix ex2: <http://example.org/operations/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode ex1:Technique-T0003 ;
+			sh:resultMessage "Less than 1 values on ex1:Technique-T0003->ex1:techniqueID" ;
+			sh:resultPath ex1:techniqueID ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that an instance of an Organization 1 Technique has techniqueID assigned.  (Recall that an instance of ex1:Technique is an OWL Class.)"@en ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:path ex1:techniqueID ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode ex2:AT-0033 ;
+			sh:resultMessage "Less than 1 values on ex2:AT-0033->ex2:techniqueID" ;
+			sh:resultPath ex2:techniqueID ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that an instance of an Organization 2 AdaptedTechnique has Organization 2's techniqueID assigned.  (Recall that an instance of ex2:AdaptedTechnique is an OWL Class.)"@en ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:path ex2:techniqueID ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode ex2:AT-0044 ;
+			sh:resultMessage "Less than 1 values on ex2:AT-0044->ex2:techniqueID" ;
+			sh:resultPath ex2:techniqueID ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that an instance of an Organization 2 AdaptedTechnique has Organization 2's techniqueID assigned.  (Recall that an instance of ex2:AdaptedTechnique is an OWL Class.)"@en ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:path ex2:techniqueID ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example/ontology/Technique-B> ;
+			sh:resultMessage "Node ex0:Technique-B->[ sh:oneOrMorePath rdfs:subClassOf ] does not contain a value in the set: ['uco-action:Action']" ;
+			sh:resultPath [
+				sh:oneOrMorePath rdfs:subClassOf ;
+			] ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:HasValueConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This shape confirms a Technique is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
+				sh:hasValue uco-action:Action ;
+				sh:path [
+					sh:oneOrMorePath rdfs:subClassOf ;
+				] ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example/ontology/Technique-B> ;
+			sh:resultMessage "Node ex0:Technique-B->[ sh:zeroOrMorePath rdfs:subClassOf ] does not contain a value in the set: ['core:UcoThing']" ;
+			sh:resultPath [
+				sh:zeroOrMorePath rdfs:subClassOf ;
+			] ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:HasValueConstraintComponent ;
+			sh:sourceShape [
+				sh:hasValue core:UcoThing ;
+				sh:path [
+					sh:zeroOrMorePath rdfs:subClassOf ;
+				] ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example/ontology/Technique-C> ;
+			sh:resultMessage "Node ex0:Technique-C->[ sh:oneOrMorePath rdfs:subClassOf ] does not contain a value in the set: ['uco-action:Action']" ;
+			sh:resultPath [
+				sh:oneOrMorePath rdfs:subClassOf ;
+			] ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:HasValueConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This shape confirms a Technique is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
+				sh:hasValue uco-action:Action ;
+				sh:path [
+					sh:oneOrMorePath rdfs:subClassOf ;
+				] ;
+			] ;
+		]
+		;
+	.
+

@@ -1,0 +1,80 @@
+@prefix ex1: <http://example.com/framework/> .
+@prefix ex2: <http://example.org/operations/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/Action-8f84a98c-2ab5-454d-9c2f-443fe64b7158> ;
+			sh:resultMessage "Focus node does not conform to shape MinCount 1: [ sh:class ex1:YDevice ]" ;
+			sh:resultPath uco-action:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that execution of this Technique involves some Y-device as action-input."@en ;
+				sh:path uco-action:object ;
+				sh:qualifiedMinCount "1"^^xsd:integer ;
+				sh:qualifiedValueShape [
+					sh:class ex1:YDevice ;
+				] ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/Action-c44d57af-a6c3-4350-b08b-0dac5f3b7aca> ;
+			sh:resultMessage "Focus node does not conform to shape MinCount 1: [ sh:class ex1:YDevice ]" ;
+			sh:resultPath uco-action:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that execution of this Technique involves some Y-device as action-input."@en ;
+				sh:path uco-action:object ;
+				sh:qualifiedMinCount "1"^^xsd:integer ;
+				sh:qualifiedValueShape [
+					sh:class ex1:YDevice ;
+				] ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/Action-f6625d7d-978d-4562-83d7-23d9ac398073> ;
+			sh:resultMessage "Focus node does not conform to shape MinCount 1: [ sh:class ex1:YDevice ]" ;
+			sh:resultPath uco-action:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that execution of this Technique involves some Y-device as action-input."@en ;
+				sh:path uco-action:object ;
+				sh:qualifiedMinCount "1"^^xsd:integer ;
+				sh:qualifiedValueShape [
+					sh:class ex1:YDevice ;
+				] ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/Action-f6625d7d-978d-4562-83d7-23d9ac398073> ;
+			sh:resultMessage "Focus node does not conform to shape MinCount 1: [ sh:class ex2:ZDevice ]" ;
+			sh:resultPath uco-action:instrument ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "This property shape enforces that execution of this AdaptedTechnique involves some Z-device as action-instrument."@en ;
+				sh:path uco-action:instrument ;
+				sh:qualifiedMinCount "1"^^xsd:integer ;
+				sh:qualifiedValueShape [
+					sh:class ex2:ZDevice ;
+				] ;
+			] ;
+		]
+		;
+	.
+
