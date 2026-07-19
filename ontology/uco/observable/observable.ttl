@@ -4068,7 +4068,7 @@ observable:MessageThread
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "MessageTread"@en ;
+	rdfs:label "MessageThread"@en ;
 	rdfs:comment "A message thread is a running commentary of electronic messages pertaining to one topic or question."@en ;
 	sh:targetClass observable:MessageThread ;
 	.
@@ -9366,7 +9366,7 @@ observable:blockType
 observable:bluetoothDeviceName
 	a owl:DatatypeProperty ;
 	rdfs:label "bluetoothDeviceName"@en ;
-	rdfs:comment "Name configured withing Bluetooth settings on a device."@en ;
+	rdfs:comment "Name configured within Bluetooth settings on a device."@en ;
 	rdfs:range xsd:string ;
 	.
 

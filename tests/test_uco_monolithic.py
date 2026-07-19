@@ -271,11 +271,11 @@ WHERE {
         raise
 
 
-def test_only_one_uco_class_is_owl_thing_direct_subclass(graph: Graph) -> None:
+def test_only_two_uco_classes_are_owl_thing_direct_subclass(graph: Graph) -> None:
     """
-    UCO expects all classes defined in UCO namespaces (i.e. excluding the "import review" ontologies) are subclasses of core:UcoThing.  Within OWL, absence of an rdfs:subClassOf statement implies being a subclass of owl:Thing.  Review UCO for any accidental omission of rdfs:subClassOf.
+    UCO expects all classes defined in UCO namespaces (i.e. excluding the "import review" ontologies) are subclasses of core:UcoThing or core:UcoType.  Within OWL, absence of an rdfs:subClassOf statement implies being a subclass of owl:Thing.  Review UCO for any accidental omission of rdfs:subClassOf.
     """
-    expected: Set[URIRef] = {NS_UCO_CORE.UcoThing}
+    expected: Set[URIRef] = {NS_UCO_CORE.UcoThing, NS_UCO_CORE.UcoType}
     computed: Set[URIRef] = set()
 
     # Create temporary graph where subClassOf statements for non-UCO classes are removed.

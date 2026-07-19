@@ -1,0 +1,152 @@
+@prefix ex0: <http://example/ontology/> .
+@prefix ex1: <http://example.com/framework/> .
+@prefix ex2: <http://example.org/operations/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex1:Technique
+	a owl:Class ;
+	rdfs:subClassOf
+		uco-action:Technique ,
+		[
+			a owl:Restriction ;
+			rdfs:comment
+				"(Technical demonstration: Instances of the metaclass can have a datatype property assigned.)"@en ,
+				"This Restriction states, but does not enforce, that an Technique (as defined by Organization 1) has a technique ID.  SHACL validation handles enforcement."@en
+				;
+			owl:onProperty ex2:techniqueID ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:comment
+		"(Technical demonstration: Technique is subclassed.)"@en ,
+		"A Technique in Organization 1 is a member of Organization 1's Framework, indexed with a technique ID."@en
+		;
+	.
+
+ex1:Technique-T0001
+	a
+		ex1:Technique ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		uco-action:Action ,
+		[
+			a owl:Restriction ;
+			rdfs:comment "This Restriction states, but does not enforce, that execution of this AdaptedTechnique involves some Y-Device as action-input.  SHACL validation handles enforcement."@en ;
+			owl:onProperty uco-action:object ;
+			owl:someValuesFrom ex1:YDevice ;
+		]
+		;
+	rdfs:comment
+		"(Technical demonstration: Technique-subclass is instantiated.)"@en ,
+		"A technique where X is done to a Y-device."@en
+		;
+	ex1:techniqueID "T0001" ;
+	.
+
+ex1:Technique-T0002
+	a
+		ex1:Technique ,
+		owl:Class
+		;
+	rdfs:subClassOf ex1:Technique-T0001 ;
+	rdfs:comment
+		"(Technical demonstration: Technique-subclass is instantiated, specializing another instance of the same Technique-subclass.)"@en ,
+		"A technique where X is done more thoroughly to a Y-device."@en
+		;
+	ex1:techniqueID "T0001" ;
+	.
+
+ex1:YDevice
+	a owl:Class ;
+	rdfs:subClassOf uco-observable:Device ;
+	.
+
+ex1:techniqueID
+	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf uco-action:techniqueID ;
+	rdfs:domain ex1:Technique ;
+	rdfs:range xsd:string ;
+	.
+
+ex2:AT-0001
+	a
+		ex2:AdaptedTechnique ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-action:Action ;
+	rdfs:comment
+		"(Technical demonstration: A Technique-subclass instance that directly specializes uco-action:Action.)"@en ,
+		"A procedure where logging is configured to store data in an instance of Example-L Logging Service."@en
+		;
+	ex2:techniqueID "AT-0001" ;
+	.
+
+ex2:AT-0099
+	a
+		ex2:AdaptedTechnique ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		ex1:Technique-T0001 ,
+		[
+			a owl:Restriction ;
+			rdfs:comment "This Restriction states, but does not enforce, that execution of this AdaptedTechnique involves some Z-Device as action-instrument.  SHACL validation handles enforcement."@en ;
+			owl:onProperty uco-action:instrument ;
+			owl:someValuesFrom ex2:ZDevice ;
+		]
+		;
+	rdfs:comment
+		"(Technical demonstration: Technique-subclass is instantiated, specializing an instance of a different Technique-subclass.  Note that the class ex2:AT-0099 is not required to be assigned a ex1:techniqueID, nor to be typed as a ex1:Technique or uco-action:Technique.)"@en ,
+		"A procedure where X is done to a Y-device using a Z-device."@en
+		;
+	ex2:techniqueID "AT-0099" ;
+	.
+
+ex2:AdaptedTechnique
+	a owl:Class ;
+	rdfs:subClassOf
+		uco-action:Technique ,
+		[
+			a owl:Restriction ;
+			rdfs:comment
+				"(Technical demonstration: Instances of the metaclass can have a datatype property assigned.)"@en ,
+				"This Restriction states, but does not enforce, that an AdaptedTechnique has an Organization 2 techniqueID.  SHACL validation handles enforcement."@en
+				;
+			owl:onProperty ex2:techniqueID ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:comment
+		"(Technical demonstration: Technique is subclassed, again.)"@en ,
+		"A Standard Operating Procedure in Organization 2 is a Technique in Organization 2's operations manual, indexed with a procedure ID."@en
+		;
+	.
+
+ex2:ZDevice
+	a owl:Class ;
+	rdfs:subClassOf uco-observable:Device ;
+	.
+
+ex2:techniqueID
+	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf uco-action:techniqueID ;
+	rdfs:comment "(Technical demonstration: Assignment of a Technique identifier is done with an OWL Datatype Property.)"@en ;
+	rdfs:domain ex2:AdaptedTechnique ;
+	rdfs:range xsd:string ;
+	.
+
+ex0:Technique-A
+	a
+		owl:Class ,
+		uco-action:Technique
+		;
+	rdfs:subClassOf uco-action:Action ;
+	rdfs:comment "(Technical demonstration: Technique is instantiated.)"@en ;
+	.
+
