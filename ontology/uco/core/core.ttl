@@ -550,7 +550,7 @@ core:UcoType
 		;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:label "UcoType"@en ;
-	rdfs:comment "UcoThing is the top-level class for metaclasses within UCO.  An instance of core:UcoType is also an instance of owl:Class, and is or specializes core:UcoThing."@en ;
+	rdfs:comment "UcoType is the top-level class for metaclasses within UCO.  An instance of core:UcoType is also an instance of owl:Class, and is or specializes core:UcoThing."@en ;
 	owl:disjointWith core:UcoThing ;
 	sh:class owl:Class ;
 	sh:property [
