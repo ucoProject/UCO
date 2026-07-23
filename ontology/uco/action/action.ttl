@@ -347,10 +347,10 @@ action:Technique
 		;
 	rdfs:subClassOf core:UcoType ;
 	rdfs:label "Technique"@en ;
-	rdfs:comment "A technique is a class of actions joined by some common characteristics.  uco-action:Technique itself is a metaclass.  A Technique instance is an owl:Class that is a subclass of uco-action:Action."@en ;
+	rdfs:comment "A technique is a class of actions joined by some common characteristics.  The class uco-action:Technique is a metaclass.  A Technique instance is an owl:Class that is a subclass of uco-action:Action."@en ;
 	sh:property
 		[
-			rdfs:comment "This shape confirms a Technique is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
+			rdfs:comment "This property shape confirms an instance of Technique is a class that is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
 			sh:hasValue action:Action ;
 			sh:path [
 				sh:oneOrMorePath rdfs:subClassOf ;
