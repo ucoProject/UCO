@@ -64,7 +64,7 @@
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:HasValueConstraintComponent ;
 			sh:sourceShape [
-				rdfs:comment "This shape confirms a Technique is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
+				rdfs:comment "This property shape confirms an instance of Technique is a class that is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
 				sh:hasValue uco-action:Action ;
 				sh:path [
 					sh:oneOrMorePath rdfs:subClassOf ;
@@ -97,7 +97,7 @@
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:HasValueConstraintComponent ;
 			sh:sourceShape [
-				rdfs:comment "This shape confirms a Technique is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
+				rdfs:comment "This property shape confirms an instance of Technique is a class that is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
 				sh:hasValue uco-action:Action ;
 				sh:path [
 					sh:oneOrMorePath rdfs:subClassOf ;
