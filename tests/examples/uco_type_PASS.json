@@ -1,0 +1,29 @@
+{
+    "@context": {
+        "core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "kb": "http://example.org/kb/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:UcoType-1",
+            "@type": [
+                "owl:Class",
+                "core:UcoType"
+            ],
+            "rdfs:subClassOf": {
+                "@id": "core:UcoThing"
+            }
+        },
+        {
+            "@id": "kb:Thing-1",
+            "@type": "kb:UcoType-1",
+            "rdfs:comment": "Triggers Info-severity violation of IRI not ending with UUID."
+        },
+        {
+            "@id": "kb:Thing-dec9123e-9e4a-4bd3-bd1a-d7a3834c7340",
+            "@type": "kb:UcoType-1"
+        }
+    ]
+}

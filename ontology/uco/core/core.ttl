@@ -11,9 +11,9 @@
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
-	owl:backwardCompatibleWith core:1.3.0 ;
-	owl:priorVersion core:1.3.0 ;
-	owl:versionIRI core:1.4.0 ;
+	owl:backwardCompatibleWith core:1.4.0 ;
+	owl:priorVersion core:1.4.0 ;
+	owl:versionIRI core:1.5.0 ;
 	.
 
 action:Action
@@ -487,7 +487,7 @@ core:UcoThing
 		;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:label "UcoThing"@en ;
-	rdfs:comment "UcoThing is the top-level class within UCO."@en ;
+	rdfs:comment "UcoThing is the top-level class for individuals within UCO."@en ;
 	rdfs:seeAlso core:UcoThing-identifier-regex-shape ;
 	sh:sparql [
 		a sh:SPARQLConstraint ;
@@ -501,6 +501,16 @@ core:UcoThing
 			        FILTER isBlank ($this)
 			}
 		""" ;
+	] ;
+	sh:targetClass core:UcoThing ;
+	.
+
+core:UcoThing-disjointWith-UcoType-shape
+	a sh:NodeShape ;
+	sh:message "core:UcoThing and core:UcoType are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:UcoType ;
 	] ;
 	sh:targetClass core:UcoThing ;
 	.
@@ -531,6 +541,25 @@ core:UcoThing-identifier-regex-shape
 		''' ;
 	] ;
 	sh:targetClass core:UcoThing ;
+	.
+
+core:UcoType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf owl:Thing ;
+	rdfs:label "UcoType"@en ;
+	rdfs:comment "UcoType is the top-level class for metaclasses within UCO.  An instance of core:UcoType is also an instance of owl:Class, and is or specializes core:UcoThing."@en ;
+	owl:disjointWith core:UcoThing ;
+	sh:class owl:Class ;
+	sh:property [
+		sh:hasValue core:UcoThing ;
+		sh:path [
+			sh:zeroOrMorePath rdfs:subClassOf ;
+		] ;
+	] ;
+	sh:targetClass core:UcoType ;
 	.
 
 core:confidence

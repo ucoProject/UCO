@@ -1,0 +1,121 @@
+@prefix ex0: <http://example/ontology/> .
+@prefix ex1: <http://example.com/framework/> .
+@prefix ex2: <http://example.org/operations/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex1:Technique
+	a owl:Class ;
+	rdfs:subClassOf
+		uco-action:Technique ,
+		[
+			a owl:Restriction ;
+			owl:onProperty ex2:techniqueID ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:comment "(No difference from ex1:Technique in PASS graph.)"@en ;
+	.
+
+ex1:Technique-T0003
+	a
+		ex1:Technique ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-action:Action ;
+	rdfs:comment "(Technical demonstration: Technique XFAILS due to techniqueID absence.)"@en ;
+	.
+
+ex1:techniqueID
+	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf uco-action:techniqueID ;
+	rdfs:comment "(No difference from ex1:techniqueID in PASS graph.)"@en ;
+	rdfs:domain ex1:Technique ;
+	rdfs:range xsd:string ;
+	.
+
+ex2:AT-0033
+	a
+		ex2:AdaptedTechnique ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-action:Action ;
+	rdfs:comment "(Technical demonstration: Technique XFAILs due to techniqueID absence."@en ;
+	.
+
+ex2:AT-0044
+	a
+		ex2:AdaptedTechnique ,
+		owl:Class
+		;
+	rdfs:subClassOf ex1:Technique-T0003 ;
+	rdfs:comment "(Technical demonstration: Technique XFAILs due to techniqueID absence.  Subclassing a ex1:Technique has no influence."@en ;
+	.
+
+ex2:AT-0055
+	a
+		ex2:AdaptedTechnique ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-action:Action ;
+	rdfs:comment "(Technical demonstration: Technique XFAILs due to techniqueID incorrect node-kind.)"@en ;
+	ex2:techniqueAltID ex2:P-5555 ;
+	ex2:techniqueID "AT-0055" ;
+	.
+
+ex2:AdaptedTechnique
+	a owl:Class ;
+	rdfs:subClassOf
+		uco-action:Technique ,
+		[
+			a owl:Restriction ;
+			owl:onProperty ex2:techniqueID ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:comment "(No difference from ex2:AdaptedTechnique in PASS graph.)"@en ;
+	.
+
+ex2:techniqueAltID
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf uco-action:techniqueID ;
+	rdfs:comment "(Technical demonstration: Assignment of a Technique identifier must be done with an OWL Datatype Property.  RDFS or OWL-RL inferencing enables detecting this modeling error.)"@en ;
+	rdfs:domain ex2:AdaptedTechnique ;
+	.
+
+ex2:techniqueID
+	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf uco-action:techniqueID ;
+	rdfs:comment
+		"(No difference from ex2:techniqueID in PASS graph.)"@en ,
+		"(Technical demonstration: Assignment of a Technique identifier is done with an OWL datatype Property.)"@en
+		;
+	rdfs:domain ex2:AdaptedTechnique ;
+	rdfs:range xsd:string ;
+	.
+
+ex0:Technique-B
+	a
+		owl:Class ,
+		uco-action:Technique
+		;
+	rdfs:comment
+		"(Technical demonstration: Technique XFAILs due to not specializing uco-action:Action.)"@en ,
+		"(Technical demonstration: Technique XFAILs due to not specializing uco-core:UcoThing.)"@en
+		;
+	.
+
+ex0:Technique-C
+	a
+		owl:Class ,
+		uco-action:Technique
+		;
+	rdfs:subClassOf uco-core:UcoObject ;
+	rdfs:comment "(Technical demonstration: Technique XFAILs due to not specializing uco-action:Action.)"@en ;
+	.
+
