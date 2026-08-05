@@ -484,6 +484,11 @@ observable:ApplicationFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:version ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:permissionName ;
 		]
 		;
 	sh:targetClass observable:ApplicationFacet ;
@@ -12043,6 +12048,13 @@ observable:peType
 	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "peType"@en ;
 	rdfs:comment "Specifies the type of the PE binary."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:permissionName
+	a owl:DatatypeProperty ;
+	rdfs:label "permissionName"@en ;
+	rdfs:comment "Specifies the string name for a permission, primarily related to application permissions."@en ;
 	rdfs:range xsd:string ;
 	.
 
