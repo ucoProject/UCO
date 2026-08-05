@@ -34,6 +34,87 @@ uco-owl:Axiom-shape
 	sh:targetClass owl:Axiom ;
 	.
 
+uco-owl:DataExactCardinalityQualified-shape
+	a sh:NodeShape ;
+	rdfs:comment
+		"This shape intentionally has no sh:targetX predicate."@en ,
+		"This shape is named for the class expression in Table 13, row 22, of the OWL 2 mapping to RDF."@en
+		;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onDataRange ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:qualifiedCardinality ;
+		]
+		;
+	.
+
+uco-owl:DataMaxCardinalityQualified-shape
+	a sh:NodeShape ;
+	rdfs:comment
+		"This shape intentionally has no sh:targetX predicate."@en ,
+		"This shape is named for the class expression in Table 13, row 21, of the OWL 2 mapping to RDF."@en
+		;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:maxQualifiedCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onDataRange ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		]
+		;
+	.
+
+uco-owl:DataMinCardinalityQualified-shape
+	a sh:NodeShape ;
+	rdfs:comment
+		"This shape intentionally has no sh:targetX predicate."@en ,
+		"This shape is named for the class expression in Table 13, row 20, of the OWL 2 mapping to RDF."@en
+		;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:minQualifiedCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onDataRange ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		]
+		;
+	.
+
 uco-owl:DataOneOf-shape
 	a sh:NodeShape ;
 	sh:sparql [
@@ -189,6 +270,87 @@ uco-owl:List-shape
 	sh:deactivated "true"^^xsd:boolean ;
 	.
 
+uco-owl:ObjectExactCardinalityQualified-shape
+	a sh:NodeShape ;
+	rdfs:comment
+		"This shape intentionally has no sh:targetX predicate."@en ,
+		"This shape is named for the class expression in Table 13, row 11, of the OWL 2 mapping to RDF."@en
+		;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onClass ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:qualifiedCardinality ;
+		]
+		;
+	.
+
+uco-owl:ObjectMaxCardinalityQualified-shape
+	a sh:NodeShape ;
+	rdfs:comment
+		"This shape intentionally has no sh:targetX predicate."@en ,
+		"This shape is named for the class expression in Table 13, row 10, of the OWL 2 mapping to RDF."@en
+		;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:maxQualifiedCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onClass ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		]
+		;
+	.
+
+uco-owl:ObjectMinCardinalityQualified-shape
+	a sh:NodeShape ;
+	rdfs:comment
+		"This shape intentionally has no sh:targetX predicate."@en ,
+		"This shape is named for the class expression in Table 13, row 9, of the OWL 2 mapping to RDF."@en
+		;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:minQualifiedCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onClass ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		]
+		;
+	.
+
 uco-owl:ObjectProperty-shacl-constraints-shape
 	a sh:NodeShape ;
 	sh:sparql
@@ -239,6 +401,64 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 	sh:targetClass owl:ObjectProperty ;
 	.
 
+uco-owl:Restriction-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso
+		<https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/> ,
+		<https://www.w3.org/TR/2012/REC-owl2-rdf-based-semantics-20121211/#A_Set_of_Axiomatic_Triples>
+		;
+	sh:description "This shape captures the one in-common restrictions on owl:Restriction in the OWL mapping to RDF document, between Tables 1 and 13: that Restrictions are identified as blank nodes.  Note that Table 5 matching potentially IRI-identified nodes does not relax the matching patterns from Tables 1 and 13.  Maximum-counts are put on properties observed to have a domain of owl:Restriction in the OWL 2 RDF-based semantics document, Table 6.2."@en ;
+	sh:nodeKind sh:BlankNode ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:cardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:maxCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:maxQualifiedCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:minCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:minQualifiedCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:onClass ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:onDataRange ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path owl:qualifiedCardinality ;
+		]
+		;
+	sh:targetClass owl:Restriction ;
+	.
+
 uco-owl:Sequence-shape
 	a sh:NodeShape ;
 	rdfs:comment "This shape intentionally has no target declaration.  It is instead intended to be incorporated using 'sh:node'."@en ;
@@ -276,6 +496,43 @@ uco-owl:Sequence-shape
 			] ;
 		]
 	) ;
+	.
+
+uco-owl:cardinality-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:nonNegativeInteger ;
+	sh:nodeKind sh:Literal ;
+	sh:targetObjectsOf owl:cardinality ;
+	.
+
+uco-owl:cardinality-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape reflects DataExactCardinality and ObjectExactCardinality for the class expressions in Table 13, rows 14 and 25, of the OWL 2 mapping to RDF.  Those rows are ambiguous if the object of owl:onProperty is not further reviewed."@en ;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path owl:onClass ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path owl:onDataRange ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:cardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		]
+		;
+	sh:targetSubjectsOf owl:cardinality ;
 	.
 
 uco-owl:disjointUnionOf-subjects-shape
@@ -353,6 +610,69 @@ uco-owl:intersectionOf-subjects-shape
 	sh:targetSubjectsOf owl:intersectionOf ;
 	.
 
+uco-owl:maxCardinality-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:nonNegativeInteger ;
+	sh:nodeKind sh:Literal ;
+	sh:targetObjectsOf owl:maxCardinality ;
+	.
+
+uco-owl:maxCardinality-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape reflects DataMaxCardinality and ObjectMaxCardinality for the class expressions in Table 13, rows 13 and 24, of the OWL 2 mapping to RDF.  Those rows are ambiguous if the object of owl:onProperty is not further reviewed."@en ;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path owl:minCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path owl:onClass ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path owl:onDataRange ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:maxCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		]
+		;
+	sh:targetSubjectsOf owl:maxCardinality ;
+	.
+
+uco-owl:maxQualifiedCardinality-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:nonNegativeInteger ;
+	sh:nodeKind sh:Literal ;
+	sh:targetObjectsOf owl:maxQualifiedCardinality ;
+	.
+
+uco-owl:maxQualifiedCardinality-subjects-shape
+	a sh:NodeShape ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:path owl:minQualifiedCardinality ;
+	] ;
+	sh:targetSubjectsOf owl:maxQualifiedCardinality ;
+	sh:xone (
+		uco-owl:DataMaxCardinalityQualified-shape
+		uco-owl:ObjectMaxCardinalityQualified-shape
+	) ;
+	.
+
 uco-owl:members-subjects-shape
 	a sh:NodeShape ;
 	sh:property [
@@ -363,6 +683,69 @@ uco-owl:members-subjects-shape
 	sh:targetSubjectsOf owl:members ;
 	.
 
+uco-owl:minCardinality-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:nonNegativeInteger ;
+	sh:nodeKind sh:Literal ;
+	sh:targetObjectsOf owl:minCardinality ;
+	.
+
+uco-owl:minCardinality-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape reflects DataMinCardinality and ObjectMinCardinality for the class expressions in Table 13, rows 12 and 23, of the OWL 2 mapping to RDF.  Those rows are ambiguous if the object of owl:onProperty is not further reviewed."@en ;
+	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Parsing_of_Expressions> ;
+	sh:class owl:Restriction ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path owl:maxCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path owl:onClass ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path owl:onDataRange ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:minCardinality ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path owl:onProperty ;
+		]
+		;
+	sh:targetSubjectsOf owl:minCardinality ;
+	.
+
+uco-owl:minQualifiedCardinality-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:nonNegativeInteger ;
+	sh:nodeKind sh:Literal ;
+	sh:targetObjectsOf owl:minQualifiedCardinality ;
+	.
+
+uco-owl:minQualifiedCardinality-subjects-shape
+	a sh:NodeShape ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:path owl:maxQualifiedCardinality ;
+	] ;
+	sh:targetSubjectsOf owl:minQualifiedCardinality ;
+	sh:xone (
+		uco-owl:DataMinCardinalityQualified-shape
+		uco-owl:ObjectMinCardinalityQualified-shape
+	) ;
+	.
+
 uco-owl:onProperties-subjects-shape
 	a sh:NodeShape ;
 	sh:property [
@@ -371,6 +754,12 @@ uco-owl:onProperties-subjects-shape
 		sh:path owl:onProperties ;
 	] ;
 	sh:targetSubjectsOf owl:onProperties ;
+	.
+
+uco-owl:onProperty-subjects-shape
+	a sh:NodeShape ;
+	sh:class owl:Restriction ;
+	sh:targetSubjectsOf owl:onProperty ;
 	.
 
 uco-owl:oneOf-subjects-shape
@@ -399,6 +788,22 @@ uco-owl:propertyChainAxiom-subjects-shape
 		sh:path owl:propertyChainAxiom ;
 	] ;
 	sh:targetSubjectsOf owl:propertyChainAxiom ;
+	.
+
+uco-owl:qualifiedCardinality-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:nonNegativeInteger ;
+	sh:nodeKind sh:Literal ;
+	sh:targetObjectsOf owl:qualifiedCardinality ;
+	.
+
+uco-owl:qualifiedCardinality-subjects-shape
+	a sh:NodeShape ;
+	sh:targetSubjectsOf owl:qualifiedCardinality ;
+	sh:xone (
+		uco-owl:DataExactCardinalityQualified-shape
+		uco-owl:ObjectExactCardinalityQualified-shape
+	) ;
 	.
 
 uco-owl:rdf-first-subjects-shape
