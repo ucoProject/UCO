@@ -8,20 +8,38 @@
 []
 	a sh:ValidationReport ;
 	sh:conforms "true"^^xsd:boolean ;
-	sh:result [
-		a sh:ValidationResult ;
-		sh:focusNode <http://example.org/kb/windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1> ;
-		sh:resultMessage "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
-		sh:resultPath observable:creationTime ;
-		sh:resultSeverity sh:Warning ;
-		sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
-		sh:sourceShape [
-			a sh:PropertyShape ;
-			sh:maxCount "0"^^xsd:integer ;
-			sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
-			sh:path observable:creationTime ;
-			sh:severity sh:Warning ;
-		] ;
-	] ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/windows-thread-da52a01e-41cc-42d5-85be-ca14bfa10fd6> ;
+			sh:resultMessage "In UCO 2.0.0, uco-observable:ProcessThread will be a subclass of uco-observable:Process.  In preparation for UCO 2.0.0, the additional type uco-observable:Process should be assigned to this node."@en ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				a sh:NodeShape ;
+				rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+				sh:class observable:Process ;
+				sh:message "In UCO 2.0.0, uco-observable:ProcessThread will be a subclass of uco-observable:Process.  In preparation for UCO 2.0.0, the additional type uco-observable:Process should be assigned to this node."@en ;
+				sh:severity sh:Warning ;
+				sh:targetClass observable:ProcessThread ;
+			] ;
+			sh:value <http://example.org/kb/windows-thread-da52a01e-41cc-42d5-85be-ca14bfa10fd6> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/windows-thread-facet-4967ae35-f00b-49c8-9dd2-38e3bdf851e1> ;
+			sh:resultMessage "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+			sh:resultPath observable:creationTime ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				a sh:PropertyShape ;
+				sh:maxCount "0"^^xsd:integer ;
+				sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+				sh:path observable:creationTime ;
+				sh:severity sh:Warning ;
+			] ;
+		]
+		;
 	.
 
