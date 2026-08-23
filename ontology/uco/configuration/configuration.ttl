@@ -59,7 +59,7 @@ configuration:ConfigurationEntry
 	sh:property
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path configuration:itemObject ;
 		] ,
 		[
