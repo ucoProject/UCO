@@ -28,7 +28,7 @@ analysis:Analysis
 	rdfs:subClassOf action:Action ;
 	rdfs:label "Analysis"@en ;
 	rdfs:comment "An analysis is an action of detailed examination of something in order to understand its nature, context or essential features."@en ;
-	sh:targetClass action:Analysis ;
+	sh:targetClass analysis:Analysis ;
 	.
 
 analysis:AnalyticResult
@@ -52,7 +52,7 @@ analysis:AnalyticResult
 			sh:path analysis:resultContent ;
 		]
 		;
-	sh:targetClass analysis:AnalysicResult ;
+	sh:targetClass analysis:AnalyticResult ;
 	.
 
 analysis:AnalyticResultFacet
