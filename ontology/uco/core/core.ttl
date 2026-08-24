@@ -90,6 +90,11 @@ core:Compilation
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Compilation"@en ;
 	rdfs:comment "A compilation is a grouping of things."@en ;
+	sh:property [
+		sh:class core:UcoObject ;
+		sh:nodeKind sh:IRI ;
+		sh:path core:object ;
+	] ;
 	sh:targetClass core:Compilation ;
 	.
 
