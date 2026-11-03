@@ -10736,7 +10736,7 @@ observable:friendsCount
 observable:from
 	a owl:ObjectProperty ;
 	rdfs:label "from"@en ;
-	rdfs:comment "The phone number of the initiating party."@en ;
+	rdfs:comment "The party that initiated a communication, such as a call or message, identified by an observable object such as an account or address."@en ;
 	rdfs:range observable:ObservableObject ;
 	.
 
@@ -13139,7 +13139,7 @@ observable:timezoneStandard
 observable:to
 	a owl:ObjectProperty ;
 	rdfs:label "to"@en ;
-	rdfs:comment "The receiver's phone number."@en ;
+	rdfs:comment "A party to which a communication, such as a call or message, is directed, identified by an observable object such as an account or address."@en ;
 	rdfs:range observable:ObservableObject ;
 	.
 
